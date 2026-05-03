@@ -1,3 +1,9 @@
+*{
+  margin: 0%;
+  padding: 0%;
+}
+
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -16,6 +22,7 @@
   background-image: linear-gradient(#6e20ff, #e24edb, #797373);
   animation: rotate var(--speed) var(--easing) alternate infinite;
   border-radius: 30% 70% 70% 30%/30% 30% 70% 70%;
+  position: absolute;
 }
 
 @media (min-width: 720px) {
