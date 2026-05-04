@@ -1,5 +1,6 @@
 import "./App.css";
-import AuthPage1 from "./pages/AuthPage1.jsx";
+// import AuthPage1 from "./pages/AuthPage1.jsx";
+import DashboardLayout from "./pages/DashboardPage"
 
 function App() {
 
@@ -7,7 +8,7 @@ function App() {
 
   return (
     <>
-      <AuthPage1/>
+      <DashboardLayout/>
     </>
   );
 }
