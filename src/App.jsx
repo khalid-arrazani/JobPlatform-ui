@@ -1,5 +1,5 @@
 import "./App.css";
-import Login from "./pages/Login.jsx";
+import AuthPage1 from "./pages/AuthPage1.jsx";
 
 function App() {
 
@@ -7,7 +7,7 @@ function App() {
 
   return (
     <>
-      <Login/>
+      <AuthPage1/>
     </>
   );
 }

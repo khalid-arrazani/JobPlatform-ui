@@ -1,0 +1,233 @@
+
+
+import "@fontsource/roboto/300.css";
+import "@fontsource/roboto/400.css";
+import "@fontsource/roboto/500.css";
+import "@fontsource/roboto/700.css";
+
+import {
+  Box,
+  Button,
+  Card,
+  Container,
+  TextField,
+  Typography,
+} from "@mui/material";
+import { useState } from "react";
+
+export default function SingUpPage() {
+  const [role, setrole] = useState("JobSeeker");
+
+  function cardRecruiter() {
+    setrole("Recruiter");
+  }
+
+  function cardJobSeeker() {
+    setrole("JobSeeker");
+  }
+  return (
+    <>
+      <Container
+        sx={{
+          position: "absolute",
+          width: "34%",
+          height: "80%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          overflow: "hidden",
+        }}
+      >
+        <Card
+          className="cardSignUp"
+          sx={{
+            height: "90%",
+            width: "90%",
+            background: "rgba(255,255,255,0.08)",
+            backdropFilter: "blur(20px)",
+            border: "1px solid rgba(255,255,255,0.1)",
+            borderRadius: "30px",
+            padding: "40px",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            gap: 2,
+            boxShadow: "0 8px 32px rgba(0,0,0,0.3)",
+            p: 1,
+            alignItems: "center",
+          }}
+        >
+          <Typography
+            variant="h3"
+            sx={{
+              color: "white",
+              fontWeight: "bold",
+              textAlign: "center",
+              mb: 0,
+            }}
+          >
+            Sign Up
+          </Typography>
+
+          <TextField
+            label="Username"
+            variant="standard"
+            size="small"
+            sx={{
+              input: {
+                color: "white",
+              },
+              label: {
+                color: "#d1d1d1",
+              },
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+              },
+              width: "90%",
+            }}
+          />
+
+          <TextField
+            label="Email"
+            variant="standard"
+            sx={{
+              input: {
+                color: "white",
+              },
+              label: {
+                color: "#d1d1d1",
+              },
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+              },
+              width: "90%",
+            }}
+          />
+
+          <TextField
+            label="Password"
+            type="password"
+            variant="standard"
+            sx={{
+              input: {
+                color: "white",
+              },
+              label: {
+                color: "#d1d1d1",
+              },
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "15px",
+              },
+              width: "90%",
+            }}
+          />
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+            }}
+          >
+            <Card
+              className="cardJobSeeker"
+              onClick={cardJobSeeker}
+              sx={{
+                flex: 1,
+                p: 1,
+                cursor: "pointer",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.08)",
+                border:
+                  role === "JobSeeker"
+                    ? "1px solid #2196f3"
+                    : "1px solid transparent",
+
+                transition: "0.3s",
+                "&:hover": {
+                  transform: "scale(1.03)",
+                },
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "18px",
+                  p: 0,
+                }}
+              >
+                Job Seeker
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "#cfcfcf",
+                  mt: 1,
+                  fontSize: "10px",
+                }}
+              >
+                Find jobs and apply easily
+              </Typography>
+            </Card>
+
+            <Card
+              className="cardRecruiter"
+              onClick={cardRecruiter}
+              sx={{
+                flex: 1,
+                p: 1,
+                cursor: "pointer",
+                borderRadius: "10px",
+                background: "rgba(255,255,255,0.08)",
+                border:
+                  role === "Recruiter"
+                    ? "1px solid #2196f3"
+                    : "1px solid transparent",
+                transition: "0.3s",
+                "&:hover": {
+                  transform: "scale(1.03)",
+                },
+                width: "120px",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "white",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                }}
+              >
+                Recruiter
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "#cfcfcf",
+                  mt: 1,
+                  fontSize: "10px",
+                }}
+              >
+                Post jobs and hire talent
+              </Typography>
+            </Card>
+          </Box>
+
+          <Button
+            variant="contained"
+            sx={{
+              mt: 2,
+              height: "55px",
+              width: "50%",
+              borderRadius: "15px",
+              fontSize: "18px",
+              textTransform: "none",
+              background:
+                "linear-gradient(to right,rgb(28, 43, 56),rgb(132, 0, 255))",
+            }}
+          >
+            Create Account
+          </Button>
+        </Card>
+      </Container>
+    </>
+  );
+}
