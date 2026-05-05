@@ -1,28 +1,142 @@
 import Navbar from "../components/dashboard/Navbar.jsx";
+import "./Dashboard.css";
 import { Box } from "@mui/material";
 
-import Grid from "@mui/material/Grid";
-import {Container} from "@mui/material"
-export default function DashboardLayout({ children }) {
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
+
+import { Card } from "@mui/material";
+import {  Avatar, Typography } from "@mui/material";
+
+import JobList from "../components/dashboard/ListJobs.jsx";
+export default function DashboardLayout() {
   return (
-    <Box sx={{ height: "100vh", display: "flex", flexDirection: "column" }}>
+    <Box
+      sx={{
+        width: "100vw",
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        background: "#ccc9c0",
+        padding: 0,
+      }}
+    >
       <Navbar />
 
-      <Grid container sx={{ flex: 1, width: "100%" , gap:1 , justifyContent:"space-around" }}>
-        <Grid item size={3}>
-          <Container sx={{ height: "99%" }}>Sidebar</Container>
-        </Grid>
+      {/* <Box
+        sx={{
+          flex: 1,
+          background: "#83212100",
+          display: "flex",
+          justifyContent: "center",
+          gap: 5,
+          overflow: "auto",
+        }}
+      >
+        <Card sx={{height:"35%",width:"20%",position:"fixed",left:"7%",mt:5}} ></Card>
 
-        <Grid item size={5}>
-          <Container sx={{  height: "100%" }}>Content</Container>
-        </Grid>
+        <JobList />
 
-        <Grid item size={3}>
-          <Container sx={{  height: "99%" }}>Extra</Container>
-        </Grid>
-      </Grid>
+        <Card sx={{height:"38%",width:"22%",position:"fixed",right:"6%",mt:5}} ></Card>
 
-      {/* <Box sx={{ padding: 3 }}>{children}</Box> */}
+      </Box>
+
+      <Box  >
+
+      </Box> */}
+
+      <div class="parent">
+
+        <div class="div1">
+          <Card
+  sx={{
+    height: "55%",
+    width: "60%",
+    borderRadius: "20px",
+    mt: "20px",
+    mr: "20px",
+    overflow: "hidden",
+    boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+  }}
+>
+  {/* Header */}
+  <Box
+    sx={{
+      height: "25%",
+      background: "linear-gradient(135deg, #6a11cb, #2575fc)",
+    }}
+  />
+
+  {/* Content */}
+  <Box
+    sx={{
+      height: "75%",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      mt: "-50px",
+      textAlign: "center",
+      p: 2,
+    }}
+  >
+    {/* Image */}
+    <Avatar
+      src="/myImage.jpg"
+      sx={{
+        width: 90,
+        height: 90,
+        border: "4px solid white",
+        boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+      }}
+    />
+
+    {/* Name */}
+    <Typography
+      sx={{
+        fontWeight: "bold",
+        fontSize: "18px",
+        mt: 1,
+      }}
+    >
+      Khalid Arrazani
+    </Typography>
+
+    {/* Description */}
+    <Typography sx={{ fontSize: "13px", color: "#666", mt: 1 }}>
+      Passionate developer building modern web apps.
+    </Typography>
+
+    {/* Address */}
+    <Typography sx={{ fontSize: "12px", color: "#888", mt: 1 }}>
+      📍 Agadir, Morocco
+    </Typography>
+  </Box>
+</Card>
+        </div>
+
+
+
+        <div class="div2">
+            <JobList />
+        </div>
+
+
+
+        <div class="div3">
+           <Card sx={{height:"55%",width:"85%",borderRadius:"10px",background:"#ffffff",mt:"20px"}}></Card>
+        </div>
+
+
+
+        <div class="div4">
+          <Stack spacing={2}>
+            <Pagination count={500} />
+          </Stack>
+        </div>
+
+
+      </div>
     </Box>
   );
 }
