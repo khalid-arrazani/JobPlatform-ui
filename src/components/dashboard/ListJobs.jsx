@@ -1,5 +1,5 @@
 import { Box, Typography, Avatar, Button, Card } from "@mui/material";
-
+import SearchInput from "./searchInput";
 export default function JobList() {
   const jobs = [
     {
@@ -49,6 +49,7 @@ export default function JobList() {
       <div
         style={{ height: "auto", background: "#ffffff00", paddingTop: "0.8%" }}
       >
+        <SearchInput/>
         {jobs.map((job) => (
           <Card
             sx={{
@@ -74,23 +75,23 @@ export default function JobList() {
             {/* Info */}
             <Box sx={{ flex: 1 }}>
               
-              <Typography sx={{ fontWeight: "bold", fontSize: "13.5px" }}>
+              <Typography sx={{ fontWeight: "bold", fontSize: "10.5px" }}>
                 {job.title}
               </Typography>
 
-              <Typography sx={{ fontSize: "12px", color: "#555" }}>
+              <Typography sx={{ fontSize: "11px", color: "#555" }}>
                 {job.company} • {job.location}
               </Typography>
 
               <Typography
-                sx={{ fontSize: "12px", color: "#777", mt: 0.2 }}
+                sx={{ fontSize: "11px", color: "#777", mt: 0.2 }}
                 noWrap
               >
                 {job.description}
               </Typography>
 
               <Typography
-                sx={{ mt: 0.2, fontWeight: "bold", fontSize: "12px" }}
+                sx={{ mt: 0.2, fontWeight: "bold", fontSize: "11px" }}
               >
                 💰 {job.salary}
               </Typography>
