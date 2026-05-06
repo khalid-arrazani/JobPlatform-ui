@@ -24,6 +24,7 @@ import logo from "../../assets/title.png";
 export default function Navbar() {
 
   const [open, setOpen] = React.useState(false);
+  const [tap, setTap] = React.useState(0);
 
 
   return (
@@ -41,19 +42,23 @@ export default function Navbar() {
     }}
   >
 
-    {/* 🔵 Logo */}
+
     <Box sx={{ display: "flex", alignItems: "center" }}>
       <img src={logo} width={"150"} alt="" />
     </Box>
     
   <Tabs
-    value={0}
+    value={tap}
     textColor="inherit"
-    indicatorColor="secondary"
+      sx={{
+    "& .MuiTabs-indicator": {
+      backgroundColor: "#5590ff",
+      height: "3px"
+    }
+  }}
   >
-
-    <Tab label="Jobs" sx={{ color: "white" }} />
-    <Tab label="Companies" sx={{ color: "white" }} />
+    <Tab onClick={()=>{setTap(0)}} label="Jobs" sx={{ color: "white" }} />
+    <Tab onClick={()=>{setTap(1)}} label="Companies" sx={{ color: "white" }} />
   </Tabs>
 
     {/* ⚡ Right side */}
