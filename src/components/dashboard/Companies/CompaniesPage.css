@@ -1,33 +1,26 @@
 .Companiesparent {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 1fr);
-    gap: 8px;
-    flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 .Companiesdiv1 {
-    grid-column: span 10 / span 10;
-    grid-row: span 2 / span 2;
-  background-color: aliceblue;
+  height: 18%;
 }
 
 .Companiesdiv2 {
-    grid-column: span 10 / span 10;
-    grid-row: span 7 / span 7;
-    grid-row-start: 3;
-    
-
-  background-color: aliceblue;
+  max-height: 60vh;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-  width: 100%;
+  overflow: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .Companiesdiv3 {
-   grid-column: span 10 / span 10;
-    grid-row-start: 10;
-  background-color: aliceblue;
-
+  max-height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

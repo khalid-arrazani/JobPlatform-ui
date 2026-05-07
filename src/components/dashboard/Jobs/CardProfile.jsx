@@ -52,7 +52,7 @@ export default function CardProfile() {
             sx={{
               fontWeight: "bold",
               fontSize: "1rem",
-              mt: 1,
+              mt: "1px",
             }}
           >
             Khalid Arrazani

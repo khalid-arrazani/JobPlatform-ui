@@ -70,6 +70,7 @@ export default function CardCompanies(){
         },
       ];
     return <>
+
   {company.map((company) => (
   <Card
     key={company.name}
@@ -87,7 +88,8 @@ export default function CardCompanies(){
         transform: "translateY(-0.2rem)",
         boxShadow: "0 0.4rem 1rem rgba(0,0,0,0.10)",
       },
-      m:1
+      m:1,
+     width:"20%"
     }}
   >
     {/* TOP */}
@@ -164,5 +166,6 @@ export default function CardCompanies(){
     </Button>
   </Card>
 ))}
+
     </>
 }
