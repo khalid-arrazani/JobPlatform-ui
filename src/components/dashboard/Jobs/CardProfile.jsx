@@ -51,7 +51,7 @@ export default function CardProfile() {
           <Typography
             sx={{
               fontWeight: "bold",
-              fontSize: "18px",
+              fontSize: "1rem",
               mt: 1,
             }}
           >
@@ -59,12 +59,12 @@ export default function CardProfile() {
           </Typography>
 
           {/* Description */}
-          <Typography sx={{ fontSize: "13px", color: "#666", mt: 1 }}>
+          <Typography sx={{ fontSize: "0.9rem", color: "#666", mt: 1 }}>
             Passionate developer building modern web apps.
           </Typography>
 
           {/* Address */}
-          <Typography sx={{ fontSize: "12px", color: "#888", mt: 1 }}>
+          <Typography sx={{ fontSize: "0.7rem", color: "#888", mt: 1 }}>
             📍 Agadir, Morocco
           </Typography>
         </Box>
