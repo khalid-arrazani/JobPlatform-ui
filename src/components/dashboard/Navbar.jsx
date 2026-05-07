@@ -6,8 +6,6 @@ import {
   Box,
   IconButton,
   Avatar
-
-  
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import WorkIcon from "@mui/icons-material/Work";
