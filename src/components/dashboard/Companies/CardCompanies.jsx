@@ -89,8 +89,10 @@ export default function CardCompanies(){
         boxShadow: "0 0.4rem 1rem rgba(0,0,0,0.10)",
       },
       m:1,
-     width:"20%"
+     width:"20%",
+     
     }}
+    style={{minWidth:"190px",maxWidth:"250px"}}
   >
     {/* TOP */}
     <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
