@@ -29,15 +29,19 @@ export default function Navbar() {
     <AppBar
   position="static"
   sx={{
-    background: "#376681"
+    background: "#376681",
+    height:"8%",
+    padding:"0px"
   }}
+
 >
   <Toolbar
     sx={{
       display: "flex",
       justifyContent: "space-between",
-      minHeight: "60px"
+      height: "80%"
     }}
+    style={{minHeight:"100%"}}
   >
 
 

@@ -1,0 +1,29 @@
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 10px;
+}
+    
+.div1 {
+    grid-column: span 6 / span 6;
+    grid-row: span 3 / span 3;
+    background-color: aliceblue;
+}
+
+.div2 {
+    grid-column: span 6 / span 6;
+    grid-row: span 8 / span 8;
+    background-color: aliceblue;
+    grid-row-start: 4;
+}
+
+.div3 {
+    grid-column: span 6 / span 6;
+    background-color: aliceblue;
+    grid-row-start: 12;
+}
+    
+        
+      
