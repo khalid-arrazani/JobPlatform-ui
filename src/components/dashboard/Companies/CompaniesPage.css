@@ -1,28 +1,32 @@
-
 .parent {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(12, 1fr);
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  gap: 8px;
 }
-    
+
 .div1 {
-    grid-column: span 5 / span 5;
-    grid-row: span 3 / span 3;
-    background-color: aliceblue;
+  grid-column: span 5 / span 5;
+  grid-row: span 2 / span 2;
+  background-color: aliceblue;
 }
 
 .div2 {
-    grid-column: span 5 / span 5;
-    grid-row: span 8 / span 8;
-    background-color: aliceblue;
-    grid-row-start: 4;
+  grid-column: span 5 / span 5;
+  grid-row: span 8 / span 8;
+  background-color: aliceblue;
+  grid-row-start: 4;
+  display: grid;
+
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+
+  gap: 20px;
+
+  width: 100%;
 }
 
 .div3 {
-    grid-column: span 5 / span 5;
-    background-color: aliceblue;
-    grid-row-start: 12;
-}     
-        
-      
+  grid-column: span 5 / span 5;
+  background-color: aliceblue;
+  grid-row-start: 12;
+}
