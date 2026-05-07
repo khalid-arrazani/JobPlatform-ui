@@ -6,12 +6,14 @@ export default function CardAds() {
     <>
       <Card
         sx={{
-          height: "55%",
+          height: "22vw",
           width: "85%",
           borderRadius: "10px",
           background: "#ffffff00",
           mt: "20px",
+
         }}
+
       >
         <img width={"100%"} src={ads} />
       </Card>

@@ -6,7 +6,7 @@ export default function CardProfile() {
     <>
       <Card
         sx={{
-          height: "55%",
+          height: "20vw",
           width: "60%",
           borderRadius: "20px",
           mt: "20px",
@@ -40,8 +40,8 @@ export default function CardProfile() {
           <Avatar
             src="/myImage.jpg"
             sx={{
-              width: 90,
-              height: 90,
+              width: "45%",
+              height:"45%",
               border: "4px solid white",
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
             }}
