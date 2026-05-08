@@ -3,6 +3,7 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 import CardCompanies from "./CardCompanies"
+import CardFilterAndSearch from "./CardFilterAndSearch";
 
 export default function CompaniesPage() {
 
@@ -11,7 +12,9 @@ export default function CompaniesPage() {
 
       <div class="Companiesparent">
 
-        <div class="Companiesdiv1">1</div>
+        <div class="Companiesdiv1">
+          <CardFilterAndSearch/>
+        </div>
 
         <div class="Companiesdiv2" >
           <CardCompanies/>

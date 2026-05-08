@@ -1,0 +1,87 @@
+import { Box, InputBase, MenuItem, Select, Typography } from "@mui/material";
+
+import SearchIcon from "@mui/icons-material/Search";
+
+export default function CompanyCard() {
+  return (
+    <Box sx={{ display: "flex", flexDirection: "column",justifyContent:"center",height:"100%",alignItems:"center" }}>
+
+       <Box sx={{width:"75%",m:1}}>
+      <Typography variant="h4" sx={{color:"#000000a2",fontWeight:"bold"}}>
+       Companies
+      </Typography>
+            <Typography variant="h7" sx={{color:"#161515c4"}}>
+       Discover top companies and explore their open positions
+      </Typography>
+      </Box>
+
+      <Box
+        sx={{
+          display: "flex",
+          gap: 2,
+          alignItems: "center",
+          flexWrap: "wrap",
+          mb: 3,
+          justifyContent: "center",
+        }}
+      >
+        <Typography></Typography>
+
+        {/* 🔍 Search */}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            background: "white",
+            px: 2,
+            py: 0.5,
+            borderRadius: "12px",
+            minWidth: "250px",
+            width: "50vw",
+          }}
+        >
+          <SearchIcon sx={{ color: "#777" }} />
+
+          <InputBase
+            placeholder="Search companies..."
+            sx={{
+              ml: 1,
+              minWidth: "100%",
+              Width: "50vw",
+            }}
+          />
+        </Box>
+
+        {/* 🏢 Industry Filter */}
+        <Select
+          defaultValue="All"
+          size="small"
+          sx={{
+            background: "white",
+            borderRadius: "12px",
+            minWidth: "150px",
+          }}
+        >
+          <MenuItem value="All">All Industries</MenuItem>
+          <MenuItem value="Tech">Tech</MenuItem>
+          <MenuItem value="Finance">Finance</MenuItem>
+        </Select>
+
+        {/* 🌍 Location Filter */}
+        <Select
+          defaultValue="Worldwide"
+          size="small"
+          sx={{
+            background: "white",
+            borderRadius: "12px",
+            minWidth: "150px",
+          }}
+        >
+          <MenuItem value="Worldwide">Worldwide</MenuItem>
+          <MenuItem value="USA">USA</MenuItem>
+          <MenuItem value="Europe">Europe</MenuItem>
+        </Select>
+      </Box>
+    </Box>
+  );
+}
