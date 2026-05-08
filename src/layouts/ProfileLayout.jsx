@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-
+import Navbar from "../components/profile/Navbar.jsx";
 
 export default function ProfileLayout({children}) {
   return (
@@ -13,7 +13,7 @@ export default function ProfileLayout({children}) {
         padding: 0,
       }}
     >
-
+    <Navbar/>
 
        {children }
       
