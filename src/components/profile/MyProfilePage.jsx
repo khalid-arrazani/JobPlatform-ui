@@ -1,6 +1,6 @@
 import "./Profile.css";
 import Header from "./header.jsx"
-
+import AboutMeCard from "./"
 
 export default function MyProfilePage() {
   return (
