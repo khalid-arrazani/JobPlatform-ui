@@ -5,7 +5,6 @@ import {
   Toolbar,
   Box,
   IconButton,
-  Avatar
 } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import WorkIcon from "@mui/icons-material/Work";
@@ -13,7 +12,7 @@ import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
 
 import * as React from "react";
 
-import { Tabs, Tab } from "@mui/material";
+
 
 import Drawer from "@mui/material/Drawer";
 
@@ -28,10 +27,10 @@ export default function Navbar() {
   position="static"
   sx={{
     background: "#376681f3",
-    height:"8%",
+    height:"6%",
     padding:"0px",
-    paddingRight:"10%",
-    paddingLeft:"10%"
+    paddingRight:"3%",
+    paddingLeft:"3%"
   }}
 
 >
@@ -46,7 +45,7 @@ export default function Navbar() {
 
 
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <img src={logo} width={"150"} alt="" />
+      <img src={logo} width={"130"} alt="" />
     </Box>
     
 
