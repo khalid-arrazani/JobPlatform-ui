@@ -19,8 +19,10 @@
 .Profilediv2 {
     grid-column: span 5 / span 5;
     grid-row: span 5 / span 5;
-    background-color: aliceblue;
+
     grid-row-start: 5;
+    display: flex;
+    justify-content: end;
 }
 
 .Profilediv3 {
