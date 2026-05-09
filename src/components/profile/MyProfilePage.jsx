@@ -1,6 +1,6 @@
 import "./Profile.css";
 import Header from "./header.jsx"
-import AboutMeCard from "./"
+import AboutMeCard from "./AboutMeCard"
 
 export default function MyProfilePage() {
   return (
@@ -11,7 +11,7 @@ export default function MyProfilePage() {
         </div>
 
         <div class="Profilediv2">
-          
+          <AboutMeCard/>
         </div>
 
 

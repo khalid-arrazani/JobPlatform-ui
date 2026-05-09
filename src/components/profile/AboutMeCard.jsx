@@ -5,7 +5,7 @@ export default function AboutMeCard() {
     <Card
       sx={{
         borderRadius: "20px",
-        p: 2,
+        p: 1,
         boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
       }}
