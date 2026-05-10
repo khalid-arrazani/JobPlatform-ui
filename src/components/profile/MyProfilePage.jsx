@@ -2,6 +2,7 @@ import "./Profile.css";
 import Header from "./header.jsx"
 import AboutMeCard from "./AboutMeCard"
 import TopSkillsCard from "./TopSkillsCard"
+import ExperienceCard from "./experiencesCard.jsx";
 
 export default function MyProfilePage() {
   return (
@@ -22,7 +23,9 @@ export default function MyProfilePage() {
 
         <div class="Profilediv4">4</div>
         <div class="Profilediv5">5</div>
-        <div class="Profilediv6">6</div>
+        <div class="Profilediv6">
+          <ExperienceCard/>
+        </div>
       </div>
     </>
   );
