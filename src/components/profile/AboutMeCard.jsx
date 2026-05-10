@@ -10,6 +10,7 @@ import {
 export default function AboutMeCard() {
   return (
     <Card
+    
       sx={{
         borderRadius: "1rem",
         p: "0.5rem",
@@ -20,7 +21,7 @@ export default function AboutMeCard() {
         
       }}
     >
-      <CardContent sx={{ p: 0.5 }}>
+      <CardContent  sx={{ p: 0.5 }}  style={{paddingBottom:"0"}}>
         {/* Title */}
         <Typography
           variant="h6"
@@ -69,7 +70,8 @@ export default function AboutMeCard() {
             </Box>
           </div>
 
-          <Box sx={{width:"50%"}}>
+          <div >
+          <Box sx={{width:"100%",}}>
             <Typography
               variant="caption"
               sx={{ color: "#888", fontSize: "0.7rem" }}
@@ -83,6 +85,7 @@ export default function AboutMeCard() {
                 gap: "0.4rem",
                 flexWrap: "wrap",
                 mt: "0.3rem",
+                
               }}
             >
               <Chip label="Arabic" size="small" sx={{ fontSize: "0.7rem" }} />
@@ -90,6 +93,21 @@ export default function AboutMeCard() {
               <Chip label="French" size="small" sx={{ fontSize: "0.7rem" }} />
             </Box>
           </Box>
+          <Box>
+                        <Box>
+              <Typography
+                variant="caption"
+                sx={{ color: "#888", fontSize: "0.7rem" }}
+              >
+                Experience Level
+              </Typography>
+              <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
+                Mid-Level
+              </Typography>
+            </Box>
+          </Box>
+        </div>
+  
         </Box>
       </CardContent>
     </Card>
