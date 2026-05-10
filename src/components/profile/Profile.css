@@ -29,7 +29,7 @@
     grid-column: span 5 / span 5;
     grid-row: span 3 / span 3;
     grid-column-start: 6;
-    background-color: aliceblue;
+ 
     grid-row-start: 5;
 }
 

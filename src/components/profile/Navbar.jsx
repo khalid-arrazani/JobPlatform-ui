@@ -45,7 +45,7 @@ export default function Navbar() {
 
 
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <img src={logo} width={"130"} alt="" />
+      <img src={logo} width={"110"} alt="" />
     </Box>
     
 

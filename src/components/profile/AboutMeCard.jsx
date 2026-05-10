@@ -10,22 +10,19 @@ import {
 export default function AboutMeCard() {
   return (
     <Card
-    
       sx={{
         borderRadius: "1rem",
         p: "0.5rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
-        width:"86%",
-     
-        
+        width: "86%",
       }}
     >
-      <CardContent  sx={{ p: 0.5 }}  style={{paddingBottom:"0"}}>
+      <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
         {/* Title */}
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", mb: "0.4rem", fontSize: "1rem" }}
+          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1rem" }}
         >
           About Me
         </Typography>
@@ -41,8 +38,14 @@ export default function AboutMeCard() {
         <Divider sx={{ my: "0.9rem" }} />
 
         {/* Info */}
-        <Box sx={{ display: "flex", flexDirection: "row", gap: "0.2rem",justifyContent:"space-between" }}>
-
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            gap: "0.2rem",
+            justifyContent: "space-between",
+          }}
+        >
           <div>
             <Box>
               <Typography
@@ -70,44 +73,47 @@ export default function AboutMeCard() {
             </Box>
           </div>
 
-          <div >
-          <Box sx={{width:"100%",}}>
-            <Typography
-              variant="caption"
-              sx={{ color: "#888", fontSize: "0.7rem" }}
-            >
-              Languages
-            </Typography>
-
-            <Box
-              sx={{
-                display: "flex",
-                gap: "0.4rem",
-                flexWrap: "wrap",
-                mt: "0.3rem",
-                
-              }}
-            >
-              <Chip label="Arabic" size="small" sx={{ fontSize: "0.7rem" }} />
-              <Chip label="English" size="small" sx={{ fontSize: "0.7rem" }} />
-              <Chip label="French" size="small" sx={{ fontSize: "0.7rem" }} />
-            </Box>
-          </Box>
-          <Box>
-                        <Box>
+          <div>
+            <Box sx={{ width: "100%",mb:"0.2rem" }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.7rem" }}
               >
-                Experience Level
+                Languages
               </Typography>
-              <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
-                Mid-Level
-              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: "0.4rem",
+                  flexWrap: "wrap",
+                  mt: "0.3rem",
+                }}
+              >
+                <Chip label="Arabic" size="small" sx={{ fontSize: "0.7rem" }} />
+                <Chip
+                  label="English"
+                  size="small"
+                  sx={{ fontSize: "0.7rem" }}
+                />
+                <Chip label="French" size="small" sx={{ fontSize: "0.7rem" }} />
+              </Box>
             </Box>
-          </Box>
-        </div>
-  
+            <Box>
+
+              <Box>
+                <Typography
+                  variant="caption"
+                  sx={{ color: "#888", fontSize: "0.7rem" }}
+                >
+                  Preferred Job Type
+                </Typography>
+                <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
+                  Full-Time
+                </Typography>
+              </Box>
+            </Box>
+          </div>
         </Box>
       </CardContent>
     </Card>

@@ -1,6 +1,7 @@
 import "./Profile.css";
 import Header from "./header.jsx"
 import AboutMeCard from "./AboutMeCard"
+import TopSkillsCard from "./TopSkillsCard"
 
 export default function MyProfilePage() {
   return (
@@ -15,7 +16,10 @@ export default function MyProfilePage() {
         </div>
 
 
-        <div class="Profilediv3">3</div>
+        <div class="Profilediv3">
+        <TopSkillsCard/>
+        </div>
+
         <div class="Profilediv4">4</div>
         <div class="Profilediv5">5</div>
         <div class="Profilediv6">6</div>
