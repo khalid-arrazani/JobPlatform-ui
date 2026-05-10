@@ -12,7 +12,7 @@ export default function MyProfilePage() {
           <Header/>
         </div>
 
-        <div class="Profilediv2">
+        {/* <div class="Profilediv2">
           <AboutMeCard/>
         </div>
 
@@ -25,7 +25,10 @@ export default function MyProfilePage() {
         <div class="Profilediv5">5</div>
         <div class="Profilediv6">
           <ExperienceCard/>
-        </div>
+        </div> */}
+
+            <div class="Profilediv2">2</div>
+    <div class="Profilediv3">3</div>
       </div>
     </>
   );
