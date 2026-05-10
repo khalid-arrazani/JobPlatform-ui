@@ -1,7 +1,7 @@
 import "./Profile.css";
 import Header from "./header.jsx"
-import AboutMeCard from "./AboutMeCard"
-import TopSkillsCard from "./TopSkillsCard"
+import AboutMeCard from "./AboutMeCard.jsx"
+import TopSkillsCard from "./TopSkillsCard.jsx"
 import ExperienceCard from "./experiencesCard.jsx";
 
 export default function MyProfilePage() {
