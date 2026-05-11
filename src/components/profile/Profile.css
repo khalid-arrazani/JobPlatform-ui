@@ -4,8 +4,10 @@ overflow: auto;
 width: 100vw;
 
 }
-::-webkit-scrollbar-track{
-    width:5px;
+::-webkit-scrollbar-thumb {
+  background: #0f0d0d;
+  width: 1000px;
+
 }
 .Profilediv1 {
     grid-column: span 10 / span 10;
