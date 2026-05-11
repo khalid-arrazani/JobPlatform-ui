@@ -23,8 +23,7 @@ export default function Header (){
                   boxShadow: "0 0.3rem 1rem rgba(0,0,0,0.12)",
                   p:3,
                   mt:1,
-                  flex:1
-                  
+                  height:"100%"
                 }}
               >
                 {/* BACKGROUND SHAPE */}

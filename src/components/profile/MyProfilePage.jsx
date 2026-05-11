@@ -9,9 +9,9 @@ export default function MyProfilePage() {
     <>
      
     
-       <div className="par" style={{flex:1,backgroundColor:"#a577228c"}}>
+       <div className="par" style={{}}>
 
-        <div style={{backgroundColor:"#ad2121",}}>
+        <div style={{height:"25vh"}}>
           <Header/>
         </div>
 
