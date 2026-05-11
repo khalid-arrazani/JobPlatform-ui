@@ -1,8 +1,8 @@
 
 .par {
-    overflow: auto;
-    width: 100vw;
-::scrollbar-width: 10px;
+overflow: auto;
+width: 100vw;
+:scrollbar-width: 10px;
 
 }
     
