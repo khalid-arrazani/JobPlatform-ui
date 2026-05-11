@@ -1,8 +1,9 @@
 
 .par {
-::-webkit-scrollbar {
-  width: 800px;
-}
+    overflow: auto;
+    width: 100vw;
+::scrollbar-width: 10px;
+
 }
     
 .Profilediv1 {

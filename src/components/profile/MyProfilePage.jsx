@@ -9,7 +9,7 @@ export default function MyProfilePage() {
     <>
      
     
-       <div className="par" style={{overflow:"auto",width:"100vw"}}>
+       <div className="par" style={{}}>
 
         <div style={{height:"25vh"}}>
           <Header/>
