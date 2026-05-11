@@ -14,7 +14,7 @@ export default function AboutMeCard() {
         borderRadius: "1rem",
        p: "1rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
-        width: "90%",
+        width: "44vw",
         m:1
       }}
     >

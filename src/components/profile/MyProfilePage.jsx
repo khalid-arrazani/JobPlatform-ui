@@ -9,7 +9,7 @@ export default function MyProfilePage() {
     <>
      
     
-       <div className="par" style={{}}>
+       <div className="par" >
 
         <div style={{height:"25vh"}}>
           <Header/>

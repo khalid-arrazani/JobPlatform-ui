@@ -4,10 +4,23 @@ overflow: auto;
 width: 100vw;
 
 }
-::-webkit-scrollbar-thumb {
-  background: #0f0d0d;
-  width: 1000px;
 
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e00;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #55555573;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
 .Profilediv1 {
     grid-column: span 10 / span 10;

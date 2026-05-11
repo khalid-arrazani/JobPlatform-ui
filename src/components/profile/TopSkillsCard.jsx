@@ -16,10 +16,11 @@ export default function TopSkillsCard() {
     <Card
       sx={{
         borderRadius: "1rem",
-        p: "0.5rem",
+        p: "1rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
-        width: "44vw",m:1
+        width: "44vw",
+        m:1
        
         
       }}
