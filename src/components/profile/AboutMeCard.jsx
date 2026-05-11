@@ -12,9 +12,10 @@ export default function AboutMeCard() {
     <Card
       sx={{
         borderRadius: "1rem",
-        p: "0.5rem",
+       p: "1rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
-        width: "86%",
+        width: "90%",
+        m:1
       }}
     >
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>

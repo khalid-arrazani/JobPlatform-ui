@@ -27,7 +27,7 @@ export default function Navbar() {
   position="static"
   sx={{
     background: "#376681f3",
-    height:"6%",
+    height:"8%",
     padding:"0px",
     paddingRight:"3%",
     paddingLeft:"3%"
@@ -45,7 +45,7 @@ export default function Navbar() {
 
 
     <Box sx={{ display: "flex", alignItems: "center" }}>
-      <img src={logo} width={"110"} alt="" />
+      <img src={logo} width={"140"} alt="" />
     </Box>
     
 

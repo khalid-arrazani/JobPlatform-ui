@@ -19,8 +19,9 @@ export default function TopSkillsCard() {
         p: "0.5rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
-        width: "85%",
-        height:"88%"
+        width: "44vw",m:1
+       
+        
       }}
     >
       <CardContent sx={{ p: "0.3rem !important" }}>

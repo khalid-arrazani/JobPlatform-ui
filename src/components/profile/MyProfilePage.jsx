@@ -9,16 +9,26 @@ export default function MyProfilePage() {
     <>
      
     
-       <div className="par" style={{}}>
+       <div className="par" style={{overflow:"auto",width:"100vw"}}>
 
         <div style={{height:"25vh"}}>
           <Header/>
         </div>
 
 
-        <div>
-          <div></div>
-          <div></div>
+        <div style={{height:"maxContent",display:"flex",padding:10}}>
+
+          <div style={{display:"flex",flexDirection:"column",alignItems:"end",width:"50%"}}>
+            <AboutMeCard/>
+            <ExperienceCard/>
+          </div>
+
+
+
+          <div style={{
+            width:"50%"}}>
+            <TopSkillsCard/>
+          </div>
         </div>
 
        </div>

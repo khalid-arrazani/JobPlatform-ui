@@ -28,7 +28,7 @@ export default function ExperienceCard() {
         p: "1rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
-        width: "80%"
+        width: "44vw",m:1
       }}
     >
       <CardContent sx={{ p: "0.75rem !important" }}>
