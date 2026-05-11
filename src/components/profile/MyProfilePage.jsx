@@ -9,9 +9,11 @@ export default function MyProfilePage() {
     <>
      
     
-       <div className="par" style={{}}>
+       <div className="par" style={{flex:1,backgroundColor:"#a577228c"}}>
 
-        <div style={{backgroundColor:"#ad2121"}}>fg</div>
+        <div style={{backgroundColor:"#ad2121",}}>
+          <Header/>
+        </div>
 
 
         <div>

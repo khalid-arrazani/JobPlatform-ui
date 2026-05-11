@@ -12,19 +12,19 @@ export default function Header (){
     return <>
               <Container
                 sx={{
-                  minHeight: "7.5rem",
                   borderRadius: "1rem",
                   background:
                     "linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #4f46e5 100%)",
-                  px: "0",
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
                   position: "relative",
                   overflow: "hidden",
                   boxShadow: "0 0.3rem 1rem rgba(0,0,0,0.12)",
-                  height: "95%",
-                  mt: 1,
+                  p:3,
+                  mt:1,
+                  flex:1
+                  
                 }}
               >
                 {/* BACKGROUND SHAPE */}
