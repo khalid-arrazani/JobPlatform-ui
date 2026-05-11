@@ -2,10 +2,11 @@
 .par {
 overflow: auto;
 width: 100vw;
-:scrollbar-width: 10px;
 
 }
-    
+::-webkit-scrollbar-track{
+    width:5px;
+}
 .Profilediv1 {
     grid-column: span 10 / span 10;
     grid-row: span 4 / span 4;
