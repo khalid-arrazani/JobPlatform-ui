@@ -1,11 +1,8 @@
 
-.Profileparent {
-    display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(14, 1fr);
-    gap: 0px;
-    flex: content;
-    overflow: auto;
+.par {
+::-webkit-scrollbar {
+  width: 800px;
+}
 }
     
 .Profilediv1 {
