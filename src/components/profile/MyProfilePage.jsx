@@ -7,29 +7,25 @@ import ExperienceCard from "./experiencesCard.jsx";
 export default function MyProfilePage() {
   return (
     <>
-      <div class="Profileparent">
-        <div class="Profilediv1">
-          <Header/>
+     
+    
+       <div className="par" style={{}}>
+
+        <div style={{backgroundColor:"#ad2121"}}>fg</div>
+
+
+        <div>
+          <div></div>
+          <div></div>
         </div>
 
-        {/* <div class="Profilediv2">
-          <AboutMeCard/>
-        </div>
+       </div>
 
 
-        <div class="Profilediv3">
-        <TopSkillsCard/>
-        </div>
 
-        <div class="Profilediv4">4</div>
-        <div class="Profilediv5">5</div>
-        <div class="Profilediv6">
-          <ExperienceCard/>
-        </div> */}
 
-            <div class="Profilediv2">2</div>
-    <div class="Profilediv3">3</div>
-      </div>
+
+
     </>
   );
 }

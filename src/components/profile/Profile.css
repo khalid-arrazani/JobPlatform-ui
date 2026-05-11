@@ -3,7 +3,7 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(14, 1fr);
-    gap: 8px;
+    gap: 0px;
     flex: content;
     overflow: auto;
 }
@@ -15,15 +15,13 @@
 }
 
 .Profilediv2 {
-    grid-column: span 5 / span 5;
-    grid-row: span 10 / span 10;
-    grid-row-start: 5;
+ width: 50vw;
+ height: 200vh;
+ background-color: aliceblue;
 }
 
 .Profilediv3 {
-    grid-column: span 5 / span 5;
-    grid-row: span 10 / span 10;
-    grid-column-start: 6;
-    grid-row-start: 5;
-    height: 200vh;
+ width: 50vw;
+ height: 200vh;
+ background-color: rgb(28, 99, 161);
 }   
