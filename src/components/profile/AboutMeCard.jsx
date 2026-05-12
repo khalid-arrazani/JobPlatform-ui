@@ -5,8 +5,10 @@ import {
   Box,
   Chip,
   Divider,
+  Button
 } from "@mui/material";
-
+import {  IconButton } from "@mui/material";
+import EditIcon from '@mui/icons-material/Edit';
 export default function AboutMeCard() {
   return (
     <Card
@@ -18,13 +20,31 @@ export default function AboutMeCard() {
         m:1
       }}
     >
+      
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
+        
         {/* Title */}
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1.1rem" }}
+          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1.1rem",display:"flex",justifyContent:"space-between" }}
         >
           About Me
+<IconButton
+  sx={{
+    background: "#160a7e00",
+    color: "#6e6e6e",
+
+    "&:hover": {
+      background: "#37373849",
+    },
+    width:"2rem",
+    height:"2rem",
+    p:0.5
+  }}
+>
+  <EditIcon sx={{width:"100%",m:0}} />
+</IconButton>
+          
         </Typography>
 
         <Typography
