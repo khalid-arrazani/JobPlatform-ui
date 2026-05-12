@@ -81,6 +81,7 @@ export default function AboutMeCard() {
             </Box>
 
             <Box sx={{mt:1}}>
+              
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.95rem" }}
@@ -94,7 +95,7 @@ export default function AboutMeCard() {
           </div>
 
           <div>
-            
+
             <Box sx={{ width: "100%",mb:"0.2rem",mt:1 }}>
               <Typography
                 variant="caption"
