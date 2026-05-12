@@ -97,6 +97,7 @@ export default function AboutMeCard() {
           <div>
 
             <Box sx={{ width: "100%",mb:"0.2rem",mt:1 }}>
+              
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.9rem" }}
