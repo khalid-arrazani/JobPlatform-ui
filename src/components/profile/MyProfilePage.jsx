@@ -3,6 +3,7 @@ import Header from "./header.jsx"
 import AboutMeCard from "./AboutMeCard.jsx"
 import TopSkillsCard from "./TopSkillsCard.jsx"
 import ExperienceCard from "./experiencesCard.jsx";
+import EducationCard from "./EducationCard.jsx";
 
 export default function MyProfilePage() {
   return (
@@ -27,7 +28,10 @@ export default function MyProfilePage() {
 
           <div style={{
             width:"50%"}}>
+
             <TopSkillsCard/>
+            <EducationCard/>
+            
           </div>
         </div>
 

@@ -22,14 +22,14 @@ export default function AboutMeCard() {
         {/* Title */}
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1rem" }}
+          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1.1rem" }}
         >
           About Me
         </Typography>
 
         <Typography
           variant="body2"
-          sx={{ color: "#555", mb: "0.9rem", fontSize: "0.75rem" }}
+          sx={{ color: "#555", mb: "0.9rem", fontSize: "0.9rem" }}
         >
           I'm a motivated web developer focused on building clean, fast and
           scalable web applications. I enjoy turning ideas into real products.
@@ -47,10 +47,10 @@ export default function AboutMeCard() {
           }}
         >
           <div>
-            <Box>
+            <Box sx={{mt:1}}>
               <Typography
                 variant="caption"
-                sx={{ color: "#888", fontSize: "0.7rem" }}
+                sx={{ color: "#888", fontSize: "0.95rem" }}
               >
                 Availability
               </Typography>
@@ -60,10 +60,10 @@ export default function AboutMeCard() {
               </Typography>
             </Box>
 
-            <Box>
+            <Box sx={{mt:1}}>
               <Typography
                 variant="caption"
-                sx={{ color: "#888", fontSize: "0.7rem" }}
+                sx={{ color: "#888", fontSize: "0.95rem" }}
               >
                 Experience Level
               </Typography>
@@ -74,10 +74,10 @@ export default function AboutMeCard() {
           </div>
 
           <div>
-            <Box sx={{ width: "100%",mb:"0.2rem" }}>
+            <Box sx={{ width: "100%",mb:"0.2rem",mt:1 }}>
               <Typography
                 variant="caption"
-                sx={{ color: "#888", fontSize: "0.7rem" }}
+                sx={{ color: "#888", fontSize: "0.9rem" }}
               >
                 Languages
               </Typography>
@@ -101,10 +101,10 @@ export default function AboutMeCard() {
             </Box>
             <Box>
 
-              <Box>
+              <Box sx={{mt:1}}>
                 <Typography
                   variant="caption"
-                  sx={{ color: "#888", fontSize: "0.7rem" }}
+                  sx={{ color: "#888", fontSize: "0.90rem"}}
                 >
                   Preferred Job Type
                 </Typography>
