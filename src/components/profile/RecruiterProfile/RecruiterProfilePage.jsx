@@ -1,7 +1,7 @@
 import Header from "./header.jsx"
 
 
-export default function MyProfilePage() {
+export default function RecruiterProfilePage() {
   return (
     <>
      

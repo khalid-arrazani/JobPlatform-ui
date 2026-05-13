@@ -8,6 +8,8 @@ import TwitterIcon from "@mui/icons-material/Twitter";
 import EditIcon from "@mui/icons-material/Edit";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+
 export default function Header() {
   return (
     <>
@@ -50,15 +52,46 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-          {/* AVATAR */}
-          <Avatar
-            src=""
+          <Box
             sx={{
-              width: "7rem",
-              height: "7rem",
-              border: "0.15rem solid white",
+              position: "relative",
+              width: "8rem",
+              height: "8rem",
             }}
-          />
+          >
+            {/* Avatar */}
+            <Avatar
+              src="/profile.jpg"
+              sx={{
+                width: "100%",
+                height: "100%",
+                border: "4px solid white",
+              }}
+            />
+
+            {/* Camera Button */}
+            <IconButton
+              sx={{
+                position: "absolute",
+                bottom: "0.2rem",
+                right: "0.2rem",
+
+                width: "2.2rem",
+                height: "2.2rem",
+
+                background: "#312e81",
+                color: "#fff",
+
+                border: "2px solid white",
+
+                "&:hover": {
+                  background: "#4338ca",
+                },
+              }}
+            >
+              <PhotoCameraIcon sx={{ fontSize: "1rem" }} />
+            </IconButton>
+          </Box>
 
           {/* INFO */}
           <Box>
@@ -71,29 +104,29 @@ export default function Header() {
             >
               Khalid Arrazani
             </Typography>
-              <Box
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: "0.3rem",
+              }}
+            >
+              <LocationOnIcon
                 sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.3rem",
+                  fontSize: "1rem",
+                  color: "#ffffffb9",
+                }}
+              />
+
+              <Typography
+                sx={{
+                  color: "#ffffffb9",
+                  fontSize: "0.8rem",
                 }}
               >
-                <LocationOnIcon
-                  sx={{
-                    fontSize: "1rem",
-                    color: "#ffffffb9",
-                  }}
-                />
-  
-                <Typography
-                  sx={{
-                    color: "#ffffffb9",
-                    fontSize: "0.8rem",
-                  }}
-                >
-                  Taroudant, Morocco
-                </Typography>
-              </Box>
+                Taroudant, Morocco
+              </Typography>
+            </Box>
             <Typography
               sx={{
                 color: "#dbeafe",
