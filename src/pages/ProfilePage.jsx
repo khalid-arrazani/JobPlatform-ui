@@ -1,6 +1,6 @@
 
-import ProfileLayout from "../layouts/ProfileLayout"
-import MyProfilePage from "../components/profile/MyProfilePage"
+import ProfileLayout from "../layouts/ProfileLayout.jsx"
+import MyProfilePage from "../components/profile/JobSeekerProfile/MyProfilePage.jsx"
 export default function ProfilePage(){
 
     return<>

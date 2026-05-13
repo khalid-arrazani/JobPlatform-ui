@@ -5,6 +5,8 @@ import {
   Box,
   Divider,
 } from "@mui/material";
+import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function EducationCard() {
   const education = [
@@ -37,9 +39,27 @@ export default function EducationCard() {
             fontWeight: 700,
             fontSize: "1rem",
             mb: "1rem",
+            display:"flex",
+            justifyContent:"space-between",
+            alignItems:"center"
           }}
         >
           Education
+          <IconButton
+  sx={{
+    background: "#160a7e00",
+    color: "#6e6e6e",
+
+    "&:hover": {
+      background: "#37373849",
+    },
+    width:"2.5rem",
+    height:"2.5rem",
+    p:1
+  }}
+>
+  <EditIcon sx={{width:"100%",m:0}} />
+</IconButton>
         </Typography>
 
         {/* Education Items */}

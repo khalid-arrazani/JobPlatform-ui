@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import Navbar from "../components/profile/Navbar.jsx";
+import Navbar from "../components/profile/JobSeekerProfile/Navbar";
 
 export default function ProfileLayout({children}) {
   return (
@@ -15,7 +15,7 @@ export default function ProfileLayout({children}) {
     >
     <Navbar/>
 
-       {children }
+       {children}
       
         
 

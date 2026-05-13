@@ -1,5 +1,6 @@
 import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
-
+import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 export default function TopSkillsCard() {
   const skills = [
     "JavaScript",
@@ -20,9 +21,7 @@ export default function TopSkillsCard() {
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         background: "linear-gradient(135deg, #ffffff 0%, #f7f7ff 100%)",
         width: "44vw",
-        m:1
-       
-        
+        m: 1,
       }}
     >
       <CardContent sx={{ p: "0.3rem !important" }}>
@@ -32,9 +31,27 @@ export default function TopSkillsCard() {
             fontWeight: "700",
             mb: "1rem",
             fontSize: "1rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           Top Skills
+          <IconButton
+            sx={{
+              background: "#160a7e00",
+              color: "#6e6e6e",
+
+              "&:hover": {
+                background: "#37373849",
+              },
+              width: "2.5rem",
+              height: "2.5rem",
+              p: 1,
+            }}
+          >
+            <EditIcon sx={{ width: "100%", m: 0 }} />
+          </IconButton>
         </Typography>
 
         {/* Skills */}
@@ -56,8 +73,7 @@ export default function TopSkillsCard() {
                 height: "1.8rem",
                 px: "0.3rem",
 
-                background:
-                  "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%)",
+                background: "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%)",
 
                 color: "#4338ca",
 

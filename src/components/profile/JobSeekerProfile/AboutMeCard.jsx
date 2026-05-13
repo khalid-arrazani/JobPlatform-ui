@@ -5,46 +5,66 @@ import {
   Box,
   Chip,
   Divider,
-
 } from "@mui/material";
-import {  IconButton } from "@mui/material";
-import EditIcon from '@mui/icons-material/Edit';
+import { IconButton } from "@mui/material";
+import EditIcon from "@mui/icons-material/Edit";
 export default function AboutMeCard() {
+  const sx = {
+    borderRadius: "0.5rem",
+    fontWeight: 500,
+    fontSize: "0.75rem",
+    height: "1.8rem",
+    px: "0.3rem",
+
+    background: "linear-gradient(135deg, #eef2ff 0%, #e0e7ff 100%)",
+
+    color: "#4338ca",
+
+    "&:hover": {
+      transform: "translateY(-0.12rem)",
+      transition: "0.3s",
+      boxShadow: "0 0.3rem 0.8rem rgba(99,102,241,0.2)",
+    },
+  };
   return (
     <Card
       sx={{
         borderRadius: "1rem",
-       p: "1rem",
+        p: "1rem",
         boxShadow: "0 0.5rem 1.5rem rgba(0,0,0,0.08)",
         width: "44vw",
-        m:1
+        m: 1,
       }}
     >
-      
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
-        
         {/* Title */}
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", mb: "0.3rem", fontSize: "1.1rem",display:"flex",justifyContent:"space-between" }}
+          sx={{
+            fontWeight: "bold",
+            mb: "0.3rem",
+            fontSize: "1.1rem",
+            display: "flex",
+            justifyContent: "space-between",
+            alignContent: "center",
+          }}
         >
           About Me
-<IconButton
-  sx={{
-    background: "#160a7e00",
-    color: "#6e6e6e",
+          <IconButton
+            sx={{
+              background: "#160a7e00",
+              color: "#6e6e6e",
 
-    "&:hover": {
-      background: "#37373849",
-    },
-    width:"2rem",
-    height:"2rem",
-    p:0.5
-  }}
->
-  <EditIcon sx={{width:"100%",m:0}} />
-</IconButton>
-          
+              "&:hover": {
+                background: "#37373849",
+              },
+              width: "2.5rem",
+              height: "2.5rem",
+              p: 1,
+            }}
+          >
+            <EditIcon sx={{ width: "100%", m: 0 }} />
+          </IconButton>
         </Typography>
 
         <Typography
@@ -67,7 +87,7 @@ export default function AboutMeCard() {
           }}
         >
           <div>
-            <Box sx={{mt:1}}>
+            <Box sx={{ mt: 1 }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.95rem" }}
@@ -75,29 +95,28 @@ export default function AboutMeCard() {
                 Availability
               </Typography>
 
-              <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
+              <Typography
+                sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
+              >
                 Available
               </Typography>
             </Box>
 
-            <Box sx={{mt:1}}>
-              
+            <Box sx={{ mt: 1 }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.95rem" }}
               >
                 Experience Level
               </Typography>
-              <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
+              <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
                 Mid-Level
               </Typography>
             </Box>
           </div>
 
           <div>
-
-            <Box sx={{ width: "100%",mb:"0.2rem",mt:1 }}>
-              
+            <Box sx={{ width: "100%", mb: "0.2rem", mt: 1 }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.9rem" }}
@@ -113,25 +132,22 @@ export default function AboutMeCard() {
                   mt: "0.3rem",
                 }}
               >
-                <Chip label="Arabic" size="small" sx={{ fontSize: "0.7rem" }} />
-                <Chip
-                  label="English"
-                  size="small"
-                  sx={{ fontSize: "0.7rem" }}
-                />
-                <Chip label="French" size="small" sx={{ fontSize: "0.7rem" }} />
+                <Chip label="Arabic" size="small" sx={sx} />
+
+                <Chip label="English" size="small" sx={sx} />
+
+                <Chip label="French" size="small" sx={sx} />
               </Box>
             </Box>
             <Box>
-
-              <Box sx={{mt:1}}>
+              <Box sx={{ mt: 1 }}>
                 <Typography
                   variant="caption"
-                  sx={{ color: "#888", fontSize: "0.90rem"}}
+                  sx={{ color: "#888", fontSize: "0.90rem" }}
                 >
                   Preferred Job Type
                 </Typography>
-                <Typography sx={{ fontWeight: 500, fontSize: "0.85rem" }}>
+                <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
                   Full-Time
                 </Typography>
               </Box>
