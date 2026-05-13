@@ -1,8 +1,8 @@
 
-.par {
-overflow: auto;
-width: 100vw;
+.par1 {
 
+width: 100vw;
+overflow: auto;
 }
 
 ::-webkit-scrollbar {

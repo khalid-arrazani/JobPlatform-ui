@@ -1,4 +1,4 @@
-import "./Profile.css";
+import "./ProfileJoobSeeker.css"
 import Header from "./header.jsx"
 import AboutMeCard from "./AboutMeCard.jsx"
 import TopSkillsCard from "./TopSkillsCard.jsx"
