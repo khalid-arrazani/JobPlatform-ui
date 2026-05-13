@@ -6,7 +6,9 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 
 import EditIcon from "@mui/icons-material/Edit";
+
 import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EmailIcon from "@mui/icons-material/Email";
 
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 
@@ -103,40 +105,43 @@ export default function Header() {
               }}
             >
               Khalid Arrazani
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.3rem",
-              }}
-            >
-              <LocationOnIcon
-                sx={{
-                  fontSize: "1rem",
-                  color: "#ffffffb9",
-                }}
-              />
 
-              <Typography
-                sx={{
-                  color: "#ffffffb9",
-                  fontSize: "0.8rem",
-                }}
-              >
-                Taroudant, Morocco
-              </Typography>
-            </Box>
+            </Typography>
             <Typography
               sx={{
-                color: "#dbeafe",
-                fontSize: "0.79rem",
-                mt: "0.1rem",
+                color: "#f0f0f0",
+                fontSize: "0.89rem",
+                mt: "0.3rem",
               }}
             >
-              Frontend Developer
+              HR & Talent Acquisition Specialist
             </Typography>
 
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
+                  mt:"0.3rem"
+                }}
+              >
+                <LocationOnIcon
+                  sx={{
+                    fontSize: "1.1rem",
+                    color: "#ffffffb9",
+                  }}
+                />
+  
+                <Typography
+                  sx={{
+                    color: "#ffffffb9",
+                    fontSize: "0.8rem",
+                    
+                  }}
+                >
+                  Taroudant, Morocco
+                </Typography>
+              </Box>
             {/* SOCIALS */}
             <Box
               sx={{
