@@ -26,7 +26,7 @@ export default function Header() {
           position: "relative",
           overflow: "hidden",
           boxShadow: "0 0.3rem 1rem rgba(0,0,0,0.12)",
-          p: 3,
+          p:" 5.5rem",
           mt: 1,
           height: "100%",
         }}
@@ -41,6 +41,7 @@ export default function Header() {
             background: "rgba(255, 255, 255, 0.07)",
             right: "15rem",
             top: "-5rem",
+            
           }}
         />
 
@@ -59,6 +60,7 @@ export default function Header() {
               position: "relative",
               width: "8rem",
               height: "8rem",
+              mr:"1rem"
             }}
           >
             {/* Avatar */}
@@ -102,10 +104,26 @@ export default function Header() {
                 color: "#ffffffd0",
                 fontWeight: "bold",
                 fontSize: "1.3rem",
+                display:"flex",
+                gap:"0.5rem",
+                alignItems:"center"
               }}
             >
               Khalid Arrazani
-
+              <Box        sx={{
+                borderRadius: "0.3rem",
+                fontWeight: 500,
+                fontSize: "0.75rem",
+                px: "0.5rem",
+                background: " #4338ca ",
+                color: "#eeeeee",
+                "&:hover": {
+                  transform: "translateY(-0.12rem)",
+                  transition: "0.3s",
+                  boxShadow: "0 0.3rem 0.8rem rgba(99,102,241,0.2)",
+                },
+                p:"0.3rem"
+              }}>Recruiter</Box>
             </Typography>
             <Typography
               sx={{
@@ -117,12 +135,20 @@ export default function Header() {
               HR & Talent Acquisition Specialist
             </Typography>
 
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                gap: "0.4rem",
+                mt: "0.4rem",
+              }}
+            >
+              {/* Location */}
               <Box
                 sx={{
                   display: "flex",
                   alignItems: "center",
                   gap: "0.3rem",
-                  mt:"0.3rem"
                 }}
               >
                 <LocationOnIcon
@@ -131,17 +157,43 @@ export default function Header() {
                     color: "#ffffffb9",
                   }}
                 />
-  
+
                 <Typography
                   sx={{
                     color: "#ffffffb9",
                     fontSize: "0.8rem",
-                    
                   }}
                 >
                   Taroudant, Morocco
                 </Typography>
               </Box>
+
+              {/* Email */}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
+                }}
+              >
+                <EmailIcon
+                  sx={{
+                    fontSize: "1.1rem",
+                    color: "#ffffffb9",
+                  }}
+                />
+
+                <Typography
+                  sx={{
+                    color: "#ffffffb9",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  recruiter@nexhire.com
+                </Typography>
+              </Box>
+            </Box>
+
             {/* SOCIALS */}
             <Box
               sx={{
