@@ -1,8 +1,10 @@
 import "./ProfileRecruiter.css"
+
 import Header from "./header.jsx";
 import RecruiterStatsCard from "./RecruiterStatsCard.jsx";
 import CompanyInformationCard from "./CompanyInformationCard.jsx";
 import AboutMeCard from "./AboutMeCard.jsx";
+import HiringFocusCard from "./HiringFocusCard.jsx";
 
 export default function RecruiterProfilePage() {
   return (
@@ -22,6 +24,8 @@ export default function RecruiterProfilePage() {
             }}
           >
           <AboutMeCard />
+          <HiringFocusCard />
+
           
           </div>
 

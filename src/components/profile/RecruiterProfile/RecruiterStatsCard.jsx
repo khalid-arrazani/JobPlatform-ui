@@ -47,6 +47,17 @@ export default function RecruiterStatsCard() {
     m:1
   }}
 >
+        {/* Header */}
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            fontWeight: 700,
+            mb: "1.2rem",
+            color: "#111",
+          }}
+        >
+          Stats
+        </Typography>
   <Box
     sx={{
       display: "grid",
