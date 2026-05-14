@@ -9,6 +9,8 @@ import ApartmentIcon from "@mui/icons-material/Apartment";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
+import BusinessTwoToneIcon from '@mui/icons-material/BusinessTwoTone';
+
 export default function CompanyInformationCard() {
   const companyData = [
     {
@@ -48,16 +50,40 @@ export default function CompanyInformationCard() {
       }}
     >
       {/* Header */}
-      <Typography
-        sx={{
-          fontSize: "1rem",
-          fontWeight: 700,
-          mb: "1.2rem",
-          color: "#111",
-        }}
-      >
-        Company Information
-      </Typography>
+                    <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            mb: "1rem",
+          }}
+        >
+          <Box
+            sx={{
+              width: "2.4rem",
+              height: "2.4rem",
+              borderRadius: "0.8rem",
+              background: "#f5f3ff",
+              color: "#5b21b6",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <QueryStatsSharpIcon />
+          </Box>
+
+          <Typography
+            sx={{
+              fontSize: "1rem",
+              fontWeight: 700,
+            }}
+          >
+            Company Information
+          </Typography>
+        </Box>
+ 
 
       {/* Content */}
       <Box

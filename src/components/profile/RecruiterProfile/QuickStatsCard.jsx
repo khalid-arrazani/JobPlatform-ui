@@ -4,6 +4,8 @@ import {
   Typography,
 } from "@mui/material";
 
+import QueryStatsSharpIcon from '@mui/icons-material/QueryStatsSharp';
+
 import WorkOutlineIcon from "@mui/icons-material/Work";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import PersonOutlineIcon from "@mui/icons-material/Person";
@@ -55,16 +57,42 @@ export default function QuickStatsCard() {
         m:1
       }}
     >
+
       {/* Header */}
-      <Typography
-        sx={{
-          fontSize: "1rem",
-          fontWeight: 700,
-          mb: "1.2rem",
-        }}
-      >
-        Quick Stats
-      </Typography>
+              <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            mb: "1rem",
+          }}
+        >
+          <Box
+            sx={{
+              width: "2.4rem",
+              height: "2.4rem",
+              borderRadius: "0.8rem",
+              background: "#f5f3ff",
+              color: "#5b21b6",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <QueryStatsSharpIcon />
+          </Box>
+
+          <Typography
+            sx={{
+              fontSize: "1rem",
+              fontWeight: 700,
+            }}
+          >
+            Quick Stats
+          </Typography>
+        </Box>
+
 
       {/* Grid */}
       <Box
