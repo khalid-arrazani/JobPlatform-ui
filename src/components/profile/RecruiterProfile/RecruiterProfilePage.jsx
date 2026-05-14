@@ -1,4 +1,4 @@
-
+import "./ProfileRecruiter.css";
 
 import Header from "./header.jsx";
 import RecruiterStatsCard from "./RecruiterStatsCard.jsx";
