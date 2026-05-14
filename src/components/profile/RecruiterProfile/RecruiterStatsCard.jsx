@@ -4,6 +4,8 @@ import {
   Typography,
 } from "@mui/material";
 
+import QuizTwoToneIcon from '@mui/icons-material/QuizTwoTone';
+
 import WorkIcon from "@mui/icons-material/Work";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
@@ -48,16 +50,39 @@ export default function RecruiterStatsCard() {
   }}
 >
         {/* Header */}
-        <Typography
+                <Box
           sx={{
-            fontSize: "1rem",
-            fontWeight: 700,
-            mb: "1.2rem",
-            color: "#111",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            mb: "1rem",
           }}
         >
-          Professional Overview
-        </Typography>
+          <Box
+            sx={{
+              width: "2.4rem",
+              height: "2.4rem",
+              borderRadius: "0.8rem",
+              background: "#f5f3ff",
+              color: "#5b21b6",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <QuizTwoToneIcon />
+          </Box>
+
+          <Typography
+            sx={{
+              fontSize: "1rem",
+              fontWeight: 700,
+            }}
+          >
+            Professional Overview
+          </Typography>
+        </Box>
   <Box
     sx={{
       display: "grid",

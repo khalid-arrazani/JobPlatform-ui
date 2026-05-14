@@ -5,6 +5,10 @@ import {
   IconButton,
 } from "@mui/material";
 
+import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
+
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
+
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
@@ -44,15 +48,44 @@ export default function SocialLinksCard() {
       }}
     >
               {/* Header */}
-      <Typography
-        sx={{
-          fontSize: "1rem",
-          fontWeight: 700,
-          mb: "1.2rem",
-        }}
-      >
-        Social Links
-      </Typography>
+              
+            {/* Header */}
+                <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.6rem",
+            mb: "1rem",
+          }}
+        >
+          <Box
+            sx={{
+              width: "2.4rem",
+              height: "2.4rem",
+              borderRadius: "0.8rem",
+              background: "#f5f3ff",
+              color: "#5b21b6",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <LinkOutlinedIcon />
+          </Box>
+
+          <Typography
+            sx={{
+              fontSize: "1rem",
+              fontWeight: 700,
+            }}
+          >
+            Social Links
+          </Typography>
+        </Box>
+
+
+
 
       {/* Icons */}
       <Box
