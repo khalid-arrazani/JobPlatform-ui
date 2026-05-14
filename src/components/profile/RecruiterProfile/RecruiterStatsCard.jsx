@@ -56,7 +56,7 @@ export default function RecruiterStatsCard() {
             color: "#111",
           }}
         >
-          Stats
+          Professional Overview
         </Typography>
   <Box
     sx={{

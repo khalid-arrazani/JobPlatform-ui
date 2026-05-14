@@ -1,10 +1,12 @@
-import "./ProfileRecruiter.css"
+import "./ProfileRecruiter.css";
 
 import Header from "./header.jsx";
 import RecruiterStatsCard from "./RecruiterStatsCard.jsx";
 import CompanyInformationCard from "./CompanyInformationCard.jsx";
 import AboutMeCard from "./AboutMeCard.jsx";
 import HiringFocusCard from "./HiringFocusCard.jsx";
+import QuickStatsCard from "./QuickStatsCard.jsx";
+import SocialLinksCard from "./SocialLinksCard.jsx";
 
 export default function RecruiterProfilePage() {
   return (
@@ -23,10 +25,9 @@ export default function RecruiterProfilePage() {
               width: "50%",
             }}
           >
-          <AboutMeCard />
-          <HiringFocusCard />
-
-          
+            <AboutMeCard />
+            <RecruiterStatsCard />
+            <SocialLinksCard />
           </div>
 
           <div
@@ -34,9 +35,10 @@ export default function RecruiterProfilePage() {
               width: "50%",
             }}
           >
-            <RecruiterStatsCard />
-          <CompanyInformationCard/>
+            <CompanyInformationCard />
 
+            <QuickStatsCard />
+            <HiringFocusCard />
           </div>
         </div>
       </div>

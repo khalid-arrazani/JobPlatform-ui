@@ -5,8 +5,8 @@ import {
   Box,
 } from "@mui/material";
 
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
 export default function AboutMeCard() {
   return (
     <Card
@@ -42,7 +42,7 @@ export default function AboutMeCard() {
               justifyContent: "center",
             }}
           >
-            <InfoOutlinedIcon />
+            <PersonOutlineOutlinedIcon />
           </Box>
 
           <Typography

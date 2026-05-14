@@ -20,7 +20,7 @@ export default function HiringFocusCard() {
     "Backend Developer",
     "UI/UX Designer",
     "Product Manager",
-    "+3 more",
+   
   ];
 
   return (
@@ -84,10 +84,23 @@ export default function HiringFocusCard() {
             key={index}
             label={item}
             sx={{
-              borderRadius: "2rem",
-              background: "#f8f8ff",
-              color: "#333",
-              fontWeight: 500,
+              
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
+
+          p: ".5rem",
+          borderRadius: ".5rem",
+
+          border: "1px solid #ececec",
+          background: "#fcfcff",
+
+          transition: "0.3s",
+
+          "&:hover": {
+            transform: "translateY(-0.15rem)",
+            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+          },
             }}
           />
         ))}
@@ -116,13 +129,22 @@ export default function HiringFocusCard() {
             key={index}
             label={role}
             sx={{
-              borderRadius: "0.7rem",
-              background: "#f3f4f6",
-              color: "#333",
+          display: "flex",
+          alignItems: "center",
+          gap: "0.5rem",
 
-              "&:hover": {
-                background: "#ebe9fe",
-              },
+          p: ".5rem",
+          borderRadius: ".5rem",
+
+          border: "1px solid #ececec",
+          background: "#fcfcff",
+
+          transition: "0.3s",
+
+          "&:hover": {
+            transform: "translateY(-0.15rem)",
+            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+          },
             }}
           />
         ))}
