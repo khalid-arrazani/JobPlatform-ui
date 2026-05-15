@@ -71,7 +71,7 @@ export default function CompanyInformationCard() {
               justifyContent: "center",
             }}
           >
-            <QueryStatsSharpIcon />
+            <BusinessTwoToneIcon />
           </Box>
 
           <Typography
