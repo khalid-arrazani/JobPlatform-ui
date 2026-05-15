@@ -1,18 +1,15 @@
-import {
-  Card,
-  Box,
-  Typography,
-  IconButton,
-} from "@mui/material";
+import { Card, Box, Typography, IconButton } from "@mui/material";
 
-import LinkOutlinedIcon from '@mui/icons-material/LinkOutlined';
+import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 
-import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import EditIcon from "@mui/icons-material/Edit";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LanguageIcon from "@mui/icons-material/Language";
 import XIcon from "@mui/icons-material/X";
+
+
 
 export default function SocialLinksCard() {
   const socials = [
@@ -47,45 +44,60 @@ export default function SocialLinksCard() {
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
       }}
     >
-              {/* Header */}
-              
-            {/* Header */}
-                <Box
+      {/* Header */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.6rem",
+          mb: "1rem",
+        }}
+      >
+        <Box
           sx={{
+            width: "2.4rem",
+            height: "2.4rem",
+            borderRadius: "0.8rem",
+            background: "#f5f3ff",
+            color: "#5b21b6",
+
             display: "flex",
             alignItems: "center",
-            gap: "0.6rem",
-            mb: "1rem",
+            justifyContent: "center",
           }}
         >
-          <Box
-            sx={{
-              width: "2.4rem",
-              height: "2.4rem",
-              borderRadius: "0.8rem",
-              background: "#f5f3ff",
-              color: "#5b21b6",
-
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <LinkOutlinedIcon />
-          </Box>
-
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: 700,
-            }}
-          >
-            Social Links
-          </Typography>
+          <LinkOutlinedIcon />
         </Box>
 
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            fontWeight: 700,
+            display:"flex",
+            flex:1,
+            justifyContent:'space-between',
+            alignItems:"center"
+          }}
+        >
+          Social Links
+                    <IconButton
+            sx={{
+              background: "#160a7e00",
+              color: "#6e6e6e",
 
+              "&:hover": {
+                background: "#37373849",
+              },
+              width: "2.5rem",
+              height: "2.5rem",
+              p: 1,
+            }}
+          >
+            <EditIcon sx={{ width: "100%", m: 0 }} />
+          </IconButton>
 
+        </Typography>
+      </Box>
 
       {/* Icons */}
       <Box

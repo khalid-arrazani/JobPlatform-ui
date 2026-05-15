@@ -1,15 +1,13 @@
-import {
-  Card,
-  Box,
-  Typography,
-} from "@mui/material";
+import { Card, Box, Typography,IconButton } from "@mui/material";
 
 import BusinessIcon from "@mui/icons-material/Business";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-import BusinessTwoToneIcon from '@mui/icons-material/BusinessTwoTone';
+import EditIcon from "@mui/icons-material/Edit";
+
+import BusinessTwoToneIcon from "@mui/icons-material/BusinessTwoTone";
 
 export default function CompanyInformationCard() {
   const companyData = [
@@ -41,16 +39,16 @@ export default function CompanyInformationCard() {
   return (
     <Card
       sx={{
-    width: "44vw",
-    borderRadius: "1rem",
-    p: "1rem",
-    background: "#fff",
-    boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-    m:1
+        width: "44vw",
+        borderRadius: "1rem",
+        p: "1rem",
+        background: "#fff",
+        boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
+        m: 1,
       }}
     >
       {/* Header */}
-                    <Box
+        <Box
           sx={{
             display: "flex",
             alignItems: "center",
@@ -78,12 +76,30 @@ export default function CompanyInformationCard() {
             sx={{
               fontSize: "1rem",
               fontWeight: 700,
+              display: "flex",
+              flex: 1,
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             Company Information
+            <IconButton
+              sx={{
+                background: "#160a7e00",
+                color: "#6e6e6e",
+
+                "&:hover": {
+                  background: "#37373849",
+                },
+                width: "2.5rem",
+                height: "2.5rem",
+                p: 1,
+              }}
+            >
+              <EditIcon sx={{ width: "100%", m: 0 }} />
+            </IconButton>
           </Typography>
         </Box>
- 
 
       {/* Content */}
       <Box

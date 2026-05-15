@@ -8,6 +8,8 @@ import HiringFocusCard from "./HiringFocusCard.jsx";
 import QuickStatsCard from "./QuickStatsCard.jsx";
 import SocialLinksCard from "./SocialLinksCard.jsx";
 
+
+
 export default function RecruiterProfilePage() {
   return (
     <>

@@ -1,37 +1,28 @@
-import {
-  Card,
-  Box,
-  Typography,
-  Chip,
-} from "@mui/material";
+import { Card, Box, Typography, Chip, IconButton } from "@mui/material";
 
 import WorkIcon from "@mui/icons-material/Work";
 
+import EditIcon from "@mui/icons-material/Edit";
+
 export default function HiringFocusCard() {
-  const hiringTypes = [
-    "Full-time",
-    "Remote",
-    "Hybrid",
-    "Internship",
-  ];
+  const hiringTypes = ["Full-time", "Remote", "Hybrid", "Internship"];
 
   const roles = [
     "Frontend Developer",
     "Backend Developer",
     "UI/UX Designer",
     "Product Manager",
-   
   ];
 
   return (
     <Card
       sx={{
-    width: "44vw",
-    borderRadius: "1rem",
-    p: "1rem",
-    background: "#fff",
-    boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-    m:1
+        width: "44vw",
+        borderRadius: "1rem",
+        p: "1rem",
+        background: "#fff",
+        boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
+        m: 1,
       }}
     >
       {/* Header */}
@@ -40,7 +31,7 @@ export default function HiringFocusCard() {
           display: "flex",
           alignItems: "center",
           gap: "0.6rem",
-          mb: "1.2rem",
+          mb: "1rem",
         }}
       >
         <Box
@@ -48,13 +39,12 @@ export default function HiringFocusCard() {
             width: "2.4rem",
             height: "2.4rem",
             borderRadius: "0.8rem",
+            background: "#f5f3ff",
+            color: "#5b21b6",
 
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-
-            background: "#f3f0ff",
-            color: "#5b21b6",
           }}
         >
           <WorkIcon />
@@ -64,9 +54,28 @@ export default function HiringFocusCard() {
           sx={{
             fontSize: "1rem",
             fontWeight: 700,
+            display: "flex",
+            flex: 1,
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           Hiring Focus
+          <IconButton
+            sx={{
+              background: "#160a7e00",
+              color: "#6e6e6e",
+
+              "&:hover": {
+                background: "#37373849",
+              },
+              width: "2.5rem",
+              height: "2.5rem",
+              p: 1,
+            }}
+          >
+            <EditIcon sx={{ width: "100%", m: 0 }} />
+          </IconButton>
         </Typography>
       </Box>
 
@@ -84,23 +93,22 @@ export default function HiringFocusCard() {
             key={index}
             label={item}
             sx={{
-              
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
 
-          p: ".5rem",
-          borderRadius: ".5rem",
+              p: ".5rem",
+              borderRadius: ".5rem",
 
-          border: "1px solid #ececec",
-          background: "#fcfcff",
+              border: "1px solid #ececec",
+              background: "#fcfcff",
 
-          transition: "0.3s",
+              transition: "0.3s",
 
-          "&:hover": {
-            transform: "translateY(-0.15rem)",
-            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-          },
+              "&:hover": {
+                transform: "translateY(-0.15rem)",
+                boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+              },
             }}
           />
         ))}
@@ -129,22 +137,22 @@ export default function HiringFocusCard() {
             key={index}
             label={role}
             sx={{
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
+              display: "flex",
+              alignItems: "center",
+              gap: "0.5rem",
 
-          p: ".5rem",
-          borderRadius: ".5rem",
+              p: ".5rem",
+              borderRadius: ".5rem",
 
-          border: "1px solid #ececec",
-          background: "#fcfcff",
+              border: "1px solid #ececec",
+              background: "#fcfcff",
 
-          transition: "0.3s",
+              transition: "0.3s",
 
-          "&:hover": {
-            transform: "translateY(-0.15rem)",
-            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-          },
+              "&:hover": {
+                transform: "translateY(-0.15rem)",
+                boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+              },
             }}
           />
         ))}

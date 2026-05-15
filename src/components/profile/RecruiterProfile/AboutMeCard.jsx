@@ -1,22 +1,18 @@
-import {
-  Card,
-  CardContent,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Card, CardContent, Typography, Box, IconButton } from "@mui/material";
 
+import EditIcon from "@mui/icons-material/Edit";
 
-import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 export default function AboutMeCard() {
   return (
     <Card
       sx={{
-    width: "44vw",
-    borderRadius: "1rem",
-    p: "1rem",
-    background: "#fff",
-    boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-    m:1
+        width: "44vw",
+        borderRadius: "1rem",
+        p: "1rem",
+        background: "#fff",
+        boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
+        m: 1,
       }}
     >
       <CardContent sx={{ p: "0.5rem !important" }}>
@@ -49,12 +45,30 @@ export default function AboutMeCard() {
             sx={{
               fontSize: "1rem",
               fontWeight: 700,
+              display: "flex",
+              flex: 1,
+              justifyContent: "space-between",
+              alignItems: "center",
             }}
           >
             About Me
+            <IconButton
+              sx={{
+                background: "#160a7e00",
+                color: "#6e6e6e",
+
+                "&:hover": {
+                  background: "#37373849",
+                },
+                width: "2.5rem",
+                height: "2.5rem",
+                p: 1,
+              }}
+            >
+              <EditIcon sx={{ width: "100%", m: 0 }} />
+            </IconButton>
           </Typography>
         </Box>
-
         {/* Description */}
         <Typography
           sx={{
@@ -63,10 +77,9 @@ export default function AboutMeCard() {
             color: "#666",
           }}
         >
-          Passionate recruiter focused on connecting talented people
-          with the right opportunities. Experienced in hiring,
-          candidate management, and building strong professional
-          relationships across the tech industry.
+          Passionate recruiter focused on connecting talented people with the
+          right opportunities. Experienced in hiring, candidate management, and
+          building strong professional relationships across the tech industry.
         </Typography>
       </CardContent>
     </Card>

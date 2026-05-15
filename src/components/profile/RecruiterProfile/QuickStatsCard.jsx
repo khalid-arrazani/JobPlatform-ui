@@ -1,7 +1,7 @@
 import {
   Card,
   Box,
-  Typography,
+  Typography,IconButton
 } from "@mui/material";
 
 import QueryStatsSharpIcon from '@mui/icons-material/QueryStatsSharp';
@@ -10,6 +10,8 @@ import WorkOutlineIcon from "@mui/icons-material/Work";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import PersonOutlineIcon from "@mui/icons-material/Person";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+
+import EditIcon from "@mui/icons-material/Edit";
 
 export default function QuickStatsCard() {
   const stats = [
@@ -59,40 +61,58 @@ export default function QuickStatsCard() {
     >
 
       {/* Header */}
-              <Box
+        <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.6rem",
+          mb: "1rem",
+        }}
+      >
+        <Box
           sx={{
+            width: "2.4rem",
+            height: "2.4rem",
+            borderRadius: "0.8rem",
+            background: "#f5f3ff",
+            color: "#5b21b6",
+
             display: "flex",
             alignItems: "center",
-            gap: "0.6rem",
-            mb: "1rem",
+            justifyContent: "center",
           }}
         >
-          <Box
-            sx={{
-              width: "2.4rem",
-              height: "2.4rem",
-              borderRadius: "0.8rem",
-              background: "#f5f3ff",
-              color: "#5b21b6",
-
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <QueryStatsSharpIcon />
-          </Box>
-
-          <Typography
-            sx={{
-              fontSize: "1rem",
-              fontWeight: 700,
-            }}
-          >
-            Quick Stats
-          </Typography>
+          <QueryStatsSharpIcon />
         </Box>
 
+        <Typography
+          sx={{
+            fontSize: "1rem",
+            fontWeight: 700,
+            display: "flex",
+            flex: 1,
+            justifyContent: "space-between",
+            alignItems: "center",
+          }}
+        >
+           Quick Stats
+          <IconButton
+            sx={{
+              background: "#160a7e00",
+              color: "#6e6e6e",
+
+              "&:hover": {
+                background: "#37373849",
+              },
+              width: "2.5rem",
+              height: "2.5rem",
+              p: 1,
+            }}
+          >
+            <EditIcon sx={{ width: "100%", m: 0 }} />
+          </IconButton>
+        </Typography>
+      </Box>
 
       {/* Grid */}
       <Box
