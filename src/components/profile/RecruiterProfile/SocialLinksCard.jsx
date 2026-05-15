@@ -42,6 +42,7 @@ export default function SocialLinksCard() {
         p: "1rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
+        mx:1
       }}
     >
       {/* Header */}

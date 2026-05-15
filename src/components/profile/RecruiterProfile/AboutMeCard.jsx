@@ -12,7 +12,8 @@ export default function AboutMeCard() {
         p: "1rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-        m: 1,
+        mx: 1,
+        mt:1
       }}
     >
       <CardContent sx={{ p: "0.5rem !important" }}>

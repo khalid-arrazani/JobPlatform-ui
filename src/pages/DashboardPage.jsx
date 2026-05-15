@@ -6,7 +6,6 @@ export default function DashboardPage() {
   return (
     <DashboardLayout>
      <CompaniesPage/>
-     
     </DashboardLayout>
   );
 }
