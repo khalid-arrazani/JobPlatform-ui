@@ -1,8 +1,7 @@
-
 import { Box } from "@mui/material";
-import Navbar from "../components/dashboard/Navbar.jsx";
 
-export default function DashboardLayout({children}) {
+
+export default function CompleteProfileLayout({children}) {
   return (
     <Box
       sx={{
@@ -14,7 +13,7 @@ export default function DashboardLayout({children}) {
         padding: 0,
       }}
     >
-      <Navbar />
+
 
        {children}
       

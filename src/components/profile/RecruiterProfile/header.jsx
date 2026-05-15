@@ -1,9 +1,6 @@
 import { Box, Avatar, Typography, Button, Container } from "@mui/material";
 import IconButton from "@mui/material/IconButton";
 
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
 
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -192,56 +189,6 @@ export default function Header() {
                   recruiter@nexhire.com
                 </Typography>
               </Box>
-            </Box>
-
-            {/* SOCIALS */}
-            <Box
-              sx={{
-                display: "flex",
-                gap: "0.4rem",
-                mt: "0.7rem",
-              }}
-            >
-              <IconButton
-                size="small"
-                sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
-                }}
-              >
-                <GitHubIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
-
-              <IconButton
-                size="small"
-                sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
-                }}
-              >
-                <LinkedInIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
-              <IconButton
-                size="small"
-                sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
-                }}
-              >
-                <TwitterIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
             </Box>
           </Box>
         </Box>
