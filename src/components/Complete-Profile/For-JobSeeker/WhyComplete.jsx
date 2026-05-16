@@ -39,7 +39,9 @@ export default function WhyCompleteProfileCard() {
           fontWeight: 700,
           color: "#111827",
           mt:'2rem',
-          mb:'.5rem'
+          mb:'.5rem',
+          width:"100%",
+          paddingLeft:"3rem"
 
         }}
       >

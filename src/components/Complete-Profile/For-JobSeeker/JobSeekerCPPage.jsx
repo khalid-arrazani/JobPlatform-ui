@@ -1,5 +1,5 @@
 import "./style.css";
-import { Card,  Box } from "@mui/material";
+import { Card } from "@mui/material";
 
 import Header from "./header";
 import OfficePart from "./Officeimg";
@@ -18,20 +18,15 @@ export default function JobSeekerCPPage() {
 
           <div className="container1">
             <div className="leftSide">
-
               <OfficePart />
-    
               <CompleteProfileDs />
-
-
-              
-                <WhyCompleteProfileCard />
-                
+              <WhyCompleteProfileCard />
+            </div>
+            
+            <div className="rightSide">
               
 
             </div>
-
-            <div className="rightSide"></div>
           </div>
         </Card>
       </div>
