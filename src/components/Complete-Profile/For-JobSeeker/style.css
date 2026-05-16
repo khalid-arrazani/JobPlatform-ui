@@ -41,6 +41,11 @@ background: linear-gradient(
 .rightSide {
   width: 68%;
   background-color: rgba(252, 252, 252, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ overflow: auto;
+ padding-bottom: 10px;
 
 }
 .discr{
@@ -50,6 +55,23 @@ background: linear-gradient(
   height:75%;
   padding: 1rem;
   padding-top: 1rem;
+}
+::-webkit-scrollbar {
+  width: 5px;
+
+}
+::-webkit-scrollbar-track {
+  background: #1e1e1e00;
+ 
+}
+
+::-webkit-scrollbar-thumb {
+  background: #55555573;
+  border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
 }
 
 

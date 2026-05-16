@@ -1,10 +1,11 @@
 import "./style.css";
-import { Card } from "@mui/material";
+import { Card,Box } from "@mui/material";
 
 import Header from "./header";
 import OfficePart from "./Officeimg";
 import WhyCompleteProfileCard from "./WhyComplete";
 import CompleteProfileDs from "./CompleteProfileDs";
+import BasicInformationSection from "./BasicInformationSection";
 
 export default function JobSeekerCPPage() {
   return (
@@ -24,8 +25,10 @@ export default function JobSeekerCPPage() {
             </div>
             
             <div className="rightSide">
-              
+              <Box sx={{width:"90%",height:"95%"}}>
+               <BasicInformationSection/>
 
+              </Box>
             </div>
           </div>
         </Card>
