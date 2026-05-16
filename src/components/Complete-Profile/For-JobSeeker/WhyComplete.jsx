@@ -35,7 +35,7 @@ export default function WhyCompleteProfileCard() {
       {/* Title */}
       <Typography
         sx={{
-          fontSize: "1rem",
+          fontSize: "0.9rem",
           fontWeight: 700,
           color: "#111827",
           mt:'2rem',
@@ -60,7 +60,8 @@ export default function WhyCompleteProfileCard() {
             sx={{
               display: "flex",
               alignItems: "flex-start",
-              gap: "0.8rem",
+              gap: "1rem",
+              width:"100%"
             }}
           >
             {/* Icon */}
@@ -90,7 +91,7 @@ export default function WhyCompleteProfileCard() {
             <Box>
               <Typography
                 sx={{
-                  fontSize: "0.92rem",
+                  fontSize: "0.8rem",
                   fontWeight: 600,
                   color: "#111827e8",
                   mb: "0.2rem",
@@ -101,9 +102,9 @@ export default function WhyCompleteProfileCard() {
 
               <Typography
                 sx={{
-                  fontSize: "0.8rem",
+                  fontSize: "0.7rem",
                   color: "#6b7280",
-                  lineHeight: 1.6,
+                  lineHeight:1,
                 }}
               >
                 {item.desc}
