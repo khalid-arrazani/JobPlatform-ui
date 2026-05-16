@@ -7,11 +7,11 @@ export default function CompleteProfileDs() {
         <Typography
           sx={{
             display: "flex",
-            justifyContent: "center",
             width: "100%",
             fontWeight: "600",
             color: "#0e0d0dcb",
             fontSize: "1.7rem",
+            
           }}
         >
           Complete Your Profile
@@ -24,7 +24,7 @@ export default function CompleteProfileDs() {
             width: "90%",
             fontWeight: "500",
             color: "#0e0d0dcb",
-            pt: "0.8rem",
+            pt: "0.5rem",
           }}
         >
           Let's create your professional identity.Complete your profile to

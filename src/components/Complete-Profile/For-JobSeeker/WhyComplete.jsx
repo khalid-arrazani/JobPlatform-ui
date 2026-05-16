@@ -37,9 +37,9 @@ export default function WhyCompleteProfileCard() {
         sx={{
           fontSize: "0.9rem",
           fontWeight: 700,
-          color: "#111827",
+          color: "#111827e7",
           mt:'2rem',
-          mb:'.5rem',
+          mb:'1rem',
           width:"100%",
           paddingLeft:"3rem"
 
@@ -70,7 +70,7 @@ export default function WhyCompleteProfileCard() {
             <Box
               sx={{
                 minWidth: "3rem",
-                height: "3rem",
+                height: "2.5rem",
 
                 borderRadius: "0.9rem",
 
