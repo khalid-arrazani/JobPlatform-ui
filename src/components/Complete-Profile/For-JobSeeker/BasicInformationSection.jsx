@@ -26,8 +26,9 @@ export default function BasicInformationSection() {
           background: "#f3f0ff",
           color: "#5b21b6",
           fontWeight: 600,
-          borderRadius: "0.5rem",
+          borderRadius: "0.2rem",
           fontSize: "0.75rem",
+          p:2
         }}
       />
 
@@ -151,7 +152,7 @@ export default function BasicInformationSection() {
             color: "#111827",
           }}
         >
-          Full Name
+          Full Name*
         </Typography>
 
         <TextField
@@ -188,14 +189,14 @@ export default function BasicInformationSection() {
             color: "#111827",
           }}
         >
-          Bio
+          Headline*
         </Typography>
 
         <TextField
           fullWidth
           required
           multiline
-          rows={4}
+          rows={3}
           placeholder="Tell us about yourself..."
           sx={{
             "& .MuiOutlinedInput-root": {
@@ -215,7 +216,7 @@ export default function BasicInformationSection() {
             color: "#111827",
           }}
         >
-          Location
+          Location*
         </Typography>
 
         <TextField
