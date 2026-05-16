@@ -11,8 +11,7 @@ import { useState } from "react";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-import TrendingFlatOutlinedIcon from '@mui/icons-material/TrendingFlatOutlined';
-
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
 export default function BasicInformationSection() {
   const [image, setImage] = useState(null);
@@ -28,7 +27,7 @@ export default function BasicInformationSection() {
           color: "#5b21b6",
           fontWeight: 600,
           borderRadius: "0.5rem",
-          fontSize: "0.70rem",
+          fontSize: "0.75rem",
         }}
       />
 
@@ -74,14 +73,14 @@ export default function BasicInformationSection() {
           }}
         >
           <Avatar
-        src={image}
-  sx={{
-    width: "100%",
-    height: "100%",
-    background: "#ede9fe",
-  }}
+            src={image}
+            sx={{
+              width: "100%",
+              height: "100%",
+              background: "#ede9fe",
+              borderRadius:"10px"
+            }}
           />
-
         </Box>
 
         {/* Upload Text */}
@@ -264,7 +263,9 @@ export default function BasicInformationSection() {
         }}
       >
         Continue
-        <TrendingFlatOutlinedIcon sx={{position:"relative",right:"-40%"}}/>
+        <TrendingFlatOutlinedIcon
+          sx={{ position: "relative", right: "-40%" }}
+        />
       </Button>
     </>
   );
