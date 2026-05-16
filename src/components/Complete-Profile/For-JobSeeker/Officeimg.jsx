@@ -7,6 +7,7 @@ export default function OfficePart() {
           width: "100%",
           display: "flex",
           justifyContent: "center",
+          height:"25%"
         }}
       >
         <img

@@ -5,7 +5,7 @@ background: linear-gradient(
   135deg,
   #5a21b623 0%,
   #6c28d92f 50%,
-  #7c3aed4d 100%
+  #7c3aed94 100%
 );;
   display: flex;
   justify-content: center;
@@ -33,14 +33,23 @@ background: linear-gradient(
   border-bottom: solid 0.2px #E9E9F2 ;
 }
 .leftSide {
-  width: 30%;
+  width: 32%;
   background-color:#F3F0FF;
   border-right: solid 0.1px #332f2f13;
+
 }
 .rightSide {
-  width: 70%;
+  width: 68%;
   background-color: rgba(252, 252, 252, 0);
 
+}
+.discr{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height:75%;
+  padding: 1rem;
+  padding-top: 2rem;
 }
 
 
