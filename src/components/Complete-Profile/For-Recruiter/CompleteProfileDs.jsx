@@ -3,7 +3,13 @@ import { Typography } from "@mui/material";
 export default function CompleteProfileDs() {
   return (
     <>
-      <div style={{ paddingLeft: "1.5rem",paddingRight: "1.5rem", paddingTop: "1rem" }}>
+      <div
+        style={{
+          paddingLeft: "1.5rem",
+          paddingRight: "1.5rem",
+          paddingTop: "1rem",
+        }}
+      >
         <Typography
           sx={{
             display: "flex",
@@ -11,7 +17,6 @@ export default function CompleteProfileDs() {
             fontWeight: "600",
             color: "#0e0d0dcb",
             fontSize: "1.7rem",
-            
           }}
         >
           Complete Your Profile
@@ -27,8 +32,8 @@ export default function CompleteProfileDs() {
             pt: "0.5rem",
           }}
         >
-          Let's create your professional identity.Complete your profile to
-          unlock the best job opportunities and get noticed by recruiters.
+          Let's create your company profile. Complete your profile
+          to post jobs, attract top talent and grow your team.
         </Typography>
       </div>
     </>

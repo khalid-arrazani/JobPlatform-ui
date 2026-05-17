@@ -19,7 +19,7 @@ export default function BasicInformationSection() {
     <>
       {/* Badge */}
       <Chip
-        label="Job Seeker"
+        label="Recruiter"
         size="small"
         sx={{
           mb: "0.5rem",
@@ -52,7 +52,7 @@ export default function BasicInformationSection() {
           mb: "1rem",
         }}
       >
-        Start by telling us a bit about yourself.
+        Start by telling us a bit about yourself and your Company
       </Typography>
 
       {/* Upload */}

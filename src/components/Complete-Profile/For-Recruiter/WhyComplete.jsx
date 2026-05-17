@@ -11,21 +11,21 @@ import TrendingUpOutlinedIcon from "@mui/icons-material/TrendingUpOutlined";
 export default function WhyCompleteProfileCard() {
   const benefits = [
     {
-      icon: <VisibilityOutlinedIcon />,
-      title: "Get noticed by recruiters",
-      desc: "Recruiters prefer complete profiles.",
+      icon:  <BusinessCenterTwoToneIcon />,
+      title: "Post jobs faster",
+      desc: "A complete profile enables you to publish jobs quickly",
     },
 
     {
-      icon: <BusinessCenterTwoToneIcon />,
-      title: "Unlock more job opportunities",
-      desc: "Apply faster and access more jobs.",
+      icon: <VisibilityOutlinedIcon />,
+      title: "Attract better candidates",
+      desc: "Top talent prefers transparent companies",
     },
 
     {
       icon: <TrendingUpOutlinedIcon />,
-      title: "Increase profile visibility",
-      desc: "Complete profiles receive more views.",
+      title: "Build trust",
+      desc: "A complete company profile builds credibility and trust",
     },
   ];
 
