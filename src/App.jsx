@@ -7,7 +7,7 @@ import CompleteProfile from "./pages/CompleteProfilePage";
 function App() {
   return (
     <>
-      <ProfilePage/>
+      <CompleteProfile/>
     </>
   );
 }

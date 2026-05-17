@@ -28,7 +28,7 @@ export default function BasicInformationSection() {
           fontWeight: 600,
           borderRadius: "0.2rem",
           fontSize: "0.75rem",
-          p:2
+          p: 2,
         }}
       />
 
@@ -79,7 +79,7 @@ export default function BasicInformationSection() {
               width: "100%",
               height: "100%",
               background: "#ede9fe",
-              borderRadius:"10px"
+              borderRadius: "10px",
             }}
           />
         </Box>
@@ -196,7 +196,6 @@ export default function BasicInformationSection() {
           fullWidth
           required
           multiline
-          rows={3}
           placeholder="Tell us about yourself..."
           sx={{
             "& .MuiOutlinedInput-root": {
@@ -224,6 +223,148 @@ export default function BasicInformationSection() {
           size="small"
           required
           placeholder="Enter your location"
+          InputProps={{
+            startAdornment: (
+              <LocationOnOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "0.3rem",
+            },
+          }}
+        />
+      </Box>
+      {/* Location */}
+      <Box sx={{ mb: "1rem" }}>
+        <Typography
+          sx={{
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            mb: "0.5rem",
+            color: "#111827",
+          }}
+        >
+          Company name*
+        </Typography>
+
+        <TextField
+          fullWidth
+          size="small"
+          required
+          placeholder="Enter your Company name"
+          InputProps={{
+            startAdornment: (
+              <LocationOnOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "0.3rem",
+            },
+          }}
+        />
+      </Box>
+      {/* Location */}
+      <Box sx={{ mb: "1rem" }}>
+        <Typography
+          sx={{
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            mb: "0.5rem",
+            color: "#111827",
+          }}
+        >
+          industry*
+        </Typography>
+
+        <TextField
+          fullWidth
+          size="small"
+          required
+          placeholder="Enter your Company industry"
+          InputProps={{
+            startAdornment: (
+              <LocationOnOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "0.3rem",
+            },
+          }}
+        />
+      </Box>
+      <Box sx={{ mb: "1rem" }}>
+        <Typography
+          sx={{
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            mb: "0.5rem",
+            color: "#111827",
+          }}
+        >
+          WebSite*
+        </Typography>
+
+        <TextField
+          fullWidth
+          size="small"
+          required
+          placeholder="Enter your Company Website"
+          InputProps={{
+            startAdornment: (
+              <LocationOnOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
+          sx={{
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "0.3rem",
+            },
+          }}
+        />
+      </Box>
+      <Box sx={{ mb: "1rem" }}>
+        <Typography
+          sx={{
+            fontSize: "0.82rem",
+            fontWeight: 600,
+            mb: "0.5rem",
+            color: "#111827",
+          }}
+        >
+          Location*
+        </Typography>
+
+        <TextField
+          fullWidth
+          size="small"
+          required
+          placeholder="Enter your Company Location"
           InputProps={{
             startAdornment: (
               <LocationOnOutlinedIcon
