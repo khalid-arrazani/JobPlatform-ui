@@ -6,15 +6,41 @@ import {
   Button,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+import { useState,useRef } from "react";
+
+import AvatarEditor from "react-avatar-editor";
+
+import { Dialog, DialogContent, Slider } from "@mui/material";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
+import Divider from "@mui/material/Divider";
+
 export default function BasicInformationSection() {
-  const [image, setImage] = useState(null);
+  
+  const editorRef = useRef();
+const [image, setImage] = useState(null);
+
+  const [scale, setScale] = useState(1.2);
+
+  const [open, setOpen] = useState(false);
+
+  const handleSave = () => {
+    const canvas =
+      editorRef.current.getImageScaledToCanvas();
+
+    const croppedImage =
+      canvas.toDataURL();
+
+    console.log(croppedImage);
+
+    setImage(croppedImage);
+
+    setOpen(false);
+  };
   return (
     <>
       {/* Badge */}
@@ -134,13 +160,58 @@ export default function BasicInformationSection() {
                 const file = e.target.files[0];
 
                 if (file) {
-                  setImage(URL.createObjectURL(file));
+             
+                  setImage(file);
+                  setOpen(true);
                 }
               }}
             />
           </Button>
         </Box>
       </Box>
+
+     <Dialog
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <DialogContent>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+          >
+            <AvatarEditor
+              ref={editorRef}
+              image={image}
+              width={350}
+              height={350}
+              border={20}
+              borderRadius={200}
+              scale={scale}
+            />
+
+            <Slider
+              min={1}
+              max={3}
+              step={0.1}
+              value={scale}
+              onChange={(e, value) =>
+                setScale(value)
+              }
+            />
+
+            <Button
+              variant="contained"
+              onClick={handleSave}
+            >
+              Save
+            </Button>
+          </Box>
+        </DialogContent>
+      </Dialog>
 
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
@@ -241,6 +312,20 @@ export default function BasicInformationSection() {
           }}
         />
       </Box>
+      <Divider sx={{ my: "1rem" }} />
+      <Chip
+        label="Company"
+        size="small"
+        sx={{
+          mb: "0.5rem",
+          background: "#f3f0ff",
+          color: "#5b21b6",
+          fontWeight: 600,
+          borderRadius: "0.2rem",
+          fontSize: "0.75rem",
+          p: 2,
+        }}
+      />
       {/* Location */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
@@ -337,7 +422,8 @@ export default function BasicInformationSection() {
                   mr: "0.5rem",
                   color: "#9ca3af",
                   fontSize: "1rem",
-                }}/>
+                }}
+              />
             ),
           }}
           sx={{
