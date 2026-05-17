@@ -23,26 +23,29 @@ export default function UploadProfilePhoto() {
 
   const [open, setOpen] = useState(false);
 
+const [preview, setPreview] = useState("");
 
-  const getBlob = (canvas) => {
-  return new Promise((resolve) => {
-    canvas.toBlob((blob) => {
-      resolve(blob);
-    }, "image/png");
-  });
-};
+const [imageFile, setImageFile] = useState(null);
+
+const handleSave = () => {
+  const canvas =
+    editorRef.current.getImageScaledToCanvas();
+
+  canvas.toBlob((blob) => {
+    if (!blob) return;
 
 
-const handleSave = async () => {
+    const previewUrl =
+      URL.createObjectURL(blob);
 
-  const canvas = editorRef.current.getImageScaledToCanvas();
-  const blob = await getBlob(canvas);
-  console.log(blob);
-  const url = URL.createObjectURL(blob);
-  setImage(url);
-  console.log(url);
-  setOpen(false);
+
+    setPreview(previewUrl);
+
   
+    setImageFile(blob);
+
+    setOpen(false);
+  }, "image/png");
 };
 
   return (
@@ -67,7 +70,7 @@ const handleSave = async () => {
           }}
         >
           <Avatar
-            src={image}
+            src={preview}
             sx={{
               width: "100%",
               height: "100%",
@@ -125,8 +128,6 @@ const handleSave = async () => {
               type="file"
               onChange={(e) => {
                 const file = e.target.files[0];
-                console.log(file);
-
                 if (file) {
                   setImage(file);
                   setOpen(true);
