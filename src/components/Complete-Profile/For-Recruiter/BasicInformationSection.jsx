@@ -337,8 +337,7 @@ export default function BasicInformationSection() {
                   mr: "0.5rem",
                   color: "#9ca3af",
                   fontSize: "1rem",
-                }}
-              />
+                }}/>
             ),
           }}
           sx={{
