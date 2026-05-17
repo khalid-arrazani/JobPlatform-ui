@@ -1,5 +1,5 @@
-import { Box, Avatar, Typography, Button, Container } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
+import { Box, Typography, Button, Container } from "@mui/material";
+
 
 
 import EditIcon from "@mui/icons-material/Edit";
@@ -7,7 +7,9 @@ import EditIcon from "@mui/icons-material/Edit";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+
+
+import UploadProfilePhoto from "./UploadProfilePhoto";
 
 export default function Header() {
   return (
@@ -52,47 +54,7 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              width: "8rem",
-              height: "8rem",
-              mr:"1rem"
-            }}
-          >
-            {/* Avatar */}
-            <Avatar
-              src="/profile.jpg"
-              sx={{
-                width: "100%",
-                height: "100%",
-                border: "4px solid white",
-              }}
-            />
-
-            {/* Camera Button */}
-            <IconButton
-              sx={{
-                position: "absolute",
-                bottom: "0.2rem",
-                right: "0.2rem",
-
-                width: "2.2rem",
-                height: "2.2rem",
-
-                background: "#312e81",
-                color: "#fff",
-
-                border: "2px solid white",
-
-                "&:hover": {
-                  background: "#4338ca",
-                },
-              }}
-            >
-              <PhotoCameraIcon sx={{ fontSize: "1rem" }} />
-            </IconButton>
-          </Box>
+         <UploadProfilePhoto/>
 
           {/* INFO */}
           <Box>
