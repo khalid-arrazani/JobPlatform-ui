@@ -13,7 +13,7 @@ export default function Header() {
 
   return (
     <>
-    
+
       <Modal
         sx={{
           display: "flex",
@@ -31,7 +31,7 @@ export default function Header() {
             borderRadius: "2rem",
           }}
         >
-          <Box sx={{ height: "10%", backgroundColor: "#b61f1f" }}>
+          <Box sx={{ height: "10%", backgroundColor: "#b61f1f",display:"flex",justifyContent:"center",alignItems:"center" }}>
             <svg
               width="80"
               height="18"
