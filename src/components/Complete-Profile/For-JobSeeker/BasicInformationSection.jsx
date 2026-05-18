@@ -1,11 +1,4 @@
-import {
-  Box,
-  Typography,
-  Chip,
-  Button,
-  TextField,
-} from "@mui/material";
-
+import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -13,7 +6,6 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 export default function BasicInformationSection() {
-
   return (
     <>
       {/* Badge */}
@@ -27,7 +19,7 @@ export default function BasicInformationSection() {
           fontWeight: 600,
           borderRadius: "0.2rem",
           fontSize: "0.75rem",
-          p:2
+          p: 2,
         }}
       />
 
@@ -55,7 +47,7 @@ export default function BasicInformationSection() {
       </Typography>
 
       {/* Upload */}
-      <UploadProfilePhoto/>
+      <UploadProfilePhoto />
 
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
@@ -113,6 +105,9 @@ export default function BasicInformationSection() {
           multiline
           rows={3}
           placeholder="Tell us about yourself..."
+          inputProps={{
+            maxLength: 250,
+          }}
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
