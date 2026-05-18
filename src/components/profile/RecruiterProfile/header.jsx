@@ -1,19 +1,47 @@
-import { Box, Typography, Button, Container } from "@mui/material";
-
-
+import { Box, Typography, Button, Container, Modal, Card } from "@mui/material";
 
 import EditIcon from "@mui/icons-material/Edit";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-
-
+import { useState } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
+
+
+      <Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <Card
+          sx={{
+            height: "60vh",
+            width: "50vw",
+            outline: "none",
+            borderRadius:"2rem"
+          }}
+        >
+        <Box sx={{height:"10%",ba}}>
+
+        </Box>
+
+        </Card>
+      </Modal>
+
+
+
+
       <Container
         sx={{
           borderRadius: "1rem",
@@ -25,7 +53,7 @@ export default function Header() {
           position: "relative",
           overflow: "hidden",
           boxShadow: "0 0.3rem 1rem rgba(0,0,0,0.12)",
-          p:" 5.5rem",
+          p: " 5.5rem",
           mt: 1,
           height: "100%",
         }}
@@ -40,7 +68,6 @@ export default function Header() {
             background: "rgba(255, 255, 255, 0.07)",
             right: "15rem",
             top: "-5rem",
-            
           }}
         />
 
@@ -54,7 +81,7 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-         <UploadProfilePhoto/>
+          <UploadProfilePhoto />
 
           {/* INFO */}
           <Box>
@@ -63,26 +90,30 @@ export default function Header() {
                 color: "#ffffffd0",
                 fontWeight: "bold",
                 fontSize: "1.3rem",
-                display:"flex",
-                gap:"0.5rem",
-                alignItems:"center"
+                display: "flex",
+                gap: "0.5rem",
+                alignItems: "center",
               }}
             >
               Khalid Arrazani
-              <Box        sx={{
-                borderRadius: "0.3rem",
-                fontWeight: 500,
-                fontSize: "0.75rem",
-                px: "0.5rem",
-                background: " #4338ca ",
-                color: "#eeeeee",
-                "&:hover": {
-                  transform: "translateY(-0.12rem)",
-                  transition: "0.3s",
-                  boxShadow: "0 0.3rem 0.8rem rgba(99,102,241,0.2)",
-                },
-                p:"0.3rem"
-              }}>Recruiter</Box>
+              <Box
+                sx={{
+                  borderRadius: "0.3rem",
+                  fontWeight: 500,
+                  fontSize: "0.75rem",
+                  px: "0.5rem",
+                  background: " #4338ca ",
+                  color: "#eeeeee",
+                  "&:hover": {
+                    transform: "translateY(-0.12rem)",
+                    transition: "0.3s",
+                    boxShadow: "0 0.3rem 0.8rem rgba(99,102,241,0.2)",
+                  },
+                  p: "0.3rem",
+                }}
+              >
+                Recruiter
+              </Box>
             </Typography>
             <Typography
               sx={{
@@ -158,6 +189,7 @@ export default function Header() {
         {/* BUTTON */}
         <Button
           variant="contained"
+          onClick={()=>{setOpen(true)}}
           sx={{
             background: "white",
             color: "#363e53",
