@@ -38,7 +38,8 @@ export default function Header() {
             width: "50vw",
             outline: "none",
             borderRadius: "1rem",
-            background: "#d9e0ee",
+            background: "#fffffff8",
+     
             p: "0.5rem",
           }}
         >
@@ -50,6 +51,7 @@ export default function Header() {
               alignItems: "center",
             }}
           >
+            
             <svg
               width="80"
               height="18"

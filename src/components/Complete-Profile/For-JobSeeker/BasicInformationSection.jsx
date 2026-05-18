@@ -2,11 +2,11 @@ import {
   Box,
   Typography,
   Chip,
-  Avatar,
+ 
   Button,
   TextField,
 } from "@mui/material";
-import { useState } from "react";
+
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
