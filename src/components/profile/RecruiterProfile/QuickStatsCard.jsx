@@ -1,7 +1,7 @@
 import {
   Card,
   Box,
-  Typography,IconButton
+  Typography
 } from "@mui/material";
 
 import QueryStatsSharpIcon from '@mui/icons-material/QueryStatsSharp';
@@ -11,7 +11,7 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import PersonOutlineIcon from "@mui/icons-material/Person";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
-import EditIcon from "@mui/icons-material/Edit";
+
 
 export default function QuickStatsCard() {
   const stats = [
@@ -96,21 +96,7 @@ export default function QuickStatsCard() {
           }}
         >
            Quick Stats
-          <IconButton
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+         
         </Typography>
       </Box>
 

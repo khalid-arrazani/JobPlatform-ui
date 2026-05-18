@@ -80,6 +80,16 @@ export default function HiringFocusCard() {
       </Box>
 
       {/* Hiring Types */}
+  
+      <Typography
+        sx={{
+          fontSize: "0.9rem",
+          fontWeight: 600,
+          mb: "0.9rem",
+        }}
+      >
+        Hiring Types:
+      </Typography>
       <Box
         sx={{
           display: "flex",
