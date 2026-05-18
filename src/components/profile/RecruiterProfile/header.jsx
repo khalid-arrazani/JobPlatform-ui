@@ -1,4 +1,14 @@
-import { Box, Typography, Button, Container, Modal, Card } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+  Modal,
+  Card,
+  TextField,
+  Divider
+} from "@mui/material";
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -13,7 +23,6 @@ export default function Header() {
 
   return (
     <>
-
       <Modal
         sx={{
           display: "flex",
@@ -25,13 +34,22 @@ export default function Header() {
       >
         <Card
           sx={{
-            height: "60vh",
+            height: "62vh",
             width: "50vw",
             outline: "none",
-            borderRadius: "2rem",
+            borderRadius: "1rem",
+            background: "#d9e0ee",
+            p: "0.5rem",
           }}
         >
-          <Box sx={{ height: "10%", backgroundColor: "#b61f1f",display:"flex",justifyContent:"center",alignItems:"center" }}>
+          <Box
+            sx={{
+              height: "10%",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <svg
               width="80"
               height="18"
@@ -45,10 +63,124 @@ export default function Header() {
               />
             </svg>
           </Box>
+          <Divider>Basic Information</Divider>
+          <Box
+            sx={{
+              height: "89%",
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "space-around",
+              // alignItems: "center",
+              
+              p: "1rem 1rem",
+            }}
+          >
+            
+            {/* Full Name */}
+            <Box sx={{ mb: "1rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  mb: "0.5rem",
+                  color: "#111827",
+                }}
+              >
+                Full Name*
+              </Typography>
+
+              <TextField
+                fullWidth
+                required
+                size="small"
+                placeholder="Enter your full name"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                  },
+                }}
+              />
+            </Box>
+
+            {/* Bio */}
+            <Box sx={{ mb: "1rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  mb: "0.5rem",
+                  color: "#111827",
+                }}
+              >
+                Headline*
+              </Typography>
+
+              <TextField
+                fullWidth
+                required
+                size="small"
+                placeholder="Tell us about yourself..."
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                  },
+                }}
+              />
+            </Box>
+
+            {/* Location */}
+            <Box sx={{ mb: "1rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  mb: "0.5rem",
+                  color: "#111827",
+                }}
+              >
+                Location*
+              </Typography>
+
+              <TextField
+                fullWidth
+                size="small"
+                required
+                placeholder="Enter your location"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                  },
+                }}
+              />
+            </Box>
+            {/* Button */}
+            <Button
+              fullWidth
+              variant="contained"
+              sx={{
+                height: "3rem",
+                borderRadius: "0.5rem",
+
+                textTransform: "none",
+                fontWeight: 500,
+                fontSize: "0.9rem",
+
+                background: "#6d28d9",
+
+                "&:hover": {
+                  background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+                },
+                mb: "2rem",
+              }}
+            >
+              Continue
+              <TrendingFlatOutlinedIcon
+                sx={{ position: "relative", right: "-40%" }}
+              />
+            </Button>
+          </Box>
         </Card>
       </Modal>
-
-
 
       <Container
         sx={{
