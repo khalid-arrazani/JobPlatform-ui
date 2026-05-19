@@ -14,7 +14,7 @@ export default function ExperienceModal({
   open,
   setOpen,
   experience,
-  setExperience,
+  setExperience
 }) {
   const [value, setValue] =
     useState(experience || "");

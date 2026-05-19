@@ -15,7 +15,7 @@ import { useState } from "react";
 export default function RecruiterStatsCard() {
 
   const [open, setOpen] = useState(false);
-  const [experience, setExperience] = useState("5+ Years");
+  const [experience, setExperience] = useState("1+ Years");
 
   const stats = [
     {
@@ -58,8 +58,8 @@ export default function RecruiterStatsCard() {
       <ExperienceModal 
       open={open}
       setOpen={setOpen}
-      open={experience}
-      open={setExperience}
+      experience={experience}
+      setExperience={setExperience}
       />
       {/* Header */}
       <Box
@@ -98,6 +98,7 @@ export default function RecruiterStatsCard() {
         >
           Professional Overview
           <IconButton
+          onClick={()=>setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
