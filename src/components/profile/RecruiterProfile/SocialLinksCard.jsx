@@ -19,7 +19,7 @@ export default function SocialLinksCard() {
 
   
   const [open, setOpen] = useState(false);
-  const [socialLinks, setSocialLinks] = useState([]);
+  const [socialLinks, setSocialLinks] = useState([{platform:"LinkedIn",url:"https://www.linkedin.com/in/khalid-arrazani-9a5860191"},{platform:"GitHub",url:"https://github.com/khalid-arrazani"}]);
 
  const getIcon = (platform) => {
   switch (platform) {
