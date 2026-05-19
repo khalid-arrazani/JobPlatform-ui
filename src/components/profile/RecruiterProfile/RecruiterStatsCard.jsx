@@ -13,11 +13,15 @@ import ExperienceModal from "./ExperienceModal";
 import { useState } from "react";
 
 export default function RecruiterStatsCard() {
+
+  const [open, setOpen] = useState(false);
+  const [experience, setExperience] = useState("5+ Years");
+
   const stats = [
     {
       icon: <WorkIcon />,
       title: "Experience",
-      value: "4+ Years",
+      value: experience,
     },
 
     {
@@ -38,8 +42,7 @@ export default function RecruiterStatsCard() {
       value: "18",
     },
   ];
-  const [open, setOpen] = useState(false);
-  const [experience, setExperience] = useState(false);
+  
 
   return (
     <Card
