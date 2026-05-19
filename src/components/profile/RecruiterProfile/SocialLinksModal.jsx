@@ -7,7 +7,8 @@ import {
   Button,
   Chip,
   MenuItem,
-  Autocomplete,
+    Autocomplete,
+  
 } from "@mui/material";
 
 import { useState } from "react";
@@ -16,29 +17,47 @@ export default function SocialLinksModal({
   open,
   setOpen,
   socialLinks,
-  setSocialLinks,
+   setSocialLinks
 }) {
-  const [platform, setPlatform] = useState("");
+  const [platform, setPlatform] =
+    useState("");
 
-  const [url, setUrl] = useState("");
+  const [url, setUrl] =
+    useState("");
+
+ 
 
   const handleAdd = () => {
-    if (!platform.trim() || !url.trim()) return;
-
-    const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
+    if (!platform.trim() || !url.trim())
+      return;
+  const isExist = socialLinks.some(
+  (item) => item.platform === platform
+);
+if(isExist){
+    console.log(55);
+}else{
+    const formattedUrl =
+  url.startsWith("http")
+    ? url
+    : `https://${url}`;
     const newLink = {
       platform,
-      url: formattedUrl,
+      url:formattedUrl,
     };
 
-    setSocialLinks((prev) => [...prev, newLink]);
+    setSocialLinks((prev) => [
+      ...prev,
+      newLink,
+    ]);
 
     setPlatform("");
-    setUrl("");
+    setUrl("");}
   };
 
   const handleDelete = (index) => {
-    setSocialLinks((prev) => prev.filter((_, i) => i !== index));
+    setSocialLinks((prev) =>
+      prev.filter((_, i) => i !== index)
+    );
   };
 
   return (
@@ -84,23 +103,35 @@ export default function SocialLinksModal({
         >
           {/* Platform */}
           <TextField
+            select
             fullWidth
             size="small"
             label="Platform"
             value={platform}
-            onChange={(e) => setPlatform(e.target.value)}
-            inputProps={{
-              list:"platforms",
-            }}
-          />
+            onChange={(e) =>
+              setPlatform(e.target.value)
+            }
+          >
+            <MenuItem value="LinkedIn">
+              LinkedIn
+            </MenuItem>
 
-          <datalist id="platforms">
-            <option value="LinkedIn" />
-            <option value="GitHub" />
-            <option value="Twitter" />
-            <option value="Facebook" />
-            <option value="Instagram" />
-          </datalist>
+            <MenuItem value="GitHub">
+              GitHub
+            </MenuItem>
+
+            <MenuItem value="Twitter">
+              Twitter
+            </MenuItem>
+
+            <MenuItem value="Facebook">
+              Facebook
+            </MenuItem>
+
+            <MenuItem value="Instagram">
+              Instagram
+            </MenuItem>
+          </TextField>
 
           {/* URL */}
           <TextField
@@ -109,7 +140,9 @@ export default function SocialLinksModal({
             label="URL"
             placeholder="https://..."
             value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            onChange={(e) =>
+              setUrl(e.target.value)
+            }
           />
 
           {/* Add */}
@@ -138,7 +171,9 @@ export default function SocialLinksModal({
             <Chip
               key={index}
               label={item.platform}
-              onDelete={() => handleDelete(index)}
+              onDelete={() =>
+                handleDelete(index)
+              }
             />
           ))}
         </Box>
