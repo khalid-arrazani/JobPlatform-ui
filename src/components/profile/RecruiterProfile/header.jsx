@@ -227,7 +227,7 @@ export default function Header() {
 
           {/* INFO */}
           <Box>
-            <Typography
+            <Box
               sx={{
                 color: "#ffffffd0",
                 fontWeight: "bold",
@@ -256,7 +256,7 @@ export default function Header() {
               >
                 Recruiter
               </Box>
-            </Typography>
+            </Box>
             <Typography
               sx={{
                 color: "#f0f0f0",

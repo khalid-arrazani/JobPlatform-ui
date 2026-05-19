@@ -6,34 +6,42 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import GitHubIcon from "@mui/icons-material/GitHub";
+
 import LanguageIcon from "@mui/icons-material/Language";
 import XIcon from "@mui/icons-material/X";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import InstagramIcon from "@mui/icons-material/Instagram";
 
-
+import SocialLinksModal from "./SocialLinksModal";
+import { useState } from "react";
 
 export default function SocialLinksCard() {
-  const socials = [
-    {
-      icon: <LinkedInIcon />,
-      color: "#0A66C2",
-    },
 
-    {
-      icon: <XIcon />,
-      color: "#111",
-    },
+  
+  const [open, setOpen] = useState(false);
+  const [socialLinks, setSocialLinks] = useState([]);
 
-    {
-      icon: <GitHubIcon />,
-      color: "#111",
-    },
+ const getIcon = (platform) => {
+  switch (platform) {
+    case "LinkedIn":
+      return <LinkedInIcon />;
 
-    {
-      icon: <LanguageIcon />,
-      color: "#5b21b6",
-    },
-  ];
+    case "GitHub":
+      return <GitHubIcon />;
 
+    case "Twitter":
+      return <XIcon />;
+
+    case "Facebook":
+      return <FacebookIcon />;
+
+    case "Instagram":
+      return <InstagramIcon />;
+
+    default:
+      return <LanguageIcon />;
+  }
+};
   return (
     <Card
       sx={{
@@ -42,9 +50,10 @@ export default function SocialLinksCard() {
         p: "1rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-        mx:1
+        mx: 1,
       }}
     >
+      <SocialLinksModal open={open} setOpen={setOpen} socialLinks={socialLinks} setSocialLinks={setSocialLinks}  />
       {/* Header */}
       <Box
         sx={{
@@ -74,14 +83,15 @@ export default function SocialLinksCard() {
           sx={{
             fontSize: "1rem",
             fontWeight: 700,
-            display:"flex",
-            flex:1,
-            justifyContent:'space-between',
-            alignItems:"center"
+            display: "flex",
+            flex: 1,
+            justifyContent: "space-between",
+            alignItems: "center",
           }}
         >
           Social Links
-                    <IconButton
+          <IconButton
+            onClick={() => setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
@@ -96,7 +106,6 @@ export default function SocialLinksCard() {
           >
             <EditIcon sx={{ width: "100%", m: 0 }} />
           </IconButton>
-
         </Typography>
       </Box>
 
@@ -108,32 +117,59 @@ export default function SocialLinksCard() {
           gap: "1rem",
         }}
       >
-        {socials.map((item, index) => (
-          <IconButton
-            key={index}
+        {socialLinks.length === 0 ? (
+          <Typography
             sx={{
-              width: "3rem",
-              height: "3rem",
-
-              border: "1px solid #ececec",
-              background: "#fcfcff",
-
-              transition: "0.3s",
-
-              "&:hover": {
-                transform: "translateY(-0.15rem)",
-                background: "#f5f3ff",
-              },
-
-              "& svg": {
-                fontSize: "1.4rem",
-                color: item.color,
-              },
+              color: "#6b7280",
+              fontSize: "0.9rem",
             }}
           >
-            {item.icon}
-          </IconButton>
-        ))}
+            No social links added yet.
+          </Typography>
+        ) : (
+          socialLinks.map((item, index) => (
+            <Box
+              key={index}
+              component="a"
+              href={item.url}
+              target="_blank"
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 1,
+
+                p: 1.2,
+
+                borderRadius: "0.7rem",
+
+                textDecoration: "none",
+
+                background: "#f8fafc",
+
+                transition: "0.2s",
+
+                "&:hover": {
+                  background: "#eef2ff",
+                },
+              }}
+            >
+              {getIcon(item.platform)}
+
+              <Box>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    color: "#111827",
+                  }}
+                >
+                  {item.platform}
+                </Typography>
+
+          
+              </Box>
+            </Box>
+          ))
+        )}
       </Box>
     </Card>
   );
