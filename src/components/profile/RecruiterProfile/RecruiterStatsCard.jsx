@@ -55,7 +55,12 @@ export default function RecruiterStatsCard() {
         m: 1,
       }}
     >
-      <ExperienceModal />
+      <ExperienceModal 
+      open={open}
+      setOpen={setOpen}
+      open={experience}
+      open={setExperience}
+      />
       {/* Header */}
       <Box
         sx={{
