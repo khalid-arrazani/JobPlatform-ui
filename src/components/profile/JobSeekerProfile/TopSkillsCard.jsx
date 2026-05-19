@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function TopSkillsCard() {
   const [open,setOpen]=useState(false)
+
   const [skills , setSkills] =useState ([
     "JavaScript",
     "React",
@@ -17,7 +18,7 @@ export default function TopSkillsCard() {
     "MUI",
     "CSS",
   ])
-
+const [editSkills,setEditSkills]=useState(skills)
   return (
     <Card
       sx={{
@@ -34,6 +35,8 @@ export default function TopSkillsCard() {
       setSkills={setSkills}
       open={open}
       setOpen={setOpen}
+      editSkills={editSkills}
+      setEditSkills={setEditSkills}
       />
 
       <CardContent sx={{ p: "0.3rem !important" }}>

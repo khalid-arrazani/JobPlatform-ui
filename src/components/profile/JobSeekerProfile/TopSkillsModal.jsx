@@ -6,7 +6,7 @@ import {
   TextField,
   Button,
   Chip,
-  MenuItem,
+
   
 } from "@mui/material";
 
@@ -15,36 +15,30 @@ import { useState } from "react";
 export default function TopSkillsModal({
   open,
   setOpen,
-  socialLinks,
-  setSocialLinks,
+  setSkills,
+  editSkills,
+  setEditSkills
 }) {
-  const [platform, setPlatform] = useState("");
 
-  const [url, setUrl] = useState("");
+  
+
+  const [inputAdd, setInputAdd] = useState("");
+
+
 
   const handleAdd = () => {
-    if (!platform.trim() || !url.trim()) return;
-    const isExist = socialLinks.some((item) => item.platform === platform);
-    if (isExist) {
-      console.log(55);
-    } else {
-      const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
-      const newLink = {
-        platform,
-        url: formattedUrl,
-      };
-
-      setSocialLinks((prev) => [...prev, newLink]);
-
-      setPlatform("");
-      setUrl("");
-    }
+    setEditSkills((S)=>[...S,inputAdd])
+      setInputAdd("");
   };
 
   const handleDelete = (index) => {
-    setSocialLinks((prev) => prev.filter((_, i) => i !== index));
+    setEditSkills((prev) => prev.filter((_, i) => i !== index));
   };
-
+  
+ const handleSave = () => {
+   setSkills(editSkills)
+   setOpen(false)
+  };
   return (
     <Modal
       open={open}
@@ -86,34 +80,16 @@ export default function TopSkillsModal({
             mb: 2,
           }}
         >
-          {/* Platform */}
-          <TextField
-            select
-            fullWidth
-            size="small"
-            label="Platform"
-            value={platform}
-            onChange={(e) => setPlatform(e.target.value)}
-          >
-            <MenuItem value="LinkedIn">LinkedIn</MenuItem>
+  
 
-            <MenuItem value="GitHub">GitHub</MenuItem>
-
-            <MenuItem value="Twitter">Twitter</MenuItem>
-
-            <MenuItem value="Facebook">Facebook</MenuItem>
-
-            <MenuItem value="Instagram">Instagram</MenuItem>
-          </TextField>
-
-          {/* URL */}
+          {/* skills */}
           <TextField
             fullWidth
             size="small"
-            label="URL"
-            placeholder="https://..."
-            value={url}
-            onChange={(e) => setUrl(e.target.value)}
+            label="skills"
+            placeholder="ex : JavaScript , react . . . . . "
+            value={inputAdd}
+            onChange={(e) => setInputAdd(e.target.value)}
           />
 
           {/* Add */}
@@ -138,10 +114,10 @@ export default function TopSkillsModal({
             flexWrap: "wrap",
           }}
         >
-          {socialLinks.map((item, index) => (
+          {editSkills.map((item, index) => (
             <Chip
               key={index}
-              label={item.platform}
+              label={item}
               onDelete={() => handleDelete(index)}
             />
           ))}
@@ -158,6 +134,7 @@ export default function TopSkillsModal({
           <Button
             variant="contained"
             onClick={() => setOpen(false)}
+            onClick={handleSave}
             sx={{
               textTransform: "none",
               borderRadius: "0.5rem",
