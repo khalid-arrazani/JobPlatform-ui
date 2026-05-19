@@ -50,6 +50,7 @@ export default function TopSkillsCard() {
         >
           Top Skills
           <IconButton
+          onClick={()=>setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
