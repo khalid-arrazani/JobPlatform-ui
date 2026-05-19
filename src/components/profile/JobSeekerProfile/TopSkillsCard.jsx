@@ -1,8 +1,13 @@
 import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+
+import TopSkillsModal from "./TopSkillsModal";
+import { useState } from "react";
+
 export default function TopSkillsCard() {
-  const skills = [
+  const [open,setOpen]=useState(false)
+  const [skills , setSkills] =useState ([
     "JavaScript",
     "React",
     "GSAP",
@@ -11,7 +16,7 @@ export default function TopSkillsCard() {
     "Express",
     "MUI",
     "CSS",
-  ];
+  ])
 
   return (
     <Card
@@ -24,6 +29,13 @@ export default function TopSkillsCard() {
         m: 1,
       }}
     >
+      <TopSkillsModal
+      skills={skills}
+      setSkills={setSkills}
+      open={open}
+      setOpen={setOpen}
+      />
+
       <CardContent sx={{ p: "0.3rem !important" }}>
         {/* Title */}
         <Typography
