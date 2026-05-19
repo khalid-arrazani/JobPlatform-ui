@@ -1,16 +1,18 @@
 import "./ProfileJoobSeeker.css"
+
 import Header from "./header.jsx"
 import AboutMeCard from "./AboutMeCard.jsx"
 import TopSkillsCard from "./TopSkillsCard.jsx"
 import ExperienceCard from "./experiencesCard.jsx";
 import EducationCard from "./EducationCard.jsx";
 
+
 export default function MyProfilePage() {
   return (
     <>
      
     
-       <div className="par" >
+       <div className="par1" >
 
         <div style={{height:"25vh"}}>
           <Header/>

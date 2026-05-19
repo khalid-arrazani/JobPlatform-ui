@@ -1,18 +1,25 @@
-import { Box, Avatar, Typography, Button, Container } from "@mui/material";
-import IconButton from "@mui/material/IconButton";
-
-import GitHubIcon from "@mui/icons-material/GitHub";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import {
+  Box,
+  Typography,
+  Button,
+  Container,
+} from "@mui/material";
 
 import EditIcon from "@mui/icons-material/Edit";
-import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import LocationOnIcon from "@mui/icons-material/LocationOn";
+import EmailIcon from "@mui/icons-material/Email";
+import { useState } from "react";
+
+import UploadProfilePhoto from "./UploadProfilePhoto";
 
 export default function Header() {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
+      
+
       <Container
         sx={{
           borderRadius: "1rem",
@@ -24,7 +31,7 @@ export default function Header() {
           position: "relative",
           overflow: "hidden",
           boxShadow: "0 0.3rem 1rem rgba(0,0,0,0.12)",
-          p: 3,
+          p: " 5.5rem",
           mt: 1,
           height: "100%",
         }}
@@ -52,139 +59,107 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-          <Box
-            sx={{
-              position: "relative",
-              width: "8rem",
-              height: "8rem",
-            }}
-          >
-            {/* Avatar */}
-            <Avatar
-              src="/profile.jpg"
-              sx={{
-                width: "100%",
-                height: "100%",
-                border: "4px solid white",
-              }}
-            />
-
-            {/* Camera Button */}
-            <IconButton
-              sx={{
-                position: "absolute",
-                bottom: "0.2rem",
-                right: "0.2rem",
-
-                width: "2.2rem",
-                height: "2.2rem",
-
-                background: "#312e81",
-                color: "#fff",
-
-                border: "2px solid white",
-
-                "&:hover": {
-                  background: "#4338ca",
-                },
-              }}
-            >
-              <PhotoCameraIcon sx={{ fontSize: "1rem" }} />
-            </IconButton>
-          </Box>
+          <UploadProfilePhoto />
 
           {/* INFO */}
           <Box>
-            <Typography
+            <Box
               sx={{
                 color: "#ffffffd0",
                 fontWeight: "bold",
                 fontSize: "1.3rem",
+                display: "flex",
+                gap: "0.5rem",
+                alignItems: "center",
               }}
             >
               Khalid Arrazani
-            </Typography>
-            <Box
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.3rem",
-              }}
-            >
-              <LocationOnIcon
+              <Box
                 sx={{
-                  fontSize: "1rem",
-                  color: "#ffffffb9",
-                }}
-              />
-
-              <Typography
-                sx={{
-                  color: "#ffffffb9",
-                  fontSize: "0.8rem",
+                  borderRadius: "0.3rem",
+                  fontWeight: 500,
+                  fontSize: "0.80rem",
+                  px: "0.5rem",
+                  background: " #4338ca ",
+                  color: "#eeeeee",
+                  "&:hover": {
+                    transform: "translateY(-0.12rem)",
+                    transition: "0.3s",
+                    boxShadow: "0 0.3rem 0.8rem rgba(99,102,241,0.2)",
+                  },
+                  p: "0.5rem",
                 }}
               >
-                Taroudant, Morocco
-              </Typography>
+                JobSeeker
+              </Box>
             </Box>
             <Typography
               sx={{
-                color: "#dbeafe",
-                fontSize: "0.79rem",
-                mt: "0.1rem",
+                color: "#f0f0f0",
+                fontSize: "0.89rem",
+                mt: "0.3rem",
               }}
             >
-              Frontend Developer
+              Full Stack Developer | React • MUI • Node.js • MongoDB • GSAP
             </Typography>
 
-            {/* SOCIALS */}
             <Box
               sx={{
                 display: "flex",
+                flexDirection: "column",
                 gap: "0.4rem",
-                mt: "0.7rem",
+                mt: "0.4rem",
               }}
             >
-              <IconButton
-                size="small"
+              {/* Location */}
+              <Box
                 sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
                 }}
               >
-                <GitHubIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
+                <LocationOnIcon
+                  sx={{
+                    fontSize: "1.1rem",
+                    color: "#ffffffb9",
+                  }}
+                />
 
-              <IconButton
-                size="small"
+                <Typography
+                  sx={{
+                    color: "#ffffffb9",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  Taroudant, Morocco
+                </Typography>
+              </Box>
+
+              {/* Email */}
+              <Box
                 sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
-
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.3rem",
                 }}
               >
-                <LinkedInIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
-              <IconButton
-                size="small"
-                sx={{
-                  background: "rgba(255,255,255,0.1)",
-                  color: "white",
+                <EmailIcon
+                  sx={{
+                    fontSize: "1.1rem",
+                    color: "#ffffffb9",
+                  }}
+                />
 
-                  "&:hover": {
-                    background: "rgba(255,255,255,0.2)",
-                  },
-                }}
-              >
-                <TwitterIcon sx={{ fontSize: "1rem" }} />
-              </IconButton>
+                <Typography
+                  sx={{
+                    color: "#ffffffb9",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  recruiter@nexhire.com
+                </Typography>
+              </Box>
             </Box>
           </Box>
         </Box>
@@ -192,6 +167,9 @@ export default function Header() {
         {/* BUTTON */}
         <Button
           variant="contained"
+          onClick={() => {
+            setOpen(true);
+          }}
           sx={{
             background: "white",
             color: "#363e53",
