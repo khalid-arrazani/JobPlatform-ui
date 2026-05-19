@@ -12,13 +12,17 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
+import EditProfileModil from "./EditProfileModal";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <>
-      
+      <EditProfileModil
+      open={open}
+      setOpen={setOpen}
+      />
 
       <Container
         sx={{

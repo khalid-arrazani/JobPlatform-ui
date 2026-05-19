@@ -5,6 +5,7 @@ import AboutMeCard from "./AboutMeCard.jsx"
 import TopSkillsCard from "./TopSkillsCard.jsx"
 import ExperienceCard from "./experiencesCard.jsx";
 import EducationCard from "./EducationCard.jsx";
+import SocialLinksCard from "./SocialLinksCard"
 
 
 export default function MyProfilePage() {
@@ -33,6 +34,8 @@ export default function MyProfilePage() {
 
             <TopSkillsCard/>
             <EducationCard/>
+            <SocialLinksCard/>
+
             
           </div>
         </div>

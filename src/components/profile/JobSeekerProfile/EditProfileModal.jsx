@@ -13,7 +13,7 @@ import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
 
 
-export default function EditProfileModil(){
+export default function EditProfileModil({open , setOpen}){
 
 
     return<>
