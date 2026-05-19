@@ -9,6 +9,9 @@ import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 
 import EditIcon from "@mui/icons-material/Edit";
 
+import ExperienceModal from "./ExperienceModal";
+import { useState } from "react";
+
 export default function RecruiterStatsCard() {
   const stats = [
     {
@@ -35,6 +38,8 @@ export default function RecruiterStatsCard() {
       value: "18",
     },
   ];
+  const [open, setOpen] = useState(false);
+  const [experience, setExperience] = useState(false);
 
   return (
     <Card
@@ -47,6 +52,7 @@ export default function RecruiterStatsCard() {
         m: 1,
       }}
     >
+      <ExperienceModal />
       {/* Header */}
       <Box
         sx={{
@@ -100,7 +106,7 @@ export default function RecruiterStatsCard() {
           </IconButton>
         </Typography>
       </Box>
-      
+
       <Box
         sx={{
           display: "grid",

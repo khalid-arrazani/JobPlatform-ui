@@ -7,7 +7,6 @@ import {
   Button,
   Chip,
   MenuItem,
-    Autocomplete,
   
 } from "@mui/material";
 
@@ -17,47 +16,33 @@ export default function SocialLinksModal({
   open,
   setOpen,
   socialLinks,
-   setSocialLinks
+  setSocialLinks,
 }) {
-  const [platform, setPlatform] =
-    useState("");
+  const [platform, setPlatform] = useState("");
 
-  const [url, setUrl] =
-    useState("");
-
- 
+  const [url, setUrl] = useState("");
 
   const handleAdd = () => {
-    if (!platform.trim() || !url.trim())
-      return;
-  const isExist = socialLinks.some(
-  (item) => item.platform === platform
-);
-if(isExist){
-    console.log(55);
-}else{
-    const formattedUrl =
-  url.startsWith("http")
-    ? url
-    : `https://${url}`;
-    const newLink = {
-      platform,
-      url:formattedUrl,
-    };
+    if (!platform.trim() || !url.trim()) return;
+    const isExist = socialLinks.some((item) => item.platform === platform);
+    if (isExist) {
+      console.log(55);
+    } else {
+      const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
+      const newLink = {
+        platform,
+        url: formattedUrl,
+      };
 
-    setSocialLinks((prev) => [
-      ...prev,
-      newLink,
-    ]);
+      setSocialLinks((prev) => [...prev, newLink]);
 
-    setPlatform("");
-    setUrl("");}
+      setPlatform("");
+      setUrl("");
+    }
   };
 
   const handleDelete = (index) => {
-    setSocialLinks((prev) =>
-      prev.filter((_, i) => i !== index)
-    );
+    setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
 
   return (
@@ -108,29 +93,17 @@ if(isExist){
             size="small"
             label="Platform"
             value={platform}
-            onChange={(e) =>
-              setPlatform(e.target.value)
-            }
+            onChange={(e) => setPlatform(e.target.value)}
           >
-            <MenuItem value="LinkedIn">
-              LinkedIn
-            </MenuItem>
+            <MenuItem value="LinkedIn">LinkedIn</MenuItem>
 
-            <MenuItem value="GitHub">
-              GitHub
-            </MenuItem>
+            <MenuItem value="GitHub">GitHub</MenuItem>
 
-            <MenuItem value="Twitter">
-              Twitter
-            </MenuItem>
+            <MenuItem value="Twitter">Twitter</MenuItem>
 
-            <MenuItem value="Facebook">
-              Facebook
-            </MenuItem>
+            <MenuItem value="Facebook">Facebook</MenuItem>
 
-            <MenuItem value="Instagram">
-              Instagram
-            </MenuItem>
+            <MenuItem value="Instagram">Instagram</MenuItem>
           </TextField>
 
           {/* URL */}
@@ -140,9 +113,7 @@ if(isExist){
             label="URL"
             placeholder="https://..."
             value={url}
-            onChange={(e) =>
-              setUrl(e.target.value)
-            }
+            onChange={(e) => setUrl(e.target.value)}
           />
 
           {/* Add */}
@@ -171,9 +142,7 @@ if(isExist){
             <Chip
               key={index}
               label={item.platform}
-              onDelete={() =>
-                handleDelete(index)
-              }
+              onDelete={() => handleDelete(index)}
             />
           ))}
         </Box>
