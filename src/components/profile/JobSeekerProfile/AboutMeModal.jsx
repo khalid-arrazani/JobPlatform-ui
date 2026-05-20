@@ -11,19 +11,51 @@ import {
   Autocomplete,
 } from "@mui/material";
 
-
-
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState } from "react";
 
+export default function AboutMeModal({
+  open,
+  setOpen,
+
+  bio,
+  setBio,
+
+  availability,
+  setAvailability,
+
+  experienceLevel,
+  setExperienceLevel,
+
+  preferredJobType,
+  setPreferredJobType,
+
+  languages,
+  setLanguages
+
+}) {
 
 
-export default function AboutMeModal({ open, setOpen, bio, setBio }) {
-  const languages = ISO6391.getAllNames();
+  const lang = ISO6391.getAllNames();
+
+
+
+  const [changeBio, setChangeBio] = useState(bio);
 
   const [language, setLanguage] = useState("");
 
   const [languagesList, setLanguagesList] = useState([]);
+
+  // -----------------------availability and preferredJobType----------------------------
+
+  const [changeAvailability, setchangeAvailability] = useState(availability);
+
+  const [changePreferredJobType, setChangePreferredJobType] = useState(preferredJobType);
+
+  // const [changeExperienceLevel, setChangeExperienceLevel] = useState(experienceLevel);
+
+
+
 
   const handleAdd = () => {
     if (!language) return;
@@ -35,16 +67,26 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
     setLanguage("");
   };
 
- 
+
+
+  const handleSave = () => {
+
+    setPreferredJobType(changePreferredJobType)
+    setLanguages(languagesList)
+    setBio(changeBio);
+    setOpen(false);
+  };
+
+
 
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
-  // -----------------------availability and preferredJobType----------------------------
 
-  const [availability, setAvailability] = useState("");
 
-  const [preferredJobType, setPreferredJobType] = useState("");
+
+
+
 
   return (
     <>
@@ -114,8 +156,8 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
               </Typography>
 
               <TextField
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
+                value={changeBio}
+                onChange={(e) => setChangeBio(e.target.value)}
                 size="small"
                 fullWidth
                 multiline
@@ -158,10 +200,9 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                   alignItems: "center",
                 }}
               >
-                
                 <Autocomplete
                   disablePortal
-                  options={languages}
+                  options={lang}
                   value={language}
                   slotProps={{
                     popper: {
@@ -233,8 +274,8 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                   select
                   fullWidth
                   size="small"
-                  value={availability}
-                  onChange={(e) => setAvailability(e.target.value)}
+                  value={changeAvailability}
+                  onChange={(e) => setchangeAvailability(e.target.value)}
                 >
                   <MenuItem value="Available Immediately">
                     Available Immediately
@@ -266,8 +307,8 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                   select
                   fullWidth
                   size="small"
-                  value={preferredJobType}
-                  onChange={(e) => setPreferredJobType(e.target.value)}
+                  value={changePreferredJobType}
+                  onChange={(e) => setChangePreferredJobType(e.target.value)}
                 >
                   <MenuItem value="Full-Time">Full-Time</MenuItem>
 
@@ -285,6 +326,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
             </Box>
             {/* Button */}
             <Button
+              onClick={handleSave}
               fullWidth
               variant="contained"
               sx={{
@@ -294,7 +336,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                 textTransform: "none",
                 fontWeight: 500,
                 fontSize: "0.9rem",
-                mt:"1rem",
+                mt: "1rem",
                 background: "#6d28d9",
 
                 "&:hover": {

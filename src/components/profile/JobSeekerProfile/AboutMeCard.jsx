@@ -19,7 +19,18 @@ export default function AboutMeCard() {
 
 
     const [open, setOpen] = useState(false);
-    const [bio, setBio] = useState('')
+    const [bio, setBio] = useState("I'm a motivated web developer focused on building clean, fast and scalable web applications. I enjoy turning ideas into real products.")
+
+    const [availability, setAvailability] = useState("");
+
+    const [experienceLevel,setExperienceLevel] = useState("");
+
+    const [preferredJobType, setPreferredJobType] = useState("");
+
+    const [languages, setLanguages] = useState("");
+
+
+    
 
   const sx = {
     borderRadius: "0.5rem",
@@ -51,9 +62,21 @@ export default function AboutMeCard() {
       <AboutMeModal
       open={open}
       setOpen={setOpen}
+
       bio={bio}
       setBio={setBio}
 
+      availability={availability}
+      setAvailability={setAvailability}
+
+      experienceLevel={experienceLevel}
+      setExperienceLevel={setExperienceLevel}
+
+      preferredJobType={preferredJobType}
+      setPreferredJobType={setPreferredJobType}
+
+      languages={languages}
+      setLanguages={setLanguages}
       />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
         {/* Title */}
@@ -91,8 +114,7 @@ export default function AboutMeCard() {
           variant="body2"
           sx={{ color: "#555", mb: "0.9rem", fontSize: "0.9rem" }}
         >
-          I'm a motivated web developer focused on building clean, fast and
-          scalable web applications. I enjoy turning ideas into real products.
+         {bio}
         </Typography>
 
         <Divider sx={{ my: "0.9rem" }} />
