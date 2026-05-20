@@ -44,7 +44,7 @@ export default function AboutMeModal({
 
   const [language, setLanguage] = useState("");
 
-  const [languagesList, setLanguagesList] = useState([]);
+  const [languagesList, setLanguagesList] = useState(languages);
 
   // -----------------------availability and preferredJobType----------------------------
 
@@ -71,9 +71,12 @@ export default function AboutMeModal({
 
   const handleSave = () => {
 
+    setAvailability(changePreferredJobType)
     setPreferredJobType(changePreferredJobType)
     setLanguages(languagesList)
     setBio(changeBio);
+
+
     setOpen(false);
   };
 

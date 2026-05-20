@@ -21,13 +21,13 @@ export default function AboutMeCard() {
     const [open, setOpen] = useState(false);
     const [bio, setBio] = useState("I'm a motivated web developer focused on building clean, fast and scalable web applications. I enjoy turning ideas into real products.")
 
-    const [availability, setAvailability] = useState("");
+    const [availability, setAvailability] = useState("Available");
 
-    const [experienceLevel,setExperienceLevel] = useState("");
+    const [experienceLevel,setExperienceLevel] = useState("Mid-Level");
 
-    const [preferredJobType, setPreferredJobType] = useState("");
+    const [preferredJobType, setPreferredJobType] = useState("Full-Time");
 
-    const [languages, setLanguages] = useState("");
+    const [languages, setLanguages] = useState(["Arabic","English","French"]);
 
 
     
@@ -140,7 +140,7 @@ export default function AboutMeCard() {
               <Typography
                 sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
               >
-                Available
+                {availability}
               </Typography>
             </Box>
 
@@ -152,7 +152,7 @@ export default function AboutMeCard() {
                 Experience Level
               </Typography>
               <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
-                Mid-Level
+                {experienceLevel}
               </Typography>
             </Box>
           </div>
@@ -174,11 +174,9 @@ export default function AboutMeCard() {
                   mt: "0.3rem",
                 }}
               >
-                <Chip label="Arabic" size="small" sx={sx} />
 
-                <Chip label="English" size="small" sx={sx} />
-
-                <Chip label="French" size="small" sx={sx} />
+                {languages.map((l)=><Chip label={l} size="small" sx={sx} />)}
+         
               </Box>
             </Box>
             <Box>
@@ -190,7 +188,7 @@ export default function AboutMeCard() {
                   Preferred Job Type
                 </Typography>
                 <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
-                  Full-Time
+                  {preferredJobType}
                 </Typography>
               </Box>
             </Box>
