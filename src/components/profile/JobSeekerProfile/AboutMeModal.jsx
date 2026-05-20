@@ -102,14 +102,21 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
             </Box>
 
             <Autocomplete
+              disablePortal
               options={languages}
-              sx={{m:1,animationDuration:"0"}}
+              sx={{ my: 2 }}
+  
+              slotProps={{
+                listbox: {
+                  sx: {
+                    maxHeight: "200px",
+                  },
+                },
+              }}
               renderInput={(params) => (
                 <TextField {...params} label="Language" />
               )}
-
               onChange={(e, value) => console.log(value)}
-              
             />
 
             {/* Button */}
