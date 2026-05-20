@@ -15,6 +15,7 @@ import { useState } from "react";
 export default function TopSkillsModal({
   open,
   setOpen,
+  
   setSkills,
   editSkills,
   setEditSkills

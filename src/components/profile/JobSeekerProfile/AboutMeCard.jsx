@@ -8,7 +8,17 @@ import {
 } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+
+
+import AboutMeModal from "./AboutMeModal.jsx";
+import { useState } from "react";
+
 export default function AboutMeCard() {
+
+
+    const [open, setOpen] = useState(false);
+    const [bio, setBio] = useState('')
+
   const sx = {
     borderRadius: "0.5rem",
     fontWeight: 500,
@@ -36,6 +46,13 @@ export default function AboutMeCard() {
         m: 1,
       }}
     >
+      <AboutMeModal
+      open={open}
+      setOpen={setOpen}
+      bio={bio}
+      setBio={setBio}
+
+      />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
         {/* Title */}
         <Typography
@@ -51,6 +68,7 @@ export default function AboutMeCard() {
         >
           About Me
           <IconButton
+          onClick={()=>setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
