@@ -31,14 +31,9 @@ export default function AboutMeModal({
   setPreferredJobType,
 
   languages,
-  setLanguages
-
+  setLanguages,
 }) {
-
-
   const lang = ISO6391.getAllNames();
-
-
 
   const [changeBio, setChangeBio] = useState(bio);
 
@@ -50,12 +45,11 @@ export default function AboutMeModal({
 
   const [changeAvailability, setchangeAvailability] = useState(availability);
 
-  const [changePreferredJobType, setChangePreferredJobType] = useState(preferredJobType);
+  const [changePreferredJobType, setChangePreferredJobType] =
+    useState(preferredJobType);
 
-  // const [changeExperienceLevel, setChangeExperienceLevel] = useState(experienceLevel);
-
-
-
+  const [changeExperienceLevel, setChangeExperienceLevel] =
+    useState(experienceLevel);
 
   const handleAdd = () => {
     if (!language) return;
@@ -67,29 +61,19 @@ export default function AboutMeModal({
     setLanguage("");
   };
 
-
-
   const handleSave = () => {
-
-    setAvailability(changeAvailability)
-    setPreferredJobType(changePreferredJobType)
-    setLanguages(languagesList)
+    setAvailability(changeAvailability);
+    setPreferredJobType(changePreferredJobType);
+    setLanguages(languagesList);
+    setExperienceLevel(changeExperienceLevel);
     setBio(changeBio);
-
 
     setOpen(false);
   };
 
-
-
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
-
-
-
-
-
 
   return (
     <>
@@ -280,9 +264,7 @@ export default function AboutMeModal({
                   value={changeAvailability}
                   onChange={(e) => setchangeAvailability(e.target.value)}
                 >
-                  <MenuItem value="Available">
-                    Available
-                  </MenuItem>
+                  <MenuItem value="Available">Available</MenuItem>
 
                   <MenuItem value="1 Week Notice">1 Week Notice</MenuItem>
 
@@ -324,6 +306,42 @@ export default function AboutMeModal({
                   <MenuItem value="Internship">Internship</MenuItem>
 
                   <MenuItem value="Remote">Remote</MenuItem>
+                </TextField>
+              </Box>
+              {/* Experience Level */}
+              <Box>
+                <Typography
+                  sx={{
+                    mb: 1,
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Experience Level
+                </Typography>
+
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  value={changeExperienceLevel}
+                  onChange={(e) => setChangeExperienceLevel(e.target.value)}
+                >
+                  <MenuItem value="Entry Level (No Experience)">
+                    Entry Level (No Experience)
+                  </MenuItem>
+                  
+                  <MenuItem value="1-2 Years">1-2 Years</MenuItem>
+
+                  <MenuItem value="1-2 Years">1-2 Years</MenuItem>
+
+                  <MenuItem value="2-4 Years">2-4 Years</MenuItem>
+
+                  <MenuItem value="4-6 Years">4-6 Years</MenuItem>
+
+                  <MenuItem value="6-10 Years">6-10 Years</MenuItem>
+
+                  <MenuItem value="10+ Years">10+ Years</MenuItem>
                 </TextField>
               </Box>
             </Box>

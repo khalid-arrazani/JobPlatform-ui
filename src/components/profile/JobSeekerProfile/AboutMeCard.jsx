@@ -23,7 +23,7 @@ export default function AboutMeCard() {
 
     const [availability, setAvailability] = useState("Available");
 
-    const [experienceLevel,setExperienceLevel] = useState("Mid-Level");
+    const [experienceLevel,setExperienceLevel] = useState("Entry Level (No Experience)");
 
     const [preferredJobType, setPreferredJobType] = useState("Full-Time");
 
@@ -192,6 +192,7 @@ export default function AboutMeCard() {
                 </Typography>
               </Box>
             </Box>
+            
           </div>
         </Box>
       </CardContent>
