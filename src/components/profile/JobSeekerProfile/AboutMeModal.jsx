@@ -2,12 +2,37 @@ import { Card, Typography, Box } from "@mui/material";
 
 import ISO6391 from "iso-639-1";
 
-import { Modal, Divider, TextField, Button, Autocomplete } from "@mui/material";
+import {
+  Chip,
+  Modal,
+  Divider,
+  TextField,
+  Button,
+  Autocomplete,
+} from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import { useState } from "react";
 
 export default function AboutMeModal({ open, setOpen, bio, setBio }) {
   const languages = ISO6391.getAllNames();
+  const [language, setLanguage] = useState("");
+
+  const [languagesList, setLanguagesList] = useState([]);
+
+  const handleAdd = () => {
+    if (!language) return;
+
+    setLanguagesList((prev) =>
+      prev.includes(language) ? prev : [...prev, language],
+    );
+
+    setLanguage("");
+  };
+
+  const handleDelete = (item) => {
+    setLanguagesList((prev) => prev.filter((l) => l !== item));
+  };
 
   return (
     <>
@@ -100,24 +125,73 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                 {bio.length}/700
               </Typography>
             </Box>
+            
+            {/* --languages-- */}
+            <Box>
+              {/* Input + Button row */}
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 1,
+                  alignItems: "center",
+                }}
+              >
+                <Autocomplete
+                  disablePortal
+                  options={languages}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
+                      },
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
+                  }}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Language" size="small" />
+                  )}
+                />
 
-            <Autocomplete
-              disablePortal
-              options={languages}
-              sx={{ my: 2 }}
-  
-              slotProps={{
-                listbox: {
-                  sx: {
-                    maxHeight: "200px",
-                  },
-                },
-              }}
-              renderInput={(params) => (
-                <TextField {...params} label="Language" />
-              )}
-              onChange={(e, value) => console.log(value)}
-            />
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                  }}
+                >
+                  Add
+                </Button>
+              </Box>
+
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
+              </Box>
+            </Box>
 
             {/* Button */}
             <Button
