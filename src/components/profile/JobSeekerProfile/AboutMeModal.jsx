@@ -101,18 +101,17 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
               </Typography>
             </Box>
 
-
             <Autocomplete
               options={languages}
-              getOptionLabel={(option) => option}
+              sx={{m:1,animationDuration:"0"}}
               renderInput={(params) => (
-               <TextField {...params} label="Language" />
+                <TextField {...params} label="Language" />
               )}
 
               onChange={(e, value) => console.log(value)}
+              
             />
 
-            
             {/* Button */}
             <Button
               fullWidth
