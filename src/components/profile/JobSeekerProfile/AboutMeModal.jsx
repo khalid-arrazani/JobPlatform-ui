@@ -1,4 +1,4 @@
-import { Card, Typography, Box } from "@mui/material";
+import { Card, Typography, Box, MenuItem } from "@mui/material";
 
 import ISO6391 from "iso-639-1";
 
@@ -16,6 +16,7 @@ import { useState } from "react";
 
 export default function AboutMeModal({ open, setOpen, bio, setBio }) {
   const languages = ISO6391.getAllNames();
+
   const [language, setLanguage] = useState("");
 
   const [languagesList, setLanguagesList] = useState([]);
@@ -33,6 +34,11 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
+  // -----------------------availability and preferredJobType----------------------------
+
+  const [availability, setAvailability] = useState("");
+
+  const [preferredJobType, setPreferredJobType] = useState("");
 
   return (
     <>
@@ -77,7 +83,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
               />
             </svg>
           </Box>
-          <Divider>About Me</Divider>
+          <Divider sx={{ mt: "1rem" }}>About Me</Divider>
           <Box
             sx={{
               height: "89%",
@@ -106,7 +112,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                 onChange={(e) => setBio(e.target.value)}
                 fullWidth
                 multiline
-                rows={6}
+                rows={3}
                 slotProps={{
                   htmlInput: {
                     maxLength: 700,
@@ -125,7 +131,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                 {bio.length}/700
               </Typography>
             </Box>
-            
+
             {/* --languages-- */}
             <Box>
               {/* Input + Button row */}
@@ -180,7 +186,6 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                   flexWrap: "wrap",
                   gap: 1,
                   my: 2,
-
                 }}
               >
                 {languagesList.map((item, index) => (
@@ -193,6 +198,74 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
               </Box>
             </Box>
 
+            {/* -----------------------availability and preferredJobType----------------------- */}
+            <Box>
+              {/* Availability */}
+              <Box sx={{ mb: 2 }}>
+                <Typography
+                  sx={{
+                    mb: 1,
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Availability
+                </Typography>
+
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  value={availability}
+                  onChange={(e) => setAvailability(e.target.value)}
+                >
+                  <MenuItem value="Available Immediately">
+                    Available Immediately
+                  </MenuItem>
+
+                  <MenuItem value="1 Week Notice">1 Week Notice</MenuItem>
+
+                  <MenuItem value="2 Weeks Notice">2 Weeks Notice</MenuItem>
+
+                  <MenuItem value="1 Month Notice">1 Month Notice</MenuItem>
+
+                  <MenuItem value="Not Available">Not Available</MenuItem>
+                </TextField>
+              </Box>
+
+              {/* Preferred Job Type */}
+              <Box>
+                <Typography
+                  sx={{
+                    mb: 1,
+                    fontWeight: 600,
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Preferred Job Type
+                </Typography>
+
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  value={preferredJobType}
+                  onChange={(e) => setPreferredJobType(e.target.value)}
+                >
+                  <MenuItem value="Full-Time">Full-Time</MenuItem>
+
+                  <MenuItem value="Part-Time">Part-Time</MenuItem>
+
+                  <MenuItem value="Freelance">Freelance</MenuItem>
+
+                  <MenuItem value="Contract">Contract</MenuItem>
+
+                  <MenuItem value="Internship">Internship</MenuItem>
+
+                  <MenuItem value="Remote">Remote</MenuItem>
+                </TextField>
+              </Box>
+            </Box>
             {/* Button */}
             <Button
               fullWidth
@@ -204,13 +277,12 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                 textTransform: "none",
                 fontWeight: 500,
                 fontSize: "0.9rem",
-
+                mt:"1rem",
                 background: "#6d28d9",
 
                 "&:hover": {
                   background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
                 },
-                mb: "2rem",
               }}
             >
               Continue
