@@ -1,18 +1,16 @@
 import { Card, Typography, Box } from "@mui/material";
 
+import ISO6391 from "iso-639-1";
 
-
-import { Modal, Divider, TextField, Button } from "@mui/material";
+import { Modal, Divider, TextField, Button, Autocomplete } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
+export default function AboutMeModal({ open, setOpen, bio, setBio }) {
+  const languages = ISO6391.getAllNames();
 
-
-
-
-export default function AboutMeModal({open, setOpen,bio, setBio}){
- 
-return <>
+  return (
+    <>
       <Modal
         sx={{
           display: "flex",
@@ -24,7 +22,7 @@ return <>
       >
         <Card
           sx={{
-            height: "55vh",
+            height: "auto",
             width: "50vw",
             outline: "none",
             borderRadius: "1rem",
@@ -102,6 +100,19 @@ return <>
                 {bio.length}/700
               </Typography>
             </Box>
+
+
+            <Autocomplete
+              options={languages}
+              getOptionLabel={(option) => option}
+              renderInput={(params) => (
+               <TextField {...params} label="Language" />
+              )}
+
+              onChange={(e, value) => console.log(value)}
+            />
+
+            
             {/* Button */}
             <Button
               fullWidth
@@ -130,5 +141,6 @@ return <>
           </Box>
         </Card>
       </Modal>
-</>
+    </>
+  );
 }

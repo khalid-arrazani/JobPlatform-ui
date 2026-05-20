@@ -8,15 +8,15 @@ import {
 } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
-import ISO6391 from 'iso-639-1'
+
 
 
 import AboutMeModal from "./AboutMeModal.jsx";
 import { useState } from "react";
 
 export default function AboutMeCard() {
-  
-console.log(ISO6391.getAllNames())
+
+
 
     const [open, setOpen] = useState(false);
     const [bio, setBio] = useState('')
