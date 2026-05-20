@@ -11,8 +11,12 @@ import {
   Autocomplete,
 } from "@mui/material";
 
+
+
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState } from "react";
+
+
 
 export default function AboutMeModal({ open, setOpen, bio, setBio }) {
   const languages = ISO6391.getAllNames();
@@ -30,6 +34,8 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
 
     setLanguage("");
   };
+
+ 
 
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
@@ -110,6 +116,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
               <TextField
                 value={bio}
                 onChange={(e) => setBio(e.target.value)}
+                size="small"
                 fullWidth
                 multiline
                 rows={3}
@@ -134,7 +141,16 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
 
             {/* --languages-- */}
             <Box>
-              {/* Input + Button row */}
+              <Typography
+                sx={{
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  mb: "0.5rem",
+                  color: "#111827",
+                }}
+              >
+                languages*
+              </Typography>
               <Box
                 sx={{
                   display: "flex",
@@ -142,6 +158,7 @@ export default function AboutMeModal({ open, setOpen, bio, setBio }) {
                   alignItems: "center",
                 }}
               >
+                
                 <Autocomplete
                   disablePortal
                   options={languages}
