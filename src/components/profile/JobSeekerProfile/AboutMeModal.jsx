@@ -71,7 +71,7 @@ export default function AboutMeModal({
 
   const handleSave = () => {
 
-    setAvailability(changePreferredJobType)
+    setAvailability(changeAvailability)
     setPreferredJobType(changePreferredJobType)
     setLanguages(languagesList)
     setBio(changeBio);
@@ -280,8 +280,8 @@ export default function AboutMeModal({
                   value={changeAvailability}
                   onChange={(e) => setchangeAvailability(e.target.value)}
                 >
-                  <MenuItem value="Available Immediately">
-                    Available Immediately
+                  <MenuItem value="Available">
+                    Available
                   </MenuItem>
 
                   <MenuItem value="1 Week Notice">1 Week Notice</MenuItem>
