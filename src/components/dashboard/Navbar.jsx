@@ -1,12 +1,6 @@
-import MainList from "./mainList.jsx"
+import MainList from "./mainList.jsx";
 
-import {
-  AppBar,
-  Toolbar,
-  Box,
-  IconButton,
-  Avatar
-} from "@mui/material";
+import { AppBar, Toolbar, Box, IconButton, Avatar } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import WorkIcon from "@mui/icons-material/Work";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
@@ -19,87 +13,66 @@ import Drawer from "@mui/material/Drawer";
 
 import logo from "../../assets/title.png";
 
-export default function Navbar({part, setPart}) {
-
+export default function Navbar({ part, setPart }) {
   const [open, setOpen] = React.useState(false);
-  
-
   return (
     <AppBar
-  position="static"
-  sx={{
-    background: "#376681",
-    height:"8%",
-    padding:"0px"
-  }}
-
->
-  <Toolbar
-    sx={{
-      display: "flex",
-      justifyContent: "space-between",
-      height: "80%"
-    }}
-    style={{minHeight:"100%"}}
-  >
-
-
-    <Box sx={{ display: "flex", alignItems: "center" }}>
-      <img src={logo} width={"150"} alt="" />
-    </Box>
-    
-  <Tabs
-  value={part}
-  onChange={(e, newValue) =>
-    setPart(newValue)
-  }
-  textColor="inherit"
-  sx={{
-    "& .MuiTabs-indicator": {
-      backgroundColor: "#5590ff",
-      height: "3px",
-    },
-  }}
->
-  <Tab
-    label="Jobs"
-    sx={{ color: "white" }}
-  />
-
-  <Tab
-    label="Companies"
-    sx={{ color: "white" }}
-  />
-</Tabs>
-
-    {/*  Right side */}
-    <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-
-      <IconButton>
-        <NotificationsIcon sx={{ color: "white" }} />
-      </IconButton>
-
-      <IconButton>
-        <WorkIcon sx={{ color: "white" }} />
-      </IconButton>
-
-      <IconButton onClick={() => setOpen(true)}>
-        <ViewHeadlineIcon sx={{ color: "white" }} />
-      </IconButton>
-
-      <Drawer
-        open={open}
-        anchor="right"
-        onClose={() => setOpen(false)}
+      position="static"
+      sx={{
+        background: "#376681",
+        height: "8%",
+        padding: "0px",
+      }}
+    >
+      <Toolbar
+        sx={{
+          display: "flex",
+          justifyContent: "space-between",
+          height: "80%",
+        }}
+        style={{ minHeight: "100%" }}
       >
-        <MainList toggleDrawer={setOpen} />
-      </Drawer>
+        <Box sx={{ display: "flex", alignItems: "center" }}>
+          <img src={logo} width={"150"} alt="" />
+        </Box>
 
-      <Avatar src="" sx={{ width: 35, height: 35 }} />
+        <Tabs
+          value={part}
+          onChange={(e, newValue) => setPart(newValue)}
+          textColor="inherit"
+          sx={{
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#5590ff",
+              height: "3px",
+            },
+          }}
+        >
+          <Tab label="Jobs" sx={{ color: "white" }} />
 
-    </Box>
+          <Tab label="Companies" sx={{ color: "white" }} />
+        </Tabs>
 
-  </Toolbar>
-</AppBar>
+        {/*  Right side */}
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+          <IconButton>
+            <NotificationsIcon sx={{ color: "white" }} />
+          </IconButton>
+
+          <IconButton>
+            <WorkIcon sx={{ color: "white" }} />
+          </IconButton>
+
+          <IconButton onClick={() => setOpen(true)}>
+            <ViewHeadlineIcon sx={{ color: "white" }} />
+          </IconButton>
+
+          <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
+            <MainList toggleDrawer={setOpen} />
+          </Drawer>
+
+          <Avatar src="" sx={{ width: 35, height: 35 }} />
+        </Box>
+      </Toolbar>
+    </AppBar>
   );
 }
