@@ -8,8 +8,12 @@ import {
 import {  IconButton } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 
+import ExperiencesModal from "./experiencesModal";
+import { useState } from "react";
+
 export default function ExperienceCard() {
-  const experiences = [
+  const [open,setOpen] = useState(false)
+  const [experiences,setExperiences] = useState([
     {
       role: "Frontend Developer",
       company: "NexHire",
@@ -20,7 +24,9 @@ export default function ExperienceCard() {
       company: "Freelance",
       period: "2024 - 2025",
     },
-  ];
+  ])
+
+  
 
   return (
 
@@ -33,6 +39,13 @@ export default function ExperienceCard() {
         width: "44vw",m:1
       }}
     >
+      <ExperiencesModal
+       open={open}
+       setOpen={setOpen}
+       experiences={experiences}
+       setExperiences={setExperiences}
+      />
+
       <CardContent sx={{ p: "0.75rem !important" }}>
         {/* Title */}
         <Typography
@@ -47,6 +60,7 @@ export default function ExperienceCard() {
         >
           Experience
           <IconButton
+          onClick={()=>setOpen(true)}
   sx={{
     background: "#160a7e00",
     color: "#6e6e6e",

@@ -6,6 +6,7 @@ import {
   TextField,
   Button,
   IconButton,
+  Divider
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -15,14 +16,14 @@ export default function experiencesModal({
   open,
   setOpen,
   experiences,
-  setExperiences,
-}) {
+  setExperiences
+}){
 
-  const [role, setRole] = useState("");
+  const [role, setRole] = useState("")
 
-  const [company, setCompany] = useState("");
+  const [company, setCompany] = useState("")
 
-  const [period, setPeriod] = useState("");
+  const [period, setPeriod] = useState("")
 
   const handleAddExperience = () => {
     if (!role || !company || !period) return;
@@ -88,22 +89,9 @@ export default function experiencesModal({
               />
             </svg>
           </Box>
-          <Divider sx={{ mt: "1rem" }}>Education</Divider>
+          <Divider sx={{ mt: "1rem" }}>Experience</Divider>
 
-          <Card
-            sx={{
-              width: "35rem",
-              maxWidth: "92vw",
 
-              p: 3,
-
-              borderRadius: "1rem",
-
-              maxHeight: "90vh",
-
-              overflowY: "auto",
-            }}
-          >
             {/* Title */}
             <Typography
               sx={{
@@ -234,7 +222,7 @@ export default function experiencesModal({
               </Button>
             </Box>
           </Card>
-        </Card>
+       
       </Modal>
     </>
   );
