@@ -19,11 +19,10 @@ import Drawer from "@mui/material/Drawer";
 
 import logo from "../../assets/title.png";
 
-export default function Navbar() {
+export default function Navbar({part, setPart}) {
 
   const [open, setOpen] = React.useState(false);
-  const [tap, setTap] = React.useState(0);
- 
+  
 
   return (
     <AppBar
@@ -50,9 +49,9 @@ export default function Navbar() {
     </Box>
     
   <Tabs
-  value={tap}
+  value={part}
   onChange={(e, newValue) =>
-    setTap(newValue)
+    setPart(newValue)
   }
   textColor="inherit"
   sx={{
