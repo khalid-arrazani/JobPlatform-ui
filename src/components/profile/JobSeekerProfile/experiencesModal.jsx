@@ -89,7 +89,7 @@ export default function experiencesModal({
               />
             </svg>
           </Box>
-          <Divider sx={{ mt: "1rem" }}>Experience</Divider>
+          <Divider sx={{ mt: "1rem" }}>Experience  </Divider>
 
 
             {/* Title */}
