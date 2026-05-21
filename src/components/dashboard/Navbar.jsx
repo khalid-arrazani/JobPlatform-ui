@@ -73,7 +73,7 @@ export default function Navbar() {
   />
 </Tabs>
 
-    {/* ⚡ Right side */}
+    {/*  Right side */}
     <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
 
       <IconButton>
