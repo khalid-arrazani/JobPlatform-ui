@@ -50,18 +50,28 @@ export default function Navbar() {
     </Box>
     
   <Tabs
-    value={tap}
-    textColor="inherit"
-      sx={{
+  value={tap}
+  onChange={(e, newValue) =>
+    setTap(newValue)
+  }
+  textColor="inherit"
+  sx={{
     "& .MuiTabs-indicator": {
       backgroundColor: "#5590ff",
-      height: "3px"
-    }
+      height: "3px",
+    },
   }}
-  >
-    <Tab onClick={()=>{setTap(0)}} label="Jobs" sx={{ color: "white" }} />
-    <Tab onClick={()=>{setTap(1)}} label="Companies" sx={{ color: "white" }} />
-  </Tabs>
+>
+  <Tab
+    label="Jobs"
+    sx={{ color: "white" }}
+  />
+
+  <Tab
+    label="Companies"
+    sx={{ color: "white" }}
+  />
+</Tabs>
 
     {/* ⚡ Right side */}
     <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>

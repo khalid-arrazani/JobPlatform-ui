@@ -4,11 +4,24 @@ import DashboardLayout from "./pages/DashboardPage"
 import ProfilePage from "./pages/ProfilePage";
 import CompleteProfile from "./pages/CompleteProfilePage";
 
+import {
+  Routes,
+  Route,
+} from "react-router-dom";
+
 function App() {
   return (
-    <>
-      <ProfilePage/>
-    </>
+<Routes>
+      <Route
+        path="/"
+        element={<DashboardLayout />}
+      />
+
+      <Route
+        path="/profile"
+        element={<ProfilePage />}
+      />
+    </Routes>
   );
 }
 
