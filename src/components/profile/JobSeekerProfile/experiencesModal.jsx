@@ -24,6 +24,7 @@ export default function experiencesModal({
   const [company, setCompany] = useState("")
 
   const [period, setPeriod] = useState("")
+ 
 
   const handleAddExperience = () => {
     if (!role || !company || !period) return;
