@@ -67,7 +67,6 @@ export default function AboutMeModal({
     setLanguages(languagesList);
     setExperienceLevel(changeExperienceLevel);
     setBio(changeBio);
-
     setOpen(false);
   };
 
@@ -82,19 +81,23 @@ export default function AboutMeModal({
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          pb:"2rem"
         }}
         open={open}
         onClose={() => setOpen(false)}
+
       >
         <Card
           sx={{
-            height: "auto",
+           maxHeight: "80vh",
             width: "50vw",
             outline: "none",
-            borderRadius: "1rem",
+           
             background: "#fffffff8",
 
             p: "0.5rem",
+            overflow:'auto'
+
           }}
         >
           <Box
@@ -261,6 +264,7 @@ export default function AboutMeModal({
                   select
                   fullWidth
                   size="small"
+                  sx={{ mb: 1 }}
                   value={changeAvailability}
                   onChange={(e) => setchangeAvailability(e.target.value)}
                 >
@@ -292,6 +296,7 @@ export default function AboutMeModal({
                   select
                   fullWidth
                   size="small"
+                  sx={{ mb: 2 }}
                   value={changePreferredJobType}
                   onChange={(e) => setChangePreferredJobType(e.target.value)}
                 >
@@ -308,6 +313,8 @@ export default function AboutMeModal({
                   <MenuItem value="Remote">Remote</MenuItem>
                 </TextField>
               </Box>
+
+
               {/* Experience Level */}
               <Box>
                 <Typography
@@ -330,7 +337,7 @@ export default function AboutMeModal({
                   <MenuItem value="Entry Level (No Experience)">
                     Entry Level (No Experience)
                   </MenuItem>
-                  
+
                   <MenuItem value="1-2 Years">1-2 Years</MenuItem>
 
                   <MenuItem value="1-2 Years">1-2 Years</MenuItem>
@@ -345,6 +352,8 @@ export default function AboutMeModal({
                 </TextField>
               </Box>
             </Box>
+
+
             {/* Button */}
             <Button
               onClick={handleSave}
@@ -365,7 +374,7 @@ export default function AboutMeModal({
                 },
               }}
             >
-              Continue
+              Save
               <TrendingFlatOutlinedIcon
                 sx={{ position: "relative", right: "-40%" }}
               />
