@@ -18,7 +18,7 @@ export default function JobSeekerSettingsSidebar() {
       <Paper
         elevation={0}
         sx={{
-          width: "18rem",
+          width: "100%",
 
           border: "1px solid #e5e7eb",
 
