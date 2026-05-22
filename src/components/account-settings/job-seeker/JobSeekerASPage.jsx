@@ -1,4 +1,4 @@
-import "./JobSeekerCPPage.css";
+import "./JobSeekerASStyle.css";
 import { Card } from "@mui/material";
 
 import Header from "./header";
