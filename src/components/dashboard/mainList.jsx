@@ -29,7 +29,7 @@ export default function MainList() {
         }}
         role="presentation"
       >
-        {/* 🔝 Profile Section */}
+        {/* Profile Section */}
         <Box
           sx={{
             textAlign: "center",
@@ -56,7 +56,7 @@ export default function MainList() {
           </Typography>
         </Box>
 
-        {/* 🧭 Navigation */}
+        {/*  Navigation */}
         <List>
           <ListItem disablePadding>
             <ListItemButton
@@ -96,7 +96,7 @@ export default function MainList() {
 
         <Divider sx={{ backgroundColor: "rgba(255,255,255,0.1)" }} />
 
-        {/* 🚪 Logout */}
+        {/*  Logout */}
         <List>
           <ListItem disablePadding>
             <ListItemButton
