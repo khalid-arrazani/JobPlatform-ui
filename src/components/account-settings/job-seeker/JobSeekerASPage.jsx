@@ -15,13 +15,18 @@ export default function JobSeekerASPage() {
           <Header />
 
           <div className="container1">
-            <div className="leftSide">
 
+
+            <div className="leftSide">
+              -
             </div>
             
-            <div className="rightSide">
 
+            <div className="rightSide">
+              
             </div>
+
+
           </div>
         </Card>
       </div>

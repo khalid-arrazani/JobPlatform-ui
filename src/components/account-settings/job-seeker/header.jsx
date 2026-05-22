@@ -1,8 +1,9 @@
 import logoTitle from "../../../assets/Logo/logo.png";
 
-import { Box, Button } from "@mui/material";
+import { Box, Button, Typography } from "@mui/material";
 
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import SettingsIcon from "@mui/icons-material/Settings";
 
 export default function Header() {
   return (
@@ -11,21 +12,21 @@ export default function Header() {
         <Box
           sx={{
             height: "100%",
-            width: "100%",
+            width: "10%",
             display: "flex",
             alignItems: "center",
           }}
         >
           <img
             src={logoTitle}
-            width={"3%"}
-            style={{ marginLeft: "2%" }}
+            width={"25%"}
+            style={{ marginLeft: "10%", marginRight: "5%" }}
             alt=""
           />
 
           <svg
-            width="8%"
-            height="30%"
+            width="6rem"
+            height="100%"
             viewBox="0 0 80 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -35,6 +36,31 @@ export default function Header() {
               fill="black"
             />
           </svg>
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+          }}
+        >
+          <SettingsIcon
+            sx={{
+              color: "#7072c7",
+              fontSize: "1.5rem",
+            }}
+          />
+
+          <Typography
+            sx={{
+              fontSize: "1.5rem",
+              color: "#111827cb",
+            }}
+            style={{fontWeight:"400"}}
+          >
+            Account Settings
+          </Typography>
         </Box>
 
         <Button
@@ -51,8 +77,9 @@ export default function Header() {
 
             px: 1.5,
             py: 1.5,
-            mr:"1rem",
-            minWidth: "fit-content",
+            mr: "1rem",
+            width: "rem",
+            fontSize: "0.9rem",
 
             "&:hover": {
               background: "#eef2ff",
