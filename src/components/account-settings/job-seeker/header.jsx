@@ -2,7 +2,7 @@ import logoTitle from "../../../assets/Logo/logo.png";
 
 import { Box, Button } from "@mui/material";
 
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 export default function Header() {
   return (
@@ -47,11 +47,11 @@ export default function Header() {
 
             color: "#4f46e5",
 
-            borderRadius: "0.7rem",
+            borderRadius: "0.5rem",
 
             px: 1.5,
-            py: 0.8,
-
+            py: 1.5,
+            mr:"1rem",
             minWidth: "fit-content",
 
             "&:hover": {
