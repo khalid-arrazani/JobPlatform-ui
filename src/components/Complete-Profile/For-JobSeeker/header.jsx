@@ -3,7 +3,7 @@ import logoTitle from "../../../assets/Logo/logo.png";
 export default function Header() {
   return (
     <>
-      <div className="header">
+      <div className="Jsheader">
         <img
           src={logoTitle}
           width={"3%"}

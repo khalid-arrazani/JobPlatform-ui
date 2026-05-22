@@ -5,10 +5,10 @@ import { Box, Button, Typography } from "@mui/material";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import SettingsIcon from "@mui/icons-material/Settings";
 
-export default function Header() {
+export default function SettingesHeader() {
   return (
     <>
-      <div className="header">
+      <div className="SGheader">
         <Box
           sx={{
             height: "100%",

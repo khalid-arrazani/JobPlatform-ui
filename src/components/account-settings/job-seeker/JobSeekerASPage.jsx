@@ -1,7 +1,7 @@
 import "./JobSeekerASStyle.css";
 import { Card } from "@mui/material";
 
-import Header from "./header";
+import Header from "./SettingesHeader";
 import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
 
 export default function JobSeekerASPage() {

@@ -31,7 +31,7 @@ export default function WhyCompleteProfileCard() {
 
   return <>
  
-   <Box sx={{width:"85%",display:"flex",flexDirection:"column",alignItems:"center"}}>
+   <Box sx={{width:"85%",display:"flex",flexDirection:"column",alignItems:"flex-start"}}>
       {/* Title */}
       <Typography
         sx={{
@@ -41,7 +41,7 @@ export default function WhyCompleteProfileCard() {
           mt:'2rem',
           mb:'1rem',
           width:"100%",
-          paddingLeft:"3rem"
+          paddingLeft:"1.7rem"
 
         }}
       >
@@ -63,7 +63,8 @@ export default function WhyCompleteProfileCard() {
               display: "flex",
               alignItems: "flex-start",
               gap: "1rem",
-              width:"100%"
+              width:"100%",
+              ml:"0.8rem"
             }}
           >
             {/* Icon */}

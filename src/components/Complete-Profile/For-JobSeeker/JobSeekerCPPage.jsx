@@ -18,10 +18,10 @@ export default function JobSeekerCPPage() {
           <Header />
 
           <div className="container1">
-            <div className="leftSide">
+            <div className="leftSidecp">
               <OfficePart />
               <CompleteProfileDs />
-              <WhyCompleteProfileCard />
+              <WhyCompleteProfileCard/>
             </div>
             
             <div className="rightSide">

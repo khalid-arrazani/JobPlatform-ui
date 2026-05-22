@@ -2,7 +2,8 @@ import {
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText
+  ListItemText,
+  Divider
 } from "@mui/material";
 
 import PersonIcon from "@mui/icons-material/Person";
@@ -37,7 +38,7 @@ export default function JobSeekerSettingsSidebar() {
               borderRadius: "0.7rem",
               mb: 1,
               mt: 1,
-             background :part == 'profile' ? "#fffafad5": 'none'
+             background :part == 'profile' ? "#3131312a": 'none'
               
             }}
           >
@@ -55,7 +56,7 @@ export default function JobSeekerSettingsSidebar() {
             sx={{
               borderRadius: "0.7rem",
               mb: 1,
-              background :part == 'security' ? "#fffafad5": 'none'
+              background :part == 'security' ? "#3131312a": 'none'
             }}
           >
             <ListItemIcon>
@@ -72,7 +73,7 @@ export default function JobSeekerSettingsSidebar() {
             sx={{
               borderRadius: "0.7rem",
               mb: 1,
-              background :part == 'social' ? "#fffafad5": 'none'
+              background :part == 'social' ? "#3131312a": 'none'
 
             }}
           >
@@ -90,7 +91,7 @@ export default function JobSeekerSettingsSidebar() {
             sx={{
               borderRadius: "0.7rem",
               mb: 1,
-              background :part == 'cv' ? "#fffafad5": 'none'
+              background :part == 'cv' ? "#3131312a": 'none'
 
             }}
           >
@@ -100,7 +101,7 @@ export default function JobSeekerSettingsSidebar() {
 
             <ListItemText primary="CV / Resume" />
           </ListItemButton>
-
+         <Divider></Divider>
           {/* Delete */}
           <ListItemButton
           onClick={handleDelete}
