@@ -7,9 +7,9 @@ import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
 export default function JobSeekerASPage() {
   return (
     <>
-      <div className="par">
+      <div className="JobSeekerASpar">
         <Card
-          className="container"
+          className="JobSeekerAScontainer"
           sx={{ borderRadius: "0.6rem", boxShadow: "none", }}
         >
           <Header />

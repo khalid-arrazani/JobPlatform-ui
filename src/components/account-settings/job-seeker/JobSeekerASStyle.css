@@ -1,4 +1,4 @@
-.par {
+.JobSeekerASpar {
   width: 100vw;
   height: 100vh;
 background: linear-gradient(
@@ -11,7 +11,7 @@ background: linear-gradient(
   justify-content: center;
   align-items: center;
 }
-.container {
+.JobSeekerAScontainer {
   width: 98%;
   height: 98%;
   border: solid 0.2px #2e2d2d4b;

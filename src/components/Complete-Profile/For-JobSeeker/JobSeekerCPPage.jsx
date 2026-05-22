@@ -10,9 +10,9 @@ import BasicInformationSection from "./BasicInformationSection";
 export default function JobSeekerCPPage() {
   return (
     <>
-      <div className="par">
+      <div className="JobSeekerpar">
         <Card
-          className="container"
+          className="JobSeekercontainer"
           sx={{ borderRadius: "0.6rem", boxShadow: "none" }}
         >
           <Header />
