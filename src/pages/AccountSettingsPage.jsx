@@ -1,12 +1,11 @@
 
-import A
-
+import AccountSettingsLayout from "../layouts/AccountSettingsLayout"
 
 
 export default function AccountSettingsPage() {
   return (
-    <CompleteProfileLayout>
-      <JobSeekerCPPage/>
-    </CompleteProfileLayout>
+    <AccountSettingsLayout>
+      
+    </AccountSettingsLayout>
   );
 }
