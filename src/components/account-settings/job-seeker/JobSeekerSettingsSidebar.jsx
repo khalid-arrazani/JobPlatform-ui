@@ -2,8 +2,7 @@ import {
   List,
   ListItemButton,
   ListItemIcon,
-  ListItemText,
-  Paper,
+  ListItemText
 } from "@mui/material";
 
 import PersonIcon from "@mui/icons-material/Person";
@@ -15,24 +14,15 @@ import DeleteIcon from "@mui/icons-material/Delete";
 export default function JobSeekerSettingsSidebar() {
   return (
     <>
-      <Paper
-        elevation={0}
-        sx={{
-          width: "100%",
-
-          border: "1px solid #e5e7eb",
-
-          borderRadius: "1rem",
-
-          p: 1,
-        }}
-      >
-        <List>
+       
+        <List sx={{height:"100%",p:"0.5rem"}}>
           {/* Profile Information */}
+
           <ListItemButton
             sx={{
               borderRadius: "0.7rem",
-              mb: 0.5,
+              mb: 1,
+              mt: 1,
             }}
           >
             <ListItemIcon>
@@ -46,7 +36,7 @@ export default function JobSeekerSettingsSidebar() {
           <ListItemButton
             sx={{
               borderRadius: "0.7rem",
-              mb: 0.5,
+              mb: 1,
             }}
           >
             <ListItemIcon>
@@ -60,7 +50,7 @@ export default function JobSeekerSettingsSidebar() {
           <ListItemButton
             sx={{
               borderRadius: "0.7rem",
-              mb: 0.5,
+              mb: 1,
             }}
           >
             <ListItemIcon>
@@ -74,7 +64,7 @@ export default function JobSeekerSettingsSidebar() {
           <ListItemButton
             sx={{
               borderRadius: "0.7rem",
-              mb: 0.5,
+              mb: 1,
             }}
           >
             <ListItemIcon>
@@ -94,16 +84,18 @@ export default function JobSeekerSettingsSidebar() {
               "&:hover": {
                 background: "#fef2f2",
               },
+              position:"absolute",
+              bottom:"2rem"
             }}
           >
-            <ListItemIcon>
+            <ListItemIcon >
               <DeleteIcon sx={{ color: "#dc2626" }} />
             </ListItemIcon>
 
             <ListItemText primary="Delete Account" />
           </ListItemButton>
         </List>
-      </Paper>
+       
     </>
   );
 }
