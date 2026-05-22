@@ -10,7 +10,7 @@ export default function JobSeekerASPage() {
       <div className="par">
         <Card
           className="container"
-          sx={{ borderRadius: "0.6rem", boxShadow: "none" }}
+          sx={{ borderRadius: "0.6rem", boxShadow: "none", }}
         >
           <Header />
 
