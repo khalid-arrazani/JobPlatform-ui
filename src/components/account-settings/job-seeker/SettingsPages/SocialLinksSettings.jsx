@@ -111,86 +111,12 @@ export default function SocialLinksSettings() {
         </Typography>
       </Box>
 
-      {/* Existing Links */}
-      <Box sx={{ mb: 4 }}>
-        {socialLinks.map(
-          (link, index) => (
-            <Box
-              key={index}
-              sx={{
-                border:
-                  "1px solid #e5e7eb",
-
-                borderRadius: "0.9rem",
-
-                p: 2,
-
-                mb: 1.5,
-
-                display: "flex",
-
-                justifyContent:
-                  "space-between",
-
-                alignItems: "center",
-              }}
-            >
-              <Box
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: 2,
-                }}
-              >
-                <Box
-                  sx={{
-                    color: "#4f46e5",
-                  }}
-                >
-                  {getIcon(
-                    link.platform
-                  )}
-                </Box>
-
-                <Box>
-                  <Typography
-                    sx={{
-                      fontWeight: 600,
-                    }}
-                  >
-                    {link.platform}
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      fontSize:
-                        "0.85rem",
-
-                      color: "#6b7280",
-                    }}
-                  >
-                    {link.url}
-                  </Typography>
-                </Box>
-              </Box>
-
-              <IconButton
-                onClick={() =>
-                  handleDelete(index)
-                }
-              >
-                <DeleteIcon />
-              </IconButton>
-            </Box>
-          )
-        )}
-      </Box>
 
       {/* Add Link */}
       <Typography
         sx={{
-          fontWeight: 700,
-          mb: 2,
+            fontWeight: 700,
+            mb: 2,
         }}
       >
         Add New Link
@@ -198,14 +124,14 @@ export default function SocialLinksSettings() {
 
       <Box
         sx={{
-          display: "grid",
-
-          gridTemplateColumns: {
-            xs: "1fr",
-            md: "1fr 1fr",
-          },
-
-          gap: 2,
+            display: "grid",
+            
+            gridTemplateColumns: {
+                xs: "1fr",
+                md: "1fr 1fr",
+            },
+            
+            gap: 2,
         }}
       >
         {/* Platform */}
@@ -238,26 +164,100 @@ export default function SocialLinksSettings() {
         variant="contained"
         onClick={handleAddLink}
         sx={{
-          mt: 3,
-
-          textTransform: "none",
-
-          borderRadius: "0.8rem",
-
-          background: "#4f46e5",
-
-          fontWeight: 600,
-
-          boxShadow: "none",
-
-          "&:hover": {
-            background: "#4338ca",
+            mt: 3,
+            
+            textTransform: "none",
+            
+            borderRadius: "0.8rem",
+            
+            background: "#4f46e5",
+            
+            fontWeight: 600,
+            
             boxShadow: "none",
-          },
+            
+            "&:hover": {
+                background: "#4338ca",
+                boxShadow: "none",
+            },
         }}
       >
         Add Link
       </Button>
+        {/* Existing Links */}
+        <Box sx={{ mt: 4 }}>
+          {socialLinks.map(
+            (link, index) => (
+              <Box
+                key={index}
+                sx={{
+                  border:
+                    "1px solid #e5e7eb",
+  
+                  borderRadius: "0.9rem",
+  
+                  p: 2,
+  
+                  mt: 1.5,
+  
+                  display: "flex",
+  
+                  justifyContent:
+                    "space-between",
+  
+                  alignItems: "center",
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      color: "#4f46e5",
+                    }}
+                  >
+                    {getIcon(
+                      link.platform
+                    )}
+                  </Box>
+  
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                      }}
+                    >
+                      {link.platform}
+                    </Typography>
+  
+                    <Typography
+                      sx={{
+                        fontSize:
+                          "0.85rem",
+  
+                        color: "#6b7280",
+                      }}
+                    >
+                      {link.url}
+                    </Typography>
+                  </Box>
+                </Box>
+  
+                <IconButton
+                  onClick={() =>
+                    handleDelete(index)
+                  }
+                >
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+            )
+          )}
+        </Box>
     </Card>
   );
 }
