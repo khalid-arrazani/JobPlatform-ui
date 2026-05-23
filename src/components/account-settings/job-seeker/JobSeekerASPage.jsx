@@ -7,8 +7,12 @@ import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
 import ProfileInformation from "./SettingsPages/ProfileInformation";
 import SecuritySettings from "./SettingsPages/SecuritySettings";
 import SocialLinksSettings from "./SettingsPages/SocialLinksSettings";
+import CVSettings from "./SettingsPages/CVSettings";
+import { useState } from "react";
 
 export default function JobSeekerASPage() {
+  const [tap, setTap] = useState()
+  console.log(tap);
   return (
     <>
       <div className="JobSeekerASpar">
@@ -19,12 +23,13 @@ export default function JobSeekerASPage() {
           <SettingesHeader />
 
           <div className="container1">
+
             <div className="leftSide">
-              <JobSeekerSettingsSidebar />
+              <JobSeekerSettingsSidebar setTap={setTap} />
             </div>
 
             <div className="JobSeekerrightSide">
-              <SocialLinksSettings />
+              <CVSettings/>
             </div>
           </div>
         </Card>

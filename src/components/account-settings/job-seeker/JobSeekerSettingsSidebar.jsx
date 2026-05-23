@@ -13,10 +13,10 @@ import DescriptionIcon from "@mui/icons-material/Description";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useState } from "react";
 
-export default function JobSeekerSettingsSidebar() {
+export default function JobSeekerSettingsSidebar({setTap}) {
 
     const [part , setPart]=useState("profile") 
-
+    setTap(part)
     const handleProfile = ()=>{setPart("profile")}
     const handleSecurity = ()=>{setPart("security")}
     const handleSocial = ()=>{setPart("social")}
