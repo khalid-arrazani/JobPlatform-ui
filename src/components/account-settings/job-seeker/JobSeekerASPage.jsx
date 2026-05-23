@@ -3,8 +3,10 @@ import { Card } from "@mui/material";
 
 import SettingesHeader from "./SettingesHeader";
 import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
+
 import ProfileInformation from "./SettingsPages/ProfileInformation";
 import SecuritySettings from "./SettingsPages/SecuritySettings";
+import SocialLinksSettings from "./SettingsPages/SocialLinksSettings";
 
 export default function JobSeekerASPage() {
   return (

@@ -13,15 +13,9 @@ export default function SecuritySettings() {
       elevation={0}
       sx={{
         flex: 1,
-
-        
-
-        
-
-        
       }}
     >
-
+      {/* Header */}
       <Box sx={{ mb: 4 }}>
         <Typography
           sx={{
@@ -43,6 +37,87 @@ export default function SecuritySettings() {
         </Typography>
       </Box>
 
+      {/* Change Email */}
+      <Box sx={{ mb: 4 }}>
+        <Typography
+          sx={{
+            fontWeight: 700,
+            mb: 2,
+            fontSize: "1rem",
+          }}
+        >
+          Change Email
+        </Typography>
+
+        <Box
+          sx={{
+            display: "grid",
+            gap: 2,
+          }}
+        >
+          <TextField
+            fullWidth
+            size="small"
+            type="email"
+            label="Current Email"
+          />
+
+          <TextField
+            fullWidth
+            size="small"
+            type="email"
+            label="New Email"
+          />
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            gap: 1.5,
+            mt: 3,
+            flexWrap: "wrap",
+          }}
+        >
+          <Button
+            variant="contained"
+            sx={{
+              textTransform: "none",
+              borderRadius: "0.8rem",
+              background: "#4f46e5",
+              fontWeight: 600,
+              boxShadow: "none",
+
+              "&:hover": {
+                background: "#4338ca",
+                boxShadow: "none",
+              },
+            }}
+          >
+            Update Email
+          </Button>
+
+          <Button
+            variant="outlined"
+            sx={{
+              textTransform: "none",
+              borderRadius: "0.8rem",
+              fontWeight: 600,
+              borderColor: "#d1d5db",
+              color: "#111827",
+
+              "&:hover": {
+                borderColor: "#4f46e5",
+              },
+            }}
+          >
+            Verify Email
+          </Button>
+        </Box>
+      </Box>
+
+      <Divider sx={{ my: 4 }} />
+
+      {/* Change Password */}
       <Box sx={{ mb: 4 }}>
         <Typography
           sx={{
@@ -57,7 +132,6 @@ export default function SecuritySettings() {
         <Box
           sx={{
             display: "grid",
-
             gridTemplateColumns: {
               xs: "1fr",
               md: "1fr",
@@ -91,15 +165,10 @@ export default function SecuritySettings() {
           variant="contained"
           sx={{
             mt: 3,
-
             textTransform: "none",
-
             borderRadius: "0.8rem",
-
             background: "#4f46e5",
-
             fontWeight: 600,
-
             boxShadow: "none",
 
             "&:hover": {
@@ -114,6 +183,7 @@ export default function SecuritySettings() {
 
       <Divider sx={{ my: 4 }} />
 
+      {/* Active Sessions */}
       <Box>
         <Typography
           sx={{
@@ -138,16 +208,13 @@ export default function SecuritySettings() {
         <Box
           sx={{
             border: "1px solid #e5e7eb",
-
             borderRadius: "0.9rem",
-
             p: 2,
-
             display: "flex",
-
             justifyContent: "space-between",
-
             alignItems: "center",
+            flexWrap: "wrap",
+            gap: 2,
           }}
         >
           <Box>
