@@ -3,7 +3,8 @@ import { Card } from "@mui/material";
 
 import SettingesHeader from "./SettingesHeader";
 import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
-import ProfileInformation from "./SettingsPage/ProfileInformation";
+import ProfileInformation from "./SettingsPages/ProfileInformation";
+import SecuritySettings from "./SettingsPages/SecuritySettings";
 
 export default function JobSeekerASPage() {
   return (
@@ -21,7 +22,7 @@ export default function JobSeekerASPage() {
             </div>
 
             <div className="JobSeekerrightSide">
-              <ProfileInformation />
+              <SecuritySettings />
             </div>
           </div>
         </Card>
