@@ -24,7 +24,7 @@ export default function JobSeekerASPage() {
             </div>
 
             <div className="JobSeekerrightSide">
-              <SecuritySettings />
+              <SocialLinksSettings />
             </div>
           </div>
         </Card>
