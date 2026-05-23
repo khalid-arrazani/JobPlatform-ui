@@ -14,11 +14,11 @@ export default function SecuritySettings() {
       sx={{
         flex: 1,
 
-        border: "1px solid #e5e7eb",
+        
 
-        borderRadius: "1.2rem",
+        
 
-        p: 3,
+        
       }}
     >
 
