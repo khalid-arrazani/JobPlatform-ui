@@ -12,7 +12,27 @@ import { useState } from "react";
 
 export default function JobSeekerASPage() {
   const [tap, setTap] = useState()
-  console.log(tap);
+ 
+
+const renderTab = () => {
+  switch (tap) {
+    case "profile":
+      return <ProfileInformation />;
+
+    case "security":
+      return <SecuritySettings />;
+
+    case "social":
+      return <SocialLinksSettings />;
+
+    case "cv":
+      return <CVSettings />;
+
+    default:
+      return <ProfileInformation />;
+  }
+};
+
   return (
     <>
       <div className="JobSeekerASpar">
@@ -29,7 +49,8 @@ export default function JobSeekerASPage() {
             </div>
 
             <div className="JobSeekerrightSide">
-              <CVSettings/>
+              
+             {renderTab()}
             </div>
           </div>
         </Card>
