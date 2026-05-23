@@ -39,14 +39,13 @@ background: linear-gradient(
   border-right: solid 0.1px #332f2f13;
 
 }
-.rightSide {
+.JobSeekerrightSide{
   width: 68%;
-  background-color: rgba(252, 252, 252, 0);
-  display: flex;
-  justify-content: center;
-  align-items: center;
  overflow: auto;
- padding-bottom: 10px;
+ padding: 1rem;
+
+ 
+ 
 
 }
 .discr{

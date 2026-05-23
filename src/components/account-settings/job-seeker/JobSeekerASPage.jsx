@@ -1,8 +1,9 @@
 import "./JobSeekerASStyle.css";
 import { Card } from "@mui/material";
 
-import Header from "./SettingesHeader";
+import SettingesHeader from "./SettingesHeader";
 import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
+import ProfileInformation from "./SettingsPage/ProfileInformation";
 
 export default function JobSeekerASPage() {
   return (
@@ -12,18 +13,20 @@ export default function JobSeekerASPage() {
           className="JobSeekerAScontainer"
           sx={{ borderRadius: "0.6rem", boxShadow: "none", }}
         >
-          <Header />
+          <SettingesHeader />
 
           <div className="container1">
 
 
             <div className="leftSide">
           <JobSeekerSettingsSidebar />
-              
             </div>
             
 
-            <div className="rightSide">
+            <div className="JobSeekerrightSide">
+
+
+            <ProfileInformation />
               
             </div>
 
