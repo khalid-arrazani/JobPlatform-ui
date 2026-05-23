@@ -11,26 +11,18 @@ export default function JobSeekerASPage() {
       <div className="JobSeekerASpar">
         <Card
           className="JobSeekerAScontainer"
-          sx={{ borderRadius: "0.6rem", boxShadow: "none", }}
+          sx={{ borderRadius: "0.6rem", boxShadow: "none" }}
         >
           <SettingesHeader />
 
           <div className="container1">
-
-
             <div className="leftSide">
-          <JobSeekerSettingsSidebar />
+              <JobSeekerSettingsSidebar />
             </div>
-            
 
             <div className="JobSeekerrightSide">
-
-
-            <ProfileInformation />
-              
+              <ProfileInformation />
             </div>
-
-
           </div>
         </Card>
       </div>

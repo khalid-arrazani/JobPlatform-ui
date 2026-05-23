@@ -25,7 +25,7 @@ export default function UploadProfilePhoto() {
 
 const [preview, setPreview] = useState("");
 
-const [imageFile, setImageFile] = useState(null);
+// const [imageFile, setImageFile] = useState(null);
 
 const handleSave = () => {
   const canvas =
@@ -40,11 +40,7 @@ const handleSave = () => {
 
 
     setPreview(previewUrl);
-
-  
-    setImageFile(blob);
-
-
+    // setImageFile(blob);
     setOpen(false);
   }, "image/png");
 };

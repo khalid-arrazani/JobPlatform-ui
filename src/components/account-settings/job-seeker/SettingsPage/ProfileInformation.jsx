@@ -3,11 +3,9 @@ import {
   Typography,
   TextField,
   Button,
-  Avatar,
-  
 } from "@mui/material";
 
-import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+
 
 import UploadProfilePhoto from "./UploadProfilePhoto.jsx"
 
@@ -236,7 +234,6 @@ export default function ProfileInformation() {
         <Typography
           sx={{
             mb: 1,
-
             fontWeight: 600,
 
             fontSize: "0.92rem",
@@ -248,7 +245,8 @@ export default function ProfileInformation() {
         <TextField
           fullWidth
           multiline
-          rows={5}
+          size="small"
+          rows={3}
           placeholder="Tell us about yourself..."
         />
       </Box>

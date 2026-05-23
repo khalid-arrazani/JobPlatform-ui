@@ -84,6 +84,7 @@ export default function MainList() {
 
           <ListItem disablePadding>
             <ListItemButton
+            onClick={() => navigate("/AccountSettings")}
               sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
             >
               <ListItemIcon sx={{ color: "white" }}>
