@@ -2,10 +2,13 @@ import logoTitle from "../../../assets/Logo/logo.png";
 
 import { Box, Button, Typography } from "@mui/material";
 
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import HomeIcon from "@mui/icons-material/Home";
+import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
+import {  useNavigate } from "react-router-dom";
 
 export default function SettingesHeader() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="SGheader">
@@ -63,31 +66,70 @@ export default function SettingesHeader() {
           </Typography>
         </Box>
 
-        <Button
-          startIcon={<ArrowBackIcon />}
-          variant="text"
-          sx={{
-            textTransform: "none",
+<Box
+  sx={{
+    display: "flex",
+    alignItems: "center",
+    gap: 1,
+    m:"1rem"
+  }}
+>
+  {/* Home */}
+  <Button
+    startIcon={<HomeIcon />}
+    variant="text"
+    onClick={() => navigate("/")}
+    sx={{
+      textTransform: "none",
 
-            fontWeight: 600,
+      fontWeight: 600,
 
-            color: "#4f46e5",
+      color: "#4f46e5",
 
-            borderRadius: "0.5rem",
+      borderRadius: "0.5rem",
 
-            px: 1.5,
-            py: 1.5,
-            mr: "1rem",
-            width: "rem",
-            fontSize: "0.9rem",
+      px: 1.5,
+      py: 1,
 
-            "&:hover": {
-              background: "#eef2ff",
-            },
-          }}
-        >
-          Back to Profile
-        </Button>
+      fontSize: "0.9rem",
+
+      "&:hover": {
+        background: "#eef2ff",
+      },
+    }}
+  >
+    Home
+  </Button>
+
+  {/* My Profile */}
+  <Button
+    startIcon={<PersonIcon />}
+    variant="text"
+    onClick={() => navigate("/Profile")}
+    sx={{
+      textTransform: "none",
+
+      fontWeight: 600,
+
+      color: "#4f46e5",
+
+      borderRadius: "0.5rem",
+
+      px: 1.5,
+      py: 1,
+
+      fontSize: "0.9rem",
+
+      "&:hover": {
+        background: "#eef2ff",
+      },
+    
+    
+    }}
+  >
+    My Profile
+  </Button>
+</Box>
       </div>
     </>
   );
