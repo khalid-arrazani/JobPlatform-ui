@@ -125,25 +125,6 @@ export default function ProfileInformation() {
           />
         </Box>
 
-        {/* Email */}
-        <Box>
-          <Typography
-            sx={{
-              mb: 1,
-              fontWeight: 600,
-              fontSize: "0.92rem",
-            }}
-          >
-            Email Address
-          </Typography>
-
-          <TextField
-            fullWidth
-            size="small"
-            placeholder="khalid@email.com"
-          />
-        </Box>
-
         {/* Phone */}
         <Box>
           <Typography
@@ -207,26 +188,6 @@ export default function ProfileInformation() {
           />
         </Box>
 
-        {/* Website */}
-        <Box>
-          <Typography
-            sx={{
-              mb: 1,
-
-              fontWeight: 600,
-
-              fontSize: "0.92rem",
-            }}
-          >
-            Website
-          </Typography>
-
-          <TextField
-            fullWidth
-            size="small"
-            placeholder="https://yourwebsite.com"
-          />
-        </Box>
       </Box>
 
       {/* Bio */}

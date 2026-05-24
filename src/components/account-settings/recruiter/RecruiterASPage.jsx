@@ -2,12 +2,12 @@ import "./RecruiterASStyle.css";
 import { Card } from "@mui/material";
 
 import SettingesHeader from "./SettingesHeader";
-import JobSeekerSettingsSidebar from "./JobSeekerSettingsSidebar";
+import RecruiterSettingsSidebar from "./RecruiterSettingsSidebar";
 
-// import ProfileInformation from "./SettingsPages/ProfileInformation";
+import ProfileInformation from "./SettingsPages/ProfileInformation";
 // import SecuritySettings from "./SettingsPages/SecuritySettings";
 // import SocialLinksSettings from "./SettingsPages/SocialLinksSettings";
-// import CVSettings from "./SettingsPages/CVSettings";
+import CompanyInformation from "./SettingsPages/CompanyInformation";
 
 import { useState } from "react";
 
@@ -45,11 +45,13 @@ export default function RecruiterASPage() {
           <div className="container1">
 
             <div className="leftSide">
-          <JobSeekerSettingsSidebar setTap={setTap} />
+          <RecruiterSettingsSidebar tap={tap} setTap={setTap} />
              
             </div>
 
-            <div className="RecruiterrightSide"></div>
+            <div className="RecruiterrightSide">
+              <CompanyInformation/>
+            </div>
 
           </div>
         </Card>
