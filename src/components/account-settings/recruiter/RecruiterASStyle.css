@@ -1,4 +1,4 @@
-.JobSeekerASpar {
+.RecruiterASpar {
   width: 100vw;
   height: 100vh;
 background: linear-gradient(
@@ -11,7 +11,7 @@ background: linear-gradient(
   justify-content: center;
   align-items: center;
 }
-.JobSeekerAScontainer {
+.RecruiterAScontainer {
   width: 98%;
   height: 98%;
   border: solid 0.2px #2e2d2d4b;
@@ -39,7 +39,7 @@ background: linear-gradient(
   border-right: solid 0.1px #332f2f13;
 
 }
-.JobSeekerrightSide{
+.RecruiterrightSide{
   width: 68%;
  overflow: auto;
  padding: 1rem;
