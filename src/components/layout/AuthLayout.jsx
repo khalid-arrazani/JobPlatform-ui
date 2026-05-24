@@ -16,7 +16,7 @@ export default function AuthLayout({ children }) {
     <Box
       sx={{
         minHeight: "100vh",
-        background: "#a782e7",
+        background: "#b184ff",
         display: "flex",
         alignItems: "center",
       }}
