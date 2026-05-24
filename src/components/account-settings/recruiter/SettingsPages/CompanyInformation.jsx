@@ -4,19 +4,14 @@ import {
   TextField,
   Button,
   Card,
-  Avatar,
 } from "@mui/material";
 
 import UploadCompanyPhotocopy from "./UploadCompanyPhotocopy.jsx"
 
 
-import { useState } from "react";
+
 
 export default function CompanyInformation() {
-  const [companyLogo, setCompanyLogo] =
-    useState("");
-
-
 
   return (
     <Card

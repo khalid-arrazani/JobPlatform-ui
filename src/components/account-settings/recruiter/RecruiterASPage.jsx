@@ -5,8 +5,8 @@ import SettingesHeader from "./SettingesHeader";
 import RecruiterSettingsSidebar from "./RecruiterSettingsSidebar";
 
 import ProfileInformation from "./SettingsPages/ProfileInformation";
-// import SecuritySettings from "./SettingsPages/SecuritySettings";
-// import SocialLinksSettings from "./SettingsPages/SocialLinksSettings";
+import SecuritySettings from "./SettingsPages/SecuritySettings";
+import SocialLinksSettings from "./SettingsPages/SocialLinksSettings";
 import CompanyInformation from "./SettingsPages/CompanyInformation";
 
 import { useState } from "react";
@@ -50,7 +50,7 @@ export default function RecruiterASPage() {
             </div>
 
             <div className="RecruiterrightSide">
-              <CompanyInformation/>
+              <SocialLinksSettings/>
             </div>
 
           </div>
