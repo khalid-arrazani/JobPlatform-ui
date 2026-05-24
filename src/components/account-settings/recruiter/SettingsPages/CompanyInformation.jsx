@@ -7,21 +7,16 @@ import {
   Avatar,
 } from "@mui/material";
 
+import UploadProfilePhoto from "./UploadProfilePhoto.jsx"
+
+
 import { useState } from "react";
 
 export default function CompanyInformation() {
   const [companyLogo, setCompanyLogo] =
     useState("");
 
-  const handleLogoChange = (e) => {
-    const file = e.target.files[0];
 
-    if (file) {
-      setCompanyLogo(
-        URL.createObjectURL(file)
-      );
-    }
-  };
 
   return (
     <Card
@@ -103,112 +98,7 @@ export default function CompanyInformation() {
         </Button>
       </Box>
 
-      {/* Logo Upload */}
-      <Box
-        sx={{
-          border:
-            "1px solid #e5e7eb",
-
-          borderRadius: "1rem",
-
-          p: 3,
-
-          mb: 4,
-        }}
-      >
-        <Typography
-          sx={{
-            fontWeight: 600,
-
-            mb: 2,
-          }}
-        >
-          Company Logo
-        </Typography>
-
-        <Box
-          sx={{
-            display: "flex",
-
-            alignItems: "center",
-
-            gap: 3,
-
-            flexWrap: "wrap",
-          }}
-        >
-          <Avatar
-            src={companyLogo}
-            variant="rounded"
-            sx={{
-              width: "6rem",
-
-              height: "6rem",
-
-              borderRadius: "1rem",
-
-              background: "#312e81",
-
-              fontSize: "2rem",
-
-              fontWeight: 700,
-            }}
-          >
-            C
-          </Avatar>
-
-          <Box>
-            <Button
-              component="label"
-              variant="outlined"
-              sx={{
-                textTransform:
-                  "none",
-
-                borderRadius:
-                  "0.7rem",
-
-                fontWeight: 600,
-
-                borderColor:
-                  "#d1d5db",
-
-                color: "#111827",
-
-                "&:hover": {
-                  borderColor:
-                    "#4f46e5",
-                },
-              }}
-            >
-              Change Logo
-
-              <input
-                hidden
-                type="file"
-                accept="image/*"
-                onChange={
-                  handleLogoChange
-                }
-              />
-            </Button>
-
-            <Typography
-              sx={{
-                mt: 1,
-
-                color: "#6b7280",
-
-                fontSize: "0.85rem",
-              }}
-            >
-              JPG, PNG or SVG. Max
-              size 2MB.
-            </Typography>
-          </Box>
-        </Box>
-      </Box>
-
+     <UploadProfilePhoto/>
       {/* Inputs */}
       <Box
         sx={{
