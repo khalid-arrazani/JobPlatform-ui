@@ -7,7 +7,7 @@ import {
   Avatar,
 } from "@mui/material";
 
-import UploadProfilePhoto from "./UploadProfilePhoto.jsx"
+import UploadCompanyPhotocopy from "./UploadCompanyPhotocopy.jsx"
 
 
 import { useState } from "react";
@@ -98,7 +98,12 @@ export default function CompanyInformation() {
         </Button>
       </Box>
 
-     <UploadProfilePhoto/>
+
+      {/* UploadPhoto */}
+     <UploadCompanyPhotocopy/>
+
+
+
       {/* Inputs */}
       <Box
         sx={{
@@ -255,8 +260,9 @@ export default function CompanyInformation() {
 
         <TextField
           fullWidth
+          size="small"
           multiline
-          rows={5}
+          rows={3}
           placeholder="Tell candidates about your company..."
         />
       </Box>
