@@ -14,24 +14,24 @@ import { useState } from "react";
 export default function RecruiterASPage() {
   const [tap, setTap] = useState()
 
-  // const renderTab = () => {
-  //   switch (tap) {
-  //     case "profile":
-  //       return <ProfileInformation />;
+  const renderTab = () => {
+    switch (tap) {
+      case "profile":
+        return <ProfileInformation />;
 
-  //     case "security":
-  //       return <SecuritySettings />;
+      case "security":
+        return <SecuritySettings />;
 
-  //     case "social":
-  //       return <SocialLinksSettings />;
+      case "social":
+        return <SocialLinksSettings />;
 
-  //     case "cv":
-  //       return <CVSettings />;
+      case "company":
+        return <CompanyInformation />;
 
-  //     default:
-  //       return <ProfileInformation />;
-  //   }
-  // };
+      default:
+        return <ProfileInformation />;
+    }
+  };
 
   return (
     <>
@@ -50,7 +50,7 @@ export default function RecruiterASPage() {
             </div>
 
             <div className="RecruiterrightSide">
-              <SocialLinksSettings/>
+              {renderTab()}
             </div>
 
           </div>
