@@ -19,7 +19,7 @@ import {
   useContext,
 } from "react";
 
-import { loginUser } from "../../logic/api/auth/login";
+import { RegisterUser } from "../../logic/api/auth/login";
 
 import { AuthContext } from "../../logic/context/AuthContext";
 
@@ -35,10 +35,10 @@ export default function SingUpPage() {
     const { dispatch } =
       useContext(AuthContext);
   
-      const handleLogin = async () => {
+      const handleRegister = async () => {
       try {console.log("Logged In");
         const data =
-          await loginUser({
+          await RegisterUser({
             email,
             password,
             role,
@@ -57,11 +57,11 @@ export default function SingUpPage() {
     };
 
   function cardRecruiter() {
-    setrole("Recruiter");
+    setrole("recruiter");
   }
 
   function cardJobSeeker() {
-    setrole("JobSeeker");
+    setrole("jobSeeker");
   }
   return (
     <>
@@ -109,6 +109,9 @@ export default function SingUpPage() {
 
           <TextField
             label="Username"
+           onChange={(e) =>
+          setUsername(e.target.value)
+        }
             variant="standard"
             size="small"
             sx={{
@@ -128,6 +131,9 @@ export default function SingUpPage() {
           <TextField
             label="Email"
             variant="standard"
+            onChange={(e) =>
+          setEmail(e.target.value)
+        }
             sx={{
               input: {
                 color: "white",
@@ -145,6 +151,9 @@ export default function SingUpPage() {
           <TextField
             label="Password"
             type="password"
+            onChange={(e) =>
+          setPassword(e.target.value)
+        }
             variant="standard"
             sx={{
               input: {
@@ -251,6 +260,7 @@ export default function SingUpPage() {
 
           <Button
             variant="contained"
+            onClick={handleRegister}
             sx={{
               mt: 2,
               height: "55px",
