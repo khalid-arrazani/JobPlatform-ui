@@ -15,8 +15,46 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
+import {
+  useContext,
+} from "react";
+
+import { loginUser } from "../../logic/api/auth/login";
+
+import { AuthContext } from "../../logic/context/AuthContext";
+
 export default function SingUpPage() {
+  
+
+
   const [role, setrole] = useState("JobSeeker");
+  const [email,setEmail] = useState("")
+  const [username,setUsername] = useState("")
+  const [password,setPassword] = useState("")
+  
+    const { dispatch } =
+      useContext(AuthContext);
+  
+      const handleLogin = async () => {
+      try {console.log("Logged In");
+        const data =
+          await loginUser({
+            email,
+            password,
+            role,
+            username
+          });
+  
+        dispatch({
+          type: "LOGIN",
+          payload: data,
+        });
+  
+        
+      } catch (error) {
+        console.log(error);
+      }
+    };
 
   function cardRecruiter() {
     setrole("Recruiter");

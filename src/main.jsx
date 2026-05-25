@@ -6,6 +6,8 @@ import {
   BrowserRouter,
 } from "react-router-dom";
 
+import AuthProvider from "./logic/context/AuthContext.jsx";
+
 import "./index.css";
 
 import App from "./App.jsx";
@@ -15,7 +17,9 @@ createRoot(
 ).render(
   <StrictMode>
     <BrowserRouter>
+    <AuthProvider>
       <App />
+    </AuthProvider>
     </BrowserRouter>
   </StrictMode>
 );
