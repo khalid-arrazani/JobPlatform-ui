@@ -9,14 +9,7 @@ import "@fontsource/roboto/700.css";
 
 import { useState } from "react";
 
-import {
-  Button,
-  Card,
-  CardContent,
-  Container,
-  Typography,
-  Box,
-} from "@mui/material";
+import { Button, Card, Typography, Box } from "@mui/material";
 
 export default function WelcomePage() {
   const [sign, setSign] = useState("Sign Up");
@@ -99,7 +92,7 @@ export default function WelcomePage() {
         sx={{
           height: "85vh",
           width: "50%",
-          background: "#1f1b1b2c",
+          background: "#0e080e",
           borderTopRightRadius: "20%",
           borderBottomRightRadius: "20%",
           borderBottomLeftRadius: "0%",
@@ -114,8 +107,7 @@ export default function WelcomePage() {
         }}
       >
         <Box sx={{ height: "100%", width: "100%", zIndex: "55" }}>
-          
-          <div style={{ width: "100%", height: "30%", background: "#3f33336c" }}>
+          <div style={{ width: "100%", height: "30%" }}>
             <Box
               sx={{
                 display: "flex",
@@ -123,6 +115,7 @@ export default function WelcomePage() {
                 alignItems: "center",
                 height: "100%",
                 width: "100%",
+                pt: "2rem",
               }}
             >
               <img
@@ -146,102 +139,132 @@ export default function WelcomePage() {
             </Box>
           </div>
 
+          <div style={{ width: "100%", height: "40%" }}>
 
-
-          <div
-            style={{ width: "100%", height: "20%", background: "#1e862f" }}
-          ></div>
-          <div
-            style={{ width: "100%", height: "20%", background: "#18615b" }}
-          ></div>
-          <div
-            style={{ width: "100%", height: "30%", background: "#080c03" }}
-          ></div>
-        </Box>
-
-        {/* box logo */}
-
-        {/* title */}
-        {/* <Typography
-          style={{
-            width: "100%",
-            zIndex: 10,
-            position: "absolute",
-            color: "#e4e4e4",
-            top: "50%",
-            textAlign: "center",
-            fontSize: "180%",
-            fontFamily: "monospace",
-          }}
-        >
-          Your Next Career Starts Here
-        </Typography> */}
-
-        <div className="gradient" />
-
-        {/* <Container
-          sx={{
-            height: "100%",
-            width: "100%",
-            background: "#1d1a1a",
-            margin: "0px",
-          }}
-          style={{
-            margin: "0px",
-            padding: "0px",
-          }}
-        >
-          <CardContent
-            sx={{ height: "50%", width: "100%", zIndex: 8888 }}
-            style={{
-              margin: "0px",
-              padding: "0px",
-            }}
-          >
-            Subtitle
+            {/* Title */}
             <Typography
-            sx={{
-              color: "#d1d5db",
+              sx={{
+                color: "#ffffff",
+                fontWeight: 700,
+                fontSize: {
+                  xs: "1rem",
+                  md: "1.5rem",
+                },
+                textAlign: "center",
+                lineHeight: 1.2,
+                mb: 2,
+                textShadow: "0px 4px 20px rgba(0,0,0,0.45)",
+              }}
+            >
+              Your Next Career Starts Here
+            </Typography>
 
-              width: {
-                xs: "95%",
-                md: "70%",
-              },
+            {/* Subtitle */}
+            <Typography
+              sx={{
+                color: "#d1d5db",
+                width: "80%",
+                textAlign: "center",
+                fontSize: {
+                  xs: "0.95rem",
+                  md: "1.05rem",
+                },
+                lineHeight: 1.8,
+                fontWeight: 400,
+                justifySelf: "center",
+              }}
+            >
+              Discover opportunities, connect with top companies, and build your
+              professional future with a modern hiring platform designed for job
+              seekers and recruiters.
+            </Typography>
 
-              textAlign: "center",
+            {/* Stats */}
+            <Box
+              sx={{
+                display: "flex",
 
-              fontSize: {
-                xs: "0.95rem",
-                md: "1.05rem",
-              },
+                gap: 4,
 
-              lineHeight: 1.8,
+                mt: 3,
 
-              fontWeight: 400,
-            }}
-          >
-            Discover opportunities,
-            connect with top
-            companies, and build your
-            professional future with
-            a modern hiring platform
-            designed for job seekers
-            and recruiters.
-          </Typography>
-          </CardContent>
+                flexWrap: "wrap",
 
-          button 
-          <CardContent
-            sx={{
-              height: "50%",
-              width: "100%",
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              zIndex: 5,
-            }}
+                justifyContent: "center",
+              }}
+            >
+              <Box textAlign="center">
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  10K+
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#cbd5e1",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Active Jobs
+                </Typography>
+              </Box>
+
+              <Box textAlign="center">
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  5K+
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#cbd5e1",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Companies
+                </Typography>
+              </Box>
+
+              <Box textAlign="center">
+                <Typography
+                  sx={{
+                    color: "#fff",
+                    fontWeight: 700,
+                    fontSize: "1.5rem",
+                  }}
+                >
+                  25K+
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#cbd5e1",
+                    fontSize: "0.9rem",
+                  }}
+                >
+                  Candidates
+                </Typography>
+              </Box>
+            </Box>
+          </div>
+
+          <div
             style={{
-              padding: 0,
+              width: "100%",
+              height: "30%",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
             <Button
@@ -260,8 +283,10 @@ export default function WelcomePage() {
             >
               {sign}
             </Button>
-          </CardContent>
-        </Container> */}
+          </div>
+        </Box>
+
+        <div className="gradient" />
       </Card>
     </>
   );
