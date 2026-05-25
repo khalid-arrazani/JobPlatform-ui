@@ -7,6 +7,5 @@ export const loginUser = async (
     "/auth/login",
     formData
   );
-
   return response.data;
 };
