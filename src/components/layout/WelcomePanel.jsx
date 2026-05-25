@@ -115,7 +115,7 @@ export default function WelcomePage() {
                 alignItems: "center",
                 height: "100%",
                 width: "100%",
-                pt: "2rem",
+                pt: "1rem",
               }}
             >
               <img
