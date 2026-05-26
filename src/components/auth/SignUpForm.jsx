@@ -251,6 +251,7 @@ export default function SingUpPage() {
           <Button
            
             variant="contained"
+            disabled={()=>{if(!email || password.length<6 || username.length < 3){return true}}}
             onClick={handleRegister}
             sx={{
               mt: 2,
@@ -259,7 +260,7 @@ export default function SingUpPage() {
               borderRadius: "15px",
               fontSize: "18px",
               textTransform: "none",
-              
+              background:"#481a5a"
             }}
           >
             Create Account
