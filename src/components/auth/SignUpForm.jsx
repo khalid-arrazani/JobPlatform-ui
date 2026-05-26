@@ -249,6 +249,7 @@ export default function SingUpPage() {
           </Box>
 
           <Button
+           
             variant="contained"
             onClick={handleRegister}
             sx={{
@@ -258,8 +259,7 @@ export default function SingUpPage() {
               borderRadius: "15px",
               fontSize: "18px",
               textTransform: "none",
-              background:
-                "linear-gradient(to right,rgb(28, 43, 56),rgb(132, 0, 255))",
+              
             }}
           >
             Create Account
