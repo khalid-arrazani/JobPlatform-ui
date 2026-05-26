@@ -13,42 +13,46 @@ import {
   Typography,
 } from "@mui/material";
 
-import {
-  useState,
-  useContext,
-} from "react";
+import { useState, useContext } from "react";
 
 import { loginUser } from "../../logic/api/auth/login";
 
 import { AuthContext } from "../../logic/context/AuthContext";
 
-
 export default function SignIn() {
-const [email,setEmail] = useState("")
-const [password,setPassword] = useState("")
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
 
-  const { dispatch , setSnackBar} =
-    useContext(AuthContext);
+  const { dispatch, setSnackBar } = useContext(AuthContext);
 
-    const handleLogin = async () => {
-    try {console.log("Logged In");
-      const data =
-     await loginUser({
-          email,
-          password,
-        });
-
+  const handleLogin = async () => {
+    try {
+      console.log("Logged In");
+      const data = await loginUser({
+        email,
+        password,
+      });
+      
+    setSnackBar({
+      open: true,
+      message: data.message,
+      severity: "success",
+    });
       dispatch({
         type: "LOGIN",
         payload: data,
       });
-    } catch (error) {
 
+
+    } catch (error) {
       console.log(error.response.data);
-      setSnackBar({})
+      setSnackBar({
+        open: true,
+        message: error.response.data.message,
+        severity: "error",
+      });
     }
   };
-
 
   return (
     <>
@@ -107,18 +111,14 @@ const [password,setPassword] = useState("")
           >
             <TextField
               label="Email"
-                   onChange={(e) =>
-          setEmail(e.target.value)
-        }
+              onChange={(e) => setEmail(e.target.value)}
               variant="standard"
               sx={{ width: "85%", marginBottom: "20px" }}
             />
 
             <TextField
               label="Password"
-                   onChange={(e) =>
-          setPassword(e.target.value)
-        }
+              onChange={(e) => setPassword(e.target.value)}
               variant="standard"
               type="password"
               sx={{ width: "85%", margin: "  10px 0" }}
