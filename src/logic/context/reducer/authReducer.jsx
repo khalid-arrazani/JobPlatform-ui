@@ -14,6 +14,11 @@ export const authReducer = (
         ...state,
         user: null,
       };
+    case "REGISTER":
+      return {
+        ...state,
+        user: null,
+      };
 
     default:
       return state;

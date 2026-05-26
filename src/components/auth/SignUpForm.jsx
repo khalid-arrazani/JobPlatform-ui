@@ -1,5 +1,3 @@
-
-
 import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
@@ -15,46 +13,44 @@ import {
 } from "@mui/material";
 import { useState } from "react";
 
-import {
-  useContext,
-} from "react";
+import { useContext } from "react";
 
 import { RegisterUser } from "../../logic/api/auth/login";
 
 import { AuthContext } from "../../logic/context/AuthContext";
 
 export default function SingUpPage() {
-  
+
+  const [role, setrole] = useState("jobSeeker");
+  const [email, setEmail] = useState("");
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
 
-  const [role, setrole] = useState("JobSeeker");
-  const [email,setEmail] = useState("")
-  const [username,setUsername] = useState("")
-  const [password,setPassword] = useState("")
-  
-    const { dispatch } =
-      useContext(AuthContext);
-  
-      const handleRegister = async () => {
-      try {console.log("Logged In");
-        const data =
-          await RegisterUser({
-            email,
-            password,
-            role,
-            username
-          });
-  
-        dispatch({
-          type: "LOGIN",
-          payload: data,
-        });
-  
-        
-      } catch (error) {
-        console.log(error);
-      }
-    };
+  const { dispatch } = useContext(AuthContext);
+
+
+  const handleRegister = async () => {
+    try {
+      console.log("Logged In");
+      const data = await RegisterUser({
+        email,
+        password,
+        role,
+        username,
+      });
+      dispatch({
+        type: "REGISTER",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.response.data);
+    }
+  };
+
+
+
+
 
   function cardRecruiter() {
     setrole("recruiter");
@@ -109,9 +105,7 @@ export default function SingUpPage() {
 
           <TextField
             label="Username"
-           onChange={(e) =>
-          setUsername(e.target.value)
-        }
+            onChange={(e) => setUsername(e.target.value)}
             variant="standard"
             size="small"
             sx={{
@@ -131,9 +125,7 @@ export default function SingUpPage() {
           <TextField
             label="Email"
             variant="standard"
-            onChange={(e) =>
-          setEmail(e.target.value)
-        }
+            onChange={(e) => setEmail(e.target.value)}
             sx={{
               input: {
                 color: "white",
@@ -151,9 +143,7 @@ export default function SingUpPage() {
           <TextField
             label="Password"
             type="password"
-            onChange={(e) =>
-          setPassword(e.target.value)
-        }
+            onChange={(e) => setPassword(e.target.value)}
             variant="standard"
             sx={{
               input: {
@@ -184,7 +174,7 @@ export default function SingUpPage() {
                 borderRadius: "10px",
                 background: "rgba(255,255,255,0.08)",
                 border:
-                  role === "JobSeeker"
+                  role === "jobSeeker"
                     ? "1px solid #2196f3"
                     : "1px solid transparent",
 
@@ -226,7 +216,7 @@ export default function SingUpPage() {
                 borderRadius: "10px",
                 background: "rgba(255,255,255,0.08)",
                 border:
-                  role === "Recruiter"
+                  role === "recruiter"
                     ? "1px solid #2196f3"
                     : "1px solid transparent",
                 transition: "0.3s",

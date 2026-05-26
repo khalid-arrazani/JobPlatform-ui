@@ -33,7 +33,7 @@ const [password,setPassword] = useState("")
     const handleLogin = async () => {
     try {console.log("Logged In");
       const data =
-        await loginUser({
+     await loginUser({
           email,
           password,
         });
@@ -45,7 +45,7 @@ const [password,setPassword] = useState("")
 
       
     } catch (error) {
-      console.log(error);
+      console.log(error.response.data);
     }
   };
 
