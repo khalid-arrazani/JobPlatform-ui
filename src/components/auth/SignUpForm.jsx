@@ -25,6 +25,12 @@ export default function SingUpPage() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
+  const [touched, setTouched] = useState({
+    email: false,
+    username: false,
+    password: false,
+  });
+
   const { dispatch } = useContext(AuthContext);
 
   const handleRegister = async () => {
@@ -116,6 +122,14 @@ export default function SingUpPage() {
           <TextField
             label="Username"
             onChange={(e) => setUsername(e.target.value)}
+            error={touched.username && !!errors.username}
+            helperText={touched.username ? errors.username : ""}
+            onBlur={() =>
+              setTouched({
+                ...touched,
+                username: true,
+              })
+            }
             variant="standard"
             size="small"
             sx={{
@@ -135,11 +149,15 @@ export default function SingUpPage() {
           <TextField
             label="Email"
             variant="standard"
-            error={!isEmailValid && email.length > 0}
-            helperText={
-              !isEmailValid && email.length > 0 ? "Invalid email" : ""
-            }
+            error={touched.email && !!errors.email}
+            helperText={touched.email ? errors.email : ""}
             onChange={(e) => setEmail(e.target.value)}
+            onBlur={() =>
+              setTouched({
+                ...touched,
+                email: true,
+              })
+            }
             sx={{
               input: {
                 color: "white",
@@ -157,6 +175,14 @@ export default function SingUpPage() {
           <TextField
             label="Password"
             type="password"
+            error={touched.password && !!errors.password}
+            helperText={touched.password ? errors.password : ""}
+            onBlur={() =>
+              setTouched({
+                ...touched,
+                password: true,
+              })
+            }
             onChange={(e) => setPassword(e.target.value)}
             variant="standard"
             sx={{
