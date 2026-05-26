@@ -2,24 +2,35 @@ import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
+
+
+
+import { AuthContext } from "../context/AuthContext";
+
 export default function SimpleSnackbar() {
-  
-  const [open, setOpen] = React.useState(true);
+
+ const { snackBar ,setSnackBar } = React.useContext(AuthContext);
 
 
+
+ 
 
 
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;
     }
-
-    setOpen(false);
+    
+    setSnackBar({
+      open: false,
+      message: "",
+      severity: "",
+    });
   };
 
   return (
     <Snackbar
-      open={open}
+      open={snackBar.open}
       autoHideDuration={6000}
       onClose={handleClose}
       anchorOrigin={{
@@ -29,11 +40,11 @@ export default function SimpleSnackbar() {
     >
       <Alert
         onClose={handleClose}
-        severity="success"
+        severity={snackBar.severity}
         variant="filled"
         sx={{ width: "100%" }}
       >
-        Registered successfully
+        {snackBar.message}
       </Alert>
     </Snackbar>
   );
