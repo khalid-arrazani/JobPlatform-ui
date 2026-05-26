@@ -5,11 +5,18 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import CompleteProfilePage from "./pages/CompleteProfilePage.jsx";
 import AccountSettingsPage from "./pages/AccountSettingsPage.jsx"
 
+import SimpleSnackbar from "./SnackBars/SnackBars.jsx";
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
-  return (
+  return (<>
+    <SimpleSnackbar/>
     <Routes>
+
+
+      
+
       <Route path="/" element={<DashboardLayout />} />
 
       <Route path="/profile" element={<ProfilePage />} />
@@ -19,7 +26,7 @@ function App() {
       <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
       <Route path="/AccountSettings" element={<AccountSettingsPage />} />
-    </Routes>
+    </Routes></>
   );
 }
 

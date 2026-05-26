@@ -143,6 +143,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
+              mb:0
             }}
           />
 
@@ -169,6 +170,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
+              m:0
             }}
           />
 
@@ -196,6 +198,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
+              mt:0
             }}
           />
           <Box
