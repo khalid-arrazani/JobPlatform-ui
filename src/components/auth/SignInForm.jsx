@@ -27,7 +27,7 @@ export default function SignIn() {
 const [email,setEmail] = useState("")
 const [password,setPassword] = useState("")
 
-  const { dispatch } =
+  const { dispatch , setSnackBar} =
     useContext(AuthContext);
 
     const handleLogin = async () => {
@@ -42,10 +42,10 @@ const [password,setPassword] = useState("")
         type: "LOGIN",
         payload: data,
       });
-
-      
     } catch (error) {
+
       console.log(error.response.data);
+      setSnackBar({})
     }
   };
 

@@ -1,6 +1,7 @@
 import {
   createContext,
   useReducer,
+  useState,
 } from "react";
 
 import { authReducer } from "./reducer/authReducer";
@@ -17,18 +18,30 @@ const initialState = {
 export default function AuthProvider({
   children,
 }) {
+
+
+ const [snackBar, setSnackBar] = useState({
+  open: false,
+  message: "",
+  severity: "success",
+});
+
   const [state, dispatch] =
     useReducer(
       authReducer,
       initialState
     );
 
+
   return (
     <AuthContext.Provider
       value={{
         ...state,
         dispatch,
+        snackBar,
+         setSnackBar
       }}
+
     >
       {children}
     </AuthContext.Provider>
