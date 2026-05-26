@@ -20,15 +20,12 @@ import { RegisterUser } from "../../logic/api/auth/login";
 import { AuthContext } from "../../logic/context/AuthContext";
 
 export default function SingUpPage() {
-
   const [role, setrole] = useState("jobSeeker");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-
   const { dispatch } = useContext(AuthContext);
-
 
   const handleRegister = async () => {
     try {
@@ -48,10 +45,6 @@ export default function SingUpPage() {
     }
   };
 
-
-
-
-
   function cardRecruiter() {
     setrole("recruiter");
   }
@@ -59,6 +52,23 @@ export default function SingUpPage() {
   function cardJobSeeker() {
     setrole("jobSeeker");
   }
+
+  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+  const isUsernameValid = username.trim().length >= 3;
+
+  const isPasswordValid = password.length >= 6;
+
+  const isFormValid = isEmailValid && isUsernameValid && isPasswordValid;
+
+  const errors = {
+    email: !isEmailValid ? "Invalid email" : "",
+
+    username: username.length < 3 ? "Username too short" : "",
+
+    password: password.length < 6 ? "Password too short" : "",
+  };
+
   return (
     <>
       <Container
@@ -125,6 +135,10 @@ export default function SingUpPage() {
           <TextField
             label="Email"
             variant="standard"
+            error={!isEmailValid && email.length > 0}
+            helperText={
+              !isEmailValid && email.length > 0 ? "Invalid email" : ""
+            }
             onChange={(e) => setEmail(e.target.value)}
             sx={{
               input: {
@@ -249,9 +263,8 @@ export default function SingUpPage() {
           </Box>
 
           <Button
-           
             variant="contained"
-            disabled={()=>{if(!email || password.length<6 || username.length < 3){return true}}}
+            disabled={!isFormValid}
             onClick={handleRegister}
             sx={{
               mt: 2,
@@ -260,7 +273,7 @@ export default function SingUpPage() {
               borderRadius: "15px",
               fontSize: "18px",
               textTransform: "none",
-              background:"#481a5a"
+              background: "#481a5a",
             }}
           >
             Create Account
