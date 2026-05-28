@@ -32,21 +32,20 @@ export default function SignIn() {
         email,
         password,
       });
-
-    setSnackBar({
-      open: true,
-      message: data.message,
-      severity: "success",
-    });
     
+      setSnackBar({
+        open: true,
+        message: data.message,
+        severity: "success",
+      });
+
       dispatch({
         type: "LOGIN",
         payload: data,
       });
-
-
     } catch (error) {
       console.log(error.response.data);
+
       setSnackBar({
         open: true,
         message: error.response.data.message,

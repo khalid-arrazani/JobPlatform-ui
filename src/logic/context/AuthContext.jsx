@@ -26,6 +26,8 @@ export default function AuthProvider({
   severity: "success",
 });
 
+console.log(snackBar);
+
   const [state, dispatch] =
     useReducer(
       authReducer,
@@ -41,7 +43,7 @@ export default function AuthProvider({
         snackBar,
          setSnackBar
       }}
-      
+
 
     >
       {children}

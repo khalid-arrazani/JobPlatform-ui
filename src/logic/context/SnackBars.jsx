@@ -2,9 +2,6 @@ import * as React from "react";
 import Snackbar from "@mui/material/Snackbar";
 import Alert from "@mui/material/Alert";
 
-
-
-
 import { AuthContext } from "../context/AuthContext";
 
 export default function SimpleSnackbar() {
@@ -12,7 +9,7 @@ export default function SimpleSnackbar() {
  const { snackBar ,setSnackBar } = React.useContext(AuthContext);
 
 
-
+ console.log("snackBar", snackBar);
  
 
 
@@ -20,7 +17,7 @@ export default function SimpleSnackbar() {
     if (reason === "clickaway") {
       return;
     }
-    
+
     setSnackBar({
       open: false,
       message: "",
