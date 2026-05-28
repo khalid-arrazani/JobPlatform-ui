@@ -8,8 +8,7 @@ import { authReducer } from "./reducer/authReducer";
 
 
 
-export const AuthContext =
-  createContext();
+export const AuthContext = createContext();
 
 const initialState = {
   user: null,
