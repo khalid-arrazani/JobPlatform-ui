@@ -24,7 +24,7 @@ export default function SimpleSnackbar() {
   return (
     <Snackbar
       open={snackBar.open}
-      autoHideDuration={6000}
+      autoHideDuration={4000}
       onClose={handleClose}
       anchorOrigin={{
         vertical: "top",

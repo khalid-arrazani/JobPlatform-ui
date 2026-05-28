@@ -15,20 +15,20 @@ import {
 
 import { useState, useContext } from "react";
 
-import { loginUser } from "../../logic/api/auth/login";
+import { LoginUser } from "../../logic/api/auth/auth";
 
 import { AuthContext } from "../../logic/context/AuthContext";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+const navigate = useNavigate()
   const { dispatch, setSnackBar } = useContext(AuthContext);
 
   const handleLogin = async () => {
     try {
-      console.log("Logged In");
-      const data = await loginUser({
+      const data = await LoginUser({
         email,
         password,
       });
@@ -43,6 +43,8 @@ export default function SignIn() {
         type: "LOGIN",
         payload: data,
       });
+     navigate("/")
+
     } catch (error) {
       console.log(error.response.data);
 

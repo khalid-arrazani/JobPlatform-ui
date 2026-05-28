@@ -15,7 +15,7 @@ import { useState } from "react";
 
 import { useContext } from "react";
 
-import { RegisterUser } from "../../logic/api/auth/login";
+import { RegisterUser } from "../../logic/api/auth/auth";
 
 import { AuthContext } from "../../logic/context/AuthContext";
 
@@ -31,11 +31,11 @@ export default function SingUpPage() {
     password: false,
   });
 
-  const { dispatch } = useContext(AuthContext);
+  const { dispatch , setSnackBar } = useContext(AuthContext);
 
   const handleRegister = async () => {
     try {
-      console.log("Logged In");
+      console.log("Register done");
       const data = await RegisterUser({
         email,
         password,
@@ -46,8 +46,18 @@ export default function SingUpPage() {
         type: "REGISTER",
         payload: data,
       });
+       setSnackBar({
+        open: true,
+        message: data.message,
+        severity: "success",
+      });
     } catch (error) {
       console.log(error.response.data);
+        setSnackBar({
+        open: true,
+        message: error.response.data.message,
+        severity: "error",
+      });
     }
   };
 

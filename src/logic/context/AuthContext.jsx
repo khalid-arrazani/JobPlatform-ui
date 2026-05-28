@@ -26,7 +26,6 @@ export default function AuthProvider({
   severity: "success",
 });
 
-console.log(snackBar);
 
   const [state, dispatch] =
     useReducer(
