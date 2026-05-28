@@ -32,11 +32,13 @@ export default function SignIn() {
         email,
         password,
       });
+
     setSnackBar({
       open: true,
       message: data.message,
       severity: "success",
     });
+    
       dispatch({
         type: "LOGIN",
         payload: data,
