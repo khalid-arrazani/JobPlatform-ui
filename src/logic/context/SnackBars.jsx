@@ -8,11 +8,7 @@ export default function SimpleSnackbar() {
 
  const { snackBar ,setSnackBar } = React.useContext(AuthContext);
 
-
- console.log("snackBar", snackBar);
  
-
-
   const handleClose = (event, reason) => {
     if (reason === "clickaway") {
       return;

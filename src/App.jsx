@@ -5,7 +5,7 @@ import ProfilePage from "./pages/ProfilePage.jsx";
 import CompleteProfilePage from "./pages/CompleteProfilePage.jsx";
 import AccountSettingsPage from "./pages/AccountSettingsPage.jsx"
 
-import SimpleSnackbar from "./SnackBars/SnackBars.jsx";
+import SimpleSnackbar from "./logic/context/SnackBars.jsx";
 
 import { Routes, Route } from "react-router-dom";
 
