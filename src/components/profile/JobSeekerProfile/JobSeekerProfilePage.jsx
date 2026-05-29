@@ -27,7 +27,7 @@ useEffect(() => {
         await getMe();
 
       dispatch({
-        type: "LOGIN",
+        type: "PROFILE",
         payload: data,
       });
 
