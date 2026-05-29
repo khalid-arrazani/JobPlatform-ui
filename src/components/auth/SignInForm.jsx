@@ -23,7 +23,7 @@ import { useNavigate } from "react-router-dom";
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-const navigate = useNavigate()
+  const navigate = useNavigate();
   const { dispatch, setSnackBar } = useContext(AuthContext);
 
   const handleLogin = async () => {
@@ -32,7 +32,7 @@ const navigate = useNavigate()
         email,
         password,
       });
-    
+
       setSnackBar({
         open: true,
         message: data.message,
@@ -43,7 +43,12 @@ const navigate = useNavigate()
         type: "LOGIN",
         payload: data,
       });
-     navigate("/")
+
+      if (!data.user.isComplete) {
+        navigate("/CompleteProfile");
+      } else {
+        navigate("/");
+      };
 
     } catch (error) {
       console.log(error.response.data);

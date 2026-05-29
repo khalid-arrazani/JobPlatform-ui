@@ -33,6 +33,7 @@ export default function AuthLayout({ children }) {
         <Card
           sx={{
             height: "85vh",
+            
             width: "80%",
             backgroundImage:
               "url('https://cdn.pixabay.com/photo/2025/09/19/05/48/mountain-range-9842371_1280.jpg')",

@@ -26,6 +26,8 @@ function App() {
       <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
       <Route path="/AccountSettings" element={<AccountSettingsPage />} />
+
+      
     </Routes></>
   );
 }
