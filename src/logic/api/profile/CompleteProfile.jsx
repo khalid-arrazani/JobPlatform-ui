@@ -1,21 +1,21 @@
 import API from "../config/axios";
 
-export const LoginUser = async (
+export const CompleteProfileJS = async (
   formData
 ) => {
   const response = await API.post(
-    "/auth/login",
+    "/jobseeker",
     formData, { withCredentials: true }
   );
   console.log(response.data);
   return response.data;
 };
 
-export const RegisterUser = async (
+export const CompleteProfileR = async (
   formData
 ) => {
   const response = await API.post(
-    "/auth/register",
+    "/recuiter",
     formData, { withCredentials: true }
   );
   console.log(response.data);

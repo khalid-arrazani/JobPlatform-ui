@@ -15,11 +15,6 @@ const initialState = {
 export default function ProfileProvider({
   children,
 }) {
-
-
-
-
-
   const [state, dispatch] =
     useReducer(
       profileReducer,

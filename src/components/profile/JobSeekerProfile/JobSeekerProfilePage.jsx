@@ -18,37 +18,26 @@ export default function MyProfilePage() {
 
 
 useEffect(() => {
-
   const fetchUser = async () => {
-
     try {
-
       const data =
         await getMe();
-
       dispatch({
         type: "PROFILE",
         payload: data,
       });
-
     } catch (error) {
-
       console.log(
         error.response?.data
       );
-
     }
   };
-
   fetchUser();
-
-}, []);
+},[]);
 
 
   return (
     <>
-     
-    
        <div className="par1" >
 
         <div style={{height:"25vh"}}>
