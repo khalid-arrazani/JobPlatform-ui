@@ -7,13 +7,14 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import {useContext } from "react";
+import {useContext, useEffect } from "react";
 
 import { Button, Card, Typography, Box } from "@mui/material";
 import { AuthContext } from "../../logic/context/AuthContext";
 
 export default function WelcomePage() {
   const {sign , setSign} = useContext(AuthContext);
+
 
   useGSAP(() => {
     gsap.set(".cardSignUp", {
@@ -23,7 +24,7 @@ export default function WelcomePage() {
   });
 
 
-  function signUp() {
+useEffect(()=>{
     if (sign === "Sign Up") {
       gsap.to(".buttonsign", {
         duration: 0.5,
@@ -53,7 +54,6 @@ export default function WelcomePage() {
         opacity: 0,
       });
 
-      setSign("Sign In");
     } else {
       gsap.to(".buttonsign", {
         duration: 0.5,
@@ -82,10 +82,8 @@ export default function WelcomePage() {
         duration: 0.5,
         opacity: 1,
       });
-
-      setSign("Sign Up");
-    }
-  }
+    }},[sign])
+ 
   return (
     <>
       <Card
@@ -270,7 +268,7 @@ export default function WelcomePage() {
           >
             <Button
               className="buttonsign"
-              onClick={signUp}
+              onClick={()=>{sign == "Sign Up"?setSign("Sign In"):setSign("Sign Up")}}
               size="large"
               sx={{
                 zIndex: 5,

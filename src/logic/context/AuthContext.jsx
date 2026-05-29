@@ -32,7 +32,7 @@ export default function AuthProvider({
       initialState
     );
 
- const [sign, setSign] = useState("Sign Up");
+ const [sign, setSign] = useState("Sign In");
   return (
     <AuthContext.Provider
       value={{
