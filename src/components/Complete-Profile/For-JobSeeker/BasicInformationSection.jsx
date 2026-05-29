@@ -12,6 +12,8 @@ export default function BasicInformationSection() {
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
+  const [photo, setPhoto] = useState("");
+
 
   
   const {setSnackBar}= useContext(AuthContext)
@@ -19,11 +21,23 @@ export default function BasicInformationSection() {
 
   const handleCreateProfile = async () => {
     try {
-      const data = await CompleteProfileJS({
-        fullName,
-        headline,
-        location
-      });
+     const formData = new FormData();
+
+    formData.append("fullName", fullName);
+    formData.append("headline", headline);
+    formData.append("location", location);
+
+    if (photo) {
+      formData.append(
+        "image",
+        photo,
+        "profile.png"
+      );
+    }
+
+    const data =
+      await CompleteProfileJS(formData);
+      
       console.log(data);
       setSnackBar({
         open: true,
@@ -31,7 +45,7 @@ export default function BasicInformationSection() {
         severity: "success",
       });
 
-      
+
     } catch (error) {
       console.log(error.response.data);
       setSnackBar({
@@ -83,7 +97,7 @@ export default function BasicInformationSection() {
       </Typography>
 
       {/* Upload */}
-      <UploadProfilePhoto />
+      <UploadProfilePhoto setPhoto={setPhoto} />
 
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
