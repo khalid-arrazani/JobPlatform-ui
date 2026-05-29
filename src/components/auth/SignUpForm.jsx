@@ -40,7 +40,7 @@ export default function SingUpPage() {
         email,
         password,
         role,
-        username,
+        username
       });
       dispatch({
         type: "REGISTER",
@@ -61,6 +61,7 @@ export default function SingUpPage() {
     }
   };
 
+
   function cardRecruiter() {
     setrole("recruiter");
   }
@@ -79,9 +80,7 @@ export default function SingUpPage() {
 
   const errors = {
     email: !isEmailValid ? "Invalid email" : "",
-
     username: username.length < 3 ? "Username too short" : "",
-
     password: password.length < 6 ? "Password too short" : "",
   };
 

@@ -44,7 +44,7 @@ export default function SignIn() {
         payload: data,
       });
 
-      if (!data.user.isComplete) {
+      if (data.user.isComplete === false) {
         navigate("/CompleteProfile");
       } else {
         navigate("/");

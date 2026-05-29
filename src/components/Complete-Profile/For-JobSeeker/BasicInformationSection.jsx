@@ -1,11 +1,45 @@
 import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 
-import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
+
+import { CompleteProfileJS } from "../../../logic/api/profile/CompleteProfile";
+import { AuthContext } from "../../../logic/context/AuthContext";
+import { useContext, useState } from "react";
+
 export default function BasicInformationSection() {
+  const [fullName, setFullName] = useState("");
+  const [headline, setHeadline] = useState("");
+  const [location, setLocation] = useState("");
+
+  
+  const {setSnackBar}= useContext(AuthContext)
+
+
+  const handleCreateProfile = async () => {
+    try {
+      const data = await CompleteProfileJS({
+        fullName,
+        headline,
+        location
+      });
+      console.log(data);
+      setSnackBar({
+        open: true,
+        message: data.message,
+        severity: "success",
+      });
+    } catch (error) {
+      console.log(error.response.data);
+      setSnackBar({
+        open: true,
+        message: error.response.data.message,
+        severity: "error",
+      });
+    }
+  };
+
   return (
     <>
       {/* Badge */}
@@ -64,20 +98,12 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setFullName(e.target.value);
+          }}
           required
           size="small"
           placeholder="Enter your full name"
-          InputProps={{
-            startAdornment: (
-              <PersonOutlineOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -101,13 +127,14 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+          setHeadline(e.target.value);
+          }}
           required
           multiline
           rows={3}
           placeholder="Tell us about yourself..."
-          inputProps={{
-            maxLength: 250,
-          }}
+
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -131,20 +158,14 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setLocation(e.target.value);
+          }}
           size="small"
           required
           placeholder="Enter your location"
-          InputProps={{
-            startAdornment: (
-              <LocationOnOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
+          
+          
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -156,6 +177,7 @@ export default function BasicInformationSection() {
       {/* Button */}
       <Button
         fullWidth
+        onClick={handleCreateProfile}
         variant="contained"
         sx={{
           height: "3rem",
