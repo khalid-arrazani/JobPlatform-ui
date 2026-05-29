@@ -31,7 +31,7 @@ export default function SingUpPage() {
     password: false,
   });
 
-  const { dispatch , setSnackBar } = useContext(AuthContext);
+  const { dispatch , setSnackBar , setSign } = useContext(AuthContext);
 
   const handleRegister = async () => {
     try {
@@ -51,6 +51,7 @@ export default function SingUpPage() {
         message: data.message,
         severity: "success",
       });
+      setSign("Sign In")
     } catch (error) {
       console.log(error.response.data);
         setSnackBar({

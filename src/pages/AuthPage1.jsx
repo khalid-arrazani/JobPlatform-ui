@@ -1,5 +1,5 @@
-import AuthLayout from "../components/layout/AuthLayout";
-import WelcomePage from "../components/layout/WelcomePanel";
+import AuthLayout from "../layouts/AuthLayout";
+import WelcomePage from "../components/auth/WelcomePanel";
 import SignIn from "../components/auth/SignInForm";
 import SingUpPage from "../components/auth/SignUpForm";
 

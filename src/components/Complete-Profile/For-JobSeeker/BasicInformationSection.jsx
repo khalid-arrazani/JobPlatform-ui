@@ -30,6 +30,8 @@ export default function BasicInformationSection() {
         message: data.message,
         severity: "success",
       });
+
+      
     } catch (error) {
       console.log(error.response.data);
       setSnackBar({

@@ -18,7 +18,7 @@ export default function AuthProvider({
   children,
 }) {
 
-
+ 
  const [snackBar, setSnackBar] = useState({
   open: false,
   message: "",
@@ -32,14 +32,16 @@ export default function AuthProvider({
       initialState
     );
 
-
+ const [sign, setSign] = useState("Sign Up");
   return (
     <AuthContext.Provider
       value={{
         ...state,
         dispatch,
         snackBar,
-         setSnackBar
+         setSnackBar,
+         sign, 
+         setSign
       }}
 
 

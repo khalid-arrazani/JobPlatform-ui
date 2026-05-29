@@ -7,12 +7,13 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import { useState } from "react";
+import {useContext } from "react";
 
 import { Button, Card, Typography, Box } from "@mui/material";
+import { AuthContext } from "../../logic/context/AuthContext";
 
 export default function WelcomePage() {
-  const [sign, setSign] = useState("Sign Up");
+  const {sign , setSign} = useContext(AuthContext);
 
   useGSAP(() => {
     gsap.set(".cardSignUp", {
@@ -20,7 +21,7 @@ export default function WelcomePage() {
       opacity: 0,
     });
   });
-  // buttonsign
+
 
   function signUp() {
     if (sign === "Sign Up") {
