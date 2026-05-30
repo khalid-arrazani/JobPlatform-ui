@@ -15,8 +15,6 @@ import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 export default function MyProfilePage() {
 
     const { dispatch } = useContext(ProfileContext);
-
-
 useEffect(() => {
   const fetchUser = async () => {
     try {
