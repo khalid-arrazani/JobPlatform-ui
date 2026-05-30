@@ -8,6 +8,7 @@ import CompleteProfileDs from "./CompleteProfileDs";
 import BasicInformationSection from "./BasicInformationSection";
 
 export default function JobSeekerCPPage() {
+  
   return (
     <>
       <div className="JobSeekerpar">

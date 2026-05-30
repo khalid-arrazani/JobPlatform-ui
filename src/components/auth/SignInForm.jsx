@@ -32,19 +32,16 @@ export default function SignIn() {
         email,
         password,
       });
-
       setSnackBar({
         open: true,
         message: data.message,
         severity: "success",
       });
-
       dispatch({
         type: "LOGIN",
         payload: data,
       });
-
-      if (data.user.isComplete === false) {
+      if (data.user.isComplete == false) {
         navigate("/CompleteProfile");
       } else {
         navigate("/");

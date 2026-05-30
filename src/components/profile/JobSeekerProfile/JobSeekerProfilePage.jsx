@@ -21,7 +21,7 @@ useEffect(() => {
   const fetchUser = async () => {
     try {
       const data =
-        await getMe();
+      await getMe();
       dispatch({
         type: "PROFILE",
         payload: data,
