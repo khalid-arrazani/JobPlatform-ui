@@ -1,13 +1,15 @@
 import { Box, IconButton, Avatar, Button } from "@mui/material";
 
-import { useState, useRef } from "react";
+import { useState, useRef,useContext } from "react";
 
 import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
 export default function UploadProfilePhoto() {
+  const { ...state } = useContext(ProfileContext);
   const editorRef = useRef();
 
   const [image, setImage] = useState(null);
@@ -16,9 +18,14 @@ export default function UploadProfilePhoto() {
 
   const [open, setOpen] = useState(false);
 
-  const [preview, setPreview] = useState("");
+  const [preview , setPreview] = useState("");
 
   const [imageFile, setImageFile] = useState(null);
+
+
+
+    
+
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -50,7 +57,7 @@ export default function UploadProfilePhoto() {
 >
   {/* Avatar */}
   <Avatar
-    src={preview}
+    src={state.user?.profile.ProfileImage}
     sx={{
       width: "100%",
       height: "100%",

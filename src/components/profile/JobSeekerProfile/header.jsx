@@ -9,13 +9,17 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-import { useState } from "react";
+import { useState,useContext } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import EditProfileModil from "./EditProfileModal";
 
+import { ProfileContext } from "../../../logic/context/profileContext.jsx";
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { ...state } = useContext(ProfileContext);
+  console.log("55555555", state.user?.profile);
 
   return (
     <>

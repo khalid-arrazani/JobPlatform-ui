@@ -9,26 +9,26 @@ import CardProfile from "./CardProfile.jsx";
 export default function JobsPage(){
 
     return <>
-          <div class="Jobsparent">
+          <div className="Jobsparent">
     
-            <div class="Jobsdiv1">
+            <div className="Jobsdiv1">
               <CardProfile></CardProfile>
             </div>
     
     
     
-            <div class="Jobsdiv2">
+            <div className="Jobsdiv2">
               <JobList />
             </div>
     
     
     
-            <div class="Jobsdiv3">
+            <div className="Jobsdiv3">
               <CardAds/>
             </div>
     
     
-            <div class="Jobsdiv4">
+            <div className="Jobsdiv4">
               <Stack spacing={2}>
                 <Pagination count={50} />
               </Stack>
