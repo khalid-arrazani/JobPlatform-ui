@@ -16,6 +16,8 @@ export default function MyProfilePage() {
 
     const { dispatch } = useContext(ProfileContext);
 
+    
+
 
 useEffect(() => {
   const fetchUser = async () => {
