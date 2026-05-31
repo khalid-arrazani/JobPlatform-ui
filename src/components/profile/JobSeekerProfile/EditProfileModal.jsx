@@ -7,6 +7,7 @@ import {
   TextField,
   Divider,
 } from "@mui/material";
+
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState } from "react";
 
@@ -15,7 +16,7 @@ export default function EditProfileModil({ open, setOpen }) {
   const [fullName, setfullName] = useState("");
   const [location, setLocation] = useState("");
   const [headline, setHeadline] = useState("");
-  
+
 
 
 
