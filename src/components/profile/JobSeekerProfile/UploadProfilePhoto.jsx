@@ -9,6 +9,8 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
 export default function UploadProfilePhoto() {
+
+
   const { ...state } = useContext(ProfileContext);
   const editorRef = useRef();
 
@@ -18,13 +20,11 @@ export default function UploadProfilePhoto() {
 
   const [open, setOpen] = useState(false);
 
+
   const [preview , setPreview] = useState("");
 
   const [imageFile, setImageFile] = useState(null);
 
-
-
-    
 
 
   const handleSave = () => {
@@ -42,6 +42,8 @@ export default function UploadProfilePhoto() {
       setOpen(false);
     }, "image/png");
   };
+
+
 
   return (
     <>

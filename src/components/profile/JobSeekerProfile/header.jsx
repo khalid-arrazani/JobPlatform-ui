@@ -19,7 +19,7 @@ import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 export default function Header() {
   const [open, setOpen] = useState(false);
   const { ...state } = useContext(ProfileContext);
-  console.log("55555555", state.user?.profile);
+
 
   return (
     <>
@@ -81,7 +81,7 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              Khalid Arrazani
+              {state.user?.profile.fullName || "------------------"}
               <Box
                 sx={{
                   borderRadius: "0.3rem",
@@ -108,7 +108,8 @@ export default function Header() {
                 mt: "0.3rem",
               }}
             >
-              Full Stack Developer | React • MUI • Node.js • MongoDB • GSAP
+              {state.user?.profile.Headline || "------------------"}
+             
             </Typography>
 
             <Box
