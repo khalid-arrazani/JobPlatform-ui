@@ -9,18 +9,40 @@ import {
 } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
+
 
 export default function EditProfileModil({ open, setOpen }) {
+  
+const { ...state } = useProfile();
 
-  const [fullName, setfullName] = useState("");
-  const [location, setLocation] = useState("");
-  const [headline, setHeadline] = useState("");
+const [fullName, setFullName] =
+  useState("");
 
+const [location, setLocation] =
+  useState("");
 
+const [headline, setHeadline] =
+  useState("");
 
+useEffect(() => {
 
-  console.log(fullName,location,headline);
+  if (state.user?.profile) {
+    
+    setFullName(
+      state.user.profile.fullName || ""
+    );
+
+    setLocation(
+      state.user.profile.location || ""
+    );
+
+    setHeadline(
+      state.user.profile.headline || ""
+    );
+  }
+}, [state.user]);
 
   return (
     <>
@@ -93,6 +115,7 @@ export default function EditProfileModil({ open, setOpen }) {
               <TextField
                 fullWidth
                 onChange={(e)=>{setfullName(e.target.value)}}
+                value={fullName}
                 required
                 size="small"
                 placeholder="Enter your full name"
@@ -119,6 +142,7 @@ export default function EditProfileModil({ open, setOpen }) {
 
               <TextField
                 fullWidth
+                value={headline}
                 onChange={(e)=>{setHeadline(e.target.value)}}
                 required
                 size="small"
@@ -146,6 +170,7 @@ export default function EditProfileModil({ open, setOpen }) {
 
               <TextField
                 fullWidth
+                value={location}
                 onChange={(e)=>{setLocation(e.target.value)}}
                 size="small"
                 required

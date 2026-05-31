@@ -103,7 +103,7 @@ export default function Header() {
                 mt: "0.3rem",
               }}
             >
-              {state.user?.profile?.Headline || "------------------"}
+              {state.user?.profile?.headline || "------------------"}
             </Typography>
 
             <Box
