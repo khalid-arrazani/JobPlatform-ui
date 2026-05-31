@@ -1,6 +1,7 @@
 import {
   createContext,
   useReducer,
+  useContext
 } from "react";
 
 import { profileReducer } from "./reducer/ProfileReducer";
@@ -10,6 +11,12 @@ export const ProfileContext=
 
 const initialState = {
   user: null,
+};
+
+export const useProfile = () => {
+  return useContext(
+    ProfileContext
+  );
 };
 
 export default function ProfileProvider({

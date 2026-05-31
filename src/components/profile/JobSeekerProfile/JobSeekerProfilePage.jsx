@@ -6,15 +6,15 @@ import TopSkillsCard from "./TopSkillsCard.jsx"
 import ExperienceCard from "./experiencesCard.jsx";
 import EducationCard from "./EducationCard.jsx";
 import SocialLinksCard from "./SocialLinksCard"
-import { useContext , useEffect } from "react";
+import { useEffect } from "react";
 
 import { getMe } from "../../../logic/api/profile/GetMe.jsx";
 
-import { ProfileContext } from "../../../logic/context/profileContext.jsx";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function MyProfilePage() {
 
-   const { dispatch } = useContext(ProfileContext);
+   const { dispatch } = useProfile();
 
 useEffect(() => {
   const fetchUser = async () => {

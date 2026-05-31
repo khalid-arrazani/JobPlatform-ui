@@ -2,6 +2,7 @@ import {
   createContext,
   useReducer,
   useState,
+  
 } from "react";
 
 import { authReducer } from "./reducer/authReducer";
@@ -9,6 +10,11 @@ import { authReducer } from "./reducer/authReducer";
 
 
 export const AuthContext = createContext();
+
+
+
+
+
 
 const initialState = {
   user: null,
