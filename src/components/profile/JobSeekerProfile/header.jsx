@@ -12,6 +12,11 @@ import EditProfileModil from "./EditProfileModal";
 import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
 export default function Header() {
+  
+
+
+
+
   const [open, setOpen] = useState(false);
   const { ...state } = useContext(ProfileContext);
 
@@ -72,7 +77,7 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              {state.user?.profile.fullName || "------------------"}
+              {state.user?.profile?.fullName || "------------------"}
               <Box
                 sx={{
                   borderRadius: "0.3rem",
@@ -99,7 +104,7 @@ export default function Header() {
                 mt: "0.3rem",
               }}
             >
-              {state.user?.profile.Headline || "------------------"}
+              {state.user?.profile?.Headline || "------------------"}
             </Typography>
 
             <Box
@@ -131,7 +136,7 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  {state.user?.profile.location || "------------------"}
+                  {state.user?.profile?.location || "------------------"}
                 </Typography>
               </Box>
 
@@ -156,7 +161,8 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  recruiter@nexhire.com
+                 {state.user?.profile?.userId?.email || "------------------"}
+
                 </Typography>
               </Box>
             </Box>

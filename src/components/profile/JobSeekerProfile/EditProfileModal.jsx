@@ -10,11 +10,15 @@ import {
   Divider
 } from "@mui/material";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import { useState } from "react";
 
 
 
 export default function EditProfileModil({open , setOpen}){
 
+    const [fullName , setName] = useState('')
+    const [locatin , setLocation] = useState('')
+    const [headline , setHeadline] = useState('')
 
     return<>
     <Modal
