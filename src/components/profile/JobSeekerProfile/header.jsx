@@ -1,15 +1,10 @@
-import {
-  Box,
-  Typography,
-  Button,
-  Container,
-} from "@mui/material";
+import { Box, Typography, Button, Container } from "@mui/material";
 
 import EditIcon from "@mui/icons-material/Edit";
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-import { useState,useContext } from "react";
+import { useState, useContext } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import EditProfileModil from "./EditProfileModal";
@@ -20,13 +15,9 @@ export default function Header() {
   const [open, setOpen] = useState(false);
   const { ...state } = useContext(ProfileContext);
 
-
   return (
     <>
-      <EditProfileModil
-      open={open}
-      setOpen={setOpen}
-      />
+      <EditProfileModil open={open} setOpen={setOpen} />
 
       <Container
         sx={{
@@ -109,7 +100,6 @@ export default function Header() {
               }}
             >
               {state.user?.profile.Headline || "------------------"}
-             
             </Typography>
 
             <Box
@@ -141,7 +131,7 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  Taroudant, Morocco
+                  {state.user?.profile.location || "------------------"}
                 </Typography>
               </Box>
 
