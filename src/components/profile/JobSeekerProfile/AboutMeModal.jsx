@@ -13,43 +13,39 @@ import {
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function AboutMeModal({
   open,
   setOpen,
 
-  bio,
-  setBio,
-
-  availability,
-  setAvailability,
-
-  experienceLevel,
-  setExperienceLevel,
-
-  preferredJobType,
-  setPreferredJobType,
-
-  languages,
-  setLanguages,
 }) {
-  const lang = ISO6391.getAllNames();
+  const {...state} = useProfile()
 
-  const [changeBio, setChangeBio] = useState(bio);
+
+  // this is the languages List 
+  const lang = ISO6391.getAllNames();
+  //---------------------------------
+
+
+  const [bio, setBio] = useState("bio");
 
   const [language, setLanguage] = useState("");
 
-  const [languagesList, setLanguagesList] = useState(languages);
+  const [languagesList, setLanguagesList] = useState([]);
 
   // -----------------------availability and preferredJobType----------------------------
 
-  const [changeAvailability, setchangeAvailability] = useState(availability);
+  const [availability, setAvailability] = useState("");
 
-  const [changePreferredJobType, setChangePreferredJobType] =
-    useState(preferredJobType);
 
-  const [changeExperienceLevel, setChangeExperienceLevel] =
-    useState(experienceLevel);
+  const [preferredJobType, setPreferredJobType] =
+    useState("");
+
+
+  const [experienceLevel, setExperienceLevel] =
+    useState("");
+
 
   const handleAdd = () => {
     if (!language) return;
@@ -61,14 +57,14 @@ export default function AboutMeModal({
     setLanguage("");
   };
 
+
   const handleSave = () => {
-    setAvailability(changeAvailability);
-    setPreferredJobType(changePreferredJobType);
-    setLanguages(languagesList);
-    setExperienceLevel(changeExperienceLevel);
-    setBio(changeBio);
+
     setOpen(false);
   };
+
+
+
 
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));

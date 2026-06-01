@@ -9,75 +9,49 @@ import {
 } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
 
-
-
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
+export default function headerModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
 
-export default function EditProfileModil({ open, setOpen }) {
-  
-const {
-  dispatch,
-  ...state
-} = useProfile();
+  const [fullName, setFullName] = useState("");
 
+  const [location, setLocation] = useState("");
 
-const [fullName, setFullName] =
-  useState("");
+  const [headline, setHeadline] = useState("");
 
-const [location, setLocation] =
-  useState("");
+  useEffect(() => {
+    if (state.user?.profile) {
+      setFullName(state.user.profile.fullName || "");
 
-const [headline, setHeadline] =
-  useState("");
+      setLocation(state.user.profile.location || "");
 
-useEffect(() => {
+      setHeadline(state.user.profile.headline || "");
+    }
+  }, [state.user]);
 
-  if (state.user?.profile) {
-
-    setFullName(
-      state.user.profile.fullName || ""
-    );
-
-    setLocation(
-      state.user.profile.location || ""
-    );
-
-    setHeadline(
-      state.user.profile.headline || ""
-    );
-  }
-}, [state.user]);
-
-
-const HandleUpdate = async ()=>{
+  const HandleUpdate = async () => {
     try {
-
-    const data =
-      await updateProfileHeader({
+      const data = await updateProfileHeader({
         fullName,
         location,
         headline,
       });
 
-       dispatch({
+      dispatch({
         type: "PROFILE",
         payload: data,
       });
-      setOpen(false)
-    console.log(data);
-
-  } catch (error) {
-
-    console.log(error.response?.data);
-    
-
-  }
-}
+      setOpen(false);
+      console.log(data);
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+  };
 
   return (
     <>
@@ -149,7 +123,9 @@ const HandleUpdate = async ()=>{
 
               <TextField
                 fullWidth
-                onChange={(e)=>{setFullName(e.target.value)}}
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
                 value={fullName}
                 required
                 size="small"
@@ -178,7 +154,9 @@ const HandleUpdate = async ()=>{
               <TextField
                 fullWidth
                 value={headline}
-                onChange={(e)=>{setHeadline(e.target.value)}}
+                onChange={(e) => {
+                  setHeadline(e.target.value);
+                }}
                 required
                 size="small"
                 placeholder="Tell us about yourself..."
@@ -206,7 +184,9 @@ const HandleUpdate = async ()=>{
               <TextField
                 fullWidth
                 value={location}
-                onChange={(e)=>{setLocation(e.target.value)}}
+                onChange={(e) => {
+                  setLocation(e.target.value);
+                }}
                 size="small"
                 required
                 placeholder="Enter your location"

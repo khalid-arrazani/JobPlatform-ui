@@ -9,15 +9,16 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
 import { useAuth } from "../../../logic/context/AuthContext.jsx";
-import { Navigate } from "react-router-dom";
 
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
+
+import {  updateProfilePhoto } from "../../../logic/api/profile/GetMe.jsx";
 
 export default function UploadProfilePhoto() {
  
   const {setSnackBar,} = useAuth()
 
-  const { ...state } = useContext(ProfileContext);
+  const { dispatch , ...state } = useContext(ProfileContext);
+
   const editorRef = useRef();
 
   const [image, setImage] = useState(null);
@@ -26,69 +27,49 @@ export default function UploadProfilePhoto() {
 
   const [open, setOpen] = useState(false);
 
+  const handleSave = () => {
+  const canvas =
+    editorRef.current.getImageScaledToCanvas();
 
-  const [preview , setPreview] = useState("");
+  canvas.toBlob(async (blob) => {
+    if (!blob) return;
 
-  const [imageFile, setImageFile] = useState(null);
+    try {
+      const formData =
+        new FormData();
 
-
-
-  const handleSave = async() => {
-
-    const canvas = editorRef.current.getImageScaledToCanvas();
-
-    canvas.toBlob((blob) => {
-      if (!blob) return;
-
-      const previewUrl = URL.createObjectURL(blob);
-
-      setPreview(previewUrl);
-
-      setImageFile(blob);
-
-      setOpen(false);
-    }, "image/png");
-
-     try {
-       const formData = new FormData();
-       if (imageFile) {
-        formData.append(
-          "image",
-          imageFile,
-          "profile.png"
-        );
-      };
+      formData.append(
+        "image",
+        blob,
+        "profile.png"
+      );
 
       const data =
-        await updateProfileHeader(formData);
+        await updateProfilePhoto(
+          formData
+        );
+        dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setSnackBar({
+        open: true,
+        message: data?.message,
+        severity: "success",
+      });
+      setOpen(false);
 
-        console.log(data);
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message:
+          error.response?.data?.message,
+        severity: "error",
+      });
+    }
 
-        setSnackBar({
-          open: true,
-          message: data?.message,
-          severity: "success",
-        });
-
-
-        // Navigate('/profile')
-
-
-      } catch (error) {
-        console.log(error.response.data);
-        
-        setSnackBar({
-          open: true,
-          message: error.response.data?.message,
-          severity: "error",
-        });
-      }
-  };
-
-
-    
-    
-
+  }, "image/png");
+};
 
   return (
     <>
@@ -104,7 +85,7 @@ export default function UploadProfilePhoto() {
 >
   {/* Avatar */}
   <Avatar
-    src={state.user?.profile?.ProfileImage}
+    src={state.user?.profile?.ProfileImage?.url}
     sx={{
       width: "100%",
       height: "100%",

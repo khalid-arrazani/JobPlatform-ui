@@ -7,7 +7,7 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
-import EditProfileModil from "./EditProfileModal";
+import HeaderModal from "./headerModal.jsx";
 
 
 import { useProfile } from "../../../logic/context/profileContext.jsx";
@@ -21,7 +21,7 @@ export default function Header() {
 
   return (
     <>
-      <EditProfileModil open={open} setOpen={setOpen} />
+      <HeaderModal open={open} setOpen={setOpen}/>
 
       <Container
         sx={{

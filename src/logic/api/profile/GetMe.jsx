@@ -10,12 +10,23 @@ export const getMe = async (
   return response.data;
 };
 
-
 export const updateProfileHeader = async (
   formData
 ) => {
   const response = await API.put(
     "/jobseeker/me",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
+
+export const updateProfilePhoto = async (
+  formData
+) => {
+  const response = await API.put(
+    "/jobseeker/update-ProfilePhoto",
     formData, { withCredentials: true }
   );
   console.log(response.data);

@@ -9,29 +9,15 @@ import {
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
-
-
 import AboutMeModal from "./AboutMeModal.jsx";
 import { useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function AboutMeCard() {
+  const { ...state } = useProfile();
 
-
-
-    const [open, setOpen] = useState(false);
-    const [bio, setBio] = useState("I'm a motivated web developer focused on building clean, fast and scalable web applications. I enjoy turning ideas into real products.")
-
-    const [availability, setAvailability] = useState("Available");
-
-    const [experienceLevel,setExperienceLevel] = useState("Entry Level (No Experience)");
-
-    const [preferredJobType, setPreferredJobType] = useState("Full-Time");
-
-    const [languages, setLanguages] = useState(["Arabic","English","French"]);
-
-
-    
-
+  const [open, setOpen] = useState(false);
+ 
   const sx = {
     borderRadius: "0.5rem",
     fontWeight: 500,
@@ -60,23 +46,8 @@ export default function AboutMeCard() {
       }}
     >
       <AboutMeModal
-      open={open}
-      setOpen={setOpen}
-
-      bio={bio}
-      setBio={setBio}
-
-      availability={availability}
-      setAvailability={setAvailability}
-
-      experienceLevel={experienceLevel}
-      setExperienceLevel={setExperienceLevel}
-
-      preferredJobType={preferredJobType}
-      setPreferredJobType={setPreferredJobType}
-
-      languages={languages}
-      setLanguages={setLanguages}
+        open={open}
+        setOpen={setOpen}
       />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
         {/* Title */}
@@ -93,7 +64,7 @@ export default function AboutMeCard() {
         >
           About Me
           <IconButton
-          onClick={()=>setOpen(true)}
+            onClick={() => setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
@@ -114,7 +85,8 @@ export default function AboutMeCard() {
           variant="body2"
           sx={{ color: "#555", mb: "0.9rem", fontSize: "0.9rem" }}
         >
-         {bio}
+          {state.user?.profile?.aboutMe?.about ||
+            "----------------------------"}
         </Typography>
 
         <Divider sx={{ my: "0.9rem" }} />
@@ -140,7 +112,8 @@ export default function AboutMeCard() {
               <Typography
                 sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
               >
-                {availability}
+                {state.user?.profile?.aboutMe?.availability ||
+                  "----------------------------"}
               </Typography>
             </Box>
 
@@ -151,8 +124,11 @@ export default function AboutMeCard() {
               >
                 Experience Level
               </Typography>
-              <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
-                {experienceLevel}
+              <Typography
+                sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
+              >
+                {state.user?.profile?.aboutMe?.experienceLevel ||
+                  "-----------------"}
               </Typography>
             </Box>
           </div>
@@ -174,9 +150,9 @@ export default function AboutMeCard() {
                   mt: "0.3rem",
                 }}
               >
-
-                {languages.map((l)=><Chip label={l} size="small" sx={sx} />)}
-         
+                {state.user?.profile?.aboutMe?.languages.map((l) => (
+                  <Chip label={l} size="small" sx={sx} />
+                )) || "-------------------" }
               </Box>
             </Box>
             <Box>
@@ -187,12 +163,18 @@ export default function AboutMeCard() {
                 >
                   Preferred Job Type
                 </Typography>
-                <Typography sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}>
-                  {preferredJobType}
+                <Typography
+                  sx={{
+                    fontSize: "0.85rem",
+                    color: "#6366f1",
+                    fontWeight: 500,
+                  }}
+                >
+                  {state.user?.profile?.aboutMe?.preferredJobType ||
+                  "-----------------"}
                 </Typography>
               </Box>
             </Box>
-            
           </div>
         </Box>
       </CardContent>
