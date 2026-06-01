@@ -20,6 +20,7 @@ export default function AboutMeModal({
   setOpen,
 
 }) {
+
   const {...state} = useProfile()
 
 
@@ -53,7 +54,6 @@ export default function AboutMeModal({
     setLanguagesList((prev) =>
       prev.includes(language) ? prev : [...prev, language],
     );
-
     setLanguage("");
   };
 
@@ -142,8 +142,8 @@ export default function AboutMeModal({
               </Typography>
 
               <TextField
-                value={changeBio}
-                onChange={(e) => setChangeBio(e.target.value)}
+                value={bio}
+                onChange={(e) => setBio(e.target.value)}
                 size="small"
                 fullWidth
                 multiline
@@ -243,6 +243,7 @@ export default function AboutMeModal({
             </Box>
 
             {/* -----------------------availability and preferredJobType----------------------- */}
+
             <Box>
               {/* Availability */}
               <Box sx={{ mb: 2 }}>
@@ -264,15 +265,12 @@ export default function AboutMeModal({
                   value={changeAvailability}
                   onChange={(e) => setchangeAvailability(e.target.value)}
                 >
-                  <MenuItem value="Available">Available</MenuItem>
+                  <MenuItem value="immediately">immediately</MenuItem>
 
-                  <MenuItem value="1 Week Notice">1 Week Notice</MenuItem>
+                  <MenuItem value="1_week">1_week</MenuItem>
 
-                  <MenuItem value="2 Weeks Notice">2 Weeks Notice</MenuItem>
+                  <MenuItem value="1_month">1_month</MenuItem>
 
-                  <MenuItem value="1 Month Notice">1 Month Notice</MenuItem>
-
-                  <MenuItem value="Not Available">Not Available</MenuItem>
                 </TextField>
               </Box>
 
@@ -296,17 +294,17 @@ export default function AboutMeModal({
                   value={changePreferredJobType}
                   onChange={(e) => setChangePreferredJobType(e.target.value)}
                 >
-                  <MenuItem value="Full-Time">Full-Time</MenuItem>
+                  <MenuItem value="full-time">full-time</MenuItem>
 
-                  <MenuItem value="Part-Time">Part-Time</MenuItem>
+                  <MenuItem value="part-time">part-time</MenuItem>
 
-                  <MenuItem value="Freelance">Freelance</MenuItem>
+                  <MenuItem value="remote">remote</MenuItem>
 
-                  <MenuItem value="Contract">Contract</MenuItem>
+                  <MenuItem value="internship">internship</MenuItem>
 
-                  <MenuItem value="Internship">Internship</MenuItem>
+                  <MenuItem value="freelance">freelance</MenuItem>
 
-                  <MenuItem value="Remote">Remote</MenuItem>
+                  <MenuItem value="contract">contract</MenuItem>
                 </TextField>
               </Box>
 
@@ -330,21 +328,13 @@ export default function AboutMeModal({
                   value={changeExperienceLevel}
                   onChange={(e) => setChangeExperienceLevel(e.target.value)}
                 >
-                  <MenuItem value="Entry Level (No Experience)">
-                    Entry Level (No Experience)
-                  </MenuItem>
 
-                  <MenuItem value="1-2 Years">1-2 Years</MenuItem>
+                  <MenuItem value="junior">junior</MenuItem>
 
-                  <MenuItem value="1-2 Years">1-2 Years</MenuItem>
+                  <MenuItem value="mid">mid</MenuItem>
 
-                  <MenuItem value="2-4 Years">2-4 Years</MenuItem>
+                  <MenuItem value="senior">senior</MenuItem>
 
-                  <MenuItem value="4-6 Years">4-6 Years</MenuItem>
-
-                  <MenuItem value="6-10 Years">6-10 Years</MenuItem>
-
-                  <MenuItem value="10+ Years">10+ Years</MenuItem>
                 </TextField>
               </Box>
             </Box>
