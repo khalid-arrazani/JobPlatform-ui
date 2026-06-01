@@ -59,7 +59,7 @@ export default function UploadProfilePhoto() {
 >
   {/* Avatar */}
   <Avatar
-    src={state.user?.profile.ProfileImage}
+    src={state.user?.profile?.ProfileImage}
     sx={{
       width: "100%",
       height: "100%",

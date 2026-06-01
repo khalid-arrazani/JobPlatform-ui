@@ -10,12 +10,21 @@ import {
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState , useEffect} from "react";
+
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
+
+
+
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 
 export default function EditProfileModil({ open, setOpen }) {
   
-const { ...state } = useProfile();
+const {
+  dispatch,
+  ...state
+} = useProfile();
+
 
 const [fullName, setFullName] =
   useState("");
@@ -29,7 +38,7 @@ const [headline, setHeadline] =
 useEffect(() => {
 
   if (state.user?.profile) {
-    
+
     setFullName(
       state.user.profile.fullName || ""
     );
@@ -43,6 +52,32 @@ useEffect(() => {
     );
   }
 }, [state.user]);
+
+
+const HandleUpdate = async ()=>{
+    try {
+
+    const data =
+      await updateProfileHeader({
+        fullName,
+        location,
+        headline,
+      });
+
+       dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setOpen(false)
+    console.log(data);
+
+  } catch (error) {
+
+    console.log(error.response?.data);
+    
+
+  }
+}
 
   return (
     <>
@@ -114,7 +149,7 @@ useEffect(() => {
 
               <TextField
                 fullWidth
-                onChange={(e)=>{setfullName(e.target.value)}}
+                onChange={(e)=>{setFullName(e.target.value)}}
                 value={fullName}
                 required
                 size="small"
@@ -185,6 +220,7 @@ useEffect(() => {
             {/* Button */}
             <Button
               fullWidth
+              onClick={HandleUpdate}
               variant="contained"
               sx={{
                 height: "3rem",

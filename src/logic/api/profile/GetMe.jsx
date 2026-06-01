@@ -1,7 +1,6 @@
 import API from "../config/axios";
 
 export const getMe = async (
-  
 ) => {
   const response = await API.get(
     "/jobseeker/me",
@@ -10,4 +9,17 @@ export const getMe = async (
   console.log(response.data);
   return response.data;
 };
+
+
+export const updateProfileHeader = async (
+  formData
+) => {
+  const response = await API.put(
+    "/jobseeker/me",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
 
