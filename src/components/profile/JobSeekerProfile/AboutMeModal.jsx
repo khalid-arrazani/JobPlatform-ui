@@ -17,6 +17,7 @@ import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
 export default function AboutMeModal({ open, setOpen }) {
+  
   const { dispatch, ...state } = useProfile();
 
   // this is the languages List
@@ -30,6 +31,8 @@ export default function AboutMeModal({ open, setOpen }) {
   const [availability, setAvailability] = useState("");
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
+
+
 
   useEffect(() => {
     const profile = state.user?.profile;
@@ -46,6 +49,7 @@ export default function AboutMeModal({ open, setOpen }) {
 
     setExperienceLevel(profile.aboutMe?.experienceLevel || "");
   }, [state.user?.profile]);
+
 
   const handleAdd = () => {
     if (!language) return;
