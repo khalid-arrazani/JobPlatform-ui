@@ -24,8 +24,6 @@ export default function TopSkillsCard() {
     "CSS",
   ])
 
-
-
 const [editSkills,setEditSkills]=useState(skills)
   return (
     <Card
