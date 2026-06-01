@@ -12,41 +12,40 @@ import {
 } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
-export default function AboutMeModal({
-  open,
-  setOpen,
+export default function AboutMeModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
 
-}) {
-
-  const {...state} = useProfile()
-
-
-  // this is the languages List 
+  // this is the languages List
   const lang = ISO6391.getAllNames();
   //---------------------------------
 
-
-  const [bio, setBio] = useState("bio");
-
+  const [about, setAbout] = useState("bio");
   const [language, setLanguage] = useState("");
-
   const [languagesList, setLanguagesList] = useState([]);
-
   // -----------------------availability and preferredJobType----------------------------
-
   const [availability, setAvailability] = useState("");
+  const [preferredJobType, setPreferredJobType] = useState("");
+  const [experienceLevel, setExperienceLevel] = useState("");
 
+  useEffect(() => {
+    const profile = state.user?.profile;
 
-  const [preferredJobType, setPreferredJobType] =
-    useState("");
+    if (!profile) return;
 
+    setAbout(profile.aboutMe?.about || "");
 
-  const [experienceLevel, setExperienceLevel] =
-    useState("");
+    setLanguagesList(profile.aboutMe?.languages || []);
 
+    setAvailability(profile.aboutMe?.availability || "");
+
+    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
+
+    setExperienceLevel(profile.aboutMe?.experienceLevel || "");
+  }, [state.user?.profile]);
 
   const handleAdd = () => {
     if (!language) return;
@@ -57,14 +56,30 @@ export default function AboutMeModal({
     setLanguage("");
   };
 
+  const handleSave = async () => {
+    const aboutMe = {
+      about,
+      languages: languagesList,
+      availability,
+      preferredJobType,
+      experienceLevel,
+    };
 
-  const handleSave = () => {
+    try {
+      const data = await updateProfileHeader({
+        aboutMe,
+      });
 
-    setOpen(false);
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+
+      setOpen(false);
+    } catch (error) {
+      console.log(error.response?.data);
+    }
   };
-
-
-
 
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
@@ -77,23 +92,21 @@ export default function AboutMeModal({
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          pb:"2rem"
+          pb: "2rem",
         }}
         open={open}
         onClose={() => setOpen(false)}
-
       >
         <Card
           sx={{
-           maxHeight: "80vh",
+            maxHeight: "80vh",
             width: "50vw",
             outline: "none",
-           
+
             background: "#fffffff8",
 
             p: "0.5rem",
-            overflow:'auto'
-
+            overflow: "auto",
           }}
         >
           <Box
@@ -142,8 +155,8 @@ export default function AboutMeModal({
               </Typography>
 
               <TextField
-                value={bio}
-                onChange={(e) => setBio(e.target.value)}
+                value={about}
+                onChange={(e) => setAbout(e.target.value)}
                 size="small"
                 fullWidth
                 multiline
@@ -163,7 +176,7 @@ export default function AboutMeModal({
                   textAlign: "right",
                 }}
               >
-                {bio.length}/700
+                {about.length}/700
               </Typography>
             </Box>
 
@@ -262,15 +275,14 @@ export default function AboutMeModal({
                   fullWidth
                   size="small"
                   sx={{ mb: 1 }}
-                  value={changeAvailability}
-                  onChange={(e) => setchangeAvailability(e.target.value)}
+                  value={availability}
+                  onChange={(e) => setAvailability(e.target.value)}
                 >
                   <MenuItem value="immediately">immediately</MenuItem>
 
                   <MenuItem value="1_week">1_week</MenuItem>
 
                   <MenuItem value="1_month">1_month</MenuItem>
-
                 </TextField>
               </Box>
 
@@ -291,8 +303,8 @@ export default function AboutMeModal({
                   fullWidth
                   size="small"
                   sx={{ mb: 2 }}
-                  value={changePreferredJobType}
-                  onChange={(e) => setChangePreferredJobType(e.target.value)}
+                  value={preferredJobType}
+                  onChange={(e) => setPreferredJobType(e.target.value)}
                 >
                   <MenuItem value="full-time">full-time</MenuItem>
 
@@ -307,7 +319,6 @@ export default function AboutMeModal({
                   <MenuItem value="contract">contract</MenuItem>
                 </TextField>
               </Box>
-
 
               {/* Experience Level */}
               <Box>
@@ -325,20 +336,17 @@ export default function AboutMeModal({
                   select
                   fullWidth
                   size="small"
-                  value={changeExperienceLevel}
-                  onChange={(e) => setChangeExperienceLevel(e.target.value)}
+                  value={experienceLevel}
+                  onChange={(e) => setExperienceLevel(e.target.value)}
                 >
-
                   <MenuItem value="junior">junior</MenuItem>
 
                   <MenuItem value="mid">mid</MenuItem>
 
                   <MenuItem value="senior">senior</MenuItem>
-
                 </TextField>
               </Box>
             </Box>
-
 
             {/* Button */}
             <Button

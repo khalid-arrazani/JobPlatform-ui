@@ -46,6 +46,7 @@ export default function headerModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
+      
       setOpen(false);
       console.log(data);
     } catch (error) {
