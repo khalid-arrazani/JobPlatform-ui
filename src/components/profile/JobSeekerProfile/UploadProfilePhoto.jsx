@@ -8,8 +8,14 @@ import { Dialog, DialogContent, Slider } from "@mui/material";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
-export default function UploadProfilePhoto() {
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
+import { Navigate } from "react-router-dom";
 
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
+
+export default function UploadProfilePhoto() {
+ 
+  const {setSnackBar,} = useAuth()
 
   const { ...state } = useContext(ProfileContext);
   const editorRef = useRef();
@@ -27,7 +33,8 @@ export default function UploadProfilePhoto() {
 
 
 
-  const handleSave = () => {
+  const handleSave = async() => {
+
     const canvas = editorRef.current.getImageScaledToCanvas();
 
     canvas.toBlob((blob) => {
@@ -41,8 +48,46 @@ export default function UploadProfilePhoto() {
 
       setOpen(false);
     }, "image/png");
+
+     try {
+       const formData = new FormData();
+       if (imageFile) {
+        formData.append(
+          "image",
+          imageFile,
+          "profile.png"
+        );
+      };
+
+      const data =
+        await updateProfileHeader(formData);
+
+        console.log(data);
+
+        setSnackBar({
+          open: true,
+          message: data?.message,
+          severity: "success",
+        });
+
+
+        // Navigate('/profile')
+
+
+      } catch (error) {
+        console.log(error.response.data);
+        
+        setSnackBar({
+          open: true,
+          message: error.response.data?.message,
+          severity: "error",
+        });
+      }
   };
 
+
+    
+    
 
 
   return (

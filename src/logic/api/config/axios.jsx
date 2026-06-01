@@ -5,24 +5,94 @@ const API = axios.create({
   withCredentials: true,
 });
 
-API.interceptors.response.use(
-  (response) => response,
+let refreshPromise = null;
 
-  async (error) => {
-    if (
-      error.response?.data?.message === "Access token missing" ||
-      error.response?.data?.message === "Invalid or expired token"
-    ) {
-      console.log(123456789);
-      await API.post("/auth/refresh-token");
-      return API(error.config);
-    } else if (error.response?.data?.message === "No refresh token") {
-      localStorage.clear();
-      window.location.href =
-        "/login"
-    }
-    return Promise.reject(error);
+API.interceptors.response.use(
+  function (response) {
+    return response;
   },
+
+  async function (error) {
+
+    const originalRequest =
+      error.config;
+
+    const message =
+      error.response?.data?.message;
+
+    if (
+      message ===
+        "Access token missing" ||
+      message ===
+        "Invalid or expired token"
+    ) {
+
+      if (
+        originalRequest._retry
+      ) {
+        return Promise.reject(
+          error
+        );
+      }
+
+      originalRequest._retry =
+        true;
+
+      try {
+
+        if (
+          !refreshPromise
+        ) {
+
+          refreshPromise =
+            API.post(
+              "/auth/refresh-token"
+            );
+
+        }
+
+        await refreshPromise;
+
+        refreshPromise =
+          null;
+
+        return API(
+          originalRequest
+        );
+
+      } catch (
+        refreshError
+      ) {
+
+        refreshPromise =
+          null;
+
+        localStorage.clear();
+
+        window.location.href =
+          "/login";
+
+        return Promise.reject(
+          refreshError
+        );
+      }
+    }
+
+    if (
+      message ===
+      "No refresh token"
+    ) {
+
+      localStorage.clear();
+
+      window.location.href =
+        "/login";
+    }
+
+    return Promise.reject(
+      error
+    );
+  }
 );
 
 export default API;

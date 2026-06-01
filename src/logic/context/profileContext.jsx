@@ -28,9 +28,6 @@ export default function ProfileProvider({
       initialState
     );
 
-    console.log("this is initialState",state);
-
-
   return (
     <ProfileContext.Provider
       value={{

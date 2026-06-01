@@ -4,9 +4,14 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import TopSkillsModal from "./TopSkillsModal";
 import { useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function TopSkillsCard() {
+
   const [open,setOpen]=useState(false)
+
+  const {dispatch , ...state} = useProfile()
+  console.log(state);
 
   const [skills , setSkills] =useState ([
     "JavaScript",
@@ -18,6 +23,9 @@ export default function TopSkillsCard() {
     "MUI",
     "CSS",
   ])
+
+
+
 const [editSkills,setEditSkills]=useState(skills)
   return (
     <Card

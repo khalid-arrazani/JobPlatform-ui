@@ -2,6 +2,7 @@ import {
   createContext,
   useReducer,
   useState,
+  useContext
   
 } from "react";
 
@@ -10,10 +11,6 @@ import { authReducer } from "./reducer/authReducer";
 
 
 export const AuthContext = createContext();
-
-
-
-
 
 
 const initialState = {
@@ -30,6 +27,7 @@ export default function AuthProvider({
   message: "",
   severity: "success",
 });
+
 
 
   const [state, dispatch] =
@@ -56,3 +54,9 @@ export default function AuthProvider({
     </AuthContext.Provider>
   );
 }
+
+export const useAuth = () => {
+  return useContext(
+    AuthContext
+  );
+};
