@@ -9,26 +9,19 @@ import {  IconButton } from "@mui/material";
 import EditIcon from '@mui/icons-material/Edit';
 
 import ExperiencesModal from "./experiencesModal";
-import { useState } from "react";
+import { useState , useContext } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function ExperienceCard() {
   const [open,setOpen] = useState(false)
+
   const {...state} = useProfile()
 
-  const [experiences,setExperiences] = useState([
-    {
-      role: "Frontend Developer",
-      company: "NexHire",
-      period: "2025 - Present",
-    },
-    {
-      role: "React Developer",
-      company: "Freelance",
-      period: "2024 - 2025",
-    },
-  ])
+  const [experiences,setExperiences] = useState()
 
+  useContext(()=>{
+    setExperiences(state.user?.profile?.experience)
+  },[state.user?.profile])
   
 
   return (
@@ -97,7 +90,7 @@ export default function ExperienceCard() {
                   fontWeight: 600,
                 }}
               >
-                {exp.role}
+                {exp.title}
               </Typography>
 
               <Typography
