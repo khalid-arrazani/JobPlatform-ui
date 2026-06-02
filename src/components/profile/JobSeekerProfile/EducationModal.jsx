@@ -26,7 +26,6 @@ export default function EducationModal({ open, setOpen }) {
   }, [state.user?.profile]);
 
 
-
   const handleAddEducation = () => {
     if (!degree || !school || !period) return;
     const newEducation = {

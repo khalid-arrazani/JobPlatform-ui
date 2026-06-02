@@ -25,18 +25,18 @@ export default function SocialLinksModal({
 
   const [socialLinks, setSocialLinks] = useState([]);
 
-
-  
-
   const [platform, setPlatform] = useState("");
   const [url, setUrl] = useState("");
 
 
 
 
-  useEffect(()=>{
-    setSocialLinks(state.user?.profile?.socialLinks)
-  },[state.user?.profile])
+ useEffect(() => {
+    setSocialLinks(
+      state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+  
 
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;

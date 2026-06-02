@@ -46,11 +46,9 @@ export default function SocialLinksCard() {
   }
 };
 
-  useEffect(() => {
-    setEducations(
-      state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
-    );
-  }, [state.user?.profile]);
+ useEffect(()=>{
+    setSocialLinks(state.user?.profile?.socialLinks)
+  },[state.user?.profile])
 
 
   return (
