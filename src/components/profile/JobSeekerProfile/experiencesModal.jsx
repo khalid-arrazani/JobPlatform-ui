@@ -6,25 +6,35 @@ import {
   TextField,
   Button,
   IconButton,
-  Divider
+  Divider,
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import { useState } from "react";
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
 
-export default function experiencesModal({
-  open,
-  setOpen,
-  experiences,
-  setExperiences
-}){
+import { useEffect, useState } from "react";
 
-  const [role, setRole] = useState("")
+import { useProfile } from "../../../logic/context/profileContext";
 
-  const [company, setCompany] = useState("")
+export default function experiencesModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
 
-  const [period, setPeriod] = useState("")
- 
+
+  
+  const [role, setRole] = useState("");
+  const [experiences, setExperiences] = useState([]);
+  const [company, setCompany] = useState("");
+  const [period, setPeriod] = useState("");
+
+
+
+  useEffect(() => {
+    setExperiences(
+      state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+
+
 
   const handleAddExperience = () => {
     if (!role || !company || !period) return;
@@ -45,6 +55,30 @@ export default function experiencesModal({
   const handleDelete = (index) => {
     setExperiences((prev) => prev.filter((_, i) => i !== index));
   };
+
+
+
+
+  const handleSave = async () => {
+    try {
+      const data = await updateProfileHeader({
+        experience: experiences,
+      });
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+
+      setOpen(false);
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+    setOpen(false);
+  };
+
+
+
   return (
     <>
       <Modal
@@ -90,140 +124,138 @@ export default function experiencesModal({
               />
             </svg>
           </Box>
-          <Divider sx={{ mt: "1rem" }}>Experience  </Divider>
+          <Divider sx={{ mt: "1rem" }}>Experience </Divider>
 
+          {/* Title */}
+          <Typography
+            sx={{
+              fontSize: "1.2rem",
+              fontWeight: 700,
+              mb: 3,
+            }}
+          >
+            Experience
+          </Typography>
 
-            {/* Title */}
-            <Typography
-              sx={{
-                fontSize: "1.2rem",
-                fontWeight: 700,
-                mb: 3,
-              }}
-            >
-              Experience
-            </Typography>
+          {/* Existing Experiences */}
+          <Box sx={{ mb: 3 }}>
+            {experiences?.map((experience, index) => (
+              <Box
+                key={index}
+                sx={{
+                  p: 2,
 
-            {/* Existing Experiences */}
-            <Box sx={{ mb: 3 }}>
-              {experiences.map((experience, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    p: 2,
+                  border: "1px solid #e5e7eb",
 
-                    border: "1px solid #e5e7eb",
+                  borderRadius: "0.7rem",
 
-                    borderRadius: "0.7rem",
+                  mb: 1.5,
 
-                    mb: 1.5,
+                  display: "flex",
 
-                    display: "flex",
+                  justifyContent: "space-between",
 
-                    justifyContent: "space-between",
+                  alignItems: "flex-start",
+                }}
+              >
+                <Box>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                    }}
+                  >
+                    {experience.role}
+                  </Typography>
 
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontWeight: 700,
-                      }}
-                    >
-                      {experience.role}
-                    </Typography>
+                  <Typography
+                    sx={{
+                      color: "#6b7280",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {experience.company}
+                  </Typography>
 
-                    <Typography
-                      sx={{
-                        color: "#6b7280",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      {experience.company}
-                    </Typography>
-
-                    <Typography
-                      sx={{
-                        color: "#9ca3af",
-                        fontSize: "0.82rem",
-                      }}
-                    >
-                      {experience.period}
-                    </Typography>
-                  </Box>
-
-                  <IconButton onClick={() => handleDelete(index)}>
-                    <DeleteIcon />
-                  </IconButton>
+                  <Typography
+                    sx={{
+                      color: "#9ca3af",
+                      fontSize: "0.82rem",
+                    }}
+                  >
+                    {experience.period}
+                  </Typography>
                 </Box>
-              ))}
-            </Box>
 
-            {/* Add New Experience */}
-            <Typography
-              sx={{
-                fontWeight: 700,
-                mb: 2,
-              }}
-            >
-              Add New Experience
-            </Typography>
+                <IconButton onClick={() => handleDelete(index)}>
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+            ))}
+          </Box>
 
-            {/* Role */}
-            <Box sx={{ mb: 2 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Role"
-                placeholder="Frontend Developer"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-              />
-            </Box>
+          {/* Add New Experience */}
+          <Typography
+            sx={{
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            Add New Experience
+          </Typography>
 
-            {/* Company */}
-            <Box sx={{ mb: 2 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Company"
-                placeholder="Google"
-                value={company}
-                onChange={(e) => setCompany(e.target.value)}
-              />
-            </Box>
+          {/* Role */}
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Role"
+              placeholder="Frontend Developer"
+              value={role}
+              onChange={(e) => setRole(e.target.value)}
+            />
+          </Box>
 
-            {/* Period */}
-            <Box sx={{ mb: 3 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Period"
-                placeholder="2022 - 2024"
-                value={period}
-                onChange={(e) => setPeriod(e.target.value)}
-              />
-            </Box>
+          {/* Company */}
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Company"
+              placeholder="Google"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </Box>
 
-            {/* Actions */}
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                gap: 1,
-              }}
-            >
-              <Button variant="outlined" onClick={() => setOpen(false)}>
-                Close
-              </Button>
+          {/* Period */}
+          <Box sx={{ mb: 3 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Period"
+              placeholder="2022 - 2024"
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+            />
+          </Box>
 
-              <Button variant="contained" onClick={handleAddExperience}>
-                Add Experience
-              </Button>
-            </Box>
-          </Card>
-       
+          {/* Actions */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: 1,
+            }}
+          >
+            <Button variant="outlined" onClick={handleSave}>
+              save
+            </Button>
+
+            <Button variant="contained" onClick={handleAddExperience}>
+              Add Experience
+            </Button>
+          </Box>
+        </Card>
       </Modal>
     </>
   );

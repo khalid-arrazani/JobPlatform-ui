@@ -3,25 +3,20 @@ import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
 import EducationModal from "./EducationModal";
-import { useState } from "react";
+import { useState , useEffect} from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EducationCard() {
   const [open, setOpen] = useState(false);
-  
+  const {...state} =  useProfile()
 
-  const [educations, setEducations] = useState([
-    {
-      degree: "Frontend Development",
-      school: "Online Learning",
-      period: "2023 - Present",
-    },
-    {
-      degree: "Forklift Diploma",
-      school: "Professional Training",
-      period: "2022 - 2023",
-    }
-  ]);
-  
+  const [educations, setEducations] = useState();
+
+   useEffect(() => {
+      setEducations(
+        state.user?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
+      );
+    }, [state.user?.profile]);
 
   return (
     <Card
@@ -33,7 +28,7 @@ export default function EducationCard() {
         m: 1,
       }}
     >
-      <EducationModal open={open} setOpen={setOpen} educations={educations} setEducations={setEducations} />
+      <EducationModal open={open} setOpen={setOpen} />
 
       <CardContent sx={{ p: "0.75rem !important" }}>
         {/* Title */}
@@ -74,7 +69,7 @@ export default function EducationCard() {
             gap: "1rem",
           }}
         >
-          {educations.map((item, index) => (
+          {educations?.map((item, index) => (
             <Box key={index}>
               <Typography
                 sx={{

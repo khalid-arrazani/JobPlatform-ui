@@ -34,6 +34,7 @@ export default function EducationModal({ open, setOpen }) {
       school,
       period,
     };
+    
     setEducations((prev) => [...prev, newEducation]);
     setDegree("");
     setSchool("");
