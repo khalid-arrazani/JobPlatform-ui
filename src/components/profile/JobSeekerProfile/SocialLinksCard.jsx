@@ -13,19 +13,22 @@ import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
 import SocialLinksModal from "./SocialLinksModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+
+
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function SocialLinksCard() {
 
-  
+  const {...state} = useProfile()
   const [open, setOpen] = useState(false);
-  const [socialLinks, setSocialLinks] = useState([{platform:"LinkedIn",url:"https://www.linkedin.com/in/khalid-arrazani-9a5860191"},{platform:"GitHub",url:"https://github.com/khalid-arrazani"}]);
+
+  const [socialLinks, setSocialLinks] = useState([]);
 
  const getIcon = (platform) => {
   switch (platform) {
     case "LinkedIn":
       return <LinkedInIcon />;
-
     case "GitHub":
       return <GitHubIcon />;
 
@@ -42,6 +45,14 @@ export default function SocialLinksCard() {
       return <LanguageIcon />;
   }
 };
+
+  useEffect(() => {
+    setEducations(
+      state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+
+
   return (
     <Card
       sx={{
@@ -117,7 +128,7 @@ export default function SocialLinksCard() {
           gap: "1rem",
         }}
       >
-        {socialLinks.length === 0 ? (
+        {socialLinks?.length === 0 ? (
           <Typography
             sx={{
               color: "#6b7280",
@@ -127,7 +138,7 @@ export default function SocialLinksCard() {
             No social links added yet.
           </Typography>
         ) : (
-          socialLinks.map((item, index) => (
+          socialLinks?.map((item, index) => (
             <Box
               key={index}
               component="a"

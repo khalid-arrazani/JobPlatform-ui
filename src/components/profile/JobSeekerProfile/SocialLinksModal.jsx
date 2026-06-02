@@ -6,21 +6,37 @@ import {
   TextField,
   Button,
   Chip,
-  MenuItem,
-  
+  Autocomplete,
 } from "@mui/material";
 
-import { useState } from "react";
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../logic/context/profileContext";
+
+const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
+
+import { useEffect, useState } from "react";
 
 export default function SocialLinksModal({
   open,
-  setOpen,
-  socialLinks,
-  setSocialLinks,
+  setOpen
 }) {
-  const [platform, setPlatform] = useState("");
 
+  const {dispatch , ...state} = useProfile();
+
+  const [socialLinks, setSocialLinks] = useState([]);
+
+
+  
+
+  const [platform, setPlatform] = useState("");
   const [url, setUrl] = useState("");
+
+
+
+
+  useEffect(()=>{
+    setSocialLinks(state.user?.profile?.socialLinks)
+  },[state.user?.profile])
 
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;
@@ -41,9 +57,32 @@ export default function SocialLinksModal({
     }
   };
 
+
   const handleDelete = (index) => {
     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
+
+
+
+
+  const handleSave = async () => {
+      try {
+        const data = await updateProfileHeader({
+          socialLinks: socialLinks,
+        });
+  
+        dispatch({
+          type: "PROFILE",
+          payload: data,
+        });
+  
+        setOpen(false);
+      } catch (error) {
+        console.log(error.response?.data);
+      }
+      setOpen(false);
+    };
+  
 
   return (
     <Modal
@@ -87,24 +126,32 @@ export default function SocialLinksModal({
           }}
         >
           {/* Platform */}
-          <TextField
-            select
+          <Autocomplete
+            freeSolo
             fullWidth
-            size="small"
-            label="Platform"
+            slotProps={{
+              popper: {
+                sx: {
+                  transition: "none",
+                  animation: "none",
+                  m: 5,
+                },
+              },
+              listbox: {
+                sx: {
+                  maxHeight: "150px",
+                },
+              },
+            }}
+            options={platforms}
             value={platform}
-            onChange={(e) => setPlatform(e.target.value)}
-          >
-            <MenuItem value="LinkedIn">LinkedIn</MenuItem>
-
-            <MenuItem value="GitHub">GitHub</MenuItem>
-
-            <MenuItem value="Twitter">Twitter</MenuItem>
-
-            <MenuItem value="Facebook">Facebook</MenuItem>
-
-            <MenuItem value="Instagram">Instagram</MenuItem>
-          </TextField>
+            onInputChange={(event, newValue) => {
+              setPlatform(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField {...params} label="Platform" size="small" fullWidth />
+            )}
+          />
 
           {/* URL */}
           <TextField
@@ -138,7 +185,7 @@ export default function SocialLinksModal({
             flexWrap: "wrap",
           }}
         >
-          {socialLinks.map((item, index) => (
+          {socialLinks?.map((item, index) => (
             <Chip
               key={index}
               label={item.platform}
@@ -157,7 +204,7 @@ export default function SocialLinksModal({
         >
           <Button
             variant="contained"
-            onClick={() => setOpen(false)}
+            onClick={handleSave}
             sx={{
               textTransform: "none",
               borderRadius: "0.5rem",

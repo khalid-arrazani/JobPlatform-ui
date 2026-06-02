@@ -10,7 +10,7 @@ export default function TopSkillsCard() {
 
   const [open,setOpen]=useState(false)
 
-  const {dispatch , ...state} = useProfile()
+  const { ...state} = useProfile()
 
   return (
     <Card
