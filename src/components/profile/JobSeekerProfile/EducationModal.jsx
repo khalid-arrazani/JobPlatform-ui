@@ -4,6 +4,7 @@ import { Modal, Divider, TextField, Button, IconButton } from "@mui/material";
 import { useState } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
 export default function EducationModal({
   open,
@@ -37,23 +38,25 @@ export default function EducationModal({
     setEducations((prev) => prev.filter((_, i) => i !== index));
   };
 
-  const handleSave = async() => {
-     try {
-            const data = await updateProfileHeader({
-              
-            });
-      
-            dispatch({
-              type: "PROFILE", 
-              payload: data,
-            });
-      
-            setOpen(false);
-          } catch (error) {
-            console.log(error.response?.data);
-          }
-        setOpen(false);
+
+
+  const handleSave = async () => {
+    try {
+      const data = await updateProfileHeader({});
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+
+      setOpen(false);
+    } catch (error) {
+      console.log(error.response?.data);
+    }
+    setOpen(false);
   };
+
+
   return (
     <>
       <Modal
@@ -62,7 +65,6 @@ export default function EducationModal({
           justifyContent: "center",
           alignItems: "center",
           pb: "2rem",
-          
         }}
         open={open}
         onClose={() => setOpen(false)}
@@ -100,134 +102,133 @@ export default function EducationModal({
               />
             </svg>
           </Box>
-            <Divider sx={{ mt: "1rem" }}>Education</Divider>
+          <Divider sx={{ mt: "1rem" }}>Education</Divider>
 
-            {/* Title */}
-            <Typography
-              sx={{
-                fontSize: "1.2rem",
-                fontWeight: 700,
-                mb: 3,
-              }}
-            >
-              Education
-            </Typography>
+          {/* Title */}
+          <Typography
+            sx={{
+              fontSize: "1.2rem",
+              fontWeight: 700,
+              mb: 3,
+            }}
+          >
+            Education
+          </Typography>
 
-            {/* Existing Educations */}
-            <Box sx={{ mb: 3 }}>
-              {educations.map((education, index) => (
-                <Box
-                  key={index}
-                  sx={{
-                    p: 2,
+          {/* Existing Educations */}
+          <Box sx={{ mb: 3 }}>
+            {educations.map((education, index) => (
+              <Box
+                key={index}
+                sx={{
+                  p: 2,
 
-                    border: "1px solid #e5e7eb",
+                  border: "1px solid #e5e7eb",
 
-                    borderRadius: "0.7rem",
+                  borderRadius: "0.7rem",
 
-                    mb: 1.5,
+                  mb: 1.5,
 
-                    display: "flex",
+                  display: "flex",
 
-                    justifyContent: "space-between",
+                  justifyContent: "space-between",
 
-                    alignItems: "flex-start",
-                  }}
-                >
-                  <Box>
-                    <Typography
-                      sx={{
-                        fontWeight: 700,
-                      }}
-                    >
-                      {education.degree}
-                    </Typography>
+                  alignItems: "flex-start",
+                }}
+              >
+                <Box>
+                  <Typography
+                    sx={{
+                      fontWeight: 700,
+                    }}
+                  >
+                    {education.degree}
+                  </Typography>
 
-                    <Typography
-                      sx={{
-                        color: "#6b7280",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      {education.school}
-                    </Typography>
+                  <Typography
+                    sx={{
+                      color: "#6b7280",
+                      fontSize: "0.9rem",
+                    }}
+                  >
+                    {education.school}
+                  </Typography>
 
-                    <Typography
-                      sx={{
-                        color: "#9ca3af",
-                        fontSize: "0.82rem",
-                      }}
-                    >
-                      {education.period}
-                    </Typography>
-                  </Box>
-
-                  <IconButton onClick={() => handleDelete(index)}>
-                    <DeleteIcon />
-                  </IconButton>
+                  <Typography
+                    sx={{
+                      color: "#9ca3af",
+                      fontSize: "0.82rem",
+                    }}
+                  >
+                    {education.period}
+                  </Typography>
                 </Box>
-              ))}
-            </Box>
 
-            {/* Add New Education */}
-            <Typography
-              sx={{
-                fontWeight: 700,
-                mb: 2,
-              }}
-            >
-              Add New Education
-            </Typography>
+                <IconButton onClick={() => handleDelete(index)}>
+                  <DeleteIcon />
+                </IconButton>
+              </Box>
+            ))}
+          </Box>
 
-            <Box sx={{ mb: 2 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Degree"
-                value={degree}
-                onChange={(e) => setDegree(e.target.value)}
-              />
-            </Box>
+          {/* Add New Education */}
+          <Typography
+            sx={{
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            Add New Education
+          </Typography>
 
-            <Box sx={{ mb: 2 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="School"
-                value={school}
-                onChange={(e) => setSchool(e.target.value)}
-              />
-            </Box>
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Degree"
+              value={degree}
+              onChange={(e) => setDegree(e.target.value)}
+            />
+          </Box>
 
-            <Box sx={{ mb: 3 }}>
-              <TextField
-                fullWidth
-                size="small"
-                label="Period"
-                placeholder="2022 - 2023"
-                value={period}
-                onChange={(e) => setPeriod(e.target.value)}
-              />
-            </Box>
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="School"
+              value={school}
+              onChange={(e) => setSchool(e.target.value)}
+            />
+          </Box>
 
-            {/* Actions */}
-            <Box
-              sx={{
-                display: "flex",
-                justifyContent: "flex-end",
-                gap: 1,
-              }}
-            >
-              <Button variant="outlined" onClick={() => setOpen(false)}>
-                Close
-              </Button>
+          <Box sx={{ mb: 3 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Period"
+              placeholder="2022 - 2023"
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+            />
+          </Box>
 
-              <Button variant="contained" onClick={handleAddEducation}>
-                Add Education
-              </Button>
-            </Box>
-          </Card>
-      
+          {/* Actions */}
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "flex-end",
+              gap: 1,
+            }}
+          >
+            <Button variant="outlined" onClick={handleSave}>
+              Save
+            </Button>
+
+            <Button variant="contained" onClick={handleAddEducation}>
+              Add Education
+            </Button>
+          </Box>
+        </Card>
       </Modal>
     </>
   );
