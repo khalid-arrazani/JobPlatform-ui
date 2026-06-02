@@ -20,8 +20,8 @@ export default function experiencesModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
 
 
-  
-  const [role, setRole] = useState("");
+
+  const [title, setTitle] = useState("");
   const [experiences, setExperiences] = useState([]);
   const [company, setCompany] = useState("");
   const [period, setPeriod] = useState("");
@@ -35,19 +35,18 @@ export default function experiencesModal({ open, setOpen }) {
   }, [state.user?.profile]);
 
 
-
   const handleAddExperience = () => {
-    if (!role || !company || !period) return;
+    if (!title || !company || !period) return;
 
     const newExperience = {
-      role,
+      title,
       company,
       period,
     };
 
     setExperiences((prev) => [...prev, newExperience]);
 
-    setRole("");
+    setTitle("");
     setCompany("");
     setPeriod("");
   };
@@ -164,7 +163,7 @@ export default function experiencesModal({ open, setOpen }) {
                       fontWeight: 700,
                     }}
                   >
-                    {experience.role}
+                    {experience.title}
                   </Typography>
 
                   <Typography
@@ -210,8 +209,8 @@ export default function experiencesModal({ open, setOpen }) {
               size="small"
               label="Role"
               placeholder="Frontend Developer"
-              value={role}
-              onChange={(e) => setRole(e.target.value)}
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
             />
           </Box>
 

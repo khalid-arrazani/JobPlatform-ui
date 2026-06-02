@@ -7,7 +7,7 @@ import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function ExperienceCard() {
-  
+
   const [open, setOpen] = useState(false);
 
   const { ...state } = useProfile();
@@ -33,8 +33,6 @@ export default function ExperienceCard() {
       <ExperiencesModal
         open={open}
         setOpen={setOpen}
-        experiences={experiences}
-        setExperiences={setExperiences}
       />
 
       <CardContent sx={{ p: "0.75rem !important" }}>
