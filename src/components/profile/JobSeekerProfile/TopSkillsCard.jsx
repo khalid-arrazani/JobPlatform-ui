@@ -11,20 +11,7 @@ export default function TopSkillsCard() {
   const [open,setOpen]=useState(false)
 
   const {dispatch , ...state} = useProfile()
-  console.log(state);
 
-  const [skills , setSkills] =useState ([
-    "JavaScript",
-    "React",
-    "GSAP",
-    "Node.js",
-    "MongoDB",
-    "Express",
-    "MUI",
-    "CSS",
-  ])
-
-const [editSkills,setEditSkills]=useState(skills)
   return (
     <Card
       sx={{
@@ -37,12 +24,10 @@ const [editSkills,setEditSkills]=useState(skills)
       }}
     >
       <TopSkillsModal
-      skills={skills}
-      setSkills={setSkills}
+
       open={open}
       setOpen={setOpen}
-      editSkills={editSkills}
-      setEditSkills={setEditSkills}
+
       />
 
       <CardContent sx={{ p: "0.3rem !important" }}>
@@ -84,7 +69,7 @@ const [editSkills,setEditSkills]=useState(skills)
             gap: "0.6rem",
           }}
         >
-          {skills.map((skill) => (
+          {state.user?.profile?.skills.map((skill) => (
             <Chip
               key={skill}
               label={skill}

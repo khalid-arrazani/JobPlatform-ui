@@ -36,6 +36,24 @@ export default function EducationModal({
   const handleDelete = (index) => {
     setEducations((prev) => prev.filter((_, i) => i !== index));
   };
+
+  const handleSave = async() => {
+     try {
+            const data = await updateProfileHeader({
+              
+            });
+      
+            dispatch({
+              type: "PROFILE", 
+              payload: data,
+            });
+      
+            setOpen(false);
+          } catch (error) {
+            console.log(error.response?.data);
+          }
+        setOpen(false);
+  };
   return (
     <>
       <Modal

@@ -6,40 +6,56 @@ import {
   TextField,
   Button,
   Chip,
-
-  
 } from "@mui/material";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
+import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
-export default function TopSkillsModal({
-  open,
-  setOpen,
-  
-  setSkills,
-  editSkills,
-  setEditSkills
-}) {
+export default function TopSkillsModal({ open, setOpen }) {
 
-  
+  const {dispatch, ...state } = useProfile();
 
   const [inputAdd, setInputAdd] = useState("");
+  const [editSkills, setEditSkills] = useState([]);
 
 
+useEffect(() => {
+  setEditSkills(
+    state.user?.profile?.skills || []
+  );
+}, [state.user?.profile]);
 
   const handleAdd = () => {
-    setEditSkills((S)=>[...S,inputAdd])
-      setInputAdd("");
+    setEditSkills((S) => [...S, inputAdd]);
+    setInputAdd("");
   };
 
   const handleDelete = (index) => {
     setEditSkills((prev) => prev.filter((_, i) => i !== index));
   };
+
+
+  const handleSave = async() => {
+      try {
+        const data = await updateProfileHeader({
+          skills:editSkills
+        });
   
- const handleSave = () => {
-   setSkills(editSkills)
-   setOpen(false)
+        dispatch({
+          type: "PROFILE", 
+          payload: data,
+        });
+  
+        setOpen(false);
+      } catch (error) {
+        console.log(error.response?.data);
+      }
+    setOpen(false);
   };
+
+
+
   return (
     <Modal
       open={open}
@@ -81,8 +97,6 @@ export default function TopSkillsModal({
             mb: 2,
           }}
         >
-  
-
           {/* skills */}
           <TextField
             fullWidth

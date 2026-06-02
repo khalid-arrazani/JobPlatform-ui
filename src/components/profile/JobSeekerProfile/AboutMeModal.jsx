@@ -17,7 +17,7 @@ import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
 export default function AboutMeModal({ open, setOpen }) {
-  
+
   const { dispatch, ...state } = useProfile();
 
   // this is the languages List
@@ -68,7 +68,6 @@ export default function AboutMeModal({ open, setOpen }) {
       preferredJobType,
       experienceLevel,
     };
-
     try {
       const data = await updateProfileHeader({
         aboutMe,
