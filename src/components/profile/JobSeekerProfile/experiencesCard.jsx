@@ -10,9 +10,12 @@ import EditIcon from '@mui/icons-material/Edit';
 
 import ExperiencesModal from "./experiencesModal";
 import { useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function ExperienceCard() {
   const [open,setOpen] = useState(false)
+  const {...state} = useProfile()
+
   const [experiences,setExperiences] = useState([
     {
       role: "Frontend Developer",

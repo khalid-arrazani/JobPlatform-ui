@@ -1,71 +1,56 @@
 import { Card, Typography, Box } from "@mui/material";
 
 import { Modal, Divider, TextField, Button, IconButton } from "@mui/material";
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
+export default function EducationModal({ open, setOpen }) {
 
-export default function EducationModal({
-  open,
-  setOpen,
+  const { dispatch, ...state } = useProfile();
 
-}) {
 
-  const {dispatch , ...state} = useProfile()
   const [degree, setDegree] = useState("");
-
   const [school, setSchool] = useState("");
-
   const [period, setPeriod] = useState("");
 
-useEffect(() => {
-  setEditSkills(
-    state.user?.profile?.skills || []
-  );
-}, [state.user?.profile]);
 
-  const [educations, setEducations] = useState([
-    {
-      degree: "Frontend Development",
-      school: "Online Learning",
-      period: "2023 - Present",
-    },
-    {
-      degree: "Forklift Diploma",
-      school: "Professional Training",
-      period: "2022 - 2023",
-    }
-  ]);
+  const [educations, setEducations] = useState();
+
+  useEffect(() => {
+    setEducations(
+      state.user?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+
+
 
   const handleAddEducation = () => {
     if (!degree || !school || !period) return;
-
     const newEducation = {
       degree,
       school,
       period,
     };
-
-
     setEducations((prev) => [...prev, newEducation]);
-
     setDegree("");
     setSchool("");
     setPeriod("");
   };
+
 
   const handleDelete = (index) => {
     setEducations((prev) => prev.filter((_, i) => i !== index));
   };
 
 
-
   const handleSave = async () => {
     try {
-      const data = await updateProfileHeader({});
+      const data = await updateProfileHeader({
+        education: educations,
+      });
 
       dispatch({
         type: "PROFILE",
@@ -79,7 +64,7 @@ useEffect(() => {
     setOpen(false);
   };
 
-
+  
   return (
     <>
       <Modal
@@ -140,7 +125,7 @@ useEffect(() => {
 
           {/* Existing Educations */}
           <Box sx={{ mb: 3 }}>
-            {educations.map((education, index) => (
+            {educations?.map((education, index) => (
               <Box
                 key={index}
                 sx={{
