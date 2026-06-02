@@ -1,22 +1,44 @@
 import { Card, Typography, Box } from "@mui/material";
 
 import { Modal, Divider, TextField, Button, IconButton } from "@mui/material";
-import { useState } from "react";
+import { useState , useEffect } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../logic/context/profileContext";
+
 
 export default function EducationModal({
   open,
   setOpen,
-  educations,
-  setEducations,
+
 }) {
+
+  const {dispatch , ...state} = useProfile()
   const [degree, setDegree] = useState("");
 
   const [school, setSchool] = useState("");
 
   const [period, setPeriod] = useState("");
+
+useEffect(() => {
+  setEditSkills(
+    state.user?.profile?.skills || []
+  );
+}, [state.user?.profile]);
+
+  const [educations, setEducations] = useState([
+    {
+      degree: "Frontend Development",
+      school: "Online Learning",
+      period: "2023 - Present",
+    },
+    {
+      degree: "Forklift Diploma",
+      school: "Professional Training",
+      period: "2022 - 2023",
+    }
+  ]);
 
   const handleAddEducation = () => {
     if (!degree || !school || !period) return;
@@ -26,6 +48,7 @@ export default function EducationModal({
       school,
       period,
     };
+
 
     setEducations((prev) => [...prev, newEducation]);
 
