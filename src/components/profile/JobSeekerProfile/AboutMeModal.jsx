@@ -2,6 +2,8 @@ import { Card, Typography, Box, MenuItem } from "@mui/material";
 
 import ISO6391 from "iso-639-1";
 
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
 import {
   Chip,
   Modal,
@@ -17,12 +19,14 @@ import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
 export default function AboutMeModal({ open, setOpen }) {
-
   const { dispatch, ...state } = useProfile();
 
   // this is the languages List
   const lang = ISO6391.getAllNames();
   //---------------------------------
+
+
+
 
   const [about, setAbout] = useState("bio");
   const [language, setLanguage] = useState("");
@@ -32,24 +36,18 @@ export default function AboutMeModal({ open, setOpen }) {
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
 
-
-
   useEffect(() => {
     const profile = state.user?.profile;
 
     if (!profile) return;
 
     setAbout(profile.aboutMe?.about || "");
-
     setLanguagesList(profile.aboutMe?.languages || []);
-
     setAvailability(profile.aboutMe?.availability || "");
-
     setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-
     setExperienceLevel(profile.aboutMe?.experienceLevel || "");
-  }, [state.user?.profile]);
 
+  }, [state.user?.profile]);
 
   const handleAdd = () => {
     if (!language) return;
@@ -68,6 +66,12 @@ export default function AboutMeModal({ open, setOpen }) {
       preferredJobType,
       experienceLevel,
     };
+
+    dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: true,
+      });
+
     try {
       const data = await updateProfileHeader({
         aboutMe,
@@ -81,7 +85,12 @@ export default function AboutMeModal({ open, setOpen }) {
       setOpen(false);
     } catch (error) {
       console.log(error.response?.data);
-    }
+    }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
+      }
   };
 
   const handleDelete = (item) => {
@@ -355,6 +364,7 @@ export default function AboutMeModal({ open, setOpen }) {
             <Button
               onClick={handleSave}
               fullWidth
+              disabled={state.isLoadingUptadeProfile}
               variant="contained"
               sx={{
                 height: "3rem",
@@ -371,10 +381,26 @@ export default function AboutMeModal({ open, setOpen }) {
                 },
               }}
             >
+
+
+
+              {state.isLoadingUptadeProfile?<CircularProgress
+                aria-label="Loading…"
+                size={30}
+                sx={{
+                  color: green[800],
+                  position: "absolute",
+                }}
+              /> :
+
+              <Box sx={{display:"flex",justifyContent:"center"}}>
               Save
               <TrendingFlatOutlinedIcon
-                sx={{ position: "relative", right: "-40%" }}
+                sx={{ position: "relative", right: "-450%" }}
               />
+              </Box>}
+
+
             </Button>
           </Box>
         </Card>

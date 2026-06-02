@@ -11,7 +11,8 @@ export const ProfileContext=
 
 const initialState = {
   user: null,
-  isLoading: false
+  isLoading: false,
+  isLoadingUptadeProfile:false
 };
 
 export const useProfile = () => {

@@ -3,11 +3,17 @@ export const profileReducer = (
   action
 ) => {
   switch (action.type) {
+    
     case "SET_LOADING":
       return {
         ...state,
         isLoading:
           action.payload,
+      };
+       case "SET_LOADING_UPDATE_PROFILE":
+      return {
+        ...state,
+        isLoadingUptadeProfile: action.payload,
       };
     case "PROFILE":
       return {
