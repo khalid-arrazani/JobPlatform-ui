@@ -12,31 +12,27 @@ import {
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+
 const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 
 import { useEffect, useState } from "react";
 
-export default function SocialLinksModal({
-  open,
-  setOpen
-}) {
-
-  const {dispatch , ...state} = useProfile();
+export default function SocialLinksModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
 
   const [socialLinks, setSocialLinks] = useState([]);
 
   const [platform, setPlatform] = useState("");
   const [url, setUrl] = useState("");
 
-
-
-
- useEffect(() => {
+  useEffect(() => {
     setSocialLinks(
       state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
     );
   }, [state.user?.profile]);
-  
 
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;
@@ -57,32 +53,36 @@ export default function SocialLinksModal({
     }
   };
 
-
   const handleDelete = (index) => {
     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
 
-
-
-
   const handleSave = async () => {
-      try {
-        const data = await updateProfileHeader({
-          socialLinks: socialLinks,
-        });
-  
-        dispatch({
-          type: "PROFILE",
-          payload: data,
-        });
-  
-        setOpen(false);
-      } catch (error) {
-        console.log(error.response?.data);
-      }
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    try {
+      const data = await updateProfileHeader({
+        socialLinks: socialLinks,
+      });
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+
       setOpen(false);
-    };
-  
+    } catch (error) {
+      console.log(error.response?.data);
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+    setOpen(false);
+  };
 
   return (
     <Modal
@@ -203,14 +203,42 @@ export default function SocialLinksModal({
           }}
         >
           <Button
-            variant="contained"
             onClick={handleSave}
+            fullWidth
+            disabled={state.isLoadingUptadeProfile}
+            variant="contained"
             sx={{
-              textTransform: "none",
+              height: "3rem",
               borderRadius: "0.5rem",
+
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "0.9rem",
+              mt: "1rem",
+              background: "#6d28d9",
+
+              "&:hover": {
+                background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+              },
             }}
           >
-            Save
+            {state.isLoadingUptadeProfile ? (
+              <CircularProgress
+                aria-label="Loading…"
+                size={30}
+                sx={{
+                  color: green[800],
+                  position: "absolute",
+                }}
+              />
+            ) : (
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                Save
+                <TrendingFlatOutlinedIcon
+                  sx={{ position: "relative", right: "-400%" }}
+                />
+              </Box>
+            )}
           </Button>
         </Box>
       </Card>

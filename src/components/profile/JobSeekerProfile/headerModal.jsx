@@ -8,12 +8,17 @@ import {
   Divider,
 } from "@mui/material";
 
-import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+
 import { useState, useEffect } from "react";
 
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
 
 import { useProfile } from "../../../logic/context/profileContext.jsx";
+
+
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
 
 export default function headerModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
@@ -35,6 +40,10 @@ export default function headerModal({ open, setOpen }) {
   }, [state.user]);
 
   const HandleUpdate = async () => {
+    dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
     try {
       const data = await updateProfileHeader({
         fullName,
@@ -51,7 +60,13 @@ export default function headerModal({ open, setOpen }) {
       console.log(data);
     } catch (error) {
       console.log(error.response?.data);
-    }
+    }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
+      }
+      setOpen(false);
   };
 
   return (
@@ -200,30 +215,45 @@ export default function headerModal({ open, setOpen }) {
             </Box>
             {/* Button */}
             <Button
-              fullWidth
-              onClick={HandleUpdate}
-              variant="contained"
-              sx={{
-                height: "3rem",
-                borderRadius: "0.5rem",
+            onClick={HandleUpdate}
+            fullWidth
+            disabled={state.isLoadingUptadeProfile}
+            variant="contained"
+            sx={{
+              height: "3rem",
+              borderRadius: "0.5rem",
 
-                textTransform: "none",
-                fontWeight: 500,
-                fontSize: "0.9rem",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "0.9rem",
+              mt: "1rem",
+              background: "#6d28d9",
 
-                background: "#6d28d9",
-
-                "&:hover": {
-                  background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
-                },
-                mb: "2rem",
-              }}
-            >
-              Continue
-              <TrendingFlatOutlinedIcon
-                sx={{ position: "relative", right: "-40%" }}
+              "&:hover": {
+                background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+              },
+              mb:"2.5rem"
+            }}
+            
+          >
+            {state.isLoadingUptadeProfile ? (
+              <CircularProgress
+                aria-label="Loading…"
+                size={30}
+                sx={{
+                  color: green[800],
+                  position: "absolute",
+                }}
               />
-            </Button>
+            ) : (
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                Save
+                <TrendingFlatOutlinedIcon
+                  sx={{ position: "relative", right: "-400%" }}
+                />
+              </Box>
+            )}
+          </Button>
           </Box>
         </Card>
       </Modal>

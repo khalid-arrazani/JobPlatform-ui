@@ -12,6 +12,10 @@ import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+
 export default function TopSkillsModal({ open, setOpen }) {
 
   const {dispatch, ...state } = useProfile();
@@ -37,6 +41,10 @@ useEffect(() => {
 
 
   const handleSave = async() => {
+     dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
       try {
         const data = await updateProfileHeader({
           skills:editSkills
@@ -50,6 +58,11 @@ useEffect(() => {
         setOpen(false);
       } catch (error) {
         console.log(error.response?.data);
+      }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
       }
     setOpen(false);
   };
@@ -86,7 +99,7 @@ useEffect(() => {
             mb: 3,
           }}
         >
-          Social Links
+          Top Skills
         </Typography>
 
         {/* Inputs */}
@@ -146,16 +159,43 @@ useEffect(() => {
             mt: 4,
           }}
         >
-          <Button
-            variant="contained"
-            onClick={() => setOpen(false)}
+         <Button
             onClick={handleSave}
+            fullWidth
+            disabled={state.isLoadingUptadeProfile}
+            variant="contained"
             sx={{
-              textTransform: "none",
+              height: "3rem",
               borderRadius: "0.5rem",
+
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "0.9rem",
+              mt: "1rem",
+              background: "#6d28d9",
+
+              "&:hover": {
+                background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+              },
             }}
           >
-            Save
+            {state.isLoadingUptadeProfile ? (
+              <CircularProgress
+                aria-label="Loading…"
+                size={30}
+                sx={{
+                  color: green[800],
+                  position: "absolute",
+                }}
+              />
+            ) : (
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                Save
+                <TrendingFlatOutlinedIcon
+                  sx={{ position: "relative", right: "-400%" }}
+                />
+              </Box>
+            )}
           </Button>
         </Box>
       </Card>

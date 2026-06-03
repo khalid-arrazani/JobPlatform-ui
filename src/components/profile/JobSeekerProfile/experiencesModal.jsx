@@ -13,27 +13,25 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
 
 import { useEffect, useState } from "react";
-
 import { useProfile } from "../../../logic/context/profileContext";
+
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
 
 export default function experiencesModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
-
-
 
   const [title, setTitle] = useState("");
   const [experiences, setExperiences] = useState([]);
   const [company, setCompany] = useState("");
   const [period, setPeriod] = useState("");
 
-
-
   useEffect(() => {
     setExperiences(
       state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
     );
   }, [state.user?.profile]);
-
 
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
@@ -55,10 +53,11 @@ export default function experiencesModal({ open, setOpen }) {
     setExperiences((prev) => prev.filter((_, i) => i !== index));
   };
 
-
-
-
   const handleSave = async () => {
+     dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
     try {
       const data = await updateProfileHeader({
         experience: experiences,
@@ -72,11 +71,14 @@ export default function experiencesModal({ open, setOpen }) {
       setOpen(false);
     } catch (error) {
       console.log(error.response?.data);
-    }
+    }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
+      }
     setOpen(false);
   };
-
-
 
   return (
     <>
@@ -125,6 +127,58 @@ export default function experiencesModal({ open, setOpen }) {
           </Box>
           <Divider sx={{ mt: "1rem" }}>Experience </Divider>
 
+          {/* Add New Experience */}
+          <Typography
+            sx={{
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            Add New Experience
+          </Typography>
+
+          {/* Role */}
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Role"
+              placeholder="Frontend Developer"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </Box>
+
+          {/* Company */}
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Company"
+              placeholder="Google"
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
+            />
+          </Box>
+
+          {/* Period */}
+          <Box sx={{ mb: 3 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Period"
+              placeholder="2022 - 2024"
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+            />
+          </Box>
+
+             <Button variant="contained" onClick={handleAddExperience}>
+              Add Experience
+            </Button>
+
+<Divider sx={{ mt: "1rem" }}>List </Divider>
+
           {/* Title */}
           <Typography
             sx={{
@@ -135,6 +189,7 @@ export default function experiencesModal({ open, setOpen }) {
           >
             Experience
           </Typography>
+
 
           {/* Existing Experiences */}
           <Box sx={{ mb: 3 }}>
@@ -192,52 +247,6 @@ export default function experiencesModal({ open, setOpen }) {
             ))}
           </Box>
 
-          {/* Add New Experience */}
-          <Typography
-            sx={{
-              fontWeight: 700,
-              mb: 2,
-            }}
-          >
-            Add New Experience
-          </Typography>
-
-          {/* Role */}
-          <Box sx={{ mb: 2 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="Role"
-              placeholder="Frontend Developer"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
-            />
-          </Box>
-
-          {/* Company */}
-          <Box sx={{ mb: 2 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="Company"
-              placeholder="Google"
-              value={company}
-              onChange={(e) => setCompany(e.target.value)}
-            />
-          </Box>
-
-          {/* Period */}
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="Period"
-              placeholder="2022 - 2024"
-              value={period}
-              onChange={(e) => setPeriod(e.target.value)}
-            />
-          </Box>
-
           {/* Actions */}
           <Box
             sx={{
@@ -246,13 +255,45 @@ export default function experiencesModal({ open, setOpen }) {
               gap: 1,
             }}
           >
-            <Button variant="outlined" onClick={handleSave}>
-              save
-            </Button>
+            <Button
+                        onClick={handleSave}
+                        fullWidth
+                        disabled={state.isLoadingUptadeProfile}
+                        variant="contained"
+                        sx={{
+                          height: "3rem",
+                          borderRadius: "0.5rem",
+            
+                          textTransform: "none",
+                          fontWeight: 500,
+                          fontSize: "0.9rem",
+                          mt: "1rem",
+                          background: "#6d28d9",
+            
+                          "&:hover": {
+                            background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+                          },
+                        }}
+                      >
+                        {state.isLoadingUptadeProfile ? (
+                          <CircularProgress
+                            aria-label="Loading…"
+                            size={30}
+                            sx={{
+                              color: green[800],
+                              position: "absolute",
+                            }}
+                          />
+                        ) : (
+                          <Box sx={{ display: "flex", justifyContent: "center" }}>
+                            Save
+                            <TrendingFlatOutlinedIcon
+                              sx={{ position: "relative", right: "-400%" }}
+                            />
+                          </Box>
+                        )}
+                      </Button>
 
-            <Button variant="contained" onClick={handleAddExperience}>
-              Add Experience
-            </Button>
           </Box>
         </Card>
       </Modal>
