@@ -10,9 +10,12 @@ import { useProfile } from "../../../logic/context/profileContext";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function EducationModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
+    const { setSnackBar } = useAuth();
+  
 
   const [degree, setDegree] = useState("");
   const [school, setSchool] = useState("");
@@ -57,15 +60,25 @@ export default function EducationModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
+      setSnackBar({
+        open: true,
+        message: "Education Update Seccesfuly",
+        severity: "success",
+      });
 
       setOpen(false);
     } catch (error) {
-      console.log(error.response?.data);
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
     }finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",
           payload: false,
         });
+        
       }
     setOpen(false);
   };

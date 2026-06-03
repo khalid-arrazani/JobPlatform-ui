@@ -59,7 +59,7 @@ useEffect(() => {
         });
         setSnackBar({
         open: true,
-        message: "Experiences Update Seccesfuly",
+        message: "Top Skills Update Seccesfuly",
         severity: "success",
       });
   
@@ -71,7 +71,7 @@ useEffect(() => {
         message: error.response?.data?.message,
         severity: "error",
       });
-      
+
       }finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",

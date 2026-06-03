@@ -17,9 +17,12 @@ import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function AboutMeModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
+      const { setSnackBar } = useAuth();
+  
 
   // this is the languages List
   const lang = ISO6391.getAllNames();
@@ -71,20 +74,27 @@ export default function AboutMeModal({ open, setOpen }) {
         type: "SET_LOADING_UPDATE_PROFILE",
         payload: true,
       });
-
+    setSnackBar({
+        open: true,
+        message: "Education Update Seccesfuly",
+        severity: "success",
+      });
     try {
       const data = await updateProfileHeader({
         aboutMe,
       });
-
       dispatch({
         type: "PROFILE",
         payload: data,
       });
-
       setOpen(false);
+      
     } catch (error) {
-      console.log(error.response?.data);
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
     }finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",

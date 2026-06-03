@@ -59,7 +59,7 @@ export default function headerModal({ open, setOpen }) {
       });
       setSnackBar({
         open: true,
-        message: "Experiences Update Seccesfuly",
+        message: "Header Update Seccesfuly",
         severity: "success",
       });
       setOpen(false);

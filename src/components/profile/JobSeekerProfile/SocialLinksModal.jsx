@@ -19,9 +19,11 @@ import { green } from "@mui/material/colors";
 const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function SocialLinksModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
   const [socialLinks, setSocialLinks] = useState([]);
 
@@ -71,10 +73,18 @@ export default function SocialLinksModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
-
+      setSnackBar({
+        open: true,
+        message: "Social Links Update Seccesfuly",
+        severity: "success",
+      });
       setOpen(false);
     } catch (error) {
-      console.log(error.response?.data);
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
     } finally {
       dispatch({
         type: "SET_LOADING_UPDATE_PROFILE",
