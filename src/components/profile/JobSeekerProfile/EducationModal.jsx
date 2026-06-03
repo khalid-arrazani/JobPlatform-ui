@@ -7,15 +7,16 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+
 export default function EducationModal({ open, setOpen }) {
-
   const { dispatch, ...state } = useProfile();
-
 
   const [degree, setDegree] = useState("");
   const [school, setSchool] = useState("");
   const [period, setPeriod] = useState("");
-
 
   const [educations, setEducations] = useState();
 
@@ -25,7 +26,6 @@ export default function EducationModal({ open, setOpen }) {
     );
   }, [state.user?.profile]);
 
-
   const handleAddEducation = () => {
     if (!degree || !school || !period) return;
     const newEducation = {
@@ -33,25 +33,26 @@ export default function EducationModal({ open, setOpen }) {
       school,
       period,
     };
-    
+
     setEducations((prev) => [...prev, newEducation]);
     setDegree("");
     setSchool("");
     setPeriod("");
   };
 
-
   const handleDelete = (index) => {
     setEducations((prev) => prev.filter((_, i) => i !== index));
   };
 
-
   const handleSave = async () => {
+        dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: true,
+      });
     try {
       const data = await updateProfileHeader({
         education: educations,
       });
-
       dispatch({
         type: "PROFILE",
         payload: data,
@@ -60,11 +61,15 @@ export default function EducationModal({ open, setOpen }) {
       setOpen(false);
     } catch (error) {
       console.log(error.response?.data);
-    }
+    }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
+      }
     setOpen(false);
   };
 
-  
   return (
     <>
       <Modal
@@ -111,6 +116,55 @@ export default function EducationModal({ open, setOpen }) {
             </svg>
           </Box>
           <Divider sx={{ mt: "1rem" }}>Education</Divider>
+
+          {/* Add New Education */}
+          <Typography
+            sx={{
+              fontWeight: 700,
+              mb: 2,
+            }}
+          >
+            Add New Education
+          </Typography>
+
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Degree"
+              value={degree}
+              onChange={(e) => setDegree(e.target.value)}
+            />
+          </Box>
+          <Box sx={{ mb: 2 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="School"
+              value={school}
+              onChange={(e) => setSchool(e.target.value)}
+            />
+          </Box>
+          <Box sx={{ mb: 3 }}>
+            <TextField
+              fullWidth
+              size="small"
+              label="Period"
+              placeholder="2022 - 2023"
+              value={period}
+              onChange={(e) => setPeriod(e.target.value)}
+            />
+          </Box>
+
+          <Button
+            variant="contained"
+            sx={{ mb: "2rem" }}
+            onClick={handleAddEducation}
+          >
+            Add Education
+          </Button>
+
+          <Divider sx={{ mt: "1rem" }}>List</Divider>
 
           {/* Title */}
           <Typography
@@ -179,47 +233,6 @@ export default function EducationModal({ open, setOpen }) {
             ))}
           </Box>
 
-          {/* Add New Education */}
-          <Typography
-            sx={{
-              fontWeight: 700,
-              mb: 2,
-            }}
-          >
-            Add New Education
-          </Typography>
-
-          <Box sx={{ mb: 2 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="Degree"
-              value={degree}
-              onChange={(e) => setDegree(e.target.value)}
-            />
-          </Box>
-
-          <Box sx={{ mb: 2 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="School"
-              value={school}
-              onChange={(e) => setSchool(e.target.value)}
-            />
-          </Box>
-
-          <Box sx={{ mb: 3 }}>
-            <TextField
-              fullWidth
-              size="small"
-              label="Period"
-              placeholder="2022 - 2023"
-              value={period}
-              onChange={(e) => setPeriod(e.target.value)}
-            />
-          </Box>
-
           {/* Actions */}
           <Box
             sx={{
@@ -228,12 +241,43 @@ export default function EducationModal({ open, setOpen }) {
               gap: 1,
             }}
           >
-            <Button variant="outlined" onClick={handleSave}>
-              Save
-            </Button>
+            <Button
+              onClick={handleSave}
+              fullWidth
+              disabled={state.isLoadingUptadeProfile}
+              variant="contained"
+              sx={{
+                height: "3rem",
+                borderRadius: "0.5rem",
 
-            <Button variant="contained" onClick={handleAddEducation}>
-              Add Education
+                textTransform: "none",
+                fontWeight: 500,
+                fontSize: "0.9rem",
+                mt: "1rem",
+                background: "#6d28d9",
+
+                "&:hover": {
+                  background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+                },
+              }}
+            >
+              {state.isLoadingUptadeProfile ? (
+                <CircularProgress
+                  aria-label="Loading…"
+                  size={30}
+                  sx={{
+                    color: green[800],
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  Save
+                  <TrendingFlatOutlinedIcon
+                    sx={{ position: "relative", right: "-450%" }}
+                  />
+                </Box>
+              )}
             </Button>
           </Box>
         </Card>

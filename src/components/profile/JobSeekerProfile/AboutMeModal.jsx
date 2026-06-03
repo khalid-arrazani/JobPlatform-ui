@@ -392,7 +392,6 @@ export default function AboutMeModal({ open, setOpen }) {
                   position: "absolute",
                 }}
               /> :
-
               <Box sx={{display:"flex",justifyContent:"center"}}>
               Save
               <TrendingFlatOutlinedIcon
