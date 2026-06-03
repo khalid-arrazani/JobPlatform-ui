@@ -9,19 +9,16 @@ import { useState } from "react";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import HeaderModal from "./headerModal.jsx";
 
-
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
-
 export default function Header() {
-
   const [open, setOpen] = useState(false);
 
   const { ...state } = useProfile();
 
   return (
     <>
-      <HeaderModal open={open} setOpen={setOpen}/>
+      <HeaderModal open={open} setOpen={setOpen} />
 
       <Container
         sx={{
@@ -160,8 +157,7 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                 {state.user?.profile?.userId?.email || "------------------"}
-
+                  {state.user?.profile?.userId?.email || "------------------"}
                 </Typography>
               </Box>
             </Box>

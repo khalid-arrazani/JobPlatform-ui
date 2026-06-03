@@ -95,13 +95,13 @@ export default function AboutMeCard() {
         <Box
           sx={{
             display: "flex",
-            flexDirection: "row",
             gap: "0.2rem",
-            justifyContent: "space-between",
+            width:"100%"
           }}
         >
-          <div>
-            <Box sx={{ mt: 1 }}>
+
+          <Box sx={{width:"50%"}} >
+            <Box sx={{ mt: 1 , width:"100%" }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.95rem" }}
@@ -131,9 +131,10 @@ export default function AboutMeCard() {
                   "-----------------"}
               </Typography>
             </Box>
-          </div>
+          </Box>
 
-          <div>
+          <Box sx={{width:"50%",borderLeft:"solid 1px #b4b4b4 ", pl:"1rem", pb:"1rem"}} >
+
             <Box sx={{ width: "100%", mb: "0.2rem", mt: 1 }}>
               <Typography
                 variant="caption"
@@ -148,6 +149,7 @@ export default function AboutMeCard() {
                   gap: "0.4rem",
                   flexWrap: "wrap",
                   mt: "0.3rem",
+                  width:"100%"
                 }}
               >
                 {state.user?.profile?.aboutMe?.languages.map((l) => (
@@ -175,8 +177,11 @@ export default function AboutMeCard() {
                 </Typography>
               </Box>
             </Box>
-          </div>
+          </Box>
+
         </Box>
+
+
       </CardContent>
     </Card>
   );
