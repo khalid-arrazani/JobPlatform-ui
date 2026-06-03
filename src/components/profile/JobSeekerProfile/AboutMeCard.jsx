@@ -17,7 +17,7 @@ export default function AboutMeCard() {
   const { ...state } = useProfile();
 
   const [open, setOpen] = useState(false);
- 
+
   const sx = {
     borderRadius: "0.5rem",
     fontWeight: 500,
@@ -45,10 +45,7 @@ export default function AboutMeCard() {
         m: 1,
       }}
     >
-      <AboutMeModal
-        open={open}
-        setOpen={setOpen}
-      />
+      <AboutMeModal open={open} setOpen={setOpen} />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
         {/* Title */}
         <Typography
@@ -96,12 +93,11 @@ export default function AboutMeCard() {
           sx={{
             display: "flex",
             gap: "0.2rem",
-            width:"100%"
+            width: "100%",
           }}
         >
-
-          <Box sx={{width:"50%"}} >
-            <Box sx={{ mt: 1 , width:"100%" }}>
+          <Box sx={{ width: "50%" }}>
+            <Box sx={{ mt: 1, width: "100%" }}>
               <Typography
                 variant="caption"
                 sx={{ color: "#888", fontSize: "0.95rem" }}
@@ -133,8 +129,14 @@ export default function AboutMeCard() {
             </Box>
           </Box>
 
-          <Box sx={{width:"50%",borderLeft:"solid 1px #b4b4b4 ", pl:"1rem", pb:"1rem"}} >
-
+          <Box
+            sx={{
+              width: "50%",
+              borderLeft: "solid 1px #b4b4b4 ",
+              pl: "1rem",
+              pb: "1rem",
+            }}
+          >
             <Box sx={{ width: "100%", mb: "0.2rem", mt: 1 }}>
               <Typography
                 variant="caption"
@@ -149,12 +151,12 @@ export default function AboutMeCard() {
                   gap: "0.4rem",
                   flexWrap: "wrap",
                   mt: "0.3rem",
-                  width:"100%"
+                  width: "100%",
                 }}
               >
                 {state.user?.profile?.aboutMe?.languages.map((l) => (
                   <Chip label={l} size="small" sx={sx} />
-                )) || "-------------------" }
+                )) || "-------------------"}
               </Box>
             </Box>
             <Box>
@@ -173,15 +175,12 @@ export default function AboutMeCard() {
                   }}
                 >
                   {state.user?.profile?.aboutMe?.preferredJobType ||
-                  "-----------------"}
+                    "-----------------"}
                 </Typography>
               </Box>
             </Box>
           </Box>
-
         </Box>
-
-
       </CardContent>
     </Card>
   );
