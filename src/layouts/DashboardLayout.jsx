@@ -1,7 +1,37 @@
 import { Box } from "@mui/material";
 import Navbar from "../components/dashboard/Navbar.jsx";
+import { useProfile } from "../logic/context/profileContext.jsx";
+import { useEffect } from "react";
+import { getMe } from "../logic/api/profile/GetMe.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
+  const { dispatch, ...state } = useProfile();
+  
+    useEffect(() => {
+      const fetchUser = async () => {
+        dispatch({
+          type: "SET_LOADING",
+          payload: true,
+        });
+        try {
+          const data = await getMe();
+          dispatch({
+            type: "PROFILE",
+            payload: data,
+          });
+
+          console.log(data);
+        } catch (error) {
+          console.log(error.response?.data);
+        } finally {
+          dispatch({
+            type: "SET_LOADING",
+            payload: false,
+          });
+        }
+      };
+      fetchUser();
+    }, []);
   return (
     <Box
       sx={{

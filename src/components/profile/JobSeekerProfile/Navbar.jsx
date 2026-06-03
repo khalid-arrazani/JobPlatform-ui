@@ -1,4 +1,4 @@
-import MainList from "../../dashboard/mainList";
+import MainList from "./mainList";
 
 import { AppBar, Toolbar, Box, IconButton } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
@@ -37,7 +37,7 @@ export default function Navbar() {
           <img src={logo} width={"140"} alt="" />
         </Box>
 
-        {/* ⚡ Right side */}
+        {/* Right side */}
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <IconButton>
             <NotificationsIcon sx={{ color: "white" }} />
@@ -54,6 +54,7 @@ export default function Navbar() {
           <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
             <MainList toggleDrawer={setOpen} />
           </Drawer>
+
         </Box>
       </Toolbar>
     </AppBar>

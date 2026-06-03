@@ -12,21 +12,20 @@ import {
 } from "@mui/material";
 
 
+
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useProfile } from "../../logic/context/profileContext";
-
+import { useEffect } from "react";
 
 export default function MainList() {
+
   const navigate = useNavigate();
-
-
-  const { ...state } = useProfile();
+  
+    console.log(5555);
 
   return (
-
     <>
       <Box
         sx={{
@@ -46,7 +45,7 @@ export default function MainList() {
           }}
         >
           <Avatar
-            src={state.user?.profile?.ProfileImage?.url}
+            src="/your-image.jpg"
             sx={{
               width: 80,
               height: 80,
@@ -55,12 +54,12 @@ export default function MainList() {
             }}
           />
 
-          <Typography variant="h6" sx={{ mt: 1, fontWeight: "bold",fontFamily: "monospace"}}>
-           {state.user?.profile?.fullName}
+          <Typography variant="h6" sx={{ mt: 1, fontWeight: "bold" }}>
+            Khalid Arrazani
           </Typography>
 
           <Typography variant="body2" sx={{ opacity: 0.7 }}>
-            {state.user?.profile?.headline}
+            Frontend Developer
           </Typography>
         </Box>
 

@@ -15,8 +15,7 @@ import { useProfile } from "../../../logic/context/profileContext.jsx";
 import LoadingPage from "./LoadingPage.jsx";
 
 export default function MyProfilePage() {
-
-  const { dispatch , ...state } = useProfile();
+  const { dispatch, ...state } = useProfile();
 
   console.log(state.isLoading);
 
@@ -46,38 +45,37 @@ export default function MyProfilePage() {
 
   return (
     <>
-    
-     {  state.isLoading ? <LoadingPage/> : 
-
-     <div className="par1">
-  <div style={{ height: "28vh" }}>
-          <Header />
-        </div>
-        <div style={{ height: "maxContent", display: "flex", padding: 10 }}>
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "end",
-              width: "50%",
-            }}
-          >
-            <AboutMeCard />
-            <ExperienceCard />
+      {state.isLoading ? (
+        <LoadingPage />
+      ) : (
+        <div className="par1">
+          <div style={{ height: "28vh" }}>
+            <Header />
           </div>
-          <div
-            style={{
-              width: "50%",
-            }}
-          >
-            <TopSkillsCard />
-            <EducationCard />
-            <SocialLinksCard />
+          <div style={{ height: "maxContent", display: "flex", padding: 10 }}>
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "end",
+                width: "50%",
+              }}
+            >
+              <AboutMeCard />
+              <ExperienceCard />
+            </div>
+            <div
+              style={{
+                width: "50%",
+              }}
+            >
+              <TopSkillsCard />
+              <EducationCard />
+              <SocialLinksCard />
+            </div>
           </div>
         </div>
-
-
-      </div>}
+      )}
     </>
   );
 }
