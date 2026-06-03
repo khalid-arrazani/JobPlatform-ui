@@ -19,9 +19,11 @@ import { useProfile } from "../../../logic/context/profileContext.jsx";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
 
 export default function headerModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
   const [fullName, setFullName] = useState("");
 
@@ -55,11 +57,19 @@ export default function headerModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
-
+      setSnackBar({
+        open: true,
+        message: "Experiences Update Seccesfuly",
+        severity: "success",
+      });
       setOpen(false);
-      console.log(data);
+      
     } catch (error) {
-      console.log(error.response?.data);
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
     }finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",

@@ -15,10 +15,13 @@ import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function TopSkillsModal({ open, setOpen }) {
 
   const {dispatch, ...state } = useProfile();
+    const { setSnackBar } = useAuth();
+  
 
   const [inputAdd, setInputAdd] = useState("");
   const [editSkills, setEditSkills] = useState([]);
@@ -54,10 +57,21 @@ useEffect(() => {
           type: "PROFILE", 
           payload: data,
         });
+        setSnackBar({
+        open: true,
+        message: "Experiences Update Seccesfuly",
+        severity: "success",
+      });
   
         setOpen(false);
       } catch (error) {
-        console.log(error.response?.data);
+
+        setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+      
       }finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",
