@@ -12,9 +12,11 @@ import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 
 import logo from "../../assets/title.png";
+import { useProfile } from "../../logic/context/profileContext.jsx";
 
 export default function Navbar({ part, setPart }) {
   const [open, setOpen] = React.useState(false);
+  const { ...state } = useProfile();
   return (
     <AppBar
       position="static"
@@ -70,7 +72,7 @@ export default function Navbar({ part, setPart }) {
             <MainList toggleDrawer={setOpen} />
           </Drawer>
 
-          <Avatar src="" sx={{ width: 35, height: 35 }} />
+          <Avatar src={state.user?.profile?.ProfileImage?.url} sx={{ width: 45, height: 45,border: "2px solid #38bdf8", }} />
         </Box>
       </Toolbar>
     </AppBar>

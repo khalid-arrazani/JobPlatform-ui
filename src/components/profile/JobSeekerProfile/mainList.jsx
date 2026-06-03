@@ -17,13 +17,13 @@ import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useEffect } from "react";
+
 
 export default function MainList() {
 
   const navigate = useNavigate();
   
-    console.log(5555);
+   
 
   return (
     <>

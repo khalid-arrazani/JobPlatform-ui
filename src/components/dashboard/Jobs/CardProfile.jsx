@@ -1,7 +1,9 @@
 import { Card } from "@mui/material";
 import { Avatar, Typography, Box } from "@mui/material";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function CardProfile() {
+  const { ...state } = useProfile();
   return (
     <>
       <Card
@@ -38,7 +40,7 @@ export default function CardProfile() {
         >
           {/* Image */}
           <Avatar
-            src="/myImage.jpg"
+            src={state.user?.profile?.ProfileImage?.url}
             sx={{
               width: "45%",
               height:"45%",
@@ -55,17 +57,17 @@ export default function CardProfile() {
               mt: "1px",
             }}
           >
-            Khalid Arrazani
+            {state.user?.profile?.fullName}
           </Typography>
 
           {/* Description */}
           <Typography sx={{ fontSize: "0.9rem", color: "#666", mt: 1 }}>
-            Passionate developer building modern web apps.
+            {state.user?.profile?.headline}
           </Typography>
 
           {/* Address */}
           <Typography sx={{ fontSize: "0.7rem", color: "#888", mt: 1 }}>
-            📍 Agadir, Morocco
+            📍 {state.user?.profile?.location}
           </Typography>
         </Box>
       </Card>
