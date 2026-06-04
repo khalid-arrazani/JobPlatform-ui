@@ -7,8 +7,13 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
+
 
 export default function EmptyAboutCard() {
+
+  const {setAboutOpen} = useProfile()
+
   return (
     <Paper
       elevation={0}
@@ -59,6 +64,7 @@ export default function EmptyAboutCard() {
 
         <Button
           startIcon={<EditOutlinedIcon />}
+          onClick={()=>{setAboutOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
@@ -124,6 +130,7 @@ export default function EmptyAboutCard() {
 
         <Button
           startIcon={<EditOutlinedIcon />}
+          onClick={()=>{setAboutOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,

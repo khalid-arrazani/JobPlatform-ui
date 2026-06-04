@@ -34,11 +34,11 @@ export default function ProfileProvider({
     );
 
 
-    const [aboutOpen , setAboutOpen ] = useState()
-    const [skillOpen , setSkillOpen ] = useState()
-    const [educationOpen , setEducationOpen ] = useState()
-    const [experienceOpen , setExperienceOpen ] = useState()
-    const [socialOpen , setSocialOpen ] = useState()
+    const [aboutOpen , setAboutOpen ] = useState(false)
+    const [skillOpen , setSkillOpen ] = useState(false)
+    const [educationOpen , setEducationOpen ] = useState(false)
+    const [experienceOpen , setExperienceOpen ] = useState(false)
+    const [socialOpen , setSocialOpen ] = useState(false)
 
   return (
     <ProfileContext.Provider

@@ -16,13 +16,12 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 
 import AboutMeModal from "./AboutMeModal.jsx";
-import { useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext.jsx";
+import { useProfile  } from "../../../logic/context/profileContext.jsx";
 
 export default function AboutMeCard() {
-  const { ...state } = useProfile();
+  const {setAboutOpen, ...state  } = useProfile();
 
-  const [open, setOpen] = useState(false);
+
 
   const sx = {
     borderRadius: "0.5rem",
@@ -51,7 +50,7 @@ export default function AboutMeCard() {
         m: 1,
       }}
     >
-      <AboutMeModal open={open} setOpen={setOpen} />
+      <AboutMeModal />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
 
 
@@ -94,7 +93,7 @@ export default function AboutMeCard() {
         </Box>
 
        <IconButton
-            onClick={() => setOpen(true)}
+            onClick={() => setAboutOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",

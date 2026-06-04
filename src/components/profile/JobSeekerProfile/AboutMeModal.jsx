@@ -19,8 +19,8 @@ import { useProfile } from "../../../logic/context/profileContext";
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function AboutMeModal({ open, setOpen }) {
-  const { dispatch, ...state } = useProfile();
+export default function AboutMeModal() {
+  const {aboutOpen , setAboutOpen, dispatch, ...state } = useProfile();
       const { setSnackBar } = useAuth();
   
 
@@ -87,7 +87,7 @@ export default function AboutMeModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
-      setOpen(false);
+      setAboutOpen(false);
       
     } catch (error) {
       setSnackBar({
@@ -116,8 +116,8 @@ export default function AboutMeModal({ open, setOpen }) {
           alignItems: "center",
           pb: "2rem",
         }}
-        open={open}
-        onClose={() => setOpen(false)}
+        open={aboutOpen}
+        onClose={() => setAboutOpen(false)}
       >
         <Card
           sx={{
