@@ -72,7 +72,7 @@ export default function Navbar({ part, setPart }) {
             <MainList toggleDrawer={setOpen} />
           </Drawer>
 
-          <Avatar src={state.user?.profile?.ProfileImage?.url} sx={{ width: 45, height: 45,border: "2px solid #38bdf8", }} />
+          <Avatar src={state.user?.profile?.ProfileImage?.url} sx={{ width: 40, border: "2px solid #38bdf8", }} />
         </Box>
       </Toolbar>
     </AppBar>

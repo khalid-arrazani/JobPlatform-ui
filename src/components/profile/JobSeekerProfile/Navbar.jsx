@@ -21,8 +21,8 @@ export default function Navbar() {
         background: "#376681f3",
         height: "8%",
         padding: "0px",
-        paddingRight: "3%",
-        paddingLeft: "3%",
+        paddingRight: "2%",
+        paddingLeft: "1.5%",
       }}
     >
       <Toolbar
@@ -34,7 +34,7 @@ export default function Navbar() {
         style={{ minHeight: "100%" }}
       >
         <Box sx={{ display: "flex", alignItems: "center" }}>
-          <img src={logo} width={"140"} alt="" />
+          <img src={logo} width={"130"} alt="" />
         </Box>
 
         {/* Right side */}
