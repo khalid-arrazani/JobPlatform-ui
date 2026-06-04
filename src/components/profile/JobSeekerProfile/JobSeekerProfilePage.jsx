@@ -5,6 +5,7 @@ import AboutMeCard from "./AboutMeCard.jsx";
 import TopSkillsCard from "./TopSkillsCard.jsx";
 import ExperienceCard from "./experiencesCard.jsx";
 import EducationCard from "./EducationCard.jsx";
+import EmptyEducationCard from "./EducationEmptyCard.jsx";
 import SocialLinksCard from "./SocialLinksCard";
 import { useEffect } from "react";
 

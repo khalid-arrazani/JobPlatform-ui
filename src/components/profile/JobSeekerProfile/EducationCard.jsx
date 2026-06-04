@@ -2,21 +2,24 @@ import { Card, CardContent, Typography, Box, Divider } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
+import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
+
+
 import EducationModal from "./EducationModal";
-import { useState , useEffect} from "react";
+import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EducationCard() {
   const [open, setOpen] = useState(false);
-  const {...state} =  useProfile()
+  const { ...state } = useProfile();
 
   const [educations, setEducations] = useState();
 
-   useEffect(() => {
-      setEducations(
-        state.user?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
-      );
-    }, [state.user?.profile]);
+  useEffect(() => {
+    setEducations(
+      state.user?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
 
   return (
     <Card
@@ -30,21 +33,47 @@ export default function EducationCard() {
     >
       <EducationModal open={open} setOpen={setOpen} />
 
-      <CardContent sx={{ p: "0.75rem !important" }}>
-        {/* Title */}
-        <Typography
+      <CardContent sx={{ p: "0.1rem !important" }}>
+
+
+        {/* Header */}
+        <Box
           sx={{
-            fontWeight: 700,
-            fontSize: "1rem",
-            mb: "1rem",
+            pb: "0.5rem",
             display: "flex",
             justifyContent: "space-between",
             alignItems: "center",
           }}
         >
-          Education
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1,
+            }}
+          >
+            <Box
+              sx={{
+                borderRadius: "50%",
+                bgcolor: "#eef4ff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <SchoolOutlinedIcon
+                sx={{
+                  color: "#2563eb",
+                  fontSize: "1.3rem",
+                }}
+              />
+            </Box>
+
+            <Typography variant="h6">Education</Typography>
+          </Box>
+
           <IconButton
-          onClick={()=>setOpen(true)}
+            onClick={() => setOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
@@ -59,7 +88,9 @@ export default function EducationCard() {
           >
             <EditIcon sx={{ width: "100%", m: 0 }} />
           </IconButton>
-        </Typography>
+        </Box>
+      <Divider sx={{ mb: "0.8rem" }} />
+
 
         {/* Education Items */}
         <Box
