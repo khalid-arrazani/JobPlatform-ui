@@ -74,7 +74,7 @@ export default function MyProfilePage() {
                 width: "50%",
               }}
             >
-              <EmptyAboutCard />
+              <AboutMeCard />
               <ExperienceCard />
             </div>
             <div
