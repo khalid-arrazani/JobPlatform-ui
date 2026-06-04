@@ -21,7 +21,7 @@ export default function SearchInput() {
             background: "rgba(255,255,255,0.95)",
             px: 2,
             py: 0.5,
-            borderRadius: "25px",
+            borderRadius: "0.8rem",
             width: "80%",
             transition: "0.3s",
             boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
