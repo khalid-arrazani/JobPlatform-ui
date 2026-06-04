@@ -33,29 +33,22 @@ export default function JobList() {
       salary: "$4000/month",
       description: "Looking for React developer with 2+ years experience",
       logo: "https://logo.clearbit.com/google.com",
-    },
-    {
-      title: "Frontend Developer",
-      company: "Google",
-      location: "Remote",
-      salary: "$4000/month",
-      description: "Looking for React developer with 2+ years experience",
-      logo: "https://logo.clearbit.com/google.com",
-    },
+    }
+   
   ];
 
   return (
     <>
       <div
-        style={{ height: "auto", background: "#ffffff00", paddingTop: "0.8%" }}
+        style={{ maxHeight:"100%",  paddingTop: "0.8%",display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,height:"79vh" }}
       >
         <SearchInput/>
         {jobs.map((job) => (
           <Card
             sx={{
               display: "flex",
-              gap: 1.5,
-              p: 1.1,
+              gap: 1,
+              p: 1,
               background: "#ffffff",
               borderRadius: "10px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
@@ -70,28 +63,28 @@ export default function JobList() {
             }}
           >
             {/* Logo */}
-            <Avatar src={job.logo} sx={{ width: 40, height: 40 }} />
+            <Avatar src={job.logo} sx={{width:"4rem",height:"4rem"}} />
 
             {/* Info */}
             <Box sx={{ flex: 1 }}>
               
-              <Typography sx={{ fontWeight: "bold", fontSize: "10.5px" }}>
+              <Typography sx={{ fontWeight: "bold", fontSize: "0.9rem" }}>
                 {job.title}
               </Typography>
 
-              <Typography sx={{ fontSize: "11px", color: "#555" }}>
+              <Typography sx={{ fontSize: "0.8rem", color: "#555" }}>
                 {job.company} • {job.location}
               </Typography>
 
               <Typography
-                sx={{ fontSize: "11px", color: "#777", mt: 0.2 }}
+                sx={{ fontSize: "0.8rem", color: "#777", mt: 0.2 ,textWrap:"wrap" }}
                 noWrap
               >
                 {job.description}
               </Typography>
 
               <Typography
-                sx={{ mt: 0.2, fontWeight: "bold", fontSize: "11px" }}
+                sx={{ mt: 0.2, fontWeight: "bold", fontSize: "0.7rem" }}
               >
                 💰 {job.salary}
               </Typography>
