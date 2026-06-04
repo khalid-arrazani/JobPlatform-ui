@@ -15,6 +15,7 @@ import EducationCard from "./EducationCard.jsx";
 import EmptyEducationCard from "./EducationEmptyCard.jsx";
 
 import SocialLinksCard from "./SocialLinksCard";
+import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 import { useEffect } from "react";
 
@@ -73,7 +74,7 @@ export default function MyProfilePage() {
                 width: "50%",
               }}
             >
-              <AboutMeCard />
+              <EmptyAboutCard />
               <ExperienceCard />
             </div>
             <div

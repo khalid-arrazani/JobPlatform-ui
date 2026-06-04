@@ -1,4 +1,4 @@
-import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
+import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import {
   Box,

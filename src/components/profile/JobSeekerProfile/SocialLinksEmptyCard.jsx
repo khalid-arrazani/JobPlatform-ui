@@ -1,7 +1,5 @@
-
-import WorkOutlineIcon from '@mui/icons-material/WorkOutlineOutlined';
+import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 import AddIcon from "@mui/icons-material/Add";
-
 import {
   Box,
   Typography,
@@ -10,7 +8,7 @@ import {
   Divider,
 } from "@mui/material";
 
-export default function EmptyExperienceCard() {
+export default function EmptySocialLinksCard() {
   return (
     <Paper
       elevation={0}
@@ -22,6 +20,7 @@ export default function EmptyExperienceCard() {
         m: 1,
       }}
     >
+      {/* Header */}
       <Box
         sx={{
           p: 1,
@@ -46,7 +45,7 @@ export default function EmptyExperienceCard() {
               justifyContent: "center",
             }}
           >
-            <WorkOutlineIcon
+            <LinkOutlinedIcon
               sx={{
                 color: "#2563eb",
                 fontSize: "1.3rem",
@@ -55,7 +54,7 @@ export default function EmptyExperienceCard() {
           </Box>
 
           <Typography variant="h6">
-            Experience
+            Social Links
           </Typography>
         </Box>
 
@@ -66,12 +65,13 @@ export default function EmptyExperienceCard() {
             fontWeight: 600,
           }}
         >
-          Add Experience
+          Add Link
         </Button>
       </Box>
 
       <Divider />
 
+      {/* Empty State */}
       <Box
         sx={{
           py: "1rem",
@@ -94,7 +94,7 @@ export default function EmptyExperienceCard() {
             mb: 1.5,
           }}
         >
-          <WorkOutlineIcon
+          <LinkOutlinedIcon
             sx={{
               fontSize: 30,
               color: "#6b7280",
@@ -108,7 +108,7 @@ export default function EmptyExperienceCard() {
           mb={1}
           sx={{ color: "#00000079" }}
         >
-          No experience added yet
+          No social links added yet
         </Typography>
 
         <Typography
@@ -119,8 +119,9 @@ export default function EmptyExperienceCard() {
             color: "#00000060",
           }}
         >
-          Add your work experience to highlight
-          your professional journey.
+          Add your LinkedIn, GitHub, portfolio,
+          Twitter, or other professional links
+          to help employers learn more about you.
         </Typography>
 
         <Button
@@ -130,7 +131,7 @@ export default function EmptyExperienceCard() {
             fontWeight: 600,
           }}
         >
-          Add Experience
+          Add Link
         </Button>
       </Box>
     </Paper>
