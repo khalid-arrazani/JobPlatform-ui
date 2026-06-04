@@ -1,12 +1,21 @@
 import "./ProfileJoobSeeker.css";
 
 import Header from "./header.jsx";
+
 import AboutMeCard from "./AboutMeCard.jsx";
+import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
+
 import TopSkillsCard from "./TopSkillsCard.jsx";
+import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
+
 import ExperienceCard from "./experiencesCard.jsx";
+import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
+
 import EducationCard from "./EducationCard.jsx";
 import EmptyEducationCard from "./EducationEmptyCard.jsx";
+
 import SocialLinksCard from "./SocialLinksCard";
+
 import { useEffect } from "react";
 
 import { getMe } from "../../../logic/api/profile/GetMe.jsx";
@@ -14,6 +23,8 @@ import { getMe } from "../../../logic/api/profile/GetMe.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 import LoadingPage from "./LoadingPage.jsx";
+
+
 
 export default function MyProfilePage() {
   const { dispatch, ...state } = useProfile();
