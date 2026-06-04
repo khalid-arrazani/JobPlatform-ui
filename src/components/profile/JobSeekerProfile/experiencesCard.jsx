@@ -2,6 +2,9 @@ import { Card, CardContent, Typography, Box, Divider } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
+import WorkOutlineIcon from '@mui/icons-material/WorkOutlineOutlined';
+
+
 import ExperiencesModal from "./experiencesModal";
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
@@ -37,18 +40,44 @@ export default function ExperienceCard() {
 
       <CardContent sx={{ p: "0.75rem !important" }}>
         {/* Title */}
-        <Typography
+        <Box
+        sx={{
+          pb: "1rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box
           sx={{
-            fontWeight: 700,
-            fontSize: "1rem",
-            mb: "1rem",
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            gap: 1,
           }}
         >
-          Experience
-          <IconButton
+          <Box
+            sx={{
+              borderRadius: "50%",
+              bgcolor: "#eef4ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <WorkOutlineIcon
+              sx={{
+                color: "#2563eb",
+                fontSize: "1.3rem",
+              }}
+            />
+          </Box>
+
+          <Typography variant="h6">
+            Experience
+          </Typography>
+        </Box>
+
+           <IconButton
             onClick={() => setOpen(true)}
             sx={{
               background: "#160a7e00",
@@ -64,7 +93,10 @@ export default function ExperienceCard() {
           >
             <EditIcon sx={{ width: "100%", m: 0 }} />
           </IconButton>
-        </Typography>
+      </Box>
+
+
+
 
         {/* Experience Items */}
         <Box

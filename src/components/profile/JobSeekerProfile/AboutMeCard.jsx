@@ -4,10 +4,16 @@ import {
   Typography,
   Box,
   Chip,
-  Divider,
+  Divider
+
 } from "@mui/material";
+
+
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
+
+import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
+
 
 import AboutMeModal from "./AboutMeModal.jsx";
 import { useState } from "react";
@@ -47,20 +53,47 @@ export default function AboutMeCard() {
     >
       <AboutMeModal open={open} setOpen={setOpen} />
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
+
+
         {/* Title */}
-        <Typography
-          variant="h6"
+       <Box
+        sx={{
+          pb: 1,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box
           sx={{
-            fontWeight: "bold",
-            mb: "0.3rem",
-            fontSize: "1.1rem",
             display: "flex",
-            justifyContent: "space-between",
-            alignContent: "center",
+            alignItems: "center",
+            gap: 1,
           }}
         >
-          About Me
-          <IconButton
+          <Box
+            sx={{
+              borderRadius: "50%",
+              bgcolor: "#eef4ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <PersonOutlineIcon
+              sx={{
+                color: "#2563eb",
+                fontSize: "1.3rem",
+              }}
+            />
+          </Box>
+
+          <Typography variant="h6">
+            About Me
+          </Typography>
+        </Box>
+
+       <IconButton
             onClick={() => setOpen(true)}
             sx={{
               background: "#160a7e00",
@@ -76,7 +109,14 @@ export default function AboutMeCard() {
           >
             <EditIcon sx={{ width: "100%", m: 0 }} />
           </IconButton>
-        </Typography>
+      </Box>
+
+      
+
+
+
+
+
 
         <Typography
           variant="body2"

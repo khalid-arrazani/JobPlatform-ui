@@ -2,6 +2,8 @@ import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
+import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
+
 import TopSkillsModal from "./TopSkillsModal";
 import { useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
@@ -31,18 +33,47 @@ export default function TopSkillsCard() {
       />
 
       <CardContent sx={{ p: "0.3rem !important" }}>
+
         {/* Title */}
-        <Typography
+
+        
+      <Box
+        sx={{
+          pb: "1rem",
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <Box
           sx={{
-            fontWeight: "700",
-            mb: "1rem",
-            fontSize: "1rem",
             display: "flex",
-            justifyContent: "space-between",
             alignItems: "center",
+            gap: 1,
           }}
         >
-          Top Skills
+          <Box
+            sx={{
+              borderRadius: "50%",
+              bgcolor: "#eef4ff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <AutoAwesomeOutlinedIcon
+              sx={{
+                color: "#2563eb",
+                fontSize: "1.3rem",
+              }}
+            />
+          </Box>
+
+          <Typography variant="h6">
+            Top Skills
+          </Typography>
+        </Box>
+
           <IconButton
           onClick={()=>setOpen(true)}
             sx={{
@@ -59,7 +90,13 @@ export default function TopSkillsCard() {
           >
             <EditIcon sx={{ width: "100%", m: 0 }} />
           </IconButton>
-        </Typography>
+
+
+      </Box>
+
+       
+
+
 
         {/* Skills */}
         <Box
