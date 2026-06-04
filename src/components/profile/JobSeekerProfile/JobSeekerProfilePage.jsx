@@ -28,7 +28,11 @@ import LoadingPage from "./LoadingPage.jsx";
 
 
 export default function MyProfilePage() {
+
+
   const { dispatch, ...state } = useProfile();
+
+
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -51,12 +55,11 @@ export default function MyProfilePage() {
         });
       }
     };
-
     fetchUser();
-
-
   }, []);
-  console.log(state.user?.profile?.skills);
+
+
+
 
   return (
     <>
@@ -69,7 +72,7 @@ export default function MyProfilePage() {
 
             <Header />
 
-            
+
           </div>
           <div style={{ height: "maxContent", display: "flex", padding: 10 }}>
 
