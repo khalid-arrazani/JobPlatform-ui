@@ -9,8 +9,12 @@ import {
 } from "@mui/material";
 import { useProfile } from "../../../logic/context/profileContext";
 
+import EducationModal  from "./EducationModal"
+
 export default function EmptyEducationCard() {
+  
   const {setEducationOpen} = useProfile();
+
   return (
     <Paper
       elevation={0}
@@ -22,6 +26,8 @@ export default function EmptyEducationCard() {
         m: 1,
       }}
     >
+      <EducationModal/>
+
       {/* Header */}
       <Box
         sx={{

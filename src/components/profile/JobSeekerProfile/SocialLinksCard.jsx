@@ -1,4 +1,4 @@
-import { Card, Box, Typography, IconButton } from "@mui/material";
+import { Card, Box, Typography, IconButton, Divider } from "@mui/material";
 
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
 
@@ -85,7 +85,7 @@ export default function SocialLinksCard() {
         >
           <LinkOutlinedIcon />
         </Box>
-
+        
         <Typography
           sx={{
             fontSize: "1rem",
@@ -115,13 +115,14 @@ export default function SocialLinksCard() {
           </IconButton>
         </Typography>
       </Box>
-
+       <Divider/>
       {/* Icons */}
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
           gap: "1rem",
+          pt:"1rem"
         }}
       >
         {socialLinks?.length === 0 ? (

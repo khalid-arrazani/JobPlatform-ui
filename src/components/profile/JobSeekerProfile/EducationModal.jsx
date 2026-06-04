@@ -17,6 +17,7 @@ export default function EducationModal() {
 
     const { setSnackBar } = useAuth();
   
+    console.log(educationOpen);
 
   const [degree, setDegree] = useState("");
   const [school, setSchool] = useState("");
@@ -172,13 +173,13 @@ export default function EducationModal() {
 
           <Button
             variant="contained"
-            sx={{ mb: "2rem" }}
+           
             onClick={handleAddEducation}
           >
             Add Education
           </Button>
 
-          <Divider sx={{ mt: "1rem" }}>List</Divider>
+          <Divider >List</Divider>
 
           {/* Title */}
           <Typography

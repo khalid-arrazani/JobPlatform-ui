@@ -7,10 +7,12 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import TopSkillsModal from "./TopSkillsModal";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EmptySkillsCard() {
-    const { setSkillOpen} = useProfile()
+    const {setSkillOpen} = useProfile()
+
   
   return (
     <Paper
@@ -23,6 +25,8 @@ export default function EmptySkillsCard() {
         m: 1,
       }}
     >
+      <TopSkillsModal/>
+      
       <Box
         sx={{
           p: 1,

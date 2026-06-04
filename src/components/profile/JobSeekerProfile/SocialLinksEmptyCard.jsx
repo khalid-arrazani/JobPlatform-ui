@@ -8,7 +8,12 @@ import {
   Divider,
 } from "@mui/material";
 
+import SocialLinksModal from "./SocialLinksModal"
+import { useProfile } from "../../../logic/context/profileContext";
+
 export default function EmptySocialLinksCard() {
+  const { setSocialOpen} = useProfile()
+  
   return (
     <Paper
       elevation={0}
@@ -20,6 +25,8 @@ export default function EmptySocialLinksCard() {
         m: 1,
       }}
     >
+      <SocialLinksModal/>
+
       {/* Header */}
       <Box
         sx={{
@@ -60,6 +67,7 @@ export default function EmptySocialLinksCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setSocialOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
@@ -126,6 +134,8 @@ export default function EmptySocialLinksCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setSocialOpen(true)}}
+
           sx={{
             textTransform: "none",
             fontWeight: 600,

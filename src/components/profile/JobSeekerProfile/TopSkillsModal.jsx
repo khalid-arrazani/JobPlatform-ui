@@ -6,6 +6,7 @@ import {
   TextField,
   Button,
   Chip,
+  Divider,
 } from "@mui/material";
 
 import { useState, useEffect } from "react";
@@ -17,9 +18,11 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function TopSkillsModal({ open, setOpen }) {
+export default function TopSkillsModal() {
 
   const {skillOpen ,setSkillOpen ,dispatch, ...state } = useProfile();
+
+
     const { setSnackBar } = useAuth();
   
 
@@ -34,8 +37,15 @@ useEffect(() => {
 }, [state.user?.profile]);
 
   const handleAdd = () => {
+    if(inputAdd){
     setEditSkills((S) => [...S, inputAdd]);
-    setInputAdd("");
+    setInputAdd("");}else{
+      setSnackBar({
+        open: true,
+        message: " Skill should be bigger than 3 characters",
+        severity: "error",
+      });
+    }
   };
 
   const handleDelete = (index) => {
@@ -147,13 +157,14 @@ useEffect(() => {
             Add
           </Button>
         </Box>
-
+        <Divider/>
         {/* Chips */}
         <Box
           sx={{
             display: "flex",
             gap: 1,
             flexWrap: "wrap",
+            pt:"1rem"
           }}
         >
           {editSkills.map((item, index) => (
@@ -169,8 +180,7 @@ useEffect(() => {
         <Box
           sx={{
             display: "flex",
-            justifyContent: "flex-end",
-            mt: 4,
+            justifyContent: "flex-end"
           }}
         >
          <Button

@@ -7,7 +7,9 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+
 import { useProfile } from "../../../logic/context/profileContext.jsx";
+import AboutMeModal from "./AboutMeModal.jsx";
 
 
 export default function EmptyAboutCard() {
@@ -25,6 +27,7 @@ export default function EmptyAboutCard() {
         m: 1,
       }}
     >
+      <AboutMeModal/>
       <Box
         sx={{
           p: 1,

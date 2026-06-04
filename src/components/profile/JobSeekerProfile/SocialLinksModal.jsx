@@ -7,6 +7,7 @@ import {
   Button,
   Chip,
   Autocomplete,
+  Divider,
 } from "@mui/material";
 
 import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
@@ -22,7 +23,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function SocialLinksModal({ open, setOpen }) {
-  const {socialOpen ,setSocialOpen, dispatch, ...state } = useProfile();
+  const {socialOpen , setSocialOpen, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
   const [socialLinks, setSocialLinks] = useState([]);
@@ -198,6 +199,7 @@ export default function SocialLinksModal({ open, setOpen }) {
             Add
           </Button>
         </Box>
+        <Divider />
 
         {/* Chips */}
         <Box
@@ -205,6 +207,7 @@ export default function SocialLinksModal({ open, setOpen }) {
             display: "flex",
             gap: 1,
             flexWrap: "wrap",
+            pt:'1rem'
           }}
         >
           {socialLinks?.map((item, index) => (
@@ -221,7 +224,7 @@ export default function SocialLinksModal({ open, setOpen }) {
           sx={{
             display: "flex",
             justifyContent: "flex-end",
-            mt: 4,
+            
           }}
         >
           <Button

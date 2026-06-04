@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
+import { Card, CardContent, Typography, Box, Chip, Divider } from "@mui/material";
 import { IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -11,8 +11,8 @@ import { useProfile } from "../../../logic/context/profileContext";
 export default function TopSkillsCard() {
 
 
-  const { setSkillOpen,...state} = useProfile()
-
+  const { setSkillOpen ,...state} = useProfile()
+  
 
   return (
     <Card
@@ -25,7 +25,7 @@ export default function TopSkillsCard() {
         m: 1,
       }}
     >
-      <TopSkillsModal  />
+      <TopSkillsModal/>
 
       <CardContent sx={{ p: "0.3rem !important" }}>
 
@@ -34,7 +34,7 @@ export default function TopSkillsCard() {
         
       <Box
         sx={{
-          pb: "1rem",
+          pb: "0.5rem",
           display: "flex",
           justifyContent: "space-between",
           alignItems: "center",
@@ -91,7 +91,7 @@ export default function TopSkillsCard() {
 
        
 
-
+      <Divider/>
 
         {/* Skills */}
         <Box
@@ -99,6 +99,7 @@ export default function TopSkillsCard() {
             display: "flex",
             flexWrap: "wrap",
             gap: "0.6rem",
+            pt:'1rem'
           }}
         >
           {state.user?.profile?.skills.map((skill) => (

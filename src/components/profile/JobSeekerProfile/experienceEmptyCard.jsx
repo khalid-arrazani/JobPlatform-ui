@@ -9,7 +9,9 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
-import { useProfile } from '../../../logic/context/profileContext';
+import { useProfile } from '../../../logic/context/profileContext.jsx';
+
+import ExperiencesModal from "./ExperiencesModal.jsx"
 
 export default function EmptyExperienceCard() {
     const { setExperienceOpen } = useProfile();
@@ -25,6 +27,9 @@ export default function EmptyExperienceCard() {
         m: 1,
       }}
     >
+      
+    <ExperiencesModal/>
+
       <Box
         sx={{
           p: 1,
