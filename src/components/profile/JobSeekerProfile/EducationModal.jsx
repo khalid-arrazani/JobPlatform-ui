@@ -12,8 +12,9 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function EducationModal({ open, setOpen }) {
-  const { dispatch, ...state } = useProfile();
+export default function EducationModal() {
+  const { educationOpen , setEducationOpen,dispatch, ...state } = useProfile();
+
     const { setSnackBar } = useAuth();
   
 
@@ -66,7 +67,8 @@ export default function EducationModal({ open, setOpen }) {
         severity: "success",
       });
 
-      setOpen(false);
+      setEducationOpen(false);
+
     } catch (error) {
       setSnackBar({
         open: true,
@@ -78,9 +80,8 @@ export default function EducationModal({ open, setOpen }) {
           type: "SET_LOADING_UPDATE_PROFILE",
           payload: false,
         });
-        
       }
-    setOpen(false);
+   
   };
 
   return (
@@ -92,8 +93,8 @@ export default function EducationModal({ open, setOpen }) {
           alignItems: "center",
           pb: "2rem",
         }}
-        open={open}
-        onClose={() => setOpen(false)}
+        open={educationOpen}
+        onClose={() => setEducationOpen(false)}
       >
         <Card
           sx={{

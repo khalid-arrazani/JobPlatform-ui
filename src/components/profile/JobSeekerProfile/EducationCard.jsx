@@ -10,8 +10,8 @@ import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EducationCard() {
-  const [open, setOpen] = useState(false);
-  const { ...state } = useProfile();
+
+  const {setEducationOpen, ...state } = useProfile();
 
   const [educations, setEducations] = useState();
 
@@ -31,7 +31,7 @@ export default function EducationCard() {
         m: 1,
       }}
     >
-      <EducationModal open={open} setOpen={setOpen} />
+      <EducationModal/>
 
       <CardContent sx={{ p: "0.1rem !important" }}>
 
@@ -73,7 +73,7 @@ export default function EducationCard() {
           </Box>
 
           <IconButton
-            onClick={() => setOpen(true)}
+            onClick={() => setEducationOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",

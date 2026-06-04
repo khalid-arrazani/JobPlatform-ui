@@ -7,8 +7,10 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EmptyEducationCard() {
+  const {setEducationOpen} = useProfile();
   return (
     <Paper
       elevation={0}
@@ -62,6 +64,7 @@ export default function EmptyEducationCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setEducationOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
@@ -127,6 +130,7 @@ export default function EmptyEducationCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setEducationOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
