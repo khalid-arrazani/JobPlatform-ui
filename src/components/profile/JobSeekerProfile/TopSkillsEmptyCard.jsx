@@ -7,8 +7,11 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function EmptySkillsCard() {
+    const { setSkillOpen} = useProfile()
+  
   return (
     <Paper
       elevation={0}
@@ -59,6 +62,7 @@ export default function EmptySkillsCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setSkillOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
@@ -123,6 +127,7 @@ export default function EmptySkillsCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setSkillOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,

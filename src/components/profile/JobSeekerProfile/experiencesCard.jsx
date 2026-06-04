@@ -11,9 +11,9 @@ import { useProfile } from "../../../logic/context/profileContext";
 
 export default function ExperienceCard() {
 
-  const [open, setOpen] = useState(false);
 
-  const { ...state } = useProfile();
+
+  const { setExperienceOpen , ...state } = useProfile();
 
   const [experiences, setExperiences] = useState([]);
 
@@ -33,10 +33,7 @@ export default function ExperienceCard() {
         m: 1,
       }}
     >
-      <ExperiencesModal
-        open={open}
-        setOpen={setOpen}
-      />
+      <ExperiencesModal />
 
       <CardContent sx={{ p: "0.75rem !important" }}>
         {/* Title */}
@@ -78,7 +75,7 @@ export default function ExperienceCard() {
         </Box>
 
            <IconButton
-            onClick={() => setOpen(true)}
+            onClick={() => setExperienceOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",

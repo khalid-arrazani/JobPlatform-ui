@@ -22,7 +22,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function SocialLinksModal({ open, setOpen }) {
-  const { dispatch, ...state } = useProfile();
+  const {socialOpen ,setSocialOpen, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
   const [socialLinks, setSocialLinks] = useState([]);
@@ -30,11 +30,17 @@ export default function SocialLinksModal({ open, setOpen }) {
   const [platform, setPlatform] = useState("");
   const [url, setUrl] = useState("");
 
+
+
+
+
   useEffect(() => {
     setSocialLinks(
       state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
     );
   }, [state.user?.profile]);
+
+
 
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;
@@ -55,9 +61,14 @@ export default function SocialLinksModal({ open, setOpen }) {
     }
   };
 
+
+
+
   const handleDelete = (index) => {
     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
+
+
 
   const handleSave = async () => {
     dispatch({
@@ -78,7 +89,7 @@ export default function SocialLinksModal({ open, setOpen }) {
         message: "Social Links Update Seccesfuly",
         severity: "success",
       });
-      setOpen(false);
+      setSocialOpen(false);
     } catch (error) {
       setSnackBar({
         open: true,
@@ -91,13 +102,14 @@ export default function SocialLinksModal({ open, setOpen }) {
         payload: false,
       });
     }
-    setOpen(false);
   };
+
+  
 
   return (
     <Modal
-      open={open}
-      onClose={() => setOpen(false)}
+      open={socialOpen}
+      onClose={() => setSocialOpen(false)}
       sx={{
         display: "flex",
         justifyContent: "center",

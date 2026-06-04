@@ -19,7 +19,7 @@ import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function TopSkillsModal({ open, setOpen }) {
 
-  const {dispatch, ...state } = useProfile();
+  const {skillOpen ,setSkillOpen ,dispatch, ...state } = useProfile();
     const { setSnackBar } = useAuth();
   
 
@@ -63,7 +63,7 @@ useEffect(() => {
         severity: "success",
       });
   
-        setOpen(false);
+        setSkillOpen(false);
       } catch (error) {
 
         setSnackBar({
@@ -78,15 +78,15 @@ useEffect(() => {
           payload: false,
         });
       }
-    setOpen(false);
+
   };
 
 
 
   return (
     <Modal
-      open={open}
-      onClose={() => setOpen(false)}
+      open={skillOpen}
+      onClose={() => setSkillOpen(false)}
       sx={{
         display: "flex",
         justifyContent: "center",

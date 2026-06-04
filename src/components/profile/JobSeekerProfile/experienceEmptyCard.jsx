@@ -9,8 +9,11 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
+import { useProfile } from '../../../logic/context/profileContext';
 
 export default function EmptyExperienceCard() {
+    const { setExperienceOpen } = useProfile();
+  
   return (
     <Paper
       elevation={0}
@@ -61,6 +64,7 @@ export default function EmptyExperienceCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setExperienceOpen(true)}}
           sx={{
             textTransform: "none",
             fontWeight: 600,
@@ -125,6 +129,8 @@ export default function EmptyExperienceCard() {
 
         <Button
           startIcon={<AddIcon />}
+          onClick={()=>{setExperienceOpen(true)}}
+
           sx={{
             textTransform: "none",
             fontWeight: 600,

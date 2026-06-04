@@ -20,9 +20,7 @@ import { useProfile } from "../../../logic/context/profileContext";
 
 export default function SocialLinksCard() {
 
-  const {...state} = useProfile()
-  const [open, setOpen] = useState(false);
-
+  const { setSocialOpen,...state} = useProfile()
   const [socialLinks, setSocialLinks] = useState([]);
 
  const getIcon = (platform) => {
@@ -62,7 +60,7 @@ export default function SocialLinksCard() {
         mx: 1,
       }}
     >
-      <SocialLinksModal open={open} setOpen={setOpen} socialLinks={socialLinks} setSocialLinks={setSocialLinks}  />
+      <SocialLinksModal/>
       {/* Header */}
       <Box
         sx={{
@@ -100,7 +98,7 @@ export default function SocialLinksCard() {
         >
           Social Links
           <IconButton
-            onClick={() => setOpen(true)}
+            onClick={() => setSocialOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",

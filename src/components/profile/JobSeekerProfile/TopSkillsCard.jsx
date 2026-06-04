@@ -5,14 +5,14 @@ import EditIcon from "@mui/icons-material/Edit";
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 
 import TopSkillsModal from "./TopSkillsModal";
-import { useState } from "react";
+
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function TopSkillsCard() {
 
-  const [open,setOpen]=useState(false)
 
-  const { ...state} = useProfile()
+  const { setSkillOpen,...state} = useProfile()
+
 
   return (
     <Card
@@ -25,12 +25,7 @@ export default function TopSkillsCard() {
         m: 1,
       }}
     >
-      <TopSkillsModal
-
-      open={open}
-      setOpen={setOpen}
-
-      />
+      <TopSkillsModal  />
 
       <CardContent sx={{ p: "0.3rem !important" }}>
 
@@ -75,7 +70,7 @@ export default function TopSkillsCard() {
         </Box>
 
           <IconButton
-          onClick={()=>setOpen(true)}
+          onClick={()=>setSkillOpen(true)}
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",

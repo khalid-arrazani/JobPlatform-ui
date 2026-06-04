@@ -20,8 +20,9 @@ import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 
-export default function experiencesModal({ open, setOpen }) {
-  const { dispatch, ...state } = useProfile();
+export default function experiencesModal( ) {
+
+  const {experienceOpen , setExperienceOpen , dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
   const [title, setTitle] = useState("");
@@ -75,7 +76,7 @@ export default function experiencesModal({ open, setOpen }) {
         severity: "success",
       });
 
-      setOpen(false);
+      setExperienceOpen(false);
     } catch (error) {
       setSnackBar({
         open: true,
@@ -89,7 +90,7 @@ export default function experiencesModal({ open, setOpen }) {
         payload: false,
       });
     }
-    setOpen(false);
+    
   };
 
   return (
@@ -101,8 +102,8 @@ export default function experiencesModal({ open, setOpen }) {
           alignItems: "center",
           pb: "2rem",
         }}
-        open={open}
-        onClose={() => setOpen(false)}
+        open={experienceOpen}
+        onClose={() => setExperienceOpen(false)}
       >
         <Card
           sx={{
