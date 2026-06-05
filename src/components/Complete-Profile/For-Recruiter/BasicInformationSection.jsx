@@ -42,6 +42,10 @@ export default function BasicInformationSection() {
       formData.append("fullName", fullName);
       formData.append("headline", headline);
       formData.append("location", location);
+      formData.append("companyName", companyName);
+      formData.append("Companylocation", companyLocation);
+      formData.append("website", webSite);
+      formData.append("industry", industry);
 
       if (photo) {
         formData.append("image", photo, "profile.png");
