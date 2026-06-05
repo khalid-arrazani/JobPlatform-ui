@@ -26,6 +26,7 @@ export default function RecruiterCPPage() {
             
             <div className="rightSide">
               <Box sx={{width:"90%",height:"95%"}}>
+                
                <BasicInformationSection/>
 
               </Box>

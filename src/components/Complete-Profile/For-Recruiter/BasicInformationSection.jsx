@@ -39,7 +39,6 @@ export default function BasicInformationSection() {
   const handleCreateProfile = async () => {
     try {
       const formData = new FormData();
-
       formData.append("fullName", fullName);
       formData.append("headline", headline);
       formData.append("location", location);
@@ -59,7 +58,7 @@ export default function BasicInformationSection() {
         message: data?.message,
         severity: "success",
       });
-      
+
       navigate("/profile");
     } catch (error) {
 

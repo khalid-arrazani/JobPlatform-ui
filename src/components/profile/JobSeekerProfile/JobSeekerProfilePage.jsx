@@ -20,7 +20,7 @@ import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 import { useEffect } from "react";
 
-import { getMe } from "../../../logic/api/profile/GetMe.jsx";
+import { getMeJS } from "../../../logic/api/profile/GetMe.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 import LoadingPage from "./LoadingPage.jsx";
@@ -40,7 +40,7 @@ export default function MyProfilePage() {
         payload: true,
       });
       try {
-        const data = await getMe();
+        const data = await getMeJS();
         dispatch({
           type: "PROFILE",
           payload: data,

@@ -1,6 +1,6 @@
 import API from "../config/axios";
 
-export const getMe = async (
+export const getMeJS = async (
 ) => {
   const response = await API.get(
     "/jobseeker/me",
