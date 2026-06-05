@@ -32,11 +32,22 @@ export const updateProfileHeader = async (
 };
 
 
-export const updateProfilePhoto = async (
+export const updateProfilePhotoJS = async (
   formData
 ) => {
   const response = await API.put(
     "/jobseeker/update-ProfilePhoto",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
+export const updateProfilePhotoR = async (
+  formData
+) => {
+  const response = await API.put(
+    "/recuiter/update-ProfilePhoto",
     formData, { withCredentials: true }
   );
   console.log(response.data);

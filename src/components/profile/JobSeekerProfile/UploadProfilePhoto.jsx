@@ -9,7 +9,7 @@ import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import { ProfileContext } from "../../../logic/context/profileContext.jsx";
 
 import { useAuth } from "../../../logic/context/AuthContext.jsx";
-import { updateProfilePhoto } from "../../../logic/api/profile/GetMe.jsx";
+import {updateProfilePhotoJS} from "../../../logic/api/profile/GetMe.jsx";
 
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
@@ -42,7 +42,7 @@ export default function UploadProfilePhoto() {
 
         formData.append("image", blob, "profile.png");
 
-        const data = await updateProfilePhoto(formData);
+        const data = await updateProfilePhotoJS(formData);
         dispatch({
           type: "PROFILE",
           payload: data,

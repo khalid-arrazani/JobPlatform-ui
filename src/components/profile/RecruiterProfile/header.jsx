@@ -21,8 +21,9 @@ import { useProfile } from "../../../logic/context/profileContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+
   const {...state } = useProfile();
-  console.log(state);
+
   return (
     <>
       <Modal
@@ -235,7 +236,7 @@ export default function Header() {
                 fontWeight: "bold",
                 fontSize: "1.3rem",
                 display: "flex",
-                gap: "0.5rem",
+                gap: "0.3rem",
                 alignItems: "center",
               }}
             >
@@ -324,7 +325,8 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  recruiter@nexhire.com
+                {state.user?.profile?.userId?.email}
+
                 </Typography>
               </Box>
             </Box>
