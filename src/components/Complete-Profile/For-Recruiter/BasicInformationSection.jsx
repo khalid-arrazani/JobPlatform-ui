@@ -59,13 +59,14 @@ export default function BasicInformationSection() {
         message: data?.message,
         severity: "success",
       });
+      
       navigate("/profile");
     } catch (error) {
-      console.log(error.response.data);
 
+      console.log(error?.response?.data);
       setSnackBar({
         open: true,
-        message: error.response.data?.message,
+        message: error?.response?.data?.message,
         severity: "error",
       });
     }
