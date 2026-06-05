@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import Navbar from "../components/dashboard/Navbar.jsx";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
-import { getMe } from "../logic/api/profile/GetMe.jsx";
+import { getMeJS } from "../logic/api/profile/GetMe.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
   const { dispatch, ...state } = useProfile();
@@ -14,7 +14,7 @@ export default function DashboardLayout({ children, part, setPart }) {
           payload: true,
         });
         try {
-          const data = await getMe();
+          const data = await getMeJS();
           dispatch({
             type: "PROFILE",
             payload: data,
