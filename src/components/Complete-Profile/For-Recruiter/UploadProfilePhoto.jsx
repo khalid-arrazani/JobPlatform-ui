@@ -15,7 +15,7 @@ import { Dialog, DialogContent, Slider } from "@mui/material";
 
 export default function UploadProfilePhoto({setPhoto}) {
   
-  const editorRef = useRef();
+ const editorRef = useRef();
 
   const [image, setImage] = useState(null);
 

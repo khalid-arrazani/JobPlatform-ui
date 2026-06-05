@@ -19,6 +19,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function BasicInformationSection() {
+  
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");

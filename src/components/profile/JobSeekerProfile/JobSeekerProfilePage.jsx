@@ -32,9 +32,8 @@ export default function MyProfilePage() {
 
   const { dispatch, ...state } = useProfile();
 
-
-
   useEffect(() => {
+
     const fetchUser = async () => {
       dispatch({
         type: "SET_LOADING",
@@ -57,8 +56,6 @@ export default function MyProfilePage() {
     };
     fetchUser();
   }, []);
-
-
 
 
   return (
