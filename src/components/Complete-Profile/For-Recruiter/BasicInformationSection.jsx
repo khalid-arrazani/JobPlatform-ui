@@ -13,13 +13,13 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-import { CompleteProfileJS } from "../../../logic/api/CompleteProfile/CompleteProfile";
+import { CompleteProfileR } from "../../../logic/api/CompleteProfile/CompleteProfile";
 import { AuthContext } from "../../../logic/context/AuthContext";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 export default function BasicInformationSection() {
-  
+
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
@@ -52,7 +52,7 @@ export default function BasicInformationSection() {
         formData.append("image", photo, "profile.png");
       }
 
-      const data = await CompleteProfileJS(formData);
+      const data = await CompleteProfileR(formData);
       console.log(data);
       setSnackBar({
         open: true,
