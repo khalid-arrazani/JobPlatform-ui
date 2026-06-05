@@ -20,7 +20,7 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-
+  
   return (
     <>
       <Modal

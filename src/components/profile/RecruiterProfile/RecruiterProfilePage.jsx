@@ -9,8 +9,44 @@ import QuickStatsCard from "./QuickStatsCard.jsx";
 import SocialLinksCard from "./SocialLinksCard.jsx";
 
 
+import { useEffect } from "react";
+
+import { getMeR } from "../../../logic/api/profile/GetMe.jsx";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
+
+
 
 export default function RecruiterProfilePage() {
+
+    const { dispatch, ...state } = useProfile();
+  
+    useEffect(() => {
+  
+      const fetchUser = async () => {
+        dispatch({
+          type: "SET_LOADING",
+          payload: true,
+        });
+        try {
+          const data = await getMeR();
+          dispatch({
+            type: "PROFILE",
+            payload: data,
+          });
+        } catch (error) {
+          console.log(error.response?.data);
+        } finally {
+          dispatch({
+            type: "SET_LOADING",
+            payload: false,
+          });
+        }
+      };
+      fetchUser();
+    }, []);
+
+    console.log(state.user);
+
   return (
     <>
       <div className="par1">

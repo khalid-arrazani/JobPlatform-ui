@@ -10,6 +10,16 @@ export const getMeJS = async (
   return response.data;
 };
 
+export const getMeR = async (
+) => {
+  const response = await API.get(
+    "/recuiter/me",
+     { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
 export const updateProfileHeader = async (
   formData
 ) => {
