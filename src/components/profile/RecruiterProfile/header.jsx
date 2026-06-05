@@ -266,7 +266,7 @@ export default function Header() {
                 mt: "0.3rem",
               }}
             >
-              HR & Talent Acquisition Specialist
+             {state.user?.profile?.headline}
             </Typography>
 
             <Box
@@ -298,7 +298,8 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  Taroudant, Morocco
+                {state.user?.profile?.location}
+
                 </Typography>
               </Box>
 
