@@ -4,7 +4,7 @@ import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 
-import { CompleteProfileJS } from "../../../logic/api/profile/CompleteProfile";
+import { CompleteProfileJS } from "../../../logic/api/CompleteProfile/CompleteProfile";
 import { AuthContext } from "../../../logic/context/AuthContext";
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";

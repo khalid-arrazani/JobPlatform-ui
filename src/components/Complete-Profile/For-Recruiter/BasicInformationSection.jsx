@@ -2,26 +2,70 @@ import {
   Box,
   Typography,
   Chip,
-
   Button,
   TextField,
+  Divider,
 } from "@mui/material";
 
-
-import UploadProfilePhoto from "./UploadProfilePhoto"
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import UploadProfilePhoto from "./UploadProfilePhoto";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
-
-import Divider from "@mui/material/Divider";
-
+import { CompleteProfileJS } from "../../../logic/api/CompleteProfile/CompleteProfile";
+import { AuthContext } from "../../../logic/context/AuthContext";
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export default function BasicInformationSection() {
-  
+  const [fullName, setFullName] = useState("");
+  const [headline, setHeadline] = useState("");
+  const [location, setLocation] = useState("");
+  const [photo, setPhoto] = useState("");
 
-  
+  //------------ Company Info ------------------
+
+  const [companyName, setCompanyName] = useState("");
+  const [industry, setIndustry] = useState("");
+  const [webSite, setWebSite] = useState("");
+  const [companyLocation, setCompanyLocation] = useState("");
+
+  const navigate = useNavigate();
+
+  const { setSnackBar } = useContext(AuthContext);
+
+  const handleCreateProfile = async () => {
+    try {
+      const formData = new FormData();
+
+      formData.append("fullName", fullName);
+      formData.append("headline", headline);
+      formData.append("location", location);
+
+      if (photo) {
+        formData.append("image", photo, "profile.png");
+      }
+
+      const data = await CompleteProfileJS(formData);
+      console.log(data);
+      setSnackBar({
+        open: true,
+        message: data?.message,
+        severity: "success",
+      });
+      navigate("/profile");
+    } catch (error) {
+      console.log(error.response.data);
+
+      setSnackBar({
+        open: true,
+        message: error.response.data?.message,
+        severity: "error",
+      });
+    }
+  };
+
   return (
     <>
       {/* Badge */}
@@ -61,10 +105,8 @@ export default function BasicInformationSection() {
       >
         Start by telling us a bit about yourself and your Company
       </Typography>
-
-      <UploadProfilePhoto/>
-
-
+      {/* Upload */}
+      <UploadProfilePhoto setPhoto={setPhoto} />
 
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
@@ -81,6 +123,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setFullName(e.target.value);
+          }}
           required
           size="small"
           placeholder="Enter your full name"
@@ -118,6 +163,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setHeadline(e.target.value);
+          }}
           required
           multiline
           placeholder="Tell us about yourself..."
@@ -145,6 +193,9 @@ export default function BasicInformationSection() {
         <TextField
           fullWidth
           size="small"
+          onChange={(e) => {
+            setLocation(e.target.value);
+          }}
           required
           placeholder="Enter your location"
           InputProps={{
@@ -179,7 +230,7 @@ export default function BasicInformationSection() {
           p: 2,
         }}
       />
-      {/* Location */}
+      {/* Company name */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
@@ -194,6 +245,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setCompanyName(e.target.value);
+          }}
           size="small"
           required
           placeholder="Enter your Company name"
@@ -215,7 +269,7 @@ export default function BasicInformationSection() {
           }}
         />
       </Box>
-      {/* Location */}
+      {/* industry */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
@@ -230,6 +284,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setIndustry(e.target.value);
+          }}
           size="small"
           required
           placeholder="Enter your Company industry"
@@ -251,6 +308,7 @@ export default function BasicInformationSection() {
           }}
         />
       </Box>
+      {/* WebSite */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
@@ -265,6 +323,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setWebSite(e.target.value);
+          }}
           size="small"
           required
           placeholder="Enter your Company Website"
@@ -286,6 +347,7 @@ export default function BasicInformationSection() {
           }}
         />
       </Box>
+      {/* Company Location */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
@@ -300,6 +362,9 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          onChange={(e) => {
+            setCompanyLocation(e.target.value);
+          }}
           size="small"
           required
           placeholder="Enter your Company Location"
@@ -326,6 +391,7 @@ export default function BasicInformationSection() {
       <Button
         fullWidth
         variant="contained"
+        onClick={handleCreateProfile}
         sx={{
           height: "3rem",
           borderRadius: "0.5rem",

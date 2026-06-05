@@ -13,7 +13,7 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function UploadProfilePhoto() {
+export default function UploadProfilePhoto({setPhoto}) {
   
   const editorRef = useRef();
 
@@ -25,8 +25,6 @@ export default function UploadProfilePhoto() {
 
 const [preview, setPreview] = useState("");
 
-const [imageFile, setImageFile] = useState(null);
-
 const handleSave = () => {
   const canvas =
     editorRef.current.getImageScaledToCanvas();
@@ -34,7 +32,7 @@ const handleSave = () => {
   canvas.toBlob((blob) => {
     if (!blob) return;
 
-
+    
     const previewUrl =
       URL.createObjectURL(blob);
 
@@ -42,7 +40,7 @@ const handleSave = () => {
     setPreview(previewUrl);
 
   
-    setImageFile(blob);
+    setPhoto(blob);
 
 
     setOpen(false);

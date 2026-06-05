@@ -5,7 +5,7 @@ import RecruiterASPage from "../components/account-settings/recruiter/RecruiterA
 export default function AccountSettingsPage() {
   return (
     <AccountSettingsLayout>
-      <RecruiterASPage/>
+      <JobSeekerASPage/>
     </AccountSettingsLayout>
   );
 }

@@ -7,7 +7,7 @@ export default function ProfilePage(){
 
     return<>
     <ProfileLayout>
-      <JobSeekerProfilePage/>
+      <RecruiterProfilePage/>
     </ProfileLayout>
     </>
 }

@@ -5,7 +5,7 @@ import RecruiterCPPage from "../components/Complete-Profile/For-Recruiter/Recrui
 export default function CompleteProfilePage() {
   return (
     <CompleteProfileLayout>
-      <JobSeekerCPPage/>
+      <RecruiterCPPage/>
     </CompleteProfileLayout>
   );
 }
