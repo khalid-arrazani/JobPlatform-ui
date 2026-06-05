@@ -10,7 +10,7 @@ export default function JobList() {
     salary: "$4,000/month",
     description:
       "Looking for a React developer with 2+ years of experience.",
-    logo: "https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo.jpg",
+    logo: "https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png",
   },
 
   {
@@ -21,7 +21,7 @@ export default function JobList() {
     salary: "$5,500/month",
     description:
       "Node.js and MongoDB developer to build scalable APIs and services.",
-    logo: "https://1000logos.net/wp-content/uploads/2017/04/Color-Microsoft-Logo.jpg",
+    logo: "https://cdn.pixabay.com/photo/2021/10/17/14/47/windows-7-logo-6718525_1280.png",
   },
 
   {
@@ -32,7 +32,7 @@ export default function JobList() {
     salary: "$4,800/month",
     description:
       "Creative designer needed to improve user experiences across web products.",
-    logo: "https://1000logos.net/wp-content/uploads/2017/08/Color-Airbnb-Logo.jpg",
+    logo: "https://cdn.pixabay.com/photo/2018/05/08/21/28/airbnb-3384008_1280.png",
   },
 
   {
@@ -43,7 +43,7 @@ export default function JobList() {
     salary: "$6,000/month",
     description:
       "Work with React, Node.js, and cloud technologies on music platforms.",
-    logo: "https://1000logos.net/wp-content/uploads/2017/08/Color-Spotify-Logo.jpg",
+    logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
   }
    
   ];
