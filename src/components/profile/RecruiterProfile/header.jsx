@@ -17,10 +17,12 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
-  
+  const {...state } = useProfile();
+  console.log(state);
   return (
     <>
       <Modal
@@ -237,7 +239,7 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              Khalid Arrazani
+              {state.user?.profile?.fullName}
               <Box
                 sx={{
                   borderRadius: "0.3rem",
