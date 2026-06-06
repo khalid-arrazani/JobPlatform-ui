@@ -11,7 +11,7 @@ import {
 
 import { useState, useEffect } from "react";
 
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
+import {  updateProfileJS } from "../../../logic/api/profile/GetMe.jsx";
 
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
@@ -47,7 +47,7 @@ export default function headerModal({ open, setOpen }) {
           payload: true,
         });
     try {
-      const data = await updateProfileHeader({
+      const data = await updateProfileJS({
         fullName,
         location,
         headline,

@@ -5,70 +5,40 @@ import ISO6391 from "iso-639-1";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 import {
-  Chip,
+
   Modal,
   Divider,
   TextField,
   Button,
-  Autocomplete,
+
 } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
-import { updateProfileJS } from "../../../logic/api/profile/GetMe";
+import {  updateProfileR } from "../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function AboutMeModal() {
-  const {aboutOpen , setAboutOpen, dispatch, ...state } = useProfile();
-      const { setSnackBar } = useAuth();
-  
+export default function AboutMeModal({open , setOpen}) {
 
-  // this is the languages List
-  const lang = ISO6391.getAllNames();
+  const { dispatch, ...state } = useProfile();
+
+      const { setSnackBar } = useAuth();
+
   //---------------------------------
 
-
-
-
   const [about, setAbout] = useState("bio");
-  const [language, setLanguage] = useState("");
-  const [languagesList, setLanguagesList] = useState([]);
-  // -----------------------availability and preferredJobType----------------------------
-  const [availability, setAvailability] = useState("");
-  const [preferredJobType, setPreferredJobType] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState("");
+
 
   useEffect(() => {
     const profile = state.user?.profile;
-
     if (!profile) return;
-
-    setAbout(profile.aboutMe?.about || "");
-    setLanguagesList(profile.aboutMe?.languages || []);
-    setAvailability(profile.aboutMe?.availability || "");
-    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-    setExperienceLevel(profile.aboutMe?.experienceLevel || "");
+    setAbout(profile.aboutMe || "");
 
   }, [state.user?.profile]);
 
-  const handleAdd = () => {
-    if (!language) return;
-
-    setLanguagesList((prev) =>
-      prev.includes(language) ? prev : [...prev, language],
-    );
-    setLanguage("");
-  };
 
   const handleSave = async () => {
-    const aboutMe = {
-      about,
-      languages: languagesList,
-      availability,
-      preferredJobType,
-      experienceLevel,
-    };
 
     dispatch({
         type: "SET_LOADING_UPDATE_PROFILE",
@@ -80,14 +50,14 @@ export default function AboutMeModal() {
         severity: "success",
       });
     try {
-      const data = await updateProfileJS({
-        aboutMe,
+      const data = await updateProfileR({
+        aboutMe:about
       });
       dispatch({
         type: "PROFILE",
         payload: data,
       });
-      setAboutOpen(false);
+      setOpen(false);
       
     } catch (error) {
       setSnackBar({
@@ -103,32 +73,28 @@ export default function AboutMeModal() {
       }
   };
 
-  const handleDelete = (item) => {
-    setLanguagesList((prev) => prev.filter((l) => l !== item));
-  };
+
 
   return (
     <>
-      <Modal
+    <Modal
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          pb: "2rem",
         }}
-        open={aboutOpen}
-        onClose={() => setAboutOpen(false)}
+        open={open}
+        onClose={() => setOpen(false)}
       >
         <Card
           sx={{
-            maxHeight: "80vh",
+            height: "auto",
             width: "50vw",
             outline: "none",
-
+            borderRadius: "1rem",
             background: "#fffffff8",
 
             p: "0.5rem",
-            overflow: "auto",
           }}
         >
           <Box
@@ -152,7 +118,7 @@ export default function AboutMeModal() {
               />
             </svg>
           </Box>
-          <Divider sx={{ mt: "1rem" }}>About Me</Divider>
+          <Divider>About Me</Divider>
           <Box
             sx={{
               height: "89%",
@@ -164,7 +130,7 @@ export default function AboutMeModal() {
             }}
           >
             {/* About Me */}
-            <Box sx={{ mb: "1rem" }}>
+            <Box sx={{ mb: "0.5rem" }}>
               <Typography
                 sx={{
                   fontSize: "0.82rem",
@@ -179,10 +145,10 @@ export default function AboutMeModal() {
               <TextField
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
-                size="small"
+
                 fullWidth
                 multiline
-                rows={3}
+                rows={4}
                 slotProps={{
                   htmlInput: {
                     maxLength: 700,
@@ -201,180 +167,10 @@ export default function AboutMeModal() {
                 {about.length}/700
               </Typography>
             </Box>
-
-            {/* --languages-- */}
-            <Box>
-              <Typography
-                sx={{
-                  fontSize: "0.82rem",
-                  fontWeight: 600,
-                  mb: "0.5rem",
-                  color: "#111827",
-                }}
-              >
-                languages*
-              </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 1,
-                  alignItems: "center",
-                }}
-              >
-                <Autocomplete
-                  disablePortal
-                  options={lang}
-                  value={language}
-                  slotProps={{
-                    popper: {
-                      sx: {
-                        transition: "none",
-                        animation: "none",
-                        m: 5,
-                      },
-                    },
-                    listbox: {
-                      sx: {
-                        maxHeight: "150px",
-                      },
-                    },
-                  }}
-                  onChange={(e, value) => setLanguage(value)}
-                  sx={{ flex: 1 }}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Language" size="small" />
-                  )}
-                />
-
-                <Button
-                  variant="contained"
-                  onClick={handleAdd}
-                  sx={{
-                    textTransform: "none",
-                    height: "40px",
-                  }}
-                >
-                  Add
-                </Button>
-              </Box>
-
-              {/* Chips */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  my: 2,
-                }}
-              >
-                {languagesList.map((item, index) => (
-                  <Chip
-                    key={index}
-                    label={item}
-                    onDelete={() => handleDelete(item)}
-                  />
-                ))}
-              </Box>
-            </Box>
-
-            {/* -----------------------availability and preferredJobType----------------------- */}
-
-            <Box>
-              {/* Availability */}
-              <Box sx={{ mb: 2 }}>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Availability
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{ mb: 1 }}
-                  value={availability}
-                  onChange={(e) => setAvailability(e.target.value)}
-                >
-                  <MenuItem value="immediately">immediately</MenuItem>
-
-                  <MenuItem value="1_week">1_week</MenuItem>
-
-                  <MenuItem value="1_month">1_month</MenuItem>
-                </TextField>
-              </Box>
-
-              {/* Preferred Job Type */}
-              <Box>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Preferred Job Type
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{ mb: 2 }}
-                  value={preferredJobType}
-                  onChange={(e) => setPreferredJobType(e.target.value)}
-                >
-                  <MenuItem value="full-time">full-time</MenuItem>
-
-                  <MenuItem value="part-time">part-time</MenuItem>
-
-                  <MenuItem value="remote">remote</MenuItem>
-
-                  <MenuItem value="internship">internship</MenuItem>
-
-                  <MenuItem value="freelance">freelance</MenuItem>
-
-                  <MenuItem value="contract">contract</MenuItem>
-                </TextField>
-              </Box>
-
-              {/* Experience Level */}
-              <Box>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Experience Level
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  value={experienceLevel}
-                  onChange={(e) => setExperienceLevel(e.target.value)}
-                >
-                  <MenuItem value="junior">junior</MenuItem>
-
-                  <MenuItem value="mid">mid</MenuItem>
-
-                  <MenuItem value="senior">senior</MenuItem>
-                </TextField>
-              </Box>
-            </Box>
-
             {/* Button */}
             <Button
-              onClick={handleSave}
               fullWidth
-              disabled={state.isLoadingUptadeProfile}
+              onClick={handleSave}
               variant="contained"
               sx={{
                 height: "3rem",
@@ -383,33 +179,19 @@ export default function AboutMeModal() {
                 textTransform: "none",
                 fontWeight: 500,
                 fontSize: "0.9rem",
-                mt: "1rem",
+
                 background: "#6d28d9",
 
                 "&:hover": {
                   background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
                 },
+                
               }}
             >
-
-
-
-              {state.isLoadingUptadeProfile?<CircularProgress
-                aria-label="Loading…"
-                size={30}
-                sx={{
-                  color: green[800],
-                  position: "absolute",
-                }}
-              /> :
-              <Box sx={{display:"flex",justifyContent:"center"}}>
-              Save
+              Continue
               <TrendingFlatOutlinedIcon
-                sx={{ position: "relative", right: "-450%" }}
+                sx={{ position: "relative", right: "-40%" }}
               />
-              </Box>}
-
-
             </Button>
           </Box>
         </Card>

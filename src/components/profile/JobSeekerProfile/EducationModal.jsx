@@ -4,7 +4,7 @@ import { Modal, Divider, TextField, Button, IconButton } from "@mui/material";
 import { useState, useEffect } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import { updateProfileJS } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
@@ -55,7 +55,7 @@ export default function EducationModal() {
         payload: true,
       });
     try {
-      const data = await updateProfileHeader({
+      const data = await updateProfileJS({
         education: educations,
       });
       dispatch({

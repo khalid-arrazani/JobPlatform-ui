@@ -10,7 +10,7 @@ import {
   Divider,
 } from "@mui/material";
 
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import {  updateProfileJS } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
@@ -77,7 +77,7 @@ export default function SocialLinksModal({ open, setOpen }) {
       payload: true,
     });
     try {
-      const data = await updateProfileHeader({
+      const data = await updateProfileJS({
         socialLinks: socialLinks,
       });
 

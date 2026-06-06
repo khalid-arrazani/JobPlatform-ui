@@ -20,11 +20,22 @@ export const getMeR = async (
   return response.data;
 };
 
-export const updateProfileHeader = async (
+export const updateProfileJS = async (
   formData
 ) => {
   const response = await API.put(
     "/jobseeker/me",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
+export const updateProfileR = async (
+  formData
+) => {
+  const response = await API.put(
+    "/recuiter/me",
     formData, { withCredentials: true }
   );
   console.log(response.data);

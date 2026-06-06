@@ -22,31 +22,7 @@ import { useState } from "react";
 
 export default function CompanyInformationCard() {
   const [open, setOpen] = useState(false);
-  const companyData = [
-    {
-      icon: <BusinessIcon />,
-      title: "Company Name",
-      value: "NexHire",
-    },
 
-    {
-      icon: <ApartmentIcon />,
-      title: "Industry",
-      value: "Technology & Recruitment",
-    },
-
-    {
-      icon: <LanguageIcon />,
-      title: "Website",
-      value: "www.nexhire.com",
-    },
-
-    {
-      icon: <LocationOnIcon />,
-      title: "Location",
-      value: "Taroudant, Morocco",
-    },
-  ];
 
   return (
     <Card
@@ -189,7 +165,7 @@ export default function CompanyInformationCard() {
                 }}
               />
             </Box>
-             {/* Website */}
+            {/* Website */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -311,76 +287,288 @@ export default function CompanyInformationCard() {
           gap: "1rem",
         }}
       >
-        {companyData.map((item, index) => (
+
+        {/*Company Name*/}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.9rem",
+
+            p: "1rem",
+
+            border: "1px solid #efefef",
+            borderRadius: "1rem",
+
+            background: "#fcfcff",
+
+            transition: "0.3s ease",
+
+            "&:hover": {
+              transform: "translateY(-0.15rem)",
+              boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+            },
+          }}
+        >
+          {/* Icon */}
           <Box
-            key={index}
             sx={{
+              minWidth: "3rem",
+              height: "3rem",
+
+              borderRadius: "0.9rem",
+
               display: "flex",
               alignItems: "center",
-              gap: "0.9rem",
+              justifyContent: "center",
 
-              p: "1rem",
+              background: "#f3f0ff",
+              color: "#5b21b6",
 
-              border: "1px solid #efefef",
-              borderRadius: "1rem",
-
-              background: "#fcfcff",
-
-              transition: "0.3s ease",
-
-              "&:hover": {
-                transform: "translateY(-0.15rem)",
-                boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+              "& svg": {
+                fontSize: "1.35rem",
               },
             }}
           >
-            {/* Icon */}
-            <Box
+            <BusinessIcon />
+          </Box>
+
+          {/* Text */}
+          <Box>
+            <Typography
               sx={{
-                minWidth: "3rem",
-                height: "3rem",
-
-                borderRadius: "0.9rem",
-
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-
-                background: "#f3f0ff",
-                color: "#5b21b6",
-
-                "& svg": {
-                  fontSize: "1.35rem",
-                },
+                fontSize: "0.72rem",
+                color: "#888",
+                mb: "0.15rem",
               }}
             >
-              {item.icon}
-            </Box>
+              Company Name
+            </Typography>
 
-            {/* Text */}
-            <Box>
-              <Typography
-                sx={{
-                  fontSize: "0.72rem",
-                  color: "#888",
-                  mb: "0.15rem",
-                }}
-              >
-                {item.title}
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "0.92rem",
-                  fontWeight: 600,
-                  color: "#111",
-                }}
-              >
-                {item.value}
-              </Typography>
-            </Box>
+            <Typography
+              sx={{
+                fontSize: "0.92rem",
+                fontWeight: 600,
+                color: "#111",
+              }}
+            >
+              NexHire
+            </Typography>
           </Box>
-        ))}
+        </Box>
+
+
+        {/*Industry*/}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.9rem",
+
+            p: "1rem",
+
+            border: "1px solid #efefef",
+            borderRadius: "1rem",
+
+            background: "#fcfcff",
+
+            transition: "0.3s ease",
+
+            "&:hover": {
+              transform: "translateY(-0.15rem)",
+              boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+            },
+          }}
+        >
+          {/* Icon */}
+          <Box
+            sx={{
+              minWidth: "3rem",
+              height: "3rem",
+
+              borderRadius: "0.9rem",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+
+              background: "#f3f0ff",
+              color: "#5b21b6",
+
+              "& svg": {
+                fontSize: "1.35rem",
+              },
+            }}
+          >
+            <ApartmentIcon />
+          </Box>
+
+          {/* Text */}
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "0.72rem",
+                color: "#888",
+                mb: "0.15rem",
+              }}
+            >
+              Industry
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "0.92rem",
+                fontWeight: 600,
+                color: "#111",
+              }}
+            >
+              Technology & Recruitment
+            </Typography>
+          </Box>
+        </Box>
+
+
+        {/*Website*/}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.9rem",
+
+            p: "1rem",
+
+            border: "1px solid #efefef",
+            borderRadius: "1rem",
+
+            background: "#fcfcff",
+
+            transition: "0.3s ease",
+
+            "&:hover": {
+              transform: "translateY(-0.15rem)",
+              boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+            },
+          }}
+        >
+          {/* Icon */}
+          <Box
+            sx={{
+              minWidth: "3rem",
+              height: "3rem",
+
+              borderRadius: "0.9rem",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+
+              background: "#f3f0ff",
+              color: "#5b21b6",
+
+              "& svg": {
+                fontSize: "1.35rem",
+              },
+            }}
+          >
+            <LanguageIcon />
+          </Box>
+
+          {/* Text */}
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "0.72rem",
+                color: "#888",
+                mb: "0.15rem",
+              }}
+            >
+              Website
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "0.92rem",
+                fontWeight: 600,
+                color: "#111",
+              }}
+            >
+              www.nexhire.com
+            </Typography>
+          </Box>
+        </Box>
+
+
+
+         {/*Location*/}
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: "0.9rem",
+
+            p: "1rem",
+
+            border: "1px solid #efefef",
+            borderRadius: "1rem",
+
+            background: "#fcfcff",
+
+            transition: "0.3s ease",
+
+            "&:hover": {
+              transform: "translateY(-0.15rem)",
+              boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+            },
+          }}
+        >
+          {/* Icon */}
+          <Box
+            sx={{
+              minWidth: "3rem",
+              height: "3rem",
+
+              borderRadius: "0.9rem",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+
+              background: "#f3f0ff",
+              color: "#5b21b6",
+
+              "& svg": {
+                fontSize: "1.35rem",
+              },
+            }}
+          >
+            <LocationOnIcon />
+          </Box>
+
+          {/* Text */}
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "0.72rem",
+                color: "#888",
+                mb: "0.15rem",
+              }}
+            >
+              Location
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "0.92rem",
+                fontWeight: 600,
+                color: "#111",
+              }}
+            >
+             Morocco - Taroudant
+            </Typography>
+          </Box>
+        </Box>
+
+
       </Box>
     </Card>
   );

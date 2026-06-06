@@ -11,7 +11,7 @@ import {
 
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe";
+import {  updateProfileJS } from "../../../logic/api/profile/GetMe";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -59,7 +59,7 @@ useEffect(() => {
           payload: true,
         });
       try {
-        const data = await updateProfileHeader({
+        const data = await updateProfileJS({
           skills:editSkills
         });
   

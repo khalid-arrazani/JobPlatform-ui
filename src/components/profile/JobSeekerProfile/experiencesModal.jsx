@@ -10,7 +10,8 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 
-import { updateProfileHeader } from "../../../logic/api/profile/GetMe.jsx";
+
+import { updateProfileJS } from "../../../logic/api/profile/GetMe.jsx";
 
 import { useEffect, useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
@@ -62,7 +63,7 @@ export default function ExperiencesModal( ) {
       payload: true,
     });
     try {
-      const data = await updateProfileHeader({
+      const data = await updateProfileJS({
         experience: experiences,
       });
 

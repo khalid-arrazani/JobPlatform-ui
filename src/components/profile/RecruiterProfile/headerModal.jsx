@@ -1,93 +1,68 @@
-import { Card, Typography, Box, MenuItem } from "@mui/material";
-
-import ISO6391 from "iso-639-1";
-
-import CircularProgress from "@mui/material/CircularProgress";
-import { green } from "@mui/material/colors";
 import {
-  Chip,
-  Modal,
-  Divider,
-  TextField,
+  Box,
+  Typography,
   Button,
-  Autocomplete,
+  Modal,
+  Card,
+  TextField,
+  Divider,
 } from "@mui/material";
 
-import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-import { updateProfileJS } from "../../../logic/api/profile/GetMe";
-import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function AboutMeModal() {
-  const {aboutOpen , setAboutOpen, dispatch, ...state } = useProfile();
-      const { setSnackBar } = useAuth();
-  
+import { updateProfileR } from "../../../logic/api/profile/GetMe.jsx";
 
-  // this is the languages List
-  const lang = ISO6391.getAllNames();
-  //---------------------------------
+import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
 
+export default function headerModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
-  const [about, setAbout] = useState("bio");
-  const [language, setLanguage] = useState("");
-  const [languagesList, setLanguagesList] = useState([]);
-  // -----------------------availability and preferredJobType----------------------------
-  const [availability, setAvailability] = useState("");
-  const [preferredJobType, setPreferredJobType] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState("");
+  const [fullName, setFullName] = useState("");
+
+  const [location, setLocation] = useState("");
+
+  const [headline, setHeadline] = useState("");
 
   useEffect(() => {
-    const profile = state.user?.profile;
+    if (state.user?.profile) {
+      setFullName(state.user.profile.fullName || "");
 
-    if (!profile) return;
+      setLocation(state.user.profile.location || "");
 
-    setAbout(profile.aboutMe?.about || "");
-    setLanguagesList(profile.aboutMe?.languages || []);
-    setAvailability(profile.aboutMe?.availability || "");
-    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-    setExperienceLevel(profile.aboutMe?.experienceLevel || "");
+      setHeadline(state.user.profile.headline || "");
+    }
+  }, [state.user]);
 
-  }, [state.user?.profile]);
-
-  const handleAdd = () => {
-    if (!language) return;
-
-    setLanguagesList((prev) =>
-      prev.includes(language) ? prev : [...prev, language],
-    );
-    setLanguage("");
-  };
-
-  const handleSave = async () => {
-    const aboutMe = {
-      about,
-      languages: languagesList,
-      availability,
-      preferredJobType,
-      experienceLevel,
-    };
-
+  const HandleUpdate = async () => {
     dispatch({
-        type: "SET_LOADING_UPDATE_PROFILE",
-        payload: true,
-      });
-    setSnackBar({
-        open: true,
-        message: "Education Update Seccesfuly",
-        severity: "success",
-      });
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
     try {
-      const data = await updateProfileJS({
-        aboutMe,
+      const data = await updateProfileR({
+        fullName,
+        location,
+        headline,
       });
+
       dispatch({
         type: "PROFILE",
         payload: data,
       });
-      setAboutOpen(false);
+      setSnackBar({
+        open: true,
+        message: "Header Update Seccesfuly",
+        severity: "success",
+      });
+      setOpen(false);
       
     } catch (error) {
       setSnackBar({
@@ -101,10 +76,7 @@ export default function AboutMeModal() {
           payload: false,
         });
       }
-  };
-
-  const handleDelete = (item) => {
-    setLanguagesList((prev) => prev.filter((l) => l !== item));
+      setOpen(false);
   };
 
   return (
@@ -114,21 +86,19 @@ export default function AboutMeModal() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          pb: "2rem",
         }}
-        open={aboutOpen}
-        onClose={() => setAboutOpen(false)}
+        open={open}
+        onClose={() => setOpen(false)}
       >
         <Card
           sx={{
-            maxHeight: "80vh",
+            height: "62vh",
             width: "50vw",
             outline: "none",
-
+            borderRadius: "1rem",
             background: "#fffffff8",
 
             p: "0.5rem",
-            overflow: "auto",
           }}
         >
           <Box
@@ -152,18 +122,19 @@ export default function AboutMeModal() {
               />
             </svg>
           </Box>
-          <Divider sx={{ mt: "1rem" }}>About Me</Divider>
+          <Divider>Basic Information</Divider>
           <Box
             sx={{
               height: "89%",
               display: "flex",
               flexDirection: "column",
               justifyContent: "space-around",
+              // alignItems: "center",
 
               p: "1rem 1rem",
             }}
           >
-            {/* About Me */}
+            {/* Full Name */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -173,37 +144,28 @@ export default function AboutMeModal() {
                   color: "#111827",
                 }}
               >
-                About Me*
+                Full Name*
               </Typography>
 
               <TextField
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
-                size="small"
                 fullWidth
-                multiline
-                rows={3}
-                slotProps={{
-                  htmlInput: {
-                    maxLength: 700,
+                onChange={(e) => {
+                  setFullName(e.target.value);
+                }}
+                value={fullName}
+                required
+                size="small"
+                placeholder="Enter your full name"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
                   },
                 }}
               />
-
-              <Typography
-                sx={{
-                  mt: 0.5,
-                  fontSize: "0.75rem",
-                  color: "#6b7280",
-                  textAlign: "right",
-                }}
-              >
-                {about.length}/700
-              </Typography>
             </Box>
 
-            {/* --languages-- */}
-            <Box>
+            {/* Bio */}
+            <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
                   fontSize: "0.82rem",
@@ -212,205 +174,96 @@ export default function AboutMeModal() {
                   color: "#111827",
                 }}
               >
-                languages*
+                Headline*
               </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-                  gap: 1,
-                  alignItems: "center",
-                }}
-              >
-                <Autocomplete
-                  disablePortal
-                  options={lang}
-                  value={language}
-                  slotProps={{
-                    popper: {
-                      sx: {
-                        transition: "none",
-                        animation: "none",
-                        m: 5,
-                      },
-                    },
-                    listbox: {
-                      sx: {
-                        maxHeight: "150px",
-                      },
-                    },
-                  }}
-                  onChange={(e, value) => setLanguage(value)}
-                  sx={{ flex: 1 }}
-                  renderInput={(params) => (
-                    <TextField {...params} label="Language" size="small" />
-                  )}
-                />
 
-                <Button
-                  variant="contained"
-                  onClick={handleAdd}
-                  sx={{
-                    textTransform: "none",
-                    height: "40px",
-                  }}
-                >
-                  Add
-                </Button>
-              </Box>
-
-              {/* Chips */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  my: 2,
+              <TextField
+                fullWidth
+                value={headline}
+                onChange={(e) => {
+                  setHeadline(e.target.value);
                 }}
-              >
-                {languagesList.map((item, index) => (
-                  <Chip
-                    key={index}
-                    label={item}
-                    onDelete={() => handleDelete(item)}
-                  />
-                ))}
-              </Box>
+                required
+                size="small"
+                placeholder="Tell us about yourself..."
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                  },
+                }}
+              />
             </Box>
 
-            {/* -----------------------availability and preferredJobType----------------------- */}
+            {/* Location */}
+            <Box sx={{ mb: "1rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                  mb: "0.5rem",
+                  color: "#111827",
+                }}
+              >
+                Location*
+              </Typography>
 
-            <Box>
-              {/* Availability */}
-              <Box sx={{ mb: 2 }}>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Availability
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{ mb: 1 }}
-                  value={availability}
-                  onChange={(e) => setAvailability(e.target.value)}
-                >
-                  <MenuItem value="immediately">immediately</MenuItem>
-
-                  <MenuItem value="1_week">1_week</MenuItem>
-
-                  <MenuItem value="1_month">1_month</MenuItem>
-                </TextField>
-              </Box>
-
-              {/* Preferred Job Type */}
-              <Box>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Preferred Job Type
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{ mb: 2 }}
-                  value={preferredJobType}
-                  onChange={(e) => setPreferredJobType(e.target.value)}
-                >
-                  <MenuItem value="full-time">full-time</MenuItem>
-
-                  <MenuItem value="part-time">part-time</MenuItem>
-
-                  <MenuItem value="remote">remote</MenuItem>
-
-                  <MenuItem value="internship">internship</MenuItem>
-
-                  <MenuItem value="freelance">freelance</MenuItem>
-
-                  <MenuItem value="contract">contract</MenuItem>
-                </TextField>
-              </Box>
-
-              {/* Experience Level */}
-              <Box>
-                <Typography
-                  sx={{
-                    mb: 1,
-                    fontWeight: 600,
-                    fontSize: "0.9rem",
-                  }}
-                >
-                  Experience Level
-                </Typography>
-
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  value={experienceLevel}
-                  onChange={(e) => setExperienceLevel(e.target.value)}
-                >
-                  <MenuItem value="junior">junior</MenuItem>
-
-                  <MenuItem value="mid">mid</MenuItem>
-
-                  <MenuItem value="senior">senior</MenuItem>
-                </TextField>
-              </Box>
+              <TextField
+                fullWidth
+                value={location}
+                onChange={(e) => {
+                  setLocation(e.target.value);
+                }}
+                size="small"
+                required
+                placeholder="Enter your location"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                  },
+                }}
+              />
             </Box>
-
             {/* Button */}
             <Button
-              onClick={handleSave}
-              fullWidth
-              disabled={state.isLoadingUptadeProfile}
-              variant="contained"
-              sx={{
-                height: "3rem",
-                borderRadius: "0.5rem",
+            onClick={HandleUpdate}
+            fullWidth
+            disabled={state.isLoadingUptadeProfile}
+            variant="contained"
+            sx={{
+              height: "3rem",
+              borderRadius: "0.5rem",
 
-                textTransform: "none",
-                fontWeight: 500,
-                fontSize: "0.9rem",
-                mt: "1rem",
-                background: "#6d28d9",
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "0.9rem",
+              mt: "1rem",
+              background: "#6d28d9",
 
-                "&:hover": {
-                  background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
-                },
-              }}
-            >
-
-
-
-              {state.isLoadingUptadeProfile?<CircularProgress
+              "&:hover": {
+                background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+              },
+              mb:"2.5rem"
+            }}
+            
+          >
+            {state.isLoadingUptadeProfile ? (
+              <CircularProgress
                 aria-label="Loading…"
                 size={30}
                 sx={{
                   color: green[800],
                   position: "absolute",
                 }}
-              /> :
-              <Box sx={{display:"flex",justifyContent:"center"}}>
-              Save
-              <TrendingFlatOutlinedIcon
-                sx={{ position: "relative", right: "-450%" }}
               />
-              </Box>}
-
-
-            </Button>
+            ) : (
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                Save
+                <TrendingFlatOutlinedIcon
+                  sx={{ position: "relative", right: "-400%" }}
+                />
+              </Box>
+            )}
+          </Button>
           </Box>
         </Card>
       </Modal>
