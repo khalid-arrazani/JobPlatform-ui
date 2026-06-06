@@ -33,7 +33,7 @@ const HiringFocusModal = ({ open, setOpen }) => {
 
   function handleSave (){
 
-    c
+    
   }
 
 
