@@ -4,15 +4,24 @@ import WorkIcon from "@mui/icons-material/Work";
 
 import EditIcon from "@mui/icons-material/Edit";
 import HiringFocusModal from "./HiringFocusModal ";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function HiringFocusCard() {
-  
-  const [hiringTypes , setHiringTypes]=useState(["Full-time", "Remote", "Hybrid", "Internship"])
-  const [roles , setRoles]=useState(["Frontend Developer",
-    "Backend Developer",
-    "UI/UX Designer",
-    "Product Manager",])
+
+  const {...state} = useProfile()
+
+  const [hiringTypes , setHiringTypes]=useState([])
+  const [roles , setRoles]=useState([])
+
+
+  useEffect(()=>{
+    setHiringTypes(state.user?.profile?.hiring_Focus?.hiring_Types ||[])
+    setRoles(state.user?.profile?.hiring_Focus?.roles_I_hire_for ||[])
+  },[state.user?.profile])
+
+
+
 
   const [open, setOpen] = useState(false);
 

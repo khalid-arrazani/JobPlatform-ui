@@ -6,21 +6,41 @@ import {
   TextField,
   Button,
   Chip,
-  MenuItem,
-  
+  Autocomplete,
+  Divider,
 } from "@mui/material";
 
-import { useState } from "react";
+import {  updateProfileJS } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../logic/context/profileContext";
 
-export default function SocialLinksModal({
-  open,
-  setOpen,
-  socialLinks,
-  setSocialLinks,
-}) {
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+import CircularProgress from "@mui/material/CircularProgress";
+import { green } from "@mui/material/colors";
+
+const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
+
+import { useEffect, useState } from "react";
+import { useAuth } from "../../../logic/context/AuthContext";
+
+export default function SocialLinksModal({ open, setOpen }) {
+  const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
+
+  const [socialLinks, setSocialLinks] = useState([]);
+
   const [platform, setPlatform] = useState("");
-
   const [url, setUrl] = useState("");
+
+
+
+
+
+  useEffect(() => {
+    setSocialLinks(
+      state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+
 
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;
@@ -35,15 +55,56 @@ export default function SocialLinksModal({
       };
 
       setSocialLinks((prev) => [...prev, newLink]);
-
+      
       setPlatform("");
       setUrl("");
     }
   };
 
+
+
+
   const handleDelete = (index) => {
     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
+
+
+
+  const handleSave = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    try {
+      const data = await updateProfileJS({
+        socialLinks: socialLinks,
+      });
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setSnackBar({
+        open: true,
+        message: "Social Links Update Seccesfuly",
+        severity: "success",
+      });
+      setSocialOpen(false);
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+  };
+
+  
 
   return (
     <Modal
@@ -87,24 +148,32 @@ export default function SocialLinksModal({
           }}
         >
           {/* Platform */}
-          <TextField
-            select
+          <Autocomplete
+            freeSolo
             fullWidth
-            size="small"
-            label="Platform"
+            slotProps={{
+              popper: {
+                sx: {
+                  transition: "none",
+                  animation: "none",
+                  m: 5,
+                },
+              },
+              listbox: {
+                sx: {
+                  maxHeight: "150px",
+                },
+              },
+            }}
+            options={platforms}
             value={platform}
-            onChange={(e) => setPlatform(e.target.value)}
-          >
-            <MenuItem value="LinkedIn">LinkedIn</MenuItem>
-
-            <MenuItem value="GitHub">GitHub</MenuItem>
-
-            <MenuItem value="Twitter">Twitter</MenuItem>
-
-            <MenuItem value="Facebook">Facebook</MenuItem>
-
-            <MenuItem value="Instagram">Instagram</MenuItem>
-          </TextField>
+            onInputChange={(event, newValue) => {
+              setPlatform(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField {...params} label="Platform" size="small" fullWidth />
+            )}
+          />
 
           {/* URL */}
           <TextField
@@ -129,6 +198,7 @@ export default function SocialLinksModal({
             Add
           </Button>
         </Box>
+        <Divider />
 
         {/* Chips */}
         <Box
@@ -136,9 +206,10 @@ export default function SocialLinksModal({
             display: "flex",
             gap: 1,
             flexWrap: "wrap",
+            pt:'1rem'
           }}
         >
-          {socialLinks.map((item, index) => (
+          {socialLinks?.map((item, index) => (
             <Chip
               key={index}
               label={item.platform}
@@ -152,18 +223,46 @@ export default function SocialLinksModal({
           sx={{
             display: "flex",
             justifyContent: "flex-end",
-            mt: 4,
+            
           }}
         >
           <Button
+            onClick={handleSave}
+            fullWidth
+            disabled={state.isLoadingUptadeProfile}
             variant="contained"
-            onClick={() => setOpen(false)}
             sx={{
-              textTransform: "none",
+              height: "3rem",
               borderRadius: "0.5rem",
+
+              textTransform: "none",
+              fontWeight: 500,
+              fontSize: "0.9rem",
+              mt: "1rem",
+              background: "#6d28d9",
+
+              "&:hover": {
+                background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
+              },
             }}
           >
-            Save
+            {state.isLoadingUptadeProfile ? (
+              <CircularProgress
+                aria-label="Loading…"
+                size={30}
+                sx={{
+                  color: green[800],
+                  position: "absolute",
+                }}
+              />
+            ) : (
+              <Box sx={{ display: "flex", justifyContent: "center" }}>
+                Save
+                <TrendingFlatOutlinedIcon
+                  sx={{ position: "relative", right: "-400%" }}
+                />
+              </Box>
+            )}
           </Button>
         </Box>
       </Card>

@@ -22,7 +22,7 @@ const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function SocialLinksModal({ open, setOpen }) {
+export default function SocialLinksModal() {
   const {socialOpen , setSocialOpen, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
@@ -46,8 +46,14 @@ export default function SocialLinksModal({ open, setOpen }) {
   const handleAdd = () => {
     if (!platform.trim() || !url.trim()) return;
     const isExist = socialLinks.some((item) => item.platform === platform);
+
     if (isExist) {
-      console.log(55);
+
+      setSnackBar({
+        open: true,
+        message: "Platform already exist",
+        severity: "error",
+      });
     } else {
       const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
       const newLink = {
