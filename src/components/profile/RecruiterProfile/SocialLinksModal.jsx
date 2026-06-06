@@ -10,7 +10,7 @@ import {
   Divider,
 } from "@mui/material";
 
-import {  updateProfileJS } from "../../../logic/api/profile/GetMe";
+import {  updateProfileR } from "../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../logic/context/profileContext";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
@@ -43,10 +43,19 @@ export default function SocialLinksModal({ open, setOpen }) {
 
 
   const handleAdd = () => {
+
     if (!platform.trim() || !url.trim()) return;
+
     const isExist = socialLinks.some((item) => item.platform === platform);
+
     if (isExist) {
-      console.log(55);
+
+      setSnackBar({
+        open: true,
+        message: "Platform already exist",
+        severity: "error",
+      });
+
     } else {
       const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
       const newLink = {
@@ -55,13 +64,11 @@ export default function SocialLinksModal({ open, setOpen }) {
       };
 
       setSocialLinks((prev) => [...prev, newLink]);
-      
+
       setPlatform("");
       setUrl("");
     }
   };
-
-
 
 
   const handleDelete = (index) => {
@@ -75,8 +82,10 @@ export default function SocialLinksModal({ open, setOpen }) {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
+
     try {
-      const data = await updateProfileJS({
+
+      const data = await updateProfileR({
         socialLinks: socialLinks,
       });
 
@@ -84,23 +93,29 @@ export default function SocialLinksModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
+
       setSnackBar({
         open: true,
         message: "Social Links Update Seccesfuly",
         severity: "success",
       });
-      setSocialOpen(false);
+
+      setOpen(false);
     } catch (error) {
+
       setSnackBar({
         open: true,
         message: error.response?.data?.message,
         severity: "error",
       });
+
     } finally {
+
       dispatch({
         type: "SET_LOADING_UPDATE_PROFILE",
         payload: false,
       });
+
     }
   };
 
