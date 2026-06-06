@@ -1,27 +1,20 @@
 import { Card, Typography, Box, MenuItem } from "@mui/material";
 
-import ISO6391 from "iso-639-1";
+
 
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
-import {
-  Modal,
-  Divider,
-  TextField,
-  Button,
-
-} from "@mui/material";
+import { Modal, Divider, TextField, Button } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
-import {  updateProfileR } from "../../../logic/api/profile/GetMe";
+import { updateProfileR } from "../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function AboutMeModal({open , setOpen}) {
-
+export default function AboutMeModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
-      const { setSnackBar } = useAuth();
+  const { setSnackBar } = useAuth();
 
   //---------------------------------
 
@@ -31,31 +24,28 @@ export default function AboutMeModal({open , setOpen}) {
   const [website, setWebsite] = useState("");
   const [companyDescription, setCompanyDescription] = useState("");
 
-
-
   useEffect(() => {
     const profile = state.user?.profile;
     if (!profile) return;
   }, [state.user?.profile]);
 
   const handleSave = async () => {
-
     dispatch({
-        type: "SET_LOADING_UPDATE_PROFILE",
-        payload: true,
-      });
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
     setSnackBar({
-        open: true,
-        message: "Education Update Seccesfuly",
-        severity: "success",
-      });
+      open: true,
+      message: "Education Update Seccesfuly",
+      severity: "success",
+    });
     try {
       const data = await updateProfileR({
-      companyName,
-      industry,
-      Companylocation:location,
-      website,
-      companyDescription
+        companyName,
+        industry,
+        Companylocation: location,
+        website,
+        companyDescription,
       });
 
       dispatch({
@@ -63,26 +53,23 @@ export default function AboutMeModal({open , setOpen}) {
         payload: data,
       });
       setOpen(false);
-      
     } catch (error) {
       setSnackBar({
         open: true,
         message: error.response?.data?.message,
         severity: "error",
       });
-    }finally {
-        dispatch({
-          type: "SET_LOADING_UPDATE_PROFILE",
-          payload: false,
-        });
-      }
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
   };
-
- 
 
   return (
     <>
-            <Modal
+      <Modal
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -266,8 +253,6 @@ export default function AboutMeModal({open , setOpen}) {
           </Box>
         </Card>
       </Modal>
-
-
     </>
   );
 }
