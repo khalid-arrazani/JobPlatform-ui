@@ -10,12 +10,70 @@ import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 import EditIcon from "@mui/icons-material/Edit";
 
 import ExperienceModal from "./ExperienceModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { updateProfileR } from "../../../logic/api/profile/GetMe";
+import { useAuth } from "../../../logic/context/AuthContext";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function RecruiterStatsCard() {
 
   const [open, setOpen] = useState(false);
-  const [experience, setExperience] = useState("1+ Years");
+
+
+
+    const { dispatch, ...state } = useProfile();
+  
+        const { setSnackBar } = useAuth();
+  
+    //---------------------------------
+    const [experience, setExperience] = useState("Lead");
+
+
+    useEffect(() => {
+      const profile = state.user?.profile;
+      if (!profile) return;
+
+      setExperience(profile.experienceLevel || "");
+
+    }, [state.user?.profile]);
+  
+  
+    const handleSave = async () => {
+  
+      dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
+      setSnackBar({
+          open: true,
+          message: "Education Update Seccesfuly",
+          severity: "success",
+        });
+      try {
+        const data = await updateProfileR({
+          experienceLevel:experience
+        });
+        dispatch({
+          type: "PROFILE",
+          payload: data,
+        });
+        setOpen(false);
+        
+      } catch (error) {
+        setSnackBar({
+          open: true,
+          message: error.response?.data?.message,
+          severity: "error",
+        });
+      }finally {
+          dispatch({
+            type: "SET_LOADING_UPDATE_PROFILE",
+            payload: false,
+          });
+        }
+    };
+
+
 
   const stats = [
     {
@@ -58,8 +116,7 @@ export default function RecruiterStatsCard() {
       <ExperienceModal 
       open={open}
       setOpen={setOpen}
-      experience={experience}
-      setExperience={setExperience}
+
       />
       {/* Header */}
       <Box

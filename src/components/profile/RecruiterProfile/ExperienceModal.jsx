@@ -8,21 +8,59 @@ import {
   Button,
 } from "@mui/material";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
+import { useAuth } from "../../../logic/context/AuthContext";
+import { updateProfileR } from "../../../logic/api/profile/GetMe";
 
-export default function ExperienceModal({
-  open,
-  setOpen,
-  experience,
-  setExperience
-}) {
-  const [value, setValue] =
-    useState(experience || "");
+export default function ExperienceModal({ open, setOpen }) {
 
-  const handleSave = () => {
-    setExperience(value);
+  const [experience, setExperience] = useState("Junior");
 
-    setOpen(false);
+  const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
+
+
+  useEffect(() => {
+    const profile = state.user?.profile;
+    if (!profile) return;
+
+    setExperience(profile.experienceLevel );
+  }, [state.user?.profile]);
+
+
+
+  const handleSave = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    setSnackBar({
+      open: true,
+      message: "Education Update Seccesfuly",
+      severity: "success",
+    });
+    try {
+      const data = await updateProfileR({
+        experienceLevel: experience,
+      });
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setOpen(false);
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
   };
 
   return (
@@ -74,30 +112,18 @@ export default function ExperienceModal({
             select
             fullWidth
             size="small"
-            value={value}
-            onChange={(e) =>
-              setValue(e.target.value)
-            }
+            value={experience}
+            onChange={(e) => setExperience(e.target.value)}
           >
-            <MenuItem value="0-1 Years">
-              0-1 Years
-            </MenuItem>
+            <MenuItem value="Entry Level">Entry Level</MenuItem>
 
-            <MenuItem value="1-2 Years">
-              1-2 Years
-            </MenuItem>
+            <MenuItem value="Junior">Junior</MenuItem>
 
-            <MenuItem value="2-4 Years">
-              2-4 Years
-            </MenuItem>
+            <MenuItem value="Mid Level">Mid Level</MenuItem>
 
-            <MenuItem value="4+ Years">
-              4+ Years
-            </MenuItem>
+            <MenuItem value="Senior">Senior</MenuItem>
 
-            <MenuItem value="10+ Years">
-              10+ Years
-            </MenuItem>
+            <MenuItem value="Lead">Lead</MenuItem>
           </TextField>
         </Box>
 
