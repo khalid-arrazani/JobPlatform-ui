@@ -8,39 +8,73 @@ import {
   Chip,
   Divider,
   Button,
+  CircularProgress,
 } from "@mui/material";
-import { useState } from "react";
-
+import { useEffect, useState } from "react";
+import { updateProfileR } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../logic/context/profileContext";
+import { useAuth } from "../../../logic/context/AuthContext";
+import { green } from "@mui/material/colors";
 
 
 const HiringFocusModal = ({ open, setOpen }) => {
+  const { dispatch, ...state } = useProfile();
 
+
+
+  const { setSnackBar } = useAuth();
 
   const [hiringTypes, setHiringTypes] = useState([
-    "Full-time",
-    "Remote",
-    "Hybrid",
-    "Internship",
-  ]);
 
+  ]);
 
   const [roles, setRoles] = useState([
-    "Frontend Developer",
-    "Backend Developer",
-    "UI/UX Designer",
-    "Product Manager",
+
   ]);
 
-  function handleSave (){
+  useEffect(()=>{
+    setHiringTypes(state.user?.profile?.hiring_Focus?.hiring_Types ||[])
+    setRoles(state.user?.profile?.hiring_Focus?.roles_I_hire_for ||[])
+  },[state.user?.profile])
 
-    
-  }
+  const handleSave = async () => {
+    const hiring_Focus = {
+      hiring_Types: hiringTypes,
 
+      roles_I_hire_for: roles,
+    };
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    setSnackBar({
+      open: true,
+      message: "Hiring Focus Update Seccesfuly",
+      severity: "success",
+    });
 
-
-
-
-
+    try {
+      const data = await updateProfileR({
+        hiring_Focus,
+      });
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setOpen(false);
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+  };
 
   return (
     <Modal
@@ -155,7 +189,7 @@ const HiringFocusModal = ({ open, setOpen }) => {
         <Button
           onClick={handleSave}
           fullWidth
-          // disabled={state.isLoadingUptadeProfile}
+          disabled={state.isLoadingUptadeProfile}
           variant="contained"
           sx={{
             height: "3rem",
@@ -172,21 +206,21 @@ const HiringFocusModal = ({ open, setOpen }) => {
             },
           }}
         >
-          {/* {state.isLoadingUptadeProfile?<CircularProgress
-                        aria-label="Loading…"
-                        size={30}
-                        sx={{
-                          color: green[800],
-                          position: "absolute",
-                        }}
-                      /> :
-                      <Box sx={{display:"flex",justifyContent:"center"}}>
-                      Save
-                      <TrendingFlatOutlinedIcon
-                        sx={{ position: "relative", right: "-450%" }}
-                      />
-                      </Box>} */}
-          Save
+          {state.isLoadingUptadeProfile ? (
+            <CircularProgress
+              aria-label="Loading…"
+              size={30}
+              sx={{
+                color: green[800],
+                position: "absolute",
+              }}
+            />
+          ) : (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              Save
+            
+            </Box>
+          )}
         </Button>
       </Card>
     </Modal>
