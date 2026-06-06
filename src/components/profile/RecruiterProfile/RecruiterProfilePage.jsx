@@ -66,6 +66,7 @@ export default function RecruiterProfilePage() {
             <AboutMeCard />
             <RecruiterStatsCard />
             <SocialLinksCard />
+            <QuickStatsCard />
           </div>
 
           <div
@@ -74,8 +75,7 @@ export default function RecruiterProfilePage() {
             }}
           >
             <CompanyInformationCard />
-
-            <QuickStatsCard />
+            
             <HiringFocusCard />
           </div>
         </div>

@@ -1,11 +1,4 @@
-import {
-  Card,
-  Box,
-  Typography,
-
-  IconButton,
-
-} from "@mui/material";
+import { Card, Box, Typography, IconButton, Avatar } from "@mui/material";
 
 import BusinessIcon from "@mui/icons-material/Business";
 import ApartmentIcon from "@mui/icons-material/Apartment";
@@ -15,15 +8,19 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EditIcon from "@mui/icons-material/Edit";
 
 import BusinessTwoToneIcon from "@mui/icons-material/BusinessTwoTone";
-import CompanyInformationModal from "./CompanyInformationModal"
+import CompanyInformationModal from "./CompanyInformationModal";
 
-import { useState } from "react";
-
-
+import { useEffect, useState } from "react";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function CompanyInformationCard() {
   const [open, setOpen] = useState(false);
+  const [profile, setProfile] = useState(null);
+  const { ...state } = useProfile();
 
+  useEffect(() => {
+    setProfile(state.user?.profile);
+  }, [state.user?.profile]);
 
   return (
     <Card
@@ -36,7 +33,7 @@ export default function CompanyInformationCard() {
         m: 1,
       }}
     >
-   <CompanyInformationModal  open={open} setOpen={setOpen}/>
+      <CompanyInformationModal open={open} setOpen={setOpen} />
 
       {/* Header */}
       <Box
@@ -95,6 +92,100 @@ export default function CompanyInformationCard() {
         </Typography>
       </Box>
 
+      {/* Company Logo */}
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          gap: "0.9rem",
+
+          p: "0.5rem",
+
+          border: "1px solid #efefef",
+          borderRadius: "1rem",
+
+          background: "#fcfcff",
+
+          transition: "0.3s ease",
+
+          "&:hover": {
+            transform: "translateY(-0.15rem)",
+            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+          },
+          mb: "1rem",
+        }}
+      >
+        <Avatar
+          src={profile?.companyLogo?.url}
+          alt="Company Logo"
+          sx={{
+            width: "6rem",
+            height: "6rem",
+            borderRadius: "0.9rem",
+          }}
+        />
+
+        <Box>
+          <Typography
+            sx={{
+              fontSize: "0.72rem",
+              color: "#888",
+              mb: "0.15rem",
+            }}
+          >
+            Company Logo
+          </Typography>
+
+          <Typography
+            sx={{
+              fontSize: "0.92rem",
+              fontWeight: 600,
+              color: "#111",
+            }}
+          >
+            {profile?.companyName}
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* Company Description */}
+      <Box
+        sx={{
+          mb: "1rem",
+          p: "1rem",
+          border: "1px solid #efefef",
+          borderRadius: "1rem",
+          background: "#fcfcff",
+          transition: "0.3s ease",
+
+          "&:hover": {
+            transform: "translateY(-0.15rem)",
+            boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.05)",
+          },
+        }}
+      >
+        <Typography
+          sx={{
+            fontSize: "0.72rem",
+            color: "#888",
+            mb: "0.5rem",
+            fontWeight: 600,
+          }}
+        >
+          Company Description
+        </Typography>
+
+        <Typography
+          sx={{
+            fontSize: "0.85rem",
+            color: "#111",
+            lineHeight: 1.5,
+          }}
+        >
+          {profile?.companyDescription}
+        </Typography>
+      </Box>
+
       {/* Content */}
       <Box
         sx={{
@@ -106,7 +197,6 @@ export default function CompanyInformationCard() {
           gap: "1rem",
         }}
       >
-
         {/*Company Name*/}
         <Box
           sx={{
@@ -171,11 +261,10 @@ export default function CompanyInformationCard() {
                 color: "#111",
               }}
             >
-              NexHire
+              {profile?.companyName}
             </Typography>
           </Box>
         </Box>
-
 
         {/*Industry*/}
         <Box
@@ -241,11 +330,10 @@ export default function CompanyInformationCard() {
                 color: "#111",
               }}
             >
-              Technology & Recruitment
+              {profile?.industry}
             </Typography>
           </Box>
         </Box>
-
 
         {/*Website*/}
         <Box
@@ -311,14 +399,13 @@ export default function CompanyInformationCard() {
                 color: "#111",
               }}
             >
-              www.nexhire.com
+              {profile?.website}
+
             </Typography>
           </Box>
         </Box>
 
-
-
-         {/*Location*/}
+        {/*Location*/}
         <Box
           sx={{
             display: "flex",
@@ -382,12 +469,10 @@ export default function CompanyInformationCard() {
                 color: "#111",
               }}
             >
-             Morocco - Taroudant
+          {profile?.Companylocation}
             </Typography>
           </Box>
         </Box>
-
-
       </Box>
     </Card>
   );
