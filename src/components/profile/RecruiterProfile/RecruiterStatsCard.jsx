@@ -103,6 +103,7 @@ export default function RecruiterStatsCard() {
   
 
   return (
+    
     <Card
       sx={{
         width: "44vw",

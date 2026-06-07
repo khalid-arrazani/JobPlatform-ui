@@ -13,6 +13,7 @@ import { useEffect } from "react";
 
 import { getMeR } from "../../../logic/api/profile/GetMe.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
+import LoadingPage from "./LoadingPage.jsx";
 
 
 
@@ -49,6 +50,7 @@ export default function RecruiterProfilePage() {
 
   return (
     <>
+    {state.isLoading ? <LoadingPage/> : 
       <div className="par1">
         <div style={{ height: "25vh" }}>
           <Header />
@@ -79,7 +81,7 @@ export default function RecruiterProfilePage() {
             <HiringFocusCard />
           </div>
         </div>
-      </div>
+      </div>}
     </>
   );
 }
