@@ -324,6 +324,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
           <Autocomplete
             size="small"
+            sx={{  maxWidth:"50%" }}
             options={["Junior", "Mid", "Senior"]}
             slotProps={{
               popper: { sx: { transition: "none", animation: "none", m: 5 } },
