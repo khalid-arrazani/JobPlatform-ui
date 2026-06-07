@@ -17,14 +17,25 @@ import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../logic/context/profileContext";
-
+import { Logout } from "../../logic/api/auth/auth";
 
 export default function MainList() {
   const navigate = useNavigate();
-
-
   const { ...state } = useProfile();
 
+
+
+  const handleLogout = async()=>{
+  try{
+
+    const data = await Logout()
+    console.log(data);
+    navigate("/login") 
+  }catch(error){
+
+    console.log(error);
+  }
+  }
   return (
 
     <>
@@ -109,6 +120,7 @@ export default function MainList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton
+            onClick={handleLogout}
               sx={{ "&:hover": { background: "rgba(255,0,0,0.1)" } }}
             >
               <ListItemIcon sx={{ color: "#f87171" }}>

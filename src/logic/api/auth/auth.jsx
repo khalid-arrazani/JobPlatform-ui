@@ -22,3 +22,10 @@ export const RegisterUser = async (
   return response.data;
 };
 
+
+export const Logout = async (
+) => {
+  const response = await API.post( "/auth/logout" );
+  console.log(response.data);
+  return response.data;
+};

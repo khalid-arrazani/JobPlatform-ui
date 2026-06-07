@@ -2,10 +2,12 @@ import { Box } from "@mui/material";
 import Navbar from "../components/dashboard/Navbar.jsx";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
-import { getMeJS } from "../logic/api/profile/GetMe.jsx";
+import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
+import { getMeUser } from "../logic/api/user/user.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
   const { dispatch, ...state } = useProfile();
+
   
     useEffect(() => {
       const fetchUser = async () => {
@@ -14,7 +16,13 @@ export default function DashboardLayout({ children, part, setPart }) {
           payload: true,
         });
         try {
-          const data = await getMeJS();
+          let data 
+          const user  = await getMeUser();
+          if(user.role == "jobSeeker"){
+             data = await getMeJS();
+          }else if(user.role == "recruiter"){
+            data = await getMeR();
+          }
           dispatch({
             type: "PROFILE",
             payload: data,
@@ -32,6 +40,7 @@ export default function DashboardLayout({ children, part, setPart }) {
       };
       fetchUser();
     }, []);
+    
   return (
     <Box
       sx={{

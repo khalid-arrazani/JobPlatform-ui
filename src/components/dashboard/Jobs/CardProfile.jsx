@@ -54,7 +54,7 @@ export default function CardProfile() {
             sx={{
               fontWeight: "bold",
               fontSize: "1rem",
-              mt: "1px",
+              mt: "0.5rem",
             }}
           >
             {state.user?.profile?.fullName}
