@@ -131,6 +131,7 @@ const currencies = [
   "MXN ",
   "ZAR ",
 ];
+
 import {
   Dialog,
   DialogTitle,
@@ -147,11 +148,29 @@ import {
 import logoTitle from "../../assets/Logo/logo.png";
 
 const PostJobModal = ({ open, setOpen }) => {
+
+    const [title , setTitle] = useState();
+
+    const [description , setDescription] = useState();
+
+    const [location , setLocation] = useState();
+
+    const [jobType , setJobType] = useState();
+
+    const [experienceLevel , setExperienceLevel] = useState();
+
+    const [salary , setSalary] = useState();   
+    const [currency , setCurrency] = useState(); 
+    
+    const [skills , setSkills] = useState();   
+    
+
   const [jobData, setJobData] = useState({
     title: "",
     description: "",
     location: "",
     salary: "",
+    salaryCurrency:"USD",
     experienceLevel: "",
     skills: [],
   });
@@ -171,6 +190,9 @@ const PostJobModal = ({ open, setOpen }) => {
     console.log(jobData);
     handleClose();
   };
+
+
+
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -210,6 +232,8 @@ const PostJobModal = ({ open, setOpen }) => {
             />
           </svg>
         </Box>
+
+
       </Box>
 
       <DialogContent>
@@ -273,7 +297,12 @@ const PostJobModal = ({ open, setOpen }) => {
               name="salary"
               placeholder="5000"
               value={jobData.salary}
-              onChange={handleChange}
+              onChange={(e, value) =>
+                setJobData({
+                  ...jobData,
+                  salary: value,
+                })
+              }
             />
 
             <Autocomplete
