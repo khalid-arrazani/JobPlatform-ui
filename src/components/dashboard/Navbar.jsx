@@ -4,6 +4,7 @@ import { AppBar, Toolbar, Box, IconButton, Avatar } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import WorkIcon from "@mui/icons-material/Work";
 import ViewHeadlineIcon from "@mui/icons-material/ViewHeadline";
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import * as React from "react";
 
@@ -61,7 +62,21 @@ export default function Navbar({ part, setPart }) {
           </IconButton>
 
           <IconButton>
-            <WorkIcon sx={{ color: "white" }} />
+           
+              <WorkIcon sx={{ color: "white"  }} />
+
+              <AddCircleIcon
+                sx={{
+                  position: "absolute",
+                  bottom: 5,
+                  right: 4,
+                  fontSize: 13,
+                  color: "#22c55e",
+                  background: "#fff",
+                  borderRadius: "50%",
+                }}
+              />
+       
           </IconButton>
 
           <IconButton onClick={() => setOpen(true)}>
@@ -72,7 +87,10 @@ export default function Navbar({ part, setPart }) {
             <MainList toggleDrawer={setOpen} />
           </Drawer>
 
-          <Avatar src={state.user?.profile?.ProfileImage?.url} sx={{ width: 40, border: "2px solid #38bdf8", }} />
+          <Avatar
+            src={state.user?.profile?.ProfileImage?.url}
+            sx={{ width: 40, border: "2px solid #38bdf8" }}
+          />
         </Box>
       </Toolbar>
     </AppBar>

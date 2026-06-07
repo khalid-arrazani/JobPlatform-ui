@@ -30,10 +30,13 @@ export default function MainList() {
 
     const data = await Logout()
     console.log(data);
+    
     navigate("/login") 
+
   }catch(error){
 
     console.log(error);
+
   }
   }
   return (
