@@ -14,11 +14,16 @@ import Drawer from "@mui/material/Drawer";
 
 import logo from "../../assets/title.png";
 import { useProfile } from "../../logic/context/profileContext.jsx";
+import PostJobModal from "./PostJobModal.jsx";
 
 export default function Navbar({ part, setPart }) {
   const [open, setOpen] = React.useState(false);
+  const [openModal, setOpenModal] = React.useState(false);
+
   const { ...state } = useProfile();
-  return (
+  return <>
+    <PostJobModal open={openModal}  setOpen={setOpenModal} />
+    
     <AppBar
       position="static"
       sx={{
@@ -61,10 +66,9 @@ export default function Navbar({ part, setPart }) {
             <NotificationsIcon sx={{ color: "white" }} />
           </IconButton>
 
-          <IconButton>
-           
+          <IconButton
+          onClick={()=>{setOpenModal(true)}}>
               <WorkIcon sx={{ color: "white"  }} />
-
               <AddCircleIcon
                 sx={{
                   position: "absolute",
@@ -76,7 +80,6 @@ export default function Navbar({ part, setPart }) {
                   borderRadius: "50%",
                 }}
               />
-       
           </IconButton>
 
           <IconButton onClick={() => setOpen(true)}>
@@ -94,5 +97,5 @@ export default function Navbar({ part, setPart }) {
         </Box>
       </Toolbar>
     </AppBar>
-  );
+  </>
 }
