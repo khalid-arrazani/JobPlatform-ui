@@ -149,31 +149,17 @@ import logoTitle from "../../assets/Logo/logo.png";
 
 const PostJobModal = ({ open, setOpen }) => {
 
-    const [title , setTitle] = useState();
-
-    const [description , setDescription] = useState();
-
-    const [location , setLocation] = useState();
-
-    const [jobType , setJobType] = useState();
-
-    const [experienceLevel , setExperienceLevel] = useState();
-
-    const [salary , setSalary] = useState();   
-    const [currency , setCurrency] = useState(); 
-    
-    const [skills , setSkills] = useState();   
-    
-
-  const [jobData, setJobData] = useState({
+    const [jobData, setJobData] = useState({
     title: "",
     description: "",
     location: "",
     salary: "",
     salaryCurrency:"USD",
-    experienceLevel: "",
+    experienceLevel: "Mid",
     skills: [],
-  });
+    });
+
+
 
   const handleChange = (e) => {
     setJobData({
