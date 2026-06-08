@@ -36,11 +36,7 @@ export default function JobsPage(){
 
         try {
          const data = await getJobList();
-        
-          if (data.isComplete){
-            navigate("/profile")
-          }
-  
+          console.log(data);
           dispatch({
             type: "SET-JOB-LIST",
             payload: data,
@@ -48,7 +44,7 @@ export default function JobsPage(){
           
         } catch (error) {
   
-          
+          console.log(error.response?.data.message);
        setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -65,6 +61,9 @@ export default function JobsPage(){
       };
       fetchUser();
     }, []);
+
+
+
 
     return <>
 

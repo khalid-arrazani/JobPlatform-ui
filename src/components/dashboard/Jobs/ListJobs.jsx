@@ -1,5 +1,5 @@
 import { Box, Typography, Avatar, Button, Card } from "@mui/material";
-import SearchInput from "./searchInput";
+
 
 export default function JobList() {
   const jobs = [
@@ -50,7 +50,7 @@ export default function JobList() {
   return (
     <>
       
-    
+  
       <div
         style={{
           maxHeight: "100%",
