@@ -143,15 +143,19 @@ import {
   Box,
   Chip,
   Autocomplete,
+  CircularProgress,
 } from "@mui/material";
 
 import logoTitle from "../../assets/Logo/logo.png";
 import { createJob } from "../../logic/api/job/Job";
 import { useAuth } from "../../logic/context/AuthContext";
+import { useProfile } from "../../logic/context/profileContext";
+import { green } from "@mui/material/colors";
 
 const PostJobModal = ({ open, setOpen }) => {
+  const { dispatch, ...state } = useProfile();
 
-     const { setSnackBar } = useAuth();
+  const { setSnackBar } = useAuth();
 
   const [jobData, setJobData] = useState({
     title: "",
@@ -179,22 +183,45 @@ const PostJobModal = ({ open, setOpen }) => {
   };
 
   const handleSubmit = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
     try {
       const data = await createJob(jobData);
-       setSnackBar({
-          open: true,
-          message: data?.message,
-          severity: "success",
-        });
+
+      setSnackBar({
+        open: true,
+        message: data?.message,
+        severity: "success",
+      });
 
       handleClose();
+      setJobData({
+        title: "",
+        description: "",
+        location: "",
 
+        salary: null,
+        salaryCurrency: "USD",
+
+        jobType: "",
+        workMode: "",
+
+        experienceLevel: "Mid",
+        skills: [],
+      });
     } catch (error) {
       setSnackBar({
-          open: true,
-          message: error.response?.data.message,
-          severity: "error",
-        });
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
     }
   };
 
@@ -456,8 +483,24 @@ const PostJobModal = ({ open, setOpen }) => {
           Cancel
         </Button>
 
-        <Button variant="contained" onClick={handleSubmit}>
-          Post Job
+        <Button
+          variant="contained"
+          disabled={state.isLoadingUptadeProfile}
+          sx={{ width: "15%", height: "2.5rem" }}
+          onClick={handleSubmit}
+        >
+          {state.isLoadingUptadeProfile ? (
+            <CircularProgress
+              aria-label="Loading…"
+              size={30}
+              sx={{
+                color: green[800],
+                position: "absolute",
+              }}
+            />
+          ) : (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Save</Box>
+          )}
         </Button>
       </DialogActions>
     </Dialog>
