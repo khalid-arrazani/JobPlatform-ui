@@ -50,6 +50,8 @@ export default function CompleteProfilePage() {
     fetchUser();
   }, []);
 
+  
+
 
 
   return (
