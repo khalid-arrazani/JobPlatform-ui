@@ -1,12 +1,12 @@
 import API from "../config/axios";
 
-export const createJob = async (
-) => {
-  const response = await API.get(
+export const createJob = async (jobData) => {
+  const response = await API.post(
     "/jobs/PostJob",
-     { withCredentials: true }
+    jobData,
+    { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 

@@ -146,6 +146,7 @@ import {
 } from "@mui/material";
 
 import logoTitle from "../../assets/Logo/logo.png";
+import { createJob } from "../../logic/api/job/Job";
 
 const PostJobModal = ({ open, setOpen }) => {
   const [jobData, setJobData] = useState({
@@ -153,7 +154,7 @@ const PostJobModal = ({ open, setOpen }) => {
     description: "",
     location: "",
 
-    salary: "",
+    salary: null,
     salaryCurrency: "USD",
 
     jobType: "",
@@ -162,6 +163,8 @@ const PostJobModal = ({ open, setOpen }) => {
     experienceLevel: "Mid",
     skills: [],
   });
+
+  console.log(jobData);
 
   const handleChange = (e) => {
     setJobData({
@@ -174,8 +177,14 @@ const PostJobModal = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  const handleSubmit = () => {
-    handleClose();
+  const handleSubmit = async () => {
+    try {
+      const data = await createJob(jobData);
+      console.log(data);
+      handleClose();
+    } catch (error) {
+      console.log(error.response?.data);
+    }
   };
 
   return (
@@ -278,12 +287,7 @@ const PostJobModal = ({ open, setOpen }) => {
               name="salary"
               placeholder="5000"
               value={jobData.salary}
-              onChange={(e, value) =>
-                setJobData({
-                  ...jobData,
-                  salary: value,
-                })
-              }
+              onChange={handleChange}
             />
 
             <Autocomplete
@@ -421,7 +425,7 @@ const PostJobModal = ({ open, setOpen }) => {
             onChange={(e, value) =>
               setJobData({
                 ...jobData,
-                skills: value
+                skills: value,
               })
             }
             renderTags={(value, getTagProps) =>
