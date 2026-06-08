@@ -142,24 +142,26 @@ import {
   Typography,
   Box,
   Chip,
-  Autocomplete
+  Autocomplete,
 } from "@mui/material";
 
 import logoTitle from "../../assets/Logo/logo.png";
 
 const PostJobModal = ({ open, setOpen }) => {
-
-    const [jobData, setJobData] = useState({
+  const [jobData, setJobData] = useState({
     title: "",
     description: "",
     location: "",
+
     salary: "",
-    salaryCurrency:"USD",
+    salaryCurrency: "USD",
+
+    jobType: "",
+    workMode: "",
+
     experienceLevel: "Mid",
     skills: [],
-    });
-
-
+  });
 
   const handleChange = (e) => {
     setJobData({
@@ -173,26 +175,19 @@ const PostJobModal = ({ open, setOpen }) => {
   };
 
   const handleSubmit = () => {
-    
     handleClose();
   };
 
-
-
-
-
-
-
-
-
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
-      <Box sx={{ display: "flex", alignItems: "center", width:"50%" , justifyContent:"space-between" 
-        
-      }}>
-
-
-
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          width: "55%",
+          justifyContent: "space-between",
+        }}
+      >
         <DialogTitle
           sx={{
             fontSize: "1rem",
@@ -201,8 +196,7 @@ const PostJobModal = ({ open, setOpen }) => {
           Post New Job
         </DialogTitle>
 
-
-        <Box sx={{ display: "flex", alignItems: "center" ,width:"25%" }}>
+        <Box sx={{ display: "flex", alignItems: "center", width: "25%" }}>
           <img
             src={logoTitle}
             width={"30%"}
@@ -223,8 +217,6 @@ const PostJobModal = ({ open, setOpen }) => {
             />
           </svg>
         </Box>
-
-
       </Box>
 
       <DialogContent>
@@ -283,7 +275,6 @@ const PostJobModal = ({ open, setOpen }) => {
             <TextField
               size="small"
               sx={{ width: "30%" }}
-            
               name="salary"
               placeholder="5000"
               value={jobData.salary}
@@ -320,6 +311,74 @@ const PostJobModal = ({ open, setOpen }) => {
           </Box>
         </Box>
 
+        {/* Job Type & Work Mode */}
+        <Box sx={{ mb: 2 }}>
+          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
+            Employment Details
+          </Typography>
+
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              justifyContent: "space-between",
+            }}
+          >
+            <Autocomplete
+              sx={{ width: "48%" }}
+              size="small"
+              slotProps={{
+                popper: { sx: { transition: "none", animation: "none", m: 5 } },
+              }}
+              options={[
+                "Full-time",
+                "Part-time",
+                "Contract",
+                "Internship",
+                "Freelance",
+                "Temporary",
+              ]}
+              value={jobData.jobType}
+              onChange={(e, value) =>
+                setJobData({
+                  ...jobData,
+                  jobType: value,
+                })
+              }
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Job Type"
+                  placeholder="Select job type"
+                />
+              )}
+            />
+
+            <Autocomplete
+              sx={{ width: "48%" }}
+              size="small"
+              slotProps={{
+                popper: { sx: { transition: "none", animation: "none", m: 5 } },
+              }}
+              options={["Remote", "Hybrid", "On-site"]}
+              value={jobData.workMode}
+              onChange={(e, value) =>
+                setJobData({
+                  ...jobData,
+                  workMode: value,
+                })
+              }
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  label="Work Mode"
+                  placeholder="Select work mode"
+                />
+              )}
+            />
+          </Box>
+        </Box>
+
         {/* Experience Level */}
         <Box sx={{ mb: 2 }}>
           <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
@@ -328,7 +387,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
           <Autocomplete
             size="small"
-            sx={{  maxWidth:"50%" }}
+            sx={{ maxWidth: "50%" }}
             options={["Junior", "Mid", "Senior"]}
             slotProps={{
               popper: { sx: { transition: "none", animation: "none", m: 5 } },
@@ -362,7 +421,7 @@ const PostJobModal = ({ open, setOpen }) => {
             onChange={(e, value) =>
               setJobData({
                 ...jobData,
-                skills: value,
+                skills: value
               })
             }
             renderTags={(value, getTagProps) =>
