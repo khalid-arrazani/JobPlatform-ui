@@ -5,8 +5,52 @@ import Stack from "@mui/material/Stack";
 import JobList from "./ListJobs.jsx";
 import CardAds from "./cardAds.jsx";
 import CardProfile from "./CardProfile.jsx";
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
+import { getJobList } from "../../../logic/api/job/Job.jsx";
+
 
 export default function JobsPage(){
+
+  const {dispatch , ...state} = useAuth()
+  
+   const navigate = useNavigate()
+    
+  
+    useEffect(() => {
+      
+      const fetchUser = async () => {
+        dispatch({
+          type: "SET_LOADING",
+          payload: true,
+        });
+        try {
+         const data = await getJobList();
+  
+          if (data.isComplete){
+            navigate("/profile")
+          }
+  
+          dispatch({
+            type: "COMPLETEPRPFILE",
+            payload: data,
+          });
+          
+        } catch (error) {
+  
+          console.log(error.response?.data);
+  
+        } finally {
+  
+          dispatch({
+            type: "SET_LOADING",
+            payload: false,
+          });
+        }
+      };
+      fetchUser();
+    }, []);
 
     return <>
           <div className="Jobsparent">

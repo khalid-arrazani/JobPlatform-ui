@@ -11,3 +11,11 @@ export const createJob = async (jobData) => {
 };
 
 
+export const getJobList = async () => {
+  const response = await API.get(
+    "/jobs/Jobs",
+    { withCredentials: true }
+  );
+
+  return response.data;
+};
