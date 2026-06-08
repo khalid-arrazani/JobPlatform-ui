@@ -5,15 +5,22 @@ import Stack from "@mui/material/Stack";
 import JobList from "./ListJobs.jsx";
 import CardAds from "./cardAds.jsx";
 import CardProfile from "./CardProfile.jsx";
-import { useAuth } from "../../../logic/context/AuthContext.jsx";
+
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { getJobList } from "../../../logic/api/job/Job.jsx";
+import { useJob } from "../../../logic/context/JobContext.jsx";
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
+import SearchInput from "./searchInput.jsx";
+import LoadingList from "./LoadingList.jsx";
 
 
 export default function JobsPage(){
 
-  const {dispatch , ...state} = useAuth()
+  const {dispatch , ...state} = useJob()
+
+    const { setSnackBar } = useAuth();
+
   
    const navigate = useNavigate()
     
@@ -21,25 +28,32 @@ export default function JobsPage(){
     useEffect(() => {
       
       const fetchUser = async () => {
+        
         dispatch({
           type: "SET_LOADING",
           payload: true,
         });
+
         try {
          const data = await getJobList();
-  
+        
           if (data.isComplete){
             navigate("/profile")
           }
   
           dispatch({
-            type: "COMPLETEPRPFILE",
+            type: "SET-JOB-LIST",
             payload: data,
           });
           
         } catch (error) {
   
-          console.log(error.response?.data);
+          
+       setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
   
         } finally {
   
@@ -53,6 +67,7 @@ export default function JobsPage(){
     }, []);
 
     return <>
+
           <div className="Jobsparent">
     
             <div className="Jobsdiv1">
@@ -62,7 +77,9 @@ export default function JobsPage(){
     
     
             <div className="Jobsdiv2">
-              <JobList />
+              <SearchInput />
+
+              <LoadingList />
             </div>
     
     
