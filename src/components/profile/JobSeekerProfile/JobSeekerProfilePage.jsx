@@ -24,6 +24,7 @@ import { getMeJS } from "../../../logic/api/profile/GetMe.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 import LoadingPage from "./LoadingPage.jsx";
+import { useAuth } from "../../../logic/context/AuthContext.jsx";
 
 
 
@@ -31,9 +32,10 @@ export default function MyProfilePage() {
 
 
   const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
   useEffect(() => {
-
+   
     const fetchUser = async () => {
       dispatch({
         type: "SET_LOADING",

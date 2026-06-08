@@ -147,8 +147,12 @@ import {
 
 import logoTitle from "../../assets/Logo/logo.png";
 import { createJob } from "../../logic/api/job/Job";
+import { useAuth } from "../../logic/context/AuthContext";
 
 const PostJobModal = ({ open, setOpen }) => {
+
+     const { setSnackBar } = useAuth();
+
   const [jobData, setJobData] = useState({
     title: "",
     description: "",
@@ -163,9 +167,6 @@ const PostJobModal = ({ open, setOpen }) => {
     experienceLevel: "Mid",
     skills: [],
   });
-
-  console.log(jobData);
-
   const handleChange = (e) => {
     setJobData({
       ...jobData,
@@ -180,10 +181,20 @@ const PostJobModal = ({ open, setOpen }) => {
   const handleSubmit = async () => {
     try {
       const data = await createJob(jobData);
-      console.log(data);
+       setSnackBar({
+          open: true,
+          message: data?.message,
+          severity: "success",
+        });
+
       handleClose();
+
     } catch (error) {
-      console.log(error.response?.data);
+      setSnackBar({
+          open: true,
+          message: error.response?.data.message,
+          severity: "error",
+        });
     }
   };
 
