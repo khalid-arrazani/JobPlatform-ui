@@ -173,9 +173,14 @@ const PostJobModal = ({ open, setOpen }) => {
   };
 
   const handleSubmit = () => {
-    console.log(jobData);
+    
     handleClose();
   };
+
+
+
+
+
 
 
 
@@ -242,7 +247,6 @@ const PostJobModal = ({ open, setOpen }) => {
           <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
             Job Description *
           </Typography>
-
           <TextField
             fullWidth
             size="small"
@@ -279,7 +283,7 @@ const PostJobModal = ({ open, setOpen }) => {
             <TextField
               size="small"
               sx={{ width: "30%" }}
-              type="number"
+            
               name="salary"
               placeholder="5000"
               value={jobData.salary}
