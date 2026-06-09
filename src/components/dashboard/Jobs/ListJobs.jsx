@@ -37,6 +37,7 @@ export default function JobList() {
         "Work with React, Node.js, and cloud technologies on music platforms.",
       logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
     },
+    
   ];
 
   return (
