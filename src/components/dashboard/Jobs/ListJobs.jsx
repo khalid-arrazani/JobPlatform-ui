@@ -1,9 +1,7 @@
 import { Box, Typography, Avatar, Button, Card } from "@mui/material";
+import { formatDistanceToNow } from "date-fns";
 
-
-export default function JobList() {
-  const jobs = [
-
+ const jobs = [
     {
       id: 2,
       title: "Backend Engineer",
@@ -48,6 +46,10 @@ export default function JobList() {
     },
     
   ];
+export default function JobList() {
+
+
+ 
 
   return (
     <>
