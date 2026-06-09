@@ -171,6 +171,8 @@ const PostJobModal = ({ open, setOpen }) => {
     experienceLevel: "Mid",
     skills: [],
   });
+
+
   const handleChange = (e) => {
     setJobData({
       ...jobData,
@@ -178,10 +180,12 @@ const PostJobModal = ({ open, setOpen }) => {
     });
   };
 
+
   const handleClose = () => {
     setOpen(false);
   };
 
+  
   const handleSubmit = async () => {
     dispatch({
       type: "SET_LOADING_UPDATE_PROFILE",
