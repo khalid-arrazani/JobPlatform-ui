@@ -11,9 +11,9 @@ export const createJob = async (jobData) => {
 };
 
 
-export const getJobList = async () => {
+export const getJobList = async (page) => {
   const response = await API.get(
-    "/jobs/Jobs",
+     `/jobs/Jobs?page=${page}`,
     { withCredentials: true }
   );
 
