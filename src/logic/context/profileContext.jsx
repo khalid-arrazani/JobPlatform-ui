@@ -14,6 +14,7 @@ const initialState = {
   user: null,
   isLoading: false,
   isLoadingUptadeProfile:false,
+  reloadListJob:false
 };
 
 export const useProfile = () => {

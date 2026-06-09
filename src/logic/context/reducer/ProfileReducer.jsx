@@ -20,6 +20,11 @@ export const profileReducer = (
         ...state,
         user: action.payload,
       };
+      case "RELOADLISTJOB":
+      return {
+        ...state,
+        reloadListJob: action.payload,
+      };
 
     default:
       return state;

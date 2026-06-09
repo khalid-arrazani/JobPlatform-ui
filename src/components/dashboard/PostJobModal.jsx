@@ -172,7 +172,7 @@ const PostJobModal = ({ open, setOpen }) => {
     skills: [],
   });
 
-  
+
 
   const handleChange = (e) => {
     setJobData({
@@ -202,6 +202,7 @@ const PostJobModal = ({ open, setOpen }) => {
       });
 
       handleClose();
+
       setJobData({
         title: "",
         description: "",
@@ -216,6 +217,12 @@ const PostJobModal = ({ open, setOpen }) => {
         experienceLevel: "Mid",
         skills: [],
       });
+
+      dispatch({
+      type: "RELOADLISTJOB",
+      payload: true,
+      });
+
     } catch (error) {
       setSnackBar({
         open: true,
@@ -229,6 +236,8 @@ const PostJobModal = ({ open, setOpen }) => {
       });
     }
   };
+
+
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -329,7 +338,7 @@ const PostJobModal = ({ open, setOpen }) => {
               sx={{ width: "30%" }}
               name="salary"
               placeholder="5000"
-              value={jobData.salary}
+              value={jobData.salary || ""}
               onChange={handleChange}
             />
 

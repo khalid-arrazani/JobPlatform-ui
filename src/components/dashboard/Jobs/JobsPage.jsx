@@ -15,54 +15,65 @@ import LoadingList from "./LoadingList.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function JobsPage() {
-
+  const { dispatch : dispatch1, ...state1 } = useProfile();
   const { dispatch, ...state } = useJob();
 
-    const {  ...state1 } = useProfile();
-    
-  
+
+
   const { setSnackBar } = useAuth();
   const [page, setPage] = useState(1);
-
-
 
   const handleChange = (event, value) => {
     setPage(value);
   };
 
-  const fetchUser = async () => {
+  const fetchJob = async () => {
+    dispatch({
+      type: "SET_LOADING",
+      payload: true,
+    });
+
+    try {
+      const data = await getJobList(page);
+
+      dispatch({
+        type: "SET-JOB-LIST",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.response?.data.message);
+
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+    } finally {
       dispatch({
         type: "SET_LOADING",
-        payload: true,
+        payload: false,
       });
+    }
+  };
 
-      try {
-        const data = await getJobList(page);
-
-        dispatch({
-          type: "SET-JOB-LIST",
-          payload: data,
-        });
-      } catch (error) {
-        console.log(error.response?.data.message);
-
-        setSnackBar({
-          open: true,
-          message: error.response?.data.message,
-          severity: "error",
-        });
-      } finally {
-        dispatch({
-          type: "SET_LOADING",
-          payload: false,
-        });
-      }
-    };
-
-  useEffect(() => {   
-    fetchUser();
+  useEffect(() => {
+    fetchJob();
   }, [page]);
 
+
+
+  useEffect(()=>{
+    console.log(1654284872);
+
+    dispatch1({
+        type: "RELOADLISTJOB",
+        payload: false,
+      });
+      fetchJob();
+  },[state1.reloadListJob])
+
+
+ 
 
   return (
     <>
@@ -83,12 +94,13 @@ export default function JobsPage() {
 
         <div className="Jobsdiv4">
           <Stack spacing={2}>
-            <Pagination onChange={handleChange} count={state.JobInfo?.totalPages} />
+            <Pagination
+              onChange={handleChange}
+              count={state.JobInfo?.totalPages}
+            />
           </Stack>
         </div>
       </div>
     </>
   );
 }
-
-
