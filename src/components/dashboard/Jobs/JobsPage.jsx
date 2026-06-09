@@ -12,10 +12,15 @@ import { useJob } from "../../../logic/context/JobContext.jsx";
 import { useAuth } from "../../../logic/context/AuthContext.jsx";
 import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
+import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function JobsPage() {
 
   const { dispatch, ...state } = useJob();
+
+    const {  ...state1 } = useProfile();
+    
+  
   const { setSnackBar } = useAuth();
   const [page, setPage] = useState(1);
 
@@ -25,8 +30,7 @@ export default function JobsPage() {
     setPage(value);
   };
 
-  useEffect(() => {
-    const fetchUser = async () => {
+  const fetchUser = async () => {
       dispatch({
         type: "SET_LOADING",
         payload: true,
@@ -35,7 +39,6 @@ export default function JobsPage() {
       try {
         const data = await getJobList(page);
 
-        console.log(data);
         dispatch({
           type: "SET-JOB-LIST",
           payload: data,
@@ -55,6 +58,8 @@ export default function JobsPage() {
         });
       }
     };
+
+  useEffect(() => {   
     fetchUser();
   }, [page]);
 
@@ -85,3 +90,5 @@ export default function JobsPage() {
     </>
   );
 }
+
+

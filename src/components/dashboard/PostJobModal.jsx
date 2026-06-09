@@ -172,6 +172,7 @@ const PostJobModal = ({ open, setOpen }) => {
     skills: [],
   });
 
+  
 
   const handleChange = (e) => {
     setJobData({
@@ -185,7 +186,7 @@ const PostJobModal = ({ open, setOpen }) => {
     setOpen(false);
   };
 
-  
+
   const handleSubmit = async () => {
     dispatch({
       type: "SET_LOADING_UPDATE_PROFILE",
@@ -193,7 +194,7 @@ const PostJobModal = ({ open, setOpen }) => {
     });
     try {
       const data = await createJob(jobData);
-
+      
       setSnackBar({
         open: true,
         message: data?.message,
