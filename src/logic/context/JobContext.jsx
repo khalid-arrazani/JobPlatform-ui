@@ -13,7 +13,7 @@ export const JobContext = createContext();
 
 
 const initialState = {
-  user: null,
+  JobInfo: null,
   isLoading: false,
 };
 

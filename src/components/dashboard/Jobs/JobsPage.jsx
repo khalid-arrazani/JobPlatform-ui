@@ -21,6 +21,8 @@ export default function JobsPage(){
 
     const { setSnackBar } = useAuth();
 
+    console.log(state);
+
     useEffect(() => {    
 
       const fetchUser = async () => {
@@ -32,6 +34,7 @@ export default function JobsPage(){
 
         try {
          const data = await getJobList();
+
           console.log(data);
           dispatch({
             type: "SET-JOB-LIST",
@@ -75,9 +78,9 @@ export default function JobsPage(){
             <div className="Jobsdiv2">
 
               <SearchInput />
-              {state.isLoading ? <LoadingList /> : <JobList />}
 
-              
+              {state.isLoading ? <LoadingList /> : <JobList />}
+ 
             </div>
     
     
@@ -89,7 +92,7 @@ export default function JobsPage(){
     
             <div className="Jobsdiv4">
               <Stack spacing={2}>
-                <Pagination count={50} />
+                <Pagination count={state.JobInfo?.totalPages} />
               </Stack>
             </div>
           </div>

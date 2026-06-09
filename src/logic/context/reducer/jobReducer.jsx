@@ -7,7 +7,7 @@ export const JobReducer = (
        case "SET-JOB-LIST":
       return {
         ...state,
-        user: action.payload,
+        JobInfo: action.payload,
       }; 
       case "SET_LOADING":
       return {

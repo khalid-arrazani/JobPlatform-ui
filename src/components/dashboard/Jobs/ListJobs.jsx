@@ -3,15 +3,7 @@ import { Box, Typography, Avatar, Button, Card } from "@mui/material";
 
 export default function JobList() {
   const jobs = [
-    {
-      id: 1,
-      title: "Frontend Developer",
-      company: "Google",
-      location: "Remote",
-      salary: "$4,000/month",
-      description: "Looking for a React developer with 2+ years of experience.",
-      logo: "https://cdn.pixabay.com/photo/2015/12/11/11/43/google-1088004_1280.png",
-    },
+
 
     {
       id: 2,
@@ -57,7 +49,7 @@ export default function JobList() {
           paddingTop: "0.8%",
           display: "flex",
           flexDirection: "column",
-          justifyContent: "space-between",
+          
           flex: 1,
           height: "70vh",
         }}
