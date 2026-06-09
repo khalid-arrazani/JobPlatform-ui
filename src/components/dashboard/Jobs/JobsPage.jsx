@@ -14,7 +14,7 @@ import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
 
 export default function JobsPage() {
-  
+
   const { dispatch, ...state } = useJob();
   const { setSnackBar } = useAuth();
   const [page, setPage] = useState(1);
@@ -24,7 +24,6 @@ export default function JobsPage() {
   const handleChange = (event, value) => {
     setPage(value);
   };
-
 
   useEffect(() => {
     const fetchUser = async () => {

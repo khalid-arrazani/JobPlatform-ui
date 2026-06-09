@@ -37,6 +37,16 @@ export default function JobList() {
         "Work with React, Node.js, and cloud technologies on music platforms.",
       logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
     },
+    {
+      id: 4,
+      title: "Full Stack Developer",
+      company: "Spotify",
+      location: "Stockholm, Sweden",
+      salary: "$6,000/month",
+      description:
+        "Work with React, Node.js, and cloud technologies on music platforms.",
+      logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
+    },
     
   ];
 
@@ -71,7 +81,7 @@ export default function JobList() {
                 transform: "translateY(-2px)",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               },
-              m: 0.8,
+              m: 0.5,
               alignItems: "center",
             }}
           >
