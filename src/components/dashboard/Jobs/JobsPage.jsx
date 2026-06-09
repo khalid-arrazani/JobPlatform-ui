@@ -21,14 +21,10 @@ export default function JobsPage(){
 
     const { setSnackBar } = useAuth();
 
-  
-   const navigate = useNavigate()
-    
-  
-    useEffect(() => {
-      
+    useEffect(() => {    
+
       const fetchUser = async () => {
-        
+
         dispatch({
           type: "SET_LOADING",
           payload: true,
@@ -45,6 +41,7 @@ export default function JobsPage(){
         } catch (error) {
   
           console.log(error.response?.data.message);
+
        setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -76,9 +73,11 @@ export default function JobsPage(){
     
     
             <div className="Jobsdiv2">
-              <SearchInput />
 
-              <LoadingList />
+              <SearchInput />
+              {state.isLoading ? <LoadingList /> : <JobList />}
+
+              
             </div>
     
     
