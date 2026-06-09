@@ -41,8 +41,6 @@ export default function JobsPage() {
         payload: data,
       });
     } catch (error) {
-      console.log(error.response?.data.message);
-
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -63,8 +61,6 @@ export default function JobsPage() {
 
 
   useEffect(()=>{
-    console.log(1654284872);
-
     dispatch1({
         type: "RELOADLISTJOB",
         payload: false,

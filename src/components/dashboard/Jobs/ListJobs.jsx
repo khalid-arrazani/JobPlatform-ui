@@ -4,7 +4,6 @@ import { Box, Typography, Avatar, Button, Card } from "@mui/material";
 export default function JobList() {
   const jobs = [
 
-
     {
       id: 2,
       title: "Backend Engineer",
