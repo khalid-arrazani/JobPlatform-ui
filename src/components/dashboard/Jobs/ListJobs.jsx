@@ -76,7 +76,7 @@ export default function JobList() {
             sx={{
               display: "flex",
               gap: 1,
-              p: 1,
+              
               background: "#ffffffe3",
               borderRadius: "10px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
@@ -90,11 +90,15 @@ export default function JobList() {
               minHeight:"8rem"
             }}
           >
+
             {/* Logo */}
-            <Avatar
+            <Box sx={{width:"20%" ,display:"flex",justifyContent:"center",alignItems:"center",background:"#00000029",height:"100%"}}>
+               <Avatar
               src={job.createdBy?.companyLogo?.url}
-              sx={{ width: "4rem", height: "4rem", backgroundSize: "cover" }}
+              sx={{ width: "5rem", height: "5rem", backgroundSize: "cover" }}
             />
+            </Box>
+           
 
             {/* Info */}
             <Box sx={{ flex: 1 }}>
