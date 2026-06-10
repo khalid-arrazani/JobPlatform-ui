@@ -81,6 +81,7 @@ export default function JobList() {
               },
               m: 0.5,
               alignItems: "center",
+              height:"8rem"
             }}
           >
             {/* Logo */}

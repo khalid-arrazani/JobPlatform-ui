@@ -9,7 +9,7 @@ export default function CardProfile() {
       <Card
         sx={{
           height: "20vw",
-          width: "60%",
+          width: "85%",
           borderRadius: "20px",
           mt: "20px",
           mr: "20px",
@@ -42,8 +42,8 @@ export default function CardProfile() {
           <Avatar
             src={state.user?.profile?.ProfileImage?.url}
             sx={{
-              width: "45%",
-              height:"45%",
+              width: "8.5rem",
+              height:"8.5rem",
               border: "4px solid white",
               boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
             }}
