@@ -19,3 +19,12 @@ export const getJobList = async (page) => {
 
   return response.data;
 };
+
+export const toggleSaveJob  = async (jobData) => {
+  const response = await API.post(
+    "savedJob/jobs/save",
+    jobData,
+    { withCredentials: true }
+  );
+  return response.data;
+};

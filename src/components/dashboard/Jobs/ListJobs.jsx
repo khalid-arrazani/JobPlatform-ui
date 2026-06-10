@@ -13,18 +13,28 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { useJob } from "../../../logic/context/JobContext";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
+import { toggleSaveJob } from "../../../logic/api/job/Job";
 
 export default function JobList() {
   const { ...state } = useJob();
-  console.log(state.JobInfo?.jobs);
 
 
+  const saveJob = async (e) => {
 
-  const saveJob = (e)=>{
-     console.log(e.currentTarget.dataset.id);;
-  }
+    console.log(e.currentTarget.dataset.id);
 
-  
+    try {
+      
+      const savejobs = await toggleSaveJob({
+        jobId: e.currentTarget.dataset.id,
+      });
+      console.log(savejobs);
+    } catch (error) {
+      console.log(error.response?.data.message);
+    }
+  };
+
   return (
     <>
       <Box
@@ -33,7 +43,6 @@ export default function JobList() {
           flexDirection: "column",
           height: "77vh",
           overflow: "scroll",
-          
 
           marginTop: "0.5rem",
         }}
@@ -102,10 +111,12 @@ export default function JobList() {
                   />
                 </Box>
 
-                <Button
-                data-id={job._id}
-                onClick={saveJob}>
-                  <TurnedInNotOutlinedIcon />{" "}
+                <Button data-id={job._id} onClick={saveJob}>
+                  {job.isSaved ? (
+                    <TurnedInIcon sx={{ color: "#1976d2" }} />
+                  ) : (
+                    <TurnedInNotOutlinedIcon />
+                  )}
                 </Button>
               </Typography>
 
@@ -156,39 +167,30 @@ export default function JobList() {
                 💰 {job.salary} / {job.salaryCurrency}
               </Typography>
               <Button
-              variant="contained"
-              endIcon={<ArrowOutwardIcon />}
-              sx={{
-           
-                position:"relative",
-                top:"-2.2rem",
-                right:"-75%",
+                variant="contained"
+                endIcon={<ArrowOutwardIcon />}
+                sx={{
+                  position: "relative",
+                  top: "-2.5rem",
+                  right: "-71%",
 
-                textTransform: "none",
-                borderRadius: "10px",
-                px: 2,
-                py: 0.8,
-                fontWeight: 600,
-                fontSize: "0.8rem",
-         
-                transition: "all 0.2s ease",
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
-                },
-              }}
-            >
-              Apply Now
-            </Button>
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  px: 2,
+                  py: 0.8,
+                  fontWeight: 600,
+                  fontSize: "0.8rem",
+
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                  },
+                }}
+              >
+                Open position
+              </Button>
             </Box>
-
-
-
-            
-
-
-
-
           </Card>
         ))}
       </Box>
