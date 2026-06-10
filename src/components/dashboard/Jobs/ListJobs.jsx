@@ -55,13 +55,22 @@ export default function JobList() {
     <>
       <div
         style={{
-          maxHeight: "100%",
+          
           paddingTop: "0.8%",
           display: "flex",
           flexDirection: "column",
 
           flex: 1,
           height: "70vh",
+          overflow:"auto",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.17)",
+              borderRadius:"1rem",
+              padding:"0.3rem",
+              marginTop:"0.5rem",
+              scrollBehavior:"smooth"
+          
+       
+          
         }}
       >
         {state.JobInfo?.jobs.map((job) => (
@@ -79,9 +88,9 @@ export default function JobList() {
                 transform: "translateY(-2px)",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               },
-              m: 0.5,
+              m: 1,
               alignItems: "center",
-              height:"8rem"
+              minHeight:"8rem"
             }}
           >
             {/* Logo */}
