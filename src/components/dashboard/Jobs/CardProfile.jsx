@@ -12,7 +12,7 @@ export default function CardProfile() {
           width: "15rem",
           borderRadius: "20px",
           mt: "20px",
-          mr: "20px",
+          ml:"1.5rem",
           overflow: "hidden",
           boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
         }}

@@ -3,6 +3,9 @@ import { formatDistanceToNow } from "date-fns";
 import { useProfile } from "../../../logic/context/profileContext";
 import { useJob } from "../../../logic/context/JobContext";
 
+import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
+
+
 const jobs = [
   {
     id: 2,
@@ -53,19 +56,15 @@ export default function JobList() {
 
   return (
     <>
-      <div
+      <Box
         style={{
           
-          paddingTop: "0.8%",
           display: "flex",
           flexDirection: "column",
-
-          flex: 1,
-          height: "20vh",
-          overflow:"auto",
-            
+          height: "77vh",
+          overflow:"scroll",
               borderRadius:"1rem",
-              padding:"0.3rem",
+              
               marginTop:"0.5rem"
           
         }}
@@ -85,7 +84,8 @@ export default function JobList() {
                 transform: "translateY(-2px)",
                 boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
               },
-              m: 1,
+              mb: "0.8rem",
+              mr: 1,
               alignItems: "center",
               minHeight:"8rem"
             }}
@@ -102,34 +102,39 @@ export default function JobList() {
 
             {/* Info */}
             <Box sx={{ flex: 1 }}>
-              <Typography sx={{ fontWeight: "bold", fontSize: "0.9rem" }}>
+
+              <Typography sx={{ fontSize: "1.4rem",display:"flex", justifyContent:"space-between" }}>
                 {job?.title}
+                <Button color="#fff"> <TurnedInNotOutlinedIcon/>  </Button>
               </Typography>
 
-              <Typography sx={{ fontSize: "0.8rem", color: "#555" }}>
-                {job?.createdBy?.companyName} • {job.location}
+              <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
+               {job?.createdBy?.companyName} • {job.location}
               </Typography>
 
               <Typography
                 sx={{
                   fontSize: "0.8rem",
                   color: "#777",
-                  mt: 0.2,
+                  mt: 0.1,
                   textWrap: "wrap",
+                  minWidth:"15rem",
+                  width:"60%"
+
                 }}
-                noWrap
               >
-                {job.description.split(" ").slice(0, 15).join(" ")}
+                {job.description.split(" ").slice(0, 15).join(" ")} .....
+
               </Typography>
 
               <Typography
-                sx={{ mt: 0.2, fontWeight: "bold", fontSize: "0.7rem" }}
+                sx={{ fontWeight: "bold", fontSize: "0.7rem" }}
               >
                 💰 {job.salary} / {job.salaryCurrency}
               </Typography>
             </Box>
 
-            {/* Button */}
+            {/* Button
             <Button
               size="small"
               variant="contained"
@@ -142,10 +147,13 @@ export default function JobList() {
               }}
             >
               Apply
-            </Button>
+            </Button> */}
+
+
+
           </Card>
         ))}
-      </div>
+      </Box>
     </>
   );
 }

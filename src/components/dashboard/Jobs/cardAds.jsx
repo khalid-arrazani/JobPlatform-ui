@@ -10,14 +10,13 @@ export default function CardAds() {
          
           borderRadius: "10px",
           background: "#ffffff00",
-          mt: "20px",
-          padding:"0px"
+          mt: "20px"
         }}
 
-        style={{width: "fit-content", height: "fit-content", backgroundSize: "cover"}}
+        style={{ width: "100%", height: "fit-content", backgroundSize: "cover",display:"flex",justifyContent:"center" }}
 
       >
-        <img style={{width: "17.5rem",margin:"0px",borderRadius:"10px"}} src={ads} />
+        <img style={{width: "80%",margin:"0px",borderRadius:"10px",marginRight:"1.5rem"}} src={ads} />
       </Box>
     </>
   );

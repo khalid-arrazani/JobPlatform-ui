@@ -10,8 +10,14 @@ import { useEffect, useState } from "react";
 import { getJobList } from "../../../logic/api/job/Job.jsx";
 import { useJob } from "../../../logic/context/JobContext.jsx";
 import { useAuth } from "../../../logic/context/AuthContext.jsx";
+
+import { Box } from "@mui/material";
+
+
 import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
+
+
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function JobsPage() {
@@ -73,30 +79,47 @@ export default function JobsPage() {
 
   return (
     <>
-      <div className="Jobsparent">
-        <div className="Jobsdiv1">
-          <CardProfile/>
-        </div>
 
-        <div className="Jobsdiv2">
-          <SearchInput />
+      <Box sx={{height:"100%",width:"100%"}}>
 
-          {state.isLoading ? <LoadingList /> : <JobList />}
-        </div>
+        <Box sx={{height:"90%",width:"100%", display:"flex",overflow:"hidden"}} >
 
-        <div className="Jobsdiv3">
-          <CardAds />
-        </div>
+          <Box sx={{height:"100%",width:"23%" ,display:"flex" , justifyContent:"center"}} >
+            <CardProfile/>   
+          </Box>
 
-        <div className="Jobsdiv4">
-          <Stack spacing={2}>
+          <Box sx={{height:"100%",width:"51%",pt:"0.5rem"}} >
+
+             <SearchInput />
+        
+             {state.isLoading ? <LoadingList /> : <JobList />}
+
+          </Box>
+
+
+          <Box sx={{height:"100%",width:"26%",display:"flex" , justifyContent:"center"}} >
+            <CardAds />
+            
+          </Box>
+
+        </Box>
+
+
+
+
+        <Box sx={{height:"10%",width:"100%",display:"flex" , justifyContent:"center",alignItems:"center"}}>
+           <Stack spacing={2}>
             <Pagination
               onChange={handleChange}
               count={state.JobInfo?.totalPages}
             />
           </Stack>
-        </div>
-      </div>
+        </Box>
+
+      </Box>
+
+
+
     </>
   );
 }
