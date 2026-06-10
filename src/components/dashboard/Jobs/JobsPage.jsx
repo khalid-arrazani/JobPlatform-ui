@@ -75,7 +75,7 @@ export default function JobsPage() {
     <>
       <div className="Jobsparent">
         <div className="Jobsdiv1">
-          <CardProfile></CardProfile>
+          <CardProfile/>
         </div>
 
         <div className="Jobsdiv2">

@@ -61,7 +61,7 @@ export default function JobList() {
           flexDirection: "column",
 
           flex: 1,
-          height: "70vh",
+          height: "20vh",
           overflow:"auto",
             
               borderRadius:"1rem",

@@ -9,7 +9,7 @@ export default function CardProfile() {
       <Card
         sx={{
           height: "20vw",
-          width: "85%",
+          width: "15rem",
           borderRadius: "20px",
           mt: "20px",
           mr: "20px",

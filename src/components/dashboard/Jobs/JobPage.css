@@ -1,47 +1,33 @@
 .Jobsparent {
-    flex:1;
+    flex: 1;
     display: grid;
-    grid-template-columns: repeat(15, 1fr);
-    grid-template-rows: repeat(8, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(10);
+    gap: 2px;
 }
-    
-.Jobsdiv1 {
-    grid-column: span 3 / span 3;
-    grid-row: span 7 / span 6;
-    display: flex;
-    justify-content:end;
 
+.Jobsdiv1 {
+    grid-column: 1 / span 5;
+    display: flex;
+    justify-content: center;
 }
 
 .Jobsdiv2 {
-    grid-column: span 8 / span 8;
-    grid-row: span 7 / span 6;
-    grid-column-start: 4;
-
+    grid-column: 6 / span 10;
     padding-top: 1rem;
-
-    
-    
 }
 
 .Jobsdiv3 {
+    grid-column: 16 / span 5;
+
     display: flex;
     justify-content: center;
-
-
-
-    grid-column: span 4 / span 4;
-    grid-row: span 7 / span 6;
-    grid-column-start: 12
-    
 }
 
-
 .Jobsdiv4 {
-    grid-column: span 15 / span 15;
-    grid-row: span 2 / span 2;
-    grid-row-start: 8;
+    grid-column: 1 / 21;
+   
+
     display: flex;
     justify-content: center;
     align-items: center;
