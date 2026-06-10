@@ -24,9 +24,7 @@ export default function JobList() {
      console.log(e.currentTarget.dataset.id);;
   }
 
-
   
-
   return (
     <>
       <Box
