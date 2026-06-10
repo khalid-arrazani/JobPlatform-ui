@@ -140,7 +140,7 @@ export default function JobList() {
                 spacing={0.5}
                 flexWrap="wrap"
                 useFlexGap
-                sx={{ mt: 1 }}
+                sx={{ mt: 0.5,mb: 1 }}
               >
                
 
@@ -161,7 +161,7 @@ export default function JobList() {
                 spacing={0.5}
                 flexWrap="wrap"
                 useFlexGap
-                sx={{ mt: 1 }}
+               sx={{ mt: 1,mb:0.5 }}
               >
                 {job.skills?.slice(0, 3).map((skill, index) => (
                   <Chip
