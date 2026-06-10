@@ -8,7 +8,8 @@ import {
   Stack,
 } from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
-import { useProfile } from "../../../logic/context/profileContext";
+
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { useJob } from "../../../logic/context/JobContext";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
@@ -121,7 +122,24 @@ export default function JobList() {
                   justifyContent: "space-between",
                 }}
               >
+                <Box>
                 {job?.title}
+                <Chip
+                  icon={<AccessTimeIcon />}
+                  label={formatDistanceToNow(new Date(job.createdAt), {
+                    addSuffix: true,
+                  })}
+                  size="small"
+                  variant="outlined"
+                  sx={{
+                    fontSize: "0.7rem",
+                    height: "24px",
+                    ml:"0.5rem"
+                  }}
+                />
+                </Box>
+
+
                 <Button color="#fff">
                   {" "}
                   <TurnedInNotOutlinedIcon />{" "}
@@ -132,18 +150,13 @@ export default function JobList() {
                 {job?.createdBy?.companyName} • {job.location}
               </Typography>
 
-        
-
-
               <Stack
                 direction="row"
                 spacing={0.5}
                 flexWrap="wrap"
                 useFlexGap
-                sx={{ mt: 0.5,mb: 1 }}
+                sx={{ mt: 0.5, mb: 1 }}
               >
-               
-
                 {job.jobType && (
                   <Chip
                     label={job.jobType}
@@ -161,7 +174,7 @@ export default function JobList() {
                 spacing={0.5}
                 flexWrap="wrap"
                 useFlexGap
-               sx={{ mt: 1,mb:0.5 }}
+                sx={{ mt: 1, mb: 0.5 }}
               >
                 {job.skills?.slice(0, 3).map((skill, index) => (
                   <Chip
@@ -174,10 +187,7 @@ export default function JobList() {
                     }}
                   />
                 ))}
-
-                
               </Stack>
-              
 
               <Typography sx={{ fontWeight: "bold", fontSize: "0.7rem" }}>
                 💰 {job.salary} / {job.salaryCurrency}
