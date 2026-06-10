@@ -1,10 +1,17 @@
-import { Box, Typography, Avatar, Button, Card } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Avatar,
+  Button,
+  Card,
+  Chip,
+  Stack,
+} from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
 import { useProfile } from "../../../logic/context/profileContext";
 import { useJob } from "../../../logic/context/JobContext";
 
-import TurnedInNotOutlinedIcon from '@mui/icons-material/TurnedInNotOutlined';
-
+import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 
 const jobs = [
   {
@@ -58,15 +65,13 @@ export default function JobList() {
     <>
       <Box
         style={{
-          
           display: "flex",
           flexDirection: "column",
           height: "77vh",
-          overflow:"scroll",
-              borderRadius:"1rem",
-              
-              marginTop:"0.5rem"
-          
+          overflow: "scroll",
+          borderRadius: "1rem",
+
+          marginTop: "0.5rem",
         }}
       >
         {state.JobInfo?.jobs.map((job) => (
@@ -75,7 +80,7 @@ export default function JobList() {
             sx={{
               display: "flex",
               gap: 1,
-              
+
               background: "#ffffffe3",
               borderRadius: "10px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
@@ -87,49 +92,94 @@ export default function JobList() {
               mb: "0.8rem",
               mr: 1,
               alignItems: "center",
-              minHeight:"8rem"
+              minHeight: "9rem",
             }}
           >
-
             {/* Logo */}
-            <Box sx={{width:"20%" ,display:"flex",justifyContent:"center",alignItems:"center",background:"#00000029",height:"100%"}}>
-               <Avatar
-              src={job.createdBy?.companyLogo?.url}
-              sx={{ width: "5rem", height: "5rem", backgroundSize: "cover" }}
-            />
+            <Box
+              sx={{
+                width: "20%",
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                background: "#00000029",
+                height: "100%",
+              }}
+            >
+              <Avatar
+                src={job.createdBy?.companyLogo?.url}
+                sx={{ width: "5rem", height: "5rem", backgroundSize: "cover" }}
+              />
             </Box>
-           
 
             {/* Info */}
-            <Box sx={{ flex: 1 }}>
-
-              <Typography sx={{ fontSize: "1.4rem",display:"flex", justifyContent:"space-between" }}>
+            <Box sx={{ flex: 1, height: "100%", pt: "0.4rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "1.4rem",
+                  display: "flex",
+                  justifyContent: "space-between",
+                }}
+              >
                 {job?.title}
-                <Button color="#fff"> <TurnedInNotOutlinedIcon/>  </Button>
+                <Button color="#fff">
+                  {" "}
+                  <TurnedInNotOutlinedIcon />{" "}
+                </Button>
               </Typography>
 
               <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
-               {job?.createdBy?.companyName} • {job.location}
+                {job?.createdBy?.companyName} • {job.location}
               </Typography>
 
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  color: "#777",
-                  mt: 0.1,
-                  textWrap: "wrap",
-                  minWidth:"15rem",
-                  width:"60%"
+        
 
-                }}
+
+              <Stack
+                direction="row"
+                spacing={0.5}
+                flexWrap="wrap"
+                useFlexGap
+                sx={{ mt: 1 }}
               >
-                {job.description.split(" ").slice(0, 15).join(" ")} .....
+               
 
-              </Typography>
-
-              <Typography
-                sx={{ fontWeight: "bold", fontSize: "0.7rem" }}
+                {job.jobType && (
+                  <Chip
+                    label={job.jobType}
+                    size="small"
+                    color="primary"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                    }}
+                  />
+                )}
+              </Stack>
+              <Stack
+                direction="row"
+                spacing={0.5}
+                flexWrap="wrap"
+                useFlexGap
+                sx={{ mt: 1 }}
               >
+                {job.skills?.slice(0, 3).map((skill, index) => (
+                  <Chip
+                    key={index}
+                    label={skill}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                    }}
+                  />
+                ))}
+
+                
+              </Stack>
+              
+
+              <Typography sx={{ fontWeight: "bold", fontSize: "0.7rem" }}>
                 💰 {job.salary} / {job.salaryCurrency}
               </Typography>
             </Box>
@@ -148,9 +198,6 @@ export default function JobList() {
             >
               Apply
             </Button> */}
-
-
-
           </Card>
         ))}
       </Box>
