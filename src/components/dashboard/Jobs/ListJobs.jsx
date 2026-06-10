@@ -8,59 +8,24 @@ import {
   Stack,
 } from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
-
+import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import { useJob } from "../../../logic/context/JobContext";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 
-const jobs = [
-  {
-    id: 2,
-    title: "Backend Engineer",
-    company: "Microsoft",
-    location: "Seattle, USA",
-    salary: "$5,500/month",
-    description:
-      "Node.js and MongoDB developer to build scalable APIs and services.",
-    logo: "https://cdn.pixabay.com/photo/2021/10/17/14/47/windows-7-logo-6718525_1280.png",
-  },
-
-  {
-    id: 3,
-    title: "UI/UX Designer",
-    company: "Airbnb",
-    location: "San Francisco, USA",
-    salary: "$4,800/month",
-    description:
-      "Creative designer needed to improve user experiences across web products.",
-    logo: "https://cdn.pixabay.com/photo/2018/05/08/21/28/airbnb-3384008_1280.png",
-  },
-
-  {
-    id: 4,
-    title: "Full Stack Developer",
-    company: "Spotify",
-    location: "Stockholm, Sweden",
-    salary: "$6,000/month",
-    description:
-      "Work with React, Node.js, and cloud technologies on music platforms.",
-    logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
-  },
-  {
-    id: 5,
-    title: "Full Stack Developer",
-    company: "Spotify",
-    location: "Stockholm, Sweden",
-    salary: "$6,000/month",
-    description:
-      "Work with React, Node.js, and cloud technologies on music platforms.",
-    logo: "https://cdn.pixabay.com/photo/2018/05/08/21/29/spotify-3384019_1280.png",
-  },
-];
 export default function JobList() {
   const { ...state } = useJob();
   console.log(state.JobInfo?.jobs);
+
+
+
+  const saveJob = (e)=>{
+     console.log(e.currentTarget.dataset.id);;
+  }
+
+
+  
 
   return (
     <>
@@ -70,14 +35,14 @@ export default function JobList() {
           flexDirection: "column",
           height: "77vh",
           overflow: "scroll",
-          borderRadius: "1rem",
+          
 
           marginTop: "0.5rem",
         }}
       >
         {state.JobInfo?.jobs.map((job) => (
           <Card
-            key={job.id}
+            key={job._id}
             sx={{
               display: "flex",
               gap: 1,
@@ -123,25 +88,25 @@ export default function JobList() {
                 }}
               >
                 <Box>
-                {job?.title}
-                <Chip
-                  icon={<AccessTimeIcon />}
-                  label={formatDistanceToNow(new Date(job.createdAt), {
-                    addSuffix: true,
-                  })}
-                  size="small"
-                  variant="outlined"
-                  sx={{
-                    fontSize: "0.7rem",
-                    height: "24px",
-                    ml:"0.5rem"
-                  }}
-                />
+                  {job?.title}
+                  <Chip
+                    icon={<AccessTimeIcon />}
+                    label={formatDistanceToNow(new Date(job.createdAt), {
+                      addSuffix: true,
+                    })}
+                    size="small"
+                    variant="outlined"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "24px",
+                      ml: "0.5rem",
+                    }}
+                  />
                 </Box>
 
-
-                <Button color="#fff">
-                  {" "}
+                <Button
+                data-id={job._id}
+                onClick={saveJob}>
                   <TurnedInNotOutlinedIcon />{" "}
                 </Button>
               </Typography>
@@ -192,22 +157,40 @@ export default function JobList() {
               <Typography sx={{ fontWeight: "bold", fontSize: "0.7rem" }}>
                 💰 {job.salary} / {job.salaryCurrency}
               </Typography>
-            </Box>
-
-            {/* Button
-            <Button
-              size="small"
+              <Button
               variant="contained"
+              endIcon={<ArrowOutwardIcon />}
               sx={{
-                borderRadius: "6px",
+           
+                position:"relative",
+                top:"-2.2rem",
+                right:"-75%",
+
                 textTransform: "none",
-                fontSize: "11.5px",
-                px: 1.5,
-                minWidth: "auto",
+                borderRadius: "10px",
+                px: 2,
+                py: 0.8,
+                fontWeight: 600,
+                fontSize: "0.8rem",
+         
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                },
               }}
             >
-              Apply
-            </Button> */}
+              Apply Now
+            </Button>
+            </Box>
+
+
+
+            
+
+
+
+
           </Card>
         ))}
       </Box>
