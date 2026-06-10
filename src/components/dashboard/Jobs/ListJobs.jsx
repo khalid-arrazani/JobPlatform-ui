@@ -63,13 +63,10 @@ export default function JobList() {
           flex: 1,
           height: "70vh",
           overflow:"auto",
-              boxShadow: "0 2px 8px rgba(0, 0, 0, 0.17)",
+            
               borderRadius:"1rem",
               padding:"0.3rem",
-              marginTop:"0.5rem",
-              scrollBehavior:"smooth"
-          
-       
+              marginTop:"0.5rem"
           
         }}
       >
