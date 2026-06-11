@@ -12,6 +12,7 @@ import {
 import Navbar from "./Navbar";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
+import TelegramIcon from '@mui/icons-material/Telegram';
 
 export default function JobDetailsPage() {
   return (
@@ -217,6 +218,7 @@ export default function JobDetailsPage() {
                   px: 3,
                   py: 1,
                   borderColor: "#DDD",
+                  color:"#a320e5"
                 }}
               >
                 Save Job
@@ -224,16 +226,18 @@ export default function JobDetailsPage() {
 
               <Button
                 variant="contained"
+                startIcon={<TelegramIcon />}
                 sx={{
                   borderRadius: "14px",
                   textTransform: "none",
                   px: 4,
                   py: 1.2,
-                  fontWeight: 600,
-                  bgcolor: "#7C3AED",
+                  fontWeight: 300,
+                  background: "linear-gradient(30deg, #8e1ef8 0%, #be81fa 35%, #8518fa 100%)",
 
                   "&:hover": {
-                    bgcolor: "#6D28D9",
+                    background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+                 
                   },
                 }}
               >
