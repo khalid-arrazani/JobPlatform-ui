@@ -15,22 +15,56 @@ import { useJob } from "../../../logic/context/JobContext";
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function JobList() {
   const { ...state } = useJob();
+  const { setSnackBar } = useAuth();
 
+  const [jobs, setJobs] = useState();
+
+  useEffect(() => {
+    setJobs(state);
+  }, [state?.JobInfo]);
 
   const saveJob = async (e) => {
-
-    console.log(e.currentTarget.dataset.id);
-
+    const jobId = e.currentTarget.dataset.id;
     try {
-      
+      setJobs((prev) => ({
+        ...prev,
+        JobInfo: {
+          ...prev.JobInfo,
+          jobs: prev.JobInfo.jobs.map((job) =>
+            job._id === jobId ? { ...job, isSaved: !job.isSaved } : job,
+          ),
+        },
+      }));
+
       const savejobs = await toggleSaveJob({
-        jobId: e.currentTarget.dataset.id,
+        jobId,
       });
-      console.log(savejobs);
+      setSnackBar({
+        open: true,
+        message: savejobs?.message,
+        severity: "success",
+      });
     } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+      setJobs((prev) => ({
+        ...prev,
+        JobInfo: {
+          ...prev.JobInfo,
+          jobs: prev.JobInfo.jobs.map((job) =>
+            job._id === jobId ? { ...job, isSaved: !job.isSaved } : job,
+          ),
+        },
+      }));
+
       console.log(error.response?.data.message);
     }
   };
@@ -47,7 +81,7 @@ export default function JobList() {
           marginTop: "0.5rem",
         }}
       >
-        {state.JobInfo?.jobs.map((job) => (
+        {jobs?.JobInfo?.jobs.map((job) => (
           <Card
             key={job._id}
             sx={{
