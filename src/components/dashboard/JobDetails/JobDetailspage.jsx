@@ -236,6 +236,7 @@ export default function JobDetailsPage() {
                   background: "linear-gradient(30deg, #8e1ef8 0%, #be81fa 35%, #8518fa 100%)",
 
                   "&:hover": {
+                    
                     background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                  
                   },
