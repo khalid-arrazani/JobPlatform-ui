@@ -92,7 +92,8 @@ export default function JobDetailsPage() {
 
 
 
-        <Box sx={{ height: "100%", width: "25%", background: "#ddd" }}>
+            
+        <Box sx={{ height: "100%", width: "25%", display:"flex"}}>
           <JobOverview/>
          
         </Box>

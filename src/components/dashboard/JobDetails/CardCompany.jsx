@@ -36,7 +36,7 @@ export default function CardCompany(){
               }}
             >
               <Avatar
-                src="https://i.pinimgproxy.com/?url=aHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS8yNTYvMjcwMi8yNzAyNjAyLnBuZw==&ts=1781345105&sig=b4e39a71beb47e245c7468ee155ce3aa4ff1a9a7a1367af204e8d1b024f61662"
+                src="https://img.icons8.com/?size=256&id=17949&format=png"
                 sx={{
                   width: 90,
                   height: 90,
@@ -143,7 +143,7 @@ export default function CardCompany(){
                 sx={{
                   borderRadius: "14px",
                   textTransform: "none",
-                  px: 3,
+                  px: 2,
                   py: 1,
                   borderColor: "#DDD",
                   color: "#a320e5",
@@ -158,7 +158,7 @@ export default function CardCompany(){
                 sx={{
                   borderRadius: "14px",
                   textTransform: "none",
-                  px: 4,
+                  px: 2,
                   py: 1.2,
                   fontWeight: 300,
                   background:
