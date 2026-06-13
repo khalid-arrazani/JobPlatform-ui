@@ -4,7 +4,6 @@ import {
   Divider,
 } from "@mui/material";
 
-import Navbar from "../Navbar5";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import CardCompany from "./CardCompany";
@@ -18,27 +17,15 @@ export default function JobDetailsPage() {
     <Box
       sx={{
         width: "100%",
-        height: "100%",
-        background: "#eeabf2",
+        height: "auto",
+
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
+        overflow:"auto"
         
       }}
     >
-      <Box
-        sx={{
-          width: "100%",
-          height: "3rem",
-          background: "#eedcef",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-        }}
-      >
-        <Navbar/>
-      </Box>
-
       <Box
         sx={{
           width: "100%",
@@ -49,7 +36,6 @@ export default function JobDetailsPage() {
           justifyContent: "center",
           gap: 3,
           pt: 1,
-          overflow: "auto",
         }}
         
       >

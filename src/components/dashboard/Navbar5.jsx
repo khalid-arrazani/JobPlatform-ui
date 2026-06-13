@@ -19,6 +19,7 @@ import { useState } from "react";
 
 import { useProfile } from "../../logic/context/profileContext.jsx";
 import PostJobModal from "./PostJobModal.jsx";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -27,12 +28,21 @@ export default function Navbar() {
 
   const { ...state } = useProfile();
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   // const location = useLocation();
 
-  const [tap, setTap] = useState(0);
+  
 
-  // const routes = ["/jobs", "/companies", "/saved-jobs", "/applications"];
+const location = useLocation();
+
+const currentTab = {
+  "/Dashboard/Jobs": 0,
+  "/Dashboard/Companies": 1,
+  "/Dashboard/saved": 2,
+  "/Dashboard/applications": 3,
+}[location.pathname] ?? 0;
+
+
 
   return (
     <Box
@@ -88,9 +98,8 @@ export default function Navbar() {
         {/* Navigation */}
         <Box display="flex" gap={1}>
           <Tabs
-            value={tap}
-            //   onChange={(e, newValue) => navigate(routes[newValue])}
-            onChange={(e, newValue) => setTap(newValue)}
+            value={currentTab}
+            
             textColor="inherit"
             sx={{
               minHeight: 64,
@@ -104,7 +113,7 @@ export default function Navbar() {
           >
             <Tab
               label="Jobs"
-              onClick={() => setTap(0)}
+              onClick={() => navigate("/Dashboard/Jobs")}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -115,7 +124,7 @@ export default function Navbar() {
 
             <Tab
               label="Companies"
-              onClick={() => setTap(1)}
+             onClick={() => navigate("/Dashboard/Companies")}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
