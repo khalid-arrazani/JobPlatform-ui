@@ -146,7 +146,7 @@ export default function Navbar() {
         </Box>
 
         {/* Right */}
-        <Box sx={{ display: "flex", gap: "0.2rem" }}>
+        <Box sx={{ display: "flex", gap: "0.4rem" }}>
           <IconButton>
             <NotificationsNoneOutlinedIcon />
           </IconButton>

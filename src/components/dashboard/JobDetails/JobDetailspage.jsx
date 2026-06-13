@@ -1,15 +1,10 @@
 import {
   Box,
-  Card,
-  Typography,
-  Avatar,
-  Chip,
   Button,
-  Stack,
   Divider,
 } from "@mui/material";
 
-import Navbar from "./Navbar";
+import Navbar from "../Navbar5";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import CardCompany from "./CardCompany";
@@ -41,7 +36,7 @@ export default function JobDetailsPage() {
           justifyContent: "center",
         }}
       >
-        <Navbar />
+        <Navbar/>
       </Box>
 
       <Box
