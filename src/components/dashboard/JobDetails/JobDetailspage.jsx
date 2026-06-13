@@ -40,6 +40,7 @@ export default function JobDetailsPage() {
         <Navbar />
       </Box>
 
+
       <Box
         sx={{
           width: "100%",
@@ -52,7 +53,6 @@ export default function JobDetailsPage() {
           pt: 1,
         }}
       >
-
         <Box
           sx={{
             height: "100%",
@@ -86,9 +86,7 @@ export default function JobDetailsPage() {
           >
             Back to Jobs
           </Button>
-
           <CardCompany/>
-
         </Box>
 
 
