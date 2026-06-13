@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import Navbar from "../components/dashboard/Navbar.jsx";
+import Navbar5 from "../components/dashboard/Navbar5.jsx";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
 import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
@@ -8,39 +9,38 @@ import { getMeUser } from "../logic/api/user/user.jsx";
 export default function DashboardLayout({ children, part, setPart }) {
   const { dispatch, ...state } = useProfile();
 
-  
-    useEffect(() => {
-      const fetchUser = async () => {
+  useEffect(() => {
+    const fetchUser = async () => {
+      dispatch({
+        type: "SET_LOADING",
+        payload: true,
+      });
+      try {
+        let data;
+        const user = await getMeUser();
+        if (user.role == "jobSeeker") {
+          data = await getMeJS();
+        } else if (user.role == "recruiter") {
+          data = await getMeR();
+        }
+        dispatch({
+          type: "PROFILE",
+          payload: data,
+        });
+
+        console.log(data);
+      } catch (error) {
+        console.log(error.response?.data);
+      } finally {
         dispatch({
           type: "SET_LOADING",
-          payload: true,
+          payload: false,
         });
-        try {
-          let data 
-          const user  = await getMeUser();
-          if(user.role == "jobSeeker"){
-             data = await getMeJS();
-          }else if(user.role == "recruiter"){
-            data = await getMeR();
-          }
-          dispatch({
-            type: "PROFILE",
-            payload: data,
-          });
+      }
+    };
+    fetchUser();
+  }, []);
 
-          console.log(data);
-        } catch (error) {
-          console.log(error.response?.data);
-        } finally {
-          dispatch({
-            type: "SET_LOADING",
-            payload: false,
-          });
-        }
-      };
-      fetchUser();
-    }, []);
-    
   return (
     <Box
       sx={{
@@ -52,7 +52,7 @@ export default function DashboardLayout({ children, part, setPart }) {
         padding: 0,
       }}
     >
-      <Navbar part={part} setPart={setPart} />
+      <Navbar5 part={part} setPart={setPart} />
 
       {children}
     </Box>

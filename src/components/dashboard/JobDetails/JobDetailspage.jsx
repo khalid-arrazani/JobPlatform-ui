@@ -16,6 +16,7 @@ import CardCompany from "./CardCompany";
 import JobOverview from "./CardJobOverview";
 import SkillsCard from "./SkillsCard";
 import DescriptionSection from "./DescriptionSection";
+import AbouttheCompany from "./AbouttheCompany";
 
 export default function JobDetailsPage() {
   return (
@@ -93,6 +94,7 @@ export default function JobDetailsPage() {
           </Button>
           <CardCompany />
           <DescriptionSection />
+          <AbouttheCompany />
           <Divider />
           
         </Box>

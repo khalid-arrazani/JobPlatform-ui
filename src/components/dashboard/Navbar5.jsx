@@ -12,7 +12,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 import { NavLink } from "react-router-dom";
 
-import logoTitle from "../../../assets/Logo/logo.png";
+import logoTitle from "../../assets/Logo/logo.png";
 import { useState } from "react";
 
 export default function Navbar() {
