@@ -93,6 +93,7 @@ export default function JobDetailsPage() {
           </Button>
           <CardCompany />
           <DescriptionSection />
+          <Divider />
           
         </Box>
 

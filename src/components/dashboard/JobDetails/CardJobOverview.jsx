@@ -22,7 +22,6 @@ export default function JobOverview() {
   <Card
   sx={{
     width: "80%",
-
     px: 2 ,
     py: 1.5,
     borderRadius: "5px",

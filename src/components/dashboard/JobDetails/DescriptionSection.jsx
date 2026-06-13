@@ -23,12 +23,12 @@ If you are excited about crafting beautiful interfaces, writing clean and mainta
   return (
     <Card
       sx={{
-        width: "80%",
-        px: 4,
-        py: 3,
-        borderRadius: "20px",
+        flex: 1,
+        height: "auto", px: "1.5rem",py: "1.5rem",
+        borderRadius: "10px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         mt: 2,
+        mb:5
       }}
     >
       <Typography
@@ -49,7 +49,7 @@ If you are excited about crafting beautiful interfaces, writing clean and mainta
             whiteSpace: "pre-wrap",
             wordBreak: "break-word",
             overflowWrap: "break-word",
-            lineHeight: 1.9,
+            lineHeight: 1.6,
             fontSize: "0.95rem",
 
             ...(expanded
