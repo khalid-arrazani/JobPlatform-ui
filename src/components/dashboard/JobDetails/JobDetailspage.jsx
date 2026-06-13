@@ -15,6 +15,7 @@ import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import CardCompany from "./CardCompany";
 import JobOverview from "./CardJobOverview";
 import SkillsCard from "./SkillsCard";
+import DescriptionSection from "./DescriptionSection";
 
 export default function JobDetailsPage() {
   return (
@@ -91,6 +92,8 @@ export default function JobDetailsPage() {
             Back to Jobs
           </Button>
           <CardCompany />
+          <DescriptionSection />
+          
         </Box>
 
         <Box sx={{ height: "100%", width: "28%" }}>
