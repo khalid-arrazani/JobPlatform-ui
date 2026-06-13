@@ -3,7 +3,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import CardCompany from "./CardCompany";
@@ -11,14 +11,29 @@ import JobOverview from "./CardJobOverview";
 import SkillsCard from "./SkillsCard";
 import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
+import { useEffect } from "react";
+import { getJobID } from "../../../logic/api/job/Job";
 
 export default function JobDetailsPage() {
 
-
+const navigate = useNavigate()
 
 const { JobId } = useParams();
 
+useEffect (async()=>{
+  try{
+    const jobById = await getJobID(JobId)
+    console.log(jobById);
+  }catch (error){
+    console.log(error);
+  }
+},[])
+
+
 console.log("inside Job details"  , JobId); 
+
+
+
 
   return (
     <Box
@@ -58,7 +73,8 @@ console.log("inside Job details"  , JobId);
         >
           <Button
             startIcon={<KeyboardBackspaceIcon />}
-            //   onClick={() => navigate("/jobs")}
+            onClick={() => navigate("/dashboard/jobs")}
+            
             sx={{
               textTransform: "none",
               fontWeight: 600,

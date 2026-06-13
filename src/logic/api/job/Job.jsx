@@ -20,6 +20,15 @@ export const getJobList = async (page) => {
   return response.data;
 };
 
+export const getJobID = async (JobId) => {
+  const response = await API.get(
+     `/jobs/Jobs/${JobId}`,
+    { withCredentials: true }
+  );
+
+  return response.data;
+};
+
 export const toggleSaveJob  = async (jobData) => {
   const response = await API.post(
     "savedJob/jobs/save",
