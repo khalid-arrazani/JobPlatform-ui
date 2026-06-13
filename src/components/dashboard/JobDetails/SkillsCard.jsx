@@ -10,7 +10,9 @@ export default function SkillsCard() {
         borderRadius: "5px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         height: "auto",
-        mt: 1.5,
+        mt: 2
+        ,mb:2
+        
        
       }}
     >

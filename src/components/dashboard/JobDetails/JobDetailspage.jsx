@@ -26,6 +26,7 @@ export default function JobDetailsPage() {
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
+        
       }}
     >
       <Box
@@ -53,14 +54,17 @@ export default function JobDetailsPage() {
           pt: 1,
           overflow: "auto",
         }}
+        
       >
         <Box
+        
           sx={{
             height: "100%",
             width: "70%",
             background: "#f7f7f7",
             pl: "1.9rem",
           }}
+          
         >
           <Button
             startIcon={<KeyboardBackspaceIcon />}
@@ -92,7 +96,9 @@ export default function JobDetailsPage() {
         <Box sx={{ height: "100%", width: "28%" }}>
           <JobOverview />
           <SkillsCard />
+          <Divider />
         </Box>
+
       </Box>
     </Box>
   );
