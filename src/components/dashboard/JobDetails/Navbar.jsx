@@ -1,35 +1,30 @@
 import {
-  AppBar,
-  Toolbar,
   Box,
-  Button,
+
   Avatar,
   IconButton,
 } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+// import { useLocation, useNavigate } from "react-router-dom";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { NavLink } from "react-router-dom";
+// import { NavLink } from "react-router-dom";
 
 import logoTitle from "../../../assets/Logo/logo.png";
 import { useState } from "react";
 
 export default function Navbar() {
-  
-  const navigate = useNavigate();
-  const location = useLocation();
-
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
   const [tap , setTap] = useState(0)
 
-
-  const routes = [
-    "/jobs",
-    "/companies",
-    "/saved-jobs",
-    "/applications",
-  ];
+  // const routes = [
+  //   "/jobs",
+  //   "/companies",
+  //   "/saved-jobs",
+  //   "/applications",
+  // ];
 
 
  

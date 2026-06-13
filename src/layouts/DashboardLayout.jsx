@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
-import Navbar from "../components/dashboard/Navbar.jsx";
-import Navbar5 from "../components/dashboard/Navbar5.jsx";
+
+import Navbar from "../components/dashboard/Navbar5.jsx";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
 import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
@@ -48,11 +48,24 @@ export default function DashboardLayout({ children, part, setPart }) {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        background: "#ebeaea",
+        background: "#e8e8e8",
         padding: 0,
       }}
     >
-      <Navbar5 part={part} setPart={setPart} />
+      <Box
+        sx={{
+          width: "100%",
+          height: "3rem",
+          background: "#eedcef",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          borderBottom:"solid 2px #b3afaf3e",
+        
+        }}
+      >
+        <Navbar part={part} setPart={setPart} />
+      </Box>
 
       {children}
     </Box>

@@ -1,38 +1,38 @@
-import {
-  AppBar,
-  Toolbar,
-  Box,
-  Button,
-  Avatar,
-  IconButton,
-} from "@mui/material";
+import { Box, Avatar, IconButton } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
-import { useLocation, useNavigate } from "react-router-dom";
+import Drawer from "@mui/material/Drawer";
+import MainList from "./mainList.jsx";
+
+// import { useLocation, useNavigate } from "react-router-dom";
+
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-import { NavLink } from "react-router-dom";
+
+// import { NavLink } from "react-router-dom";
+
+import WorkIcon from "@mui/icons-material/Work";
+
+import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import logoTitle from "../../assets/Logo/logo.png";
 import { useState } from "react";
 
+import { useProfile } from "../../logic/context/profileContext.jsx";
+import PostJobModal from "./PostJobModal.jsx";
+
 export default function Navbar() {
-  
-  const navigate = useNavigate();
-  const location = useLocation();
+  const [open, setOpen] = useState(false);
 
+  const [openModal, setOpenModal] = useState(false);
 
-  const [tap , setTap] = useState(0)
+  const { ...state } = useProfile();
 
+  // const navigate = useNavigate();
+  // const location = useLocation();
 
-  const routes = [
-    "/jobs",
-    "/companies",
-    "/saved-jobs",
-    "/applications",
-  ];
+  const [tap, setTap] = useState(0);
 
-
- 
+  // const routes = ["/jobs", "/companies", "/saved-jobs", "/applications"];
 
   return (
     <Box
@@ -42,31 +42,27 @@ export default function Navbar() {
         bgcolor: "#F5EAF9",
         color: "#1B1B1B",
         borderBottom: "1px solid #EEE",
-        width:"100%",
-        height:"100%",
-        display:"flex",
-        justifyContent:"center"
+        width: "100%",
+        height: "100%",
+        display: "flex",
+        justifyContent: "center",
       }}
-      
-
     >
+      <PostJobModal open={openModal} setOpen={setOpenModal} />
       <Box
         sx={{
           width: "95%",
-          display:"flex",
+          display: "flex",
           justifyContent: "space-between",
-          alignItems:"center "
+          alignItems: "center ",
         }}
-        style={{padding:0 , }}
-      
+        style={{ padding: 0 }}
       >
         {/* Logo */}
         <Box
-          sx={{     
-           
+          sx={{
             display: "flex",
             alignItems: "center",
-          
           }}
         >
           <img
@@ -92,85 +88,101 @@ export default function Navbar() {
         {/* Navigation */}
         <Box display="flex" gap={1}>
           <Tabs
-      value={tap}
-    //   onChange={(e, newValue) => navigate(routes[newValue])}
-    onChange={(e, newValue) => setTap(newValue)}
-      textColor="inherit"
-      sx={{
-        minHeight: 64,
-        "& .MuiTabs-indicator": {
-          backgroundColor: "#5590ff",
-          height: "2px",
-          borderRadius: "999px",
-          top:"51px"
-        },
-      }}
-    >
-      <Tab
-        label="Jobs"
-        onClick={()=>setTap(0)}
-        sx={{
-          textTransform: "none",
-          fontWeight: 600,
-          minHeight: 64,
-          padding:0
-        }}
-      />
+            value={tap}
+            //   onChange={(e, newValue) => navigate(routes[newValue])}
+            onChange={(e, newValue) => setTap(newValue)}
+            textColor="inherit"
+            sx={{
+              minHeight: 64,
+              "& .MuiTabs-indicator": {
+                backgroundColor: "#5590ff",
+                height: "2px",
+                borderRadius: "999px",
+                top: "51px",
+              },
+            }}
+          >
+            <Tab
+              label="Jobs"
+              onClick={() => setTap(0)}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minHeight: 64,
+                padding: 0,
+              }}
+            />
 
-      <Tab
-        label="Companies"
-        onClick={()=>setTap(1)}
+            <Tab
+              label="Companies"
+              onClick={() => setTap(1)}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minHeight: 64,
+              }}
+            />
 
-        sx={{
-          textTransform: "none",
-          fontWeight: 600,
-          minHeight: 64,
-        }}
-      />
+            <Tab
+              onClick={() => setTap(2)}
+              label="Saved"
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minHeight: 64,
+              }}
+            />
 
-      <Tab
-        onClick={()=>setTap(2)}
-
-        label="Saved"
-        sx={{
-          textTransform: "none",
-          fontWeight: 600,
-          minHeight: 64,
-        }}
-      />
-
-      <Tab
-        label="Applications"
-        onClick={()=>setTap(3)}
-
-        sx={{
-          textTransform: "none",
-          fontWeight: 600,
-          minHeight: 64,
-        }}
-      />
-    </Tabs>
+            <Tab
+              label="Applications"
+              onClick={() => setTap(3)}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minHeight: 64,
+              }}
+            />
+          </Tabs>
         </Box>
 
         {/* Right */}
-        <Box sx={{display:"flex",gap:"0.2rem"}}>
+        <Box sx={{ display: "flex", gap: "0.2rem" }}>
           <IconButton>
             <NotificationsNoneOutlinedIcon />
-            
+          </IconButton>
+          <IconButton
+            onClick={() => {
+              setOpenModal(true);
+            }}
+          >
+            <WorkIcon sx={{ color: "#696363" }} />
+            <AddCircleIcon
+              sx={{
+                position: "absolute",
+                bottom: 10,
+                right: 4,
+                fontSize: 13,
+                color: "#22c55e",
+                background: "#fff",
+                borderRadius: "50%",
+              }}
+            />
           </IconButton>
 
-          
-
-          <IconButton size="small">
+          <IconButton onClick={() => setOpen(true)} size="small">
             <Avatar
-            src="/profile.jpg"
-            sx={{
-              width: 40,
-              height: 40,
-            }}
-          />
+              src={state.user?.profile?.ProfileImage?.url}
+              sx={{
+                width: 55,
+                height: 55,
+              }}
+              sx={{ border: "1px solid #32103993" }}
+            />
             <KeyboardArrowDownIcon />
           </IconButton>
+          <Drawer open={open} anchor="right" onClose={() => setOpen(false)}>
+            <MainList toggleDrawer={setOpen} />
+          </Drawer>
         </Box>
       </Box>
     </Box>
