@@ -12,7 +12,7 @@ import {
 import Navbar from "./Navbar";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
-import TelegramIcon from '@mui/icons-material/Telegram';
+import TelegramIcon from "@mui/icons-material/Telegram";
 
 export default function JobDetailsPage() {
   return (
@@ -57,7 +57,6 @@ export default function JobDetailsPage() {
             width: "75%",
             background: "#f7f7f7",
             pl: "1.9rem",
-            
           }}
         >
           <Button
@@ -106,7 +105,7 @@ export default function JobDetailsPage() {
               }}
             >
               <Avatar
-                src="https://i.pinimgproxy.com/?url=aHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS8yNTYvMjgxLzI4MTc2NC5wbmc=&ts=1781217189&sig=ab15924525ba4834dae1622a3a8c25e61e488fad2189d2f0bb622776e27e9a24"
+                src="https://i.pinimgproxy.com/?url=aHR0cHM6Ly9jZG4taWNvbnMtcG5nLmZsYXRpY29uLmNvbS8yNTYvMjcwMi8yNzAyNjAyLnBuZw==&ts=1781345105&sig=b4e39a71beb47e245c7468ee155ce3aa4ff1a9a7a1367af204e8d1b024f61662"
                 sx={{
                   width: 90,
                   height: 90,
@@ -114,7 +113,7 @@ export default function JobDetailsPage() {
                   border: "1px solid #eee",
                   borderRadius: "10px",
                   m: "2rem",
-                  p:2
+                  p: 2,
                 }}
               />
 
@@ -130,7 +129,7 @@ export default function JobDetailsPage() {
                 }}
               >
                 <Box>
-                    <Stack direction="row" spacing={1.5}>
+                  <Stack direction="row" spacing={1.5}>
                     <Chip
                       label="Verified Company"
                       size="small"
@@ -201,14 +200,12 @@ export default function JobDetailsPage() {
                         fontWeight: 400,
                       }}
                     />
-                   
                   </Stack>
                 </Box>
               </Box>
             </Box>
             {/* Right Side */}
             <Stack direction="row" spacing={2}>
-
               <Button
                 variant="outlined"
                 startIcon={<TurnedInNotOutlinedIcon />}
@@ -218,7 +215,7 @@ export default function JobDetailsPage() {
                   px: 3,
                   py: 1,
                   borderColor: "#DDD",
-                  color:"#a320e5"
+                  color: "#a320e5",
                 }}
               >
                 Save Job
@@ -233,12 +230,12 @@ export default function JobDetailsPage() {
                   px: 4,
                   py: 1.2,
                   fontWeight: 300,
-                  background: "linear-gradient(30deg, #8e1ef8 0%, #be81fa 35%, #8518fa 100%)",
+                  background:
+                    "linear-gradient(30deg, #8e1ef8 0%, #be81fa 35%, #8518fa 100%)",
 
                   "&:hover": {
-                    
-                    background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
-                 
+                    background:
+                      "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                   },
                 }}
               >
