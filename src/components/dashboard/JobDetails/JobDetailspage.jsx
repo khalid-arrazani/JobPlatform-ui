@@ -12,7 +12,6 @@ import {
 import Navbar from "./Navbar";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
-
 import CardCompany from "./CardCompany";
 import JobOverview from "./CardJobOverview";
 import SkillsCard from "./SkillsCard";
@@ -42,7 +41,6 @@ export default function JobDetailsPage() {
         <Navbar />
       </Box>
 
-
       <Box
         sx={{
           width: "100%",
@@ -53,10 +51,8 @@ export default function JobDetailsPage() {
           justifyContent: "center",
           gap: 3,
           pt: 1,
-          overflow:"auto"
-          
+          overflow: "auto",
         }}
-        
       >
         <Box
           sx={{
@@ -66,7 +62,6 @@ export default function JobDetailsPage() {
             pl: "1.9rem",
           }}
         >
-
           <Button
             startIcon={<KeyboardBackspaceIcon />}
             //   onClick={() => navigate("/jobs")}
@@ -91,22 +86,13 @@ export default function JobDetailsPage() {
           >
             Back to Jobs
           </Button>
-          <CardCompany/>
+          <CardCompany />
         </Box>
 
-
-
-            
-        <Box sx={{ height: "100%", width: "28%",
-        }}
-        >
-          <JobOverview/>
-          <SkillsCard/>
-         
+        <Box sx={{ height: "100%", width: "28%" }}>
+          <JobOverview />
+          <SkillsCard />
         </Box>
-
-
-
       </Box>
     </Box>
   );
