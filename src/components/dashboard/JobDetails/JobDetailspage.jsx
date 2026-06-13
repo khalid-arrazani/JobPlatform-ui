@@ -97,7 +97,9 @@ export default function JobDetailsPage() {
 
 
             
-        <Box sx={{ height: "100%", width: "28%"}}>
+        <Box sx={{ height: "100%", width: "28%",
+        }}
+        >
           <JobOverview/>
           <SkillsCard/>
          
