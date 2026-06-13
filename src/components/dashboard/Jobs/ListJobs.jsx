@@ -17,12 +17,14 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function JobList() {
   const { ...state } = useJob();
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
+   const navigate = useNavigate();
 
   useEffect(() => {
     setJobs(state);
@@ -67,6 +69,11 @@ export default function JobList() {
 
       console.log(error.response?.data.message);
     }
+  };
+
+  const openJob = async (e) => {
+    const jobId = e.currentTarget.dataset.id;
+    navigate(`Details/${jobId}`);
   };
 
   return (
@@ -202,6 +209,8 @@ export default function JobList() {
               </Typography>
               <Button
                 variant="contained"
+                data-id={job._id}
+                onClick={openJob}
                 endIcon={<ArrowOutwardIcon />}
                 sx={{
                   position: "relative",

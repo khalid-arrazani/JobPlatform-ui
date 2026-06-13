@@ -28,7 +28,7 @@ If you are excited about crafting beautiful interfaces, writing clean and mainta
         borderRadius: "10px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         mt: 2,
-        mb:5
+        mb:2
       }}
     >
       <Typography

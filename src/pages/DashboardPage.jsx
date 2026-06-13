@@ -13,10 +13,10 @@ export default function DashboardPage() {
 
       <Routes>
         <Route path="Jobs" element={<JobsPage />} />
-        <Route path="Jobs/JobDetails" element={<JobDetailsPage />} />
+        <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
         <Route path="Companies" element={<CompaniesPage />} />
       </Routes>
-      
+
     </DashboardLayout>
   );
 }

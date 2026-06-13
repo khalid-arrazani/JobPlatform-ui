@@ -29,18 +29,19 @@ export default function Navbar() {
   const { ...state } = useProfile();
 
   const navigate = useNavigate();
-  // const location = useLocation();
 
-  
+
 
 const location = useLocation();
 
 const currentTab = {
   "/Dashboard/Jobs": 0,
-  "/Dashboard/Companies": 1,
+  "/Dashboard/Companies":1,
   "/Dashboard/saved": 2,
   "/Dashboard/applications": 3,
 }[location.pathname] ?? 0;
+
+
 
 
 

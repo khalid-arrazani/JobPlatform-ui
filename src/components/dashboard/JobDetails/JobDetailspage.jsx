@@ -3,7 +3,7 @@ import {
   Button,
   Divider,
 } from "@mui/material";
-
+import { useParams } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
 import CardCompany from "./CardCompany";
@@ -13,6 +13,13 @@ import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
 
 export default function JobDetailsPage() {
+
+
+
+const { JobId } = useParams();
+
+console.log("inside Job details"  , JobId); 
+
   return (
     <Box
       sx={{

@@ -3,7 +3,6 @@ import { Box, Card, Typography } from "@mui/material";
 
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 
-
 export default function AbouttheCompany() {
   const [expanded, setExpanded] = useState(false);
 
@@ -33,7 +32,7 @@ Founded: 1998`;
         borderRadius: "10px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         mt: 2,
-        mb: 5,
+        mb: 2,
       }}
     >
       <Typography
@@ -41,11 +40,13 @@ Founded: 1998`;
           fontSize: "1.2rem",
           fontWeight: 700,
           color: "#1F2937",
-          mb: 2,
+          mb: 2,display: "flex",gap:1
         }}
       >
-        <Box sx={{display:"flex",gap:1}}><BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
-       About the Company</Box>
+   
+          <BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
+          About the Company
+    
         
       </Typography>
 
