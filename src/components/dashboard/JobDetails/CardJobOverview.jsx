@@ -21,14 +21,14 @@ export default function JobOverview() {
   return (
   <Card
   sx={{
-    width: "15.5rem",
-    px: 2.8,
+    width: "80%",
+
+    px: 2 ,
     py: 1.5,
     borderRadius: "5px",
     boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
     height:"auto",
-    mt:1.5
-
+    mt:2
   }}
   style={{height:"fit-Content"}}
 >

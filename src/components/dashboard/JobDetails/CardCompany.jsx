@@ -143,10 +143,11 @@ export default function CardCompany(){
                 sx={{
                   borderRadius: "14px",
                   textTransform: "none",
-                  px: 2,
+                  px: 1,
                   py: 1,
                   borderColor: "#DDD",
                   color: "#a320e5",
+                  fontSize:"0.8rem"
                 }}
               >
                 Save Job
@@ -168,6 +169,7 @@ export default function CardCompany(){
                     background:
                       "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                   },
+                  fontSize:"0.8rem"
                 }}
               >
                 Apply Now
