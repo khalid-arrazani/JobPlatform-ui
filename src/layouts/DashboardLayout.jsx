@@ -27,8 +27,7 @@ export default function DashboardLayout({ children, part, setPart }) {
           type: "PROFILE",
           payload: data,
         });
-
-        console.log(data);
+ 
       } catch (error) {
         console.log(error.response?.data);
       } finally {

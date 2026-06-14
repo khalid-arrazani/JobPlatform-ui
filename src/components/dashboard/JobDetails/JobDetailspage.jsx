@@ -1,8 +1,4 @@
-import {
-  Box,
-  Button,
-  Divider,
-} from "@mui/material";
+import { Box, Button, Divider } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
 import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
 
@@ -15,25 +11,22 @@ import { useEffect } from "react";
 import { getJobID } from "../../../logic/api/job/Job";
 
 export default function JobDetailsPage() {
+  const navigate = useNavigate();
 
-const navigate = useNavigate()
+  const { JobId } = useParams();
 
-const { JobId } = useParams();
+  useEffect( () => {fetchJobById()}, []);
 
-useEffect (async()=>{
-  try{
-    const jobById = await getJobID(JobId)
-    console.log(jobById);
-  }catch (error){
-    console.log(error);
-  }
-},[])
+  const fetchJobById = async () => {
+    try {
+      const jobById = await getJobID(JobId);
+      console.log(jobById);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-
-console.log("inside Job details"  , JobId); 
-
-
-
+  console.log("inside Job details", JobId);
 
   return (
     <Box
@@ -44,8 +37,7 @@ console.log("inside Job details"  , JobId);
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
-        overflow:"auto"
-        
+        overflow: "auto",
       }}
     >
       <Box
@@ -59,22 +51,18 @@ console.log("inside Job details"  , JobId);
           gap: 3,
           pt: 1,
         }}
-        
       >
         <Box
-        
           sx={{
             height: "100%",
             width: "70%",
             background: "#f7f7f7",
             pl: "1.9rem",
           }}
-          
         >
           <Button
             startIcon={<KeyboardBackspaceIcon />}
             onClick={() => navigate("/dashboard/jobs")}
-            
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -100,7 +88,6 @@ console.log("inside Job details"  , JobId);
           <DescriptionSection />
           <AbouttheCompany />
           <Divider />
-          
         </Box>
 
         <Box sx={{ height: "100%", width: "28%" }}>
@@ -108,7 +95,6 @@ console.log("inside Job details"  , JobId);
           <SkillsCard />
           <Divider />
         </Box>
-
       </Box>
     </Box>
   );

@@ -6,7 +6,7 @@ export const getMeJS = async (
     "/jobseeker/me",
      { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
@@ -16,7 +16,7 @@ export const getMeR = async (
     "/recuiter/me",
      { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
@@ -27,7 +27,7 @@ export const updateProfileJS = async (
     "/jobseeker/me",
     formData, { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
@@ -38,7 +38,7 @@ export const updateProfileR = async (
     "/recuiter/me",
     formData, { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
@@ -50,7 +50,7 @@ export const updateProfilePhotoJS = async (
     "/jobseeker/update-ProfilePhoto",
     formData, { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
@@ -61,7 +61,7 @@ export const updateProfilePhotoR = async (
     "/recuiter/update-ProfilePhoto",
     formData, { withCredentials: true }
   );
-  console.log(response.data);
+
   return response.data;
 };
 
