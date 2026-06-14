@@ -172,8 +172,6 @@ const PostJobModal = ({ open, setOpen }) => {
     skills: [],
   });
 
-
-
   const handleChange = (e) => {
     setJobData({
       ...jobData,
@@ -181,11 +179,9 @@ const PostJobModal = ({ open, setOpen }) => {
     });
   };
 
-
   const handleClose = () => {
     setOpen(false);
   };
-
 
   const handleSubmit = async () => {
     dispatch({
@@ -194,7 +190,7 @@ const PostJobModal = ({ open, setOpen }) => {
     });
     try {
       const data = await createJob(jobData);
-      
+
       setSnackBar({
         open: true,
         message: data?.message,
@@ -219,10 +215,9 @@ const PostJobModal = ({ open, setOpen }) => {
       });
 
       dispatch({
-      type: "RELOADLISTJOB",
-      payload: true,
+        type: "RELOADLISTJOB",
+        payload: true,
       });
-
     } catch (error) {
       setSnackBar({
         open: true,
@@ -236,8 +231,6 @@ const PostJobModal = ({ open, setOpen }) => {
       });
     }
   };
-
-
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -328,41 +321,73 @@ const PostJobModal = ({ open, setOpen }) => {
 
         {/* Salary */}
         <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Salary</Typography>
+          <Typography sx={{ mb: 1, fontWeight: 600 }}>Salary</Typography>
 
           <Box
-            sx={{ display: "flex", gap: 2, justifyContent: "space-between" }}
+            sx={{
+              display: "flex",
+              gap: 1.5,
+              flexWrap: "wrap",
+            }}
           >
+            {/* Min Salary */}
             <TextField
               size="small"
-              sx={{ width: "30%" }}
-              name="salary"
-              placeholder="5000"
-              value={jobData.salary || ""}
+              label="Min Salary"
+              name="minSalary"
+              type="number"
+              value={jobData.minSalary || ""}
               onChange={handleChange}
+              sx={{ flex: 1, minWidth: "120px" }}
             />
 
-            <Autocomplete
-              sx={{ width: "20%" }}
+            {/* Max Salary */}
+            <TextField
               size="small"
+              label="Max Salary"
+              name="maxSalary"
+              type="number"
+              value={jobData.maxSalary || ""}
+              onChange={handleChange}
+              sx={{ flex: 1, minWidth: "120px" }}
+            />
+
+            {/* Currency */}
+            <Autocomplete
+              size="small"
+              options={currencies}
               slotProps={{
                 popper: { sx: { transition: "none", animation: "none", m: 5 } },
               }}
-              options={currencies}
-              value={jobData.salaryCurrency}
+              value={jobData.salaryCurrency || null}
               onChange={(e, value) =>
                 setJobData({
                   ...jobData,
                   salaryCurrency: value,
                 })
               }
+              sx={{ width: 130 }}
               renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Currency"
-                  placeholder="Select currency"
-                />
+                <TextField {...params} label="Currency" />
               )}
+            />
+
+            {/* Monthly / Yearly */}
+            <Autocomplete
+              size="small"
+              options={["Per Month", "Per Year"]}
+              value={jobData.salaryPeriod || null}
+              onChange={(e, value) =>
+                setJobData({
+                  ...jobData,
+                  salaryPeriod: value,
+                })
+              }
+              slotProps={{
+                popper: { sx: { transition: "none", animation: "none", m: 5 } },
+              }}
+              sx={{ width: 180 }}
+              renderInput={(params) => <TextField {...params} label="Period" />}
             />
           </Box>
         </Box>
