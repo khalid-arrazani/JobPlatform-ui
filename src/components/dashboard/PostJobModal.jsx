@@ -162,8 +162,10 @@ const PostJobModal = ({ open, setOpen }) => {
     description: "",
     location: "",
 
-    salary: null,
+    minSalary: "",
+    maxSalary: "",
     salaryCurrency: "USD",
+    salaryPeriod: "Per Year",
 
     jobType: "",
     workMode: "",
@@ -204,8 +206,10 @@ const PostJobModal = ({ open, setOpen }) => {
         description: "",
         location: "",
 
-        salary: null,
+        minSalary: "",
+        maxSalary: "",
         salaryCurrency: "USD",
+        salaryPeriod: "Per Year",
 
         jobType: "",
         workMode: "",
