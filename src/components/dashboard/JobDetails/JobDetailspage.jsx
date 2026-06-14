@@ -7,31 +7,42 @@ import JobOverview from "./CardJobOverview";
 import SkillsCard from "./SkillsCard";
 import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { getJobID } from "../../../logic/api/job/Job";
+
+import LoadingPage from "../../profile/JobSeekerProfile/LoadingPage";
 
 export default function JobDetailsPage() {
   const navigate = useNavigate();
 
   const { JobId } = useParams();
-
+  const [job , setJob] = useState()
+  const [loading , setLoading] = useState(false)
+ 
   useEffect(() => {
     fetchJobById();
   }, []);
 
   const fetchJobById = async () => {
+    setLoading(true)
     try {
       const jobById = await getJobID(JobId);
-      console.log(jobById);
+      setJob(jobById);
+
     } catch (error) {
+
       console.log(error);
+
+    }finally{
+      setLoading(false)
     }
   };
 
-  console.log("inside Job details", JobId);
+  console.log("88" ,job);
 
-  return (
-    <Box
+  return <>
+    {loading ?( <LoadingPage/>) :
+    (<Box
       sx={{
         width: "100%",
         height: "auto",
@@ -98,6 +109,6 @@ export default function JobDetailsPage() {
           <Divider />
         </Box>
       </Box>
-    </Box>
-  );
+    </Box> ) }
+ </>
 }

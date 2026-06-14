@@ -8,6 +8,5 @@ export const getMeUser = async (
     "/users/me",
      { withCredentials: true }
   );
-  console.log(response.data);
   return response.data;
 };
