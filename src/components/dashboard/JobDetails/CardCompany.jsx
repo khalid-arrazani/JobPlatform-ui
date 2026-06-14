@@ -9,11 +9,67 @@ import {
 } from "@mui/material";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
+import TurnedInIcon from "@mui/icons-material/TurnedIn";
+
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
+import { useJob } from "../../../logic/context/JobContext";
+import { useAuth } from "../../../logic/context/AuthContext";
+import { useEffect, useState } from "react";
+import { toggleSaveJob } from "../../../logic/api/job/Job";
 
-export default function CardCompany({ jobInfo }) {
+export default function CardCompany({ jobInfo , JobId }) {
+const { ...state } = useJob();
+  const { setSnackBar } = useAuth();
+
+  const [jobs, setJobs] = useState();
+
+  useEffect(() => {
+    setJobs(state);
+  }, [state?.JobInfo]);
+
+
+  const saveJob = async (e) => {
+   
+    try {
+      setJobs((prev) => ({
+        ...prev,
+        JobInfo: {
+          ...prev.JobInfo,
+          jobs: prev.JobInfo?.jobs?.map((job) =>
+            job._id === JobId ? { ...job, isSaved: !job?.isSaved } : job,
+          ),
+        },
+      }));
+
+      const savejobs = await toggleSaveJob({
+       jobId : JobId
+      });
+      setSnackBar({
+        open: true,
+        message: savejobs?.message,
+        severity: "success",
+      });
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+      setJobs((prev) => ({
+        ...prev,
+        JobInfo: {
+          ...prev.JobInfo,
+          jobs: prev.JobInfo.jobs.map((job) =>
+            job._id === JobId ? { ...job, isSaved: !job?.isSaved } : job,
+          ),
+        },
+      }));
+
+      
+    }
+  };
   return (
     <>
       <Card
@@ -147,7 +203,12 @@ export default function CardCompany({ jobInfo }) {
         <Stack direction="row" spacing={2}>
           <Button
             variant="outlined"
-            startIcon={<TurnedInNotOutlinedIcon />}
+            startIcon= {jobs?.isSaved ? (
+                    <TurnedInIcon sx={{ color: "#1976d2" }} />
+                  ) : (
+                    <TurnedInNotOutlinedIcon />
+                  )}
+            onClick={saveJob}
             sx={{
               borderRadius: "14px",
               textTransform: "none",

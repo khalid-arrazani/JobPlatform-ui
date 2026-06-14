@@ -99,7 +99,7 @@ export default function JobDetailsPage() {
           </Button>
 
 
-          <CardCompany jobInfo={job}/>
+          <CardCompany jobInfo={job} JobId={JobId}/>
           <DescriptionSection jobInfo={job}/>
           <AbouttheCompany jobInfo={job}/>
           <Divider />
