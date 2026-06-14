@@ -17,7 +17,8 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
-import { Navigate, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
+import { millify } from "millify";
 
 export default function JobList() {
   const { ...state } = useJob();
@@ -70,6 +71,7 @@ export default function JobList() {
       console.log(error.response?.data.message);
     }
   };
+  console.log(state);
 
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
@@ -84,7 +86,6 @@ export default function JobList() {
           flexDirection: "column",
           height: "77vh",
           overflow: "scroll",
-
           marginTop: "0.5rem",
         }}
       >
@@ -94,19 +95,19 @@ export default function JobList() {
             sx={{
               display: "flex",
               gap: 1,
-
               background: "#ffffffe3",
               borderRadius: "10px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
               transition: "0.2s",
               "&:hover": {
                 transform: "translateY(-2px)",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.1)",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
               },
               mb: "0.8rem",
               mr: 1,
               alignItems: "center",
-              minHeight: "9rem",
+              minHeight: "9.5rem",
+              p:1,
             }}
           >
             {/* Logo */}
@@ -116,18 +117,19 @@ export default function JobList() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
-                background: "#00000029",
+                background: "#00000000",
                 height: "100%",
+                borderRight:"solid 1px #84848438"
               }}
             >
               <Avatar
                 src={job.createdBy?.companyLogo?.url}
-                sx={{ width: "5rem", height: "5rem", backgroundSize: "cover" }}
+                sx={{ width: "5rem", height: "5rem", backgroundSize: "cover",background:"#00000014",borderRadius:"10px",p:2 }}
               />
             </Box>
 
             {/* Info */}
-            <Box sx={{ flex: 1, height: "100%", pt: "0.4rem" }}>
+            <Box sx={{ flex: 1, height: "100%"}}>
               <Typography
                 sx={{
                   fontSize: "1.4rem",
@@ -204,9 +206,27 @@ export default function JobList() {
                 ))}
               </Stack>
 
-              <Typography sx={{ fontWeight: "bold", fontSize: "0.7rem" }}>
-                💰 {job.salary} / {job.salaryCurrency}
-              </Typography>
+              <Box sx={{ mt:1  }}>
+                
+                  <Chip
+           
+                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+
+                    size="small"
+                 
+                     sx={{ fontSize: "0.7rem",
+                      height: "22px",
+                        bgcolor: "#c4e6d2",
+                        color: "#289e5d",
+                        fontWeight: 400,
+                        py:1.5,
+                        borderRadius:"8px"
+                       
+                      }}
+                  />
+              </Box>
+
+
               <Button
                 variant="contained"
                 data-id={job._id}

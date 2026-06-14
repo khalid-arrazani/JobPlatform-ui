@@ -15,7 +15,9 @@ export default function JobDetailsPage() {
 
   const { JobId } = useParams();
 
-  useEffect( () => {fetchJobById()}, []);
+  useEffect(() => {
+    fetchJobById();
+  }, []);
 
   const fetchJobById = async () => {
     try {
