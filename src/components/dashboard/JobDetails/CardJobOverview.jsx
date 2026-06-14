@@ -119,7 +119,7 @@ export default function JobOverview({jobInfo}) {
     </Typography>
 
     <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-      {jobInfo.workMode}
+      {jobInfo?.workMode}
     </Typography>
   </Box>
 </Box>

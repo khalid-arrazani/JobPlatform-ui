@@ -1,6 +1,6 @@
 import { Card, Typography, Box, Chip } from "@mui/material";
 
-export default function SkillsCard() {
+export default function SkillsCard({ jobInfo }) {
   return (
     <Card
       sx={{
@@ -10,10 +10,8 @@ export default function SkillsCard() {
         borderRadius: "5px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         height: "auto",
-        mt: 2
-        ,mb:2
-        
-       
+        mt: 2,
+        mb: 2,
       }}
     >
       <Typography
@@ -34,150 +32,26 @@ export default function SkillsCard() {
           gap: 1,
         }}
       >
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
+        {jobInfo?.skills.map((skill) => 
+          <Chip
+            size="small"
+            sx={{
+              bgcolor: "#F3E8FF",
+              color: "#8B5CF6",
+              fontSize: "0.72rem",
+              fontWeight: 500,
+              borderRadius: "8px",
+              height: "28px",
 
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="React.js"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
+              "& .MuiChip-label": {
+                px: 1.2,
+              },
+            }}
+            label={skill}
+          />
+        )}
 
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="JavaScript"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="TypeScript"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="HTML"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="CSS"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="Redux"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="Git"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="REST APIs"
-        />
-        <Chip
-          size="small"
-          sx={{
-            bgcolor: "#F3E8FF",
-            color: "#8B5CF6",
-            fontSize: "0.72rem",
-            fontWeight: 500,
-            borderRadius: "8px",
-            height: "28px",
-
-            "& .MuiChip-label": {
-              px: 1.2,
-            },
-          }}
-          label="Figma"
-        />
+       
       </Box>
     </Card>
   );
