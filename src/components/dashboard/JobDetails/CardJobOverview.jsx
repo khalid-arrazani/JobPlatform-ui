@@ -12,10 +12,14 @@ import BadgeOutlinedIcon from "@mui/icons-material/BadgeOutlined";
 import TimelineOutlinedIcon from "@mui/icons-material/TimelineOutlined";
 import PaidOutlinedIcon from "@mui/icons-material/PaidOutlined";
 import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
+import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
 import FlagOutlinedIcon from "@mui/icons-material/FlagOutlined";
 
-export default function JobOverview() {
+import { millify } from "millify";
+import { formatDistanceToNow } from "date-fns";
+
+
+export default function JobOverview({jobInfo}) {
 
 
   return (
@@ -51,7 +55,7 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        Frontend Developer
+        {jobInfo?.title}
       </Typography>
     </Box>
   </Box>
@@ -71,7 +75,7 @@ export default function JobOverview() {
           color: "#8B5CF6",
         }}
       >
-        Google
+        {jobInfo?.createdBy.companyName}
       </Typography>
     </Box>
   </Box>
@@ -85,7 +89,7 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        London, United Kingdom (Hybrid)
+        {jobInfo?.location}
       </Typography>
     </Box>
   </Box>
@@ -99,10 +103,26 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        Full Time
+      {jobInfo?.jobType}
+
       </Typography>
     </Box>
   </Box>
+
+  {/* Work Mode */}
+<Box sx={{ display: "flex", gap: 1.5, mb: 1 }}>
+  <WorkOutlineOutlinedIcon sx={{ color: "#8B5CF6" }} />
+
+  <Box>
+    <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+      Work Mode
+    </Typography>
+
+    <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+      {jobInfo.workMode}
+    </Typography>
+  </Box>
+</Box>
 
   {/* Experience */}
   <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
@@ -113,7 +133,7 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        Mid Level (2 - 4 years)
+        {jobInfo?.experienceLevel} Level 
       </Typography>
     </Box>
   </Box>
@@ -127,7 +147,7 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        $90,000 - $120,000 / year
+        {`${millify(jobInfo?.minSalary)} - ${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency} / ${jobInfo?.salaryPeriod}`}
       </Typography>
     </Box>
   </Box>
@@ -141,24 +161,17 @@ export default function JobOverview() {
       </Typography>
 
       <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        2 days ago
+        {` ${jobInfo?.createdAt
+                              ? formatDistanceToNow(new Date(jobInfo.createdAt), {
+                                  addSuffix: true,
+                                })
+                              : ""}`
+                          }
       </Typography>
     </Box>
   </Box>
 
-  {/* Applicants */}
-  <Box sx={{ display: "flex", gap: 1.5, mb: 1 }}>
-    <GroupOutlinedIcon sx={{ color: "#8B5CF6" }} />
-    <Box>
-      <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
-        Applicants
-      </Typography>
 
-      <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
-        248 applicants
-      </Typography>
-    </Box>
-  </Box>
 
   <Divider sx={{ my: 2 }} />
 

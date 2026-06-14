@@ -97,15 +97,17 @@ export default function JobDetailsPage() {
           >
             Back to Jobs
           </Button>
-          <CardCompany />
-          <DescriptionSection />
-          <AbouttheCompany />
+
+
+          <CardCompany jobInfo={job}/>
+          <DescriptionSection jobInfo={job}/>
+          <AbouttheCompany jobInfo={job}/>
           <Divider />
         </Box>
 
         <Box sx={{ height: "100%", width: "28%" }}>
-          <JobOverview />
-          <SkillsCard />
+          <JobOverview jobInfo={job}/>
+          <SkillsCard jobInfo={job}/>
           <Divider />
         </Box>
       </Box>

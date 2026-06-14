@@ -1,27 +1,14 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Box, Card, Typography } from "@mui/material";
 
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 
-export default function AbouttheCompany() {
+export default function AbouttheCompany({jobInfo}) {
   const [expanded, setExpanded] = useState(false);
+  const [description, setDescription] = useState("");
 
-  const description = `Google is a global technology company focused on
-organizing the world's information and making it
-universally accessible and useful.
-
-Founded in 1998, Google develops products used
-by billions of people, including Search, Maps,
-YouTube, Android, and Google Cloud.
-
-The company values innovation, collaboration,
-diversity, and continuous learning.
-
-Website: google.com
-Industry: Technology
-Company Size: 100,000+ employees
-Founded: 1998`;
-
+ 
+useEffect(()=>{setDescription(jobInfo?.createdBy.companyDescription)},[jobInfo?.createdBy])
   return (
     <Card
       sx={{
