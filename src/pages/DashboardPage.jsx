@@ -2,6 +2,7 @@ import DashboardLayout from "../layouts/DashboardLayout.jsx";
 import JobsPage from "../components/dashboard/Jobs/JobsPage.jsx";
 import CompaniesPage from "../components/dashboard/Companies/CompaniesPage.jsx";
 import JobDetailsPage from "../components/dashboard/JobDetails/JobDetailspage.jsx";
+import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 
@@ -15,6 +16,7 @@ export default function DashboardPage() {
         <Route path="Jobs" element={<JobsPage />} />
         <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
         <Route path="Companies" element={<CompaniesPage />} />
+        <Route path="Saved" element={<SavedJobs />} />
       </Routes>
 
     </DashboardLayout>

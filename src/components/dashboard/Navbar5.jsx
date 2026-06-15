@@ -37,7 +37,7 @@ const location = useLocation();
 const currentTab = {
   "/Dashboard/Jobs": 0,
   "/Dashboard/Companies":1,
-  "/Dashboard/saved": 2,
+  "/Dashboard/Saved": 2,
   "/Dashboard/applications": 3,
 }[location.pathname] ?? 0;
 
@@ -134,7 +134,8 @@ const currentTab = {
             />
 
             <Tab
-              onClick={() => setTap(2)}
+                            onClick={() => navigate("/Dashboard/Saved")}
+
               label="Saved"
               sx={{
                 textTransform: "none",
