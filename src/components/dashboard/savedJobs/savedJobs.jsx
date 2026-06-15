@@ -12,7 +12,7 @@ export default function SavedJobs() {
           width: "100vw",
           height: "100%",
           bgcolor: "#dcdbdb",
-          display: "flex",
+          display: "flex",boxSizing: "border-box"
         }}
       >
         {/* left side header and SavedJobsList */}
@@ -23,7 +23,6 @@ export default function SavedJobs() {
             height: "100%",
             bgcolor: "#ffffff",
             display: "flex",
-      
             flexDirection:"column",
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
@@ -33,12 +32,12 @@ export default function SavedJobs() {
             <Header/>
             <Box
             sx={{
-              height: "82%",
+             height: "82%",
               width: "100%",
               display:"flex",
               flexDirection:"column",
               justifyContent:"space-between",
-              bgcolor:"#a63737"
+  
             }}
           >
             <ListJobsSaved/>
