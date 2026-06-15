@@ -104,7 +104,7 @@ import BookmarkAddedOutlinedIcon from '@mui/icons-material/BookmarkAddedOutlined
 export default function ListJobsSaved() {
   return (
     <>
-    <Box sx={{height:"100%",overflow:"auto"}}>
+    <Box sx={{height:"90%",overflow:"auto"}}>
      {jobs.map((job) => (
       <Card
         sx={{
