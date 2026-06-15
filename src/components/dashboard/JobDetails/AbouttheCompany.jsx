@@ -60,7 +60,7 @@ useEffect(()=>{setDescription(jobInfo?.createdBy.companyDescription)},[jobInfo?.
           {description}
         </Typography>
 
-        {description.length > 250 && (
+        {description?.length > 250 && (
           <Typography
             onClick={() => setExpanded(!expanded)}
             sx={{

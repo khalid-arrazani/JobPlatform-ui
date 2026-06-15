@@ -19,32 +19,26 @@ import { useAuth } from "../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
 
-export default function CardCompany({ jobInfo , JobId }) {
-const { ...state } = useJob();
+export default function CardCompany({ jobInfo, JobId }) {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
 
   useEffect(() => {
-    setJobs(state);
-  }, [state?.JobInfo]);
+    setJobs(jobInfo);
+  }, [jobInfo]);
 
+  console.log(15644, jobs);
 
-  const saveJob = async (e) => {
-   
+  const saveJob = async () => {
     try {
       setJobs((prev) => ({
         ...prev,
-        JobInfo: {
-          ...prev.JobInfo,
-          jobs: prev.JobInfo?.jobs?.map((job) =>
-            job._id === JobId ? { ...job, isSaved: !job?.isSaved } : job,
-          ),
-        },
+        isSaved: !prev.isSaved,
       }));
 
       const savejobs = await toggleSaveJob({
-       jobId : JobId
+        jobId: JobId,
       });
       setSnackBar({
         open: true,
@@ -59,15 +53,8 @@ const { ...state } = useJob();
       });
       setJobs((prev) => ({
         ...prev,
-        JobInfo: {
-          ...prev.JobInfo,
-          jobs: prev.JobInfo.jobs.map((job) =>
-            job._id === JobId ? { ...job, isSaved: !job?.isSaved } : job,
-          ),
-        },
+        isSaved: !prev.isSaved,
       }));
-
-      
     }
   };
   return (
@@ -128,12 +115,13 @@ const { ...state } = useJob();
                   }}
                 />
                 <Chip
-                  label={`Posted ${jobInfo?.createdAt
+                  label={`Posted ${
+                    jobInfo?.createdAt
                       ? formatDistanceToNow(new Date(jobInfo.createdAt), {
                           addSuffix: true,
                         })
-                      : ""}`
-                  }
+                      : ""
+                  }`}
                   size="small"
                   sx={{
                     bgcolor: "#f2f0f0",
@@ -193,8 +181,6 @@ const { ...state } = useJob();
                     fontFamily: "-apple-system",
                   }}
                 />
-
-                
               </Stack>
             </Box>
           </Box>
@@ -203,11 +189,13 @@ const { ...state } = useJob();
         <Stack direction="row" spacing={2}>
           <Button
             variant="outlined"
-            startIcon= {jobs?.isSaved ? (
-                    <TurnedInIcon sx={{ color: "#1976d2" }} />
-                  ) : (
-                    <TurnedInNotOutlinedIcon />
-                  )}
+            startIcon={
+              jobs?.isSaved ? (
+                <TurnedInIcon />
+              ) : (
+                <TurnedInNotOutlinedIcon />
+              )
+            }
             onClick={saveJob}
             sx={{
               borderRadius: "14px",
@@ -215,7 +203,10 @@ const { ...state } = useJob();
               px: 1,
               py: 1,
               borderColor: "#DDD",
-              color: "#a320e5",
+
+              color:  jobs?.isSaved ? "#ffffff" : "#a320e5",
+              background: jobs?.isSaved ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)" : "#ffffff" ,
+
               fontSize: "0.8rem",
             }}
           >
@@ -231,14 +222,18 @@ const { ...state } = useJob();
               px: 2,
               py: 1.2,
               fontWeight: 300,
-              background:
-                "linear-gradient(30deg, #8e1ef8 0%, #be81fa 35%, #8518fa 100%)",
+            
+             background:
+                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+              transition: "all 0.3s ease",
 
               "&:hover": {
                 background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
               },
               fontSize: "0.8rem",
             }}
+            
           >
             Apply Now
           </Button>
