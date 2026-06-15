@@ -3,48 +3,35 @@ import { Box } from "@mui/material";
 import Header from "./header";
 
 import ListJobsSaved from "./ListJobsSaved";
+import ProfileCard from "./ProfileCard";
 
 export default function SavedJobs() {
   return (
     <>
       <Box
         sx={{
+            
           width: "100vw",
-          height: "100%",
+          height: "92.4vh",
           bgcolor: "#dcdbdb",
-          display: "flex",boxSizing: "border-box"
+          display: "flex",
         }}
       >
         {/* left side header and SavedJobsList */}
-
         <Box
           sx={{
             width: "70vw",
             height: "100%",
             bgcolor: "#ffffff",
             display: "flex",
-            flexDirection:"column",
+            flexDirection: "column",
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
             px: 5,
           }}
         >
-            <Header/>
-            <Box
-            sx={{
-             height: "82%",
-              width: "100%",
-              display:"flex",
-              flexDirection:"column",
-              justifyContent:"space-between",
-  
-            }}
-          >
-            <ListJobsSaved/>
-        
-
-          </Box>
-
+          <Header />
+          <ListJobsSaved/>
         </Box>
 
         {/* right side profile card  */}
@@ -65,7 +52,9 @@ export default function SavedJobs() {
               bgcolor: "#f5eaf9bb",
               borderRadius: "10px",
             }}
-          ></Box>
+          >
+            <ProfileCard/>
+          </Box>
         </Box>
       </Box>
     </>

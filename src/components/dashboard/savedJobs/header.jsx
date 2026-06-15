@@ -10,7 +10,6 @@ export default function Header (){
             sx={{
               height: "18%",
               width: "100%",
-   
               display:"flex",
               justifyContent:"space-between",
               borderBottom:"solid 0.1px #8d8d8d3a"

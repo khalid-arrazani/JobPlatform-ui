@@ -49,6 +49,7 @@ export default function DashboardLayout({ children, part, setPart }) {
         flexDirection: "column",
         background: "#e8e8e8",
         padding: 0,
+        boxSizing:"border-box"
       }}
     >
       <Box
@@ -59,7 +60,7 @@ export default function DashboardLayout({ children, part, setPart }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderBottom:"solid 2px #b3afaf3e",
+          borderBottom:"solid 2px #b3afaf3e"
         
         }}
       >
