@@ -363,13 +363,11 @@ export default function ListJobsSaved({ savedJobs , handleChange }) {
 
         <Pagination
          onChange={handleChange}
-
          count={savedJobs?.totalPages}
-
           sx={{
             mt: "auto",
             alignSelf: "center",
-            mb: 1,
+            mb: 2,
           }}
         />
       </Box>
