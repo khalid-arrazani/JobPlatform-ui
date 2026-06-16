@@ -4,8 +4,28 @@ import Header from "./header";
 
 import ListJobsSaved from "./ListJobsSaved";
 import ProfileCard from "./ProfileCard";
+import { useEffect, useState } from "react";
+import { getSavedJobs } from "../../../logic/api/job/Job";
 
 export default function SavedJobs() {
+  const [currentPage , setCurrentPage] = useState(1)
+  const [savedJobs , setSavedJobs] = useState()
+
+  useEffect(()=>{
+   SavedJobs()
+  },[])
+
+  const SavedJobs = async()=>{
+     try{
+      const SavedJobs = await getSavedJobs()
+      console.log(SavedJobs);
+      setSavedJobs(SavedJobs)
+    }catch (err){
+
+      console.log(err);
+    }}
+console.log(savedJobs);
+
   return (
     <>
       <Box
@@ -31,7 +51,7 @@ export default function SavedJobs() {
           }}
         >
           <Header />
-          <ListJobsSaved/>
+          <ListJobsSaved savedJobs={savedJobs} setCurrentPage={setCurrentPage}/>
         </Box>
 
         {/* right side profile card  */}

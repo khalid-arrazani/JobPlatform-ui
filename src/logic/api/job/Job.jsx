@@ -29,10 +29,22 @@ export const getJobID = async (JobId) => {
   return response.data;
 };
 
+
+
+//this for save jobds part 
+
 export const toggleSaveJob  = async (jobData) => {
   const response = await API.post(
     "savedJob/jobs/save",
     jobData,
+    { withCredentials: true }
+  );
+  return response.data;
+};
+
+export const getSavedJobs  = async () => {
+  const response = await API.get(
+    "savedJob/jobs/save", 
     { withCredentials: true }
   );
   return response.data;
