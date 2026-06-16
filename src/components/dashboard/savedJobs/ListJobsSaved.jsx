@@ -23,89 +23,112 @@ const jobs = [
   },
   {
     id: 2,
-    logo: "U",
-    title: "UI/UX Designer",
-    company: "Slack",
-    workMode: "Hybrid",
-    jobType: "Full-time",
-    salary: "$70k - $100k",
-    savedAt: "Saved 5 days ago",
-    skills: ["Figma", "UI Design", "Prototyping"],
-  },
-  {
-    id: 3,
-    logo: "N",
-    title: "Product Manager",
-    company: "Notion",
-    workMode: "Remote",
-    jobType: "Full-time",
-    salary: "$90k - $130k",
-    savedAt: "Saved 1 week ago",
-    skills: ["Strategy", "Roadmapping", "Agile"],
-  },
-  {
-    id: 4,
-    logo: "L",
-    title: "Backend Engineer",
-    company: "LinkedIn",
-    workMode: "On-site",
-    jobType: "Full-time",
-    salary: "$100k - $150k",
-    savedAt: "Saved 1 week ago",
-    skills: ["Node.js", "Python", "PostgreSQL"],
-  },
-  {
-    id: 5,
     logo: "G",
-    title: "Mobile Developer",
+    title: "Backend Developer",
     company: "Google",
     workMode: "Hybrid",
     jobType: "Full-time",
-    salary: "$95k - $140k",
+    salary: "$100k - $140k",
+    savedAt: "Saved 5 hours ago",
+    skills: ["Node.js", "Express", "MongoDB"],
+  },
+  {
+    id: 3,
+    logo: "M",
+    title: "UI/UX Designer",
+    company: "Microsoft",
+    workMode: "On-site",
+    jobType: "Contract",
+    salary: "$70k - $95k",
     savedAt: "Saved yesterday",
-    skills: ["Flutter", "Dart", "Firebase"],
+    skills: ["Figma", "Adobe XD", "Prototyping"],
+  },
+  {
+    id: 4,
+    logo: "A",
+    title: "Mobile Developer",
+    company: "Airbnb",
+    workMode: "Remote",
+    jobType: "Full-time",
+    salary: "$90k - $125k",
+    savedAt: "Saved 3 days ago",
+    skills: ["React Native", "Expo", "Firebase"],
+  },
+  {
+    id: 5,
+    logo: "N",
+    title: "DevOps Engineer",
+    company: "Netflix",
+    workMode: "Hybrid",
+    jobType: "Full-time",
+    salary: "$110k - $150k",
+    savedAt: "Saved 1 week ago",
+    skills: ["Docker", "Kubernetes", "AWS"],
   },
   {
     id: 6,
-    logo: "M",
-    title: "DevOps Engineer",
-    company: "Microsoft",
+    logo: "U",
+    title: "Data Analyst",
+    company: "Uber",
     workMode: "Remote",
-    jobType: "Full-time",
-    salary: "$110k - $160k",
-    savedAt: "Saved 3 days ago",
-    skills: ["Docker", "Kubernetes", "Azure"],
+    jobType: "Part-time",
+    salary: "$65k - $90k",
+    savedAt: "Saved 4 days ago",
+    skills: ["SQL", "Power BI", "Python"],
   },
   {
     id: 7,
-    logo: "A",
-    title: "Data Analyst",
-    company: "Amazon",
-    workMode: "Hybrid",
-    jobType: "Contract",
-    salary: "$75k - $105k",
-    savedAt: "Saved today",
-    skills: ["SQL", "Power BI", "Excel"],
-  },
-  {
-    id: 8,
     logo: "T",
-    title: "QA Engineer",
+    title: "Machine Learning Engineer",
     company: "Tesla",
     workMode: "On-site",
     jobType: "Full-time",
+    salary: "$120k - $170k",
+    savedAt: "Saved today",
+    skills: ["Python", "TensorFlow", "PyTorch"],
+  },
+  {
+    id: 8,
+    logo: "D",
+    title: "Product Manager",
+    company: "Dropbox",
+    workMode: "Hybrid",
+    jobType: "Full-time",
+    salary: "$95k - $130k",
+    savedAt: "Saved 6 days ago",
+    skills: ["Roadmapping", "Agile", "Communication"],
+  },
+  {
+    id: 9,
+    logo: "C",
+    title: "Cybersecurity Specialist",
+    company: "Cisco",
+    workMode: "Remote",
+    jobType: "Contract",
     salary: "$85k - $115k",
-    savedAt: "Saved 4 days ago",
-    skills: ["Cypress", "Jest", "Testing"],
+    savedAt: "Saved 2 weeks ago",
+    skills: ["Network Security", "SIEM", "Penetration Testing"],
+  },
+  {
+    id: 10,
+    logo: "F",
+    title: "Full Stack Developer",
+    company: "Facebook",
+    workMode: "Hybrid",
+    jobType: "Full-time",
+    salary: "$100k - $145k",
+    savedAt: "Saved 8 hours ago",
+    skills: ["React", "Node.js", "PostgreSQL"],
   },
 ];
 import BookmarkAddedOutlinedIcon from "@mui/icons-material/BookmarkAddedOutlined";
+import Pagination from "@mui/material/Pagination";
 
 export default function ListJobsSaved() {
   return (
     <>
       <Box
-        sx={{ height: "82%", overflow: "auto", boxSizing: "border-box", pt: 2 }}
+        sx={{ height: "82%", overflow: "auto", boxSizing: "border-box", pt: 2, display:"flex", flexDirection:"column"}}
       >
         {jobs.map((job) => (
           <Card
@@ -325,6 +348,16 @@ export default function ListJobsSaved() {
             </Box>
           </Card>
         ))}
+
+
+         <Pagination
+    count={10}
+    sx={{
+      mt: "auto",
+      alignSelf: "center", 
+      mb:1
+    }}
+  />
       </Box>
     </>
   );
