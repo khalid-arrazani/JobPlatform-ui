@@ -8,23 +8,31 @@ import { useEffect, useState } from "react";
 import { getSavedJobs } from "../../../logic/api/job/Job";
 
 export default function SavedJobs() {
-  const [currentPage , setCurrentPage] = useState(1)
+
+
+
   const [savedJobs , setSavedJobs] = useState()
+
+ const handleChange = (event, value) => {
+     SavedJobs(value)
+  };
 
   useEffect(()=>{
    SavedJobs()
   },[])
 
-  const SavedJobs = async()=>{
+  const SavedJobs = async(value)=>{
      try{
-      const SavedJobs = await getSavedJobs()
-      console.log(SavedJobs);
+
+      const SavedJobs = await getSavedJobs(value)
+      
       setSavedJobs(SavedJobs)
+      
     }catch (err){
 
       console.log(err);
     }}
-console.log(savedJobs);
+
 
   return (
     <>
@@ -51,7 +59,7 @@ console.log(savedJobs);
           }}
         >
           <Header />
-          <ListJobsSaved savedJobs={savedJobs} setCurrentPage={setCurrentPage}/>
+          <ListJobsSaved savedJobs={savedJobs}  handleChange={handleChange}/>
         </Box>
 
         {/* right side profile card  */}

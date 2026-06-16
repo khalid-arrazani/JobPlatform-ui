@@ -123,16 +123,25 @@ const jobs = [
 ];
 import BookmarkAddedOutlinedIcon from "@mui/icons-material/BookmarkAddedOutlined";
 import Pagination from "@mui/material/Pagination";
+import { millify } from "millify";
+import { formatDistanceToNow } from "date-fns";
 
-export default function ListJobsSaved({savedJobs,setCurrentPage}) {
-  console.log(savedJobs);
-  
+export default function ListJobsSaved({ savedJobs , handleChange }) {
+ 
+
   return (
     <>
       <Box
-        sx={{ height: "82%", overflow: "auto", boxSizing: "border-box", pt: 2, display:"flex", flexDirection:"column"}}
+        sx={{
+          height: "82%",
+          overflow: "auto",
+          boxSizing: "border-box",
+          pt: 2,
+          display: "flex",
+          flexDirection: "column",
+        }}
       >
-        {savedJobs?.jobs.map((job) => (
+        {savedJobs?.jobs?.map((job) => (
           <Card
             key={job.id}
             sx={{
@@ -168,8 +177,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                 }}
               >
                 <Avatar
-
-                src={job.createdBy.companyLogo.url}
+                  src={job?.createdBy?.companyLogo?.url}
                   sx={{
                     width: 70,
                     height: 70,
@@ -177,9 +185,9 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                     background: "linear-gradient(135deg, #9333EA, #3B82F6)",
                     fontSize: "1.8rem",
                     fontWeight: 700,
-                    p:1
+                    p: 1,
                   }}
-                  />
+                />
                 <Box>
                   <Typography
                     sx={{
@@ -188,7 +196,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                       color: "#0F172A",
                     }}
                   >
-                    {job.title}
+                    {job?.title}
                   </Typography>
 
                   <Typography
@@ -198,7 +206,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                       fontSize: "0.9rem",
                     }}
                   >
-                     {job.createdBy.companyName}
+                    {job?.createdBy?.companyName}
                   </Typography>
 
                   <Stack
@@ -209,7 +217,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                   >
                     <Chip
                       size="small"
-                      label={job.workMode}
+                      label={job?.workMode}
                       sx={{
                         bgcolor: "#F8FAFC",
                         borderRadius: "8px",
@@ -218,7 +226,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
 
                     <Chip
                       size="small"
-                      label={job.jobType}
+                      label={job?.jobType}
                       sx={{
                         bgcolor: "#F8FAFC",
                         borderRadius: "8px",
@@ -227,7 +235,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
 
                     <Chip
                       size="small"
-                      label={``}
+                      label={` ${millify(savedJobs?.maxSalary)} - ${millify(savedJobs?.minSalary)} / ${savedJobs?.salaryCurrency}`}
                       sx={{
                         bgcolor: "#F8FAFC",
                         borderRadius: "8px",
@@ -242,14 +250,16 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                       color: "#94A3B8",
                     }}
                   >
-                    {job.savedAt}
+                    {formatDistanceToNow(new Date(job?.createdAt), {
+                      addSuffix: true,
+                    })}
                   </Typography>
                 </Box>
               </Box>
 
               {/* Save Button */}
               <Box
-              size="small"
+                size="small"
                 sx={{
                   display: "flex",
                   flexDirection: "column",
@@ -279,7 +289,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                   flexWrap="wrap"
                   justifyContent="flex-end"
                 >
-                  {job.skills.map((skill) => (
+                  {job?.skills?.slice(0, 3).map((skill) => (
                     <Chip
                       key={skill}
                       label={skill}
@@ -322,11 +332,11 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                     View Details
                   </Button>
 
-                  <Button 
-                  size="small"
+                  <Button
+                    size="small"
                     sx={{
                       minWidth: 130,
-                    
+
                       height: 40,
                       borderRadius: "12px",
                       textTransform: "none",
@@ -351,15 +361,17 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
           </Card>
         ))}
 
+        <Pagination
+         onChange={handleChange}
 
-         <Pagination
-    count={10}
-    sx={{
-      mt: "auto",
-      alignSelf: "center", 
-      mb:1
-    }}
-  />
+         count={savedJobs?.totalPages}
+
+          sx={{
+            mt: "auto",
+            alignSelf: "center",
+            mb: 1,
+          }}
+        />
       </Box>
     </>
   );

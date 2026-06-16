@@ -42,9 +42,10 @@ export const toggleSaveJob  = async (jobData) => {
   return response.data;
 };
 
-export const getSavedJobs  = async () => {
+
+export const getSavedJobs  = async (page) => {
   const response = await API.get(
-    "savedJob/jobs/save", 
+    `savedJob/jobs/save/${page}`, 
     { withCredentials: true }
   );
   return response.data;

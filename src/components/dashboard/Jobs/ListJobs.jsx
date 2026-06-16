@@ -17,7 +17,7 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../logic/context/AuthContext";
-import {  useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { millify } from "millify";
 
 export default function JobList() {
@@ -25,7 +25,7 @@ export default function JobList() {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   useEffect(() => {
     setJobs(state);
@@ -107,7 +107,7 @@ export default function JobList() {
               mr: 1,
               alignItems: "center",
               minHeight: "9.5rem",
-              p:1,
+              p: 1,
             }}
           >
             {/* Logo */}
@@ -119,17 +119,24 @@ export default function JobList() {
                 alignItems: "center",
                 background: "#00000000",
                 height: "100%",
-                borderRight:"solid 1px #84848438"
+                borderRight: "solid 1px #84848438",
               }}
             >
               <Avatar
                 src={job.createdBy?.companyLogo?.url}
-                sx={{ width: "5rem", height: "5rem", backgroundSize: "cover",background:"#00000014",borderRadius:"10px",p:2 }}
+                sx={{
+                  width: "5rem",
+                  height: "5rem",
+                  backgroundSize: "cover",
+                  background: "#00000014",
+                  borderRadius: "10px",
+                  p: 2,
+                }}
               />
             </Box>
 
             {/* Info */}
-            <Box sx={{ flex: 1, height: "100%"}}>
+            <Box sx={{ flex: 1, height: "100%" }}>
               <Typography
                 sx={{
                   fontSize: "1.4rem",
@@ -206,26 +213,21 @@ export default function JobList() {
                 ))}
               </Stack>
 
-              <Box sx={{ mt:1  }}>
-                
-                  <Chip
-           
-                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
-
-                    size="small"
-                 
-                     sx={{ fontSize: "0.7rem",
-                      height: "22px",
-                        bgcolor: "#c4e6d2",
-                        color: "#289e5d",
-                        fontWeight: 400,
-                        py:1.5,
-                        borderRadius:"8px"
-                       
-                      }}
-                  />
+              <Box sx={{ mt: 1 }}>
+                <Chip
+                  label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+                  size="small"
+                  sx={{
+                    fontSize: "0.7rem",
+                    height: "22px",
+                    bgcolor: "#c4e6d2",
+                    color: "#289e5d",
+                    fontWeight: 400,
+                    py: 1.5,
+                    borderRadius: "8px",
+                  }}
+                />
               </Box>
-
 
               <Button
                 variant="contained"
