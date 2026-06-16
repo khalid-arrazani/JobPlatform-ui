@@ -124,7 +124,8 @@ const jobs = [
 import BookmarkAddedOutlinedIcon from "@mui/icons-material/BookmarkAddedOutlined";
 import Pagination from "@mui/material/Pagination";
 
-export default function ListJobsSaved() {
+export default function ListJobsSaved({savedJobs,setCurrentPage}) {
+  console.log(savedJobs);
   return (
     <>
       <Box
