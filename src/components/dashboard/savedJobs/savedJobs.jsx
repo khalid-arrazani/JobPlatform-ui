@@ -45,17 +45,10 @@ export default function SavedJobs() {
             justifyContent: "center",
           }}
         >
-          <Box
-            sx={{
-              height: "95%",
-              width: "90%",
-              bgcolor: "#f5eaf9bb",
-              borderRadius: "10px",
-            }}
-          >
+         
             <ProfileCard/>
           </Box>
-        </Box>
+   
       </Box>
     </>
   );
