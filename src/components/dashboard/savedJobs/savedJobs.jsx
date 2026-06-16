@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Pagination } from "@mui/material";
 
 import Header from "./header";
 
@@ -6,12 +6,14 @@ import ListJobsSaved from "./ListJobsSaved";
 import ProfileCard from "./ProfileCard";
 import { useEffect, useState } from "react";
 import { getSavedJobs } from "../../../logic/api/job/Job";
+import LoadingList from "./LoadingList";
 
 export default function SavedJobs() {
 
 
 
   const [savedJobs , setSavedJobs] = useState()
+  const [loading , setLoading ] = useState(false)
 
  const handleChange = (event, value) => {
      SavedJobs(value)
@@ -22,6 +24,7 @@ export default function SavedJobs() {
   },[])
 
   const SavedJobs = async(value)=>{
+    setLoading(true)
      try{
 
       const SavedJobs = await getSavedJobs(value)
@@ -31,6 +34,8 @@ export default function SavedJobs() {
     }catch (err){
 
       console.log(err);
+    }finally{
+      setLoading(false)
     }}
 
 
@@ -59,7 +64,17 @@ export default function SavedJobs() {
           }}
         >
           <Header />
-          <ListJobsSaved savedJobs={savedJobs}  handleChange={handleChange}/>
+          { loading ? <LoadingList/> : <ListJobsSaved savedJobs={savedJobs}  handleChange={handleChange}/> }
+            <Pagination
+                   onChange={handleChange}
+                   
+                   count={savedJobs?.totalPages}
+                    sx={{
+                      mt: "auto",
+                      alignSelf: "center",
+                      mb: 2,
+                    }}
+                  />
         </Box>
 
         {/* right side profile card  */}
