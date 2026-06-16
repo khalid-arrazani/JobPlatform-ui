@@ -126,12 +126,13 @@ import Pagination from "@mui/material/Pagination";
 
 export default function ListJobsSaved({savedJobs,setCurrentPage}) {
   console.log(savedJobs);
+  
   return (
     <>
       <Box
         sx={{ height: "82%", overflow: "auto", boxSizing: "border-box", pt: 2, display:"flex", flexDirection:"column"}}
       >
-        {jobs.map((job) => (
+        {savedJobs?.jobs.map((job) => (
           <Card
             key={job.id}
             sx={{
@@ -167,6 +168,8 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                 }}
               >
                 <Avatar
+
+                src={job.createdBy.companyLogo.url}
                   sx={{
                     width: 70,
                     height: 70,
@@ -174,11 +177,9 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                     background: "linear-gradient(135deg, #9333EA, #3B82F6)",
                     fontSize: "1.8rem",
                     fontWeight: 700,
+                    p:1
                   }}
-                >
-                  {job.logo}
-                </Avatar>
-
+                  />
                 <Box>
                   <Typography
                     sx={{
@@ -197,7 +198,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
                       fontSize: "0.9rem",
                     }}
                   >
-                    {job.company}
+                     {job.createdBy.companyName}
                   </Typography>
 
                   <Stack
@@ -226,7 +227,7 @@ export default function ListJobsSaved({savedJobs,setCurrentPage}) {
 
                     <Chip
                       size="small"
-                      label={job.salary}
+                      label={``}
                       sx={{
                         bgcolor: "#F8FAFC",
                         borderRadius: "8px",
