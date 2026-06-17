@@ -42,9 +42,6 @@ const currentTab = {
 }[location.pathname] ?? 0;
 
 
-
-
-
   return (
     <Box
       position="static"

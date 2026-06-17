@@ -30,7 +30,7 @@ export default function SavedJobs() {
       const SavedJobs = await getSavedJobs(value)
       
       setSavedJobs(SavedJobs)
-      console.log(SavedJobs.jobs[0].salaryCurrency);
+
     }catch (err){
 
       console.log(err);
