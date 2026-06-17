@@ -10,6 +10,7 @@ export default function CompanyPage() {
 
   return <>
   <CompanyLayout>
+
      <Company_Page/>
   </CompanyLayout>
   </>
