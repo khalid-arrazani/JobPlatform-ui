@@ -1,12 +1,16 @@
-import { Box, Avatar, IconButton } from "@mui/material";
+import { Box, Avatar, IconButton, Button } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import MainList from "./mainList.jsx";
 
+import Badge from "@mui/material/Badge";
+import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
+import AddIcon from "@mui/icons-material/Add";
 // import { useLocation, useNavigate } from "react-router-dom";
 
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+import Tooltip from "@mui/material/Tooltip";
 
 // import { NavLink } from "react-router-dom";
 
@@ -22,7 +26,6 @@ import PostJobModal from "./PostJobModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
-  
   const [open, setOpen] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);
@@ -31,17 +34,15 @@ export default function Navbar() {
 
   const navigate = useNavigate();
 
+  const location = useLocation();
 
-
-const location = useLocation();
-
-const currentTab = {
-  "/Dashboard/Jobs": 0,
-  "/Dashboard/Companies":1,
-  "/Dashboard/Saved": 2,
-  "/Dashboard/applications": 3,
-}[location.pathname] ?? 0;
-
+  const currentTab =
+    {
+      "/Dashboard/Jobs": 0,
+      "/Dashboard/Companies": 1,
+      "/Dashboard/Saved": 2,
+      "/Dashboard/applications": 3,
+    }[location.pathname] ?? 0;
 
   return (
     <Box
@@ -58,6 +59,7 @@ const currentTab = {
       }}
     >
       <PostJobModal open={openModal} setOpen={setOpenModal} />
+
       <Box
         sx={{
           width: "95%",
@@ -98,7 +100,6 @@ const currentTab = {
         <Box display="flex" gap={1}>
           <Tabs
             value={currentTab}
-            
             textColor="inherit"
             sx={{
               minHeight: 64,
@@ -123,7 +124,7 @@ const currentTab = {
 
             <Tab
               label="Companies"
-             onClick={() => navigate("/Dashboard/Companies")}
+              onClick={() => navigate("/Dashboard/Companies")}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -132,8 +133,7 @@ const currentTab = {
             />
 
             <Tab
-                            onClick={() => navigate("/Dashboard/Saved")}
-
+              onClick={() => navigate("/Dashboard/Saved")}
               label="Saved"
               sx={{
                 textTransform: "none",
@@ -155,10 +155,37 @@ const currentTab = {
         </Box>
 
         {/* Right */}
-        <Box sx={{ display: "flex", gap: "0.4rem" }}>
-          <IconButton>
+        <Box sx={{ display: "flex", gap: "0.4rem"}}>
+
+            <IconButton sx={{ mr: 1,borderRadius:"10px",height:"90%",alignSelf:"center" ,fontSize:13,gap:0.5,border:"solid 1px #88858535",fontFamily:"-apple-system" }}>
+            <Badge
+              overlap="circular"
+              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+
+              badgeContent={
+                <AddIcon
+                  sx={{
+                    fontSize: 9,
+                    bgcolor: "#1976d2",
+                    color: "white",
+                    borderRadius: "10px",
+                    p: 0.2,
+                  }}
+                />
+              }
+            >
+              <BusinessOutlinedIcon />
+              
+            </Badge>
+            add Company
+          </IconButton>
+
+          <IconButton >
             <NotificationsNoneOutlinedIcon />
           </IconButton>
+
+      
+
           <IconButton
             onClick={() => {
               setOpenModal(true);
