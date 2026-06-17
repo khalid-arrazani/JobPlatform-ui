@@ -22,6 +22,7 @@ import PostJobModal from "./PostJobModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
+  
   const [open, setOpen] = useState(false);
 
   const [openModal, setOpenModal] = useState(false);

@@ -18,8 +18,11 @@ import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 import PsychologyIcon from "@mui/icons-material/Psychology";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function ProfileCard() {
+  const { ...state } = useProfile();
+  console.log(state.user);
   return (
     <Card
       sx={{
@@ -67,7 +70,7 @@ export default function ProfileCard() {
           }}
         >
           <Avatar
-            src="https://i.pravatar.cc/150?img=12"
+            src={state.user?.profile?.ProfileImage?.url}
             sx={{
               width: 80,
               height: 80,
@@ -80,13 +83,13 @@ export default function ProfileCard() {
             fontWeight={600}
             sx={{ fontWeight: 600, fontSize: "18px", mt: 1 }}
           >
-            Younes Dev
+            {state.user?.profile?.fullName}
           </Typography>
 
           <Typography
             sx={{ fontWeight: 400, fontSize: "14px", color: "#444343" }}
           >
-            karazani2003@gmail.com
+            {state.user?.profile?.userId?.email}
           </Typography>
 
           <Stack
@@ -101,7 +104,7 @@ export default function ProfileCard() {
             <Typography
               sx={{ fontWeight: 400, fontSize: "12px", color: "#444343" }}
             >
-              Casablanca, Morocco
+              {state.user?.profile?.location}
             </Typography>
           </Stack>
         </Box>
@@ -120,8 +123,7 @@ export default function ProfileCard() {
               </Typography>
 
               <Typography sx={{ fontSize: "12px", color: "#695d6b" }}>
-                {" "}
-                2+ Years
+                {state.user?.profile?.experienceLevel}
               </Typography>
             </Box>
           </Stack>
