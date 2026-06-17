@@ -124,7 +124,7 @@ export default function ListJobsSaved({ savedJobs  }) {
 
                     <Chip
                       size="small"
-                      label={` ${millify(savedJobs?.maxSalary)} - ${millify(savedJobs?.minSalary)} / ${savedJobs?.salaryCurrency}`}
+                      label={`${millify(job?.minSalary)} - ${millify(job?.maxSalary)} ${job?.salaryCurrency} / ${job?.salaryPeriod}`}
                       sx={{
                         bgcolor: "#F8FAFC",
                         borderRadius: "8px",
