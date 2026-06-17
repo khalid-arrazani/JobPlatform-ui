@@ -8,7 +8,7 @@ import AccountSettingsPage from "./pages/AccountSettingsPage.jsx"
 import SimpleSnackbar from "./logic/context/SnackBars.jsx";
 
 import JobDetailsPage from "./pages/JobDetailsPage.jsx";
-import CompanyLayout from "./layouts/CompanyLayout.jsx";
+// import CompanyLayout from "./layouts/CompanyLayout.jsx";
 
 
 
@@ -21,12 +21,14 @@ function App() {
     <Routes>
 
 
+
       <Route path="/Dashboard/*"element={<DashboardPage />} />
+      
 
       <Route path="/profile" element={<ProfilePage />} />
 
       <Route path="/login" element={<AuthPage1 />} />
-      
+
 
       <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
@@ -35,6 +37,9 @@ function App() {
 
       
       <Route path="/JobDetails" element={<JobDetailsPage />} />
+
+
+
 
       
     </Routes></>

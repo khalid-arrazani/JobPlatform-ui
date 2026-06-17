@@ -1,8 +1,10 @@
 import { Box, Typography, Avatar, LinearProgress, Stack } from "@mui/material";
 
 export default function CompanyHeader() {
-  return (
-    <Box
+  return<>
+
+
+     <Box
       sx={{
         width: "100%",
         height: "40vh",
@@ -41,6 +43,7 @@ export default function CompanyHeader() {
         <Stack direction="row" spacing={2} alignItems="center">
           <Avatar
             src="https://logo.clearbit.com/microsoft.com"
+            
             sx={{
               width: 70,
               height: 70,
@@ -86,5 +89,10 @@ export default function CompanyHeader() {
 
       
     </Box>
-  );
+
+
+
+
+    </>
+
 }
