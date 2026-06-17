@@ -21,6 +21,7 @@ export default function DashboardPage() {
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Company" element={<CompanyPage />} />
+        
       </Routes>
 
     </DashboardLayout>

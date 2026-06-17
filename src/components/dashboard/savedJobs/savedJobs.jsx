@@ -19,9 +19,13 @@ export default function SavedJobs() {
      SavedJobs(value)
   };
 
+
+
   useEffect(()=>{
    SavedJobs()
   },[])
+
+  
 
   const SavedJobs = async(value)=>{
     setLoading(true)
@@ -34,6 +38,7 @@ export default function SavedJobs() {
     }catch (err){
 
       console.log(err);
+
     }finally{
       setLoading(false)
     }}

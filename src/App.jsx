@@ -23,7 +23,7 @@ function App() {
 
 
       <Route path="/Dashboard/*"element={<DashboardPage />} />
-      
+
 
       <Route path="/profile" element={<ProfilePage />} />
 
