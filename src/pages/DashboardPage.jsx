@@ -3,8 +3,10 @@ import JobsPage from "../components/dashboard/Jobs/JobsPage.jsx";
 import CompaniesPage from "../components/dashboard/Companies/CompaniesPage.jsx";
 import JobDetailsPage from "../components/dashboard/JobDetails/JobDetailspage.jsx";
 import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
+
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
+import CompanyLayout from "../layouts/CompanyLayout.jsx";
 
 export default function DashboardPage() {
   const [part, setPart] = useState(0);
@@ -17,6 +19,7 @@ export default function DashboardPage() {
         <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
+        <Route path="My_Company" element={<CompanyLayout />} />
       </Routes>
 
     </DashboardLayout>

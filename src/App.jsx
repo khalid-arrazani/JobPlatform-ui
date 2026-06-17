@@ -6,7 +6,10 @@ import CompleteProfilePage from "./pages/CompleteProfilePage.jsx";
 import AccountSettingsPage from "./pages/AccountSettingsPage.jsx"
 
 import SimpleSnackbar from "./logic/context/SnackBars.jsx";
+
 import JobDetailsPage from "./pages/JobDetailsPage.jsx";
+import CompanyLayout from "./layouts/CompanyLayout.jsx";
+
 
 import { Routes, Route } from "react-router-dom";
 
@@ -25,6 +28,8 @@ function App() {
       <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
       <Route path="/AccountSettings" element={<AccountSettingsPage />} />
+
+      
       
       <Route path="/JobDetails" element={<JobDetailsPage />} />
 

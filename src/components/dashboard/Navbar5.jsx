@@ -42,7 +42,10 @@ export default function Navbar() {
       "/Dashboard/Companies": 1,
       "/Dashboard/Saved": 2,
       "/Dashboard/applications": 3,
+      "/Dashboard/My_Company": 4,
     }[location.pathname] ?? 0;
+
+  console.log(location);
 
   return (
     <Box
@@ -98,6 +101,7 @@ export default function Navbar() {
 
         {/* Navigation */}
         <Box display="flex" gap={1}>
+          
           <Tabs
             value={currentTab}
             textColor="inherit"
@@ -109,6 +113,7 @@ export default function Navbar() {
                 borderRadius: "999px",
                 top: "51px",
               },
+             width:"110%"
             }}
           >
             <Tab
@@ -151,40 +156,51 @@ export default function Navbar() {
                 minHeight: 64,
               }}
             />
+
+            <IconButton
+              onClick={() => navigate("/Dashboard/My_Company")}
+              sx={{
+                mr: 1,
+                borderRadius: "5px",
+                height: "90%",
+                alignSelf: "center",
+                fontSize: 13,
+                gap: 0.5,
+                border: "solid 1px #88858535",
+                fontFamily: "-apple-system",
+
+              }}
+              style={{position:"relative",
+               right:"-3rem"
+              }}
+            >
+              <Badge
+                overlap="circular"
+                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                badgeContent={
+                  <AddIcon
+                    sx={{
+                      fontSize: 9,
+                      bgcolor: "#1976d2",
+                      color: "white",
+                      borderRadius: "10px",
+                      p: 0.2,
+                    }}
+                  />
+                }
+              >
+                <BusinessOutlinedIcon />
+              </Badge>
+              add Company
+            </IconButton>
           </Tabs>
         </Box>
 
         {/* Right */}
-        <Box sx={{ display: "flex", gap: "0.4rem"}}>
-
-            <IconButton sx={{ mr: 1,borderRadius:"10px",height:"90%",alignSelf:"center" ,fontSize:13,gap:0.5,border:"solid 1px #88858535",fontFamily:"-apple-system" }}>
-            <Badge
-              overlap="circular"
-              anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-
-              badgeContent={
-                <AddIcon
-                  sx={{
-                    fontSize: 9,
-                    bgcolor: "#1976d2",
-                    color: "white",
-                    borderRadius: "10px",
-                    p: 0.2,
-                  }}
-                />
-              }
-            >
-              <BusinessOutlinedIcon />
-              
-            </Badge>
-            add Company
-          </IconButton>
-
-          <IconButton >
+        <Box sx={{ display: "flex", gap: "0.4rem" }}>
+          <IconButton>
             <NotificationsNoneOutlinedIcon />
           </IconButton>
-
-      
 
           <IconButton
             onClick={() => {

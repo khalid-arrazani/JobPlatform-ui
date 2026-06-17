@@ -1,4 +1,9 @@
 
 
 
-export
+export default function CompanyPage (){
+
+    return <>
+    
+    </>
+}
