@@ -11,6 +11,7 @@ import JobDetailsPage from "./pages/JobDetailsPage.jsx";
 import CompanyLayout from "./layouts/CompanyLayout.jsx";
 
 
+
 import { Routes, Route } from "react-router-dom";
 
 function App() {
@@ -19,17 +20,19 @@ function App() {
     
     <Routes>
 
+
       <Route path="/Dashboard/*"element={<DashboardPage />} />
 
       <Route path="/profile" element={<ProfilePage />} />
 
       <Route path="/login" element={<AuthPage1 />} />
+      
 
       <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
       <Route path="/AccountSettings" element={<AccountSettingsPage />} />
 
-      
+
       
       <Route path="/JobDetails" element={<JobDetailsPage />} />
 
