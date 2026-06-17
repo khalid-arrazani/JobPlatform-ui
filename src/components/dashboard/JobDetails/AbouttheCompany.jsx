@@ -22,7 +22,6 @@ useEffect(()=>{setDescription(jobInfo?.createdBy.companyDescription)},[jobInfo?.
         mb: 2,
       }}
     >
-      
       <Typography
         sx={{
           fontSize: "1.2rem",
