@@ -1,4 +1,4 @@
-import { Box, Card, Typography } from "@mui/material";
+import { Box, Card, Typography, Chip } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -66,8 +66,6 @@ export default function CompanyPage() {
               />
             </Card>
 
-
-
             {/* Company Name */}
             <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
               <Typography
@@ -75,8 +73,7 @@ export default function CompanyPage() {
                   fontSize: "1.6rem",
                   fontWeight: 600,
                   color: "#2e2e2e",
-                  fontFamily:"-apple-system",
-
+                  fontFamily: "-apple-system",
                 }}
               >
                 Google
@@ -135,18 +132,20 @@ export default function CompanyPage() {
                 mt: 0.5,
               }}
             >
-              <LanguageOutlinedIcon sx={{ fontSize: "1rem", color: "#666" }} />
-
-              <Typography
+              <Chip
+                icon={<LanguageOutlinedIcon />}
+                label="google.com"
+                clickable
                 sx={{
-                  fontSize: "0.9rem",
                   color: "#1a73e8",
                   fontWeight: 500,
-                  cursor: "pointer",
+                  bgcolor: "#f5f8ff",
+                  border: "1px solid #dbe7ff",
+                  "& .MuiChip-icon": {
+                    color: "#666",
+                  },
                 }}
-              >
-                www.google.com
-              </Typography>
+              />
             </Box>
           </Box>
         </Box>
