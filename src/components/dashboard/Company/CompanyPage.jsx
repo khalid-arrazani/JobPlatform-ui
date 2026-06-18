@@ -1,4 +1,9 @@
-import { Box,Card,Typography } from "@mui/material";
+import { Box, Card, Typography } from "@mui/material";
+import VerifiedIcon from "@mui/icons-material/Verified";
+import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 export default function CompanyPage() {
   return (
     <>
@@ -32,20 +37,118 @@ export default function CompanyPage() {
             }}
           ></Box>
 
-          <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff", pl:"13.5vw",position: "relative" ,pt:"2vh" }}>
-           
-           <Card sx={{ height: "8.5rem ", width: "8.5rem", bgcolor: "#fffafa" ,position:"absolute", top:"-50%",left:"2%",borderRadius:"15px"}}>
+          <Box
+            sx={{
+              height: "35% ",
+              width: "100%",
+              bgcolor: "#ffffff",
+              pl: "13.5vw",
+              position: "relative",
+              pt: "1vh",
+            }}
+          >
+            <Card
+              sx={{
+                height: "8.5rem ",
+                width: "8.5rem",
+                bgcolor: "#fffafa",
+                position: "absolute",
+                top: "-50%",
+                left: "2%",
+                borderRadius: "15px",
+              }}
+            >
+              <img
+                style={{ width: "100%" }}
+                src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg"
+                alt=""
+                srcset=""
+              />
+            </Card>
 
-            <img style={{width:"100%"}} src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg" alt="" srcset=""  />
-            
-           </Card>
-          <Typography sx={{fontSize:"1.5rem",fontWeight:500,color:"#262626",fontFamily:"-apple-system"}}>
-            Google
-          </Typography>
 
-           
+
+            {/* Company Name */}
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Typography
+                sx={{
+                  fontSize: "1.6rem",
+                  fontWeight: 600,
+                  color: "#2e2e2e",
+                  fontFamily:"-apple-system",
+
+                }}
+              >
+                Google
+              </Typography>
+
+              <VerifiedIcon
+                sx={{
+                  color: "#1a73e8",
+                  fontSize: "1.3rem",
+                }}
+              />
+            </Box>
+
+            {/* Info Row */}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 3,
+                mt: 0.3,
+                flexWrap: "wrap",
+              }}
+            >
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <BusinessCenterOutlinedIcon
+                  sx={{ fontSize: "1rem", color: "#666" }}
+                />
+                <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                  Technology & Internet
+                </Typography>
+              </Box>
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <LocationOnOutlinedIcon
+                  sx={{ fontSize: "1rem", color: "#666" }}
+                />
+                <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                  Mountain View, USA
+                </Typography>
+              </Box>
+
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <GroupsOutlinedIcon sx={{ fontSize: "1rem", color: "#666" }} />
+                <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                  190k+ Employees
+                </Typography>
+              </Box>
+            </Box>
+
+            {/* Website */}
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                gap: 0.5,
+                mt: 0.5,
+              }}
+            >
+              <LanguageOutlinedIcon sx={{ fontSize: "1rem", color: "#666" }} />
+
+              <Typography
+                sx={{
+                  fontSize: "0.9rem",
+                  color: "#1a73e8",
+                  fontWeight: 500,
+                  cursor: "pointer",
+                }}
+              >
+                www.google.com
+              </Typography>
+            </Box>
           </Box>
-
         </Box>
       </Box>
     </>
