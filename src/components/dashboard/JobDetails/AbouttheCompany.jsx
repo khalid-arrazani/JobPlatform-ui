@@ -3,12 +3,13 @@ import { Box, Card, Typography } from "@mui/material";
 
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 
-export default function AbouttheCompany({jobInfo}) {
+export default function AbouttheCompany({ jobInfo }) {
   const [expanded, setExpanded] = useState(false);
   const [description, setDescription] = useState("");
 
- 
-useEffect(()=>{setDescription(jobInfo?.createdBy.companyDescription)},[jobInfo?.createdBy])
+  useEffect(() => {
+    setDescription(jobInfo?.createdBy.companyDescription);
+  }, [jobInfo?.createdBy]);
   return (
     <Card
       sx={{
@@ -27,14 +28,13 @@ useEffect(()=>{setDescription(jobInfo?.createdBy.companyDescription)},[jobInfo?.
           fontSize: "1.2rem",
           fontWeight: 700,
           color: "#1F2937",
-          mb: 2,display: "flex",gap:1
+          mb: 2,
+          display: "flex",
+          gap: 1,
         }}
       >
-   
-          <BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
-          About the Company
-    
-        
+        <BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
+        About the Company
       </Typography>
 
       <Box>
