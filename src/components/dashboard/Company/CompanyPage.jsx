@@ -32,15 +32,15 @@ export default function CompanyPage() {
             }}
           ></Box>
 
-          <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff", px:24 }}>
+          <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff", pl:"14vw" }}>
            
            <Card sx={{ height: "8.5rem ", width: "8.5rem", bgcolor: "#fffafa" ,position:"absolute", top:"30%",left:"8%",borderRadius:"15px" }}>
 
             <img style={{width:"100%"}} src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg" alt="" srcset=""  />
             
            </Card>
+           
 
-bnjh
            
           </Box>
 
