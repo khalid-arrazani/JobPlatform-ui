@@ -134,6 +134,7 @@ export default function CompanyPage() {
             >
               <Chip
                 icon={<LanguageOutlinedIcon />}
+                size="small"
                 label="google.com"
                 clickable
                 sx={{
@@ -143,7 +144,9 @@ export default function CompanyPage() {
                   border: "1px solid #dbe7ff",
                   "& .MuiChip-icon": {
                     color: "#666",
-                  },
+                    width:0.15
+                    
+                  },borderRadius:"5px"
                 }}
               />
             </Box>
