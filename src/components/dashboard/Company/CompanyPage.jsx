@@ -46,7 +46,7 @@ export default function CompanyPage() {
               bgcolor: "#ffffff",
               pl: "13.5vw",
               position: "relative",
-              pt: "1vh",
+              pt: "0.2vh",
             }}
           >
             <Button
@@ -156,7 +156,7 @@ export default function CompanyPage() {
                 display: "flex",
                 alignItems: "center",
                 gap: 0.5,
-                mt: 0.5,
+                mt: 1,
               }}
             >
               <Chip
