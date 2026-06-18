@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box,Card } from "@mui/material";
 export default function CompanyPage() {
   return (
     <>
@@ -14,7 +14,7 @@ export default function CompanyPage() {
       >
         <Box
           sx={{
-            height: "50vh ",
+            height: "46vh ",
             width: "100%",
             bgcolor: "#ffffff",
             borderRadius: "15px",
@@ -34,7 +34,11 @@ export default function CompanyPage() {
 
           <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff" }}>
            
-           <Box sx={{ height: "9.5rem ", width: "9.5rem", bgcolor: "#2e2c2c" ,position:"absolute", top:"30%",left:"9%",borderRadius:"20px" }}></Box>
+           <Card sx={{ height: "8.5rem ", width: "8.5rem", bgcolor: "#fffafa" ,position:"absolute", top:"30%",left:"9%",borderRadius:"15px" }}>
+
+            <img style={{width:"100%"}} src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg" alt="" srcset=""  />
+            
+           </Card>
           </Box>
 
         </Box>
