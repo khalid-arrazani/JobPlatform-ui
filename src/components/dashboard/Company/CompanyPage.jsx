@@ -1,9 +1,11 @@
-import { Box, Card, Typography, Chip } from "@mui/material";
+import { Box, Card, Typography, Chip, Button } from "@mui/material";
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
 export default function CompanyPage() {
   return (
     <>
@@ -40,13 +42,38 @@ export default function CompanyPage() {
           <Box
             sx={{
               height: "35% ",
-              width: "100%",
+              flex: 1,
               bgcolor: "#ffffff",
               pl: "13.5vw",
               position: "relative",
               pt: "1vh",
             }}
           >
+            <Button
+              variant="contained"
+              startIcon={<EditOutlinedIcon />}
+              sx={{
+                position: "absolute",
+                bottom: 20,
+                right: 20,
+                textTransform: "none",
+                borderRadius: "5px",
+                px: 2.5,
+                border:"solid 1px #b9b9b959",
+                color:"#434343",
+                fontFamily:"sans-serif",
+                fontWeight:500,
+                py: 1,
+                bgcolor: "#fdfdfd",
+                boxShadow: "0 4px 12px rgba(203, 226, 249, 0.25)",
+                "&:hover": {
+                  bgcolor: "#e2f4fa",
+                },
+              }}
+            >
+              Edit Company Profile
+            </Button>
+
             <Card
               sx={{
                 height: "8.5rem ",
@@ -144,9 +171,9 @@ export default function CompanyPage() {
                   border: "1px solid #dbe7ff",
                   "& .MuiChip-icon": {
                     color: "#666",
-                    width:0.15
-                    
-                  },borderRadius:"5px"
+                    width: 0.15,
+                  },
+                  borderRadius: "5px",
                 }}
               />
             </Box>
