@@ -1,4 +1,4 @@
-import { Box,Card } from "@mui/material";
+import { Box,Card,Typography } from "@mui/material";
 export default function CompanyPage() {
   return (
     <>
@@ -32,14 +32,16 @@ export default function CompanyPage() {
             }}
           ></Box>
 
-          <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff", pl:"14vw",position: "relative"  }}>
+          <Box sx={{ height: "35% ", width: "100%", bgcolor: "#ffffff", pl:"13.5vw",position: "relative" ,pt:"3vh" }}>
            
-           <Card sx={{ height: "8.5rem ", width: "8.5rem", bgcolor: "#fffafa" ,position:"absolute", top:"-60%",left:"2%",borderRadius:"15px"}}>
+           <Card sx={{ height: "8.5rem ", width: "8.5rem", bgcolor: "#fffafa" ,position:"absolute", top:"-50%",left:"2%",borderRadius:"15px"}}>
 
             <img style={{width:"100%"}} src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg" alt="" srcset=""  />
             
            </Card>
-
+          <Typography sx={{fontSize:"1.5rem",fontWeight:500}}>
+            Google
+          </Typography>
 
            
           </Box>
