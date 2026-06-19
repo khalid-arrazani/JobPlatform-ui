@@ -154,6 +154,9 @@ export default function OpenPositionsCard() {
                         ? "#1976d2"
                         : item.workMode === "On-site"
                           ? "#d32f2f"
+                        : item.workMode === "Hybrid"
+                          ? "#9c27b0"  
+
                           : "#555",
 
                     bgcolor:
@@ -161,6 +164,9 @@ export default function OpenPositionsCard() {
                         ? "rgba(25, 118, 210, 0.1)"
                         : item.workMode === "On-site"
                           ? "rgba(211, 47, 47, 0.1)"
+                          : item.workMode === "Hybrid"
+                          ? "rgba(156,39,176,0.1)"
+
                           : "rgba(0,0,0,0.05)",
                   }}
                   label={item.workMode}
