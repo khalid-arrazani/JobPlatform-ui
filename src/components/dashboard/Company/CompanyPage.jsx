@@ -5,6 +5,10 @@ import AboutCompany from "./AboutCompany";
 import OpenPositionsCard from "./OpenPositionsCard ";
 
 import CompanyStatistics from "./CompanyStatistics";
+import CompanyBenefits from "./CompanyBenefits ";
+import SocialContact from "./SocialContact";
+
+
 
 export default function CompanyPage() {
   return (
@@ -49,7 +53,9 @@ export default function CompanyPage() {
 
             {/* Open Positions Card  */}
             <OpenPositionsCard />
-            
+
+            {/* Company Benefits Card  */}
+            <SocialContact />
           </Box>
 
           {/* right side  */}
@@ -59,12 +65,17 @@ export default function CompanyPage() {
               height: "100vh",
 
               borderRadius: "15px",
+
             }}
           >
             {/* Company Statistics  */}
             <CompanyStatistics />
 
-
+            {/* Company Benefits Card  */}
+            <CompanyBenefits />
+            
+            
+            
 
 
           </Box>

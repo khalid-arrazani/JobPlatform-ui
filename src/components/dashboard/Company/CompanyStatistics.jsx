@@ -62,7 +62,6 @@ const CompanyStatistics = () => {
 
 
         {/* Applicants */}
-   
           <Card sx={cardStyle("#0288d1")}>
             <PeopleAltIcon sx={{ color: "#0288d1" }} />
             <Box>
@@ -75,7 +74,6 @@ const CompanyStatistics = () => {
 
 
         {/* New Applicants */}
-    
           <Card sx={cardStyle("#f57c00")}>
             <PersonAddAlt1Icon sx={{ color: "#f57c00" }} />
             <Box>
@@ -88,7 +86,6 @@ const CompanyStatistics = () => {
  
 
         {/* Hired */}
-        
           <Card sx={cardStyle("#9c27b0")}>
             <CheckCircleIcon sx={{ color: "#9c27b0" }} />
             <Box>
@@ -101,7 +98,6 @@ const CompanyStatistics = () => {
      
 
         {/* Views */}
-       
           <Card sx={cardStyle("#455a64")}>
             <VisibilityIcon sx={{ color: "#455a64" }} />
             <Box>
