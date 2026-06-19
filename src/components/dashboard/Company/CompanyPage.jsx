@@ -73,10 +73,6 @@ export default function CompanyPage() {
 
             {/* Company Benefits Card  */}
             <CompanyBenefits />
-            
-            
-            
-
 
           </Box>
         </Box>
