@@ -7,6 +7,7 @@ import OpenPositionsCard from "./OpenPositionsCard ";
 import CompanyStatistics from "./CompanyStatistics";
 import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
+import CompanyInfo from "./CompanyInfo";
 
 
 
@@ -73,6 +74,10 @@ export default function CompanyPage() {
 
             {/* Company Benefits Card  */}
             <CompanyBenefits />
+
+
+            {/* Company Info Card  */}
+            <CompanyInfo />
 
           </Box>
         </Box>
