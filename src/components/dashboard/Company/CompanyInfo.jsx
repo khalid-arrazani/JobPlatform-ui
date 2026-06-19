@@ -44,13 +44,24 @@ const CompanyInfo = () => {
   return (
     <Card
       sx={{
+        mt: 2,
         p: 2,
-        borderRadius: "12px",
+        borderRadius: "20px",
+        border: "1px solid #eef2f7",
+        background:
+          "linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)",
+        boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
       }}
     >
       <Typography
         variant="h6"
-        sx={{ mb: 2, fontWeight: 600 }}
+        sx={{
+          mb: 1,
+          fontWeight: 600,
+          color: "#111827d5",
+          fontFamily:"-apple-system",
+          letterSpacing: "-0.3px",
+        }}
       >
         Company Information
       </Typography>
@@ -61,37 +72,74 @@ const CompanyInfo = () => {
             sx={{
               display: "flex",
               alignItems: "center",
-              py: 1.5,
+              py: 1,
+              px: 1,
+              borderRadius: "14px",
+              transition: "all .25s ease",
+              "&:hover": {
+                bgcolor: "#f8fafc",
+                transform: "translateX(4px)",
+              },
             }}
           >
+            {/* Icon */}
             <Box
               sx={{
-                color: "text.secondary",
-                mr: 1.5,
+                width: 42,
+                height: 42,
+                borderRadius: "12px",
+                background:
+                  "linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)",
+                color: "#fff",
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
+                mr: 2,
+                flexShrink: 0,
+                boxShadow: "0 8px 16px rgba(37,99,235,.2)",
               }}
             >
               {item.icon}
             </Box>
 
-            <Typography
-              variant="body2"
-              color="text.secondary"
-              sx={{ width: 120 }}
-            >
-              {item.label}
-            </Typography>
+            {/* Text */}
+            <Box sx={{ flex: 1 }}>
+              <Typography
+                variant="caption"
+                sx={{
+                  color: "#64748b",
+                  fontWeight: 600,
+                  fontFamily: "Inter, sans-serif",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.8px",
+                }}
+              >
+                {item.label}
+              </Typography>
 
-            <Typography
-              variant="body2"
-              fontWeight={500}
-            >
-              {item.value}
-            </Typography>
+              <Typography
+                sx={{
+                  mt: 0.5,
+                  color: "#0f172a",
+                  fontWeight: 700,
+                  fontSize: "0.95rem",
+                  lineHeight: 1.5,
+                  fontFamily: "Inter, sans-serif",
+                }}
+              >
+                {item.value}
+              </Typography>
+            </Box>
           </Box>
 
-          {index !== info.length - 1 && <Divider />}
+          {index !== info.length - 1 && (
+            <Divider
+              sx={{
+                borderColor: "#f1f5f9",
+                my: 0.5,
+              }}
+            />
+          )}
         </Box>
       ))}
     </Card>

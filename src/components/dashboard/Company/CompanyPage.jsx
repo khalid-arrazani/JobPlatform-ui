@@ -16,13 +16,13 @@ export default function CompanyPage() {
     <>
       <Box
         sx={{
-          height: "92.3vh ",
+          height: "auto",
           width: "100vw",
           bgcolor: "#bebfcd",
           boxSizing: "border-box",
           px: 6,
           pt: 3,
-          overflow: "auto",
+          overflow: "auto"
         }}
       >
         {/* top side or Company Card or  Header   */}
@@ -32,8 +32,7 @@ export default function CompanyPage() {
         <Box
           sx={{
             width: "100%",
-            height: "100vh",
-
+            height: "fit-Content",
             my: 2,
             borderRadius: "15px",
             display: "flex",
@@ -44,9 +43,8 @@ export default function CompanyPage() {
           <Box
             sx={{
               width: "50%",
-              height: "100vh",
-
               borderRadius: "15px",
+ 
             }}
           >
             {/* About Company Card  */}
@@ -63,10 +61,8 @@ export default function CompanyPage() {
           <Box
             sx={{
               width: "50%",
-              height: "100vh",
-
+              height: "fit-Content",
               borderRadius: "15px",
-
             }}
           >
             {/* Company Statistics  */}
@@ -81,6 +77,8 @@ export default function CompanyPage() {
 
           </Box>
         </Box>
+
+
       </Box>
     </>
   );
