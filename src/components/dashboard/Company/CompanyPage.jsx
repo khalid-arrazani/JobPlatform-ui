@@ -4,6 +4,8 @@ import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
 import OpenPositionsCard from "./OpenPositionsCard ";
 
+import CompanyStatistics from "./CompanyStatistics";
+
 export default function CompanyPage() {
   return (
     <>
@@ -51,7 +53,6 @@ export default function CompanyPage() {
           </Box>
 
           {/* right side  */}
-
           <Box
             sx={{
               width: "50%",
@@ -59,7 +60,14 @@ export default function CompanyPage() {
 
               borderRadius: "15px",
             }}
-          ></Box>
+          >
+            {/* Company Statistics  */}
+            <CompanyStatistics />
+
+
+
+
+          </Box>
         </Box>
       </Box>
     </>
