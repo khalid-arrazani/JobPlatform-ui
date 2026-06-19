@@ -57,6 +57,7 @@ export default function CompanyPage() {
               </Box>
 
               <Collapse in={expanded} collapsedSize={70}>
+
                 <Typography
                   sx={{
                     mt: 1.5,
@@ -76,6 +77,7 @@ export default function CompanyPage() {
                   products such as Search, YouTube, Android, Google Cloud,
                   Gmail, and Maps.
                 </Typography>
+                
               </Collapse>
 
               <Button
