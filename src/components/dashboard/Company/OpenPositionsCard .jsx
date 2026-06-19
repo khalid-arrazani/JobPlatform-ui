@@ -1,4 +1,4 @@
-import { Card, Typography, Box } from "@mui/material";
+import { Card, Typography, Box, Chip } from "@mui/material";
 
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -125,6 +125,15 @@ export default function OpenPositionsCard() {
 
               
               </Box>
+            </Box>
+
+            <Box sx={{display:"flex"}}>
+
+                <Chip
+                label={item.employmentType}/>
+
+                <Chip
+                label={item.employmentType}/>
             </Box>
 
             <ArrowForwardIosIcon
