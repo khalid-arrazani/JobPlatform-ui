@@ -125,31 +125,66 @@ export default function OpenPositionsCard() {
               </Box>
             </Box>
 
-            <Box sx={{ display: "flex",gap:2 }}>
-
-              <Chip size="small" sx={{fontSize:"0.7rem",borderRadius:"5px"}} label={item.employmentType} />
-
-              
-              <Chip size="small" sx={{fontSize:"0.7rem",borderRadius:"5px"}} label={item.workMode} />
-            </Box>
-
             <Box
               sx={{
                 display: "flex",
-                alignItems:"center",
-                gap:2
+                width: "60%",
+                justifyContent: "space-between",
               }}
             >
+              <Box sx={{ display: "flex", gap: 2 }}>
+                <Chip
+                  size="small"
+                  sx={{
+                    fontSize: "0.7rem",
+                    borderRadius: "3px",
+                    color: "#04b630",
+                    bgcolor: "#e9fdef",
+                  }}
+                  label={item.employmentType}
+                />
 
-              <Typography sx={{fontSize:"0.7rem"}}>{item.postedAt}</Typography>
+                <Chip
+                  size="small"
+                  sx={{
+                    fontSize: "0.7rem",
+                    borderRadius: "3px",
+                    color:
+                      item.workMode === "Remote"
+                        ? "#1976d2"
+                        : item.workMode === "On-site"
+                          ? "#d32f2f"
+                          : "#555",
 
-              <ArrowForwardIosIcon
+                    bgcolor:
+                      item.workMode === "Remote"
+                        ? "rgba(25, 118, 210, 0.1)"
+                        : item.workMode === "On-site"
+                          ? "rgba(211, 47, 47, 0.1)"
+                          : "rgba(0,0,0,0.05)",
+                  }}
+                  label={item.workMode}
+                />
+              </Box>
+
+              <Box
                 sx={{
-                  fontSize: "0.9rem",
-                  color: "#999",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 2,
                 }}
-              />
+              >
+                <Typography sx={{ fontSize: "0.7rem" }}>
+                  {item.postedAt}
+                </Typography>
 
+                <ArrowForwardIosIcon
+                  sx={{
+                    fontSize: "0.9rem",
+                    color: "#999",
+                  }}
+                />
+              </Box>
             </Box>
           </Box>
         ))}
