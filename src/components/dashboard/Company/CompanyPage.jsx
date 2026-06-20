@@ -47,14 +47,19 @@ export default function CompanyPage() {
  
             }}
           >
+
+
             {/* About Company Card  */}
             <AboutCompany />
+          {/* Company Statistics  */}
+          <CompanyStatistics />
 
             {/* Open Positions Card  */}
             <OpenPositionsCard />
 
-            {/* Company Benefits Card  */}
-            <SocialContact />
+
+
+
           </Box>
 
           {/* right side  */}
@@ -65,8 +70,10 @@ export default function CompanyPage() {
               borderRadius: "15px",
             }}
           >
-            {/* Company Statistics  */}
-            <CompanyStatistics />
+
+
+            {/* Company Benefits Card  */}
+            <SocialContact />
 
             {/* Company Benefits Card  */}
             <CompanyBenefits />
@@ -74,6 +81,7 @@ export default function CompanyPage() {
 
             {/* Company Info Card  */}
             <CompanyInfo />
+
 
           </Box>
         </Box>
