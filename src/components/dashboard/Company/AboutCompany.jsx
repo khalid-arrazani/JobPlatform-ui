@@ -12,7 +12,7 @@ const [expanded, setExpanded] = useState(false);
                 borderRadius: "15px",
                 p: 2.5,
                 boxSizing: "border-box",
-                mb:"2"
+                mb:2
               }}
             >
               <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>

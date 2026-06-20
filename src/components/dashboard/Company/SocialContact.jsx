@@ -9,8 +9,8 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const SocialContact = () => {
   return (
-    <Card sx={{ p: 2, borderRadius: "12px", mt: 2 }}>
-      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+    <Card sx={{ p: 2, borderRadius: "12px" }}>
+      <Typography variant="h6" sx={{ mb: 1.5, fontWeight: "bold" }}>
         Contact
       </Typography>
 
@@ -21,13 +21,25 @@ const SocialContact = () => {
       </Box>
 
       {/* Social Icons */}
-      <Box sx={{ display: "flex", gap: 1 }}>
-        <IconButton
-          href="https://instagram.com"
-          target="_blank"
-          sx={{ color: "#E1306C" }}
-        >
-          <InstagramIcon />
+      <Box sx={{ display: "flex", gap: 1 ,borderRadius:"10px"}}>
+
+
+        <IconButton sx={{borderRadius:"20px"}} href="https://instagram.com" target="_blank">
+
+          <Card
+            sx={{
+              color: "#E1306C",
+              border: "solid 0.5px #cacacab6",
+              borderRadius: "12px",
+              bgcolor: "#e3f3fd",
+              placeItems: "center",
+              display:"flex",
+              alignContent:"center",
+              justifyContent:"center",p:1
+            }}
+          >
+            <InstagramIcon sx={{ fontSize: "2.5rem" }} />
+          </Card>
         </IconButton>
 
         <IconButton
@@ -55,12 +67,21 @@ const SocialContact = () => {
         </IconButton>
 
         {/* Email */}
-        <Box sx={{ display: "flex", alignItems: "center", gap: 1, px: 1 ,border:'solid 1px #807f7f5b',borderRadius:"10px"}}>
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            gap: 1,
+            px: 1,
+            border: "solid 1px #807f7f5b",
+            borderRadius: "10px",
+          }}
+        >
           <EmailIcon color="primary" />
-          <Typography variant="body2" sx={{fontFamily:"sans-serif"}}>company@email.com</Typography>
-
+          <Typography variant="body2" sx={{ fontFamily: "sans-serif" }}>
+            company@email.com
+          </Typography>
         </Box>
-
       </Box>
     </Card>
   );
