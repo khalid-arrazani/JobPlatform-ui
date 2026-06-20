@@ -177,6 +177,18 @@ const CompanyStatistics = () => {
         </Box>
 
         {/* Views */}
+        <Box
+          sx={{
+            borderRadius: "15px",
+            transition: "0.5s",
+            "&:hover": {
+              transform: "translateY(-3px)",
+              boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+              borderColor: "#dbeafe",
+            },
+            bgcolor:"#455a6420"
+          }}
+          >
         <Card sx={cardStyle("#455a64")}>
           <VisibilityIcon sx={{ color: "#455a64" }} />
           <Box>
@@ -186,6 +198,9 @@ const CompanyStatistics = () => {
             </Typography>
           </Box>
         </Card>
+        </Box>
+
+
       </Box>
     </Card>
   );
