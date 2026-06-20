@@ -1,6 +1,8 @@
 import { Card, Typography, Box, IconButton, Divider } from "@mui/material";
-
+import { RiContactsLine } from "react-icons/ri";
 import sendMessage from "../../../assets/Sent Message-bro.svg";
+
+
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -17,7 +19,12 @@ const SocialContact = () => {
         src={sendMessage}
         alt=""
       />
-      <Typography variant="h6" sx={{ mb: 1.5, fontWeight: "bold" }}>
+
+
+      <Typography variant="h6" sx={{ mb: 1.5, fontWeight: "bold",display:"flex", alignItems:"center" , gap:1,fontFamily:"initial",color:"#090909d8" }}>
+
+        <RiContactsLine color="#2b88f3"/>
+
         Contact
       </Typography>
 
@@ -93,6 +100,9 @@ const SocialContact = () => {
           }}
         />
       </Card>
+
+      <Divider sx={{my:2.5}}/>
+
 
       {/* Social Icons */}
 
