@@ -73,7 +73,15 @@ export default function OpenPositionsCard() {
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <WorkOutlineOutlinedIcon color="primary" />
-            <Typography  sx={{fontFamily:"initial",color:"#090909d8" ,fontSize:"1.2rem"}}>Open Positions</Typography>
+            <Typography
+              sx={{
+                fontFamily: "initial",
+                color: "#090909d8",
+                fontSize: "1.2rem",
+              }}
+            >
+              Open Positions
+            </Typography>
           </Box>
 
           <Typography
@@ -92,15 +100,29 @@ export default function OpenPositionsCard() {
           <Card
             key={item}
             sx={{
-              boxSizing:"border-box",
+              boxSizing: "border-box",
+              borderRadius: "16px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              py: 1.5,
-              px:1.5,
-              borderBottom: item !== 3 ? "1px solid #f0f0f0" : "none",
-              width:"100%"
+              py: 2,
+              px: 2.5,
+              width: "100%",
+              mb: 1.5,
 
+              border: "1px solid #eef2f7",
+              background: "#fff",
+
+              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.1)",
+
+              transition: "all .3s cubic-bezier(.4,0,.2,1)",
+
+              "&:hover": {
+                transform: "translateY(-3px)",
+                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                borderColor: "#dbeafe",
+              },
+              cursor:"pointer"
             }}
           >
             <Box>
@@ -158,10 +180,9 @@ export default function OpenPositionsCard() {
                         ? "#1976d2"
                         : item.workMode === "On-site"
                           ? "#d32f2f"
-                        : item.workMode === "Hybrid"
-                          ? "#9c27b0"  
-
-                          : "#555",
+                          : item.workMode === "Hybrid"
+                            ? "#9c27b0"
+                            : "#555",
 
                     bgcolor:
                       item.workMode === "Remote"
@@ -169,9 +190,8 @@ export default function OpenPositionsCard() {
                         : item.workMode === "On-site"
                           ? "rgba(211, 47, 47, 0.1)"
                           : item.workMode === "Hybrid"
-                          ? "rgba(156,39,176,0.1)"
-
-                          : "rgba(0,0,0,0.05)",
+                            ? "rgba(156,39,176,0.1)"
+                            : "rgba(0,0,0,0.05)",
                   }}
                   label={item.workMode}
                 />
@@ -184,9 +204,11 @@ export default function OpenPositionsCard() {
                   gap: 2,
                 }}
               >
-                <Chip size="small" label={item.postedAt} sx={{ fontSize: "0.7rem",borderRadius:"5px" }}>
-                
-                </Chip>
+                <Chip
+                  size="small"
+                  label={item.postedAt}
+                  sx={{ fontSize: "0.7rem", borderRadius: "5px" }}
+                ></Chip>
 
                 <ArrowForwardIosIcon
                   sx={{
