@@ -89,14 +89,18 @@ export default function OpenPositionsCard() {
 
         {/* Job Item */}
         {postedJobs.slice(0, 3).map((item) => (
-          <Box
+          <Card
             key={item}
             sx={{
+              boxSizing:"border-box",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
               py: 1.5,
+              px:1.5,
               borderBottom: item !== 3 ? "1px solid #f0f0f0" : "none",
+              width:"100%"
+
             }}
           >
             <Box>
@@ -180,9 +184,9 @@ export default function OpenPositionsCard() {
                   gap: 2,
                 }}
               >
-                <Typography sx={{ fontSize: "0.7rem" }}>
-                  {item.postedAt}
-                </Typography>
+                <Chip size="small" label={item.postedAt} sx={{ fontSize: "0.7rem",borderRadius:"5px" }}>
+                
+                </Chip>
 
                 <ArrowForwardIosIcon
                   sx={{
@@ -192,7 +196,7 @@ export default function OpenPositionsCard() {
                 />
               </Box>
             </Box>
-          </Box>
+          </Card>
         ))}
       </Card>
     </>
