@@ -18,7 +18,7 @@ export default function CompanyPage() {
         sx={{
           height: "auto",
           width: "100vw",
-          bgcolor: "#bebfcd",
+          bgcolor: "#f2f2f5",
           boxSizing: "border-box",
           px: 6,
           pt: 3,
