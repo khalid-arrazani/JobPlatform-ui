@@ -244,10 +244,9 @@ const SocialContact = () => {
 
           <Typography
             sx={{
-              fontWeight: 600,
-              color: "#0f172a",
-              fontSize: "0.95rem",
-              fontFamily: "Inter, sans-serif",
+              color: "#020203bc",
+              fontSize: "1rem",
+              fontFamily: "Inter",
             }}
           >
             company@email.com

@@ -73,7 +73,7 @@ export default function OpenPositionsCard() {
         >
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <WorkOutlineOutlinedIcon color="primary" />
-            <Typography fontWeight={600}>Open Positions</Typography>
+            <Typography  sx={{fontFamily:"initial",color:"#090909d8" ,fontSize:"1.2rem"}}>Open Positions</Typography>
           </Box>
 
           <Typography

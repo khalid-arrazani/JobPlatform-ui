@@ -30,7 +30,7 @@ const CompanyStatistics = () => {
 
   return (
     <Card sx={{ p: 2, borderRadius: "12px" }}>
-      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold" }}>
+      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold",fontFamily:"initial",color:"#090909d8"  }}>
         Company Statistics
       </Typography>
 

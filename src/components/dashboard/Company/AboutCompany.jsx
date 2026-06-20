@@ -15,9 +15,9 @@ const [expanded, setExpanded] = useState(false);
                 mb:2
               }}
             >
-              <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Box sx={{ display: "flex", alignItems: "center", gap: 1 ,}}>
                 <InfoOutlinedIcon color="primary" />
-                <Typography fontWeight={600} fontSize="1rem">
+                <Typography fontWeight={600} fontSize="1rem"  sx={{fontWeight:600,fontFamily:"initial",color:"#090909d8",fontSize:"1.2rem" }}>
                   About Company
                 </Typography>
               </Box>
