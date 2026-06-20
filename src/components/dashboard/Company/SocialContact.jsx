@@ -1,4 +1,4 @@
-import { Card, Typography, Box, IconButton, Divider } from "@mui/material";
+import { Card, Typography, Box,  Divider } from "@mui/material";
 import { RiContactsLine } from "react-icons/ri";
 import sendMessage from "../../../assets/Sent Message-bro.svg";
 

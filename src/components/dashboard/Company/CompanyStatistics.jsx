@@ -1,4 +1,4 @@
-import { Grid, Card, Typography, Box } from "@mui/material";
+import {  Card, Typography, Box } from "@mui/material";
 
 // Icons
 import WorkOutlineOutlinedIcon from '@mui/icons-material/WorkOutlineOutlined';
@@ -8,7 +8,6 @@ import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
-import { FcStatistics } from "react-icons/fc";
 import { ChartColumn } from 'lucide-react';
 
 const CompanyStatistics = () => {
