@@ -129,6 +129,18 @@ const CompanyStatistics = () => {
         </Box>
 
         {/* New Applicants */}
+         <Box
+          sx={{
+            borderRadius: "15px",
+            transition: "0.5s",
+            "&:hover": {
+              transform: "translateY(-3px)",
+              boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+              borderColor: "#dbeafe",
+            },
+            bgcolor:"#f57b002d"
+          }}
+        >
         <Card sx={cardStyle("#f57c00")}>
           <PersonAddAlt1Icon sx={{ color: "#f57c00" }} />
           <Box>
@@ -138,8 +150,21 @@ const CompanyStatistics = () => {
             </Typography>
           </Box>
         </Card>
+        </Box>
 
         {/* Hired */}
+        <Box
+          sx={{
+            borderRadius: "15px",
+            transition: "0.5s",
+            "&:hover": {
+              transform: "translateY(-3px)",
+              boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+              borderColor: "#dbeafe",
+            },
+            bgcolor:"#9b27b031"
+          }}
+        >
         <Card sx={cardStyle("#9c27b0")}>
           <CheckCircleIcon sx={{ color: "#9c27b0" }} />
           <Box>
@@ -149,6 +174,7 @@ const CompanyStatistics = () => {
             </Typography>
           </Box>
         </Card>
+        </Box>
 
         {/* Views */}
         <Card sx={cardStyle("#455a64")}>
