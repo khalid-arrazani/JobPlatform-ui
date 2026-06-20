@@ -1,4 +1,6 @@
-import { Card, Typography, Box, IconButton } from "@mui/material";
+import { Card, Typography, Box, IconButton, Divider } from "@mui/material";
+
+import sendMessage from "../../../assets/Sent Message-bro.svg";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
@@ -9,79 +11,238 @@ import EmailIcon from "@mui/icons-material/Email";
 
 const SocialContact = () => {
   return (
-    <Card sx={{ p: 2, borderRadius: "12px" }}>
+    <Card sx={{ p: 2, borderRadius: "12px", position: "relative" }}>
+      <img
+        style={{ position: "absolute", width: "12.5rem", right: 0, zIndex: 0 }}
+        src={sendMessage}
+        alt=""
+      />
       <Typography variant="h6" sx={{ mb: 1.5, fontWeight: "bold" }}>
         Contact
       </Typography>
 
       {/* Phone */}
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: 2 }}>
-        <PhoneIcon color="success" />
-        <Typography variant="body2">+212 600 000 000</Typography>
-      </Box>
-
-      {/* Social Icons */}
-      <Box sx={{ display: "flex", gap: 1 ,borderRadius:"10px"}}>
-
-
-        <IconButton sx={{borderRadius:"20px"}} href="https://instagram.com" target="_blank">
-
-          <Card
+      <Card
+        sx={{
+          p: 1.5,
+          borderRadius: "14px",
+          bgcolor: "#f8fcf8",
+          border: "1px solid #e7f7ea",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          width: "60%",
+          boxShadow: "0 8px 20px rgba(8, 8, 8, 0.08)",
+          zIndex: 1,
+          mb: 2,
+          cursor: "pointer",
+          transition: ".25s",
+          "&:hover": {
+            transform: "translateY(-3px)",
+            boxShadow: "0 8px 20px rgba(188, 245, 130, 0.2)",
+          },
+        }}
+      >
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
+          <Box
             sx={{
-              color: "#E1306C",
-              border: "solid 0.5px #cacacab6",
-              borderRadius: "12px",
-              bgcolor: "#e3f3fd",
-              placeItems: "center",
-              display:"flex",
-              alignContent:"center",
-              justifyContent:"center",p:1
+              width: 42,
+              height: 42,
+              borderRadius: "50%",
+              bgcolor: "#fff",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
             }}
           >
-            <InstagramIcon sx={{ fontSize: "2.5rem" }} />
-          </Card>
-        </IconButton>
+            <PhoneIcon
+              sx={{
+                color: "#22c55e",
+                fontSize: "1.3rem",
+              }}
+            />
+          </Box>
 
-        <IconButton
-          href="https://facebook.com"
-          target="_blank"
-          sx={{ color: "#1877F2" }}
-        >
-          <FacebookIcon />
-        </IconButton>
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "0.75rem",
+                color: "#64748b",
+                lineHeight: 1,
+              }}
+            >
+              Call us
+            </Typography>
 
-        <IconButton
-          href="https://twitter.com"
-          target="_blank"
-          sx={{ color: "#1DA1F2" }}
-        >
-          <TwitterIcon />
-        </IconButton>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: 700,
+                color: "#0f172a",
+              }}
+            >
+              +212 600 000 000
+            </Typography>
+          </Box>
+        </Box>
 
-        <IconButton
-          href="https://linkedin.com"
-          target="_blank"
-          sx={{ color: "#0A66C2" }}
-        >
-          <LinkedInIcon />
-        </IconButton>
-
-        {/* Email */}
-        <Box
+        <PhoneIcon
           sx={{
+            color: "#22c55e",
+            fontSize: "1.2rem",
+          }}
+        />
+      </Card>
+
+      {/* Social Icons */}
+
+      <Box sx={{ zIndex: 1, display: "flex", gap: 2, flexWrap: "wrap" }}>
+        {/* Instagram */}
+        <Card
+          sx={{
+            color: "#E1306C",
+            border: "1px solid #f3d4e1",
+            borderRadius: "14px",
+            bgcolor: "#fff",
             display: "flex",
             alignItems: "center",
-            gap: 1,
-            px: 1,
-            border: "solid 1px #807f7f5b",
-            borderRadius: "10px",
+            justifyContent: "center",
+            p: 1.2,
+            zIndex: 1,
+            cursor: "pointer",
+            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            boxShadow: "0 8px 20px rgba(225, 48, 108, 0.15)",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 15px 30px rgba(225, 48, 108, 0.25)",
+            },
           }}
         >
-          <EmailIcon color="primary" />
-          <Typography variant="body2" sx={{ fontFamily: "sans-serif" }}>
+          <InstagramIcon sx={{ fontSize: "2rem" }} />
+        </Card>
+
+        {/* Facebook */}
+        <Card
+          sx={{
+            color: "#1877F2",
+            border: "1px solid #d7e8ff",
+            borderRadius: "14px",
+            bgcolor: "#fff",
+            display: "flex",
+            zIndex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            p: 1.2,
+            cursor: "pointer",
+            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            boxShadow: "0 8px 20px rgba(24, 119, 242, 0.15)",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 15px 30px rgba(24, 119, 242, 0.25)",
+            },
+          }}
+        >
+          <FacebookIcon sx={{ fontSize: "2rem" }} />
+        </Card>
+
+        {/* Twitter */}
+        <Card
+          sx={{
+            color: "#1DA1F2",
+            border: "1px solid #d6efff",
+            borderRadius: "14px",
+            bgcolor: "#fff",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            p: 1.2,
+            zIndex: 1,
+            cursor: "pointer",
+            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            boxShadow: "0 8px 20px rgba(29, 161, 242, 0.15)",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 15px 30px rgba(29, 161, 242, 0.25)",
+            },
+          }}
+        >
+          <TwitterIcon sx={{ fontSize: "2rem" }} />
+        </Card>
+
+        {/* LinkedIn */}
+        <Card
+          sx={{
+            color: "#0A66C2",
+            border: "1px solid #d7e7f7",
+            borderRadius: "14px",
+            bgcolor: "#fff",
+            display: "flex",
+            zIndex: 1,
+            alignItems: "center",
+            justifyContent: "center",
+            p: 1.2,
+            cursor: "pointer",
+            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            boxShadow: "0 8px 20px rgba(10, 102, 194, 0.15)",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 15px 30px rgba(10, 102, 194, 0.25)",
+            },
+          }}
+        >
+          <LinkedInIcon sx={{ fontSize: "2rem" }} />
+        </Card>
+
+        {/* Email */}
+        <Card
+          sx={{
+            px: 2,
+            border: "1px solid #dbeafe",
+            borderRadius: "14px",
+            bgcolor: "#fff",
+            display: "flex",
+            alignItems: "center",
+            zIndex: 1,
+            gap: 1.2,
+            cursor: "pointer",
+            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+            boxShadow: "0 8px 20px rgba(37, 99, 235, 0.12)",
+            "&:hover": {
+              transform: "translateY(-4px)",
+              boxShadow: "0 15px 30px rgba(37, 99, 235, 0.2)",
+            },
+          }}
+        >
+          <Box
+            sx={{
+              width: 42,
+              height: 42,
+              borderRadius: "12px",
+
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+            }}
+          >
+            <EmailIcon
+              sx={{
+                color: "#2563eb",
+                fontSize: "1.5rem",
+              }}
+            />
+          </Box>
+
+          <Typography
+            sx={{
+              fontWeight: 600,
+              color: "#0f172a",
+              fontSize: "0.95rem",
+              fontFamily: "Inter, sans-serif",
+            }}
+          >
             company@email.com
           </Typography>
-        </Box>
+        </Card>
       </Box>
     </Card>
   );
