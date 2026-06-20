@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Chip } from "@mui/material";
+import { Card, Typography, Box, Chip,Button } from "@mui/material";
 
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -84,15 +84,19 @@ export default function OpenPositionsCard() {
             </Typography>
           </Box>
 
-          <Typography
+          <Button
+          size="small"
             sx={{
               color: "primary.main",
-              fontSize: "0.85rem",
+              fontSize: "0.75rem",
               cursor: "pointer",
             }}
           >
             View all jobs
-          </Typography>
+          </Button>
+
+
+
         </Box>
 
         {/* Job Item */}
@@ -122,9 +126,16 @@ export default function OpenPositionsCard() {
                 boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
                 borderColor: "#dbeafe",
               },
+              "&:active": {
+                transform: "translateY(-10px)",
+                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                borderColor: "#dbeafe",
+              background: "#ebf9ff",
+
+              },
               cursor:"pointer"
             }}
-          >
+          > 
             <Box>
               <Typography fontWeight={600}> {item.title} </Typography>
 
