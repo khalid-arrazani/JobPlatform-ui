@@ -1,4 +1,4 @@
-import { Grid, Card, Typography, Box } from "@mui/material";
+import {  Card, Typography, Box } from "@mui/material";
 
 // Icons
 import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
