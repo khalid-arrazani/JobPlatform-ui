@@ -8,6 +8,8 @@ import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
 import ScheduleIcon from "@mui/icons-material/Schedule";
 import SchoolIcon from "@mui/icons-material/School";
 
+import { CircleCheckBig } from 'lucide-react';
+
 const CompanyBenefits = () => {
   const benefits = [
     {
@@ -44,8 +46,10 @@ const CompanyBenefits = () => {
 
   return (
     <Card sx={{ p: 2, borderRadius: "12px",mt:2 }}>
-      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold",fontFamily:"initial",color:"#090909d8"  }}>
+      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold",fontFamily:"initial",color:"#090909d8" ,display:"flex", alignItems:"center",gap:1 }}>
+        <CircleCheckBig color="#389af5"/>
         Company Benefits
+        
       </Typography>
 
       <Grid container spacing={2}>

@@ -10,6 +10,8 @@ import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
+import { Building2 } from 'lucide-react';
+
 const CompanyInfo = () => {
   const company = {
     founded: "1998",
@@ -61,8 +63,12 @@ const CompanyInfo = () => {
           color: "#111827d5",
           fontFamily:"-apple-system",
           letterSpacing: "-0.3px",
+          display:"flex",
+          alignItems:"center",
+          gap:1
         }}
       >
+        <Building2 color="#3091ff"/>
         Company Information
       </Typography>
 

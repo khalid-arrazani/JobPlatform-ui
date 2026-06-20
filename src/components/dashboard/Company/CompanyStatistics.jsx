@@ -8,6 +8,9 @@ import PersonAddAlt1Icon from "@mui/icons-material/PersonAddAlt1";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 
+import { FcStatistics } from "react-icons/fc";
+import { ChartColumn } from 'lucide-react';
+
 const CompanyStatistics = () => {
   const stats = {
     totalJobs: 12,
@@ -30,7 +33,8 @@ const CompanyStatistics = () => {
 
   return (
     <Card sx={{ p: 2, borderRadius: "12px" }}>
-      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold",fontFamily:"initial",color:"#090909d8"  }}>
+      <Typography variant="h6" sx={{ mb: 2, fontWeight: "bold",fontFamily:"initial",color:"#090909d8",display:"flex",alignItems:"center",gap:1   }}>
+        <ChartColumn color="#1f8afc" />
         Company Statistics
       </Typography>
 
