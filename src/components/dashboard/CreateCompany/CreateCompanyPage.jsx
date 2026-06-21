@@ -6,27 +6,26 @@ const companyProfileBenefits = [
   {
     title: "Build trust",
     description: "A verified company profile builds trust with candidates.",
-    icon: <Award color="#06B6D4" />,
+    icon: <ShieldCheck color="#0891B2" size={20} />,
     bgColor: "#ECFEFF",
   },
   {
     title: "Attract top talent",
     description: "Showcase your company culture and values.",
-    icon: <Users color="#6366F1" />,
+    icon: <Users color="#4F46E5" size={20} />,
     bgColor: "#EEF2FF",
   },
   {
     title: "Stand out",
     description: "A complete profile makes your jobs more attractive.",
-    icon: <Shield color="#F59E0B" />,
+    icon: <Award color="#F59E0B" size={20} />,
     bgColor: "#FEF3C7",
   },
   {
     title: "Your information is secure",
     description: "We never share your data with third parties.",
-    icon: <ShieldCheck color="#6366F1" />,
+    icon: <Shield color="#9333EA" size={20} />,
     bgColor: "#F3E8FF",
-    cardBgColor: "#F5F3FF",
   },
 ];
 export default function CreateCompanyPage() {
@@ -34,9 +33,9 @@ export default function CreateCompanyPage() {
     <>
       <Box
         sx={{
-          height: "93vh",
+          height: "92.3vh",
           width: "100vw",
-          bgcolor: "#f0f7fe79",
+          bgcolor: "#F8FAFC",
           display: "flex",
           boxSizing: "border-box",
         }}
@@ -45,7 +44,7 @@ export default function CreateCompanyPage() {
         <Box
           sx={{
             height: "100%",
-            bgcolor: "#f9fcffd8",
+            bgcolor: "#FFFFFF",
             boxSizing: "inherit",
             width: "25%",
             px: 2.5,
@@ -60,10 +59,12 @@ export default function CreateCompanyPage() {
               height: "35%",
               width: "100%",
               borderRadius: "10px",
+              border: "1px solid #E2E8F0",
               position: "relative",
               overflow: "hidden",
               boxSizing: "border-box",
-              bgcolor: "#fefafe",
+              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.08)",
+              bgcolor: "#FFFFFF",
               px: 1,
             }}
           >
@@ -82,12 +83,12 @@ export default function CreateCompanyPage() {
               sx={{
                 textAlign: "center",
                 fontFamily: "ui-monospace",
-                fontWeight: 600,
-                color: "#1a1a25e4",
+                fontWeight: 700,
+                color: "#0f172ae2",
                 mb: 1,
+                fontSize: "1.25rem",
               }}
             >
-              {" "}
               Create your company profile
             </Typography>
 
@@ -96,9 +97,9 @@ export default function CreateCompanyPage() {
                 textAlign: "center",
                 fontFamily: "ui-rounded",
                 fontWeight: 600,
-                color: "#010101a8",
+                color: "#64748B",
                 textWrap: "wrap",
-                fontSize: "0.8rem",
+                fontSize: "0.9rem",
               }}
             >
               A complete profile helps candidates learn more about your company.
@@ -111,11 +112,11 @@ export default function CreateCompanyPage() {
               background: "#FFFFFF",
               border: "1px solid #E2E8F0",
               width: "100%",
-              borderRadius: "10px",
+              borderRadius: "16px",
               overflow: "hidden",
               boxSizing: "border-box",
-              px: 2,
-              py: 2,
+              p: 2,
+              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
             }}
           >
             <Typography
@@ -140,24 +141,25 @@ export default function CreateCompanyPage() {
                   borderRadius: "10px",
                   border: "solid 1px #f2f2f2",
                   transition: "all .25s ease",
-                  boxShadow: "0 8px 16px rgba(18, 22, 29, 0.2)",
+                  boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
                   bgcolor: item.cardBgColor,
                   "&:hover": {
-                    bgcolor: "#f8fafc",
-                    transform: "translateX(4px)",
-                    boxShadow: "0 8px 16px rgba(46, 52, 64, 0.45)",
+                    backgroundColor: item.bgColor,
+                  transform: "translateX(4px)",
+                  boxShadow: "0 8px 24px rgba(15, 23, 42, 0.10)",
                   },
                 }}
               >
                 <Box
                   sx={{
-                    width: 44,
-                    height: 44,
-                    borderRadius: "12px",
-                    backgroundColor: item.bgColor,
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
+                   minWidth: 45,
+                  width: 48,
+                  height: 48,
+                  borderRadius: "14px",
+                  backgroundColor: item.bgColor,
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
                   }}
                 >
                   {item.icon}
@@ -167,15 +169,15 @@ export default function CreateCompanyPage() {
                   <Typography
                     sx={{
                       fontSize: "0.8rem",
-                      fontWeight: 600,
-                      color: "#111220ef",
-                      fontFamily: "system-ui",
+                     fontWeight: 600,
+                    color: "#0F172A",
+                    mb: 0.1,
                     }}
                   >
                     {item.title}
                   </Typography>
 
-                  <Typography sx={{ fontSize: "0.7rem", color: "#4e4d4d" }}>
+                  <Typography sx={{ fontSize: "0.7rem",  color: "#64748B", }}>
                     {item.description}
                   </Typography>
                 </Box>
@@ -189,7 +191,7 @@ export default function CreateCompanyPage() {
         <Box
           sx={{
             height: "100%",
-            bgcolor: "#f9fcffd8",
+        bgcolor: "#F8FAFC",
             width: "75%",
             borderLeft: "solid 0.5px #d5d5d5",
           }}
