@@ -6,30 +6,26 @@ const companyProfileBenefits = [
   {
     title: "Build trust",
     description: "A verified company profile builds trust with candidates.",
-    icon: <Award />,
-    iconColor: "#06B6D4",
-    bgColor: "#E0F7FA",
+    icon: <Award color="#06B6D4" />,
+    bgColor: "#ECFEFF",
   },
   {
     title: "Attract top talent",
     description: "Showcase your company culture and values.",
-    icon: <Users />,
-    iconColor: "#6366F1",
+    icon: <Users color="#6366F1" />,
     bgColor: "#EEF2FF",
   },
   {
     title: "Stand out",
     description: "A complete profile makes your jobs more attractive.",
-    icon: <Shield />,
-    iconColor: "#F59E0B",
+    icon: <Shield color="#F59E0B" />,
     bgColor: "#FEF3C7",
   },
   {
     title: "Your information is secure",
     description: "We never share your data with third parties.",
-    icon: <ShieldCheck />,
-    iconColor: "#6366F1",
-    bgColor: "#F3F0FF",
+    icon: <ShieldCheck color="#6366F1" />,
+    bgColor: "#F3E8FF",
     cardBgColor: "#F5F3FF",
   },
 ];
@@ -40,17 +36,16 @@ export default function CreateCompanyPage() {
         sx={{
           height: "93vh",
           width: "100vw",
-          bgcolor: "#dbdbdbd4",
+          bgcolor: "#f0f7fe79",
           display: "flex",
           boxSizing: "border-box",
-          gap: 1,
         }}
       >
         {/* left side */}
         <Box
           sx={{
             height: "100%",
-            bgcolor: "#eeeeee",
+            bgcolor: "#f9fcffd8",
             boxSizing: "inherit",
             width: "25%",
             px: 2.5,
@@ -58,7 +53,6 @@ export default function CreateCompanyPage() {
             display: "flex",
             flexDirection: "column",
             justifyContent: "space-around",
-            borderRight: "solid 0.5px #d5d5d5",
           }}
         >
           <Card
@@ -69,6 +63,7 @@ export default function CreateCompanyPage() {
               position: "relative",
               overflow: "hidden",
               boxSizing: "border-box",
+              bgcolor: "#fefafe",
               px: 1,
             }}
           >
@@ -106,7 +101,6 @@ export default function CreateCompanyPage() {
                 fontSize: "0.8rem",
               }}
             >
-              {" "}
               A complete profile helps candidates learn more about your company.
             </Typography>
           </Card>
@@ -114,7 +108,8 @@ export default function CreateCompanyPage() {
           <Card
             sx={{
               height: "fit-Content",
-              bgcolor: "#fdf3fd",
+              background: "#FFFFFF",
+              border: "1px solid #E2E8F0",
               width: "100%",
               borderRadius: "10px",
               overflow: "hidden",
@@ -143,9 +138,10 @@ export default function CreateCompanyPage() {
                   mt: 1,
                   p: 0.7,
                   borderRadius: "10px",
-                  border: "solid 1px #e7e1e1",
+                  border: "solid 1px #f2f2f2",
                   transition: "all .25s ease",
                   boxShadow: "0 8px 16px rgba(18, 22, 29, 0.2)",
+                  bgcolor: item.cardBgColor,
                   "&:hover": {
                     bgcolor: "#f8fafc",
                     transform: "translateX(4px)",
@@ -189,8 +185,15 @@ export default function CreateCompanyPage() {
         </Box>
 
         {/* right side */}
-            
-        <Box sx={{ height: "100%", bgcolor: "#eeeeee", width: "75%",borderLeft: "solid 0.5px #d5d5d5", }}></Box>
+
+        <Box
+          sx={{
+            height: "100%",
+            bgcolor: "#f9fcffd8",
+            width: "75%",
+            borderLeft: "solid 0.5px #d5d5d5",
+          }}
+        ></Box>
       </Box>
     </>
   );
