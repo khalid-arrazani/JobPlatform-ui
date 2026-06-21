@@ -20,7 +20,7 @@ const companyProfileBenefits = [
   {
     title: "Stand out",
     description: "A complete profile makes your jobs more attractive.",
-    icon: <  Shield />,
+    icon: <Shield />,
     iconColor: "#F59E0B",
     bgColor: "#FEF3C7",
   },
@@ -40,26 +40,25 @@ export default function CreateCompanyPage() {
         sx={{
           height: "93vh",
           width: "100vw",
-          bgcolor: "#d0cecedb",
+          bgcolor: "#ffffffd4",
           display: "flex",
           boxSizing: "border-box",
           gap: 3,
         }}
       >
-         {/* left side */}
+        {/* left side */}
         <Box
           sx={{
-            height:"100%",
-            bgcolor: "#e8e6e6",
-            boxSizing:"inherit",
+            height: "100%",
+            bgcolor: "#eeeeee",
+            boxSizing: "inherit",
             width: "25%",
             px: 2.5,
             py: 2,
             display: "flex",
             flexDirection: "column",
-            justifyContent:"space-around",
-            
-            
+            justifyContent: "space-around",
+            borderRight: "solid 0.5px #d5d5d5",
           }}
         >
           <Card
@@ -115,7 +114,7 @@ export default function CreateCompanyPage() {
           <Card
             sx={{
               height: "fit-Content",
-              bgcolor: "#ffffff",
+              bgcolor: "#fdf3fd",
               width: "100%",
               borderRadius: "10px",
               overflow: "hidden",
@@ -135,38 +134,62 @@ export default function CreateCompanyPage() {
               Why is this important?
             </Typography>
 
-            {companyProfileBenefits.map((item)=>
-                
-            <Card key={item.title} sx={{ display: "flex", gap: 2 ,mt:1,p:0.7,borderRadius:"10px",border:"solid 1px #e7e1e1",boxShadow:"-moz-initial"}}>
-              <Box
+            {companyProfileBenefits.map((item) => (
+              <Card
+                key={item.title}
                 sx={{
-                  width: 44,
-                  height: 44,
-                  borderRadius: "12px",
-                  backgroundColor: item.bgColor,
                   display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
+                  gap: 2,
+                  mt: 1,
+                  p: 0.7,
+                  borderRadius: "10px",
+                  border: "solid 1px #e7e1e1",
+                  transition: "all .25s ease",
+                  boxShadow: "0 8px 16px rgba(18, 22, 29, 0.2)",
+                  "&:hover": {
+                    bgcolor: "#f8fafc",
+                    transform: "translateX(4px)",
+                    boxShadow: "0 8px 16px rgba(46, 52, 64, 0.45)",
+                  },
                 }}
               >
-               {item.icon}
-              </Box>
+                <Box
+                  sx={{
+                    width: 44,
+                    height: 44,
+                    borderRadius: "12px",
+                    backgroundColor: item.bgColor,
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  {item.icon}
+                </Box>
 
-              <Box>
-                <Typography sx={{fontSize:"0.8rem",fontWeight:600,color:"#111220ef",fontFamily:"system-ui"}}>{item.title}</Typography>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontSize: "0.8rem",
+                      fontWeight: 600,
+                      color: "#111220ef",
+                      fontFamily: "system-ui",
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
 
-                <Typography sx={{fontSize:"0.7rem",color:"#4e4d4d"}}>
-                  {item.description}
-                </Typography>
-              </Box>
-            </Card>
-           )}
-
+                  <Typography sx={{ fontSize: "0.7rem", color: "#4e4d4d" }}>
+                    {item.description}
+                  </Typography>
+                </Box>
+              </Card>
+            ))}
           </Card>
         </Box>
 
         {/* right side */}
-        <Box sx={{ height: "100%", bgcolor: "#fff", width: "75%" }}></Box>
+        <Box sx={{ height: "100%", bgcolor: "#ffffffd4", width: "75%" }}></Box>
       </Box>
     </>
   );
