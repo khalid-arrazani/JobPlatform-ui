@@ -195,7 +195,11 @@ export default function CreateCompanyPage() {
             width: "75%",
             borderLeft: "solid 0.5px #d5d5d5",
           }}
-        ></Box>
+        >
+
+
+            
+        </Box>
       </Box>
     </>
   );
