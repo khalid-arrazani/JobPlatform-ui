@@ -40,10 +40,10 @@ export default function CreateCompanyPage() {
         sx={{
           height: "93vh",
           width: "100vw",
-          bgcolor: "#ffffffd4",
+          bgcolor: "#dbdbdbd4",
           display: "flex",
           boxSizing: "border-box",
-          gap: 3,
+          gap: 1,
         }}
       >
         {/* left side */}
@@ -189,7 +189,8 @@ export default function CreateCompanyPage() {
         </Box>
 
         {/* right side */}
-        <Box sx={{ height: "100%", bgcolor: "#ffffffd4", width: "75%" }}></Box>
+            
+        <Box sx={{ height: "100%", bgcolor: "#eeeeee", width: "75%",borderLeft: "solid 0.5px #d5d5d5", }}></Box>
       </Box>
     </>
   );
