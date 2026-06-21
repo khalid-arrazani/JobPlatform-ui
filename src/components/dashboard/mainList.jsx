@@ -46,7 +46,7 @@ export default function MainList() {
         sx={{
           width: 280,
           height: "100%",
-          background: "linear-gradient(180deg, #f290d4a8 0%, #121925 100%)",
+          background: "linear-gradient(180deg, #57073d95 0%, #64129ab9 100%)",
           color: "white",
         }}
         role="presentation"
