@@ -10,7 +10,8 @@ import Header from "./header";
 import ButtonB from "./ButtonB";
 
 export default function CreateCompanyPage() {
-  const [step, setStep] = useState(0);
+    
+    const [step, setStep] = useState(0);
 
 
 
