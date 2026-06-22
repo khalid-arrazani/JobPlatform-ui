@@ -35,6 +35,7 @@ export default function CreateCompanyPage() {
            
             position: "relative",
             boxSizing: "border-box",
+            px:4
           }}
         >
           {/* header */}
@@ -43,7 +44,7 @@ export default function CreateCompanyPage() {
              
               display: "flex",
               justifyContent: "space-between",
-              borderBottom:"solid 0.1px #b3b0b069",
+               
               py:2
             }}
           >
@@ -108,7 +109,7 @@ export default function CreateCompanyPage() {
             </Box>
           </Box>
 
-          <Box sx={{}}>
+          <Box sx={{height:"70%",width:"100%" ,border:"solid 0.5px #b3b0b069",borderRadius:"15px"}}>
 
           </Box>
 
