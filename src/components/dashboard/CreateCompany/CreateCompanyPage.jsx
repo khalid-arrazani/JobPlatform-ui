@@ -1,21 +1,14 @@
 import { Card, Typography, Box, Divider, Button } from "@mui/material";
 import Left_side from "./left_Side";
 
-
 import { useEffect, useState } from "react";
-
-
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
+import CompanyInformationForm from "./CompanyInformationForm";
 
 export default function CreateCompanyPage() {
-    
-    const [step, setStep] = useState(0);
-
-
-
-
+  const [step, setStep] = useState(0);
 
   return (
     <>
@@ -47,27 +40,12 @@ export default function CreateCompanyPage() {
           {/* header */}
           <Header step={step} />
 
-
           {/* Content */}
-          <Box
-            sx={{
-              height: "70%",
-              width: "100%",
-              border: "solid 0.5px #b3b0b069",
-              borderRadius: "15px",
-            }}
-          >
-         
 
+          <CompanyInformationForm />
 
-
-
-
-          </Box>
-
-         {/* Bottom */}
-         <ButtonB step={step}  setStep={setStep}/>
-
+          {/* Bottom */}
+          <ButtonB step={step} setStep={setStep} />
         </Box>
       </Box>
     </>
