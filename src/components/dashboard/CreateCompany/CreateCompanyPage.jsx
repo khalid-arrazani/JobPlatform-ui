@@ -32,7 +32,7 @@ export default function CreateCompanyPage() {
             bgcolor: "#F8FAFC",
             width: "75%",
             borderLeft: "solid 0.5px #d5d5d5",
-            py: 2,
+           
             position: "relative",
             boxSizing: "border-box",
           }}
@@ -40,9 +40,11 @@ export default function CreateCompanyPage() {
           {/* header */}
           <Box
             sx={{
-              bgcolor: "#ddd",
+             
               display: "flex",
               justifyContent: "space-between",
+              borderBottom:"solid 0.1px #b3b0b069",
+              py:2
             }}
           >
             {/* title part side  */}
@@ -80,7 +82,7 @@ export default function CreateCompanyPage() {
                   color: "#0f0e27ea",
                 }}
               >
-                {" "}
+            
                 step {step + 1} of 3
               </Typography>
 
@@ -105,6 +107,11 @@ export default function CreateCompanyPage() {
               </Stepper>
             </Box>
           </Box>
+
+          <Box sx={{}}>
+
+          </Box>
+
 
           <Button
             onClick={() => {
