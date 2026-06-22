@@ -37,31 +37,75 @@ export default function CreateCompanyPage() {
             boxSizing: "border-box",
           }}
         >
-            <Box>
-
-            <Typography> step {step + 1} of 3</Typography>
-
-          <Stepper
-            activeStep={step}
+          {/* header */}
+          <Box
             sx={{
-              width: "15%",
-
-              "& .MuiStepLabel-label": {
-                fontSize: "0.75rem",
-              },
-
-              "& .MuiStepIcon-root": {
-                fontSize: "1.1rem",
-              },
+              bgcolor: "#ddd",
+              display: "flex",
+              justifyContent: "space-between",
             }}
           >
-            {steps.map((label) => (
-              <Step key={label}>
-                <StepLabel></StepLabel>
-              </Step>
-            ))}
-          </Stepper>
-          
+            {/* title part side  */}
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "2rem",
+                  fontWeight: "600",
+                  color: "#0f0e27ea",
+                  fontFamily: "-apple-system",
+                  pl:1
+                }}
+              >
+                Creat Company
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: "600",
+                  color: "#38374dea",
+                  fontFamily: "-apple-system",
+                  pl:1
+                }}
+              >
+                Company Information
+              </Typography>
+            </Box>
+
+            {/* stepper part side  */}
+            <Box sx={{ display: "flex", gap: 0, p: 1, alignItems: "center" }}>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontWeight: "600",
+                  color: "#0f0e27ea",
+                }}
+              >
+                {" "}
+                step {step + 1} of 3
+              </Typography>
+
+              <Stepper
+                activeStep={step}
+                sx={{
+                  width: "10rem",
+                 my:2,
+
+                  
+
+                  "& .MuiStepIcon-root": {
+                    fontSize: "1.5rem",
+                   p:0,
+                   m:0
+                  },
+                }}
+              >
+                {steps.map((label) => (
+                  <Step sx={{p:0}} key={label}>
+                    <StepLabel sx={{"& .MuiStepLabel-iconContainer":{p:0}}}  ></StepLabel>
+                  </Step>
+                ))}
+              </Stepper>
+            </Box>
           </Box>
 
           <Button
