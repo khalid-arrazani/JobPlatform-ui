@@ -135,7 +135,8 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
-            select
+   
+            placeholder="Select industry"
             fullWidth
             size="small"
             defaultValue=""
@@ -166,7 +167,7 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
-            select
+            placeholder="Select Location"
             fullWidth
             size="small"
             defaultValue=""
