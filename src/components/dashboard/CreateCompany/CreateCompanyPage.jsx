@@ -53,7 +53,7 @@ export default function CreateCompanyPage() {
                   fontWeight: "600",
                   color: "#0f0e27ea",
                   fontFamily: "-apple-system",
-                  pl:1
+                  pl: 1,
                 }}
               >
                 Creat Company
@@ -64,7 +64,7 @@ export default function CreateCompanyPage() {
                   fontWeight: "600",
                   color: "#38374dea",
                   fontFamily: "-apple-system",
-                  pl:1
+                  pl: 1,
                 }}
               >
                 Company Information
@@ -72,7 +72,7 @@ export default function CreateCompanyPage() {
             </Box>
 
             {/* stepper part side  */}
-            <Box sx={{ display: "flex", gap: 0, p: 1, alignItems: "center" }}>
+            <Box sx={{ display: "flex", gap: 1, p: 1, alignItems: "center" }}>
               <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -88,20 +88,18 @@ export default function CreateCompanyPage() {
                 activeStep={step}
                 sx={{
                   width: "10rem",
-                 my:2,
-
-                  
+                  my: 2,
 
                   "& .MuiStepIcon-root": {
                     fontSize: "1.5rem",
-                   p:0,
-                   m:0
                   },
                 }}
               >
                 {steps.map((label) => (
-                  <Step sx={{p:0}} key={label}>
-                    <StepLabel sx={{"& .MuiStepLabel-iconContainer":{p:0}}}  ></StepLabel>
+                  <Step sx={{ p: 0 }} key={label}>
+                    <StepLabel
+                      sx={{ "& .MuiStepLabel-iconContainer": { p: 0, mx: 1 } }}
+                    ></StepLabel>
                   </Step>
                 ))}
               </Stepper>
