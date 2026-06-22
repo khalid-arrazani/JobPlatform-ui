@@ -21,7 +21,7 @@ export default function DashboardPage() {
         <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
-        <Route path="My_Company" element={<CompanyPage />} />
+        <Route path="My_Company" element={<CreateCompanyPage />} />
 
       </Routes>
 
