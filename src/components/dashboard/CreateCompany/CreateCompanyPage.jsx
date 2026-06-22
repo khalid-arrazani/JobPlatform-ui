@@ -47,6 +47,8 @@ export default function CreateCompanyPage() {
           {/* header */}
           <Header step={step} />
 
+
+          {/* Content */}
           <Box
             sx={{
               height: "70%",
@@ -54,8 +56,16 @@ export default function CreateCompanyPage() {
               border: "solid 0.5px #b3b0b069",
               borderRadius: "15px",
             }}
-          ></Box>
+          >
+         
 
+
+
+
+
+          </Box>
+
+         {/* Bottom */}
          <ButtonB step={step}  setStep={setStep}/>
 
         </Box>
