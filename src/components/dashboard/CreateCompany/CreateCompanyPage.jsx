@@ -6,6 +6,9 @@ import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 import { use, useEffect, useState } from "react";
 
+import { ChevronRight } from 'lucide-react';
+import { ChevronLeft } from 'lucide-react';
+
 export default function CreateCompanyPage() {
   const [step, setStep] = useState(0);
   const [buttonT , setButtonT] = useState("Next : More Info")
@@ -142,10 +145,11 @@ export default function CreateCompanyPage() {
               onClick={() => {
                 setStep((prev) => prev - 1);
               }}
+              sx={{color:"#fff" ,   bgcolor: step !== 0 ? "#487cff" : "#e0e0e0"  ,px:2,display:"flex", alignItems:"center",textAlign:"center",gap:1}}
               size="small"
             >
-              {" "}
-              Back Step
+
+             <ChevronLeft /> Back Step 
             </Button>
 
             <Button
@@ -153,9 +157,9 @@ export default function CreateCompanyPage() {
               onClick={() => {
                 setStep((prev) => prev + 1);
               }}
-              sx={{color:"#fff",bgcolor:"#4678f5",px:2}}
+              sx={{color:"#fff",bgcolor:"#4678f5",px:2,display:"flex", alignItems:"center",textAlign:"center",gap:1}}
             >
-              {buttonT}
+              {buttonT} <ChevronRight />
             </Button>
           </Box>
 
