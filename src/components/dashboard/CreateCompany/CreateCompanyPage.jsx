@@ -41,7 +41,6 @@ export default function CreateCompanyPage() {
           <Header step={step} />
 
           {/* Content */}
-
           <CompanyInformationForm />
 
           {/* Bottom */}
