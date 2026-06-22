@@ -1,12 +1,12 @@
-import { Card, Typography, Box, Divider, Button } from "@mui/material";
-import Left_side from "./left_Side";
+import { Typography, Box} from "@mui/material";
+
 
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
 
 
-  const steps = ["Company Information", "Additional Details", "Branding"];
+const steps = ["Company Information", "Additional Details", "Branding"];
 
 export default function Header({step}) {
   return (
