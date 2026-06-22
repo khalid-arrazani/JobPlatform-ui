@@ -4,12 +4,22 @@ import Left_side from "./left_Side";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
-import { useState } from "react";
+import { use, useEffect, useState } from "react";
 
 export default function CreateCompanyPage() {
   const [step, setStep] = useState(0);
+  const [buttonT , setButtonT] = useState("Next : More Info")
+
+
+  useEffect(()=>{
+    step ==0 ? setButtonT("Next : More Info")  : step == 1 ? setButtonT("Next : Branding") : step == 2 ? setButtonT("Create Company") : null
+
+
+  },[step])
 
   const steps = ["Company Information", "Additional Details", "Branding"];
+
+
 
   return (
     <>
@@ -137,8 +147,7 @@ export default function CreateCompanyPage() {
               }}
               sx={{}}
             >
-              {" "}
-              Next Step
+              {buttonT}
             </Button>
           </Box>
         </Box>
