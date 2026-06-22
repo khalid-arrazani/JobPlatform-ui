@@ -32,20 +32,20 @@ export default function CreateCompanyPage() {
             bgcolor: "#F8FAFC",
             width: "75%",
             borderLeft: "solid 0.5px #d5d5d5",
-           
+
             position: "relative",
             boxSizing: "border-box",
-            px:4
+            px: 4,
           }}
         >
           {/* header */}
           <Box
             sx={{
-             
               display: "flex",
               justifyContent: "space-between",
-               
-              py:2
+
+              py: 2,
+              height: "11.8%",
             }}
           >
             {/* title part side  */}
@@ -83,7 +83,6 @@ export default function CreateCompanyPage() {
                   color: "#0f0e27ea",
                 }}
               >
-            
                 step {step + 1} of 3
               </Typography>
 
@@ -109,31 +108,39 @@ export default function CreateCompanyPage() {
             </Box>
           </Box>
 
-          <Box sx={{height:"70%",width:"100%" ,border:"solid 0.5px #b3b0b069",borderRadius:"15px"}}>
+          <Box
+            sx={{
+              height: "70%",
+              width: "100%",
+              border: "solid 0.5px #b3b0b069",
+              borderRadius: "15px",
+            }}
+          ></Box>
 
+          <Box sx={{ height: "12.2%", width: "100%",display:"flex",  justifyContent:"space-between",py:2,boxSizing:"border-box",px:1 }}>
+
+            <Button
+              disabled={step == 0}
+              onClick={() => {
+                setStep((prev) => prev - 1);
+              }}
+              size="small"
+            >
+              {" "}
+              Back Step
+            </Button>
+
+            <Button
+             size="small"
+              onClick={() => {
+                setStep((prev) => prev + 1);
+              }}
+              sx={{}}
+            >
+              {" "}
+              Next Step
+            </Button>
           </Box>
-
-
-          <Button
-            onClick={() => {
-              setStep((prev) => prev + 1);
-            }}
-            sx={{ position: "absolute", bottom: 1, right: 10 }}
-          >
-            {" "}
-            Next Step
-          </Button>
-
-          <Button
-            disabled={step == 0}
-            onClick={() => {
-              setStep((prev) => prev - 1);
-            }}
-            sx={{ position: "absolute", bottom: 1, left: 10 }}
-          >
-            {" "}
-            Back Step
-          </Button>
         </Box>
       </Box>
     </>
