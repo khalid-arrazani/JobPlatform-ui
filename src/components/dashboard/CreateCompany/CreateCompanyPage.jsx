@@ -4,8 +4,11 @@ import Left_side from "./left_Side";
 import Stepper from "@mui/material/Stepper";
 import Step from "@mui/material/Step";
 import StepLabel from "@mui/material/StepLabel";
+import { useState } from "react";
 
 export default function CreateCompanyPage() {
+    const [step , setStep] = useState(0)
+
   return (
     <>
       <Box
@@ -32,7 +35,9 @@ export default function CreateCompanyPage() {
             boxSizing:"border-box"
           }}
         >
-          <Stepper  sx={{ width: "50%" }} activeStep={1}>
+
+
+          <Stepper  sx={{ width: "50%" }} activeStep={step}>
             <Step sx={{ fontSize: "0.8rem" }}>
 
               <StepLabel >
@@ -50,7 +55,11 @@ export default function CreateCompanyPage() {
             </Step>
           </Stepper>
 
-          <Button sx={{position:"absolute",bottom:1}}> Next Step</Button>
+          <Button onClick={()=>{setStep((prev)=> prev + 1)}} sx={{position:"absolute",bottom:1,right:10}}> Next Step</Button>
+
+          <Button disabled={step==0} onClick={()=>{setStep((prev)=> prev - 1)}} sx={{position:"absolute",bottom:1,left:10}}> Back Step</Button>
+
+
 
         </Box>
       </Box>
