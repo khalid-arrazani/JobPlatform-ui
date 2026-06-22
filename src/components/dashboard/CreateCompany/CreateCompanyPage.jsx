@@ -125,7 +125,15 @@ export default function CreateCompanyPage() {
               border: "solid 0.5px #b3b0b069",
               borderRadius: "15px",
             }}
-          ></Box>
+          >
+
+
+
+          </Box>
+
+
+
+
 
           <Box sx={{ height: "12.2%", width: "100%",display:"flex",  justifyContent:"space-between",py:2,boxSizing:"border-box",px:1 }}>
 
@@ -145,11 +153,13 @@ export default function CreateCompanyPage() {
               onClick={() => {
                 setStep((prev) => prev + 1);
               }}
-              sx={{}}
+              sx={{color:"#fff",bgcolor:"#4678f5",px:2}}
             >
               {buttonT}
             </Button>
           </Box>
+
+
         </Box>
       </Box>
     </>
