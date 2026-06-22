@@ -157,7 +157,7 @@ export default function CreateCompanyPage() {
               onClick={() => {
                 setStep((prev) => prev + 1);
               }}
-              sx={{color:"#fff",bgcolor:"#4678f5",px:2,display:"flex", alignItems:"center",textAlign:"center",gap:1}}
+              sx={{color:"#fff",bgcolor:"#4678f5",px:2,display:"flex", alignItems:"center",textAlign:"center",gap:1, fontFamily:"monospace",fontWeight:600}}
             >
               {buttonT} <ChevronRight />
             </Button>
