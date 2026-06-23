@@ -42,7 +42,8 @@ export default function Header({step}) {
               pl: 1,
             }}
           >
-            Company Information
+           
+            {step == 0 ? "Create Company" : step == 1 ? "More Info" : step == 2 ? "Logo & Background" : null }
           </Typography>
         </Box>
 

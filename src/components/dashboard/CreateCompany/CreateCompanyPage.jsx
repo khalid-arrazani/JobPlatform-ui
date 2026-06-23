@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import Header from "./header";
 import ButtonB from "./ButtonB";
 import CompanyInformationForm from "./CompanyInformationForm";
+import MoreInfo from "./MoreInfo";
 
 export default function CreateCompanyPage() {
   const [step, setStep] = useState(0);
@@ -53,7 +54,7 @@ export default function CreateCompanyPage() {
         p: 3,
       }}
     >
-        {step == 0 ? <CompanyInformationForm /> :null}
+        {step == 0 ? <CompanyInformationForm /> : step == 1 ? <MoreInfo /> : null }
        
     </Box>
           
