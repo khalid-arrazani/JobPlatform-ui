@@ -19,7 +19,7 @@ import {
   ArrowLeft,
   ArrowRight,
 } from "lucide-react";
-import { FaLinkedin, FaFacebook, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaFacebook, FaXTwitter , FaInstagram } from "react-icons/fa6";
 
 const benefits = [
   {
@@ -51,9 +51,7 @@ export default function MoreInfo() {
         sx={{
           height: "70%",
           width: "100%",
-
           boxSizing: "border-box",
-
           display: "flex",
           gap: 2,
         }}
@@ -116,11 +114,10 @@ export default function MoreInfo() {
                   border: "1px solid #b8b8b89b",
                   cursor: "pointer",
                   boxShadow: "0 8px 24px rgba(39, 38, 38, 0)",
-                  transition:"0.5s",
-                   "&:hover": {
-                  
-                  transform: "translateY(-4px)",
-                  boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
+                  transition: "0.5s",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
                   },
                 }}
               >
@@ -140,14 +137,25 @@ export default function MoreInfo() {
                   {benefit.icon}
                 </Box>
 
-                <Typography  sx={{textAlign:"center",fontSize:"1rem",fontWeight:600,color:"#06051cd1"}}>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    color: "#06051cd1",
+                  }}
+                >
                   {benefit.title}
                 </Typography>
               </Card>
             ))}
           </Box>
 
-          <Button variant="outlined" sx={{borderStyle:"dashed"}} startIcon={<Plus size={16} />}>
+          <Button
+            variant="outlined"
+            sx={{ borderStyle: "dashed" }}
+            startIcon={<Plus size={16} />}
+          >
             Add Benefit
           </Button>
         </Box>
@@ -162,7 +170,7 @@ export default function MoreInfo() {
             p: 2,
           }}
         >
-            <Typography
+          <Typography
             sx={{
               fontWeight: 700,
               fontSize: "1.5rem",
@@ -170,7 +178,7 @@ export default function MoreInfo() {
               fontFamily: "ui-serif",
             }}
           >
-            Company Benefits
+            Social Links (optional)
           </Typography>
 
           <Typography
@@ -181,10 +189,112 @@ export default function MoreInfo() {
               mb: 3,
             }}
           >
-            Add benefits your company offers
+            Add benefits your company social media profiles
           </Typography>
+          <Box sx={{width:"100%",  display:"flex",flexDirection:"column", flex:1,gap:2.5}}>
+
+          
+
+          {/* LinkedIn */}
+           <TextField
+            fullWidth
+            
+            placeholder="https://linkedin.com/company/..."
+            sx={inputStyle}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FaLinkedin size={30} color="#64748B" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
+
+          {/* Facebook */}
+           <TextField
+            fullWidth
+            
+            placeholder="https://facebook.com/..."
+            sx={inputStyle}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FaFacebook size={30} color="#64748B" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
+          {/* Facebook */}
+           <TextField
+            fullWidth
+            
+            placeholder="https://instagram.com/..."
+            sx={inputStyle}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FaInstagram size={30} color="#64748B" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
+          
+          {/* X / Twitter */}
+           <TextField
+            fullWidth
+           
+            placeholder="https://twitter.com/..."
+            sx={inputStyle}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FaXTwitter size={30} color="#64748B" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
+          </Box>
+
         </Box>
       </Box>
     </>
   );
 }
+const inputWrapper = {
+  display: "flex",
+  alignItems: "center",
+  border: "1px solid #e5e5e5",
+  borderRadius: "8px",
+  padding: "10px",
+  marginBottom: "12px",
+  background: "#fafafa",
+};
+
+const iconBox = {
+  width: "3rem",
+  height: "2.5rem",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "6px",
+  background: "#f0f0f0",
+  fontWeight: "bold",
+  marginRight: "10px",
+  fontSize: "12px",
+};
+
+const inputStyle = {
+  border: "none",
+  outline: "none",
+  width: "100%",
+  background: "transparent",
+  fontSize: "13px",
+};
