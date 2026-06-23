@@ -148,7 +148,9 @@ export default function MoreInfo() {
             }}
           >
             { benefits.map((benefit) => {
+                
                 const Icon = benefitIcons[benefit];
+
               return (
               <Card
                 key={benefit.title}
@@ -199,6 +201,7 @@ export default function MoreInfo() {
                   {benefit.title}
                 </Typography>
               </Card>
+
             )})}
           </Box>
 
