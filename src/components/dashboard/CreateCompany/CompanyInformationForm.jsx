@@ -25,21 +25,12 @@ const inputStyle = {
 
 export default function CompanyInformationForm() {
   return (
-    <Box
-      sx={{
-        height: "70%",
-        width: "100%",
-        border: "solid 0.5px #b3b0b069",
-        borderRadius: "15px",
-        boxSizing: "border-box",
-        p: 3,
-      }}
-    >
+    
       <Box sx={{ display: "flex",flexWrap:"wrap",gap:2,justifyContent:"space-between" }}>
 
         {/* Company Name */}
-        <Box sx={{width:"32%" }} >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box  sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600,fontFamily:"system-ui" }}>
             Company Name <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -61,8 +52,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* Email */}
-        <Box sx={{width:"32%" }} >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box  sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600 ,fontFamily:"system-ui"}}>
             Company Email <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -84,8 +75,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* Phone */}
-        <Box sx={{width:"32%" }}  >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box  sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600,fontFamily:"system-ui" }}>
             Phone Number <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -107,8 +98,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* Website */}
-        <Box sx={{width:"32%" }}  >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box  sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600 ,fontFamily:"system-ui"}}>
             Company Website
           </Typography>
 
@@ -130,8 +121,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* Industry */}
-        <Box sx={{width:"32%" }} >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600,fontFamily:"system-ui" }}>
             Industry <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -161,8 +152,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* Location */}
-        <Box sx={{width:"32%" }}  >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box  sx={{minWidth:"32%",flex:1 }} >
+          <Typography sx={{ mb: 1, fontWeight: 600,fontFamily:"system-ui" }}>
             Location <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -191,8 +182,8 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* About Company */}
-        <Box sx={{width:"32%",flex:1 }} >
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>
+        <Box sx={{minWidth:"80%",flex:1  }} >
+          <Typography sx={{ mb: 1, fontWeight: 600,fontFamily:"system-ui" }}>
             About Your Company <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
@@ -212,6 +203,6 @@ export default function CompanyInformationForm() {
           />
         </Box>
       </Box>
-    </Box>
+ 
   );
 }
