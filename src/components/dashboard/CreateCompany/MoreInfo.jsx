@@ -47,18 +47,23 @@ const benefits = [
 export default function MoreInfo() {
   return (
     <>
-    <Box
-            sx={{
-              height: "70%",
-              width: "100%",
-              border: "solid 0.5px #b3b0b069",
-              borderRadius: "15px",
-              boxSizing: "border-box",p: 3,
-              
-            }}>
+      <Box
+        sx={{
+          height: "70%",
+          width: "100%",
+          
+          
+          boxSizing: "border-box",
+          
+          display:"flex",gap:2
+        }}
+      >
+        <Box sx={{width:"50%",height:"100%",borderRadius: "15px",border: "solid 0.5px #b3b0b069"}}></Box> 
+        <Box sx={{width:"50%",height:"100%",borderRadius: "15px",border: "solid 0.5px #b3b0b069"}}></Box>
 
 
-    </Box>
+
+      </Box>
     </>
   );
 }
