@@ -35,9 +35,10 @@ export default function CompanyInformationForm() {
         p: 3,
       }}
     >
-      <Grid container spacing={3}>
+      <Box sx={{ display: "flex",flexWrap:"wrap",gap:2,justifyContent:"space-between" }}>
+
         {/* Company Name */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }} >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Company Name <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -57,10 +58,10 @@ export default function CompanyInformationForm() {
               },
             }}
           />
-        </Grid>
+        </Box>
 
         {/* Email */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }} >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Company Email <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -80,10 +81,10 @@ export default function CompanyInformationForm() {
               },
             }}
           />
-        </Grid>
+        </Box>
 
         {/* Phone */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }}  >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Phone Number <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -103,10 +104,10 @@ export default function CompanyInformationForm() {
               },
             }}
           />
-        </Grid>
+        </Box>
 
         {/* Website */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }}  >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Company Website
           </Typography>
@@ -126,16 +127,15 @@ export default function CompanyInformationForm() {
               },
             }}
           />
-        </Grid>
+        </Box>
 
         {/* Industry */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }} >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Industry <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <TextField
-   
             placeholder="Select industry"
             fullWidth
             size="small"
@@ -158,10 +158,10 @@ export default function CompanyInformationForm() {
             <MenuItem value="Marketing">Marketing</MenuItem>
             <MenuItem value="Construction">Construction</MenuItem>
           </TextField>
-        </Grid>
+        </Box>
 
         {/* Location */}
-        <Grid size={{ xs: 12, md: 4 }}>
+        <Box sx={{width:"32%" }}  >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             Location <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -188,10 +188,10 @@ export default function CompanyInformationForm() {
             <MenuItem value="Canada">Canada</MenuItem>
             <MenuItem value="United Kingdom">United Kingdom</MenuItem>
           </TextField>
-        </Grid>
+        </Box>
 
         {/* About Company */}
-        <Grid size={12}>
+        <Box sx={{width:"32%",flex:1 }} >
           <Typography sx={{ mb: 1, fontWeight: 600 }}>
             About Your Company <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -210,8 +210,8 @@ export default function CompanyInformationForm() {
               },
             }}
           />
-        </Grid>
-      </Grid>
+        </Box>
+      </Box>
     </Box>
   );
 }
