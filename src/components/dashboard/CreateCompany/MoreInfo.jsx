@@ -56,7 +56,7 @@ export default function MoreInfo (){
 
 
     return <>
-    <Box sx={{ p: 4 }}>
+    <Box >
    
 
       {/* Content */}
@@ -251,32 +251,7 @@ export default function MoreInfo (){
         </Grid>
       </Grid>
 
-      {/* Footer */}
-      <Box
-        sx={{
-          mt: 4,
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <Button
-          variant="outlined"
-          startIcon={<ArrowLeft size={16} />}
-        >
-          Back
-        </Button>
-
-        <Button
-          variant="contained"
-          endIcon={<ArrowRight size={16} />}
-          sx={{
-            px: 3,
-            borderRadius: "10px",
-          }}
-        >
-          Next: Branding
-        </Button>
-      </Box>
+     
     </Box>
     
     </>
