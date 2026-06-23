@@ -197,8 +197,7 @@ export default function MoreInfo() {
 
           {/* LinkedIn */}
            <TextField
-            fullWidth
-            
+            fullWidth           
             placeholder="https://linkedin.com/company/..."
             sx={inputStyle}
             slotProps={{
@@ -214,8 +213,7 @@ export default function MoreInfo() {
 
           {/* Facebook */}
            <TextField
-            fullWidth
-            
+            fullWidth           
             placeholder="https://facebook.com/..."
             sx={inputStyle}
             slotProps={{
@@ -230,8 +228,7 @@ export default function MoreInfo() {
           />
           {/* Facebook */}
            <TextField
-            fullWidth
-            
+            fullWidth           
             placeholder="https://instagram.com/..."
             sx={inputStyle}
             slotProps={{
@@ -248,7 +245,6 @@ export default function MoreInfo() {
           {/* X / Twitter */}
            <TextField
             fullWidth
-           
             placeholder="https://twitter.com/..."
             sx={inputStyle}
             slotProps={{
