@@ -204,12 +204,13 @@ export default function MoreInfo() {
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <FaLinkedin size={30} color="#64748B" />
+                    <FaLinkedin size={30} color="#3376d5" />
                   </InputAdornment>
                 ),
               },
             }}
           />
+
 
           {/* Facebook */}
            <TextField
@@ -220,13 +221,15 @@ export default function MoreInfo() {
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <FaFacebook size={30} color="#64748B" />
+                    <FaFacebook size={30} color="#1f62c1" />
                   </InputAdornment>
                 ),
               },
             }}
           />
-          {/* Facebook */}
+
+
+          {/* Instagram */}
            <TextField
             fullWidth           
             placeholder="https://instagram.com/..."
@@ -235,13 +238,15 @@ export default function MoreInfo() {
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <FaInstagram size={30} color="#64748B" />
+                    <FaInstagram size={30} color="#E1306C" />
                   </InputAdornment>
                 ),
               },
             }}
           />
           
+
+
           {/* X / Twitter */}
            <TextField
             fullWidth
@@ -251,7 +256,7 @@ export default function MoreInfo() {
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <FaXTwitter size={30} color="#64748B" />
+                    <FaXTwitter size={30} color="#353d49" />
                   </InputAdornment>
                 ),
               },
