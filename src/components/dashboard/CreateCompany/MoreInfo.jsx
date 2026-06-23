@@ -2,23 +2,22 @@ import {
   Box,
   Card,
   Typography,
-
   Button,
   TextField,
   InputAdornment,
+  MenuItem,
+  Autocomplete,
+  Chip,
 } from "@mui/material";
 
+import { Heart, Clock3, TrendingUp, Plus } from "lucide-react";
+
 import {
-  Heart,
-  
-  Clock3,
-  TrendingUp,
-  Plus,
-} from "lucide-react";
-
-
-
-import { FaLinkedin, FaFacebook, FaXTwitter , FaInstagram } from "react-icons/fa6";
+  FaLinkedin,
+  FaFacebook,
+  FaXTwitter,
+  FaInstagram,
+} from "react-icons/fa6";
 
 import {
   Laptop,
@@ -32,43 +31,178 @@ import {
   Users,
   Shield,
 } from "lucide-react";
+import { useState } from "react";
+const companyBenefit = [
+  "Remote Work",
+  "Hybrid Work",
+  "Flexible Hours",
+  "Health Insurance",
+  "Dental Insurance",
+  "Vision Insurance",
+  "Paid Time Off",
+  "Paid Sick Leave",
+  "Parental Leave",
+  "Performance Bonus",
+  "Annual Bonus",
+  "Retirement Plan",
+  "Stock Options",
+  "Gym Membership",
+  "Free Lunch",
+  "Free Snacks",
+  "Transportation Allowance",
+  "Company Laptop",
+  "Training Budget",
+  "Learning & Development",
+  "Career Growth",
+  "Team Events",
+  "Work From Home Stipend",
+  "Wellness Program",
+  "Employee Discounts",
+  "Relocation Assistance",
+  "Life Insurance",
+  "Mental Health Support",
+];
 
-const benefitIcons = {
-  "Remote Work": Laptop,
-  "Hybrid Work": Laptop,
-  "Flexible Hours": Briefcase,
-
-  "Health Insurance": HeartPulse,
-  "Dental Insurance": HeartPulse,
-  "Vision Insurance": HeartPulse,
-  "Mental Health Support": HeartPulse,
-
-  "Performance Bonus": DollarSign,
-  "Annual Bonus": DollarSign,
-  "Stock Options": DollarSign,
-  "Retirement Plan": DollarSign,
-
-  "Training Budget": GraduationCap,
-  "Learning & Development": GraduationCap,
-  "Career Growth": GraduationCap,
-
-  "Gym Membership": Dumbbell,
-  "Wellness Program": Dumbbell,
-
-  "Free Lunch": Utensils,
-  "Free Snacks": Utensils,
-
-  "Relocation Assistance": Plane,
-  "Transportation Allowance": Plane,
-
-  "Team Events": Users,
-  "Employee Discounts": Users,
-
-  "Life Insurance": Shield,
-};
-
-
-
+const companyBenefits = [
+  {
+    label: "Remote Work",
+    icon: Laptop,
+    color: "#06B6D4",
+    bg: "#ECFEFF",
+  },
+  {
+    label: "Hybrid Work",
+    icon: Laptop,
+    color: "#06B6D4",
+    bg: "#ECFEFF",
+  },
+  {
+    label: "Flexible Hours",
+    icon: Briefcase,
+    color: "#4F46E5",
+    bg: "#EEF2FF",
+  },
+  {
+    label: "Health Insurance",
+    icon: HeartPulse,
+    color: "#EF4444",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Dental Insurance",
+    icon: HeartPulse,
+    color: "#EF4444",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Vision Insurance",
+    icon: HeartPulse,
+    color: "#EF4444",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Performance Bonus",
+    icon: DollarSign,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Annual Bonus",
+    icon: DollarSign,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Stock Options",
+    icon: DollarSign,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Retirement Plan",
+    icon: DollarSign,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Training Budget",
+    icon: GraduationCap,
+    color: "#F59E0B",
+    bg: "#FEF3C7",
+  },
+  {
+    label: "Learning & Development",
+    icon: GraduationCap,
+    color: "#F59E0B",
+    bg: "#FEF3C7",
+  },
+  {
+    label: "Career Growth",
+    icon: GraduationCap,
+    color: "#F59E0B",
+    bg: "#FEF3C7",
+  },
+  {
+    label: "Gym Membership",
+    icon: Dumbbell,
+    color: "#8B5CF6",
+    bg: "#F3E8FF",
+  },
+  {
+    label: "Wellness Program",
+    icon: Dumbbell,
+    color: "#8B5CF6",
+    bg: "#F3E8FF",
+  },
+  {
+    label: "Free Lunch",
+    icon: Utensils,
+    color: "#F97316",
+    bg: "#FFF7ED",
+  },
+  {
+    label: "Free Snacks",
+    icon: Utensils,
+    color: "#F97316",
+    bg: "#FFF7ED",
+  },
+  {
+    label: "Transportation Allowance",
+    icon: Plane,
+    color: "#0EA5E9",
+    bg: "#F0F9FF",
+  },
+  {
+    label: "Relocation Assistance",
+    icon: Plane,
+    color: "#0EA5E9",
+    bg: "#F0F9FF",
+  },
+  {
+    label: "Team Events",
+    icon: Users,
+    color: "#EC4899",
+    bg: "#FDF2F8",
+  },
+  {
+    label: "Employee Discounts",
+    icon: Users,
+    color: "#EC4899",
+    bg: "#FDF2F8",
+  },
+  {
+    label: "Life Insurance",
+    icon: Shield,
+    color: "#6366F1",
+    bg: "#EEF2FF",
+  },
+  {
+    label: "Mental Health Support",
+    icon: HeartPulse,
+    color: "#EF4444",
+    bg: "#FEF2F2",
+  },
+];
 
 const benefits = [
   {
@@ -94,6 +228,18 @@ const benefits = [
 ];
 
 export default function MoreInfo() {
+  const [selectedBenefits, setSelectedBenefits] = useState([]);
+
+  const MAX_BENEFITS = 6;
+
+  const handleChange = (event) => {
+    const value = event.target.value;
+
+    if (value.length <= MAX_BENEFITS) {
+      setSelectedBenefits(value);
+    }
+  };
+
   return (
     <>
       <Box
@@ -147,71 +293,80 @@ export default function MoreInfo() {
               mb: 3,
             }}
           >
-            { benefits.map((benefit) => {
-                
-                const Icon = benefitIcons[benefit];
-
+            {benefits.map((benefit) => {
               return (
-              <Card
-                key={benefit.title}
-                sx={{
-                  boxSizing: "border-box",
-                  width: "7.8rem",
-                  height: "7.5rem",
-                  px: 1.8,
-                  py: 1.5,
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  borderRadius: "14px",
-                  border: "1px solid #b8b8b89b",
-                  cursor: "pointer",
-                  boxShadow: "0 8px 24px rgba(39, 38, 38, 0)",
-                  transition: "0.5s",
-                  "&:hover": {
-                    transform: "translateY(-4px)",
-                    boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
-                  },
-                }}
-              >
-                <Box
+                <Card
+                  key={benefit.title}
                   sx={{
-                    width: "2.2rem",
-                    height: "2.2rem",
-                    p: "0.7rem",
-                    borderRadius: "12px",
-                    bgcolor: benefit.bg,
+                    boxSizing: "border-box",
+                    width: "7.8rem",
+                    height: "7.5rem",
+                    px: 1.8,
+                    py: 1.5,
                     display: "flex",
+                    flexDirection: "column",
                     alignItems: "center",
-                    justifyContent: "center",
-                    mb: 1,
+                    borderRadius: "14px",
+                    border: "1px solid #b8b8b89b",
+                    cursor: "pointer",
+                    boxShadow: "0 8px 24px rgba(39, 38, 38, 0)",
+                    transition: "0.5s",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
+                    },
                   }}
                 >
-                  {benefit.icon}
-                </Box>
+                  <Box
+                    sx={{
+                      width: "2.2rem",
+                      height: "2.2rem",
+                      p: "0.7rem",
+                      borderRadius: "12px",
+                      bgcolor: benefit.bg,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      mb: 1,
+                    }}
+                  >
+                    {benefit.icon}
+                  </Box>
 
-                <Typography
-                  sx={{
-                    textAlign: "center",
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                    color: "#06051cd1",
-                  }}
-                >
-                  {benefit.title}
-                </Typography>
-              </Card>
-
-            )})}
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      fontSize: "1rem",
+                      fontWeight: 600,
+                      color: "#06051cd1",
+                    }}
+                  >
+                    {benefit.title}
+                  </Typography>
+                </Card>
+              );
+            })}
           </Box>
 
-          <Button
-            variant="outlined"
-            sx={{ borderStyle: "dashed" }}
-            startIcon={<Plus size={16} />}
-          >
-            Add Benefit
-          </Button>
+          <Autocomplete
+            multiple
+            size="small"
+            freeSolo
+            slotProps={{
+              popper: { sx: { transition: "none", animation: "none", m: 5 } },
+            }}
+            options={companyBenefit}
+            value={selectedBenefits}
+            onChange={(e, value) => setSelectedBenefits(value)}
+            renderTags={(value, getTagProps) =>
+              value.map((option, index) => (
+                <Chip label={option} {...getTagProps({ index })} key={index} />
+              ))
+            }
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Add skills..." />
+            )}
+          />
         </Box>
 
         <Box
@@ -245,83 +400,84 @@ export default function MoreInfo() {
           >
             Add benefits your company social media profiles
           </Typography>
-          <Box sx={{width:"100%",  display:"flex",flexDirection:"column", flex:1,gap:2.5}}>
-
-          
-
-          {/* LinkedIn */}
-           <TextField
-            fullWidth           
-            placeholder="https://linkedin.com/company/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FaLinkedin size={30} color="#3376d5" />
-                  </InputAdornment>
-                ),
-              },
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              flexDirection: "column",
+              flex: 1,
+              gap: 2.5,
             }}
-          />
+          >
+            {/* LinkedIn */}
+            <TextField
+              fullWidth
+              placeholder="https://linkedin.com/company/..."
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FaLinkedin size={30} color="#3376d5" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
 
+            {/* Facebook */}
+            <TextField
+              fullWidth
+              placeholder="https://facebook.com/..."
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FaFacebook size={30} color="#1f62c1" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
 
-          {/* Facebook */}
-           <TextField
-            fullWidth           
-            placeholder="https://facebook.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FaFacebook size={30} color="#1f62c1" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
+            {/* Instagram */}
+            <TextField
+              fullWidth
+              placeholder="https://instagram.com/..."
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FaInstagram size={30} color="#E1306C" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
 
-
-          {/* Instagram */}
-           <TextField
-            fullWidth           
-            placeholder="https://instagram.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FaInstagram size={30} color="#E1306C" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-          
-
-
-          {/* X / Twitter */}
-           <TextField
-            fullWidth
-            placeholder="https://twitter.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FaXTwitter size={30} color="#353d49" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
+            {/* X / Twitter */}
+            <TextField
+              fullWidth
+              placeholder="https://twitter.com/..."
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <FaXTwitter size={30} color="#353d49" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
           </Box>
-
         </Box>
       </Box>
     </>
-  )}
+  );
+}
 
 const inputWrapper = {
   display: "flex",
