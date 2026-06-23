@@ -41,25 +41,12 @@ export default function CreateCompanyPage() {
           {/* header */}
           <Header step={step} />
 
-          
-
           {/* Content */}
-          <Box
-      sx={{
-        height: "70%",
-        width: "100%",
-        border: "solid 0.5px #b3b0b069",
-        borderRadius: "15px",
-        boxSizing: "border-box",
-        p: 3,
-      }}
-    >
-        {step == 0 ? <CompanyInformationForm /> : step == 1 ? <MoreInfo /> : null }
-       
-    </Box>
-          
-
-
+          {step == 0 ? (
+            <CompanyInformationForm />
+          ) : step == 1 ? (
+            <MoreInfo />
+          ) : null}
 
           {/* Bottom */}
           <ButtonB step={step} setStep={setStep} />
