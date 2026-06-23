@@ -2,7 +2,7 @@ import {
   Box,
   Card,
   Typography,
-  Grid,
+
   Button,
   TextField,
   InputAdornment,
@@ -10,16 +10,65 @@ import {
 
 import {
   Heart,
-  Briefcase,
+  
   Clock3,
   TrendingUp,
   Plus,
-  Mail,
-  Phone,
-  ArrowLeft,
-  ArrowRight,
 } from "lucide-react";
+
+
+
 import { FaLinkedin, FaFacebook, FaXTwitter , FaInstagram } from "react-icons/fa6";
+
+import {
+  Laptop,
+  HeartPulse,
+  DollarSign,
+  GraduationCap,
+  Dumbbell,
+  Utensils,
+  Plane,
+  Briefcase,
+  Users,
+  Shield,
+} from "lucide-react";
+
+const benefitIcons = {
+  "Remote Work": Laptop,
+  "Hybrid Work": Laptop,
+  "Flexible Hours": Briefcase,
+
+  "Health Insurance": HeartPulse,
+  "Dental Insurance": HeartPulse,
+  "Vision Insurance": HeartPulse,
+  "Mental Health Support": HeartPulse,
+
+  "Performance Bonus": DollarSign,
+  "Annual Bonus": DollarSign,
+  "Stock Options": DollarSign,
+  "Retirement Plan": DollarSign,
+
+  "Training Budget": GraduationCap,
+  "Learning & Development": GraduationCap,
+  "Career Growth": GraduationCap,
+
+  "Gym Membership": Dumbbell,
+  "Wellness Program": Dumbbell,
+
+  "Free Lunch": Utensils,
+  "Free Snacks": Utensils,
+
+  "Relocation Assistance": Plane,
+  "Transportation Allowance": Plane,
+
+  "Team Events": Users,
+  "Employee Discounts": Users,
+
+  "Life Insurance": Shield,
+};
+
+
+
 
 const benefits = [
   {
@@ -98,7 +147,9 @@ export default function MoreInfo() {
               mb: 3,
             }}
           >
-            {benefits.map((benefit) => (
+            { benefits.map((benefit) => {
+                const Icon = benefitIcons[benefit];
+              return (
               <Card
                 key={benefit.title}
                 sx={{
@@ -148,7 +199,7 @@ export default function MoreInfo() {
                   {benefit.title}
                 </Typography>
               </Card>
-            ))}
+            )})}
           </Box>
 
           <Button
@@ -267,8 +318,8 @@ export default function MoreInfo() {
         </Box>
       </Box>
     </>
-  );
-}
+  )}
+
 const inputWrapper = {
   display: "flex",
   alignItems: "center",
