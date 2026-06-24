@@ -142,6 +142,8 @@ export default function CompanyInformationForm() {
 
           <TextField
             placeholder="Select industry"
+            
+
             fullWidth
             size="small"
             defaultValue=""
