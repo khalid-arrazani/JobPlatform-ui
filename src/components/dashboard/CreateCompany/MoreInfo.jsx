@@ -506,7 +506,7 @@ console.log(selectedBenefits,selectedBenefitObjects);
                       mb: 1,
                     }}
                   >
-                    { <benefit.icon/>}
+                    { <benefit.icon color={benefit.color}/>}
                   </Box>
 
                   <Typography
@@ -528,6 +528,7 @@ console.log(selectedBenefits,selectedBenefitObjects);
             multiple
             size="small"
             disableCloseOnSelect
+            aria-colspan={false}
             options={companyBenefit}
             value={selectedBenefits}
             onChange={(event, newValue) => {
