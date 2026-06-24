@@ -6,7 +6,7 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyBG ({  openImageLogo , openSetImagLogo,ImageLogo,  setPreviewLogo}) {
+export default function CompanyBG ({  openImageBG , openSetImagBG,ImageBG,  setPreviewBG}) {
   const editorRef = useRef();
 
   const [image, setImage] = useState(null);
@@ -23,11 +23,11 @@ export default function CompanyBG ({  openImageLogo , openSetImagLogo,ImageLogo,
 
       const previewUrl = URL.createObjectURL(blob);
 
-      setPreviewLogo(previewUrl);
+      setPreviewBG(previewUrl);
 
       // setPhoto(blob);
 
-      openSetImagLogo(false);
+      openSetImagBG(false);
     }, "image/png");
   };
 
@@ -35,7 +35,7 @@ export default function CompanyBG ({  openImageLogo , openSetImagLogo,ImageLogo,
     <>
       {/* Upload */}
 
-      <Dialog open={openImageLogo} onClose={() => openSetImagLogo(false)}>
+      <Dialog open={openImageBG} onClose={() => openSetImagBG(false)}>
         <DialogContent>
           <Box
             sx={{
@@ -47,7 +47,7 @@ export default function CompanyBG ({  openImageLogo , openSetImagLogo,ImageLogo,
           >
             <AvatarEditor
               ref={editorRef}
-              image={ImageLogo}
+              image={ImageBG}
               width={360}
               height={360}
               border={5}

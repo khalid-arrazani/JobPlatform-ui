@@ -86,6 +86,7 @@ export default function Branding() {
             </Typography>
 
             <Button
+              component="label"
               sx={{
                 color: "#4a62ff",
                 bgcolor: "#ffffff",
@@ -99,30 +100,35 @@ export default function Branding() {
               }}
             >
               <MdOutlineFileUpload
-                style={{ width: "1.3rem", height: "1.3rem", p: 0 }}
+                style={{
+                  width: "1.3rem",
+                  height: "1.3rem",
+                }}
               />
               Choose Image
-
+              
               <input
-                  hidden
-                  accept="image/*"
-                  type="file"
-                  onChange={(e) => {
-                    const file = e.target.files?.[0];
+                hidden
+                accept="image/*"
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
 
-                    if (file) {
-                      setImagBG(file);
-                      openSetImagBG(true);
-                    }
-                  }}
-                />
-
+                  if (file) {
+                    setImagBG(file);
+                    openSetImagBG(true);
+                  }
+                }}
+              />
             </Button>
-           <CompanyBG  openImageLogo={openImageLogo}
-                openSetImagLogo={openSetImagLogo}
-                ImageLogo={ImageLogo}
-                previewLogo={previewLogo}
-                setPreviewLogo={setPreviewLogo}/>
+
+            <CompanyBG
+              openImageBG={openImageBG}
+              openSetImagBG={openSetImagBG}
+              ImageBG={ImageBG}
+              previewBG={previewBG}
+              setPreviewBG={setPreviewBG}
+            />
           </Box>
 
           {/* Company lOGO */}
