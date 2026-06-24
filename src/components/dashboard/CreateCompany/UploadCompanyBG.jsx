@@ -6,7 +6,7 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function UploadProfilePhoto({ setPhoto }) {
+export default function CompanyBg({ setPhoto }) {
   const editorRef = useRef();
 
   const [image, setImage] = useState(null);
