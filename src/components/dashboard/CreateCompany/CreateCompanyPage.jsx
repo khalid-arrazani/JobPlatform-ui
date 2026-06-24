@@ -7,6 +7,7 @@ import Header from "./header";
 import ButtonB from "./ButtonB";
 import CompanyInformationForm from "./CompanyInformationForm";
 import MoreInfo from "./MoreInfo";
+import Branding from "./Branding";
 
 export default function CreateCompanyPage() {
   const [step, setStep] = useState(0);
@@ -46,7 +47,9 @@ export default function CreateCompanyPage() {
             <CompanyInformationForm />
           ) : step == 1 ? (
             <MoreInfo />
-          ) : null}
+          ) :step == 2 ? 
+          <Branding />:
+          null}
 
           {/* Bottom */}
           <ButtonB step={step} setStep={setStep} />
