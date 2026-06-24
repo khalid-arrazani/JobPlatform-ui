@@ -5,9 +5,22 @@ import PanoramaOutlinedIcon from "@mui/icons-material/PanoramaOutlined";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 
+import CompanyLogo from "./UploadCompanyLogo";
+import CompanyBG from "./UploadCompanyBG";
+
 import { MdOutlineFileUpload } from "react-icons/md";
+import { useState } from "react";
 
 export default function Branding() {
+  const [ImageLogo, setImagLogo] = useState("");
+  const [openImageLogo, openSetImagLogo] = useState("");
+
+  const [ImageBG, setImagBG] = useState("");
+  const [openImageBG, openSetImagBG] = useState("");
+
+  const [previewLogo, setPreviewLogo] = useState("");
+  const [previewBG, setPreviewBG] = useState("");
+
   return (
     <>
       <Box
@@ -31,6 +44,7 @@ export default function Branding() {
             position: "relative",
           }}
         >
+          {/* Company BG */}
           <Box
             sx={{
               width: "100%",
@@ -80,16 +94,38 @@ export default function Branding() {
                 gap: 0.5,
                 alignItems: "center",
                 borderRadius: "5px",
-                mt: 1.5,textTransform:"none",
+                mt: 1.5,
+                textTransform: "none",
               }}
             >
               <MdOutlineFileUpload
                 style={{ width: "1.3rem", height: "1.3rem", p: 0 }}
               />
               Choose Image
+
+              <input
+                  hidden
+                  accept="image/*"
+                  type="file"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+
+                    if (file) {
+                      setImagBG(file);
+                      openSetImagBG(true);
+                    }
+                  }}
+                />
+
             </Button>
+           <CompanyBG  openImageLogo={openImageLogo}
+                openSetImagLogo={openSetImagLogo}
+                ImageLogo={ImageLogo}
+                previewLogo={previewLogo}
+                setPreviewLogo={setPreviewLogo}/>
           </Box>
 
+          {/* Company lOGO */}
           <Box
             sx={{
               width: "100%",
@@ -113,13 +149,21 @@ export default function Branding() {
                 display: "flex",
                 justifyContent: "center",
                 alignItems: "center",
+                backgroundImage: previewLogo ? `url(${previewLogo})` : "none",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
               }}
             >
-              <DomainIcon
-                sx={{ width: "70%", height: "70%", color: "#b1afaf" }}
-              />
+              {previewLogo ? null : (
+                <DomainIcon
+                  sx={{ width: "70%", height: "70%", color: "#b1afaf" }}
+                />
+              )}
 
-              <IconButton
+              <Button
+                component="label"
+                size="small"
                 sx={{
                   position: "absolute",
                   bottom: -9,
@@ -127,10 +171,42 @@ export default function Branding() {
                   bgcolor: "#0033ffd0",
                   color: "#fff",
                   p: 1,
+                  borderRadius: "50%",
+                  minWidth: 0,
+                  "&:hover": {
+                    bgcolor: "#0033ff",
+                  },
                 }}
               >
-                <PhotoCameraIcon sx={{ width: "1.6rem", height: "1.6rem" }} />
-              </IconButton>
+                <input
+                  hidden
+                  accept="image/*"
+                  type="file"
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+
+                    if (file) {
+                      setImagLogo(file);
+                      openSetImagLogo(true);
+                    }
+                  }}
+                />
+
+                <PhotoCameraIcon
+                  sx={{
+                    width: "1.6rem",
+                    height: "1.6rem",
+                  }}
+                />
+              </Button>
+
+              <CompanyLogo
+                openImageLogo={openImageLogo}
+                openSetImagLogo={openSetImagLogo}
+                ImageLogo={ImageLogo}
+                previewLogo={previewLogo}
+                setPreviewLogo={setPreviewLogo}
+              />
             </Box>
           </Box>
         </Box>
