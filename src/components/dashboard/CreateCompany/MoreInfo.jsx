@@ -21,16 +21,190 @@ import {
 
 import {
   Laptop,
+  Briefcase,
   HeartPulse,
   DollarSign,
-  GraduationCap,
   Dumbbell,
   Utensils,
   Plane,
-  Briefcase,
+  GraduationCap,
   Users,
   Shield,
+  CalendarDays,
+  Baby,
+  Monitor,
 } from "lucide-react";
+
+const companyBenefits = [
+  {
+    label: "Remote Work",
+    icon: Laptop,
+    color: "#06B6D4",
+    bg: "#ECFEFF",
+  },
+  {
+    label: "Hybrid Work",
+    icon: Laptop,
+    color: "#0891B2",
+    bg: "#E0F2FE",
+  },
+  {
+    label: "Flexible Hours",
+    icon: Briefcase,
+    color: "#4F46E5",
+    bg: "#EEF2FF",
+  },
+  {
+    label: "Health Insurance",
+    icon: HeartPulse,
+    color: "#EF4444",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Dental Insurance",
+    icon: HeartPulse,
+    color: "#DC2626",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Vision Insurance",
+    icon: HeartPulse,
+    color: "#B91C1C",
+    bg: "#FEF2F2",
+  },
+  {
+    label: "Paid Time Off",
+    icon: CalendarDays,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Paid Sick Leave",
+    icon: CalendarDays,
+    color: "#15803D",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Parental Leave",
+    icon: Baby,
+    color: "#EC4899",
+    bg: "#FDF2F8",
+  },
+  {
+    label: "Performance Bonus",
+    icon: DollarSign,
+    color: "#16A34A",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Annual Bonus",
+    icon: DollarSign,
+    color: "#22C55E",
+    bg: "#F0FDF4",
+  },
+  {
+    label: "Retirement Plan",
+    icon: DollarSign,
+    color: "#059669",
+    bg: "#ECFDF5",
+  },
+  {
+    label: "Stock Options",
+    icon: DollarSign,
+    color: "#10B981",
+    bg: "#ECFDF5",
+  },
+  {
+    label: "Gym Membership",
+    icon: Dumbbell,
+    color: "#8B5CF6",
+    bg: "#F3E8FF",
+  },
+  {
+    label: "Free Lunch",
+    icon: Utensils,
+    color: "#F97316",
+    bg: "#FFF7ED",
+  },
+  {
+    label: "Free Snacks",
+    icon: Utensils,
+    color: "#EA580C",
+    bg: "#FFF7ED",
+  },
+  {
+    label: "Transportation Allowance",
+    icon: Plane,
+    color: "#0EA5E9",
+    bg: "#F0F9FF",
+  },
+  {
+    label: "Company Laptop",
+    icon: Monitor,
+    color: "#3B82F6",
+    bg: "#EFF6FF",
+  },
+  {
+    label: "Training Budget",
+    icon: GraduationCap,
+    color: "#F59E0B",
+    bg: "#FEF3C7",
+  },
+  {
+    label: "Learning & Development",
+    icon: GraduationCap,
+    color: "#D97706",
+    bg: "#FEF3C7",
+  },
+  {
+    label: "Career Growth",
+    icon: GraduationCap,
+    color: "#CA8A04",
+    bg: "#FEF9C3",
+  },
+  {
+    label: "Team Events",
+    icon: Users,
+    color: "#EC4899",
+    bg: "#FDF2F8",
+  },
+  {
+    label: "Work From Home Stipend",
+    icon: Laptop,
+    color: "#2563EB",
+    bg: "#EFF6FF",
+  },
+  {
+    label: "Wellness Program",
+    icon: Dumbbell,
+    color: "#7C3AED",
+    bg: "#F3E8FF",
+  },
+  {
+    label: "Employee Discounts",
+    icon: Users,
+    color: "#DB2777",
+    bg: "#FDF2F8",
+  },
+  {
+    label: "Relocation Assistance",
+    icon: Plane,
+    color: "#0284C7",
+    bg: "#F0F9FF",
+  },
+  {
+    label: "Life Insurance",
+    icon: Shield,
+    color: "#6366F1",
+    bg: "#EEF2FF",
+  },
+  {
+    label: "Mental Health Support",
+    icon: HeartPulse,
+    color: "#E11D48",
+    bg: "#FFF1F2",
+  },
+];
 import { useState } from "react";
 const companyBenefit = [
   "Remote Work",
@@ -63,182 +237,184 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
-const companyBenefits = [
-  {
-    label: "Remote Work",
-    icon: Laptop,
-    color: "#06B6D4",
-    bg: "#ECFEFF",
-  },
-  {
-    label: "Hybrid Work",
-    icon: Laptop,
-    color: "#06B6D4",
-    bg: "#ECFEFF",
-  },
-  {
-    label: "Flexible Hours",
-    icon: Briefcase,
-    color: "#4F46E5",
-    bg: "#EEF2FF",
-  },
-  {
-    label: "Health Insurance",
-    icon: HeartPulse,
-    color: "#EF4444",
-    bg: "#FEF2F2",
-  },
-  {
-    label: "Dental Insurance",
-    icon: HeartPulse,
-    color: "#EF4444",
-    bg: "#FEF2F2",
-  },
-  {
-    label: "Vision Insurance",
-    icon: HeartPulse,
-    color: "#EF4444",
-    bg: "#FEF2F2",
-  },
-  {
-    label: "Performance Bonus",
-    icon: DollarSign,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-  },
-  {
-    label: "Annual Bonus",
-    icon: DollarSign,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-  },
-  {
-    label: "Stock Options",
-    icon: DollarSign,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-  },
-  {
-    label: "Retirement Plan",
-    icon: DollarSign,
-    color: "#16A34A",
-    bg: "#F0FDF4",
-  },
-  {
-    label: "Training Budget",
-    icon: GraduationCap,
-    color: "#F59E0B",
-    bg: "#FEF3C7",
-  },
-  {
-    label: "Learning & Development",
-    icon: GraduationCap,
-    color: "#F59E0B",
-    bg: "#FEF3C7",
-  },
-  {
-    label: "Career Growth",
-    icon: GraduationCap,
-    color: "#F59E0B",
-    bg: "#FEF3C7",
-  },
-  {
-    label: "Gym Membership",
-    icon: Dumbbell,
-    color: "#8B5CF6",
-    bg: "#F3E8FF",
-  },
-  {
-    label: "Wellness Program",
-    icon: Dumbbell,
-    color: "#8B5CF6",
-    bg: "#F3E8FF",
-  },
-  {
-    label: "Free Lunch",
-    icon: Utensils,
-    color: "#F97316",
-    bg: "#FFF7ED",
-  },
-  {
-    label: "Free Snacks",
-    icon: Utensils,
-    color: "#F97316",
-    bg: "#FFF7ED",
-  },
-  {
-    label: "Transportation Allowance",
-    icon: Plane,
-    color: "#0EA5E9",
-    bg: "#F0F9FF",
-  },
-  {
-    label: "Relocation Assistance",
-    icon: Plane,
-    color: "#0EA5E9",
-    bg: "#F0F9FF",
-  },
-  {
-    label: "Team Events",
-    icon: Users,
-    color: "#EC4899",
-    bg: "#FDF2F8",
-  },
-  {
-    label: "Employee Discounts",
-    icon: Users,
-    color: "#EC4899",
-    bg: "#FDF2F8",
-  },
-  {
-    label: "Life Insurance",
-    icon: Shield,
-    color: "#6366F1",
-    bg: "#EEF2FF",
-  },
-  {
-    label: "Mental Health Support",
-    icon: HeartPulse,
-    color: "#EF4444",
-    bg: "#FEF2F2",
-  },
-];
+// const companyBenefits = [
+//   {
+//     label: "Remote Work",
+//     icon: Laptop,
+//     color: "#06B6D4",
+//     bg: "#ECFEFF",
+//   },
+//   {
+//     label: "Hybrid Work",
+//     icon: Laptop,
+//     color: "#06B6D4",
+//     bg: "#ECFEFF",
+//   },
+//   {
+//     label: "Flexible Hours",
+//     icon: Briefcase,
+//     color: "#4F46E5",
+//     bg: "#EEF2FF",
+//   },
+//   {
+//     label: "Health Insurance",
+//     icon: HeartPulse,
+//     color: "#EF4444",
+//     bg: "#FEF2F2",
+//   },
+//   {
+//     label: "Dental Insurance",
+//     icon: HeartPulse,
+//     color: "#EF4444",
+//     bg: "#FEF2F2",
+//   },
+//   {
+//     label: "Vision Insurance",
+//     icon: HeartPulse,
+//     color: "#EF4444",
+//     bg: "#FEF2F2",
+//   },
+//   {
+//     label: "Performance Bonus",
+//     icon: DollarSign,
+//     color: "#16A34A",
+//     bg: "#F0FDF4",
+//   },
+//   {
+//     label: "Annual Bonus",
+//     icon: DollarSign,
+//     color: "#16A34A",
+//     bg: "#F0FDF4",
+//   },
+//   {
+//     label: "Stock Options",
+//     icon: DollarSign,
+//     color: "#16A34A",
+//     bg: "#F0FDF4",
+//   },
+//   {
+//     label: "Retirement Plan",
+//     icon: DollarSign,
+//     color: "#16A34A",
+//     bg: "#F0FDF4",
+//   },
+//   {
+//     label: "Training Budget",
+//     icon: GraduationCap,
+//     color: "#F59E0B",
+//     bg: "#FEF3C7",
+//   },
+//   {
+//     label: "Learning & Development",
+//     icon: GraduationCap,
+//     color: "#F59E0B",
+//     bg: "#FEF3C7",
+//   },
+//   {
+//     label: "Career Growth",
+//     icon: GraduationCap,
+//     color: "#F59E0B",
+//     bg: "#FEF3C7",
+//   },
+//   {
+//     label: "Gym Membership",
+//     icon: Dumbbell,
+//     color: "#8B5CF6",
+//     bg: "#F3E8FF",
+//   },
+//   {
+//     label: "Wellness Program",
+//     icon: Dumbbell,
+//     color: "#8B5CF6",
+//     bg: "#F3E8FF",
+//   },
+//   {
+//     label: "Free Lunch",
+//     icon: Utensils,
+//     color: "#F97316",
+//     bg: "#FFF7ED",
+//   },
+//   {
+//     label: "Free Snacks",
+//     icon: Utensils,
+//     color: "#F97316",
+//     bg: "#FFF7ED",
+//   },
+//   {
+//     label: "Transportation Allowance",
+//     icon: Plane,
+//     color: "#0EA5E9",
+//     bg: "#F0F9FF",
+//   },
+//   {
+//     label: "Relocation Assistance",
+//     icon: Plane,
+//     color: "#0EA5E9",
+//     bg: "#F0F9FF",
+//   },
+//   {
+//     label: "Team Events",
+//     icon: Users,
+//     color: "#EC4899",
+//     bg: "#FDF2F8",
+//   },
+//   {
+//     label: "Employee Discounts",
+//     icon: Users,
+//     color: "#EC4899",
+//     bg: "#FDF2F8",
+//   },
+//   {
+//     label: "Life Insurance",
+//     icon: Shield,
+//     color: "#6366F1",
+//     bg: "#EEF2FF",
+//   },
+//   {
+//     label: "Mental Health Support",
+//     icon: HeartPulse,
+//     color: "#EF4444",
+//     bg: "#FEF2F2",
+//   },
+// ];
 
-const benefits = [
-  {
-    title: "Health Insurance",
-    icon: <Heart color="#EF4444" />,
-    bg: "#FEF2F2",
-  },
-  {
-    title: "Remote Work",
-    icon: <Briefcase size={25} color="#06B6D4" />,
-    bg: "#ECFEFF",
-  },
-  {
-    title: "Flexible Hours",
-    icon: <Clock3 size={25} color="#4F46E5" />,
-    bg: "#EEF2FF",
-  },
-  {
-    title: "Career Growth",
-    icon: <TrendingUp size={25} color="#F59E0B" />,
-    bg: "#FEF3C7",
-  },
-];
+// const benefits = [
+//   {
+//     title: "Health Insurance",
+//     icon: <Heart color="#EF4444" />,
+//     bg: "#FEF2F2",
+//   },
+//   {
+//     title: "Remote Work",
+//     icon: <Briefcase size={25} color="#06B6D4" />,
+//     bg: "#ECFEFF",
+//   },
+//   {
+//     title: "Flexible Hours",
+//     icon: <Clock3 size={25} color="#4F46E5" />,
+//     bg: "#EEF2FF",
+//   },
+//   {
+//     title: "Career Growth",
+//     icon: <TrendingUp size={25} color="#F59E0B" />,
+//     bg: "#FEF3C7",
+//   },
+// ];
 
 export default function MoreInfo() {
   const [selectedBenefits, setSelectedBenefits] = useState([]);
 
-  const MAX_BENEFITS = 6;
 
-  const handleChange = (event) => {
-    const value = event.target.value;
 
-    if (value.length <= MAX_BENEFITS) {
-      setSelectedBenefits(value);
-    }
-  };
+  
+
+
+  const selectedBenefitObjects = companyBenefits.filter(
+  (benefit) => selectedBenefits.includes(benefit.label)
+);
+
+
+console.log(selectedBenefits,selectedBenefitObjects);
 
   return (
     <>
@@ -293,10 +469,10 @@ export default function MoreInfo() {
               mb: 3,
             }}
           >
-            {benefits.map((benefit) => {
+            {selectedBenefitObjects?.map((benefit) => {
               return (
                 <Card
-                  key={benefit.title}
+                  key={benefit.label}
                   sx={{
                     boxSizing: "border-box",
                     width: "7.8rem",
@@ -330,7 +506,7 @@ export default function MoreInfo() {
                       mb: 1,
                     }}
                   >
-                    {benefit.icon}
+                    { <benefit.icon/>}
                   </Box>
 
                   <Typography
@@ -341,34 +517,38 @@ export default function MoreInfo() {
                       color: "#06051cd1",
                     }}
                   >
-                    {benefit.title}
+                    {benefit.label}
                   </Typography>
                 </Card>
               );
             })}
           </Box>
 
-          {/* <Autocomplete
+          <Autocomplete
             multiple
             size="small"
-            freeSolo
-            slotProps={{
-              popper: { sx: { transition: "none", animation: "none", m: 5 } },
-            }}
+            disableCloseOnSelect
             options={companyBenefit}
             value={selectedBenefits}
-            onChange={(e, value) => setSelectedBenefits(value)}
-            renderTags={(value, getTagProps) =>
-              value.map((option, index) => (
-                <Chip label={option} {...getTagProps({ index })} key={index} />
-              ))
+            onChange={(event, newValue) => {
+              if (newValue.length <= 6) {
+                setSelectedBenefits(newValue);
+              }
+            }}
+            getOptionDisabled={(option) =>
+              selectedBenefits.length >= 6 && !selectedBenefits.includes(option)
             }
+
+            renderTags={() => null}
+            sx={{
+              "& .MuiAutocomplete-tag": {
+                display: "none",
+              },
+            }}
             renderInput={(params) => (
-              <TextField {...params} placeholder="Add skills..." />
+              <TextField {...params} placeholder={`${selectedBenefits.length}/6 benefits selected`} />
             )}
-          /> */}
-
-
+          />
         </Box>
 
         <Box
@@ -480,29 +660,6 @@ export default function MoreInfo() {
     </>
   );
 }
-
-const inputWrapper = {
-  display: "flex",
-  alignItems: "center",
-  border: "1px solid #e5e5e5",
-  borderRadius: "8px",
-  padding: "10px",
-  marginBottom: "12px",
-  background: "#fafafa",
-};
-
-const iconBox = {
-  width: "3rem",
-  height: "2.5rem",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  borderRadius: "6px",
-  background: "#f0f0f0",
-  fontWeight: "bold",
-  marginRight: "10px",
-  fontSize: "12px",
-};
 
 const inputStyle = {
   border: "none",
