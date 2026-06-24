@@ -454,7 +454,7 @@ console.log(selectedBenefits,selectedBenefitObjects);
               fontSize: "0.9rem",
               fontWeight: 600,
               color: "#06051cb7",
-              mb: 3,
+              mb: 2,
             }}
           >
             Add benefits your company offers
@@ -466,12 +466,12 @@ console.log(selectedBenefits,selectedBenefitObjects);
               display: "flex",
               flexWrap: "wrap",
               gap: 1.5,
-              mb: 3,
+              mb: 1,
               width:"100%",
-              height:"65%",
+              height:"70%",
               border:"dashed 0.5px #c8c8c8",
               p:1,
-              boxSizing:"border-box"
+              boxSizing:"border-box",overflow:"auto"
             }}
           >
             {selectedBenefitObjects?.map((benefit) => {
