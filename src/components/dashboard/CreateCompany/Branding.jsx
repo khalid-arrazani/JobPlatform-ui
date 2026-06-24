@@ -25,13 +25,15 @@ export default function Branding() {
             borderRadius: "15px",
             overflow: "hidden",
             border: "solid 0.5px #b3b0b069",
+            position:"relative"
           }}
         >
           <Box sx={{ width: "100%", height: "68%", bgcolor: "#ffffff" }}>
-            <IconButton sx={{position:"absolute",bottom:-10,right:-25,bgcolor:"#123ff4",color:"#fff"}}>
+            <IconButton sx={{position:"absolute",bgcolor:"#123ff4",color:"#fff"}}>
                 <AddPhotoAlternateIcon  sx={{width:"3rem",height:"3rem"}}/>
               </IconButton>
           </Box>
+
           <Box
             sx={{
               width: "100%",
