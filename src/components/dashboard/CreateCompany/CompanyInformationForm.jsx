@@ -213,11 +213,8 @@ export default function CompanyInformationForm() {
 
           <TextField
             value={company_about}
-            
             onChange={(e) => {
-              company_about.length <= 2000
-                ? SetCompany_about(e.target.value)
-                : null;
+              e.target.value.length <= 2000 && SetCompany_about(e.target.value);
             }}
             fullWidth
             multiline
@@ -225,6 +222,9 @@ export default function CompanyInformationForm() {
             placeholder="Tell us about your company, your mission, vision and what makes it unique..."
             sx={inputStyle}
             helperText={`${company_about.length}/2000`}
+            inputProps={{
+              maxLength: 2000,
+            }}
             FormHelperTextProps={{
               sx: {
                 textAlign: "right",
