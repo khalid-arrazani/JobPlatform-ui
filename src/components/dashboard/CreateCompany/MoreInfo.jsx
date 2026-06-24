@@ -348,7 +348,7 @@ export default function MoreInfo() {
             })}
           </Box>
 
-          <Autocomplete
+          {/* <Autocomplete
             multiple
             size="small"
             freeSolo
@@ -366,7 +366,9 @@ export default function MoreInfo() {
             renderInput={(params) => (
               <TextField {...params} placeholder="Add skills..." />
             )}
-          />
+          /> */}
+
+
         </Box>
 
         <Box
