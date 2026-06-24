@@ -15,6 +15,7 @@ import {
   BriefcaseBusiness,
   MapPin,
 } from "lucide-react";
+import { useState } from "react";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -24,6 +25,13 @@ const inputStyle = {
 };
 
 export default function CompanyInformationForm() {
+  const [company_name, SetCompany_name] = useState("");
+  const [company_email, SetCompany_email] = useState("");
+  const [company_number, SetCompany_number] = useState("");
+  const [company_locatin, SetCompany_location] = useState("");
+  const [company_industry, SetCompany_industry] = useState("");
+  const [company_webSite, SetCompany_webSite] = useState("");
+  const [company_about, SetCompany_about] = useState("");
   return (
     <Box
       sx={{
@@ -31,7 +39,8 @@ export default function CompanyInformationForm() {
         width: "100%",
         border: "solid 0.5px #b3b0b069",
         borderRadius: "15px",
-        boxSizing: "border-box",p: 3,
+        boxSizing: "border-box",
+        p: 3,
       }}
     >
       <Box
@@ -142,8 +151,6 @@ export default function CompanyInformationForm() {
 
           <TextField
             placeholder="Select industry"
-            
-
             fullWidth
             size="small"
             defaultValue=""
@@ -198,18 +205,26 @@ export default function CompanyInformationForm() {
         </Box>
 
         {/* About Company */}
+
         <Box sx={{ minWidth: "80%", flex: 1 }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             About Your Company <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <TextField
+            value={company_about}
+            
+            onChange={(e) => {
+              company_about.length <= 2000
+                ? SetCompany_about(e.target.value)
+                : null;
+            }}
             fullWidth
             multiline
             rows={5}
             placeholder="Tell us about your company, your mission, vision and what makes it unique..."
             sx={inputStyle}
-            helperText="0/500"
+            helperText={`${company_about.length}/2000`}
             FormHelperTextProps={{
               sx: {
                 textAlign: "right",
