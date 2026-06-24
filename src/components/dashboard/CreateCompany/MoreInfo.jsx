@@ -467,6 +467,11 @@ console.log(selectedBenefits,selectedBenefitObjects);
               flexWrap: "wrap",
               gap: 1.5,
               mb: 3,
+              width:"100%",
+              height:"65%",
+              border:"dashed 0.5px #c8c8c8",
+              p:1,
+              boxSizing:"border-box"
             }}
           >
             {selectedBenefitObjects?.map((benefit) => {
@@ -524,11 +529,14 @@ console.log(selectedBenefits,selectedBenefitObjects);
             })}
           </Box>
 
+
+
+
           <Autocomplete
             multiple
             size="small"
             disableCloseOnSelect
-            aria-colspan={false}
+       
             options={companyBenefit}
             value={selectedBenefits}
             onChange={(event, newValue) => {
@@ -545,6 +553,10 @@ console.log(selectedBenefits,selectedBenefitObjects);
               "& .MuiAutocomplete-tag": {
                 display: "none",
               },
+              
+            }}
+            slotProps={{
+              popper: { sx: { transition: "none", animation: "none", m: 5 } },
             }}
             renderInput={(params) => (
               <TextField {...params} placeholder={`${selectedBenefits.length}/6 benefits selected`} />
