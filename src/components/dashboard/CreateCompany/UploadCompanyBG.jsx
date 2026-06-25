@@ -11,7 +11,7 @@ export default function CompanyBG ({  openImageBG , openSetImagBG,ImageBG,  setP
 
   const [image, setImage] = useState(null);
 
-  const [scale, setScale] = useState(1.2);
+  const [scale, setScale] = useState(1.3);
 
   const [preview, setPreview] = useState("");
 
@@ -48,10 +48,10 @@ export default function CompanyBG ({  openImageBG , openSetImagBG,ImageBG,  setP
             <AvatarEditor
               ref={editorRef}
               image={ImageBG}
-              width={360}
-              height={360}
-              border={5}
-              borderRadius={200}
+              width={580}
+              height={120}
+              border={0}
+              borderRadius={0}
               scale={scale}
             />
 
