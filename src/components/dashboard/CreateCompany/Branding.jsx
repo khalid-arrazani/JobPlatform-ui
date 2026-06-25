@@ -61,46 +61,48 @@ export default function Branding() {
               backgroundRepeat: "no-repeat",
             }}
           >
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "center",
+                alignItems: "center",
+                width: "100%",
+                height: "40%",
+              }}
+            >
+              {!previewBG ? (
+                <>
+                  <PanoramaOutlinedIcon
+                    sx={{ width: "3rem", height: "3rem", color: "#0958c6" }}
+                  />
 
+                  <Typography
+                    sx={{
+                      fontFamily: "-apple-system",
+                      fontWeight: 700,
+                      color: "#0b0b12d9",
+                      m: 0,
+                    }}
+                  >
+                    Upload cover background
+                  </Typography>
 
-            <Box sx={ {display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              width:"100%",
-              height:"40%"}}>
-                { !previewBG ? 
-              <>
-              <PanoramaOutlinedIcon
-                sx={{ width: "3rem", height: "3rem", color: "#0958c6" }}
-              />
-
-              <Typography
-                sx={{
-                  fontFamily: "-apple-system",
-                  fontWeight: 700,
-                  color: "#0b0b12d9",
-                  m: 0,
-                }}
-              >
-                Upload cover background
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontFamily: "-apple-system",
-                  fontWeight: 700,
-                  color: "#0a0a189f",
-                  m: 0,
-                  fontSize: "0.8rem",
-                  p: 0,
-                }}
-              >
-                JBG or PNG. Recommended size 1920x600px. Max size 5MB
-              </Typography>
-              </> : null }
+                  <Typography
+                    sx={{
+                      fontFamily: "-apple-system",
+                      fontWeight: 700,
+                      color: "#0a0a189f",
+                      m: 0,
+                      fontSize: "0.8rem",
+                      p: 0,
+                    }}
+                  >
+                    JBG or PNG. Recommended size 1920x600px. Max size 5MB
+                  </Typography>
+                </>
+              ) : null}
             </Box>
-
 
             <Button
               component="label"

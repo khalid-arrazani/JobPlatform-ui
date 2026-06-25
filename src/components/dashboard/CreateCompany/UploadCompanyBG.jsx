@@ -6,27 +6,36 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyBG ({  openImageBG , openSetImagBG,ImageBG,  setPreviewBG}) {
+export default function CompanyBG({
+  openImageBG,
+  openSetImagBG,
+  ImageBG,
+  setPreviewBG,
+}) {
   const editorRef = useRef();
 
   const [image, setImage] = useState(null);
 
   const [scale, setScale] = useState(1.3);
 
-  const [preview, setPreview] = useState("");
-
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
 
-    canvas.toBlob((blob) => {
+    const outputCanvas = document.createElement("canvas");
+
+    outputCanvas.width = 1920;
+    outputCanvas.height = 400;
+
+    const ctx = outputCanvas.getContext("2d");
+
+    ctx.drawImage(canvas, 0, 0, 1920, 400);
+
+    outputCanvas.toBlob((blob) => {
       if (!blob) return;
 
       const previewUrl = URL.createObjectURL(blob);
 
       setPreviewBG(previewUrl);
-
-      // setPhoto(blob);
-
       openSetImagBG(false);
     }, "image/png");
   };
@@ -35,21 +44,24 @@ export default function CompanyBG ({  openImageBG , openSetImagBG,ImageBG,  setP
     <>
       {/* Upload */}
 
-      <Dialog open={openImageBG} onClose={() => openSetImagBG(false)}>
-        <DialogContent>
+      <Dialog sx={{"& .MuiPaper-root":{maxWidth:"100vw"} }} open={openImageBG} onClose={() => openSetImagBG(false)}>
+        <DialogContent  >
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               gap: "1rem",
+              transform: "scale(1)",
+              transformOrigin: "top center",
+            
             }}
           >
             <AvatarEditor
               ref={editorRef}
               image={ImageBG}
-              width={580}
-              height={120}
+              width={1160}
+              height={240}
               border={0}
               borderRadius={0}
               scale={scale}
