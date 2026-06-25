@@ -23,16 +23,11 @@ export default function CreateCompanyPage() {
 
 
 
-  const [step, setStep] = useState(0);
   
-  const next = () => {
-    setStep((prev) => prev + 1);
-  };
-
   const back = () => {
     setStep((prev) => prev - 1);
   };
-
+  
   const [firstInfo , setFirstInfo ] = useState({
     company_name:"",
     company_email:"",
@@ -42,36 +37,35 @@ export default function CreateCompanyPage() {
     company_webSite:"",
     company_about:""
   })
-
-console.log(firstInfo);
-
-
-  const validateForm = () => {
-  if (validator.isEmpty(firstInfo.company_name.trim())) {
-    "Company name is required"
-    return false;
-  }
-
-  if (!validator.isEmail(firstInfo.company_email)) {
-    "Invalid email"
-    return false;
-  }
-
-  if (
-    validator.isEmpty(firstInfo.company_number.trim()) ||
-    !validator.isMobilePhone(firstInfo.company_number, "any")
-  ) {
-    "Invalid phone number"
-    return false;
-  }
-
-  if (validator.isEmpty(firstInfo.company_locatin.trim())) {
-    "Location is required"
+  
+  
+  let err = null
+  const validateForm = () => {  
+    if (validator.isEmpty(firstInfo.company_name.trim())) {
+      err = "Company name is required"
+      return false;
+    }
+    
+    if (!validator.isEmail(firstInfo.company_email)) {
+      err ="Invalid email"
+      return false;
+    }
+    
+    if (
+      validator.isEmpty(firstInfo.company_number.trim()) ||
+      !validator.isMobilePhone(firstInfo.company_number, "any")
+    ) {
+      err = "Invalid phone number"
+      return false;
+    }
+    
+    if (validator.isEmpty(firstInfo.company_locatin.trim())) {
+    err ="Location is required"
     return false;
   }
 
   if (validator.isEmpty(firstInfo.company_industry.trim())) {
-    "Industry is required"
+    err ="Industry is required"
     return false;
   }
 
@@ -79,7 +73,7 @@ console.log(firstInfo);
     firstInfo.company_webSite &&
     !validator.isURL(firstInfo.company_webSite)
   ) {
-    "Invalid website"
+   err = "Invalid website"
     return false;
   }
 
@@ -87,19 +81,28 @@ console.log(firstInfo);
     validator.isEmpty(firstInfo.company_about.trim()) ||
     !validator.isLength(firstInfo.company_about, { min: 20, max: 2000 })
   ) {
-    "About company must be between 20 and 2000 characters"
+    err = "About company must be between 20 and 2000 characters"
     return false;
   }
-
-  
-
   return true;
 };
 
 
-console.log(validateForm());
-  return (
-    <>
+
+const [step, setStep] = useState(0);
+
+const next = () => {
+  if (!validateForm()){
+   console.log(err)
+  }else{
+    setStep((prev) => prev + 1);
+  }
+  
+};
+
+return (
+  
+  <>
       <Box
         sx={{
           height: "92.3vh",
