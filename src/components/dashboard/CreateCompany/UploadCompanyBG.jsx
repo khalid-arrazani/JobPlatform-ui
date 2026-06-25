@@ -11,6 +11,7 @@ export default function CompanyBG({
   openSetImagBG,
   ImageBG,
   setPreviewBG,
+  setBgBlob
 }) {
   const editorRef = useRef();
 
@@ -34,6 +35,9 @@ export default function CompanyBG({
       const previewUrl = URL.createObjectURL(blob);
 
       setPreviewBG(previewUrl);
+
+      setBgBlob(blob);
+      
       openSetImagBG(false);
     }, "image/png");
   };

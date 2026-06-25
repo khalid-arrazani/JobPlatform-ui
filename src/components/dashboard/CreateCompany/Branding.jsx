@@ -150,7 +150,7 @@ export default function Branding() {
               setPreviewBG={setPreviewBG}
 
               setBgBlob={setBgBlob}
-              setLogoBlob={setLogoBlob}
+              
             />
           </Box>
 
@@ -235,6 +235,8 @@ export default function Branding() {
                 ImageLogo={ImageLogo}
                 previewLogo={previewLogo}
                 setPreviewLogo={setPreviewLogo}
+
+                setLogoBlob={setLogoBlob}
               />
             </Box>
           </Box>

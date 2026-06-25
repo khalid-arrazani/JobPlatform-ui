@@ -6,14 +6,11 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLogo, previewLogo, setPreviewLogo}) {
+export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLogo, setLogoBlob, setPreviewLogo}) {
   const editorRef = useRef();
-
-  const [image, setImage] = useState(null);
 
   const [scale, setScale] = useState(1.2);
 
-  const [preview, setPreview] = useState("");
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -25,7 +22,7 @@ export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLog
 
       setPreviewLogo(previewUrl);
 
-      // setPhoto(blob);
+      setLogoBlob(blob);
 
       openSetImagLogo(false);
     }, "image/png");
