@@ -21,6 +21,9 @@ export default function Branding() {
   const [previewLogo, setPreviewLogo] = useState("");
   const [previewBG, setPreviewBG] = useState("");
 
+  const [ logoBlob , setLogoBlob ] = useState()
+  const [ bgBlob , setBgBlob ] = useState()
+
   return (
     <>
       <Box
@@ -145,6 +148,9 @@ export default function Branding() {
               ImageBG={ImageBG}
               previewBG={previewBG}
               setPreviewBG={setPreviewBG}
+
+              setBgBlob={setBgBlob}
+              setLogoBlob={setLogoBlob}
             />
           </Box>
 

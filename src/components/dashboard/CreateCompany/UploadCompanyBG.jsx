@@ -14,8 +14,6 @@ export default function CompanyBG({
 }) {
   const editorRef = useRef();
 
-  const [image, setImage] = useState(null);
-
   const [scale, setScale] = useState(1.3);
 
   const handleSave = () => {
