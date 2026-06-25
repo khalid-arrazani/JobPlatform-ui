@@ -14,7 +14,7 @@ import {
   BriefcaseBusiness,
   MapPin,
 } from "lucide-react";
-import { useEffect, useState } from "react";
+
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -24,8 +24,6 @@ const inputStyle = {
 };
 
 export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
-  
-
   return (
     <Box
       sx={{

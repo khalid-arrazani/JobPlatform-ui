@@ -44,56 +44,60 @@ export default function CreateCompanyPage() {
   })
 
 console.log(firstInfo);
-//   const validateForm = () => {
-//   if (validator.isEmpty(company_name.trim())) {
-//     alert("Company name is required");
-//     return false;
-//   }
-
-//   if (!validator.isEmail(company_email)) {
-//     alert("Invalid email");
-//     return false;
-//   }
-
-//   if (
-//     validator.isEmpty(company_number.trim()) ||
-//     !validator.isMobilePhone(company_number, "any")
-//   ) {
-//     alert("Invalid phone number");
-//     return false;
-//   }
-
-//   if (validator.isEmpty(company_locatin.trim())) {
-//     alert("Location is required");
-//     return false;
-//   }
-
-//   if (validator.isEmpty(company_industry.trim())) {
-//     alert("Industry is required");
-//     return false;
-//   }
-
-//   if (
-//     company_webSite &&
-//     !validator.isURL(company_webSite)
-//   ) {
-//     alert("Invalid website");
-//     return false;
-//   }
-
-//   if (
-//     validator.isEmpty(company_about.trim()) ||
-//     !validator.isLength(company_about, { min: 20, max: 2000 })
-//   ) {
-//     alert("About company must be between 20 and 2000 characters");
-//     return false;
-//   }
-
-//   return true;
-// };
 
 
+  const validateForm = () => {
+  if (validator.isEmpty(firstInfo.company_name.trim())) {
+    "Company name is required"
+    return false;
+  }
 
+  if (!validator.isEmail(firstInfo.company_email)) {
+    "Invalid email"
+    return false;
+  }
+
+  if (
+    validator.isEmpty(firstInfo.company_number.trim()) ||
+    !validator.isMobilePhone(firstInfo.company_number, "any")
+  ) {
+    "Invalid phone number"
+    return false;
+  }
+
+  if (validator.isEmpty(firstInfo.company_locatin.trim())) {
+    "Location is required"
+    return false;
+  }
+
+  if (validator.isEmpty(firstInfo.company_industry.trim())) {
+    "Industry is required"
+    return false;
+  }
+
+  if (
+    firstInfo.company_webSite &&
+    !validator.isURL(firstInfo.company_webSite)
+  ) {
+    "Invalid website"
+    return false;
+  }
+
+  if (
+    validator.isEmpty(firstInfo.company_about.trim()) ||
+    !validator.isLength(firstInfo.company_about, { min: 20, max: 2000 })
+  ) {
+    "About company must be between 20 and 2000 characters"
+    return false;
+  }
+
+  
+
+  return true;
+};
+
+
+console.log(validateForm());
   return (
     <>
       <Box
