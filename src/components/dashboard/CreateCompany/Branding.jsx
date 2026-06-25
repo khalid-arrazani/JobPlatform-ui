@@ -55,35 +55,52 @@ export default function Branding() {
               justifyContent: "center",
               alignItems: "center",
               gap: 0.5,
+              backgroundImage: previewBG ? `url(${previewBG})` : "none",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           >
-            <PanoramaOutlinedIcon
-              sx={{ width: "3rem", height: "3rem", color: "#0958c6" }}
-            />
 
-            <Typography
-              sx={{
-                fontFamily: "-apple-system",
-                fontWeight: 700,
-                color: "#0b0b12d9",
-                m: 0,
-              }}
-            >
-              Upload cover background
-            </Typography>
 
-            <Typography
-              sx={{
-                fontFamily: "-apple-system",
-                fontWeight: 700,
-                color: "#0a0a189f",
-                m: 0,
-                fontSize: "0.8rem",
-                p: 0,
-              }}
-            >
-              JBG or PNG. Recommended size 1920x600px. Max size 5MB
-            </Typography>
+            <Box sx={ {display: "flex",
+              flexDirection: "column",
+              justifyContent: "center",
+              alignItems: "center",
+              width:"100%",
+              height:"40%"}}>
+                { !previewBG ? 
+              <>
+              <PanoramaOutlinedIcon
+                sx={{ width: "3rem", height: "3rem", color: "#0958c6" }}
+              />
+
+              <Typography
+                sx={{
+                  fontFamily: "-apple-system",
+                  fontWeight: 700,
+                  color: "#0b0b12d9",
+                  m: 0,
+                }}
+              >
+                Upload cover background
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontFamily: "-apple-system",
+                  fontWeight: 700,
+                  color: "#0a0a189f",
+                  m: 0,
+                  fontSize: "0.8rem",
+                  p: 0,
+                }}
+              >
+                JBG or PNG. Recommended size 1920x600px. Max size 5MB
+              </Typography>
+              </> : null }
+            </Box>
+
 
             <Button
               component="label"
@@ -106,14 +123,12 @@ export default function Branding() {
                 }}
               />
               Choose Image
-              
               <input
                 hidden
                 accept="image/*"
                 type="file"
                 onChange={(e) => {
                   const file = e.target.files?.[0];
-
                   if (file) {
                     setImagBG(file);
                     openSetImagBG(true);
