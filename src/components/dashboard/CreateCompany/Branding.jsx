@@ -12,6 +12,7 @@ import { MdOutlineFileUpload } from "react-icons/md";
 import { useState } from "react";
 
 export default function Branding() {
+  
   const [ImageLogo, setImagLogo] = useState("");
   const [openImageLogo, openSetImagLogo] = useState("");
 
