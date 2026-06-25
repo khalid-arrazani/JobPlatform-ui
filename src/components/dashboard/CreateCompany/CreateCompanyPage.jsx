@@ -1,3 +1,13 @@
+import validator from "validator";
+
+
+
+
+
+
+
+
+
 import { Card, Typography, Box, Divider, Button } from "@mui/material";
 import Left_side from "./left_Side";
 
@@ -23,7 +33,74 @@ export default function CreateCompanyPage() {
     setStep((prev) => prev - 1);
   };
 
+  const [firstInfo , setFirstInfo ] = useState({
+    company_name:"",
+    company_email:"",
+    company_number:"",
+    company_locatin:"",
+    company_industry:"",
+    company_webSite:"",
+    company_about:""
+  })
+  
 
+//   const validateForm = () => {
+//   if (validator.isEmpty(company_name.trim())) {
+//     alert("Company name is required");
+//     return false;
+//   }
+
+//   if (!validator.isEmail(company_email)) {
+//     alert("Invalid email");
+//     return false;
+//   }
+
+//   if (
+//     validator.isEmpty(company_number.trim()) ||
+//     !validator.isMobilePhone(company_number, "any")
+//   ) {
+//     alert("Invalid phone number");
+//     return false;
+//   }
+
+//   if (validator.isEmpty(company_locatin.trim())) {
+//     alert("Location is required");
+//     return false;
+//   }
+
+//   if (validator.isEmpty(company_industry.trim())) {
+//     alert("Industry is required");
+//     return false;
+//   }
+
+//   if (
+//     company_webSite &&
+//     !validator.isURL(company_webSite)
+//   ) {
+//     alert("Invalid website");
+//     return false;
+//   }
+
+//   if (
+//     validator.isEmpty(company_about.trim()) ||
+//     !validator.isLength(company_about, { min: 20, max: 2000 })
+//   ) {
+//     alert("About company must be between 20 and 2000 characters");
+//     return false;
+//   }
+
+//   return true;
+// };
+
+  const [company_name, SetCompany_name] = useState("");
+  const [company_email, SetCompany_email] = useState("");
+  const [company_number, SetCompany_number] = useState("");
+  const [company_locatin, SetCompany_location] = useState("");
+  const [company_industry, SetCompany_industry] = useState("");
+  const [company_webSite, SetCompany_webSite] = useState(""); 
+
+  
+  const [company_about, SetCompany_about] = useState("");
 
   return (
     <>
