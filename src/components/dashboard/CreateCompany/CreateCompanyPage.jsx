@@ -10,7 +10,20 @@ import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
 export default function CreateCompanyPage() {
+
+
+
   const [step, setStep] = useState(0);
+  
+  const next = () => {
+    setStep((prev) => prev + 1);
+  };
+
+  const back = () => {
+    setStep((prev) => prev - 1);
+  };
+
+
 
   return (
     <>
@@ -52,7 +65,7 @@ export default function CreateCompanyPage() {
           null}
 
           {/* Bottom */}
-          <ButtonB step={step} setStep={setStep} />
+          <ButtonB step={step} setStep={setStep} next={next} back={back}/>
         </Box>
       </Box>
     </>

@@ -26,15 +26,17 @@ const inputStyle = {
 
 export default function CompanyInformationForm() {
 
+
   const [company_name, SetCompany_name] = useState("");
   const [company_email, SetCompany_email] = useState("");
   const [company_number, SetCompany_number] = useState("");
   const [company_locatin, SetCompany_location] = useState("");
   const [company_industry, SetCompany_industry] = useState("");
-  const [company_webSite, SetCompany_webSite] = useState("");
+  const [company_webSite, SetCompany_webSite] = useState(""); 
 
-  const [company_about, SetCompany_about] = useState("");
   
+  const [company_about, SetCompany_about] = useState("");
+
   return (
     <Box
       sx={{
