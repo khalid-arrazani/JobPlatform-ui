@@ -42,8 +42,8 @@ export default function CreateCompanyPage() {
     company_webSite:"",
     company_about:""
   })
-  
 
+console.log(firstInfo);
 //   const validateForm = () => {
 //   if (validator.isEmpty(company_name.trim())) {
 //     alert("Company name is required");
@@ -92,15 +92,7 @@ export default function CreateCompanyPage() {
 //   return true;
 // };
 
-  const [company_name, SetCompany_name] = useState("");
-  const [company_email, SetCompany_email] = useState("");
-  const [company_number, SetCompany_number] = useState("");
-  const [company_locatin, SetCompany_location] = useState("");
-  const [company_industry, SetCompany_industry] = useState("");
-  const [company_webSite, SetCompany_webSite] = useState(""); 
 
-  
-  const [company_about, SetCompany_about] = useState("");
 
   return (
     <>
@@ -134,7 +126,7 @@ export default function CreateCompanyPage() {
 
           {/* Content */}
           {step == 0 ? (
-            <CompanyInformationForm />
+            <CompanyInformationForm setFirstInfo={setFirstInfo} firstInfo={firstInfo} />
           ) : step == 1 ? (
             <MoreInfo />
           ) :step == 2 ? 

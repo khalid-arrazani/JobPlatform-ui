@@ -1,6 +1,5 @@
 import {
   Box,
-  Grid,
   TextField,
   Typography,
   MenuItem,
@@ -15,7 +14,7 @@ import {
   BriefcaseBusiness,
   MapPin,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -24,18 +23,8 @@ const inputStyle = {
   },
 };
 
-export default function CompanyInformationForm() {
-
-
-  const [company_name, SetCompany_name] = useState("");
-  const [company_email, SetCompany_email] = useState("");
-  const [company_number, SetCompany_number] = useState("");
-  const [company_locatin, SetCompany_location] = useState("");
-  const [company_industry, SetCompany_industry] = useState("");
-  const [company_webSite, SetCompany_webSite] = useState(""); 
-
+export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
   
-  const [company_about, SetCompany_about] = useState("");
 
   return (
     <Box
@@ -63,6 +52,15 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
+
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_name: e.target.value,
+              }));
+            }}
+
+            value={firstInfo.company_name}
             fullWidth
             size="small"
             placeholder="Enter company name"
@@ -87,6 +85,14 @@ export default function CompanyInformationForm() {
 
           <TextField
             fullWidth
+            value={firstInfo.company_email}
+
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_email: e.target.value,
+              }));
+            }}
             size="small"
             placeholder="contact@company.com"
             sx={inputStyle}
@@ -110,6 +116,14 @@ export default function CompanyInformationForm() {
 
           <TextField
             fullWidth
+            value={firstInfo.company_number}
+
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_number: e.target.value,
+              }));
+            }}
             size="small"
             placeholder="+212 6 12 34 56 78"
             sx={inputStyle}
@@ -132,7 +146,14 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
+            value={firstInfo.company_webSite}
             fullWidth
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_webSite: e.target.value,
+              }));
+            }}
             size="small"
             placeholder="https://www.yourcompany.com"
             sx={inputStyle}
@@ -156,7 +177,14 @@ export default function CompanyInformationForm() {
 
           <TextField
             placeholder="Select industry"
+            value={firstInfo.company_industry}
             fullWidth
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_industry: e.target.value,
+              }));
+            }}
             size="small"
             defaultValue=""
             sx={inputStyle}
@@ -186,8 +214,15 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
+            value={firstInfo.company_locatin}
             placeholder="Select Location"
             fullWidth
+            onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_locatin: e.target.value,
+              }));
+            }}
             size="small"
             defaultValue=""
             sx={inputStyle}
@@ -217,16 +252,21 @@ export default function CompanyInformationForm() {
           </Typography>
 
           <TextField
-            value={company_about}
+           value={firstInfo.company_about}
+
             onChange={(e) => {
-              e.target.value.length <= 2000 && SetCompany_about(e.target.value);
+              e.target.value.length <= 2000 &&
+                setFirstInfo((prev) => ({
+                  ...prev,
+                  company_about: e.target.value,
+                }));
             }}
             fullWidth
             multiline
             rows={5}
             placeholder="Tell us about your company, your mission, vision and what makes it unique..."
             sx={inputStyle}
-            helperText={`${company_about.length}/2000`}
+            helperText={`${firstInfo.company_about.length}/2000`}
             inputProps={{
               maxLength: 2000,
             }}
