@@ -22,15 +22,13 @@ import CompanyInformationForm from "./CompanyInformationForm";
 import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
-import { useGSAP } from "@gsap/react";
+
 import gsap from "gsap";
 
 export default function CreateCompanyPage() {
-  const [snakState, setSnackStat] = useState(false);
+
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
-
- 
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -42,26 +40,25 @@ export default function CreateCompanyPage() {
     company_about: "",
   });
 
-const [secondtInfo, setSecondInfo] = useState({
+  const [secondtInfo, setSecondInfo] = useState({
     company_linkdin: {
-      platform :"linkdin",
-      url:""
+      platform: "linkdin",
+      url: "",
     },
     company_facebook: {
-      platform :"facebook",
-      url:""
+      platform: "facebook",
+      url: "",
     },
     company_instagram: {
-      platform :"instagram",
-      url:""
+      platform: "instagram",
+      url: "",
     },
     company_x: {
-      platform :"x",
-      url:""
+      platform: "x",
+      url: "",
     },
-    company_benefit:[],
+    company_benefit: [],
   });
-
 
   const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
@@ -110,76 +107,74 @@ const [secondtInfo, setSecondInfo] = useState({
     return true;
   };
 
+  const validatesecondtInfo = () => {
+    if (
+      secondtInfo.company_linkdin.url &&
+      !validator.isURL(secondtInfo.company_linkdin.url)
+    ) {
+      setErr("Invalid LinkedIn URL");
+      return false;
+    }
 
-   const validatesecondtInfo = () => {
+    if (
+      secondtInfo.company_facebook.url &&
+      !validator.isURL(secondtInfo.company_facebook.url)
+    ) {
+      setErr("Invalid Facebook URL");
+      return false;
+    }
 
-   if (
-  secondtInfo.company_linkdin.url &&
-  !validator.isURL(secondtInfo.company_linkdin.url)
-) {
-  setErr("Invalid LinkedIn URL");
-  return false;
-}
+    if (
+      secondtInfo.company_instagram.url &&
+      !validator.isURL(secondtInfo.company_instagram.url)
+    ) {
+      setErr("Invalid Instagram URL");
+      return false;
+    }
 
-if (
-  secondtInfo.company_facebook.url &&
-  !validator.isURL(secondtInfo.company_facebook.url)
-) {
-  setErr("Invalid Facebook URL");
-  return false;
-}
-
-if (
-  secondtInfo.company_instagram.url &&
-  !validator.isURL(secondtInfo.company_instagram.url)
-) {
-  setErr("Invalid Instagram URL");
-  return false;
-}
-
-if (
-  secondtInfo.company_x.url &&
-  !validator.isURL(secondtInfo.company_x.url)
-) {
-  setErr("Invalid X URL");
-  return false;
-}
+    if (
+      secondtInfo.company_x.url &&
+      !validator.isURL(secondtInfo.company_x.url)
+    ) {
+      setErr("Invalid X URL");
+      return false;
+    }
     return true;
- };
-
-  
+  };
 
   const next = () => {
     if (!validatefirstInfo()) {
-      setSnackStat(true);
 
       const tl = gsap.timeline();
 
       tl.to(".snakbar", {
         y: -100,
-        duration: .2,
+        duration: 0.2,
         opacity: 1,
         yoyo: true,
         repeat: 1,
-        repeatDelay: 2.3
+        repeatDelay: 2.3,
       });
-    } else {
+    }else if (!validatesecondtInfo() && step == 1 ) {
+
+      const tl = gsap.timeline();
+
+      tl.to(".snakbar", {
+        y: -100,
+        duration: 0.2,
+        opacity: 1,
+        yoyo: true,
+        repeat: 1,
+        repeatDelay: 2.3,
+      });
+    }else {
       setStep((prev) => prev + 1);
     }
   };
 
-
- const back = () => {
+  const back = () => {
     setStep((prev) => prev - 1);
   };
-
-
-
-
-
-
-
-   
 
   return (
     <>
