@@ -11,6 +11,7 @@ import {
   Slide,
   Zoom,
   Grow,
+  Alert,
 } from "@mui/material";
 import Left_side from "./left_Side";
 
@@ -101,20 +102,39 @@ export default function CreateCompanyPage() {
     setSnackStat(false);
   };
 
-
- 
-
   return (
     <>
       {/* this section for snakbar */}
 
       <Snackbar
-        open={snakState}
+        open={true}
         onClose={handleClose}
-        message="I love snacks"
         TransitionComponent={Grow}
-        autoHideDuration={1200}
-      />
+        autoHideDuration={2000}
+        sx={{border:"solid 1px #9f9f9f",bgcolor:"#fff",width:"20%"}}
+      >
+        <Box>
+          <lord-icon
+            src="https://cdn.lordicon.com/lltgvngb.json"
+            trigger="loop"
+            colors="primary:#4f46e5"
+            style={{
+              width: "40px",
+              height: "40px",
+            }}
+          ></lord-icon>
+
+          <Typography>
+            {err}
+          </Typography>
+
+
+
+          </Box>
+
+          
+     
+      </Snackbar>
 
       <Box
         sx={{
