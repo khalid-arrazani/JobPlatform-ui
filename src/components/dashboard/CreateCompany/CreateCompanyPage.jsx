@@ -100,10 +100,11 @@ export default function CreateCompanyPage() {
 
       tl.to(".snakbar", {
         y: -100,
-        duration: 0.5,
-      }).to(".snakbar", {
-        y: 0,
-        duration: 0.5,
+        duration: .2,
+        opacity: 1,
+        yoyo: true,
+        repeat: 1,
+        repeatDelay: 2.3
       });
     } else {
       setStep((prev) => prev + 1);
@@ -134,7 +135,8 @@ export default function CreateCompanyPage() {
             by: 1,
             position: "absolute",
             left: "50%",
-            bottom: "2%",
+            opacity: 0,
+            bottom: "-10%",
             zIndex: 5000,
           }}
         >
