@@ -110,26 +110,16 @@ export default function CreateCompanyPage() {
     }
   };
 
-  const handleClose = () => {
-    setSnackStat(false);
-  };
+
 
   return (
     <>
       {/* this section for snakbar */}
 
-      <Snackbar
-        open={snakState}
-        onClose={handleClose}
-        autoHideDuration={3000}
+      <Box
+    
         className="snakbar"
-        anchorOrigin={{
-          vertical: "center",
-          horizontal: "center",
-        }}
-        slots={{
-          transition: "up",
-        }}
+      
         sx={{
           border: "solid 1px #c9c9c9",
           bgcolor: "#fff",
@@ -137,6 +127,8 @@ export default function CreateCompanyPage() {
           borderRadius: "10px",
           pr: 2,
           by: 1,
+          position:"absolute",
+          
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
@@ -160,7 +152,7 @@ export default function CreateCompanyPage() {
             {err}
           </Typography>
         </Box>
-      </Snackbar>
+      </Box>
 
       <Box
         sx={{
