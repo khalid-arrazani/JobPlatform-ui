@@ -2,15 +2,13 @@ import {
   Box,
   Card,
   Typography,
-  Button,
   TextField,
   InputAdornment,
-  MenuItem,
   Autocomplete,
-  Chip,
+
 } from "@mui/material";
 
-import { Heart, Clock3, TrendingUp, Plus } from "lucide-react";
+
 
 import {
   FaLinkedin,
@@ -205,7 +203,7 @@ const companyBenefits = [
     bg: "#FFF1F2",
   },
 ];
-import { useState } from "react";
+
 const companyBenefit = [
   "Remote Work",
   "Hybrid Work",
@@ -239,8 +237,6 @@ const companyBenefit = [
 
 
 export default function MoreInfo({ secondtInfo, setSecondInfo }) {
-
-
 
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
@@ -421,10 +417,10 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
               fontSize: "0.9rem",
               fontWeight: 600,
               color: "#06051cb7",
-              mb: 3,
+              mb: 2,
             }}
           >
-            Add benefits your company social media profiles
+            Add  your company social media 
           </Typography>
           <Box
             sx={{
@@ -432,7 +428,12 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
               display: "flex",
               flexDirection: "column",
               flex: 1,
-              gap: 2.5,
+              gap: 1.5,
+              border: "dashed 0.5px #c8c8c8",
+              p: 1,
+              boxSizing: "border-box",
+              overflow: "auto",
+              maxHeight:"80%"
             }}
           >
             {/* LinkedIn */}
