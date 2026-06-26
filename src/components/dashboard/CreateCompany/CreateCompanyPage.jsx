@@ -43,6 +43,15 @@ export default function CreateCompanyPage() {
     company_about: "",
   });
 
+const [secondtInfo, setSecondInfo] = useState({
+    company_linkdin: "",
+    company_facebook: "",
+    company_instagram: "",
+    company_x: "",
+    company_benefit:[],
+  });
+
+
   const validateForm = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
       setErr("Invalid Company name");
@@ -201,7 +210,7 @@ export default function CreateCompanyPage() {
               firstInfo={firstInfo}
             />
           ) : step == 1 ? (
-            <MoreInfo />
+            <MoreInfo secondtInfo={secondtInfo} setSecondInfo={setSecondInfo} />
           ) : step == 2 ? (
             <Branding />
           ) : null}

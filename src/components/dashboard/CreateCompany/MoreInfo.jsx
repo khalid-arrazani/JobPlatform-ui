@@ -237,184 +237,17 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
-// const companyBenefits = [
-//   {
-//     label: "Remote Work",
-//     icon: Laptop,
-//     color: "#06B6D4",
-//     bg: "#ECFEFF",
-//   },
-//   {
-//     label: "Hybrid Work",
-//     icon: Laptop,
-//     color: "#06B6D4",
-//     bg: "#ECFEFF",
-//   },
-//   {
-//     label: "Flexible Hours",
-//     icon: Briefcase,
-//     color: "#4F46E5",
-//     bg: "#EEF2FF",
-//   },
-//   {
-//     label: "Health Insurance",
-//     icon: HeartPulse,
-//     color: "#EF4444",
-//     bg: "#FEF2F2",
-//   },
-//   {
-//     label: "Dental Insurance",
-//     icon: HeartPulse,
-//     color: "#EF4444",
-//     bg: "#FEF2F2",
-//   },
-//   {
-//     label: "Vision Insurance",
-//     icon: HeartPulse,
-//     color: "#EF4444",
-//     bg: "#FEF2F2",
-//   },
-//   {
-//     label: "Performance Bonus",
-//     icon: DollarSign,
-//     color: "#16A34A",
-//     bg: "#F0FDF4",
-//   },
-//   {
-//     label: "Annual Bonus",
-//     icon: DollarSign,
-//     color: "#16A34A",
-//     bg: "#F0FDF4",
-//   },
-//   {
-//     label: "Stock Options",
-//     icon: DollarSign,
-//     color: "#16A34A",
-//     bg: "#F0FDF4",
-//   },
-//   {
-//     label: "Retirement Plan",
-//     icon: DollarSign,
-//     color: "#16A34A",
-//     bg: "#F0FDF4",
-//   },
-//   {
-//     label: "Training Budget",
-//     icon: GraduationCap,
-//     color: "#F59E0B",
-//     bg: "#FEF3C7",
-//   },
-//   {
-//     label: "Learning & Development",
-//     icon: GraduationCap,
-//     color: "#F59E0B",
-//     bg: "#FEF3C7",
-//   },
-//   {
-//     label: "Career Growth",
-//     icon: GraduationCap,
-//     color: "#F59E0B",
-//     bg: "#FEF3C7",
-//   },
-//   {
-//     label: "Gym Membership",
-//     icon: Dumbbell,
-//     color: "#8B5CF6",
-//     bg: "#F3E8FF",
-//   },
-//   {
-//     label: "Wellness Program",
-//     icon: Dumbbell,
-//     color: "#8B5CF6",
-//     bg: "#F3E8FF",
-//   },
-//   {
-//     label: "Free Lunch",
-//     icon: Utensils,
-//     color: "#F97316",
-//     bg: "#FFF7ED",
-//   },
-//   {
-//     label: "Free Snacks",
-//     icon: Utensils,
-//     color: "#F97316",
-//     bg: "#FFF7ED",
-//   },
-//   {
-//     label: "Transportation Allowance",
-//     icon: Plane,
-//     color: "#0EA5E9",
-//     bg: "#F0F9FF",
-//   },
-//   {
-//     label: "Relocation Assistance",
-//     icon: Plane,
-//     color: "#0EA5E9",
-//     bg: "#F0F9FF",
-//   },
-//   {
-//     label: "Team Events",
-//     icon: Users,
-//     color: "#EC4899",
-//     bg: "#FDF2F8",
-//   },
-//   {
-//     label: "Employee Discounts",
-//     icon: Users,
-//     color: "#EC4899",
-//     bg: "#FDF2F8",
-//   },
-//   {
-//     label: "Life Insurance",
-//     icon: Shield,
-//     color: "#6366F1",
-//     bg: "#EEF2FF",
-//   },
-//   {
-//     label: "Mental Health Support",
-//     icon: HeartPulse,
-//     color: "#EF4444",
-//     bg: "#FEF2F2",
-//   },
-// ];
 
-// const benefits = [
-//   {
-//     title: "Health Insurance",
-//     icon: <Heart color="#EF4444" />,
-//     bg: "#FEF2F2",
-//   },
-//   {
-//     title: "Remote Work",
-//     icon: <Briefcase size={25} color="#06B6D4" />,
-//     bg: "#ECFEFF",
-//   },
-//   {
-//     title: "Flexible Hours",
-//     icon: <Clock3 size={25} color="#4F46E5" />,
-//     bg: "#EEF2FF",
-//   },
-//   {
-//     title: "Career Growth",
-//     icon: <TrendingUp size={25} color="#F59E0B" />,
-//     bg: "#FEF3C7",
-//   },
-// ];
-
-export default function MoreInfo() {
-  const [selectedBenefits, setSelectedBenefits] = useState([]);
+export default function MoreInfo({ secondtInfo, setSecondInfo }) {
 
 
 
-  
 
+  const selectedBenefitObjects = companyBenefits.filter((benefit) =>
+    secondtInfo.company_benefit.includes(benefit.label),
+  );
 
-  const selectedBenefitObjects = companyBenefits.filter(
-  (benefit) => selectedBenefits.includes(benefit.label)
-);
-
-
-console.log(selectedBenefits,selectedBenefitObjects);
+  console.log(secondtInfo , selectedBenefitObjects);
 
   return (
     <>
@@ -467,11 +300,12 @@ console.log(selectedBenefits,selectedBenefitObjects);
               flexWrap: "wrap",
               gap: 1.5,
               mb: 1,
-              width:"100%",
-              height:"70%",
-              border:"dashed 0.5px #c8c8c8",
-              p:1,
-              boxSizing:"border-box",overflow:"auto"
+              width: "100%",
+              height: "70%",
+              border: "dashed 0.5px #c8c8c8",
+              p: 1,
+              boxSizing: "border-box",
+              overflow: "auto",
             }}
           >
             {selectedBenefitObjects?.map((benefit) => {
@@ -511,7 +345,7 @@ console.log(selectedBenefits,selectedBenefitObjects);
                       mb: 1,
                     }}
                   >
-                    { <benefit.icon color={benefit.color}/>}
+                    {<benefit.icon color={benefit.color} />}
                   </Box>
 
                   <Typography
@@ -529,37 +363,34 @@ console.log(selectedBenefits,selectedBenefitObjects);
             })}
           </Box>
 
-
-
-
           <Autocomplete
             multiple
             size="small"
             disableCloseOnSelect
-       
             options={companyBenefit}
-            value={selectedBenefits}
+            value={secondtInfo.company_benefit}
             onChange={(event, newValue) => {
               if (newValue.length <= 6) {
-                setSelectedBenefits(newValue);
+                setSecondInfo((prev)=>({...prev , company_benefit : newValue}));
               }
             }}
             getOptionDisabled={(option) =>
-              selectedBenefits.length >= 6 && !selectedBenefits.includes(option)
+              secondtInfo.company_benefit.length >= 6 && !secondtInfo.company_benefit.includes(option)
             }
-
             renderTags={() => null}
             sx={{
               "& .MuiAutocomplete-tag": {
                 display: "none",
               },
-              
             }}
             slotProps={{
               popper: { sx: { transition: "none", animation: "none", m: 5 } },
             }}
             renderInput={(params) => (
-              <TextField {...params} placeholder={`${selectedBenefits.length}/6 benefits selected`} />
+              <TextField
+                {...params}
+                placeholder={`${secondtInfo.company_benefit.length}/6 benefits selected`}
+              />
             )}
           />
         </Box>
@@ -606,6 +437,8 @@ console.log(selectedBenefits,selectedBenefitObjects);
           >
             {/* LinkedIn */}
             <TextField
+            value={secondtInfo.company_linkdin}
+            onChange={(e)=>setSecondInfo((prev)=>({...prev , company_linkdin:e.target.value }))}
               fullWidth
               placeholder="https://linkedin.com/company/..."
               sx={inputStyle}
@@ -623,6 +456,8 @@ console.log(selectedBenefits,selectedBenefitObjects);
             {/* Facebook */}
             <TextField
               fullWidth
+              value={secondtInfo.company_facebook}
+            onChange={(e)=>setSecondInfo((prev)=>({...prev , company_facebook:e.target.value }))}
               placeholder="https://facebook.com/..."
               sx={inputStyle}
               slotProps={{
@@ -639,6 +474,8 @@ console.log(selectedBenefits,selectedBenefitObjects);
             {/* Instagram */}
             <TextField
               fullWidth
+              value={secondtInfo.company_instagram}
+              onChange={(e)=>setSecondInfo((prev)=>({...prev , company_instagram:e.target.value }))}
               placeholder="https://instagram.com/..."
               sx={inputStyle}
               slotProps={{
@@ -655,7 +492,9 @@ console.log(selectedBenefits,selectedBenefitObjects);
             {/* X / Twitter */}
             <TextField
               fullWidth
-              placeholder="https://twitter.com/..."
+              value={secondtInfo.company_x}
+              onChange={(e)=>setSecondInfo((prev)=>({...prev , company_x:e.target.value }))}
+              placeholder="https://x.com/..."
               sx={inputStyle}
               slotProps={{
                 input: {
