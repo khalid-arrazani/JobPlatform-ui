@@ -11,7 +11,7 @@ import CompanyBG from "./UploadCompanyBG";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { useState } from "react";
 
-export default function Branding() {
+export default function Branding({setThirdInfo}) {
   
   const [ImageLogo, setImagLogo] = useState("");
   const [openImageLogo, openSetImagLogo] = useState("");
@@ -21,6 +21,7 @@ export default function Branding() {
 
   const [previewLogo, setPreviewLogo] = useState("");
   const [previewBG, setPreviewBG] = useState("");
+
 
   const [ logoBlob , setLogoBlob ] = useState()
   const [ bgBlob , setBgBlob ] = useState()
@@ -150,7 +151,8 @@ export default function Branding() {
               previewBG={previewBG}
               setPreviewBG={setPreviewBG}
 
-              setBgBlob={setBgBlob}
+
+              setThirdInfo={setThirdInfo}
               
             />
           </Box>
@@ -237,7 +239,8 @@ export default function Branding() {
                 previewLogo={previewLogo}
                 setPreviewLogo={setPreviewLogo}
 
-                setLogoBlob={setLogoBlob}
+
+                setThirdInfo={setThirdInfo}
               />
             </Box>
           </Box>

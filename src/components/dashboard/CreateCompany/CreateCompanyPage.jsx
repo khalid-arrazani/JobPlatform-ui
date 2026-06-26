@@ -22,11 +22,10 @@ import CompanyInformationForm from "./CompanyInformationForm";
 import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
-
 import gsap from "gsap";
+import { create_company } from "../../../logic/api/company/Company";
 
 export default function CreateCompanyPage() {
-
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
 
@@ -58,6 +57,11 @@ export default function CreateCompanyPage() {
       url: "",
     },
     company_benefit: [],
+  });
+
+  const [thirdtInfo, setThirdInfo] = useState({
+    company_logo: "",
+    company_banner: "",
   });
 
   const validatefirstInfo = () => {
@@ -142,38 +146,70 @@ export default function CreateCompanyPage() {
     return true;
   };
 
+  const gs = () => {
+    const tl = gsap.timeline();
+
+    tl.to(".snakbar", {
+      y: -100,
+      duration: 0.2,
+      opacity: 1,
+      yoyo: true,
+      repeat: 1,
+      repeatDelay: 2.3,
+    });
+  };
+
   const next = () => {
     if (!validatefirstInfo()) {
-
-      const tl = gsap.timeline();
-
-      tl.to(".snakbar", {
-        y: -100,
-        duration: 0.2,
-        opacity: 1,
-        yoyo: true,
-        repeat: 1,
-        repeatDelay: 2.3,
-      });
-    }else if (!validatesecondtInfo() && step == 1 ) {
-
-      const tl = gsap.timeline();
-
-      tl.to(".snakbar", {
-        y: -100,
-        duration: 0.2,
-        opacity: 1,
-        yoyo: true,
-        repeat: 1,
-        repeatDelay: 2.3,
-      });
-    }else {
+      gs();
+    } else if (!validatesecondtInfo() && step == 1) {
+      gs();
+    } else {
       setStep((prev) => prev + 1);
     }
   };
 
   const back = () => {
     setStep((prev) => prev - 1);
+  };
+
+  // this section for create company api
+
+  const handleCreateProfile = async () => {
+    try {
+      const formData = new FormData();
+
+      // formData.append("fullName", fullName);
+      // formData.append("headline", headline);
+      // formData.append("location", location);
+
+      if (thirdtInfo.company_logo) {
+        formData.append("companyLogo", thirdtInfo.company_logo);
+      };
+
+      if (thirdtInfo.company_banner) {
+        formData.append("companyBackground", thirdtInfo.company_banner);
+      };
+
+      const data = await create_company(formData);
+
+      console.log(data);
+
+      // setSnackBar({
+      //   open: true,
+      //   message: data?.message,
+      //   severity: "success",
+      // });
+      // navigate('/profile')
+    } catch (error) {
+      console.log(error.response.data);
+
+      // setSnackBar({
+      //   open: true,
+      //   message: error.response.data?.message,
+      //   severity: "error",
+      // });
+    }
   };
 
   return (
@@ -257,7 +293,7 @@ export default function CreateCompanyPage() {
           ) : step == 1 ? (
             <MoreInfo secondtInfo={secondtInfo} setSecondInfo={setSecondInfo} />
           ) : step == 2 ? (
-            <Branding />
+            <Branding setThirdInfo={setThirdInfo} />
           ) : null}
 
           {/* Bottom */}

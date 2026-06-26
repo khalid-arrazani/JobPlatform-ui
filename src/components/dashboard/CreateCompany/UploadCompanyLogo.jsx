@@ -6,7 +6,8 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLogo, setLogoBlob, setPreviewLogo}) {
+  
+export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLogo,  setPreviewLogo,setThirdInfo}) {
   const editorRef = useRef();
 
   const [scale, setScale] = useState(1.2);
@@ -22,7 +23,10 @@ export default function CompanyLogo ({  openImageLogo , openSetImagLogo,ImageLog
 
       setPreviewLogo(previewUrl);
 
-      setLogoBlob(blob);
+
+
+     setThirdInfo((prev)=> ({...prev , company_logo : blob}))
+
 
       openSetImagLogo(false);
     }, "image/png");

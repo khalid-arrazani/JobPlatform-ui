@@ -11,7 +11,9 @@ export default function CompanyBG({
   openSetImagBG,
   ImageBG,
   setPreviewBG,
-  setBgBlob
+
+
+  setThirdInfo
 }) {
   const editorRef = useRef();
 
@@ -36,7 +38,9 @@ export default function CompanyBG({
 
       setPreviewBG(previewUrl);
 
-      setBgBlob(blob);
+   
+     setThirdInfo((prev)=> ({...prev , company_banner : blob}))
+
       
       openSetImagBG(false);
     }, "image/png");
