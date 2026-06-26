@@ -177,11 +177,24 @@ export default function CreateCompanyPage() {
 
   const handleCreateProfile = async () => {
     try {
+
       const formData = new FormData();
 
-      // formData.append("fullName", fullName);
-      // formData.append("headline", headline);
-      // formData.append("location", location);
+      formData.append("fullName", firstInfo.company_name);
+      formData.append("fullName", firstInfo.company_email);
+      formData.append("fullName", firstInfo.company_number);
+      formData.append("fullName", firstInfo.company_locatin);
+      formData.append("fullName", firstInfo.company_industry);
+      formData.append("fullName", firstInfo.company_webSite);
+      formData.append("fullName", firstInfo.company_about);
+
+
+      formData.append("fullName", secondtInfo.company_linkdin);
+      formData.append("fullName", secondtInfo.company_facebook);
+      formData.append("fullName", secondtInfo.company_instagram);
+      formData.append("fullName", secondtInfo.company_x);
+      formData.append("fullName", secondtInfo.company_benefit);
+
 
       if (thirdtInfo.company_logo) {
         formData.append("companyLogo", thirdtInfo.company_logo);
