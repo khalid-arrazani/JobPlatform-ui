@@ -176,33 +176,38 @@ export default function CreateCompanyPage() {
   // this section for create company api
 
   const handleCreateProfile = async () => {
-    try {
 
+
+    try {
       const formData = new FormData();
 
-      formData.append("fullName", firstInfo.company_name);
-      formData.append("fullName", firstInfo.company_email);
-      formData.append("fullName", firstInfo.company_number);
-      formData.append("fullName", firstInfo.company_locatin);
-      formData.append("fullName", firstInfo.company_industry);
-      formData.append("fullName", firstInfo.company_webSite);
-      formData.append("fullName", firstInfo.company_about);
+      formData.append("name", firstInfo.company_name);
+      formData.append("company_email", firstInfo.company_email);
+      formData.append("company_number", firstInfo.company_number);
+      formData.append("location", firstInfo.company_locatin);
+      formData.append("industry", firstInfo.company_industry);
+      formData.append("website", firstInfo.company_webSite);
+      formData.append("description", firstInfo.company_about);
 
+      formData.append(
+        "socialLinks",
+        JSON.stringify([
+          secondtInfo.company_linkdin,
+          secondtInfo.company_facebook,
+          secondtInfo.company_instagram,
+          secondtInfo.company_x,
+        ]),
+      );
 
-      formData.append("fullName", secondtInfo.company_linkdin);
-      formData.append("fullName", secondtInfo.company_facebook);
-      formData.append("fullName", secondtInfo.company_instagram);
-      formData.append("fullName", secondtInfo.company_x);
-      formData.append("fullName", secondtInfo.company_benefit);
-
+      formData.append("benefits", secondtInfo.company_benefit);
 
       if (thirdtInfo.company_logo) {
         formData.append("companyLogo", thirdtInfo.company_logo);
-      };
+      }
 
       if (thirdtInfo.company_banner) {
         formData.append("companyBackground", thirdtInfo.company_banner);
-      };
+      }
 
       const data = await create_company(formData);
 
