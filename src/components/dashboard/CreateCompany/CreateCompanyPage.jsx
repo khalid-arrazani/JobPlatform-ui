@@ -8,14 +8,13 @@ import {
   Button,
   Snackbar,
   Fade,
-  Slide,
   Zoom,
   Grow,
   Alert,
 } from "@mui/material";
 import Left_side from "./left_Side";
-
-import { useEffect, useState } from "react";
+import Slide from "@mui/material/Slide";
+import { useEffect, useRef, useState } from "react";
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
@@ -23,10 +22,12 @@ import CompanyInformationForm from "./CompanyInformationForm";
 import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 export default function CreateCompanyPage() {
   const [snakState, setSnackStat] = useState(false);
   const [err, setErr] = useState("");
-  
 
   const back = () => {
     setStep((prev) => prev - 1);
@@ -42,16 +43,14 @@ export default function CreateCompanyPage() {
     company_about: "",
   });
 
-
   const validateForm = () => {
-
     if (validator.isEmpty(firstInfo.company_name.trim())) {
-      setErr("Invalid email") 
+      setErr("Invalid Company name");
       return false;
     }
 
     if (!validator.isEmail(firstInfo.company_email)) {
-      setErr("Invalid email") 
+      setErr("Invalid email");
       return false;
     }
 
@@ -59,17 +58,7 @@ export default function CreateCompanyPage() {
       validator.isEmpty(firstInfo.company_number.trim()) ||
       !validator.isMobilePhone(firstInfo.company_number, "any")
     ) {
-      setErr ("Invalid phone number")
-      return false;
-    }
-
-    if (validator.isEmpty(firstInfo.company_locatin.trim())) {
-      setErr ( "Location is required")
-      return false;
-    }
-
-    if (validator.isEmpty(firstInfo.company_industry.trim())) {
-      setErr  ("Industry is required")
+      setErr("Invalid phone number");
       return false;
     }
 
@@ -77,7 +66,17 @@ export default function CreateCompanyPage() {
       firstInfo.company_webSite &&
       !validator.isURL(firstInfo.company_webSite)
     ) {
-      setErr("Invalid website")
+      setErr("Invalid website");
+      return false;
+    }
+
+    if (validator.isEmpty(firstInfo.company_industry.trim())) {
+      setErr("Industry is required");
+      return false;
+    }
+
+    if (validator.isEmpty(firstInfo.company_locatin.trim())) {
+      setErr("Location is required");
       return false;
     }
 
@@ -85,18 +84,27 @@ export default function CreateCompanyPage() {
       validator.isEmpty(firstInfo.company_about.trim()) ||
       !validator.isLength(firstInfo.company_about, { min: 20, max: 2000 })
     ) {
-      setErr ("About company must be between 20 and 2000 characters");
+      setErr("About company must be between 20 and 2000 characters");
       return false;
     }
     return true;
   };
 
 
+ 
+
   const [step, setStep] = useState(0);
 
   const next = () => {
     if (!validateForm()) {
-      setSnackStat(true)
+      setSnackStat(true);
+   
+    gsap.from(".snakbar", {
+      y: "100px",
+      opacity: 0,
+      duration: 1,
+  
+  });
     } else {
       setStep((prev) => prev + 1);
     }
@@ -106,7 +114,6 @@ export default function CreateCompanyPage() {
     setSnackStat(false);
   };
 
-
   return (
     <>
       {/* this section for snakbar */}
@@ -114,11 +121,25 @@ export default function CreateCompanyPage() {
       <Snackbar
         open={snakState}
         onClose={handleClose}
-        TransitionComponent={Grow}
-        autoHideDuration={2000}
-        sx={{border:"solid 1px #9f9f9f",bgcolor:"#fff",width:"20%"}}
+        autoHideDuration={3000}
+        className="snakbar"
+        anchorOrigin={{
+          vertical: "center",
+          horizontal: "center",
+        }}
+        slots={{
+          transition: "up",
+        }}
+        sx={{
+          border: "solid 1px #c9c9c9",
+          bgcolor: "#fff",
+          width: "auto",
+          borderRadius: "10px",
+          pr: 2,
+          by: 1,
+        }}
       >
-        <Box>
+        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
           <lord-icon
             src="https://cdn.lordicon.com/lltgvngb.json"
             trigger="loop"
@@ -129,16 +150,16 @@ export default function CreateCompanyPage() {
             }}
           ></lord-icon>
 
-          <Typography>
+          <Typography
+            sx={{
+              fontFamily: "monospace",
+              fontWeight: 700,
+              color: "#980505e1",
+            }}
+          >
             {err}
           </Typography>
-
-
-
-          </Box>
-
-          
-     
+        </Box>
       </Snackbar>
 
       <Box
