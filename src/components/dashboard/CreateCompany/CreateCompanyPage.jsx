@@ -164,6 +164,8 @@ export default function CreateCompanyPage() {
       gs();
     } else if (!validatesecondtInfo() && step == 1) {
       gs();
+    }else if (step == 2) {
+      handleCreateProfile();
     } else {
       setStep((prev) => prev + 1);
     }
