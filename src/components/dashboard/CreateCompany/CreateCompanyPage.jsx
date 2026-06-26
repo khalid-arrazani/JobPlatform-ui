@@ -90,70 +90,28 @@ export default function CreateCompanyPage() {
     return true;
   };
 
-
- 
-
   const [step, setStep] = useState(0);
 
   const next = () => {
     if (!validateForm()) {
       setSnackStat(true);
-   
-    gsap.from(".snakbar", {
-      y: "100px",
-      opacity: 0,
-      duration: 1,
-  
-  });
+
+      const tl = gsap.timeline();
+
+      tl.to(".snakbar", {
+        y: -100,
+        duration: 0.5,
+      }).to(".snakbar", {
+        y: 0,
+        duration: 0.5,
+      });
     } else {
       setStep((prev) => prev + 1);
     }
   };
 
-
-
   return (
     <>
-      {/* this section for snakbar */}
-
-      <Box
-    
-        className="snakbar"
-      
-        sx={{
-          border: "solid 1px #c9c9c9",
-          bgcolor: "#fff",
-          width: "auto",
-          borderRadius: "10px",
-          pr: 2,
-          by: 1,
-          position:"absolute",
-          
-        }}
-      >
-        <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-          <lord-icon
-            src="https://cdn.lordicon.com/lltgvngb.json"
-            trigger="loop"
-            colors="primary:#4f46e5"
-            style={{
-              width: "40px",
-              height: "40px",
-            }}
-          ></lord-icon>
-
-          <Typography
-            sx={{
-              fontFamily: "monospace",
-              fontWeight: 700,
-              color: "#980505e1",
-            }}
-          >
-            {err}
-          </Typography>
-        </Box>
-      </Box>
-
       <Box
         sx={{
           height: "92.3vh",
@@ -163,6 +121,47 @@ export default function CreateCompanyPage() {
           boxSizing: "border-box",
         }}
       >
+        {/* this section for snakbar */}
+        {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
+        <Box
+          className="snakbar"
+          sx={{
+            border: "solid 1px #c9c9c9",
+            bgcolor: "#fff",
+            width: "auto",
+            borderRadius: "10px",
+            pr: 2,
+            by: 1,
+            position: "absolute",
+            left: "50%",
+            bottom: "2%",
+            zIndex: 5000,
+          }}
+        >
+          <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+            <lord-icon
+              src="https://cdn.lordicon.com/lltgvngb.json"
+              trigger="loop"
+              colors="primary:#4f46e5"
+              style={{
+                width: "40px",
+                height: "40px",
+              }}
+            ></lord-icon>
+
+            <Typography
+              sx={{
+                fontFamily: "monospace",
+                fontWeight: 700,
+                color: "#980505e1",
+              }}
+            >
+              {err}
+            </Typography>
+          </Box>
+        </Box>
+        {/* /////////////////////////////////////////////////////////////////////////////////////////// */}
+
         {/* Left side */}
         <Left_side />
 
