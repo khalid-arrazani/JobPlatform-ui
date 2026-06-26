@@ -243,7 +243,7 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
     secondtInfo.company_benefit.includes(benefit.label),
   );
 
-  console.log(secondtInfo , selectedBenefitObjects);
+  
 
   return (
     <>
@@ -365,6 +365,7 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             disableCloseOnSelect
             options={companyBenefit}
             value={secondtInfo.company_benefit}
+
             onChange={(event, newValue) => {
               if (newValue.length <= 6) {
                 setSecondInfo((prev)=>({...prev , company_benefit : newValue}));
@@ -438,8 +439,8 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
           >
             {/* LinkedIn */}
             <TextField
-            value={secondtInfo.company_linkdin}
-            onChange={(e)=>setSecondInfo((prev)=>({...prev , company_linkdin:e.target.value }))}
+            value={secondtInfo.company_linkdin.url}
+            onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
               fullWidth
               placeholder="https://linkedin.com/company/..."
               sx={inputStyle}
@@ -457,8 +458,8 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             {/* Facebook */}
             <TextField
               fullWidth
-              value={secondtInfo.company_facebook}
-            onChange={(e)=>setSecondInfo((prev)=>({...prev , company_facebook:e.target.value }))}
+              value={secondtInfo.company_facebook.url}
+            onChange={(e)=>setSecondInfo((prev)=>({...prev, company_facebook : {...prev.company_facebook , url:e.target.value  }   }))}
               placeholder="https://facebook.com/..."
               sx={inputStyle}
               slotProps={{
@@ -475,8 +476,8 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             {/* Instagram */}
             <TextField
               fullWidth
-              value={secondtInfo.company_instagram}
-              onChange={(e)=>setSecondInfo((prev)=>({...prev , company_instagram:e.target.value }))}
+              value={secondtInfo.company_instagram.url}
+              onChange={(e)=>setSecondInfo((prev)=>({...prev, company_instagram : {...prev.company_instagram , url:e.target.value  }   }))}
               placeholder="https://instagram.com/..."
               sx={inputStyle}
               slotProps={{
@@ -493,8 +494,8 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             {/* X / Twitter */}
             <TextField
               fullWidth
-              value={secondtInfo.company_x}
-              onChange={(e)=>setSecondInfo((prev)=>({...prev , company_x:e.target.value }))}
+              value={secondtInfo.company_x.url}
+              onChange={(e)=>setSecondInfo((prev)=>({...prev, company_x : {...prev.company_x , url:e.target.value  }   }))}
               placeholder="https://x.com/..."
               sx={inputStyle}
               slotProps={{
