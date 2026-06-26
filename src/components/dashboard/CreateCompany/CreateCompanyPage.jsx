@@ -28,10 +28,9 @@ import gsap from "gsap";
 export default function CreateCompanyPage() {
   const [snakState, setSnackStat] = useState(false);
   const [err, setErr] = useState("");
+  const [step, setStep] = useState(0);
 
-  const back = () => {
-    setStep((prev) => prev - 1);
-  };
+ 
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -44,15 +43,27 @@ export default function CreateCompanyPage() {
   });
 
 const [secondtInfo, setSecondInfo] = useState({
-    company_linkdin: "",
-    company_facebook: "",
-    company_instagram: "",
-    company_x: "",
+    company_linkdin: {
+      platform :"linkdin",
+      url:""
+    },
+    company_facebook: {
+      platform :"facebook",
+      url:""
+    },
+    company_instagram: {
+      platform :"instagram",
+      url:""
+    },
+    company_x: {
+      platform :"x",
+      url:""
+    },
     company_benefit:[],
   });
 
 
-  const validateForm = () => {
+  const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
       setErr("Invalid Company name");
       return false;
@@ -99,10 +110,47 @@ const [secondtInfo, setSecondInfo] = useState({
     return true;
   };
 
-  const [step, setStep] = useState(0);
+
+   const validatesecondtInfo = () => {
+
+   if (
+  secondtInfo.company_linkdin.url &&
+  !validator.isURL(secondtInfo.company_linkdin.url)
+) {
+  setErr("Invalid LinkedIn URL");
+  return false;
+}
+
+if (
+  secondtInfo.company_facebook.url &&
+  !validator.isURL(secondtInfo.company_facebook.url)
+) {
+  setErr("Invalid Facebook URL");
+  return false;
+}
+
+if (
+  secondtInfo.company_instagram.url &&
+  !validator.isURL(secondtInfo.company_instagram.url)
+) {
+  setErr("Invalid Instagram URL");
+  return false;
+}
+
+if (
+  secondtInfo.company_x.url &&
+  !validator.isURL(secondtInfo.company_x.url)
+) {
+  setErr("Invalid X URL");
+  return false;
+}
+    return true;
+ };
+
+  
 
   const next = () => {
-    if (!validateForm()) {
+    if (!validatefirstInfo()) {
       setSnackStat(true);
 
       const tl = gsap.timeline();
@@ -121,7 +169,9 @@ const [secondtInfo, setSecondInfo] = useState({
   };
 
 
-
+ const back = () => {
+    setStep((prev) => prev - 1);
+  };
 
 
 
