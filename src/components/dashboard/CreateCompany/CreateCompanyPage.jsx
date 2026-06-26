@@ -24,7 +24,9 @@ import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
 export default function CreateCompanyPage() {
-  const [snakState, setSnackStat] = useState(true);
+  const [snakState, setSnackStat] = useState(false);
+  const [err, setErr] = useState("");
+  
 
   const back = () => {
     setStep((prev) => prev - 1);
@@ -40,15 +42,16 @@ export default function CreateCompanyPage() {
     company_about: "",
   });
 
-  let err = null;
+
   const validateForm = () => {
+
     if (validator.isEmpty(firstInfo.company_name.trim())) {
-      err = "Company name is required";
+      setErr("Invalid email") 
       return false;
     }
 
     if (!validator.isEmail(firstInfo.company_email)) {
-      err = "Invalid email";
+      setErr("Invalid email") 
       return false;
     }
 
@@ -56,17 +59,17 @@ export default function CreateCompanyPage() {
       validator.isEmpty(firstInfo.company_number.trim()) ||
       !validator.isMobilePhone(firstInfo.company_number, "any")
     ) {
-      err = "Invalid phone number";
+      setErr ("Invalid phone number")
       return false;
     }
 
     if (validator.isEmpty(firstInfo.company_locatin.trim())) {
-      err = "Location is required";
+      setErr ( "Location is required")
       return false;
     }
 
     if (validator.isEmpty(firstInfo.company_industry.trim())) {
-      err = "Industry is required";
+      setErr  ("Industry is required")
       return false;
     }
 
@@ -74,7 +77,7 @@ export default function CreateCompanyPage() {
       firstInfo.company_webSite &&
       !validator.isURL(firstInfo.company_webSite)
     ) {
-      err = "Invalid website";
+      setErr("Invalid website")
       return false;
     }
 
@@ -82,17 +85,18 @@ export default function CreateCompanyPage() {
       validator.isEmpty(firstInfo.company_about.trim()) ||
       !validator.isLength(firstInfo.company_about, { min: 20, max: 2000 })
     ) {
-      err = "About company must be between 20 and 2000 characters";
+      setErr ("About company must be between 20 and 2000 characters");
       return false;
     }
     return true;
   };
 
+
   const [step, setStep] = useState(0);
 
   const next = () => {
     if (!validateForm()) {
-      console.log(err);
+      setSnackStat(true)
     } else {
       setStep((prev) => prev + 1);
     }
@@ -102,12 +106,13 @@ export default function CreateCompanyPage() {
     setSnackStat(false);
   };
 
+
   return (
     <>
       {/* this section for snakbar */}
 
       <Snackbar
-        open={true}
+        open={snakState}
         onClose={handleClose}
         TransitionComponent={Grow}
         autoHideDuration={2000}
