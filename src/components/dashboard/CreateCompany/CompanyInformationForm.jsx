@@ -244,7 +244,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
 
         {/* About Company */}
 
-        <Box sx={{ minWidth: "80%", flex: 1 }}>
+        <Box sx={{ minWidth: "80%", flex: 1  }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             About Your Company <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -261,7 +261,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             }}
             fullWidth
             multiline
-            rows={5}
+            rows={4.2}
             placeholder="Tell us about your company, your mission, vision and what makes it unique..."
             sx={inputStyle}
             helperText={`${firstInfo.company_about.length}/2000`}
