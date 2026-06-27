@@ -18,6 +18,8 @@ export default function CompanyPage() {
 
 const { dispatch , ...state } = useCompany()
 
+
+
   useEffect(() => {
       const fetchUser = async () => {
         dispatch({

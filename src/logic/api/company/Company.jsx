@@ -19,7 +19,7 @@ export const create_company = async (
 export const getmyCompany = async (
 ) => {
   const response = await API.get(
-    "/company",
+    "/company/my-company",
      { withCredentials: true }
   );
 
