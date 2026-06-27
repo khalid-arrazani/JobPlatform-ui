@@ -13,3 +13,16 @@ export const create_company = async (
   return response.data;
 };
 
+
+
+// Get my Company
+export const getmyCompany = async (
+) => {
+  const response = await API.get(
+    "/company",
+     { withCredentials: true }
+  );
+
+  return response.data;
+};
+
