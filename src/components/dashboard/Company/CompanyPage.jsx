@@ -12,6 +12,44 @@ import CompanyInfo from "./CompanyInfo";
 
 
 export default function CompanyPage() {
+
+
+  // useEffect(() => {
+  //     const fetchUser = async () => {
+  //       dispatch({
+  //         type: "SET_LOADING",
+  //         payload: true,
+  //       });
+  //       try {
+  //         let data;
+  //         const user = await getMeUser();
+  //         if (user.role == "jobSeeker") {
+  //           data = await getMeJS();
+  //         } else if (user.role == "recruiter") {
+  //           data = await getMeR();
+  //         }
+  //         console.log(data);
+  //         dispatch({
+  //           type: "PROFILE",
+  //           payload: data,
+  //         });
+   
+  //       } catch (error) {
+  //         console.log(error.response?.data);
+  //       } finally {
+  //         dispatch({
+  //           type: "SET_LOADING",
+  //           payload: false,
+  //         });
+  //       }
+  //     };
+  //     fetchUser();
+  //   }, []);
+
+
+
+
+
   return (
     <>
       <Box
