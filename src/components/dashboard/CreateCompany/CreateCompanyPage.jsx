@@ -1,14 +1,11 @@
 import validator from "validator";
 
-import {
+import { Typography, Box } from "@mui/material";
+import Modal from "@mui/material/Modal";
 
-  Typography,
-  Box,
-  
-} from "@mui/material";
 import Left_side from "./left_Side";
 
-import {  useState } from "react";
+import { useState } from "react";
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
@@ -57,7 +54,7 @@ export default function CreateCompanyPage() {
     company_logo: "",
     company_banner: "",
   });
-  console.log(thirdtInfo)
+  console.log(thirdtInfo);
 
   const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
@@ -223,9 +220,52 @@ export default function CreateCompanyPage() {
       // });
     }
   };
+  const [open, setOpen] = useState(true);
+
+  const handleOpen = () => {
+    setOpen(true);
+  };
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
+      <Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          
+        }}
+        onClose={handleClose}
+        open={true}
+      >
+        <Box
+          sx={{
+            width: "60%",
+            borderRadius:"10px",
+            height: "50%",
+            bgcolor: "#fff",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            "&:focus": {
+              outline: "none",
+            },
+            overflow:"hidden"
+          }}
+        >
+          <Box sx={{width:"100%", height:"18%",bgcolor:"#ddd"}}></Box>
+          <Box sx={{width:"100%", height:"57%",bgcolor:"#372c2c"}}></Box>
+          <Box sx={{width:"100%", height:"25%",bgcolor:"#454040"}}></Box>
+
+
+
+
+        </Box>
+      </Modal>
       <Box
         sx={{
           height: "92.3vh",
