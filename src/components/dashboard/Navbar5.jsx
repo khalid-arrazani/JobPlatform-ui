@@ -1,4 +1,4 @@
-import { Box, Avatar, IconButton} from "@mui/material";
+import { Box, Avatar, IconButton, Typography, CircularProgress } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import MainList from "./mainList.jsx";
@@ -6,13 +6,9 @@ import MainList from "./mainList.jsx";
 import Badge from "@mui/material/Badge";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
 import AddIcon from "@mui/icons-material/Add";
-// import { useLocation, useNavigate } from "react-router-dom";
 
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
-
-
-// import { NavLink } from "react-router-dom";
 
 import WorkIcon from "@mui/icons-material/Work";
 
@@ -44,8 +40,6 @@ export default function Navbar() {
       "/Dashboard/applications": 3,
       "/Dashboard/My_Company": 4,
     }[location.pathname] ?? 0;
-
-  console.log(location);
 
   return (
     <Box
@@ -101,7 +95,6 @@ export default function Navbar() {
 
         {/* Navigation */}
         <Box display="flex" gap={1}>
-          
           <Tabs
             value={currentTab}
             textColor="inherit"
@@ -113,7 +106,7 @@ export default function Navbar() {
                 borderRadius: "999px",
                 top: "51px",
               },
-             width:"110%"
+              width: "110%",
             }}
           >
             <Tab
@@ -168,30 +161,46 @@ export default function Navbar() {
                 gap: 0.5,
                 border: "solid 1px #88858535",
                 fontFamily: "-apple-system",
-
               }}
-              style={{position:"relative",
-               right:"-3rem"
-              }}
+              style={{ position: "relative", right: "-3rem" }}
             >
-              <Badge
-                overlap="circular"
-                anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                badgeContent={
-                  <AddIcon
+              {      state.isLoading ?   <CircularProgress color="success" aria-label="Loading…" sx={{mx:3}} /> :    (!state?.user?.hasCompany ? (
+                <Box sx={{ display: "flex", alignItems: "center" }}>
+                  <Badge
+                    overlap="circular"
+                    sx={{ mr: 0.5 }}
+                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                    badgeContent={
+                      <AddIcon
+                        sx={{
+                          fontSize: 9,
+                          bgcolor: "#1976d2",
+                          color: "white",
+                          borderRadius: "10px",
+                          p: 0.2,
+                        }}
+                      />
+                    }
+                  >
+                    <BusinessOutlinedIcon />
+                  </Badge>
+                  add Company
+                </Box>
+              ) : (
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <BusinessOutlinedIcon />
+                  <Typography
                     sx={{
-                      fontSize: 9,
-                      bgcolor: "#1976d2",
-                      color: "white",
-                      borderRadius: "10px",
-                      p: 0.2,
+                      color: "#0a0d2cc7",
+                      fontWeight: 500,
+                      fontFamily: "system-ui",
                     }}
-                  />
-                }
-              >
-                <BusinessOutlinedIcon />
-              </Badge>
-              add Company
+                  >
+                    {" "}
+                    {state.user.profile.company.name}{" "}
+                  </Typography>
+                </Box>
+              )    )    }   
             </IconButton>
           </Tabs>
         </Box>

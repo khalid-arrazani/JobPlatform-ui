@@ -1,20 +1,14 @@
 import validator from "validator";
 
 import {
-  Card,
+
   Typography,
   Box,
-  Divider,
-  Button,
-  Snackbar,
-  Fade,
-  Zoom,
-  Grow,
-  Alert,
+  
 } from "@mui/material";
 import Left_side from "./left_Side";
-import Slide from "@mui/material/Slide";
-import { useEffect, useRef, useState } from "react";
+
+import {  useState } from "react";
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
