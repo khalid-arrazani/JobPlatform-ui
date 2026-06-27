@@ -10,7 +10,9 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 
 
-export default function CompanyHeader (){
+export default function CompanyHeader ({CompanyInfo}){
+
+  console.log(CompanyInfo);
 
     return <>
       <Box
@@ -27,7 +29,7 @@ export default function CompanyHeader (){
               height: "65% ",
               width: "100%",
               bgcolor: "#544f4f",
-              backgroundImage: `url(https://images.openai.com/static-rsc-4/PHTER0Rl3I33Op-D5zV-G2DiAvA8q7wWIyh26XkgQPQDLkaVy0ninCSxtw5D84s1R3QZ2RlIrTKyfqdScSXR0daTG49X5_ZoLulPPtadkou9hOtdjL9scDKcdLqAM07zM78smzlRZ8qulEA13D47BhrNhtWd9zjCWkC6DNX83nqnJ71glVmKZiVmMG64pN4f?purpose=fullsize)`,
+              backgroundImage: `url(https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "bottom",
             }}
@@ -81,7 +83,7 @@ export default function CompanyHeader (){
             >
               <img
                 style={{ width: "100%" }}
-                src="https://i.pinimg.com/1200x/2c/50/23/2c50234169fdba4edb9b3ae602b8feec.jpg"
+                src={CompanyInfo?.companyLogo?.url}
                 alt=""
                 srcset=""
               />

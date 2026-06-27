@@ -32,7 +32,7 @@ const { dispatch , ...state } = useCompany()
           
           console.log(data);
           dispatch({
-            type: "PROFILE",
+            type: "SETCOMPANY",
             payload: data,
           });
    
@@ -66,7 +66,7 @@ const { dispatch , ...state } = useCompany()
         }}
       >
         {/* top side or Company Card or  Header   */}
-        <CompanyHeader />
+        <CompanyHeader CompanyInfo={state.Company?.company} />
 
         {/* Content about Company or bottom side  */}
         <Box
@@ -90,12 +90,12 @@ const { dispatch , ...state } = useCompany()
 
 
             {/* About Company Card  */}
-            <AboutCompany />
+            <AboutCompany CompanyInfo={state.Company} />
           {/* Company Statistics  */}
-          <CompanyStatistics />
+          <CompanyStatistics CompanyInfo={state.Company} />
 
             {/* Open Positions Card  */}
-            <OpenPositionsCard />
+            <OpenPositionsCard CompanyInfo={state.Company} />
 
 
 
@@ -113,14 +113,14 @@ const { dispatch , ...state } = useCompany()
 
 
             {/* Company Benefits Card  */}
-            <SocialContact />
+            <SocialContact CompanyInfo={state.Company} />
 
             {/* Company Benefits Card  */}
-            <CompanyBenefits />
+            <CompanyBenefits CompanyInfo={state.Company} />
 
 
             {/* Company Info Card  */}
-            <CompanyInfo />
+            <CompanyInfo CompanyInfo={state.Company} />
 
 
           </Box>
