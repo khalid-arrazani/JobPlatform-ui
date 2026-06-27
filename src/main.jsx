@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import AuthProvider from "./logic/context/AuthContext.jsx";
 import ProfileProvider from "./logic/context/profileContext.jsx";
 import JobProvider from "./logic/context/JobContext.jsx";
+import CompanyProvider from "./logic/context/CompanyContext.jsx";
 
 import "./index.css";
 
@@ -22,11 +23,13 @@ createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <JobProvider>
+        <CompanyProvider>
       <AuthProvider>
         <ProfileProvider>
           <App />
         </ProfileProvider>
       </AuthProvider>
+      </CompanyProvider>
       </JobProvider>
     </BrowserRouter>
   </StrictMode>,

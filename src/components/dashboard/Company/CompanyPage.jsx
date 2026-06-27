@@ -8,43 +8,43 @@ import CompanyStatistics from "./CompanyStatistics";
 import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
+import { useEffect } from "react";
+import { getmyCompany } from "../../../logic/api/company/Company";
 
+import { useCompany } from "../../../logic/context/CompanyContext";
 
 
 export default function CompanyPage() {
 
+const { dispatch , ...state } = useCompany()
 
-  // useEffect(() => {
-  //     const fetchUser = async () => {
-  //       dispatch({
-  //         type: "SET_LOADING",
-  //         payload: true,
-  //       });
-  //       try {
-  //         let data;
-  //         const user = await getMeUser();
-  //         if (user.role == "jobSeeker") {
-  //           data = await getMeJS();
-  //         } else if (user.role == "recruiter") {
-  //           data = await getMeR();
-  //         }
-  //         console.log(data);
-  //         dispatch({
-  //           type: "PROFILE",
-  //           payload: data,
-  //         });
+  useEffect(() => {
+      const fetchUser = async () => {
+        dispatch({
+          type: "SET_LOADING",
+          payload: true,
+        });
+        try {
+         
+          const data = await getmyCompany();
+          
+          console.log(data);
+          dispatch({
+            type: "PROFILE",
+            payload: data,
+          });
    
-  //       } catch (error) {
-  //         console.log(error.response?.data);
-  //       } finally {
-  //         dispatch({
-  //           type: "SET_LOADING",
-  //           payload: false,
-  //         });
-  //       }
-  //     };
-  //     fetchUser();
-  //   }, []);
+        } catch (error) {
+          console.log(error.response?.data);
+        } finally {
+          dispatch({
+            type: "SET_LOADING",
+            payload: false,
+          });
+        }
+      };
+      fetchUser();
+    }, []);
 
 
 

@@ -17,7 +17,7 @@ const initialState = {
   isLoading: false,
 };
 
-export default function JobProvider({
+export default function CompanyProvider({
   children,
 }) {
 
