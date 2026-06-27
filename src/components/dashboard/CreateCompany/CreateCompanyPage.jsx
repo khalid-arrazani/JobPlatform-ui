@@ -1,11 +1,13 @@
 import validator from "validator";
 
-import { Typography, Box } from "@mui/material";
+import { Typography, Box,IconButton } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
 import Left_side from "./left_Side";
 
 import { useState } from "react";
+
+import CloseIcon from '@mui/icons-material/Close';
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
@@ -236,7 +238,6 @@ export default function CreateCompanyPage() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          
         }}
         onClose={handleClose}
         open={true}
@@ -244,7 +245,7 @@ export default function CreateCompanyPage() {
         <Box
           sx={{
             width: "60%",
-            borderRadius:"10px",
+            borderRadius: "10px",
             height: "50%",
             bgcolor: "#fff",
             position: "absolute",
@@ -254,16 +255,14 @@ export default function CreateCompanyPage() {
             "&:focus": {
               outline: "none",
             },
-            overflow:"hidden"
+            overflow: "hidden",
           }}
         >
-          <Box sx={{width:"100%", height:"18%",bgcolor:"#ddd"}}></Box>
-          <Box sx={{width:"100%", height:"57%",bgcolor:"#372c2c"}}></Box>
-          <Box sx={{width:"100%", height:"25%",bgcolor:"#454040"}}></Box>
-
-
-
-
+          <Box sx={{ width: "100%", height: "15%", bgcolor: "#ffffff" , display:"flex",alignItems:"center",px:2,boxSizing:"border-box",justifyContent:"space-between" }}>
+            <Typography sx={{fontSize:"1.5rem",fontWeight:600,color:"#050318d2",fontFamily:"system-ui"}}> Banner</Typography> <IconButton><CloseIcon/></IconButton> 
+          </Box>
+          <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
+          <Box sx={{ width: "100%", height: "25%", bgcolor: "#ffffff" }}></Box>
         </Box>
       </Modal>
       <Box
