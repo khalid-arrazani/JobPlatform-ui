@@ -24,6 +24,7 @@ export default function DashboardLayout({ children, part, setPart }) {
         } else if (user.role == "recruiter") {
           data = await getMeR();
         }
+        console.log(data);
         dispatch({
           type: "PROFILE",
           payload: data,
