@@ -63,6 +63,7 @@ export default function CreateCompanyPage() {
     company_logo: "",
     company_banner: "",
   });
+  console.log(thirdtInfo)
 
   const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
@@ -164,7 +165,7 @@ export default function CreateCompanyPage() {
       gs();
     } else if (!validatesecondtInfo() && step == 1) {
       gs();
-    }else if (step == 2) {
+    } else if (step == 2) {
       handleCreateProfile();
     } else {
       setStep((prev) => prev + 1);
@@ -176,10 +177,7 @@ export default function CreateCompanyPage() {
   };
 
   // this section for create company api
-
   const handleCreateProfile = async () => {
-
-
     try {
       const formData = new FormData();
 
@@ -201,7 +199,7 @@ export default function CreateCompanyPage() {
         ]),
       );
 
-      formData.append("benefits", secondtInfo.company_benefit);
+      formData.append("benefits", JSON.stringify(secondtInfo.company_benefit));
 
       if (thirdtInfo.company_logo) {
         formData.append("companyLogo", thirdtInfo.company_logo);
