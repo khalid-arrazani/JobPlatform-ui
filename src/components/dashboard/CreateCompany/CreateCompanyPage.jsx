@@ -1,6 +1,6 @@
 import validator from "validator";
 
-import { Typography, Box,IconButton } from "@mui/material";
+import { Typography, Box,IconButton,Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
 import Left_side from "./left_Side";
@@ -16,6 +16,7 @@ import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
 import gsap from "gsap";
+import { GalleryHorizontal, ImageUp } from "lucide-react";
 import { create_company } from "../../../logic/api/company/Company";
 
 export default function CreateCompanyPage() {
@@ -258,31 +259,64 @@ export default function CreateCompanyPage() {
             overflow: "hidden",
           }}
         >
-          <Box sx={{ width: "100%", height: "15%", bgcolor: "#ffffff" , display:"flex",alignItems:"center",px:2,boxSizing:"border-box",justifyContent:"space-between" }}>
-            <Typography sx={{fontSize:"1.5rem",fontWeight:600,color:"#050318d2",fontFamily:"system-ui"}}> Banner</Typography> <IconButton><CloseIcon/></IconButton> 
+          <Box
+            sx={{
+              width: "100%",
+              height: "15%",
+              bgcolor: "#ffffff",
+              display: "flex",
+              alignItems: "center",
+              px: 2,
+              boxSizing: "border-box",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "1.5rem",
+                fontWeight: 600,
+                color: "#050318d2",
+                fontFamily: "system-ui",
+              }}
+            >
+              {" "}
+              Banner
+            </Typography>{" "}
+            <IconButton>
+              <CloseIcon />
+            </IconButton>
           </Box>
           <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
 
+          <Box
+            sx={{
+              width: "100%",
+              height: "25%",
+              bgcolor: "#ffffff",
+              display: "flex",
+              justifyContent: "center",
+            }}
+          >
+            <Box
+              sx={{
+                height: "100%",
+                width: "70%",
+                display: "flex",
+                justifyContent: "space-around",
+              
+                boxSizing: "border-box",
+              }}
+            >
+              <Button size="small"  sx={{ display: "flex", flexDirection:"column",borderRadius:"0px"  }}>
+                  <GalleryHorizontal size={30} color="#2a6aff" style={{margin:0}} />
+                  <Typography sx={{fontSize:"0.9rem"}}> Choose Banner </Typography>
+              </Button>
 
-          <Box sx={{ width: "100%", height: "25%", bgcolor: "#ffffff" , display:"flex",justifyContent:"center" }}>
-
-            <Box sx={{bgcolor:"#ddd" , height:"80%",width:"70%"}}>
-
+              <ImageUp size={40} color="#2a6aff" />
             </Box>
           </Box>
         </Box>
       </Modal>
-
-
-
-
-
-
-
-
-
-
-
 
       <Box
         sx={{
