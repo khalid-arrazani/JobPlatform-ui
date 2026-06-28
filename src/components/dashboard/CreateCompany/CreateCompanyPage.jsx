@@ -266,7 +266,7 @@ export default function CreateCompanyPage() {
 
           <Box sx={{ width: "100%", height: "25%", bgcolor: "#ffffff" , display:"flex",justifyContent:"center" }}>
 
-            <Box sx={{bgcolor:"#ddd"}}>
+            <Box sx={{bgcolor:"#ddd" , height:"80%",width:"70%"}}>
 
             </Box>
           </Box>
