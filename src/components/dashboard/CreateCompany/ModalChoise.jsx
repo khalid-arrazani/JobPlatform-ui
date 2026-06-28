@@ -1,150 +1,151 @@
-
-
-import {
-  Typography,
-  Box,
-  IconButton,
-  Button,
-
-} from "@mui/material";
+import { Typography, Box, IconButton, Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
-
 
 import { useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 
-
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 
-
-export default function  ModalChoise(){
-
-
- const [open, setOpen] = useState(true);
-
-
-  const handleOpen = () => {
-    setOpen(true);
+export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  openSetImagBG}) {
+  const handleClose = () => {
+    setchoiseModal(false);
   };
 
-
- const handleClose = () => {
-    setOpen(false);
-  };
-
-    return (
-           <Modal
+  return (
+    <Modal
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClose={handleClose}
+      open={choiseModal}
+    >
+      <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          width: "60%",
+          borderRadius: "10px",
+          height: "50%",
+          bgcolor: "#fff",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          "&:focus": {
+            outline: "none",
+          },
+          overflow: "hidden",
         }}
-        onClose={handleClose}
-        open={open}
       >
         <Box
           sx={{
-            width: "60%",
-            borderRadius: "10px",
-            height: "50%",
-            bgcolor: "#fff",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            "&:focus": {
-              outline: "none",
-            },
-            overflow: "hidden",
+            width: "100%",
+            height: "15%",
+            bgcolor: "#ffffff",
+            display: "flex",
+            alignItems: "center",
+            px: 2,
+            boxSizing: "border-box",
+            justifyContent: "space-between",
+          }}
+        >
+          <Typography
+            sx={{
+              fontSize: "1.5rem",
+              fontWeight: 600,
+              color: "#050318d2",
+              fontFamily: "system-ui",
+            }}
+          >
+            Banner
+          </Typography>
+          <IconButton>
+            <CloseIcon />
+          </IconButton>
+        </Box>
+        <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
+
+        <Box
+          sx={{
+            width: "100%",
+            height: "25%",
+            bgcolor: "#ffffff",
+            display: "flex",
+            justifyContent: "center",
           }}
         >
           <Box
             sx={{
-              width: "100%",
-              height: "15%",
-              bgcolor: "#ffffff",
+              height: "100%",
+              width: "70%",
               display: "flex",
-              alignItems: "center",
-              px: 2,
+              justifyContent: "space-around",
+
               boxSizing: "border-box",
-              justifyContent: "space-between",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "system-ui",
-              }}
-            >
-      
-              Banner
-            </Typography>
-            <IconButton>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
 
-          <Box
-            sx={{
-              width: "100%",
-              height: "25%",
-              bgcolor: "#ffffff",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <Box
+
+
+            <Button
+              size="small"
               sx={{
-                height: "100%",
-                width: "70%",
                 display: "flex",
-                justifyContent: "space-around",
-
-                boxSizing: "border-box",
+                flexDirection: "column",
+                borderRadius: "0px",
+                gap: 0.5,
               }}
             >
-              <Button
-                size="small"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  borderRadius: "0px",
-                  gap: 0.5,
-                }}
-              >
-                <GalleryHorizontal
-                  size={30}
-                  color="#2a6aff"
-                  style={{ margin: 0 }}
-                />
-                <Typography sx={{ fontSize: "0.9rem" }}>
-                  {" "}
-                  Choose Banner{" "}
-                </Typography>
-              </Button>
+              <GalleryHorizontal
+                size={30}
+                color="#2a6aff"
+                style={{ margin: 0 }}
+              />
+              <Typography sx={{ fontSize: "0.9rem" }}>
+                Choose Banner
+              </Typography>
+            </Button>
 
-              <Button
-                size="small"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  borderRadius: "0px",
-                  gap: 0.5,
+
+
+
+
+            <Button
+              size="small"
+              component="label"
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "0px",
+                gap: 0.5,
+              }}
+            >
+              <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
+              <Typography sx={{ fontSize: "0.9rem" }}>
+                Upload Image
+              </Typography>
+               <input
+                hidden
+                accept="image/*"
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setImagBG(file);
+                    openSetImagBG(true);
+                  }
                 }}
-              >
-                <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
-                <Typography sx={{ fontSize: "0.9rem" }}>
-                  {" "}
-                  Upload Image{" "}
-                </Typography>
-              </Button>
-            </Box>
+              />
+            </Button>
+
+
+
+
+
           </Box>
         </Box>
-      </Modal>
-    )
+      </Box>
+    </Modal>
+  );
 }

@@ -27,6 +27,8 @@ import CompanyBG from "./UploadCompanyBG";
 import { MdOutlineFileUpload } from "react-icons/md";
 import { useState } from "react";
 
+import ModalChoise from "./ModalChoise";
+
 export default function Branding({setThirdInfo}) {
   
   const [ImageLogo, setImagLogo] = useState("");
@@ -38,8 +40,17 @@ export default function Branding({setThirdInfo}) {
   const [previewLogo, setPreviewLogo] = useState("");
   const [previewBG, setPreviewBG] = useState("");
 
+  const[choiseModal , setchoiseModal]= useState(false)
+
+  const handlechoiseModal = () => {setchoiseModal(true)}
+
+  const[bannerModal , setbannerModal]= useState(false)
+
+
   return (
     <>
+
+     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG} />
       <Box
         sx={{
           height: "70%",
@@ -123,6 +134,7 @@ export default function Branding({setThirdInfo}) {
 
             <Button
               component="label"
+              onClick={handlechoiseModal}
               sx={{
                 color: "#4a62ff",
                 bgcolor: "#ffffff",
@@ -142,18 +154,13 @@ export default function Branding({setThirdInfo}) {
                 }}
               />
               Choose Image
-              <input
-                hidden
-                accept="image/*"
-                type="file"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) {
-                    setImagBG(file);
-                    openSetImagBG(true);
-                  }
-                }}
-              />
+
+
+
+
+
+
+
             </Button>
 
             <CompanyBG
@@ -228,7 +235,6 @@ export default function Branding({setThirdInfo}) {
                   type="file"
                   onChange={(e) => {
                     const file = e.target.files?.[0];
-
                     if (file) {
                       setImagLogo(file);
                       openSetImagLogo(true);
