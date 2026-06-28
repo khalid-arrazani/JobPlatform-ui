@@ -28,6 +28,7 @@ import { MdOutlineFileUpload } from "react-icons/md";
 import { useState } from "react";
 
 import ModalChoise from "./ModalChoise";
+import Modalbanner from "./Modalbanner";
 
 export default function Branding({setThirdInfo}) {
   
@@ -51,6 +52,8 @@ export default function Branding({setThirdInfo}) {
     <>
 
      <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG} />
+     
+     <Modalbanner choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG} />
       <Box
         sx={{
           height: "70%",
