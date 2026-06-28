@@ -469,7 +469,12 @@ export default function CreateCompanyPage() {
             ))}
           </Box>
 
-          <Box></Box>
+          <Box sx={{display:"flex",alignItems:"center",height:"12%",width:"100%",justifyContent:"end"}}>
+
+            <Button size="large" sx={{mr:4 , bgcolor:"#2c68ff",color:"#fff",px:4}} > Save </Button>
+            
+          </Box>
+
         </Box>
       </Modal>
 
