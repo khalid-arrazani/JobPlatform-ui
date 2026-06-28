@@ -307,16 +307,102 @@ export default function CreateCompanyPage() {
                 boxSizing: "border-box",
               }}
             >
-              <Button size="small"  sx={{ display: "flex", flexDirection:"column",borderRadius:"0px"  }}>
+              <Button size="small"  sx={{ display: "flex", flexDirection:"column",borderRadius:"0px",gap:0.5   }}>
                   <GalleryHorizontal size={30} color="#2a6aff" style={{margin:0}} />
                   <Typography sx={{fontSize:"0.9rem"}}> Choose Banner </Typography>
               </Button>
 
-              <ImageUp size={40} color="#2a6aff" />
+              <Button size="small"  sx={{ display: "flex", flexDirection:"column",borderRadius:"0px" ,gap:0.5 }}>
+                  <ImageUp size={30} color="#2a6aff" style={{margin:0}} />
+                  <Typography sx={{fontSize:"0.9rem"}}> Upload Image </Typography>
+              </Button>
+
+             
             </Box>
           </Box>
         </Box>
       </Modal>
+      
+      <Modal
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onClose={handleClose}
+        open={true}
+      >
+        <Box
+          sx={{
+            width: "90%",
+      
+            borderRadius: "10px",
+            height: "90%",
+            bgcolor: "#fff",
+            position: "absolute",
+            top: "50%",
+            left: "50%",
+            transform: "translate(-50%, -50%)",
+            "&:focus": {
+              outline: "none",
+            },
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "10%",
+             
+              display: "flex",
+              alignItems: "center",
+              px: 2,
+              boxSizing: "border-box",
+              justifyContent: "space-between",borderBottom:"solid #b4b4b473 1px"
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "1.3rem",
+                fontWeight: 600,
+                color: "#050318d2",
+                fontFamily: "system-ui",
+                
+              }}
+            >
+           
+              Add a cover image
+            </Typography>
+            <IconButton>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+
+          <Box sx={{
+              width: "100%",
+              height: "78%",
+             
+              display: "flex",
+              alignItems: "center",
+              px: 2,
+              boxSizing: "border-box",
+              justifyContent: "space-between",borderBottom:"solid #b4b4b473 1px"
+            }}></Box>
+
+            
+          <Box></Box>
+
+
+         
+        </Box>
+      </Modal>
+
+
+
+
+
+
 
       <Box
         sx={{
