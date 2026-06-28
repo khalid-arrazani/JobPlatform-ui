@@ -262,7 +262,9 @@ export default function CreateCompanyPage() {
     setOpen(false);
   };
 
-  const id = useId();
+  const [SelectedBanner, setSelectedBanner] = useState();
+
+  console.log( SelectedBanner );
 
   return (
     <>
@@ -437,50 +439,34 @@ export default function CreateCompanyPage() {
             sx={{
               width: "100%",
               height: "78%",
-
               display: "flex",
-              alignItems: "center",
-              px: 2,
+              p: 2,
               boxSizing: "border-box",
-              justifyContent: "space-between",
+              justifyContent:"space-evenly",
               borderBottom: "solid #b4b4b473 1px",
+              flexWrap:"wrap",
+              overflow:"auto",
+              gap:2
             }}
           >
-            <FormControl sx={{width:"100%",height:"100%",display:"flex",boxSizing:"border-box",flexWrap:"wrap"}}>
-              <RadioGroup
-                aria-labelledby={`${id}-label`}
-                defaultValue="female"
-                name="radio-buttons-group"
-                sx={{width:"100%",height:"100%",display:"flex",bgcolor:"#ddd",flexWrap:"wrap",gap:2,boxSizing:"border-box",}}
-              >
-                {Object.entries(banners).map(([id, url]) => (
-                  <Box
-                    key={id}
-                    component="img"
-                    src={url}
-                    onClick={() => console.log(id)}
-                    sx={{
-                      width: 250,
-                      height: 120,
-                      objectFit: "cover",
-                      borderRadius: 2,
-                      cursor: "pointer",
-                      transition: "0.3s",
-
-                      "&:hover": {
-                        transform: "scale(1.03)",
-                      },
-                    }}
-                  />
-                ))}
-
-                <FormControlLabel
-                  value="female"
-                  control={<Radio />}
-                  label="Female"
-                />
-              </RadioGroup>
-            </FormControl>
+            {Object.entries(banners).map(([id, url]) => (
+              <Box
+                key={id}
+                component="img"
+                src={url}
+                onClick={() => setSelectedBanner(Number(id))}
+                sx={{
+                  width: 300,
+                  height: 120,
+                  cursor: "pointer",
+                  borderRadius: 2,
+                  border:
+                    SelectedBanner === Number(id)
+                      ? "3px solid #268ff9"
+                      : "3px solid transparent",
+                }}
+              />
+            ))}
           </Box>
 
           <Box></Box>
