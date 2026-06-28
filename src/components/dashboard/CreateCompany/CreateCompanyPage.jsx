@@ -12,9 +12,9 @@ import Modal from "@mui/material/Modal";
 
 import Left_side from "./left_Side";
 
-import { useId, useState } from "react";
+import {  useState } from "react";
 
-import CloseIcon from "@mui/icons-material/Close";
+
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
@@ -23,31 +23,9 @@ import MoreInfo from "./MoreInfo";
 import Branding from "./Branding";
 
 import gsap from "gsap";
-import { GalleryHorizontal, ImageUp } from "lucide-react";
+
 import { create_company } from "../../../logic/api/company/Company";
 
-const banners = {
-  1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
-  2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
-  3: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590332/AAYABATzAAgAAQAAAAAAAOBT-FNgMROnShuQ5eB2HbQteg_teo4cw.jpg",
-  4: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590315/AAYABATzAAgAAQAAAAAAAN6Y-o5SDacURUWv0_FkZRq6Gg_m1bqxn.jpg",
-  5: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590304/AAYABATzAAgAAQAAAAAAAMj_3rfOgP3ZQmm5o1-2ZgmbRw_oftb6h.jpg",
-  6: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590296/AAYABATzAAgAAQAAAAAAAMo80PNuvpeYSWmOieS4NeQYtQ_avkput.jpg",
-  7: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590281/AAYABATzAAgAAQAAAAAAAMOHxFnK8NKlT9yznyIWepeV4w_fapjy3.jpg",
-  8: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590217/AAYABATzAAgAAQAAAAAAALNrMPYvoAPPTSuRq_eKjwPCMg_pvk6kp.jpg",
-  9: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590212/AAYABATzAAgAAQAAAAAAAQidZ4lo5ohrTLODXaijuiow2A_uubxgf.jpg",
-  10: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590190/AAYABATzAAgAAQAAAAAAALL3VUK4GDT6TD2xvmyubQ6QGQ_cf8v3m.jpg",
-  11: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590173/AAYABATzAAgAAQAAAAAAAAPFzwpvhXv8S5-B3JgetGKbiQ_svtqwc.jpg",
-  12: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590134/AAYABATzAAgAAQAAAAAAAAIViJt5_fXtQleFNmpGiUR4Cw_mfzkyj.jpg",
-  13: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
-  14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
-};
-
-import Radio from "@mui/material/Radio";
-import RadioGroup from "@mui/material/RadioGroup";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import FormControl from "@mui/material/FormControl";
-import FormLabel from "@mui/material/FormLabel";
 
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
@@ -253,230 +231,9 @@ export default function CreateCompanyPage() {
       // });
     }
   };
-  const [open, setOpen] = useState(true);
-
-  const handleOpen = () => {
-    setOpen(true);
-  };
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-  const [SelectedBanner, setSelectedBanner] = useState();
-
-  console.log( SelectedBanner );
 
   return (
     <>
-      <Modal
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClose={handleClose}
-        open={true}
-      >
-        <Box
-          sx={{
-            width: "60%",
-            borderRadius: "10px",
-            height: "50%",
-            bgcolor: "#fff",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            "&:focus": {
-              outline: "none",
-            },
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              height: "15%",
-              bgcolor: "#ffffff",
-              display: "flex",
-              alignItems: "center",
-              px: 2,
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "system-ui",
-              }}
-            >
-              {" "}
-              Banner
-            </Typography>{" "}
-            <IconButton>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-          <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
-
-          <Box
-            sx={{
-              width: "100%",
-              height: "25%",
-              bgcolor: "#ffffff",
-              display: "flex",
-              justifyContent: "center",
-            }}
-          >
-            <Box
-              sx={{
-                height: "100%",
-                width: "70%",
-                display: "flex",
-                justifyContent: "space-around",
-
-                boxSizing: "border-box",
-              }}
-            >
-              <Button
-                size="small"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  borderRadius: "0px",
-                  gap: 0.5,
-                }}
-              >
-                <GalleryHorizontal
-                  size={30}
-                  color="#2a6aff"
-                  style={{ margin: 0 }}
-                />
-                <Typography sx={{ fontSize: "0.9rem" }}>
-                  {" "}
-                  Choose Banner{" "}
-                </Typography>
-              </Button>
-
-              <Button
-                size="small"
-                sx={{
-                  display: "flex",
-                  flexDirection: "column",
-                  borderRadius: "0px",
-                  gap: 0.5,
-                }}
-              >
-                <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
-                <Typography sx={{ fontSize: "0.9rem" }}>
-                  {" "}
-                  Upload Image{" "}
-                </Typography>
-              </Button>
-            </Box>
-          </Box>
-        </Box>
-      </Modal>
-
-      <Modal
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        onClose={handleClose}
-        open={true}
-      >
-        <Box
-          sx={{
-            width: "90%",
-
-            borderRadius: "10px",
-            height: "90%",
-            bgcolor: "#fff",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            "&:focus": {
-              outline: "none",
-            },
-            overflow: "hidden",
-          }}
-        >
-          <Box
-            sx={{
-              width: "100%",
-              height: "10%",
-
-              display: "flex",
-              alignItems: "center",
-              px: 2,
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-              borderBottom: "solid #b4b4b473 1px",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "1.3rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "system-ui",
-              }}
-            >
-              Add a cover image
-            </Typography>
-            <IconButton>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-
-          <Box
-            sx={{
-              width: "100%",
-              height: "78%",
-              display: "flex",
-              p: 2,
-              boxSizing: "border-box",
-              justifyContent:"space-evenly",
-              borderBottom: "solid #b4b4b473 1px",
-              flexWrap:"wrap",
-              overflow:"auto",
-              gap:2
-            }}
-          >
-            {Object.entries(banners).map(([id, url]) => (
-              <Box
-                key={id}
-                component="img"
-                src={url}
-                onClick={() => setSelectedBanner(Number(id))}
-                sx={{
-                  width: 300,
-                  height: 120,
-                  cursor: "pointer",
-                  borderRadius: 2,
-                  border:
-                    SelectedBanner === Number(id)
-                      ? "3px solid #268ff9"
-                      : "3px solid transparent",
-                }}
-              />
-            ))}
-          </Box>
-
-          <Box sx={{display:"flex",alignItems:"center",height:"12%",width:"100%",justifyContent:"end"}}>
-
-            <Button size="large" sx={{mr:4 , bgcolor:"#2c68ff",color:"#fff",px:4}} > Save </Button>
-            
-          </Box>
-
-        </Box>
-      </Modal>
 
       <Box
         sx={{

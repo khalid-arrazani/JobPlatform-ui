@@ -38,9 +38,6 @@ export default function Branding({setThirdInfo}) {
   const [previewLogo, setPreviewLogo] = useState("");
   const [previewBG, setPreviewBG] = useState("");
 
-
-
-
   return (
     <>
       <Box
