@@ -46,14 +46,15 @@ export default function Branding({setThirdInfo}) {
   const handlechoiseModal = () => {setchoiseModal(true)}
 
   const[bannerModal , setbannerModal]= useState(false)
+  const handlebannerModal = () => {setbannerModal(true)}
 
 
   return (
     <>
 
-     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG} />
-     
-     <Modalbanner choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG} />
+     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal}/>
+
+     <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal} />
       <Box
         sx={{
           height: "70%",

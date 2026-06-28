@@ -33,19 +33,17 @@ const banners = {
 };
 
 
-export default function  Modalbanner(){
+export default function  Modalbanner({bannerModal, setbannerModal}){
   const [SelectedBanner, setSelectedBanner] = useState();
 
- const [open, setOpen] = useState(true);
 
 
-  const handleOpen = () => {
-    setOpen(true);
-  };
+
+  
 
 
  const handleClose = () => {
-    setOpen(false);
+    setbannerModal(false);
   };
 
     return (
@@ -56,7 +54,7 @@ export default function  Modalbanner(){
           alignItems: "center",
         }}
         onClose={handleClose}
-        open={open}
+        open={bannerModal}
       >
         <Box
           sx={{
@@ -98,7 +96,7 @@ export default function  Modalbanner(){
             >
               Add a cover image
             </Typography>
-            <IconButton>
+            <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
           </Box>

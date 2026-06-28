@@ -1,13 +1,12 @@
 import { Typography, Box, IconButton, Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
-import { useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 
-export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  openSetImagBG}) {
+export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  openSetImagBG,handlebannerModal}) {
   const handleClose = () => {
     setchoiseModal(false);
   };
@@ -60,7 +59,7 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
           >
             Banner
           </Typography>
-          <IconButton>
+          <IconButton onClick={handleClose}>
             <CloseIcon />
           </IconButton>
         </Box>
@@ -96,6 +95,7 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
                 borderRadius: "0px",
                 gap: 0.5,
               }}
+              onClick={handlebannerModal}
             >
               <GalleryHorizontal
                 size={30}
