@@ -262,9 +262,28 @@ export default function CreateCompanyPage() {
             <Typography sx={{fontSize:"1.5rem",fontWeight:600,color:"#050318d2",fontFamily:"system-ui"}}> Banner</Typography> <IconButton><CloseIcon/></IconButton> 
           </Box>
           <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
-          <Box sx={{ width: "100%", height: "25%", bgcolor: "#ffffff" }}></Box>
+
+
+          <Box sx={{ width: "100%", height: "25%", bgcolor: "#ffffff" , display:"flex",justifyContent:"center" }}>
+
+            <Box sx={{bgcolor:"#ddd"}}>
+
+            </Box>
+          </Box>
         </Box>
       </Modal>
+
+
+
+
+
+
+
+
+
+
+
+
       <Box
         sx={{
           height: "92.3vh",
