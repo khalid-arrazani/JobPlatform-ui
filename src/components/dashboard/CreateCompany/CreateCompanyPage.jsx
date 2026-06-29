@@ -27,6 +27,7 @@ import { create_company } from "../../../logic/api/company/Company";
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
+  
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
