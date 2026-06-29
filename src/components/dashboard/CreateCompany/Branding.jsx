@@ -53,7 +53,7 @@ export default function Branding({setThirdInfo}) {
   bannerId: null,
   image: null,
    });
-
+console.log(background);
 
   return (
     <>
@@ -172,9 +172,10 @@ export default function Branding({setThirdInfo}) {
               openSetImagBG={openSetImagBG}
               ImageBG={ImageBG}
               previewBG={previewBG}
-              
+
               setPreviewBG={setPreviewBG}
-              setThirdInfo={setThirdInfo}
+
+              setBackground={setBackground}
             />
           </Box>
 

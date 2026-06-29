@@ -11,8 +11,8 @@ export default function CompanyBG({
   openSetImagBG,
   ImageBG,
   setPreviewBG,
-  setThirdInfo
-}){
+  setBackground,
+}) {
   const editorRef = useRef();
 
   const [scale, setScale] = useState(1.3);
@@ -36,10 +36,12 @@ export default function CompanyBG({
 
       setPreviewBG(previewUrl);
 
-   
-     setThirdInfo((prev)=> ({...prev , company_banner : blob}))
+      setBackground({
+        type: "upload",
+        bannerId: null,
+        image: blob,
+      });
 
-      
       openSetImagBG(false);
     }, "image/png");
   };
@@ -48,8 +50,12 @@ export default function CompanyBG({
     <>
       {/* Upload */}
 
-      <Dialog sx={{"& .MuiPaper-root":{maxWidth:"100vw"} }} open={openImageBG} onClose={() => openSetImagBG(false)}>
-        <DialogContent  >
+      <Dialog
+        sx={{ "& .MuiPaper-root": { maxWidth: "100vw" } }}
+        open={openImageBG}
+        onClose={() => openSetImagBG(false)}
+      >
+        <DialogContent>
           <Box
             sx={{
               display: "flex",
@@ -58,7 +64,6 @@ export default function CompanyBG({
               gap: "1rem",
               transform: "scale(1)",
               transformOrigin: "top center",
-            
             }}
           >
             <AvatarEditor
