@@ -95,7 +95,7 @@ export default function Branding({setThirdInfo}) {
               justifyContent: "center",
               alignItems: "center",
               gap: 0.5,
-              backgroundImage: background.bannerId && background.image  ? "default" : background.type == "banner" ? `url(${background.bannerId})` : background.type == "upload" ? `url(${background.image})` : "none",
+              backgroundImage: background.bannerId == null && background.image == null  ? "default" : background.type == "banner" ? `url(${banners[background.bannerId]})` : background.type == "upload" ? `url(${previewBG})` : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
