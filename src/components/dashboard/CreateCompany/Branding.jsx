@@ -55,6 +55,8 @@ export default function Branding({setThirdInfo}) {
   image: null,
    });
 
+   const [BG ,setBG] = useState(background.bannerId == null && background.image == null  ? "default" : background.type == "banner" ? `url(${banners[background.bannerId]})` : background.type == "upload" ? `url(${previewBG})` : "none")
+   console.log(BG);
 
   return (
     <>
