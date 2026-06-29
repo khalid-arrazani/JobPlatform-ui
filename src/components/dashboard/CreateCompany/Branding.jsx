@@ -20,6 +20,7 @@ const banners = {
   13: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
+const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782727987/default_pqckaf.png"
 
 import CompanyLogo from "./UploadCompanyLogo";
 import CompanyBG from "./UploadCompanyBG";
@@ -59,7 +60,7 @@ export default function Branding({ setThirdInfo }) {
 
   const BG =
     background.bannerId == null && background.image == null
-      ? "default"
+      ? Default
       : background.type == "banner"
         ? banners[background.bannerId]
         : background.type == "upload"
