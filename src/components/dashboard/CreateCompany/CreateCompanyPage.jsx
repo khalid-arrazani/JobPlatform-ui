@@ -16,12 +16,13 @@ import gsap from "gsap";
 
 import { create_company } from "../../../logic/api/company/Company";
 import { useProfile } from "../../../logic/context/profileContext";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
-    const { dispatch , ...state } = useProfile();
-  
+  const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -216,25 +217,25 @@ export default function CreateCompanyPage() {
       if (background.type === "upload") {
         formData.append("companyBackground", background.image);
       }
+      const data = await create_company(formData);
 
-       await create_company(formData);
-
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-
-    } catch (error) {
-
-      console.log(error.response.data);
-
-    }finally{
+      setSnackBar({
+        open: true,
+        message: data.message,
+        severity: "success",
+      });
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       dispatch({
-      type: "SET_LOADING_COMPANY",
-      payload: false,
-    });
-
-    dispatch({
-      type: "RELOADCOMPANY",
-      payload: 1,
-    });
+        type: "RELOADCOMPANY",
+        payload: 1,
+      });
+    } catch (error) {
+      console.log(error.response.data);
+    } finally {
+      dispatch({
+        type: "SET_LOADING_COMPANY",
+        payload: false,
+      });
     }
   };
 
@@ -327,7 +328,13 @@ export default function CreateCompanyPage() {
           ) : null}
 
           {/* Bottom */}
-          <ButtonB state={state} step={step} setStep={setStep} next={next} back={back} />
+          <ButtonB
+            state={state}
+            step={step}
+            setStep={setStep}
+            next={next}
+            back={back}
+          />
         </Box>
       </Box>
     </>
