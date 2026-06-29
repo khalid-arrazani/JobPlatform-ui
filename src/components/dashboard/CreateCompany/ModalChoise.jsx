@@ -4,6 +4,7 @@ import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 
 import { GalleryHorizontal, ImageUp } from "lucide-react";
+import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
 
 export default function ModalChoise({
   choiseModal,
@@ -12,6 +13,7 @@ export default function ModalChoise({
   openSetImagBG,
   handlebannerModal,
   BG,
+  setBackground,
 }) {
   const handleClose = () => {
     setchoiseModal(false);
@@ -143,6 +145,25 @@ export default function ModalChoise({
                   }
                 }}
               />
+            </Button>
+
+            <Button
+              size="small"
+              onClick={() => {
+                setBackground({ type: "banner", bannerId: null, image: null });
+              }}
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+                borderRadius: "0px",
+                gap: 0.5,
+              }}
+            >
+              <DeleteSweepOutlinedIcon
+                color="#2a6aff"
+                style={{ margin: 0, fontSize: 30 }}
+              />
+              <Typography sx={{ fontSize: "0.9rem" }}>Delete Image</Typography>
             </Button>
           </Box>
         </Box>

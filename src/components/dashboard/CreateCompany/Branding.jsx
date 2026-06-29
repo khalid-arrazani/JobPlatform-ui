@@ -1,7 +1,7 @@
 import { Box, Typography, Button, Modal } from "@mui/material";
 import DomainIcon from "@mui/icons-material/Domain";
 
-import PanoramaOutlinedIcon from "@mui/icons-material/PanoramaOutlined";
+
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
 
 const banners = {
@@ -20,7 +20,7 @@ const banners = {
   13: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
-const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782727987/default_pqckaf.png"
+const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png"
 
 import CompanyLogo from "./UploadCompanyLogo";
 import CompanyBG from "./UploadCompanyBG";
@@ -30,6 +30,8 @@ import { useState } from "react";
 
 import ModalChoise from "./ModalChoise";
 import Modalbanner from "./Modalbanner";
+
+import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined';
 
 export default function Branding({ setThirdInfo }) {
   const [ImageLogo, setImagLogo] = useState("");
@@ -134,37 +136,6 @@ export default function Branding({ setThirdInfo }) {
                 height: "40%",
               }}
             >
-              {!previewBG ? (
-                <>
-                  <PanoramaOutlinedIcon
-                    sx={{ width: "3rem", height: "3rem", color: "#0958c6" }}
-                  />
-
-                  <Typography
-                    sx={{
-                      fontFamily: "-apple-system",
-                      fontWeight: 700,
-                      color: "#0b0b12d9",
-                      m: 0,
-                    }}
-                  >
-                    Upload cover background
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      fontFamily: "-apple-system",
-                      fontWeight: 700,
-                      color: "#0a0a189f",
-                      m: 0,
-                      fontSize: "0.8rem",
-                      p: 0,
-                    }}
-                  >
-                    JBG or PNG. Recommended size 1920x600px. Max size 5MB
-                  </Typography>
-                </>
-              ) : null}
             </Box>
 
             <Button
