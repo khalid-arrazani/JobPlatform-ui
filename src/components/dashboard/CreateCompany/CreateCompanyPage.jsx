@@ -3,12 +3,9 @@ import validator from "validator";
 import {
   Typography,
   Box,
-  IconButton,
-  Button,
-  buttonBaseClasses,
-  imageListClasses,
+  
 } from "@mui/material";
-import Modal from "@mui/material/Modal";
+
 
 import Left_side from "./left_Side";
 

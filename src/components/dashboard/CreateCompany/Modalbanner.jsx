@@ -29,10 +29,10 @@ export default function Modalbanner({
 }) {
   const [SelectedBanner, setSelectedBanner] = useState();
 
-  const selectBanner = (id) => {
+  const selectBanner = () => {
     setBackground({
       type: "banner",
-      bannerId: id,
+      bannerId: SelectedBanner,
       image: null,
     });
   };

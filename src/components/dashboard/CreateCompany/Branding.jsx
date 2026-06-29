@@ -52,7 +52,7 @@ export default function Branding({setThirdInfo}) {
   type: "banner", // banner | upload
   bannerId: null,
   image: null,
-});
+   });
 
 
   return (
@@ -165,12 +165,6 @@ export default function Branding({setThirdInfo}) {
               />
               Choose Image
 
-
-
-
-
-
-
             </Button>
 
             <CompanyBG
@@ -178,11 +172,9 @@ export default function Branding({setThirdInfo}) {
               openSetImagBG={openSetImagBG}
               ImageBG={ImageBG}
               previewBG={previewBG}
-              setPreviewBG={setPreviewBG}
-
-
-              setThirdInfo={setThirdInfo}
               
+              setPreviewBG={setPreviewBG}
+              setThirdInfo={setThirdInfo}
             />
           </Box>
 

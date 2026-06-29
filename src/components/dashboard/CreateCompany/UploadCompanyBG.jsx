@@ -11,8 +11,6 @@ export default function CompanyBG({
   openSetImagBG,
   ImageBG,
   setPreviewBG,
-
-
   setThirdInfo
 }) {
   const editorRef = useRef();
