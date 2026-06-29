@@ -12,7 +12,7 @@ export default function CompanyBG({
   ImageBG,
   setPreviewBG,
   setThirdInfo
-}) {
+}){
   const editorRef = useRef();
 
   const [scale, setScale] = useState(1.3);
