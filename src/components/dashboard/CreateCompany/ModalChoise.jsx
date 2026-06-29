@@ -7,6 +7,10 @@ import CloseIcon from "@mui/icons-material/Close";
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 
 export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  openSetImagBG,handlebannerModal}) {
+
+
+
+
   const handleClose = () => {
     setchoiseModal(false);
   };
@@ -106,9 +110,6 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
                 Choose Banner
               </Typography>
             </Button>
-
-
-
 
 
             <Button

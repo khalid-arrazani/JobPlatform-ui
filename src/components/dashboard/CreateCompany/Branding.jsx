@@ -48,13 +48,19 @@ export default function Branding({setThirdInfo}) {
   const[bannerModal , setbannerModal]= useState(false)
   const handlebannerModal = () => {setbannerModal(true)}
 
+  const [background, setBackground] = useState({
+  type: "banner", // banner | upload
+  bannerId: null,
+  image: null,
+});
+
 
   return (
     <>
 
-     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal}/>
+     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal} setBackground={setBackground} />
 
-     <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal} />
+     <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal}  setBackground={setBackground} />
       <Box
         sx={{
           height: "70%",

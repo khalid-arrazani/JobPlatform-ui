@@ -33,7 +33,7 @@ const banners = {
 };
 
 
-export default function  Modalbanner({bannerModal, setbannerModal}){
+export default function  Modalbanner({bannerModal, setbannerModal,setBackground}){
   const [SelectedBanner, setSelectedBanner] = useState();
 
 
@@ -47,7 +47,7 @@ export default function  Modalbanner({bannerModal, setbannerModal}){
   };
 
     return (
-           <Modal
+       <Modal
         sx={{
           display: "flex",
           justifyContent: "center",
