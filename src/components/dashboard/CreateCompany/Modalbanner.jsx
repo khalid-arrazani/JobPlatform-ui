@@ -1,19 +1,9 @@
-
-
-import {
-  Typography,
-  Box,
-  IconButton,
-  Button,
-
-} from "@mui/material";
+import { Typography, Box, IconButton, Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
-
 
 import { useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
-
 
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
@@ -32,116 +22,133 @@ const banners = {
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
 
-
-export default function  Modalbanner({bannerModal, setbannerModal,setBackground}){
+export default function Modalbanner({
+  bannerModal,
+  setbannerModal,
+  setBackground,
+}) {
   const [SelectedBanner, setSelectedBanner] = useState();
 
+  const selectBanner = (id) => {
+    setBackground({
+      type: "banner",
+      bannerId: id,
+      image: null,
+    });
+  };
 
-
-
-  
-
-
- const handleClose = () => {
+  const handleClose = () => {
     setbannerModal(false);
   };
 
-    return (
-       <Modal
+  return (
+    <Modal
+      sx={{
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
+      onClose={handleClose}
+      open={bannerModal}
+    >
+      <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          width: "90%",
+
+          borderRadius: "10px",
+          height: "90%",
+          bgcolor: "#fff",
+          position: "absolute",
+          top: "50%",
+          left: "50%",
+          transform: "translate(-50%, -50%)",
+          "&:focus": {
+            outline: "none",
+          },
+          overflow: "hidden",
         }}
-        onClose={handleClose}
-        open={bannerModal}
       >
         <Box
           sx={{
-            width: "90%",
+            width: "100%",
+            height: "10%",
 
-            borderRadius: "10px",
-            height: "90%",
-            bgcolor: "#fff",
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            "&:focus": {
-              outline: "none",
-            },
-            overflow: "hidden",
+            display: "flex",
+            alignItems: "center",
+            px: 2,
+            boxSizing: "border-box",
+            justifyContent: "space-between",
+            borderBottom: "solid #b4b4b473 1px",
           }}
         >
-          <Box
+          <Typography
             sx={{
-              width: "100%",
-              height: "10%",
-
-              display: "flex",
-              alignItems: "center",
-              px: 2,
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-              borderBottom: "solid #b4b4b473 1px",
+              fontSize: "1.3rem",
+              fontWeight: 600,
+              color: "#050318d2",
+              fontFamily: "system-ui",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "1.3rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "system-ui",
-              }}
-            >
-              Add a cover image
-            </Typography>
-            <IconButton onClick={handleClose}>
-              <CloseIcon />
-            </IconButton>
-          </Box>
-
-          <Box
-            sx={{
-              width: "100%",
-              height: "78%",
-              display: "flex",
-              p: 2,
-              boxSizing: "border-box",
-              justifyContent:"space-evenly",
-              borderBottom: "solid #b4b4b473 1px",
-              flexWrap:"wrap",
-              overflow:"auto",
-              gap:2
-            }}
-          >
-            {Object.entries(banners).map(([id, url]) => (
-              <Box
-                key={id}
-                component="img"
-                src={url}
-                onClick={() => setSelectedBanner(Number(id))}
-                sx={{
-                  width: 300,
-                  height: 120,
-                  cursor: "pointer",
-                  borderRadius: 2,
-                  border:
-                    SelectedBanner === Number(id)
-                      ? "3px solid #268ff9"
-                      : "3px solid transparent",
-                }}
-              />
-            ))}
-          </Box>
-
-          <Box sx={{display:"flex",alignItems:"center",height:"12%",width:"100%",justifyContent:"end"}}>
-
-            <Button size="large" sx={{mr:4 , bgcolor:"#2c68ff",color:"#fff",px:4}} > Save </Button>
-            
-          </Box>
-
+            Add a cover image
+          </Typography>
+          <IconButton onClick={handleClose}>
+            <CloseIcon />
+          </IconButton>
         </Box>
-      </Modal>
-    )
+
+        <Box
+          sx={{
+            width: "100%",
+            height: "78%",
+            display: "flex",
+            p: 2,
+            boxSizing: "border-box",
+            justifyContent: "space-evenly",
+            borderBottom: "solid #b4b4b473 1px",
+            flexWrap: "wrap",
+            overflow: "auto",
+            gap: 2,
+          }}
+        >
+          {Object.entries(banners).map(([id, url]) => (
+            <Box
+              key={id}
+              component="img"
+              src={url}
+              onClick={() => setSelectedBanner(Number(id))}
+              sx={{
+                width: 300,
+                height: 120,
+                cursor: "pointer",
+                borderRadius: 2,
+                border:
+                  SelectedBanner === Number(id)
+                    ? "3px solid #268ff9"
+                    : "3px solid transparent",
+              }}
+            />
+          ))}
+        </Box>
+
+        <Box
+          sx={{
+            display: "flex",
+            alignItems: "center",
+            height: "12%",
+            width: "100%",
+            justifyContent: "end",
+          }}
+        >
+          <Button
+            onClick={selectBanner}
+            size="large"
+            sx={{ mr: 4, bgcolor: "#2c68ff", color: "#fff", px: 4 }}
+          >
+            {" "}
+            Save{" "}
+          </Button>
+        </Box>
+      </Box>
+    </Modal>
+  );
 }
