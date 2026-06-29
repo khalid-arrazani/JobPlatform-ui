@@ -31,9 +31,9 @@ import { useState } from "react";
 import ModalChoise from "./ModalChoise";
 import Modalbanner from "./Modalbanner";
 
-import DeleteSweepOutlinedIcon from '@mui/icons-material/DeleteSweepOutlined';
+ 
 
-export default function Branding({ setThirdInfo }) {
+export default function Branding({ setThirdInfo,background, setBackground }) {
   const [ImageLogo, setImagLogo] = useState("");
   const [openImageLogo, openSetImagLogo] = useState("");
 
@@ -54,11 +54,7 @@ export default function Branding({ setThirdInfo }) {
     setbannerModal(true);
   };
 
-  const [background, setBackground] = useState({
-    type: "banner",
-    bannerId: null,
-    image: null,
-  });
+  
 
   const BG =
     background.bannerId == null && background.image == null

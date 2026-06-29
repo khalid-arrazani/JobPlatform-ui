@@ -27,7 +27,7 @@ import { create_company } from "../../../logic/api/company/Company";
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
-  
+
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -61,9 +61,14 @@ export default function CreateCompanyPage() {
 
   const [thirdtInfo, setThirdInfo] = useState({
     company_logo: "",
-    company_banner: "",
   });
-  console.log(thirdtInfo);
+
+  const [background, setBackground] = useState({
+    type: "banner",
+    bannerId: null,
+    image: null,
+  });
+
 
   const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
@@ -312,7 +317,7 @@ export default function CreateCompanyPage() {
           ) : step == 1 ? (
             <MoreInfo secondtInfo={secondtInfo} setSecondInfo={setSecondInfo} />
           ) : step == 2 ? (
-            <Branding setThirdInfo={setThirdInfo} />
+            <Branding setThirdInfo={setThirdInfo}  background={background} setBackground={setBackground} />
           ) : null}
 
           {/* Bottom */}
