@@ -20,7 +20,7 @@ import { useProfile } from "../../../logic/context/profileContext";
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
-    const { dispatch } = useProfile();
+    const { dispatch , ...state } = useProfile();
   
 
   const [firstInfo, setFirstInfo] = useState({
@@ -219,29 +219,20 @@ export default function CreateCompanyPage() {
 
       const data = await create_company(formData);
 
-      console.log(data);
-
-      dispatch({
-      type: "RELOADCOMPANY",
-      payload: 0,
-    });
 
     } catch (error) {
+
       console.log(error.response.data);
 
-      // setSnackBar({
-      //   open: true,
-      //   message: error.response.data?.message,
-      //   severity: "error",
-      // });
     }finally{
       dispatch({
       type: "SET_LOADING",
       payload: false,
     });
+
     dispatch({
       type: "RELOADCOMPANY",
-      payload: false,
+      payload: 1,
     });
     }
   };
@@ -335,7 +326,7 @@ export default function CreateCompanyPage() {
           ) : null}
 
           {/* Bottom */}
-          <ButtonB step={step} setStep={setStep} next={next} back={back} />
+          <ButtonB state={state} step={step} setStep={setStep} next={next} back={back} />
         </Box>
       </Box>
     </>

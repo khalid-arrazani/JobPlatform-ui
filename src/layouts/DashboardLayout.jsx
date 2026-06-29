@@ -20,7 +20,7 @@ export default function DashboardLayout({ children, part, setPart }) {
   const fetchUser = async () => {
     dispatch({
       type: "SET_LOADING",
-      payload: 1,
+      payload: true,
     });
     try {
       let data;
@@ -40,7 +40,7 @@ export default function DashboardLayout({ children, part, setPart }) {
     } finally {
       dispatch({
         type: "SET_LOADING",
-        payload: 0,
+        payload: false,
       });
     }
   };
