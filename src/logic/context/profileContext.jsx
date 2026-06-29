@@ -7,14 +7,14 @@ import {
 
 import { profileReducer } from "./reducer/ProfileReducer";
 
-export const ProfileContext=
-  createContext();
+export const ProfileContext= createContext();
 
 const initialState = {
   user: null,
   isLoading: false,
   isLoadingUptadeProfile:false,
-  reloadListJob:false
+  reloadListJob:false,
+  reloadCompany:0
 };
 
 

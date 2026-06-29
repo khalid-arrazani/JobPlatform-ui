@@ -15,10 +15,13 @@ import Branding from "./Branding";
 import gsap from "gsap";
 
 import { create_company } from "../../../logic/api/company/Company";
+import { useProfile } from "../../../logic/context/profileContext";
 
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
+    const { dispatch } = useProfile();
+  
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -173,6 +176,10 @@ export default function CreateCompanyPage() {
 
   // this section for create company api
   const handleCreateProfile = async () => {
+    dispatch({
+      type: "SET_LOADING",
+      payload: true,
+    });
     try {
       const formData = new FormData();
 
@@ -214,13 +221,11 @@ export default function CreateCompanyPage() {
 
       console.log(data);
 
-      // setSnackBar({
-      //   open: true,
-      //   message: data?.message,
-      //   severity: "success",
-      // });
-      // navigate('/profile')
-      
+      dispatch({
+      type: "RELOADCOMPANY",
+      payload: 0,
+    });
+
     } catch (error) {
       console.log(error.response.data);
 
@@ -229,6 +234,15 @@ export default function CreateCompanyPage() {
       //   message: error.response.data?.message,
       //   severity: "error",
       // });
+    }finally{
+      dispatch({
+      type: "SET_LOADING",
+      payload: false,
+    });
+    dispatch({
+      type: "RELOADCOMPANY",
+      payload: false,
+    });
     }
   };
 

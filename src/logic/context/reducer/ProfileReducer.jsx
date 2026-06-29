@@ -25,6 +25,11 @@ export const profileReducer = (
         ...state,
         reloadListJob: action.payload,
       };
+      case "RELOADCOMPANY":
+      return {
+        ...state,
+        reloadCompany: action.payload,
+      };
 
     default:
       return state;

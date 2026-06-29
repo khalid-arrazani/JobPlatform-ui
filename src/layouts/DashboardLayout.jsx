@@ -7,40 +7,43 @@ import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
 import { getMeUser } from "../logic/api/user/user.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
-
-  const { dispatch  } = useProfile();
+  const { dispatch , ...state } = useProfile();
 
   useEffect(() => {
-    const fetchUser = async () => {
-      dispatch({
-        type: "SET_LOADING",
-        payload: true,
-      });
-      try {
-        let data;
-        const user = await getMeUser();
-        if (user.role == "jobSeeker") {
-          data = await getMeJS();
-        } else if (user.role == "recruiter") {
-          data = await getMeR();
-        }
-        console.log(data);
-        dispatch({
-          type: "PROFILE",
-          payload: data,
-        });
- 
-      } catch (error) {
-        console.log(error.response?.data);
-      } finally {
-        dispatch({
-          type: "SET_LOADING",
-          payload: false,
-        });
-      }
-    };
     fetchUser();
   }, []);
+
+  useEffect(() => {
+    fetchUser();
+  }, [state.reloadCompany]);
+
+  const fetchUser = async () => {
+    dispatch({
+      type: "SET_LOADING",
+      payload: 1,
+    });
+    try {
+      let data;
+      const user = await getMeUser();
+      if (user.role == "jobSeeker") {
+        data = await getMeJS();
+      } else if (user.role == "recruiter") {
+        data = await getMeR();
+      }
+      console.log(data);
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.response?.data);
+    } finally {
+      dispatch({
+        type: "SET_LOADING",
+        payload: 0,
+      });
+    }
+  };
 
   return (
     <Box
@@ -51,7 +54,7 @@ export default function DashboardLayout({ children, part, setPart }) {
         flexDirection: "column",
         background: "#e8e8e8",
         padding: 0,
-        boxSizing:"border-box"
+        boxSizing: "border-box",
       }}
     >
       <Box
@@ -62,8 +65,7 @@ export default function DashboardLayout({ children, part, setPart }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderBottom:"solid 2px #b3afaf3e"
-        
+          borderBottom: "solid 2px #b3afaf3e",
         }}
       >
         <Navbar part={part} setPart={setPart} />
