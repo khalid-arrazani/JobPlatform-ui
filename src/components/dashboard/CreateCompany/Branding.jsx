@@ -55,13 +55,13 @@ export default function Branding({setThirdInfo}) {
   image: null,
    });
 
-   const [BG ,setBG] = useState(background.bannerId == null && background.image == null  ? "default" : background.type == "banner" ? `url(${banners[background.bannerId]})` : background.type == "upload" ? `url(${previewBG})` : "none")
-   console.log(BG);
+   const BG  = background.bannerId == null && background.image == null  ? "default" : background.type == "banner" ? banners[background.bannerId] : background.type == "upload" ? previewBG : "none"
+  
 
   return (
     <>
 
-     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal} setBackground={setBackground} />
+     <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal} setBackground={setBackground} BG={BG} />
 
      <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal}  setBackground={setBackground} />
 
@@ -97,7 +97,7 @@ export default function Branding({setThirdInfo}) {
               justifyContent: "center",
               alignItems: "center",
               gap: 0.5,
-              backgroundImage: background.bannerId == null && background.image == null  ? "default" : background.type == "banner" ? `url(${banners[background.bannerId]})` : background.type == "upload" ? `url(${previewBG})` : "none",
+              backgroundImage: `url(${BG})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

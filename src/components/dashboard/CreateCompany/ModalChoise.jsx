@@ -1,16 +1,18 @@
 import { Typography, Box, IconButton, Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
-
 import CloseIcon from "@mui/icons-material/Close";
 
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 
-export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  openSetImagBG,handlebannerModal}) {
-
-
-
-
+export default function ModalChoise({
+  choiseModal,
+  setchoiseModal,
+  setImagBG,
+  openSetImagBG,
+  handlebannerModal,
+  BG,
+}) {
   const handleClose = () => {
     setchoiseModal(false);
   };
@@ -67,7 +69,18 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
             <CloseIcon />
           </IconButton>
         </Box>
-        <Box sx={{ width: "100%", height: "60%", bgcolor: "#9c9c9c" }}></Box>
+
+        <Box
+          sx={{
+            width: "100%",
+            height: "60%",
+            bgcolor: "#9c9c9c",
+            backgroundImage: `url(${BG})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+          }}
+        ></Box>
 
         <Box
           sx={{
@@ -88,9 +101,6 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
               boxSizing: "border-box",
             }}
           >
-
-
-
             <Button
               size="small"
               sx={{
@@ -106,11 +116,8 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
                 color="#2a6aff"
                 style={{ margin: 0 }}
               />
-              <Typography sx={{ fontSize: "0.9rem" }}>
-                Choose Banner
-              </Typography>
+              <Typography sx={{ fontSize: "0.9rem" }}>Choose Banner</Typography>
             </Button>
-
 
             <Button
               size="small"
@@ -123,10 +130,8 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
               }}
             >
               <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
-              <Typography sx={{ fontSize: "0.9rem" }}>
-                Upload Image
-              </Typography>
-               <input
+              <Typography sx={{ fontSize: "0.9rem" }}>Upload Image</Typography>
+              <input
                 hidden
                 accept="image/*"
                 type="file"
@@ -139,11 +144,6 @@ export default function ModalChoise({ choiseModal, setchoiseModal ,setImagBG,  o
                 }}
               />
             </Button>
-
-
-
-
-
           </Box>
         </Box>
       </Box>
