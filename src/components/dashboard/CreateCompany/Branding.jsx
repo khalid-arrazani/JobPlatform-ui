@@ -48,12 +48,13 @@ export default function Branding({setThirdInfo}) {
   const[bannerModal , setbannerModal]= useState(false)
   const handlebannerModal = () => {setbannerModal(true)}
 
+
   const [background, setBackground] = useState({
-  type: "banner", // banner | upload
+  type: "banner",
   bannerId: null,
   image: null,
    });
-console.log(background);
+
 
   return (
     <>

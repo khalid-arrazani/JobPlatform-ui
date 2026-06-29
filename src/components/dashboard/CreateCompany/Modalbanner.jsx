@@ -35,11 +35,13 @@ export default function Modalbanner({
       bannerId: SelectedBanner,
       image: null,
     });
+    setbannerModal(false)
   };
 
   const handleClose = () => {
     setbannerModal(false);
   };
+  
 
   return (
     <Modal
