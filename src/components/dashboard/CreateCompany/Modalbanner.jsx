@@ -1,7 +1,7 @@
 import { Typography, Box, IconButton, Button } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
 
@@ -25,9 +25,9 @@ const banners = {
 export default function Modalbanner({
   bannerModal,
   setbannerModal,
-  setBackground,
+  setBackground,background
 }) {
-  const [SelectedBanner, setSelectedBanner] = useState();
+  const [SelectedBanner, setSelectedBanner] = useState(null);
 
   const selectBanner = () => {
     setBackground({
@@ -38,10 +38,16 @@ export default function Modalbanner({
     setbannerModal(false)
   };
 
+  useEffect(()=>{
+    if( background.bannerId == null){
+        setSelectedBanner(null)
+    }
+  },[background.type])
+
   const handleClose = () => {
     setbannerModal(false);
   };
-  
+
 
   return (
     <Modal

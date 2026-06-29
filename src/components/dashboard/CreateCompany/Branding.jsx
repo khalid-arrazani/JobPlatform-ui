@@ -63,7 +63,7 @@ export default function Branding({setThirdInfo}) {
 
      <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal} setBackground={setBackground} BG={BG} />
 
-     <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal}  setBackground={setBackground} />
+     <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal}  setBackground={setBackground} background={background} />
 
       <Box
         sx={{
