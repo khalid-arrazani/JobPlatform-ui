@@ -34,7 +34,8 @@ export default function ProfileProvider({
       profileReducer,
       initialState
     );
-console.log(state?.user);
+
+console.log(state);
 
     const [aboutOpen , setAboutOpen ] = useState(false)
     const [skillOpen , setSkillOpen ] = useState(false)
