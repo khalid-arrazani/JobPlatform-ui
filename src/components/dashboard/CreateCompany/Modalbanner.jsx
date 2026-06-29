@@ -40,7 +40,7 @@ export default function Modalbanner({
 
   useEffect(()=>{
     if( background.bannerId == null){
-        setSelectedBanner(null)
+        setSelectedBanner(null);
     }
   },[background.type])
 
