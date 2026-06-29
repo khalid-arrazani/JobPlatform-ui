@@ -177,7 +177,7 @@ export default function CreateCompanyPage() {
   // this section for create company api
   const handleCreateProfile = async () => {
     dispatch({
-      type: "SET_LOADING",
+      type: "SET_LOADING_COMPANY",
       payload: true,
     });
     try {
@@ -217,17 +217,17 @@ export default function CreateCompanyPage() {
         formData.append("companyBackground", background.image);
       }
 
-      const data = await create_company(formData);
+       await create_company(formData);
 
     await new Promise((resolve) => setTimeout(resolve, 2000));
-    
+
     } catch (error) {
 
       console.log(error.response.data);
 
     }finally{
       dispatch({
-      type: "SET_LOADING",
+      type: "SET_LOADING_COMPANY",
       payload: false,
     });
 

@@ -31,6 +31,12 @@ export const profileReducer = (
         reloadCompany: action.payload,
       };
 
+       case "SET_LOADING_COMPANY":
+      return {
+        ...state,
+        isLoadingCompany: action.payload,
+      };
+
     default:
       return state;
   }

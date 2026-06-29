@@ -57,11 +57,11 @@ console.log(state.isLoading);
 
         <Button
           size="small"
-          disabled={state.isLoading}
+          disabled={state.isLoadingCompany}
           onClick={next}
           sx={{
             color: "#fff",
-            bgcolor: state.isLoading ? "#ddd" : "#4678f5",
+            bgcolor: state.isLoadingCompany ? "#ddd" : "#4678f5",
             px: 2,
             display: "flex",
             alignItems: "center",
@@ -71,7 +71,7 @@ console.log(state.isLoading);
             fontWeight: 600,
           }}
         >
-         {state.isLoading ? <CircularProgress size={30}/> : null}     {buttonT} <ChevronRight />
+         {state.isLoadingCompany ? <CircularProgress size={30}/> : null}     {buttonT} <ChevronRight />
         </Button>
       </Box>
     </>

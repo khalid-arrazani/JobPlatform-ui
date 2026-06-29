@@ -14,7 +14,8 @@ const initialState = {
   isLoading: false,
   isLoadingUptadeProfile:false,
   reloadListJob:false,
-  reloadCompany:0
+  reloadCompany:0,
+  isLoadingCompany:false
 };
 
 
