@@ -62,6 +62,7 @@ export default function Branding({setThirdInfo}) {
      <ModalChoise choiseModal={choiseModal} setchoiseModal={setchoiseModal} setImagBG={setImagBG}  openSetImagBG={openSetImagBG}  handlebannerModal={handlebannerModal} setBackground={setBackground} />
 
      <Modalbanner bannerModal={bannerModal} setbannerModal={setbannerModal}  setBackground={setBackground} />
+
       <Box
         sx={{
           height: "70%",
@@ -94,7 +95,7 @@ export default function Branding({setThirdInfo}) {
               justifyContent: "center",
               alignItems: "center",
               gap: 0.5,
-              backgroundImage: previewBG ? `url(${previewBG})` : "none",
+              backgroundImage: background.bannerId && background.image  ? "default" : background.type == "banner" ? `url(${background.bannerId})` : background.type == "upload" ? `url(${background.image})` : "none",
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
