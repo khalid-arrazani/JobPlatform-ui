@@ -1,17 +1,10 @@
 import validator from "validator";
 
-import {
-  Typography,
-  Box,
-  
-} from "@mui/material";
-
+import { Typography, Box } from "@mui/material";
 
 import Left_side from "./left_Side";
 
-import {  useState } from "react";
-
-
+import { useState } from "react";
 
 import Header from "./header";
 import ButtonB from "./ButtonB";
@@ -23,11 +16,9 @@ import gsap from "gsap";
 
 import { create_company } from "../../../logic/api/company/Company";
 
-
 export default function CreateCompanyPage() {
   const [err, setErr] = useState("");
   const [step, setStep] = useState(0);
-
 
   const [firstInfo, setFirstInfo] = useState({
     company_name: "",
@@ -68,7 +59,6 @@ export default function CreateCompanyPage() {
     bannerId: null,
     image: null,
   });
-
 
   const validatefirstInfo = () => {
     if (validator.isEmpty(firstInfo.company_name.trim())) {
@@ -210,8 +200,14 @@ export default function CreateCompanyPage() {
         formData.append("companyLogo", thirdtInfo.company_logo);
       }
 
-      if (thirdtInfo.company_banner) {
-        formData.append("companyBackground", thirdtInfo.company_banner);
+      formData.append("backgroundType", background.type);
+
+      if (background.type === "banner") {
+        formData.append("bannerId", background.bannerId);
+      }
+
+      if (background.type === "upload") {
+        formData.append("companyBackground", background.image);
       }
 
       const data = await create_company(formData);
@@ -224,6 +220,7 @@ export default function CreateCompanyPage() {
       //   severity: "success",
       // });
       // navigate('/profile')
+      
     } catch (error) {
       console.log(error.response.data);
 
@@ -237,7 +234,6 @@ export default function CreateCompanyPage() {
 
   return (
     <>
-
       <Box
         sx={{
           height: "92.3vh",
@@ -317,7 +313,11 @@ export default function CreateCompanyPage() {
           ) : step == 1 ? (
             <MoreInfo secondtInfo={secondtInfo} setSecondInfo={setSecondInfo} />
           ) : step == 2 ? (
-            <Branding setThirdInfo={setThirdInfo}  background={background} setBackground={setBackground} />
+            <Branding
+              setThirdInfo={setThirdInfo}
+              background={background}
+              setBackground={setBackground}
+            />
           ) : null}
 
           {/* Bottom */}

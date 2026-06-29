@@ -21,7 +21,10 @@ const { dispatch , ...state } = useCompany()
 
 
   useEffect(() => {
-      const fetchUser = async () => {
+      fetchCompany();
+    }, []);
+
+ const fetchCompany = async () => {
         dispatch({
           type: "SET_LOADING",
           payload: true,
@@ -29,7 +32,6 @@ const { dispatch , ...state } = useCompany()
         try {
          
           const data = await getmyCompany();
-          
           console.log(data);
           dispatch({
             type: "SETCOMPANY",
@@ -45,10 +47,6 @@ const { dispatch , ...state } = useCompany()
           });
         }
       };
-      fetchUser();
-    }, []);
-
-
 
 
 

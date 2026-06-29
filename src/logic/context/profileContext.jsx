@@ -17,6 +17,7 @@ const initialState = {
   reloadListJob:false
 };
 
+
 export const useProfile = () => {
   return useContext(
     ProfileContext
@@ -33,7 +34,7 @@ export default function ProfileProvider({
       profileReducer,
       initialState
     );
-
+console.log(state?.user);
 
     const [aboutOpen , setAboutOpen ] = useState(false)
     const [skillOpen , setSkillOpen ] = useState(false)
