@@ -147,7 +147,7 @@ export default function CompanyHeader ({CompanyInfo}){
                   sx={{ fontSize: "1rem", color: "#666" }}
                 />
                 <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
-                  Technology & Internet
+                  {CompanyInfo?.industry}
                 </Typography>
               </Box>
 
