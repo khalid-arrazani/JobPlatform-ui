@@ -95,9 +95,6 @@ const { dispatch , ...state } = useCompany()
             {/* Open Positions Card  */}
             <OpenPositionsCard CompanyInfo={state.Company?.company} />
 
-
-
-
           </Box>
 
           {/* right side  */}
