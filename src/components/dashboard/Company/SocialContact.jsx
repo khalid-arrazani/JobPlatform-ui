@@ -249,7 +249,7 @@ const SocialContact = ({CompanyInfo}) => {
               fontFamily: "Inter",
             }}
           >
-            company@email.com
+            {CompanyInfo?.company_email}
           </Typography>
         </Card>
       </Box>

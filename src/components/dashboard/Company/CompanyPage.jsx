@@ -108,7 +108,7 @@ const { dispatch , ...state } = useCompany()
 
 
             {/* Company Benefits Card  */}
-            <SocialContact CompanyInfo={state.Company} />
+            <SocialContact CompanyInfo={state.Company?.company} />
 
             {/* Company Benefits Card  */}
             <CompanyBenefits CompanyInfo={state.Company} />
