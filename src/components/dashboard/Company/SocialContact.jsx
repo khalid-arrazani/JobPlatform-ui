@@ -107,6 +107,18 @@ const SocialContact = ({CompanyInfo}) => {
       {/* Social Icons */}
 
       <Box sx={{ zIndex: 1, display: "flex", gap: 2, flexWrap: "wrap" }}>
+
+
+
+        {CompanyInfo?.socialLinks
+  .filter((item) => item.url.trim() !== "")
+  .map((item) => (
+    <Box key={item._id}>
+      {item.platform}
+    </Box>
+  ))}
+
+
         {/* Instagram */}
         <Card
           sx={{
