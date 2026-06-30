@@ -1,17 +1,50 @@
-import { Card, Typography, Box,  Divider } from "@mui/material";
+import { Card, Typography, Box, Divider } from "@mui/material";
 import { RiContactsLine } from "react-icons/ri";
 import sendMessage from "../../../assets/Sent Message-bro.svg";
-
-
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
+
+const icons = {
+  linkdin: {
+    icon: <LinkedInIcon sx={{ fontSize: "2rem" }} />,
+    color: "#0A66C2",
+    border: "#cfe5ff",
+    shadow: "0 8px 20px rgba(10, 102, 194, 0.15)",
+    hoverShadow: "0 15px 30px rgba(10, 102, 194, 0.25)",
+  },
+
+  facebook: {
+    icon: <FacebookIcon sx={{ fontSize: "2rem" }} />,
+    color: "#1877F2",
+    border: "#d5e7ff",
+    shadow: "0 8px 20px rgba(24, 119, 242, 0.15)",
+    hoverShadow: "0 15px 30px rgba(24, 119, 242, 0.25)",
+  },
+
+  instagram: {
+    icon: <InstagramIcon sx={{ fontSize: "2rem" }} />,
+    color: "#E1306C",
+    border: "#f3d4e1",
+    shadow: "0 8px 20px rgba(225, 48, 108, 0.15)",
+    hoverShadow: "0 15px 30px rgba(225, 48, 108, 0.25)",
+  },
+
+  x: {
+    icon: <TwitterIcon sx={{ fontSize: "2rem" }} />,
+    color: "#000",
+    border: "#ddd",
+    shadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
+    hoverShadow: "0 15px 30px rgba(0, 0, 0, 0.25)",
+  },
+};
+
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
-const SocialContact = ({CompanyInfo}) => {
+const SocialContact = ({ CompanyInfo }) => {
   return (
     <Card sx={{ p: 2, borderRadius: "12px", position: "relative" }}>
       <img
@@ -20,11 +53,19 @@ const SocialContact = ({CompanyInfo}) => {
         alt=""
       />
 
-
-      <Typography variant="h6" sx={{ mb: 1.5, fontWeight: "bold",display:"flex", alignItems:"center" , gap:1,fontFamily:"initial",color:"#090909d8" }}>
-
-        <RiContactsLine color="#2b88f3"/>
-
+      <Typography
+        variant="h6"
+        sx={{
+          mb: 1.5,
+          fontWeight: "bold",
+          display: "flex",
+          alignItems: "center",
+          gap: 1,
+          fontFamily: "initial",
+          color: "#090909d8",
+        }}
+      >
+        <RiContactsLine color="#2b88f3" />
         Contact
       </Typography>
 
@@ -101,47 +142,48 @@ const SocialContact = ({CompanyInfo}) => {
         />
       </Card>
 
-      <Divider sx={{my:2.5}}/>
-
+      <Divider sx={{ my: 2.5 }} />
 
       {/* Social Icons */}
 
       <Box sx={{ zIndex: 1, display: "flex", gap: 2, flexWrap: "wrap" }}>
-
-
-
         {CompanyInfo?.socialLinks
-  .filter((item) => item.url.trim() !== "")
-  .map((item) => (
-    <Box key={item._id}>
-      {item.platform}
-    </Box>
-  ))}
+          .filter((item) => item.url.trim() !== "")
+          .map((item) => {
+            const social = icons[item.platform];
 
+            return (
+              <Card
+                key={item._id}
+                component="a"
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: social.color,
+
+                  border: `1px solid ${social.border}`,
+                  borderRadius: "14px",
+                  boxShadow: social.shadow,
+                  textDecoration: "none",
+                  display: "flex",
+                  zIndex: 1,
+                  alignItems: "center",
+                  justifyContent: "center",
+                  p: 1.2,
+                  cursor: "pointer", transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                  "&:hover": {
+                    boxShadow: social.hoverShadow,
+                    transform: "translateY(-4px)",
+                  },
+                }}
+              >
+                {social.icon}
+              </Card>
+            );
+          })}
 
         {/* Instagram */}
-        <Card
-          sx={{
-            color: "#E1306C",
-            border: "1px solid #f3d4e1",
-            borderRadius: "14px",
-            bgcolor: "#fff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            p: 1.2,
-            zIndex: 1,
-            cursor: "pointer",
-            transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
-            boxShadow: "0 8px 20px rgba(225, 48, 108, 0.15)",
-            "&:hover": {
-              transform: "translateY(-4px)",
-              boxShadow: "0 15px 30px rgba(225, 48, 108, 0.25)",
-            },
-          }}
-        >
-          <InstagramIcon sx={{ fontSize: "2rem" }} />
-        </Card>
 
         {/* Facebook */}
         <Card
