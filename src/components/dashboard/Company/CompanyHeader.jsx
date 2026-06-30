@@ -22,12 +22,20 @@ const banners = {
   13:"https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
   14:"https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg"
 }
+const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png"
 
 
 export default function CompanyHeader ({CompanyInfo}){
 
   console.log(CompanyInfo);
+  let BG = null
 
+  if(CompanyInfo?.companyBackground?.backgroundType == "banner"){
+    BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`
+  }else if(CompanyInfo?.companyBackground?.backgroundType == "upload"){
+   BG = `url(${CompanyInfo?.companyBackground?.url} )`
+  }
+  console.log(BG);
     return <>
       <Box
           sx={{
@@ -43,7 +51,7 @@ export default function CompanyHeader ({CompanyInfo}){
               height: "65% ",
               width: "100%",
               bgcolor: "#544f4f",
-              backgroundImage: `url(${banners[2]} )`,
+              backgroundImage: `${BG} `,
               backgroundSize: "cover",
               backgroundPosition: "bottom",
             }}
@@ -113,7 +121,7 @@ export default function CompanyHeader ({CompanyInfo}){
                   fontFamily: "-apple-system",
                 }}
               >
-                Google
+                {CompanyInfo?.name}
               </Typography>
 
               <VerifiedIcon
@@ -148,7 +156,7 @@ export default function CompanyHeader ({CompanyInfo}){
                   sx={{ fontSize: "1rem", color: "#666" }}
                 />
                 <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
-                  Mountain View, USA
+                  {CompanyInfo?.location}
                 </Typography>
               </Box>
 
@@ -172,7 +180,7 @@ export default function CompanyHeader ({CompanyInfo}){
               <Chip
                 icon={<LanguageOutlinedIcon />}
                 size="small"
-                label="google.com"
+                label={CompanyInfo?.website}
                 clickable
                 sx={{
                   color: "#1a73e8",
@@ -181,7 +189,7 @@ export default function CompanyHeader ({CompanyInfo}){
                   border: "1px solid #dbe7ff",
                   "& .MuiChip-icon": {
                     color: "#666",
-                    width: 0.15,
+                   
                   },
                   borderRadius: "5px",
                 }}
