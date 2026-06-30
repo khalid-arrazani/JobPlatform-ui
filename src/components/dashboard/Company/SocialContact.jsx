@@ -11,7 +11,7 @@ import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
-const SocialContact = () => {
+const SocialContact = ({CompanyInfo}) => {
   return (
     <Card sx={{ p: 2, borderRadius: "12px", position: "relative" }}>
       <img
@@ -88,7 +88,7 @@ const SocialContact = () => {
                 color: "#0f172a",
               }}
             >
-              +212 600 000 000
+              {CompanyInfo?.company_number}
             </Typography>
           </Box>
         </Box>
