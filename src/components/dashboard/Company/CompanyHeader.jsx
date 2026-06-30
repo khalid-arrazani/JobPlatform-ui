@@ -160,12 +160,7 @@ export default function CompanyHeader ({CompanyInfo}){
                 </Typography>
               </Box>
 
-              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                <GroupsOutlinedIcon sx={{ fontSize: "1rem", color: "#666" }} />
-                <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
-                  190k+ Employees
-                </Typography>
-              </Box>
+              
             </Box>
 
             {/* Website */}
