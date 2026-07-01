@@ -33,7 +33,7 @@ const { dispatch , ...state } = useCompany()
         try {
          
           const data = await getmyCompany();
-          console.log(data);
+        
           dispatch({
             type: "SETCOMPANY",
             payload: data,
@@ -47,6 +47,7 @@ const { dispatch , ...state } = useCompany()
             payload: false,
           });
         }
+        
       };
       const getCompany = async () => {
         
