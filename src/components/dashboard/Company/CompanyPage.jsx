@@ -9,7 +9,7 @@ import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect } from "react";
-import { getmyCompany } from "../../../logic/api/company/Company";
+import { getCompanyById, getmyCompany } from "../../../logic/api/company/Company";
 
 import { useCompany } from "../../../logic/context/CompanyContext";
 
@@ -22,6 +22,7 @@ const { dispatch , ...state } = useCompany()
 
   useEffect(() => {
       fetchCompany();
+      getCompany()
     }, []);
 
  const fetchCompany = async () => {
@@ -45,6 +46,18 @@ const { dispatch , ...state } = useCompany()
             type: "SET_LOADING",
             payload: false,
           });
+        }
+      };
+      const getCompany = async () => {
+        
+        try {
+         
+          const data = await getCompanyById();
+          console.log("1111" ,data);
+         
+   
+        } catch (error) {
+          console.log(error.response?.data);
         }
       };
 
