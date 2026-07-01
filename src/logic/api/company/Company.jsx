@@ -26,3 +26,16 @@ export const getmyCompany = async (
   return response.data;
 };
 
+
+
+// Get my Company
+export const getCompanyById = async (
+) => {
+  const response = await API.get(
+    "/company/my-company",
+     { withCredentials: true }
+  );
+
+  return response.data;
+};
+
