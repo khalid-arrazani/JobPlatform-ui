@@ -25,6 +25,8 @@ const { dispatch , ...state } = useCompany()
       getCompany()
     }, []);
 
+
+
  const fetchCompany = async () => {
         dispatch({
           type: "SET_LOADING",
@@ -38,6 +40,8 @@ const { dispatch , ...state } = useCompany()
             type: "SETCOMPANY",
             payload: data,
           });
+          console.log(data);
+
    
         } catch (error) {
           console.log(error.response?.data);
@@ -47,8 +51,9 @@ const { dispatch , ...state } = useCompany()
             payload: false,
           });
         }
-        
+
       };
+
       const getCompany = async () => {
         
         try {
@@ -78,7 +83,8 @@ const { dispatch , ...state } = useCompany()
         }}
       >
         {/* top side or Company Card or  Header   */}
-        <CompanyHeader CompanyInfo={state.Company?.company} />
+        <CompanyHeader  CompanyInfo={state.Company?.company} />
+        
 
         {/* Content about Company or bottom side  */}
         <Box
