@@ -8,8 +8,10 @@ export default function AbouttheCompany({ jobInfo }) {
   const [description, setDescription] = useState("");
 
   useEffect(() => {
-    setDescription(jobInfo?.createdBy.companyDescription);
+    setDescription(jobInfo?.createdBy?.description);
   }, [jobInfo?.createdBy]);
+
+  console.log(description);
   return (
     <Card
       sx={{
