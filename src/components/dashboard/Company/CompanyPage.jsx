@@ -22,7 +22,6 @@ const { dispatch , ...state } = useCompany()
 
   useEffect(() => {
       fetchCompany();
-   
     }, []);
 
 

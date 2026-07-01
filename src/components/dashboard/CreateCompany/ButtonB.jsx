@@ -1,8 +1,8 @@
-import { Card, Typography, Box, Divider, Button } from "@mui/material";
+import { Box,  Button } from "@mui/material";
 
 import CircularProgress from '@mui/material/CircularProgress';
 
-import { use, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 
 import { ChevronRight } from "lucide-react";
 import { ChevronLeft } from "lucide-react";
@@ -11,7 +11,7 @@ export default function ButtonB({  step, next, back , state }) {
 
   const [buttonT, setButtonT] = useState("Next : More Info");
   
-console.log(state.isLoading);
+
 
   useEffect(() => {
     step == 0
