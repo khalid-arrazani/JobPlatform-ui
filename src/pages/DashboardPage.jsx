@@ -17,7 +17,7 @@ export default function DashboardPage() {
 
   const { ...state  } = useProfile();
   
-  console.log(state.isLoading);
+
 
   return (
     <DashboardLayout part={part} setPart={setPart}>

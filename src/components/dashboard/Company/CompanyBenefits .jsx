@@ -187,56 +187,19 @@ const companyBenefits = [
 ];
 
 
-// Icons
-import HealthAndSafetyIcon from "@mui/icons-material/HealthAndSafety";
-import AttachMoneyIcon from "@mui/icons-material/AttachMoney";
-import LaptopMacIcon from "@mui/icons-material/LaptopMac";
-import FlightTakeoffIcon from "@mui/icons-material/FlightTakeoff";
-import ScheduleIcon from "@mui/icons-material/Schedule";
-import SchoolIcon from "@mui/icons-material/School";
+
 
 import { CircleCheckBig } from "lucide-react";
 
 const CompanyBenefits = ({CompanyInfo}) => {
 
-  const benefits = [
-    {
-      title: "Health Insurance",
-      icon: <HealthAndSafetyIcon />,
-      color: "#1976d2",
-    },
-    {
-      title: "Good Salary",
-      icon: <AttachMoneyIcon />,
-      color: "#2e7d32",
-    },
-    {
-      title: "Remote Work",
-      icon: <LaptopMacIcon />,
-      color: "#0288d1",
-    },
-    {
-      title: "Paid Vacation",
-      icon: <FlightTakeoffIcon />,
-      color: "#f57c00",
-    },
-    {
-      title: "Flexible Hours",
-      icon: <ScheduleIcon />,
-      color: "#9c27b0",
-    },
-    {
-      title: "Training & Courses",
-      icon: <SchoolIcon />,
-      color: "#455a64",
-    },
-  ];
+
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     CompanyInfo?.benefits.includes(benefit.label),
   );
 
-  console.log(selectedBenefitObjects);
+
 
   return (
     <Card sx={{ p: 2, borderRadius: "12px", mt: 2 }}>

@@ -25,7 +25,7 @@ const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 export default function CompanyHeader({ CompanyInfo }) {
-  console.log(CompanyInfo);
+
   let BG = null;
 
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
@@ -33,7 +33,7 @@ export default function CompanyHeader({ CompanyInfo }) {
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
-  console.log(BG);
+
   return (
     <>
       <Box

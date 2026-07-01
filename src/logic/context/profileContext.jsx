@@ -36,7 +36,7 @@ export default function ProfileProvider({
       initialState
     );
 
-console.log(state);
+
 
     const [aboutOpen , setAboutOpen ] = useState(false)
     const [skillOpen , setSkillOpen ] = useState(false)
