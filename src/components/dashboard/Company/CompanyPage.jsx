@@ -109,7 +109,7 @@ const { dispatch , ...state } = useCompany()
             {/* About Company Card  */}
             <AboutCompany CompanyInfo={state.Company?.company} />
           {/* Company Statistics  */}
-          <CompanyStatistics CompanyInfo={state.Company?.company} />
+          <CompanyStatistics CompanyInfo={state?.Company} />
 
             {/* Open Positions Card  */}
           <OpenPositionsCard CompanyInfo={state.Company?.company} />

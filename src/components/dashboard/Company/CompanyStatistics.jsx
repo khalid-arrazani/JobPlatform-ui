@@ -10,15 +10,16 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { ChartColumn } from "lucide-react";
 
-const CompanyStatistics = () => {
+const CompanyStatistics = ({CompanyInfo}) => {
   const stats = {
-    totalJobs: 12,
-    activeJobs: 5,
-    totalApplicants: 148,
-    newApplicants: 23,
-    hired: 7,
-    avgViewsPerJob: 320,
+    totalJobs:CompanyInfo?.totalJobs||0 ,
+    activeJobs: CompanyInfo?.activeJobs||0,
+    totalApplicants: CompanyInfo?.applicants||0,
+    newApplicants: CompanyInfo?.newApplicants||0,
+    hired: CompanyInfo?.hired||0,
+    avgViewsPerJob: CompanyInfo?.companyViews||0,
   };
+  console.log(CompanyInfo);
 
   const cardStyle = (color) => ({
     p: 2,
