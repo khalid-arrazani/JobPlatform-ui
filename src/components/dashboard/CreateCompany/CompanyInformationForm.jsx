@@ -4,6 +4,7 @@ import {
   Typography,
   MenuItem,
   InputAdornment,
+  Autocomplete,
 } from "@mui/material";
 
 import {
@@ -15,6 +16,37 @@ import {
   MapPin,
 } from "lucide-react";
 
+const optionSize = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"];
+const specialties = [
+  "Frontend Development",
+  "Backend Development",
+  "Full Stack Development",
+  "UI/UX Design",
+  "Mobile Development",
+  "DevOps",
+  "Cloud Computing",
+  "Cybersecurity",
+  "Artificial Intelligence",
+  "Machine Learning",
+  "Data Science",
+  "Data Analysis",
+  "Blockchain",
+  "Game Development",
+  "QA Testing",
+  "Project Management",
+  "Product Management",
+  "Digital Marketing",
+  "SEO",
+  "Content Writing",
+  "Graphic Design",
+  "Video Editing",
+  "Human Resources",
+  "Finance",
+  "Sales",
+  "Customer Support",
+  "Business Development",
+  "Recruitment",
+];
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -22,6 +54,8 @@ const inputStyle = {
     backgroundColor: "#fff",
   },
 };
+
+import CompanyFounded from "./CompanyFounded";
 
 export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
   return (
@@ -33,6 +67,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
         borderRadius: "15px",
         boxSizing: "border-box",
         p: 3,
+        overflow:"auto"
       }}
     >
       <Box
@@ -50,14 +85,12 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           </Typography>
 
           <TextField
-
             onChange={(e) => {
               setFirstInfo((prev) => ({
                 ...prev,
                 company_name: e.target.value,
               }));
             }}
-
             value={firstInfo.company_name}
             fullWidth
             size="small"
@@ -84,7 +117,6 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           <TextField
             fullWidth
             value={firstInfo.company_email}
-
             onChange={(e) => {
               setFirstInfo((prev) => ({
                 ...prev,
@@ -115,7 +147,6 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           <TextField
             fullWidth
             value={firstInfo.company_number}
-
             onChange={(e) => {
               setFirstInfo((prev) => ({
                 ...prev,
@@ -233,25 +264,90 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
                 ),
               },
             }}
-          >
-            <MenuItem value="">Select location</MenuItem>
-            <MenuItem value="Morocco">Morocco</MenuItem>
-            <MenuItem value="Germany">Germany</MenuItem>
-            <MenuItem value="Canada">Canada</MenuItem>
-            <MenuItem value="United Kingdom">United Kingdom</MenuItem>
-          </TextField>
+          ></TextField>
+        </Box>
+
+
+
+
+
+        {/* Company Founded*/}
+        <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+            Founded <span style={{ color: "#EF4444" }}>*</span>
+          </Typography>
+
+          <CompanyFounded />
+        </Box>
+
+
+
+
+        {/* Company Size*/}
+         <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+            Company Size <span style={{ color: "#EF4444" }}>*</span>
+          </Typography>
+
+          <Autocomplete
+          disablePortal
+          value={firstInfo.company_size}
+
+          options={optionSize}
+          
+          onChange={(e) => {
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_size: e.target.value,
+              }));
+            }}
+          sx={{ width: "100%",  }}
+          renderInput={(params) => (
+            <TextField {...params} />
+          )}
+          slotProps={{
+            popper: { sx: { transition: "none", animation: "none" } },
+          }}
+        />
+        </Box>
+        
+
+        {/* Company Specialties*/}
+
+        <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+            Specialties <span style={{ color: "#EF4444" }}>*</span>
+          </Typography>
+          <Autocomplete
+            freeSolo
+            options={specialties}
+            // value={companySpecialties}
+            // onChange={(event, newValue) => {
+            //   setCompanySpecialties(newValue);
+            // }}
+
+            slotProps={{
+              popper: { sx: { transition: "none", animation: "none" } },
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+            
+                placeholder="Select or type a specialty"
+              />
+            )}
+          />
         </Box>
 
         {/* About Company */}
 
-        <Box sx={{ minWidth: "80%", flex: 1  }}>
+        <Box sx={{ minWidth: "80%", flex: 1 }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             About Your Company <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <TextField
-           value={firstInfo.company_about}
-
+            value={firstInfo.company_about}
             onChange={(e) => {
               e.target.value.length <= 2000 &&
                 setFirstInfo((prev) => ({
@@ -261,7 +357,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             }}
             fullWidth
             multiline
-            rows={4.2}
+            rows={4}
             placeholder="Tell us about your company, your mission, vision and what makes it unique..."
             sx={inputStyle}
             helperText={`${firstInfo.company_about.length}/2000`}

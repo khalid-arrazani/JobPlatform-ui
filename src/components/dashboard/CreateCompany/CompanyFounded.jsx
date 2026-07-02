@@ -8,13 +8,18 @@ export default function CompanyFounded() {
   const [value, setValue] = useState(dayjs());
 
   return (
-    <LocalizationProvider dateAdapter={AdapterDayjs}>
+    <LocalizationProvider  dateAdapter={AdapterDayjs}>
       <DatePicker
-        label="Founded Year"
+        
+     
         views={["year"]}
         openTo="year"
         value={value}
         onChange={setValue}
+        sx={{ width:"100%"}}
+        slotProps={{
+            popper: { sx: { transition: "none", animation: "none",} },
+         }}
       />
     </LocalizationProvider>
   );

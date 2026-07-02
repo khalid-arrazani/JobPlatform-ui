@@ -32,6 +32,9 @@ export default function CreateCompanyPage() {
     company_industry: "",
     company_webSite: "",
     company_about: "",
+    company_founded: "2026",
+    company_size: "1-10",
+    company_specialties : "",
   });
 
   const [secondtInfo, setSecondInfo] = useState({
