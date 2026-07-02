@@ -235,6 +235,8 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
+import CompanyFounded from "./CompanyFounded";
+
 
 export default function MoreInfo({ secondtInfo, setSecondInfo }) {
 
@@ -256,6 +258,7 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
           gap: 2,
         }}
       >
+        
         {/* Benefits */}
         <Box
           sx={{
@@ -277,7 +280,7 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
           >
             Company Benefits
           </Typography>
-
+          
           <Typography
             sx={{
               fontSize: "0.9rem",
@@ -304,6 +307,7 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
               overflow: "auto",
             }}
           >
+           
             {selectedBenefitObjects?.map((benefit) => {
               return (
                 <Card
