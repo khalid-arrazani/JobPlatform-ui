@@ -13,7 +13,7 @@ import { ChartColumn } from "lucide-react";
 const CompanyStatistics = ({CompanyInfo}) => {
   const stats = {
     totalJobs:CompanyInfo?.totalJobs||0 ,
-    activeJobs: CompanyInfo?.activeJobs||0,
+    activeJobs: CompanyInfo?.totalActiveJobs||0,
     totalApplicants: CompanyInfo?.applicants||0,
     newApplicants: CompanyInfo?.newApplicants||0,
     hired: CompanyInfo?.hired||0,
