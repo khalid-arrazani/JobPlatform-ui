@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Chip,Button } from "@mui/material";
+import { Card, Typography, Box, Chip, Button } from "@mui/material";
 
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -50,7 +50,10 @@ const postedJobs = [
     postedAt: "12 hours ago",
   },
 ];
-export default function OpenPositionsCard({CompanyInfo}) {
+import { formatDistanceToNow } from "date-fns";
+
+export default function OpenPositionsCard({ CompanyInfo }) {
+  console.log(CompanyInfo);
   return (
     <>
       <Card
@@ -85,7 +88,7 @@ export default function OpenPositionsCard({CompanyInfo}) {
           </Box>
 
           <Button
-          size="small"
+            size="small"
             sx={{
               color: "primary.main",
               fontSize: "0.75rem",
@@ -94,15 +97,12 @@ export default function OpenPositionsCard({CompanyInfo}) {
           >
             View all jobs
           </Button>
-
-
-
         </Box>
 
         {/* Job Item */}
-        {postedJobs.slice(0, 3).map((item) => (
+        {CompanyInfo?.activeJobs?.slice(0, 3).map((item) => (
           <Card
-            key={item}
+            key={item._id}
             sx={{
               boxSizing: "border-box",
               borderRadius: "16px",
@@ -130,12 +130,11 @@ export default function OpenPositionsCard({CompanyInfo}) {
                 transform: "translateY(-10px)",
                 boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
                 borderColor: "#dbeafe",
-              background: "#ebf9ff",
-
+                background: "#ebf9ff",
               },
-              cursor:"pointer"
+              cursor: "pointer",
             }}
-          > 
+          >
             <Box>
               <Typography fontWeight={600}> {item.title} </Typography>
 
@@ -178,7 +177,7 @@ export default function OpenPositionsCard({CompanyInfo}) {
                     color: "#04b630",
                     bgcolor: "#e9fdef",
                   }}
-                  label={item.employmentType}
+                  label={item.jobType}
                 />
 
                 <Chip
@@ -217,7 +216,9 @@ export default function OpenPositionsCard({CompanyInfo}) {
               >
                 <Chip
                   size="small"
-                  label={item.postedAt}
+                  label={formatDistanceToNow(new Date(item.createdAt), {
+                      addSuffix: true,
+                    })}
                   sx={{ fontSize: "0.7rem", borderRadius: "5px" }}
                 ></Chip>
 
