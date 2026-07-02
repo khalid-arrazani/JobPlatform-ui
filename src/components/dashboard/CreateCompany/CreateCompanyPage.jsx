@@ -187,7 +187,7 @@ export default function CreateCompanyPage() {
       formData.append("name", firstInfo.company_name);
       formData.append("company_email", firstInfo.company_email);
       formData.append("company_number", firstInfo.company_number);
-      formData.append("location", firstInfo.company_locatin);
+      formData.append("headquarters", firstInfo.company_locatin);
       formData.append("industry", firstInfo.company_industry);
       formData.append("website", firstInfo.company_webSite);
       formData.append("description", firstInfo.company_about);

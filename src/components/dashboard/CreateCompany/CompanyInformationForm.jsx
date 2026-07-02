@@ -205,10 +205,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           </TextField>
         </Box>
 
-        {/* Location */}
+        {/* headquarters */}
         <Box sx={{ minWidth: "32%", flex: 1 }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Location <span style={{ color: "#EF4444" }}>*</span>
+            Headquarters <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <TextField

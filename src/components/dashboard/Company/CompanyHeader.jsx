@@ -155,7 +155,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                 sx={{ fontSize: "1rem", color: "#666" }}
               />
               <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
-                {CompanyInfo?.location}
+                {CompanyInfo?.headquarters}
               </Typography>
             </Box>
           </Box>
