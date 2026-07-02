@@ -53,18 +53,18 @@ const { dispatch , ...state } = useCompany()
 
       };
 
-      const getCompany = async () => {
+      // const getCompany = async () => {
         
-        try {
+      //   try {
          
-          const data = await getCompanyById();
-          console.log("1111" ,data);
+      //     const data = await getCompanyById();
+      //     console.log("1111" ,data);
          
    
-        } catch (error) {
-          console.log(error.response?.data);
-        }
-      };
+      //   } catch (error) {
+      //     console.log(error.response?.data);
+      //   }
+      // };
 
 
 
