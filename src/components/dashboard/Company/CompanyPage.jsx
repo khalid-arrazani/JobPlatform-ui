@@ -134,7 +134,7 @@ const { dispatch , ...state } = useCompany()
 
 
             {/* Company Info Card  */}
-            <CompanyInfo CompanyInfo={state.Company} />
+            <CompanyInfo CompanyInfo={state.Company?.company} />
 
 
           </Box>

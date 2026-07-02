@@ -13,11 +13,14 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import { Building2 } from 'lucide-react';
 
 const CompanyInfo = ( {CompanyInfo}) => {
+
+  console.log(CompanyInfo);
   const company = {
     founded: "1998",
     size: "190K+",
-    industry: "Technology, Information & Internet",
-    headquarters: "Mountain View, California, USA",
+  
+    industry: CompanyInfo?.industry,
+    headquarters: CompanyInfo?.headquarters,
   };
 
   const info = [
