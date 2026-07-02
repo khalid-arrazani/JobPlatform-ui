@@ -50,7 +50,7 @@ const postedJobs = [
     postedAt: "12 hours ago",
   },
 ];
-export default function OpenPositionsCard() {
+export default function OpenPositionsCard({CompanyInfo}) {
   return (
     <>
       <Card

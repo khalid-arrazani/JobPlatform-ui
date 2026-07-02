@@ -19,7 +19,7 @@ const CompanyStatistics = ({CompanyInfo}) => {
     hired: CompanyInfo?.hired||0,
     avgViewsPerJob: CompanyInfo?.companyViews||0,
   };
-  console.log(CompanyInfo);
+
 
   const cardStyle = (color) => ({
     p: 2,
@@ -28,7 +28,7 @@ const CompanyStatistics = ({CompanyInfo}) => {
     alignItems: "center",
     gap: 2,
     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-    backgroundColor: `${color}15`, // light background
+    backgroundColor: `${color}15`, 
   });
 
   return (
