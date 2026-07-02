@@ -59,6 +59,7 @@ export default function OpenPositionsCard({ CompanyInfo }) {
       <Card
         sx={{
           width: "100%",
+          height:"22.5rem",
           borderRadius: "15px",
           boxSizing: "border-box",
           p: 2.5,
@@ -232,6 +233,8 @@ export default function OpenPositionsCard({ CompanyInfo }) {
             </Box>
           </Card>
         ))}
+
+
       </Card>
     </>
   );
