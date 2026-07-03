@@ -34,6 +34,7 @@ export default function CreateCompanyPage() {
     company_about: "",
     company_founded: "2026",
     company_size: "1-10",
+
     company_specialties : "",
   });
 
@@ -232,6 +233,7 @@ export default function CreateCompanyPage() {
       if (background.type === "upload") {
         formData.append("companyBackground", background.image);
       }
+
       const data = await create_company(formData);
 
       setSnackBar({
@@ -239,13 +241,21 @@ export default function CreateCompanyPage() {
         message: data.message,
         severity: "success",
       });
+
       await new Promise((resolve) => setTimeout(resolve, 2000));
+
       dispatch({
         type: "RELOADCOMPANY",
         payload: 1,
       });
+
     } catch (error) {
-      console.log(error.response.data);
+      setSnackBar({
+        open: true,
+        message: error?.response?.data.message,
+        severity: "error",
+      });
+      console.log(error?.response?.data);
     } finally {
       dispatch({
         type: "SET_LOADING_COMPANY",
@@ -253,6 +263,7 @@ export default function CreateCompanyPage() {
       });
     }
   };
+
 
   return (
     <>

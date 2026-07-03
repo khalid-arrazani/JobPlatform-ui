@@ -92,6 +92,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
               }));
             }}
             value={firstInfo.company_name}
+            
             fullWidth
             size="small"
             placeholder="Enter company name"
@@ -286,10 +287,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             value={firstInfo.company_size}
             defaultValue={"1-10"}
             options={optionSize}
-            onChange={(event, newValue) => {
+            onChange={(e) => {
               setFirstInfo((prev) => ({
                 ...prev,
-                company_size: newValue,
+                company_size: e.target.value,
               }));
             }}
             sx={{ width: "100%" }}
@@ -312,10 +313,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             freeSolo
             options={specialties}
             value={firstInfo.company_specialties}
-            onChange={(event, newValue) => {
+            onChange={(e) => {
               setFirstInfo((prev) => ({
                 ...prev,
-                company_specialties: newValue,
+                company_specialties: e.target.value,
               }));
             }}
             slotProps={{
