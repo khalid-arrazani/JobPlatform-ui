@@ -37,7 +37,7 @@ export default function CreateCompanyPage() {
     company_specialties : "",
   });
 
-  console.log(firstInfo);
+
 
   const [secondtInfo, setSecondInfo] = useState({
     company_linkdin: {
@@ -196,6 +196,10 @@ export default function CreateCompanyPage() {
       formData.append("industry", firstInfo.company_industry);
       formData.append("website", firstInfo.company_webSite);
       formData.append("description", firstInfo.company_about);
+
+      formData.append("foundedYear", firstInfo.company_founded);
+      formData.append("companySize", firstInfo.company_size);
+      formData.append("specialties", firstInfo.company_specialties);
 
       formData.append(
         "socialLinks",
