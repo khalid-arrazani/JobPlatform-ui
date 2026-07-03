@@ -62,8 +62,8 @@ export default function CompanyHeader({ CompanyInfo }) {
             position:"relative"
           }}
         >
-       <IconButton sx={{position:"absolute"}}>
-         <ModeRoundedIcon sx={{color:"#ebeaea" ,}} />
+       <IconButton size="small" sx={{position:"absolute",right:0,bgcolor:"#f8f8f8",m:2}}>
+         <ModeRoundedIcon sx={{color:"#060420de" ,}} />
         </IconButton>      
 
 
