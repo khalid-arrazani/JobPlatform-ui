@@ -302,7 +302,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             }}
           sx={{ width: "100%",  }}
           renderInput={(params) => (
-            <TextField {...params} aria-readonly  />
+            <TextField {...params}  placeholder="Select Company Size " />
           )}
           slotProps={{
             popper: { sx: { transition: "none", animation: "none" } },
