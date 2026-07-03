@@ -67,7 +67,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
         borderRadius: "15px",
         boxSizing: "border-box",
         p: 3,
-        overflow:"auto"
+        overflow: "auto",
       }}
     >
       <Box
@@ -267,49 +267,40 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           ></TextField>
         </Box>
 
-
-
-
-
         {/* Company Founded*/}
         <Box sx={{ minWidth: "32%", flex: 1 }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             Founded <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
-          <CompanyFounded />
+          <CompanyFounded setFirstInfo={setFirstInfo} firstInfo={firstInfo} />
         </Box>
 
-
-
-
         {/* Company Size*/}
-         <Box sx={{ minWidth: "32%", flex: 1 }}>
+        <Box sx={{ minWidth: "32%", flex: 1 }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             Company Size <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <Autocomplete
-          
-          value={firstInfo.company_size}
-          defaultValue={"1-10"}
-          options={optionSize}
-          onChange={(event, newValue) => {
-            setFirstInfo((prev) => ({
+            value={firstInfo.company_size}
+            defaultValue={"1-10"}
+            options={optionSize}
+            onChange={(event, newValue) => {
+              setFirstInfo((prev) => ({
                 ...prev,
                 company_size: newValue,
               }));
             }}
-          sx={{ width: "100%",  }}
-          renderInput={(params) => (
-            <TextField {...params}  placeholder="Select Company Size " />
-          )}
-          slotProps={{
-            popper: { sx: { transition: "none", animation: "none" } },
-          }}
-        />
+            sx={{ width: "100%" }}
+            renderInput={(params) => (
+              <TextField {...params} placeholder="Select Company Size " />
+            )}
+            slotProps={{
+              popper: { sx: { transition: "none", animation: "none" } },
+            }}
+          />
         </Box>
-        
 
         {/* Company Specialties*/}
 
@@ -327,16 +318,11 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
                 company_specialties: newValue,
               }));
             }}
-
             slotProps={{
               popper: { sx: { transition: "none", animation: "none" } },
             }}
             renderInput={(params) => (
-              <TextField
-                {...params}
-            
-                placeholder="Select or type a specialty"
-              />
+              <TextField {...params} placeholder="Select or type a specialty" />
             )}
           />
         </Box>

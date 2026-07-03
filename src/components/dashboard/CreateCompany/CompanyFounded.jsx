@@ -4,8 +4,9 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useState } from "react";
 
-export default function CompanyFounded() {
+export default function CompanyFounded({ setFirstInfo, firstInfo }) {
   const [value, setValue] = useState(dayjs());
+  console.log(dayjs());
 
   return (
     <LocalizationProvider  dateAdapter={AdapterDayjs}>

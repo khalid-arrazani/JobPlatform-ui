@@ -37,6 +37,8 @@ export default function CreateCompanyPage() {
     company_specialties : "",
   });
 
+  console.log(firstInfo);
+
   const [secondtInfo, setSecondInfo] = useState({
     company_linkdin: {
       platform: "linkdin",
