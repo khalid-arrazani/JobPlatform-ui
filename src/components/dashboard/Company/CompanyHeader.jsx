@@ -129,6 +129,7 @@ export default function CompanyHeader({ CompanyInfo }) {
               },
               "&:active":{
                top: "-49%",
+               
                 height: "8.7rem ",
               width: "8.7rem",
               }
