@@ -112,6 +112,12 @@ export default function CreateCompanyPage() {
     ) {
       setErr("About company must be between 20 and 2000 characters");
       return false;
+    }if (
+      !validator.isEmpty(firstInfo.company_specialties.trim()) &&
+      !validator.isLength(firstInfo.company_specialties, { min: 3, max: 30 })
+    ) {
+      setErr("Company Specialties must be between 3 and 30 characters");
+      return false;
     }
     return true;
   };
