@@ -290,16 +290,11 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           </Typography>
 
           <Autocomplete
-          disablePortal
+          freeSolo
           value={firstInfo.company_size}
-
           options={optionSize}
-          
-          onChange={(e) => {
-              setFirstInfo((prev) => ({
-                ...prev,
-                company_size: e.target.value,
-              }));
+          onChange={(event, newValue) => {
+              firstInfo.company_size(newValue);
             }}
           sx={{ width: "100%",  }}
           renderInput={(params) => (
@@ -321,10 +316,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           <Autocomplete
             freeSolo
             options={specialties}
-            // value={companySpecialties}
-            // onChange={(event, newValue) => {
-            //   setCompanySpecialties(newValue);
-            // }}
+            value={firstInfo.company_specialties}
+            onChange={(event, newValue) => {
+              firstInfo.company_specialties(newValue);
+            }}
 
             slotProps={{
               popper: { sx: { transition: "none", animation: "none" } },
