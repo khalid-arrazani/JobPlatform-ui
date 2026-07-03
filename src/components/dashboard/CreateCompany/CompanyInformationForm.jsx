@@ -92,7 +92,6 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
               }));
             }}
             value={firstInfo.company_name}
-            
             fullWidth
             size="small"
             placeholder="Enter company name"
@@ -287,12 +286,14 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             value={firstInfo.company_size}
             defaultValue={"1-10"}
             options={optionSize}
-            onChange={(e) => {
+            onInputChange={(event, newInputValue) => {
               setFirstInfo((prev) => ({
                 ...prev,
-                company_size: e.target.value,
+                company_size: newInputValue,
               }));
+             console.log(newInputValue);
             }}
+            
             sx={{ width: "100%" }}
             renderInput={(params) => (
               <TextField {...params} placeholder="Select Company Size " />
@@ -313,17 +314,23 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             freeSolo
             options={specialties}
             value={firstInfo.company_specialties}
-            onChange={(e) => {
+            onInputChange={(event, newInputValue) => {
               setFirstInfo((prev) => ({
                 ...prev,
-                company_specialties: e.target.value,
+                company_specialties: newInputValue,
               }));
+             
             }}
-            slotProps={{
+           
+             slotProps={{
               popper: { sx: { transition: "none", animation: "none" } },
             }}
             renderInput={(params) => (
-              <TextField {...params} placeholder="Select or type a specialty" />
+              <TextField
+                {...params}
+                label="Specialty"
+                placeholder="Select or type a specialty"
+              />
             )}
           />
         </Box>

@@ -16,8 +16,8 @@ const CompanyInfo = ( {CompanyInfo}) => {
 
   console.log(CompanyInfo);
   const company = {
-    founded: "1998",
-    size: "190K+",
+    founded: CompanyInfo?.foundedYear,
+    size: CompanyInfo?.companySize,
   
     industry: CompanyInfo?.industry,
     headquarters: CompanyInfo?.headquarters,
