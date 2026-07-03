@@ -4,7 +4,8 @@ import sendMessage from "../../../assets/Sent Message-bro.svg";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+import XIcon from '@mui/icons-material/X';
+
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const icons = {
@@ -21,6 +22,7 @@ const icons = {
     color: "#1877F2",
     border: "#d5e7ff",
     shadow: "0 8px 20px rgba(24, 119, 242, 0.15)",
+  
     hoverShadow: "0 15px 30px rgba(24, 119, 242, 0.25)",
   },
 
@@ -33,8 +35,8 @@ const icons = {
   },
 
   x: {
-    icon: <TwitterIcon sx={{ fontSize: "2rem" }} />,
-    color: "#000",
+    icon: <XIcon sx={{ fontSize: "2rem" }} />,
+    color: "#2b2c2d",
     border: "#ddd",
     shadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
     hoverShadow: "0 15px 30px rgba(0, 0, 0, 0.25)",
