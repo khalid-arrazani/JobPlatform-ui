@@ -290,8 +290,9 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           </Typography>
 
           <Autocomplete
-          freeSolo
+          
           value={firstInfo.company_size}
+          defaultValue={"1-10"}
           options={optionSize}
           onChange={(event, newValue) => {
             setFirstInfo((prev) => ({
@@ -301,7 +302,7 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             }}
           sx={{ width: "100%",  }}
           renderInput={(params) => (
-            <TextField {...params} />
+            <TextField {...params} aria-readonly  />
           )}
           slotProps={{
             popper: { sx: { transition: "none", animation: "none" } },
