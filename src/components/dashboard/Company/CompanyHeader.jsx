@@ -107,6 +107,9 @@ export default function CompanyHeader({ CompanyInfo }) {
             Edit Company Profile
           </Button>
 
+
+
+   {/* logo */}
           <Card
             sx={{
               height: "8.5rem ",
@@ -116,6 +119,19 @@ export default function CompanyHeader({ CompanyInfo }) {
               top: "-50%",
               left: "2%",
               borderRadius: "15px",
+              cursor:"pointer",
+              transition:"0.2s",
+              TransformOrigin:"center",
+              "&:hover":{
+               top: "-53%",
+                height: "8.7rem ",
+              width: "8.7rem",
+              },
+              "&:active":{
+               top: "-49%",
+                height: "8.7rem ",
+              width: "8.7rem",
+              }
             }}
           >
             <img
@@ -125,6 +141,8 @@ export default function CompanyHeader({ CompanyInfo }) {
               srcset=""
             />
           </Card>
+
+
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
