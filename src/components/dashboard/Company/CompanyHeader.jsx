@@ -1,9 +1,12 @@
-import { Box, Card, Typography, Chip, Button } from "@mui/material";
+import { Box, Card, Typography, Chip, Button,IconButton  } from "@mui/material"
+
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
-import GroupsOutlinedIcon from "@mui/icons-material/GroupsOutlined";
+
+import ModeRoundedIcon from '@mui/icons-material/ModeRounded';
+
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
@@ -45,6 +48,9 @@ export default function CompanyHeader({ CompanyInfo }) {
           overflow: "hidden",
         }}
       >
+
+
+        {/* banner */}
         <Box
           sx={{
             height: "65% ",
@@ -53,8 +59,18 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundImage: `${BG} `,
             backgroundSize: "cover",
             backgroundPosition: "bottom",
+            position:"relative"
           }}
-        ></Box>
+        >
+       <IconButton sx={{position:"absolute"}}>
+         <ModeRoundedIcon sx={{color:"#ebeaea" ,}} />
+        </IconButton>      
+
+
+        </Box>
+
+
+
 
         <Box
           sx={{
