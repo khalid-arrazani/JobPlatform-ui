@@ -294,7 +294,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
           value={firstInfo.company_size}
           options={optionSize}
           onChange={(event, newValue) => {
-              firstInfo.company_size(newValue);
+            setFirstInfo((prev) => ({
+                ...prev,
+                company_size: newValue,
+              }));
             }}
           sx={{ width: "100%",  }}
           renderInput={(params) => (
@@ -318,7 +321,10 @@ export default function CompanyInformationForm({ setFirstInfo, firstInfo }) {
             options={specialties}
             value={firstInfo.company_specialties}
             onChange={(event, newValue) => {
-              firstInfo.company_specialties(newValue);
+              setFirstInfo((prev) => ({
+                ...prev,
+                company_specialties: newValue,
+              }));
             }}
 
             slotProps={{
