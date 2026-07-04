@@ -24,40 +24,36 @@ const banners = {
 
 import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
 
-export default function Modalbanner({
-  open,
-  setOpen,
-  bannerid
-  // setBackground,background
-}) {
-  
+export default function Modalbanner({ open, setOpen, bannerid }) {
   const [SelectedBanner, setSelectedBanner] = useState(null);
 
+  useEffect(() => {
+    setSelectedBanner(bannerid);
+  }, [bannerid]);
 
-  useEffect(()=>{
-  setSelectedBanner(bannerid)
-  },[bannerid])
+  const selectBanner = async () => {
+    try {
+      const formData = new FormData();
+
+      formData.append("backgroundType", "banner");
+
+      formData.append("bannerId", SelectedBanner);
+
+      const res = await uptadeCompanyBanner(formData);
+
+      console.log(res);
+
+      // setOpen(false);
 
 
-
-
-  const selectBanner = () => {
-
-    setBackground({
-      type: "banner",
-      bannerId: SelectedBanner,
-      image: null,
-    });
-
-    setbannerModal(false)
+    } catch (error) {
+      console.log(error);
+    }
   };
-
-
 
   const handleClose = () => {
     setOpen(false);
   };
-
 
   return (
     <Modal
@@ -158,9 +154,7 @@ export default function Modalbanner({
           }}
         >
           <Button
-
             onClick={selectBanner}
-
             size="large"
             sx={{ mr: 4, bgcolor: "#2c68ff", color: "#fff", px: 4 }}
           >
