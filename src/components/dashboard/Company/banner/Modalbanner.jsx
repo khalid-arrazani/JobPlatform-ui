@@ -37,7 +37,9 @@ export default function Modalbanner({
   },[bannerid])
 
   const selectBanner = () => {
+
     
+
     setBackground({
       type: "banner",
       bannerId: SelectedBanner,
@@ -47,11 +49,7 @@ export default function Modalbanner({
     setbannerModal(false)
   };
 
-  // useEffect(()=>{
-  //   if( background.bannerId == null){
-  //       setSelectedBanner(null);
-  //   }
-  // },[background.type])
+
 
   const handleClose = () => {
     setOpen(false);
