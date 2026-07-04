@@ -37,15 +37,11 @@ export default function Modalbanner({
   },[bannerid])
 
   const selectBanner = () => {
-
-  
-
     setBackground({
       type: "banner",
       bannerId: SelectedBanner,
       image: null,
     });
-
     setbannerModal(false)
   };
 
