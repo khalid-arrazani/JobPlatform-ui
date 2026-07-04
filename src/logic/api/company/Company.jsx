@@ -1,7 +1,6 @@
 import API from "../config/axios";
 
 // create company 
-
 export const create_company = async (
   formData
 ) => {
@@ -27,7 +26,6 @@ export const getmyCompany = async (
 };
 
 
-
 // Get my Company
 export const getCompanyById = async ( ) => {
   const response = await API.get(
@@ -35,6 +33,18 @@ export const getCompanyById = async ( ) => {
      { withCredentials: true }
   );
 
+  return response.data;
+};
+
+// create company 
+export const uptadeCompanyBanner = async (
+  formData
+) => {
+  const response = await API.post(
+    "/company/banner",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
   return response.data;
 };
 
