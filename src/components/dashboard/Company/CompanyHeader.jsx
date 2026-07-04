@@ -114,6 +114,8 @@ export default function CompanyHeader({ CompanyInfo }) {
             sx={{
               height: "8.5rem ",
               width: "8.5rem",
+              p:0.5,
+              boxSizing:"border-box",
               bgcolor: "#fffafa",
               position: "absolute",
               top: "-50%",
@@ -126,10 +128,10 @@ export default function CompanyHeader({ CompanyInfo }) {
                top: "-53%",
                 height: "8.7rem ",
               width: "8.7rem",
+              bgcolor: "#e6e5e5",
               },
               "&:active":{
                top: "-49%",
-               
                 height: "8.7rem ",
               width: "8.7rem",
               }
