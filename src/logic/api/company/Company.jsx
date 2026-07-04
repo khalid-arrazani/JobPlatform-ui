@@ -8,7 +8,6 @@ export const create_company = async (
     "/company",
     formData, { withCredentials: true }
   );
-  console.log(response.data);
   return response.data;
 };
 
