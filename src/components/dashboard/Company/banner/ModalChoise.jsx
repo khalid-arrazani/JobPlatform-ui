@@ -7,8 +7,8 @@ import { GalleryHorizontal, ImageUp } from "lucide-react";
 import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
 
 export default function ModalChoise({
-  choiseModal,
-  setchoiseModal,
+  open,
+  setOpen,
   setImagBG,
   openSetImagBG,
   handlebannerModal,
@@ -16,7 +16,7 @@ export default function ModalChoise({
   setBackground,
 }) {
   const handleClose = () => {
-    setchoiseModal(false);
+    setOpen(false);
   };
 
   return (
@@ -27,7 +27,7 @@ export default function ModalChoise({
         alignItems: "center",
       }}
       onClose={handleClose}
-      open={choiseModal}
+      open={open}
     >
       <Box
         sx={{

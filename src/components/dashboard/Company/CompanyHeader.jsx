@@ -1,11 +1,11 @@
-import { Box, Card, Typography, Chip, Button,IconButton  } from "@mui/material"
+import { Box, Card, Typography, Chip, Button, IconButton } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 
-import ModeRoundedIcon from '@mui/icons-material/ModeRounded';
+import ModeRoundedIcon from "@mui/icons-material/ModeRounded";
 
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 const banners = {
@@ -24,18 +24,31 @@ const banners = {
   13: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
+
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
+
+
+import ModalChoise from "./banner/ModalChoise";
+import { useState } from "react";
+
 export default function CompanyHeader({ CompanyInfo }) {
+  
+  const [modalChoise , setModalChoise] = useState(false)
+
+
+
+
+
 
   let BG = null;
-
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
+
 
   return (
     <>
@@ -48,8 +61,6 @@ export default function CompanyHeader({ CompanyInfo }) {
           overflow: "hidden",
         }}
       >
-
-
         {/* banner */}
         <Box
           sx={{
@@ -59,18 +70,22 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundImage: `${BG} `,
             backgroundSize: "cover",
             backgroundPosition: "bottom",
-            position:"relative"
+            position: "relative",
           }}
         >
-       <IconButton size="small" sx={{position:"absolute",right:0,bgcolor:"#f8f8f8",m:2}}>
-         <ModeRoundedIcon sx={{color:"#060420de" ,}} />
-        </IconButton>      
-
-
+          <IconButton
+            size="small"
+            sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2 }}
+            onClick={()=>setModalChoise(true)}
+          >
+            <ModeRoundedIcon sx={{ color: "#060420de" }} />
+          </IconButton>
         </Box>
 
-
-
+        {/* this section for edit Banner  */}
+        {/* ============================================================================== */}
+           <ModalChoise open={modalChoise} setOpen={setModalChoise}/>
+        {/* ============================================================================== */}
 
         <Box
           sx={{
@@ -107,34 +122,32 @@ export default function CompanyHeader({ CompanyInfo }) {
             Edit Company Profile
           </Button>
 
-
-
-   {/* logo */}
+          {/* logo */}
           <Card
             sx={{
               height: "8.5rem ",
               width: "8.5rem",
-              p:0.5,
-              boxSizing:"border-box",
+              p: 0.5,
+              boxSizing: "border-box",
               bgcolor: "#fffafa",
               position: "absolute",
               top: "-50%",
               left: "2%",
               borderRadius: "15px",
-              cursor:"pointer",
-              transition:"0.2s",
-              TransformOrigin:"center",
-              "&:hover":{
-               top: "-53%",
+              cursor: "pointer",
+              transition: "0.2s",
+              TransformOrigin: "center",
+              "&:hover": {
+                top: "-53%",
                 height: "8.7rem ",
-              width: "8.7rem",
-              bgcolor: "#e6e5e5",
+                width: "8.7rem",
+                bgcolor: "#e6e5e5",
               },
-              "&:active":{
-               top: "-49%",
+              "&:active": {
+                top: "-49%",
                 height: "8.7rem ",
-              width: "8.7rem",
-              }
+                width: "8.7rem",
+              },
             }}
           >
             <img
@@ -144,8 +157,6 @@ export default function CompanyHeader({ CompanyInfo }) {
               srcset=""
             />
           </Card>
-
-
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
