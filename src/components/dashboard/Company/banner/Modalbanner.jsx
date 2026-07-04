@@ -25,12 +25,19 @@ const banners = {
 export default function Modalbanner({
   open,
   setOpen,
+  bannerid
   // setBackground,background
 }) {
+  
   const [SelectedBanner, setSelectedBanner] = useState(null);
 
-  const selectBanner = () => {
 
+  useEffect(()=>{
+  setSelectedBanner(bannerid)
+  },[bannerid])
+
+  const selectBanner = () => {
+    
     setBackground({
       type: "banner",
       bannerId: SelectedBanner,

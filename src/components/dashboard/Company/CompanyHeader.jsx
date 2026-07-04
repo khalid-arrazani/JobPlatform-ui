@@ -90,7 +90,7 @@ export default function CompanyHeader({ CompanyInfo }) {
         {/* ============================================================================== */}
            <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} />
 
-           <Modalbanner open={modalBanner} setOpen={setModalBanner}/>
+           <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} />
         {/* ============================================================================== */}
 
         <Box
