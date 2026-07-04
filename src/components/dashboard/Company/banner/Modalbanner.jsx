@@ -38,7 +38,7 @@ export default function Modalbanner({
 
   const selectBanner = () => {
 
-    
+  
 
     setBackground({
       type: "banner",
