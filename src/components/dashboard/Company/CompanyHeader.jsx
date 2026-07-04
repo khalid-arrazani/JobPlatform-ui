@@ -43,9 +43,6 @@ export default function CompanyHeader({ CompanyInfo }) {
 
 
 
-
-
-
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;

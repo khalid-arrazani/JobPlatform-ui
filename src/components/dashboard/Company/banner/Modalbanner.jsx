@@ -22,6 +22,8 @@ const banners = {
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
 
+import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
+
 export default function Modalbanner({
   open,
   setOpen,
@@ -36,12 +38,17 @@ export default function Modalbanner({
   setSelectedBanner(bannerid)
   },[bannerid])
 
+
+
+
   const selectBanner = () => {
+
     setBackground({
       type: "banner",
       bannerId: SelectedBanner,
       image: null,
     });
+
     setbannerModal(false)
   };
 
@@ -151,7 +158,9 @@ export default function Modalbanner({
           }}
         >
           <Button
+
             onClick={selectBanner}
+
             size="large"
             sx={{ mr: 4, bgcolor: "#2c68ff", color: "#fff", px: 4 }}
           >
