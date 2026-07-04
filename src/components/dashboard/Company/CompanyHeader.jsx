@@ -84,7 +84,7 @@ export default function CompanyHeader({ CompanyInfo }) {
 
         {/* this section for edit Banner  */}
         {/* ============================================================================== */}
-           <ModalChoise open={modalChoise} setOpen={setModalChoise}/>
+           <ModalChoise open={modalChoise} setOpen={setModalChoise} BG={BG}/>
         {/* ============================================================================== */}
 
         <Box

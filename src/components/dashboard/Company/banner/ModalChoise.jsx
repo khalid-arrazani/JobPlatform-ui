@@ -9,12 +9,14 @@ import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
 export default function ModalChoise({
   open,
   setOpen,
+
   setImagBG,
   openSetImagBG,
+
   handlebannerModal,
   BG,
   setBackground,
-}) {
+}) {console.log(BG);
   const handleClose = () => {
     setOpen(false);
   };
