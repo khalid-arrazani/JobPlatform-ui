@@ -13,10 +13,18 @@ export default function ModalChoise({
   setImagBG,
   openSetImagBG,
 
-  handlebannerModal,
-  BG,
+  banner,
   setBackground,
-}) {console.log(BG);
+
+  setBannerModal,
+}) {
+  
+  console.log(banner);
+
+  const handlebannerModal = () => {
+    setBannerModal(true);
+  };
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -79,7 +87,7 @@ export default function ModalChoise({
             width: "100%",
             height: "60%",
             bgcolor: "#9c9c9c",
-            backgroundImage: `url(${BG})`,
+            backgroundImage: banner,
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",

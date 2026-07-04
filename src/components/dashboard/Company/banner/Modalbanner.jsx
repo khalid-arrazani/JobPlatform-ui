@@ -23,29 +23,31 @@ const banners = {
 };
 
 export default function Modalbanner({
-  bannerModal,
-  setbannerModal,
-  setBackground,background
+  open,
+  setOpen,
+  // setBackground,background
 }) {
   const [SelectedBanner, setSelectedBanner] = useState(null);
 
   const selectBanner = () => {
+
     setBackground({
       type: "banner",
       bannerId: SelectedBanner,
       image: null,
     });
+
     setbannerModal(false)
   };
 
-  useEffect(()=>{
-    if( background.bannerId == null){
-        setSelectedBanner(null);
-    }
-  },[background.type])
+  // useEffect(()=>{
+  //   if( background.bannerId == null){
+  //       setSelectedBanner(null);
+  //   }
+  // },[background.type])
 
   const handleClose = () => {
-    setbannerModal(false);
+    setOpen(false);
   };
 
 
@@ -57,7 +59,7 @@ export default function Modalbanner({
         alignItems: "center",
       }}
       onClose={handleClose}
-      open={bannerModal}
+      open={open}
     >
       <Box
         sx={{
