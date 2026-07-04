@@ -19,7 +19,7 @@ export default function ModalChoise({
   setBannerModal,
 }) {
   
-  console.log(banner);
+  
 
   const handlebannerModal = () => {
     setBannerModal(true);

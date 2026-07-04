@@ -63,7 +63,7 @@ export default function CompanyHeader({ CompanyInfo }) {
           bgcolor: "#ffffff",
           borderRadius: "15px",
           overflow: "hidden",
-        }}
+        }} 
       >
         {/* banner */}
         <Box
