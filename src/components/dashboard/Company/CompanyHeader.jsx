@@ -98,7 +98,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
 
-           <CompanyBG open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
+          
 
         {/* ============================================================================== */}
 

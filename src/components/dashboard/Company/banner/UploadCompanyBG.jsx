@@ -6,16 +6,13 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyBG({
-  openImageBG,
-  openSetImagBG,
-  ImageBG,
-  setPreviewBG,
-  setBackground,
-}) {
+export default function CompanyBG() {
   const editorRef = useRef();
 
+
   const [scale, setScale] = useState(1.3);
+  const [SetImagBG, openSetImagBG] = useState(1.3);
+  const [ImageBG, openImageBG] = useState(1.3);
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -46,51 +43,51 @@ export default function CompanyBG({
     }, "image/png");
   };
 
-  // const selectBanner = async () => {
-  //     if (SelectedBanner == null) {
-  //       setSnackBar({
-  //         open: true,
-  //         message: "Choose a banner.",
-  //         severity: "warning",
-  //       });
+  const selectBanner = async () => {
+      if (SelectedBanner == null) {
+        setSnackBar({
+          open: true,
+          message: "Choose a banner.",
+          severity: "warning",
+        });
   
-  //       return;
-  //     }
+        return;
+      }
   
-  //     if (SelectedBanner === bannerid) {
-  //       setSnackBar({
-  //         open: true,
-  //         message: "You didn't make any changes.",
-  //         severity: "warning",
-  //       });
+      if (SelectedBanner === bannerid) {
+        setSnackBar({
+          open: true,
+          message: "You didn't make any changes.",
+          severity: "warning",
+        });
   
-  //       return;
-  //     }
-  //     try {
-  //       const formData = new FormData();
+        return;
+      }
+      try {
+        const formData = new FormData();
   
-  //       formData.append("backgroundType", "banner");
+        formData.append("backgroundType", "banner");
   
-  //       formData.append("bannerId",SelectedBanner);
+        formData.append("bannerId",SelectedBanner);
   
-  //       const res = await uptadeCompanyBanner(formData);
+        const res = await uptadeCompanyBanner(formData);
   
-  //      setSnackBar({
-  //         open: true,
-  //         message: res?.message,
-  //         severity: "success",
-  //       });
+       setSnackBar({
+          open: true,
+          message: res?.message,
+          severity: "success",
+        });
   
-  //       fetchCompany()
-  //       setOpen(false);
-  //     } catch (error) {
-  //       setSnackBar({
-  //         open: true,
-  //         message: error?.response?.data?.message,
-  //         severity: "error",
-  //       });
-  //     }
-  //   };
+        fetchCompany()
+        setOpen(false);
+      } catch (error) {
+        setSnackBar({
+          open: true,
+          message: error?.response?.data?.message,
+          severity: "error",
+        });
+      }
+    };
 
   return (
     <>
@@ -98,7 +95,7 @@ export default function CompanyBG({
 
       <Dialog
         sx={{ "& .MuiPaper-root": { maxWidth: "100vw" } }}
-        open={openImageBG}
+        open={true}
         onClose={() => openSetImagBG(false)}
       >
         <DialogContent>
