@@ -6,13 +6,12 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 
-export default function CompanyBG() {
+export default function CompanyBG({openEditor , setOpenEditor , image , setImage}) {
   const editorRef = useRef();
 
 
   const [scale, setScale] = useState(1.3);
-  const [SetImagBG, openSetImagBG] = useState(1.3);
-  const [ImageBG, openImageBG] = useState(1.3);
+
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -39,7 +38,7 @@ export default function CompanyBG() {
       //   image: blob,
       // });
 
-      openSetImagBG(false);
+      setOpenEditor(false);
     }, "image/png");
   };
 
@@ -95,8 +94,8 @@ export default function CompanyBG() {
 
       <Dialog
         sx={{ "& .MuiPaper-root": { maxWidth: "100vw" } }}
-        open={true}
-        onClose={() => openSetImagBG(false)}
+        open={openEditor}
+        onClose={() => setOpenEditor(false)}
       >
         <DialogContent>
           <Box
@@ -111,7 +110,7 @@ export default function CompanyBG() {
           >
             <AvatarEditor
               ref={editorRef}
-              image={ImageBG}
+              image={image}
               width={1160}
               height={240}
               border={0}
