@@ -34,6 +34,9 @@ import ModalChoise from "./banner/ModalChoise";
 import Modalbanner from "./banner/Modalbanner";
 import CompanyBG from "./banner/UploadCompanyBG";
 
+
+import CompanyLogo from "./logo/UploadCompanyLogo";
+
 import { useState } from "react";
 
 export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
@@ -43,8 +46,11 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   const [modalBanner , setModalBanner] = useState(false)
 
     const [openEditor , setOpenEditor] = useState(false)
+
+    const [openEditorLogo , setOpenEditorLogo] = useState(false)
   
     const [image , setImage] = useState(false)
+    const [imageLogo , setImageLogo] = useState(false)
 
  
 
@@ -97,9 +103,6 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
 
            <CompanyBG openEditor={openEditor}  setOpenEditor={setOpenEditor}  image={image}  setImage={setImage} fetchCompany={fetchCompany} />
-
-          
-
         {/* ============================================================================== */}
 
         <Box
@@ -139,6 +142,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
           {/* logo */}
           <Card
+           component="label"
             sx={{
               height: "8.5rem ",
               width: "8.5rem",
@@ -171,7 +175,24 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
               alt=""
               srcset=""
             />
+             <input
+                hidden
+                accept="image/*"
+                type="file"
+                onChange={(e) => {
+                  const file = e.target.files?.[0];
+                  if (file) {
+                    setImageLogo(file);
+                    setOpenEditorLogo(true);
+                  }
+                }}
+              />
           </Card>
+          {/* this section for upload Logo */}
+          {/* ============================================================ */}
+          <CompanyLogo setOpenEditorLogo={setOpenEditorLogo} openEditorLogo={openEditorLogo}  imageLogo={imageLogo}  fetchCompany={fetchCompany}  />
+          {/* ============================================================ */}
+
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>

@@ -35,12 +35,24 @@ export const getCompanyById = async ( ) => {
   return response.data;
 };
 
-// create company 
+// update company banner
 export const uptadeCompanyBanner = async (
   formData
 ) => {
   const response = await API.put(
     "/company/banner",
+    formData, { withCredentials: true }
+  );
+  console.log(response.data);
+  return response.data;
+};
+
+// update company Logo
+export const uptadeCompanyLogo = async (
+  formData
+) => {
+  const response = await API.put(
+    "/company/logo",
     formData, { withCredentials: true }
   );
   console.log(response.data);
