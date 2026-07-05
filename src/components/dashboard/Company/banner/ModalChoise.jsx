@@ -30,7 +30,8 @@ export default function ModalChoise({
     setOpen(false);
   };
 
-  return (
+  return  <>
+     <CompanyBG/>
     <Modal
       sx={{
         display: "flex",
@@ -40,7 +41,7 @@ export default function ModalChoise({
       onClose={handleClose}
       open={open}
     >
-       <CompanyBG/>
+       
       <Box
         sx={{
           width: "60%",
@@ -181,5 +182,5 @@ export default function ModalChoise({
         </Box>
       </Box>
     </Modal>
-  );
+  </>
 }

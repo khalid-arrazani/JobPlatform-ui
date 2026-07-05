@@ -31,13 +31,13 @@ export default function CompanyBG() {
 
       const previewUrl = URL.createObjectURL(blob);
 
-      setPreviewBG(previewUrl);
+      // setPreviewBG(previewUrl);
 
-      setBackground({
-        type: "upload",
-        bannerId: null,
-        image: blob,
-      });
+      // setBackground({
+      //   type: "upload",
+      //   bannerId: null,
+      //   image: blob,
+      // });
 
       openSetImagBG(false);
     }, "image/png");
