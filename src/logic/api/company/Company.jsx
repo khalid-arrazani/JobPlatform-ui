@@ -39,7 +39,7 @@ export const getCompanyById = async ( ) => {
 export const uptadeCompanyBanner = async (
   formData
 ) => {
-  const response = await API.post(
+  const response = await API.put(
     "/company/banner",
     formData, { withCredentials: true }
   );

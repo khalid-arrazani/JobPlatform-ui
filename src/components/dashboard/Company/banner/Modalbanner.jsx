@@ -23,31 +23,59 @@ const banners = {
 };
 
 import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
+import { useAuth } from "../../../../logic/context/AuthContext";
 
-export default function Modalbanner({ open, setOpen, bannerid }) {
+export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
   const [SelectedBanner, setSelectedBanner] = useState(null);
+  const { setSnackBar } = useAuth();
 
   useEffect(() => {
     setSelectedBanner(bannerid);
   }, [bannerid]);
 
   const selectBanner = async () => {
+    if (SelectedBanner == null) {
+      setSnackBar({
+        open: true,
+        message: "Choose a banner.",
+        severity: "warning",
+      });
+
+      return;
+    }
+
+    if (SelectedBanner === bannerid) {
+      setSnackBar({
+        open: true,
+        message: "You didn't make any changes.",
+        severity: "warning",
+      });
+
+      return;
+    }
     try {
       const formData = new FormData();
 
       formData.append("backgroundType", "banner");
 
-      formData.append("bannerId", SelectedBanner);
+      formData.append("bannerId",SelectedBanner);
 
       const res = await uptadeCompanyBanner(formData);
 
-      console.log(res);
+     setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
 
-      // setOpen(false);
-
-
+      fetchCompany()
+      setOpen(false);
     } catch (error) {
-      console.log(error);
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
     }
   };
 

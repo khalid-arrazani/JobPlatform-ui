@@ -35,7 +35,7 @@ import Modalbanner from "./banner/Modalbanner";
 
 import { useState } from "react";
 
-export default function CompanyHeader({ CompanyInfo }) {
+export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   
   const [modalChoise , setModalChoise] = useState(false)
 
@@ -87,7 +87,7 @@ export default function CompanyHeader({ CompanyInfo }) {
         {/* ============================================================================== */}
            <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} />
 
-           <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} />
+           <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
         {/* ============================================================================== */}
 
         <Box

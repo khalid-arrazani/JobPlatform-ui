@@ -82,7 +82,7 @@ const { dispatch , ...state } = useCompany()
         }}
       >
         {/* top side or Company Card or  Header   */}
-        <CompanyHeader  CompanyInfo={state.Company?.company} />
+        <CompanyHeader  CompanyInfo={state.Company?.company}  fetchCompany={fetchCompany}/>
         
 
         {/* Content about Company or bottom side  */}
