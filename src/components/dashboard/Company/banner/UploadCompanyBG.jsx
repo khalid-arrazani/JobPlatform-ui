@@ -35,9 +35,7 @@ export default function CompanyBG({
       if (!blob) return;
 
       UploudBnner(blob);
-
-    
-
+      
     }, "image/png");
   };
 
