@@ -42,13 +42,11 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
   const [modalBanner , setModalBanner] = useState(false)
 
-  const [openEditor , setOpenEditor] = useState(false)
+    const [openEditor , setOpenEditor] = useState(false)
+  
+    const [image , setImage] = useState(false)
 
-  const [image , setImage] = useState(false)
-
-
-
-
+ 
 
 
 
@@ -94,9 +92,11 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
         {/* this section for edit Banner  */}
         {/* ============================================================================== */}
-           <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} />
+           <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} />
 
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
+
+           <CompanyBG openEditor={openEditor}  setOpenEditor={setOpenEditor}  image={image}  setImage={setImage} fetchCompany={fetchCompany} />
 
           
 

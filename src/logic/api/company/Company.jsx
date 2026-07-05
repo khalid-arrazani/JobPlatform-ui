@@ -47,3 +47,6 @@ export const uptadeCompanyBanner = async (
   return response.data;
 };
 
+
+
+

@@ -5,13 +5,19 @@ import { useState, useRef } from "react";
 import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
+import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
+import { useAuth } from "../../../../logic/context/AuthContext";
 
-export default function CompanyBG({openEditor , setOpenEditor , image , setImage}) {
+export default function CompanyBG({
+  openEditor,
+  setOpenEditor,
+  image,
+  fetchCompany,
+}) {
+  const { setSnackBar } = useAuth();
   const editorRef = useRef();
 
-
   const [scale, setScale] = useState(1.3);
-
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -28,65 +34,41 @@ export default function CompanyBG({openEditor , setOpenEditor , image , setImage
     outputCanvas.toBlob((blob) => {
       if (!blob) return;
 
-      const previewUrl = URL.createObjectURL(blob);
+      UploudBnner(blob);
 
-      // setPreviewBG(previewUrl);
+    
 
-      // setBackground({
-      //   type: "upload",
-      //   bannerId: null,
-      //   image: blob,
-      // });
-
-      setOpenEditor(false);
     }, "image/png");
   };
 
-  const selectBanner = async () => {
-      if (SelectedBanner == null) {
-        setSnackBar({
-          open: true,
-          message: "Choose a banner.",
-          severity: "warning",
-        });
-  
-        return;
-      }
-  
-      if (SelectedBanner === bannerid) {
-        setSnackBar({
-          open: true,
-          message: "You didn't make any changes.",
-          severity: "warning",
-        });
-  
-        return;
-      }
-      try {
-        const formData = new FormData();
-  
-        formData.append("backgroundType", "banner");
-  
-        formData.append("bannerId",SelectedBanner);
-  
-        const res = await uptadeCompanyBanner(formData);
-  
-       setSnackBar({
-          open: true,
-          message: res?.message,
-          severity: "success",
-        });
-  
-        fetchCompany()
-        setOpen(false);
-      } catch (error) {
-        setSnackBar({
-          open: true,
-          message: error?.response?.data?.message,
-          severity: "error",
-        });
-      }
-    };
+  const UploudBnner = async (blob) => {
+    try {
+      const formData = new FormData();
+
+      formData.append("backgroundType", "upload");
+
+      formData.append("companyBackground", blob);
+
+      const res = await uptadeCompanyBanner(formData);
+
+      setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
+
+      fetchCompany();
+      setOpenEditor(false);
+
+    } catch (error) {
+      console.log(error);
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
+    }
+  };
 
   return (
     <>

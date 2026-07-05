@@ -5,8 +5,7 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
-import CompanyBG from "./UploadCompanyBG";
-import { useState } from "react";
+
 
 export default function ModalChoise({
   open,
@@ -16,14 +15,12 @@ export default function ModalChoise({
   setBackground,
 
   setBannerModal,
+
+  setOpenEditor,
+  setImage
 }) {
 
-    const [openEditor , setOpenEditor] = useState(false)
-  
-    const [image , setImage] = useState(false)
-  
-  
-  
+
 
   const handlebannerModal = () => {
     setBannerModal(true);
@@ -35,7 +32,7 @@ export default function ModalChoise({
  
 
   return  <>
-     <CompanyBG openEditor={openEditor}  setOpenEditor={setOpenEditor}  image={image}  setImage={setImage} />
+     
     <Modal
       sx={{
         display: "flex",
@@ -158,7 +155,7 @@ export default function ModalChoise({
                   const file = e.target.files?.[0];
                   if (file) {
                     setImage(file);
-                    openEditor(true);
+                    setOpenEditor(true);
                   }
                 }}
               />
