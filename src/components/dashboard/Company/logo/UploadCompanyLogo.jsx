@@ -5,7 +5,7 @@ import { useState, useRef } from "react";
 import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
-import { uptadeCompanyBanner, uptadeCompanyLogo } from "../../../../logic/api/company/Company";
+import { uptadeCompanyLogo } from "../../../../logic/api/company/Company";
 import { useAuth } from "../../../../logic/context/AuthContext";
 
   
@@ -48,7 +48,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
         setOpenEditorLogo(false);
   
       } catch (error) {
-        console.log(error);
+        console.log(error?.response?.data);
         setSnackBar({
           open: true,
           message: error?.response?.data?.message,
