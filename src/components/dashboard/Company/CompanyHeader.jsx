@@ -32,6 +32,7 @@ const Default =
 
 import ModalChoise from "./banner/ModalChoise";
 import Modalbanner from "./banner/Modalbanner";
+import CompanyBG from "./banner/UploadCompanyBG";
 
 import { useState } from "react";
 
@@ -40,6 +41,14 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   const [modalChoise , setModalChoise] = useState(false)
 
   const [modalBanner , setModalBanner] = useState(false)
+
+  const [openEditor , setOpenEditor] = useState(false)
+
+  const [image , setImage] = useState(false)
+
+
+
+
 
 
 
@@ -88,6 +97,9 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
            <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} />
 
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
+
+           <CompanyBG open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
+
         {/* ============================================================================== */}
 
         <Box

@@ -46,6 +46,52 @@ export default function CompanyBG({
     }, "image/png");
   };
 
+  // const selectBanner = async () => {
+  //     if (SelectedBanner == null) {
+  //       setSnackBar({
+  //         open: true,
+  //         message: "Choose a banner.",
+  //         severity: "warning",
+  //       });
+  
+  //       return;
+  //     }
+  
+  //     if (SelectedBanner === bannerid) {
+  //       setSnackBar({
+  //         open: true,
+  //         message: "You didn't make any changes.",
+  //         severity: "warning",
+  //       });
+  
+  //       return;
+  //     }
+  //     try {
+  //       const formData = new FormData();
+  
+  //       formData.append("backgroundType", "banner");
+  
+  //       formData.append("bannerId",SelectedBanner);
+  
+  //       const res = await uptadeCompanyBanner(formData);
+  
+  //      setSnackBar({
+  //         open: true,
+  //         message: res?.message,
+  //         severity: "success",
+  //       });
+  
+  //       fetchCompany()
+  //       setOpen(false);
+  //     } catch (error) {
+  //       setSnackBar({
+  //         open: true,
+  //         message: error?.response?.data?.message,
+  //         severity: "error",
+  //       });
+  //     }
+  //   };
+
   return (
     <>
       {/* Upload */}

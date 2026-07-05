@@ -18,13 +18,9 @@ export default function CompanyPage() {
 
 const { dispatch , ...state } = useCompany()
 
-
-
   useEffect(() => {
       fetchCompany();
     }, []);
-
-
 
  const fetchCompany = async () => {
         dispatch({
