@@ -22,28 +22,7 @@ import {
 
 import { Building2, Mail, Share2, Gift } from "lucide-react";
 
-const companyEditSections = [
-  {
-    id: 1,
-    title: "Company Information",
-    icon: Building2,
-  },
-  {
-    id: 2,
-    title: "Contact Information",
-    icon: Mail,
-  },
-  {
-    id: 3,
-    title: "Social Links",
-    icon: Share2,
-  },
-  {
-    id: 4,
-    title: "Benefits",
-    icon: Gift,
-  },
-];
+
 
 import PersonIcon from "@mui/icons-material/Person";
 import SecurityIcon from "@mui/icons-material/Security";
@@ -56,20 +35,36 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
 
-  const [part, setPart] = useState("profile");
+  const [part, setPart] = useState("Company Information");
 
-  const handleProfile = () => {
-    setPart("profile");
-  };
-  const handleSecurity = () => {
-    setPart("security");
-  };
-  const handleSocial = () => {
-    setPart("social");
-  };
-  const handlecompany = () => {
-    setPart("company");
-  };
+  const companyEditSections = [
+  {
+    id: 1,
+    title: "Company Information",
+    icon: Building2,
+    background: part == "Company Information" ? "#3131312a" : "none",
+  },
+  {
+    id: 2,
+    title: "Contact Information",
+    background: part == "Contact Information" ? "#3131312a" : "none",
+    icon: Mail,
+  },
+  {
+    id: 3,
+    title: "Social Links",
+    background: part == "Social Links" ? "#3131312a" : "none",
+    icon: Share2,
+  },
+  {
+    id: 4,
+    title: "Benefits",
+    background: part == "Benefits" ? "#3131312a" : "none",
+    icon: Gift,
+  },
+];
+
+  
   const handleDelete = () => {
     setPart("delete");
   };
@@ -176,23 +171,25 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                   return (
                     <ListItemButton
                       key={section.id}
-                      onClick={handleProfile}
+                      onClick={()=>{
+                        setPart(section.title);
+                      }}
                       sx={{
                         borderRadius: "0.7rem",
                         mb: 1,
                         mt: 1,
-                        background: part == "profile" ? "#3131312a" : "none",
+                        background:section.background,
                       }}
                     >
                       <ListItemIcon>
-                        <Icon sx={{ color: "#4f46e5" }} />
+                        <Icon style={{ color: "#4f46e5" }} />
                       </ListItemIcon>
 
                       <ListItemText primary={section.title} />
                     </ListItemButton>
                   );
                 })}
-                <Divider/>
+                <Divider></Divider>
 
                 {/* Delete */}
                 <ListItemButton
@@ -214,7 +211,7 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                     <DeleteIcon sx={{ color: "#dc2626" }} />
                   </ListItemIcon>
 
-                  <ListItemText primary="Delete Account" />
+                  <ListItemText primary="Delete Company" />
                 </ListItemButton>
               </List>
             </Box>
