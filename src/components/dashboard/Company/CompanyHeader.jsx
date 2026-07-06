@@ -86,7 +86,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
             bgcolor: "#544f4f",
             backgroundImage: `${BG} `,
             backgroundSize: "cover",
-            backgroundPosition: "bottom",
+            backgroundPosition: "center",
             position: "relative",
           }}
         >

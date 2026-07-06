@@ -1,11 +1,41 @@
-import { Typography, Box, IconButton, Button, Modal } from "@mui/material";
+import { Typography, Box, IconButton, Button, Modal, CircularProgress } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
+import { useState } from "react";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { deleteCompanyBnner } from "../../../../logic/api/company/Company";
 
-export default function ModalDeleteBanner({ open, setOpen }) {
+export default function ModalDeleteBanner({ open, setOpen,fetchCompany }) {
 
+      const [reload , setReload] = useState(false)
+        const { setSnackBar } = useAuth();
 
-    
+    const DeleteCompanyBanner = async () => {
+        setReload(true)
+          try {
+            const res = await deleteCompanyBnner();
+      
+            setSnackBar({
+              open: true,
+              message: res?.message,
+              severity: "success",
+            });
+      
+            fetchCompany();
+
+            setOpen(false);
+      
+          } catch (error) {
+            console.log(error?.response?.data);
+            setSnackBar({
+              open: true,
+              message: error?.response?.data?.message,
+              severity: "error",
+            });
+          }finally{
+            setReload(false)
+          }
+        };
 
 
 
@@ -15,7 +45,7 @@ export default function ModalDeleteBanner({ open, setOpen }) {
   return (
     <>
       <Modal
-        open={true}
+        open={open}
         onClose={handleClose}
         sx={{
           display: "flex",
@@ -27,10 +57,11 @@ export default function ModalDeleteBanner({ open, setOpen }) {
           sx={{
             height: "19rem",
             width: "28rem",
-            bgcolor: "#fff",
+            bgcolor: "#ffffffc9",
             borderRadius: "20px",
             overflow: "hidden",
             boxSizing: "border-box",
+            outline:'none'
           }}
         >
           <Box
@@ -105,10 +136,11 @@ export default function ModalDeleteBanner({ open, setOpen }) {
               px: 2,   bgcolor:"#fff4f3"
             }}
           >
-            <Button>Cancel</Button>
+            <Button onClick={handleClose}  >Cancel</Button>
 
-            <Button variant="contained" sx={{ bgcolor: "#de0e0ed6" }}>
+            <Button variant="contained" disabled={reload} sx={{ bgcolor: "#de0e0ed6" , display:"flex", gap:2}} onClick={DeleteCompanyBanner} >
               Yes, delete it
+               {reload ? <CircularProgress  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
             </Button>
           </Box>
         </Box>
