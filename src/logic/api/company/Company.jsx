@@ -62,11 +62,10 @@ export const uptadeCompanyLogo = async (
 
 // delete Company Bnner
 export const deleteCompanyBnner = async ( ) => {
-  const response = await API.get(
-   `/company/6a42d392ef9e67e39f882ace`,
+  const response = await API.put(
+   "/company/delete_banner",
      { withCredentials: true }
   );
-
   return response.data;
 };
 
