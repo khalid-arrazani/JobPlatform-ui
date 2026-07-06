@@ -54,14 +54,14 @@ const inputStyle = {
 export default function Companyinfo() {
   return (
     <>
-      <Box sx={{ width: "100%", height: "80%", boxSizing: "border-box" }}>
+      <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
         <Typography
           sx={{
             fontSize: "1.5rem",
             fontWeight: 600,
             color: "#050318d2",
             fontFamily: "system-ui",
-            my: 2,
+            py: 2,
             boxSizing: "border-box",
             ml: 1,
           }}
@@ -397,7 +397,9 @@ export default function Companyinfo() {
           boxSizing: "border-box",
           alignSelf: "end",
         }}
-      ></Box>
+      >
+        
+      </Box>
     </>
   );
 }
