@@ -15,6 +15,8 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
 
   const { setSnackBar } = useAuth();
 
+  const [reload , setReload] = useState(false)
+
   const [scale, setScale] = useState(1.2);
 
 
@@ -31,6 +33,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
   };
 
   const UploudBnner = async (blob) => {
+    setReload(true)
       try {
         const formData = new FormData();
   
@@ -54,6 +57,8 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
           message: error?.response?.data?.message,
           severity: "error",
         });
+      }finally{
+        setReload(false)
       }
     };
 
