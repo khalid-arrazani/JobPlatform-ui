@@ -43,7 +43,7 @@ export default function ContactInfo() {
           sx={{
             display: "flex",
             flexDirection:"column",
-            gap: 3,
+            gap: 1,
             justifyContent: "center",
             px: 2,
             pt: 2,
