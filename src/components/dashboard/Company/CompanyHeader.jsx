@@ -146,7 +146,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
             sx={{
               height: "8.5rem ",
               width: "8.5rem",
-              p: 0.5,
+            
               boxSizing: "border-box",
               bgcolor: "#fffafa",
               position: "absolute",
