@@ -12,7 +12,7 @@ export default function ModalChoise({
   setOpen,
 
   banner,
-  setBackground,
+
 
   setBannerModal,
 
@@ -31,6 +31,8 @@ export default function ModalChoise({
   const handleClose = () => {
     setOpen(false);
   };
+
+  console.log(banner);
  
 
   return  <>
