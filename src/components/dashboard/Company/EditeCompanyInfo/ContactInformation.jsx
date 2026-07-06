@@ -46,7 +46,7 @@ export default function ContactInfo() {
             gap: 1,
             justifyContent: "center",
             px: 2,
-            pt: 2,
+            pt: 3,
             height:"80%"
           }}
         >
