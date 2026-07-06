@@ -1,12 +1,4 @@
-import {
-  Typography,
-  Box,
-  IconButton,
-  Button,
-  Modal,
-  CircularProgress,
-  Card,
-} from "@mui/material";
+import { Typography, Box, IconButton, Modal } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
@@ -20,14 +12,24 @@ import {
   Divider,
 } from "@mui/material";
 
-import { Building2, Mail, Share2, Gift } from "lucide-react";
+import {
+  TextField,
+  MenuItem,
+  InputAdornment,
+  Autocomplete,
+} from "@mui/material";
 
+import {
+  Building2,
+  Mail,
+  Phone,
+  Globe,
+  BriefcaseBusiness,
+  MapPin,
+} from "lucide-react";
 
-
-import PersonIcon from "@mui/icons-material/Person";
-import SecurityIcon from "@mui/icons-material/Security";
-import BusinessIcon from "@mui/icons-material/Business";
-import LinkIcon from "@mui/icons-material/Link";
+import { Share2, Gift } from "lucide-react";
+import Companyinfo from "./CompanyInformation";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 
@@ -38,33 +40,32 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
   const [part, setPart] = useState("Company Information");
 
   const companyEditSections = [
-  {
-    id: 1,
-    title: "Company Information",
-    icon: Building2,
-    background: part == "Company Information" ? "#3131312a" : "none",
-  },
-  {
-    id: 2,
-    title: "Contact Information",
-    background: part == "Contact Information" ? "#3131312a" : "none",
-    icon: Mail,
-  },
-  {
-    id: 3,
-    title: "Social Links",
-    background: part == "Social Links" ? "#3131312a" : "none",
-    icon: Share2,
-  },
-  {
-    id: 4,
-    title: "Benefits",
-    background: part == "Benefits" ? "#3131312a" : "none",
-    icon: Gift,
-  },
-];
+    {
+      id: 1,
+      title: "Company Information",
+      icon: Building2,
+      background: part == "Company Information" ? "#3131312a" : "none",
+    },
+    {
+      id: 2,
+      title: "Contact Information",
+      background: part == "Contact Information" ? "#3131312a" : "none",
+      icon: Mail,
+    },
+    {
+      id: 3,
+      title: "Social Links",
+      background: part == "Social Links" ? "#3131312a" : "none",
+      icon: Share2,
+    },
+    {
+      id: 4,
+      title: "Benefits",
+      background: part == "Benefits" ? "#3131312a" : "none",
+      icon: Gift,
+    },
+  ];
 
-  
   const handleDelete = () => {
     setPart("delete");
   };
@@ -171,14 +172,14 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                   return (
                     <ListItemButton
                       key={section.id}
-                      onClick={()=>{
+                      onClick={() => {
                         setPart(section.title);
                       }}
                       sx={{
                         borderRadius: "0.7rem",
                         mb: 1,
                         mt: 1,
-                        background:section.background,
+                        background: section.background,
                       }}
                     >
                       <ListItemIcon>
@@ -189,7 +190,7 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                     </ListItemButton>
                   );
                 })}
-                <Divider></Divider>
+                <Divider />
 
                 {/* Delete */}
                 <ListItemButton
@@ -216,7 +217,17 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
               </List>
             </Box>
 
-            <Box sx={{ width: "70%", height: "100%" }}></Box>
+            <Box
+              sx={{
+                width: "70%",
+                height: "100%",
+                px: 3,
+                boxSizing: "border-box",
+              }}
+            >
+              <Companyinfo />
+            </Box>
+            
           </Box>
         </Box>
       </Modal>
