@@ -101,7 +101,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
         {/* this section for edit Banner  */}
         {/* ============================================================================== */}
-           <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} setOpenDeleteBanner={setOpenDeleteBanner} />
+           <ModalChoise open={modalChoise} setOpen={setModalChoise} bannerid={CompanyInfo?.companyBackground?.bannerId} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} setOpenDeleteBanner={setOpenDeleteBanner} />
 
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
 
