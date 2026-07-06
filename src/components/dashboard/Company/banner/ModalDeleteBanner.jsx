@@ -31,7 +31,8 @@ export default function ModalDeleteBanner ({open , setOpen}){
 
             <IconButton onClick={handleClose}>
             <CloseIcon />
-          </IconButton>
+            </IconButton>
+
         </Box>
      
         <Box  sx={{height:"57.5%" , width:"100%" , bgcolor: "#776464"}}  ></Box>
