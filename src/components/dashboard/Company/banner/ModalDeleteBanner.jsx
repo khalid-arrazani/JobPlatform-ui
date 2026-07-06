@@ -3,13 +3,19 @@ import { Typography, Box, IconButton, Button, Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 
 export default function ModalDeleteBanner({ open, setOpen }) {
+
+
+    
+
+
+
   const handleClose = () => {
     setOpen(false);
   };
   return (
     <>
       <Modal
-        open={open}
+        open={true}
         onClose={handleClose}
         sx={{
           display: "flex",
@@ -35,10 +41,19 @@ export default function ModalDeleteBanner({ open, setOpen }) {
               alignItems: "center",
               px: 2,
               boxSizing: "border-box",
-              justifyContent: "space-between",
+            
+              justifyContent: "space-between",  bgcolor:"#f3fcff9a"
             }}
           >
-            <Typography >Remove background photo?</Typography>
+            <Typography
+              sx={{
+                fontWeight: 500,
+                fontFamily: "system-ui",
+                color: "#050920",
+              }}
+            >
+              Remove background photo?
+            </Typography>
 
             <IconButton onClick={handleClose}>
               <CloseIcon />
@@ -46,13 +61,55 @@ export default function ModalDeleteBanner({ open, setOpen }) {
           </Box>
 
           <Box
-            sx={{ height: "57.5%", width: "100%", bgcolor: "#776464" }}
-          ></Box>
+            sx={{
+              height: "57.5%",
+              width: "100%",
 
-          <Box sx={{ height: "23%", width: "100%", bgcolor: "#aea1a1" }}>
+              display: "flex",
+              alignItems: "center",
+              px: 2,
+              boxSizing: "border-box",
+              justifyContent: "center",
+              borderTop: " solid  1px #7b7b7b3b",
+              borderBottom: " solid  1px #7b7b7b3b",
+            }}
+          >
+            <Typography
+              sx={{
+                fontWeight: 500,
+                fontFamily: "system-ui",
+                color: "#050920dd",
+                display: "flex",
+                alignItems: "center",
+                px: 3,
+
+                textAlign: "center",
+                fontSize: "1.4rem",
+              }}
+            >
+              This background photo helps others get to know you better.
+              Deleting it will remove it from your profile.
+            </Typography>
+          </Box>
+
+          <Box
+            sx={{
+              height: "23%",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              boxSizing: "border-box",
+
+           
+              px: 2,   bgcolor:"#fff4f3"
+            }}
+          >
             <Button>Cancel</Button>
 
-            <Button>Yes, delete it</Button>
+            <Button variant="contained" sx={{ bgcolor: "#de0e0ed6" }}>
+              Yes, delete it
+            </Button>
           </Box>
         </Box>
       </Modal>
