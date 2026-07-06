@@ -5,6 +5,7 @@ import {
   Button,
   Modal,
   CircularProgress,
+  Card,
 } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
@@ -18,6 +19,31 @@ import {
   ListItemText,
   Divider,
 } from "@mui/material";
+
+import { Building2, Mail, Share2, Gift } from "lucide-react";
+
+const companyEditSections = [
+  {
+    id: 1,
+    title: "Company Information",
+    icon: Building2,
+  },
+  {
+    id: 2,
+    title: "Contact Information",
+    icon: Mail,
+  },
+  {
+    id: 3,
+    title: "Social Links",
+    icon: Share2,
+  },
+  {
+    id: 4,
+    title: "Benefits",
+    icon: Gift,
+  },
+];
 
 import PersonIcon from "@mui/icons-material/Person";
 import SecurityIcon from "@mui/icons-material/Security";
@@ -144,73 +170,29 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
               }}
             >
               <List sx={{ height: "100%", p: "0.5rem" }}>
-                {/* Profile Information */}
-                <ListItemButton
-                  onClick={handleProfile}
-                  sx={{
-                    borderRadius: "0.7rem",
-                    mb: 1,
-                    mt: 1,
-                    background: part == "profile" ? "#3131312a" : "none",
-                  }}
-                >
-                  <ListItemIcon>
-                    <PersonIcon sx={{ color: "#4f46e5" }} />
-                  </ListItemIcon>
+                {companyEditSections.map((section) => {
+                  const Icon = section.icon;
 
-                  <ListItemText primary="Profile Information" />
-                </ListItemButton>
+                  return (
+                    <ListItemButton
+                      key={section.id}
+                      onClick={handleProfile}
+                      sx={{
+                        borderRadius: "0.7rem",
+                        mb: 1,
+                        mt: 1,
+                        background: part == "profile" ? "#3131312a" : "none",
+                      }}
+                    >
+                      <ListItemIcon>
+                        <Icon sx={{ color: "#4f46e5" }} />
+                      </ListItemIcon>
 
-                {/* Company Information */}
-                <ListItemButton
-                  onClick={handlecompany}
-                  sx={{
-                    borderRadius: "0.7rem",
-                    mb: 1,
-                    mt: 1,
-                    background: part == "company" ? "#3131312a" : "none",
-                  }}
-                >
-                  <ListItemIcon>
-                    <BusinessIcon sx={{ color: "#4f46e5" }} />
-                  </ListItemIcon>
-
-                  <ListItemText primary="Company Information" />
-                </ListItemButton>
-
-                {/* Security */}
-                <ListItemButton
-                  onClick={handleSecurity}
-                  sx={{
-                    borderRadius: "0.7rem",
-                    mb: 1,
-                    background: part == "security" ? "#3131312a" : "none",
-                  }}
-                >
-                  <ListItemIcon>
-                    <SecurityIcon sx={{ color: "#4f46e5" }} />
-                  </ListItemIcon>
-
-                  <ListItemText primary="Security" />
-                </ListItemButton>
-
-                {/* Social Links */}
-                <ListItemButton
-                  onClick={handleSocial}
-                  sx={{
-                    borderRadius: "0.7rem",
-                    mb: 1,
-                    background: part == "social" ? "#3131312a" : "none",
-                  }}
-                >
-                  <ListItemIcon>
-                    <LinkIcon sx={{ color: "#4f46e5" }} />
-                  </ListItemIcon>
-
-                  <ListItemText primary="Social Links" />
-                </ListItemButton>
-                
-                <Divider></Divider>
+                      <ListItemText primary={section.title} />
+                    </ListItemButton>
+                  );
+                })}
+                <Divider/>
 
                 {/* Delete */}
                 <ListItemButton
