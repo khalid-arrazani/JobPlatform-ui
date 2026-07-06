@@ -15,6 +15,7 @@ const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
+    minWidth:"170%"
   },
 };
 
@@ -43,9 +44,10 @@ export default function ContactInfo() {
             display: "flex",
             flexDirection:"column",
             gap: 3,
-            justifyContent: "space-between",
+            justifyContent: "center",
             px: 2,
             pt: 2,
+            height:"80%"
           }}
         >
           
