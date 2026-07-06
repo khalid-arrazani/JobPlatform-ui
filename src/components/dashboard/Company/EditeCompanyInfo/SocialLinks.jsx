@@ -19,7 +19,7 @@ const inputStyle = {
   },
 };
 
-export default function ContactInfo() {
+export default function SocialInfo() {
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
@@ -34,7 +34,7 @@ export default function ContactInfo() {
             ml: 1,
           }}
         >
-          Edite Contact information
+          Edite Socia Links
         </Typography>
 
         <Divider />

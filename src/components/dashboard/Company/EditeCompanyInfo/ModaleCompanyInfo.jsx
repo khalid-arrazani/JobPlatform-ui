@@ -33,6 +33,7 @@ import Companyinfo from "./CompanyInformation";
 
 import DeleteIcon from "@mui/icons-material/Delete";
 import ContactInfo from "./ContactInformation";
+import SocialInfo from "./SocialLinks";
 
 export default function ModalInfo({ open, setOpen, fetchCompany }) {
   const [reload, setReload] = useState(false);
@@ -226,7 +227,7 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                 boxSizing: "border-box",
               }}
             >
-              <ContactInfo />
+              <SocialInfo/>
             </Box>
 
           </Box>
