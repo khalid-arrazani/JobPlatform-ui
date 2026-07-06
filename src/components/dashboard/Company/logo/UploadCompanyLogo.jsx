@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, CircularProgress } from "@mui/material";
 
 import { useState, useRef } from "react";
 
@@ -15,7 +15,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
 
   const { setSnackBar } = useAuth();
 
-  const [reload , setReload] = useState(false)
+  const [reload , setReload] = useState(true)
 
   const [scale, setScale] = useState(1.2);
 
@@ -82,7 +82,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               width={360}
               height={360}
               border={5}
-              borderRadius={200}
+              borderRadius={100}
               scale={scale}
             />
 
@@ -94,8 +94,9 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               onChange={(e, value) => setScale(value)}
             />
 
-            <Button variant="contained" onClick={handleSave}>
+            <Button disabled={reload} sx={{display:"flex",gap:1}} variant="contained" onClick={handleSave}>
               Save
+              <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" />
             </Button>
           </Box>
         </DialogContent>
