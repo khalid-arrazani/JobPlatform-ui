@@ -57,7 +57,7 @@ export default function ModalInfo({ open, setOpen , fetchCompany }) {
           sx={{
             height: "95%",
             width: "95%",
-            bgcolor: "#ffffffc9",
+            bgcolor: "#ffffff",
             borderRadius: "20px",
             overflow: "hidden",
             boxSizing: "border-box",
