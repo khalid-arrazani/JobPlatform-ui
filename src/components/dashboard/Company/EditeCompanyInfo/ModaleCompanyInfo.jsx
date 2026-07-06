@@ -64,6 +64,19 @@ export default function ModalInfo({ open, setOpen , fetchCompany }) {
             outline:'none'
           }}
         >
+            <Box sx={{width:"100%", height:"10%",bgcolor:"#eeecec",borderBottom:"solid 1px #c9c9c9c6"}}>
+
+            </Box>
+
+
+
+            <Box sx={{width:"100%", height:"90%",bgcolor:"#eeecec",display:"flex",boxSizing:"border-box"}}>
+
+                <Box sx={{width:"30%", height:"100%",borderRight:"solid 1px #c9c9c9c6"}}></Box>
+
+                <Box sx={{width:"70%", height:"100%"}}></Box>
+
+            </Box>
 
         </Box>
       </Modal>
