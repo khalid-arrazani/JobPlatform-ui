@@ -44,7 +44,7 @@ export default function ModalChoise({
       return;
     }
 
-    setOpen(true);
+    setOpenDeleteBanner(true);
   };
 
   return (

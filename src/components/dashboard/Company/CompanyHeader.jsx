@@ -25,39 +25,28 @@ const banners = {
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
 
-const Default =
-  "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
-
-
+const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 import ModalChoise from "./banner/ModalChoise";
 import Modalbanner from "./banner/Modalbanner";
 import CompanyBG from "./banner/UploadCompanyBG";
-
-
 import CompanyLogo from "./logo/UploadCompanyLogo";
-
-import { useEffect, useState } from "react";
 import ModalDeleteBanner from "./banner/ModalDeleteBanner";
+import ModalInfo from "./EditeCompanyInfo/ModaleCompanyInfo";
 
-export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
-  
-  const [modalChoise , setModalChoise] = useState(false)
+import { useState } from "react";
 
-  const [modalBanner , setModalBanner] = useState(false)
-
-    const [openEditor , setOpenEditor] = useState(false)
-
-    const [openEditorLogo , setOpenEditorLogo] = useState(false)
-  
-    const [image , setImage] = useState(false)
-    const [imageLogo , setImageLogo] = useState(false)
-
-    const [openDeleteBanner,setOpenDeleteBanner] = useState(false)
-
- 
+export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
+  const [modalChoise, setModalChoise] = useState(false);
+  const [modalBanner, setModalBanner] = useState(false);
+  const [openEditor, setOpenEditor] = useState(false);
+  const [openEditorLogo, setOpenEditorLogo] = useState(false);
+  const [openDeleteBanner, setOpenDeleteBanner] = useState(false);
+  const [openCompanyInfoEdite, setOpenCompanyInfoEdite] = useState(false);
 
 
+  const [image, setImage] = useState(false);
+  const [imageLogo, setImageLogo] = useState(false);
 
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
@@ -65,7 +54,6 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
-
 
   return (
     <>
@@ -76,7 +64,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
           bgcolor: "#ffffff",
           borderRadius: "15px",
           overflow: "hidden",
-        }} 
+        }}
       >
         {/* banner */}
         <Box
@@ -93,7 +81,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
           <IconButton
             size="small"
             sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2 }}
-            onClick={()=>setModalChoise(true)}
+            onClick={() => setModalChoise(true)}
           >
             <ModeRoundedIcon sx={{ color: "#060420de" }} />
           </IconButton>
@@ -101,13 +89,43 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
         {/* this section for edit Banner  */}
         {/* ============================================================================== */}
-           <ModalChoise open={modalChoise} setOpen={setModalChoise} bannerid={CompanyInfo?.companyBackground?.bannerId} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} setOpenDeleteBanner={setOpenDeleteBanner} />
+        <ModalChoise
+          open={modalChoise}
+          setOpen={setModalChoise}
+          bannerid={CompanyInfo?.companyBackground?.bannerId}
+          banner={BG}
+          setBannerModal={setModalBanner}
+          setOpenEditor={setOpenEditor}
+          setImage={setImage}
+          setOpenDeleteBanner={setOpenDeleteBanner}
+        />
 
-           <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
+        <Modalbanner
+          open={modalBanner}
+          setOpen={setModalBanner}
+          bannerid={CompanyInfo?.companyBackground?.bannerId}
+          fetchCompany={fetchCompany}
+        />
 
-           <CompanyBG openEditor={openEditor}  setOpenEditor={setOpenEditor}  image={image}  setImage={setImage} fetchCompany={fetchCompany} />
+        <CompanyBG
+          openEditor={openEditor}
+          setOpenEditor={setOpenEditor}
+          image={image}
+          setImage={setImage}
+          fetchCompany={fetchCompany}
+        />
 
-           <ModalDeleteBanner open={openDeleteBanner}  setOpen={setOpenDeleteBanner}  fetchCompany={fetchCompany} />
+        <ModalDeleteBanner
+          open={openDeleteBanner}
+          setOpen={setOpenDeleteBanner}
+          fetchCompany={fetchCompany}
+        />
+
+        <ModalInfo
+          open={openCompanyInfoEdite}
+          setOpen={setOpenCompanyInfoEdite}
+          fetchCompany={fetchCompany}
+        />
         {/* ============================================================================== */}
 
         <Box
@@ -121,6 +139,7 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
           }}
         >
           <Button
+          onClick={()=>{setOpenCompanyInfoEdite(true)}}
             variant="contained"
             startIcon={<EditOutlinedIcon />}
             sx={{
@@ -147,11 +166,11 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
           {/* logo */}
           <Card
-           component="label"
+            component="label"
             sx={{
               height: "8.5rem ",
               width: "8.5rem",
-            
+
               boxSizing: "border-box",
               bgcolor: "#fffafa",
               position: "absolute",
@@ -180,24 +199,28 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
               alt=""
               srcset=""
             />
-             <input
-                hidden
-                accept="image/*"
-                type="file"
-                onChange={(e) => {
-                  const file = e.target.files?.[0];
-                  if (file) {
-                    setImageLogo(file);
-                    setOpenEditorLogo(true);
-                  }
-                }}
-              />
+            <input
+              hidden
+              accept="image/*"
+              type="file"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  setImageLogo(file);
+                  setOpenEditorLogo(true);
+                }
+              }}
+            />
           </Card>
           {/* this section for upload Logo */}
           {/* ============================================================ */}
-          <CompanyLogo setOpenEditorLogo={setOpenEditorLogo} openEditorLogo={openEditorLogo}  imageLogo={imageLogo}  fetchCompany={fetchCompany}  />
+          <CompanyLogo
+            setOpenEditorLogo={setOpenEditorLogo}
+            openEditorLogo={openEditorLogo}
+            imageLogo={imageLogo}
+            fetchCompany={fetchCompany}
+          />
           {/* ============================================================ */}
-
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
