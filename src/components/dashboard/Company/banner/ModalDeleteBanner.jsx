@@ -38,7 +38,7 @@ export default function ModalDeleteBanner({ open, setOpen }) {
               justifyContent: "space-between",
             }}
           >
-            <Typography>Remove background photo?</Typography>
+            <Typography >Remove background photo?</Typography>
 
             <IconButton onClick={handleClose}>
               <CloseIcon />
