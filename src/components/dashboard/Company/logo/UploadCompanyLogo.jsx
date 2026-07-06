@@ -15,7 +15,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
 
   const { setSnackBar } = useAuth();
 
-  const [reload , setReload] = useState(true)
+  const [reload , setReload] = useState(false)
 
   const [scale, setScale] = useState(1.2);
 
@@ -94,9 +94,10 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               onChange={(e, value) => setScale(value)}
             />
 
-            <Button disabled={reload} sx={{display:"flex",gap:1}} variant="contained" onClick={handleSave}>
+            <Button disabled={reload} variant="contained" onClick={handleSave} sx={{display:"flex",gap:2}}>
               Save
-              <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" />
+              {reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
+              
             </Button>
           </Box>
         </DialogContent>

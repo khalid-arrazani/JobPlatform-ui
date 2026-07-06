@@ -1,4 +1,4 @@
-import { Typography, Box, IconButton, Button } from "@mui/material";
+import { Typography, Box, IconButton, Button, CircularProgress } from "@mui/material";
 import Modal from "@mui/material/Modal";
 
 import { useEffect, useState } from "react";
@@ -28,12 +28,14 @@ import { useAuth } from "../../../../logic/context/AuthContext";
 export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
   const [SelectedBanner, setSelectedBanner] = useState(null);
   const { setSnackBar } = useAuth();
+  const [reload , setReload]= useState(false)
 
   useEffect(() => {
     setSelectedBanner(bannerid);
   }, [bannerid]);
 
   const selectBanner = async () => {
+
     if (SelectedBanner == null) {
       setSnackBar({
         open: true,
@@ -53,6 +55,7 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
 
       return;
     }
+    setReload(true)
     try {
       const formData = new FormData();
 
@@ -76,6 +79,8 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
         message: error?.response?.data?.message,
         severity: "error",
       });
+    }finally{
+      setReload(false)
     }
   };
 
@@ -184,9 +189,12 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
           <Button
             onClick={selectBanner}
             size="large"
-            sx={{ mr: 4, bgcolor: "#2c68ff", color: "#fff", px: 4 }}
+            sx={{ mr: 4, px: 4 , display:"flex", gap:2}}
+            disabled={reload}
+            variant="contained" 
           >
             Save
+            {reload ? <CircularProgress  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
           </Button>
         </Box>
       </Box>

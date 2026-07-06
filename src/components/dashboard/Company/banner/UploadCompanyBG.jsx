@@ -1,4 +1,4 @@
-import { Box, Button } from "@mui/material";
+import { Box, Button, CircularProgress } from "@mui/material";
 
 import { useState, useRef } from "react";
 
@@ -16,6 +16,7 @@ export default function CompanyBG({
 }) {
   const { setSnackBar } = useAuth();
   const editorRef = useRef();
+  const [reload , setReload] = useState(false)
 
   const [scale, setScale] = useState(1.3);
 
@@ -40,6 +41,7 @@ export default function CompanyBG({
   };
 
   const UploudBnner = async (blob) => {
+    setReload(true)
     try {
       const formData = new FormData();
 
@@ -65,6 +67,8 @@ export default function CompanyBG({
         message: error?.response?.data?.message,
         severity: "error",
       });
+    }finally{
+      setReload(false)
     }
   };
 
@@ -106,8 +110,9 @@ export default function CompanyBG({
               onChange={(e, value) => setScale(value)}
             />
 
-            <Button variant="contained" onClick={handleSave}>
+            <Button disabled={reload} variant="contained" onClick={handleSave} sx={{display:"flex",gap:2}}>
               Save
+              {reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
             </Button>
           </Box>
         </DialogContent>
