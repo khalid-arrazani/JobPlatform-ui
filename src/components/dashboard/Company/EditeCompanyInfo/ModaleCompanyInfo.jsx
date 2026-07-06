@@ -1,43 +1,46 @@
-import { Typography, Box, IconButton, Button, Modal, CircularProgress } from "@mui/material";
+import {
+  Typography,
+  Box,
+  IconButton,
+  Button,
+  Modal,
+  CircularProgress,
+} from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import { useAuth } from "../../../../logic/context/AuthContext";
 
+export default function ModalInfo({ open, setOpen, fetchCompany }) {
+  const [reload, setReload] = useState(false);
+  const { setSnackBar } = useAuth();
 
-export default function ModalInfo({ open, setOpen , fetchCompany }) {
+  // const DeleteCompanyBanner = async () => {
+  //     setReload(true)
+  //       try {
+  //         const res = await deleteCompanyBnner();
 
-      const [reload , setReload] = useState(false)
-        const { setSnackBar } = useAuth();
+  //         setSnackBar({
+  //           open: true,
+  //           message: res?.message,
+  //           severity: "success",
+  //         });
 
-    // const DeleteCompanyBanner = async () => {
-    //     setReload(true)
-    //       try {
-    //         const res = await deleteCompanyBnner();
-      
-    //         setSnackBar({
-    //           open: true,
-    //           message: res?.message,
-    //           severity: "success",
-    //         });
-      
-    //         fetchCompany();
+  //         fetchCompany();
 
-    //         setOpen(false);
-      
-    //       } catch (error) {
-    //         console.log(error?.response?.data);
-    //         setSnackBar({
-    //           open: true,
-    //           message: error?.response?.data?.message,
-    //           severity: "error",
-    //         });
-    //       }finally{
-    //         setReload(false)
-    //       }
-    //     };
+  //         setOpen(false);
 
-
+  //       } catch (error) {
+  //         console.log(error?.response?.data);
+  //         setSnackBar({
+  //           open: true,
+  //           message: error?.response?.data?.message,
+  //           severity: "error",
+  //         });
+  //       }finally{
+  //         setReload(false)
+  //       }
+  //     };
 
   const handleClose = () => {
     setOpen(false);
@@ -61,23 +64,56 @@ export default function ModalInfo({ open, setOpen , fetchCompany }) {
             borderRadius: "20px",
             overflow: "hidden",
             boxSizing: "border-box",
-            outline:'none'
+            outline: "none",
           }}
         >
-            <Box sx={{width:"100%", height:"10%",bgcolor:"#eeecec",borderBottom:"solid 1px #c9c9c9c6"}}>
+          <Box
+            sx={{
+              width: "100%",
+              height: "10%",
+              bgcolor: "#eeecec",
+              borderBottom: "solid 1px #c9c9c9c6",
+              display: "flex",
+              alignItems: "center",
+              px: 3.5,
+              boxSizing: "border-box",
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
+              sx={{
+                fontSize: "1.5rem",
+                fontWeight: 600,
+                color: "#050318d2",
+                fontFamily: "system-ui",
+              }}
+            >
+              Edite Company Information
+            </Typography>
+            <IconButton onClick={handleClose}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
 
-            </Box>
+          <Box
+            sx={{
+              width: "100%",
+              height: "90%",
+              bgcolor: "#eeecec",
+              display: "flex",
+              boxSizing: "border-box",
+            }}
+          >
+            <Box
+              sx={{
+                width: "30%",
+                height: "100%",
+                borderRight: "solid 1px #c9c9c9c6",
+              }}
+            ></Box>
 
-
-
-            <Box sx={{width:"100%", height:"90%",bgcolor:"#eeecec",display:"flex",boxSizing:"border-box"}}>
-
-                <Box sx={{width:"30%", height:"100%",borderRight:"solid 1px #c9c9c9c6"}}></Box>
-
-                <Box sx={{width:"70%", height:"100%"}}></Box>
-
-            </Box>
-
+            <Box sx={{ width: "70%", height: "100%" }}></Box>
+          </Box>
         </Box>
       </Modal>
     </>
