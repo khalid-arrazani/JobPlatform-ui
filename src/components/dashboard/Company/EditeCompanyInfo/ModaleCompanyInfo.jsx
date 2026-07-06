@@ -32,6 +32,7 @@ import { Share2, Gift } from "lucide-react";
 import Companyinfo from "./CompanyInformation";
 
 import DeleteIcon from "@mui/icons-material/Delete";
+import ContactInfo from "./ContactInformation";
 
 export default function ModalInfo({ open, setOpen, fetchCompany }) {
   const [reload, setReload] = useState(false);
@@ -225,9 +226,9 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                 boxSizing: "border-box",
               }}
             >
-              <Companyinfo />
+              <ContactInfo />
             </Box>
-            
+
           </Box>
         </Box>
       </Modal>

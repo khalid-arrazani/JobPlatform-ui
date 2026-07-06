@@ -5,7 +5,7 @@ import {
   TextField,
   MenuItem,
   InputAdornment,
-  Autocomplete,
+  Autocomplete,Button
 } from "@mui/material";
 
 import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
@@ -392,13 +392,20 @@ export default function Companyinfo() {
 
       <Box
         sx={{
-          bgcolor: "#fff",
           height: "15%",
           boxSizing: "border-box",
           alignSelf: "end",
+          borderTop:" solid 1px #d0d0d0",
+          display:"flex",
+          alignItems:"center",
+          justifyContent:"end",pb:1.5,
+          px:4
+          
         }}
       >
-        
+        <Button variant="contained" size="large" sx={{  display:"flex", gap:2,height:"2.5rem",fontSize:"1.1rem"}} >
+              Save
+         </Button>
       </Box>
     </>
   );
