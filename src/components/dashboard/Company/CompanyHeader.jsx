@@ -37,7 +37,8 @@ import CompanyBG from "./banner/UploadCompanyBG";
 
 import CompanyLogo from "./logo/UploadCompanyLogo";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import ModalDeleteBanner from "./banner/ModalDeleteBanner";
 
 export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   
@@ -51,6 +52,8 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
   
     const [image , setImage] = useState(false)
     const [imageLogo , setImageLogo] = useState(false)
+
+    const [openDeleteBanner,setOpenDeleteBanner] = useState(false)
 
  
 
@@ -98,11 +101,13 @@ export default function CompanyHeader({ CompanyInfo ,fetchCompany}) {
 
         {/* this section for edit Banner  */}
         {/* ============================================================================== */}
-           <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} />
+           <ModalChoise open={modalChoise} setOpen={setModalChoise} banner={BG}  setBannerModal={setModalBanner} setOpenEditor={setOpenEditor} setImage={setImage} setOpenDeleteBanner={setOpenDeleteBanner} />
 
            <Modalbanner open={modalBanner} setOpen={setModalBanner} bannerid={CompanyInfo?.companyBackground?.bannerId} fetchCompany={fetchCompany} />
 
            <CompanyBG openEditor={openEditor}  setOpenEditor={setOpenEditor}  image={image}  setImage={setImage} fetchCompany={fetchCompany} />
+
+           <ModalDeleteBanner open={openDeleteBanner}  setOpen={setOpenDeleteBanner}  fetchCompany={fetchCompany} />
         {/* ============================================================================== */}
 
         <Box

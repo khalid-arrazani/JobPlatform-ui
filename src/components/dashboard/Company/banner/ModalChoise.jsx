@@ -17,7 +17,9 @@ export default function ModalChoise({
   setBannerModal,
 
   setOpenEditor,
-  setImage
+  setImage,
+
+  setOpenDeleteBanner 
 }) {
 
 
@@ -164,7 +166,7 @@ export default function ModalChoise({
             <Button
               size="small"
               onClick={() => {
-                setBackground({ type: "banner", bannerId: null, image: null });
+                setOpenDeleteBanner(true)
               }}
               sx={{
                 display: "flex",
