@@ -1,21 +1,18 @@
 import {
-  Box,
-  Card,
   Typography,
+  Box,
+  Divider,
   TextField,
+  MenuItem,
   InputAdornment,
   Autocomplete,
-
+  Button,
+  Card,
 } from "@mui/material";
 
+import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
 
-
-import {
-  FaLinkedin,
-  FaFacebook,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+import CompanyFounded from "./CompanyFounded";
 
 import {
   Laptop,
@@ -32,6 +29,7 @@ import {
   Baby,
   Monitor,
 } from "lucide-react";
+import { useState } from "react";
 
 const companyBenefits = [
   {
@@ -235,62 +233,52 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
-import CompanyFounded from "./CompanyFounded";
-
-
-export default function MoreInfo({ secondtInfo, setSecondInfo }) {
-
+export default function CompanyBenefits() {
+  const [company_benefit, setCompany_benefit] = useState([
+    "Remote Work",
+    "Hybrid Work",
+    "Flexible Hours",
+    "Health Insurance",
+    "Dental Insurance",
+    "Vision Insurance",
+  ]);
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
-    secondtInfo.company_benefit.includes(benefit.label),
+    company_benefit.includes(benefit.label),
   );
-
-  
 
   return (
     <>
-      <Box
-        sx={{
-          height: "70%",
-          width: "100%",
-          boxSizing: "border-box",
-          display: "flex",
-          gap: 2,
-        }}
-      >
-        
-        {/* Benefits */}
-        <Box
+      <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
+        <Typography
           sx={{
-            width: "50%",
-            height: "100%",
+            fontSize: "1.5rem",
+            fontWeight: 600,
+            color: "#050318d2",
+            fontFamily: "system-ui",
+            py: 2,
+            boxSizing: "border-box",
+            ml: 1,
+          }}
+        >
+          Edite Company Benefits
+        </Typography>
+
+        <Divider />
+
+        {/* Benefits */}
+
+        {/* <Box
+          sx={{
+            width: "80%",
+            height: "85%",
             borderRadius: "15px",
             border: "solid 0.5px #b3b0b069",
             boxSizing: "border-box",
             p: 2,
           }}
         >
-          <Typography
-            sx={{
-              fontWeight: 700,
-              fontSize: "1.5rem",
-              color: "#020314d2",
-              fontFamily: "ui-serif",
-            }}
-          >
-            Company Benefits
-          </Typography>
-          
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              color: "#06051cb7",
-              mb: 2,
-            }}
-          >
-            Add benefits your company offers
-          </Typography>
+
 
           <Box
             sx={{
@@ -300,22 +288,21 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
               gap: 1.5,
               mb: 1,
               width: "100%",
-              height: "70%",
+              height: "90%",
               border: "dashed 0.5px #c8c8c8",
               p: 1,
               boxSizing: "border-box",
               overflow: "auto",
             }}
           >
-           
             {selectedBenefitObjects?.map((benefit) => {
               return (
                 <Card
                   key={benefit.label}
                   sx={{
                     boxSizing: "border-box",
-                    width: "7.8rem",
-                    height: "7.5rem",
+                    width: "10rem",
+                    height: "9rem",
                     px: 1.8,
                     py: 1.5,
                     display: "flex",
@@ -368,15 +355,15 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             size="small"
             disableCloseOnSelect
             options={companyBenefit}
-            value={secondtInfo.company_benefit}
-
+            value={company_benefit}
             onChange={(event, newValue) => {
               if (newValue.length <= 6) {
-                setSecondInfo((prev)=>({...prev , company_benefit : newValue}));
+                setCompany_benefit(newValue);
               }
             }}
             getOptionDisabled={(option) =>
-              secondtInfo.company_benefit.length >= 6 && !secondtInfo.company_benefit.includes(option)
+              company_benefit.length >= 6 &&
+              !company_benefit.includes(option)
             }
             renderTags={() => null}
             sx={{
@@ -390,142 +377,35 @@ export default function MoreInfo({ secondtInfo, setSecondInfo }) {
             renderInput={(params) => (
               <TextField
                 {...params}
-                placeholder={`${secondtInfo.company_benefit.length}/6 benefits selected`}
+                placeholder={`${company_benefit.length}/6 benefits selected`}
               />
             )}
           />
-        </Box>
+        </Box> */}
 
-        <Box
-          sx={{
-            width: "50%",
-            height: "100%",
-            borderRadius: "15px",
-            border: "solid 0.5px #b3b0b069",
-            boxSizing: "border-box",
-            p: 2,
-          }}
+      </Box>
+
+      <Box
+        sx={{
+          height: "15%",
+          boxSizing: "border-box",
+          alignSelf: "end",
+          borderTop: " solid 1px #d0d0d0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "end",
+          pb: 1.5,
+          px: 4,
+        }}
+      >
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
         >
-          <Typography
-            sx={{
-              fontWeight: 700,
-              fontSize: "1.5rem",
-              color: "#020314d2",
-              fontFamily: "ui-serif",
-            }}
-          >
-            Social Links (optional)
-          </Typography>
-
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              color: "#06051cb7",
-              mb: 2,
-            }}
-          >
-            Add  your company social media 
-          </Typography>
-
-
-          
-          <Box
-            sx={{
-              width: "100%",
-              display: "flex",
-              flexDirection: "column",
-              flex: 1,
-              gap: 1.5,
-              border: "dashed 0.5px #c8c8c8",
-              p: 1,
-              boxSizing: "border-box",
-              overflow: "auto",
-              maxHeight:"80%"
-            }}
-          >
-            {/* LinkedIn */}
-            <TextField
-            value={secondtInfo.company_linkdin.url}
-            onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
-              fullWidth
-              placeholder="https://linkedin.com/company/..."
-              sx={inputStyle}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FaLinkedin size={30} color="#3376d5" />
-                    </InputAdornment>
-                  ),
-                },
-              }}
-            />
-
-            {/* Facebook */}
-            <TextField
-              fullWidth
-              value={secondtInfo.company_facebook.url}
-            onChange={(e)=>setSecondInfo((prev)=>({...prev, company_facebook : {...prev.company_facebook , url:e.target.value  }   }))}
-              placeholder="https://facebook.com/..."
-              sx={inputStyle}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FaFacebook size={30} color="#1f62c1" />
-                    </InputAdornment>
-                  ),
-                },
-              }}
-            />
-
-            {/* Instagram */}
-            <TextField
-              fullWidth
-              value={secondtInfo.company_instagram.url}
-              onChange={(e)=>setSecondInfo((prev)=>({...prev, company_instagram : {...prev.company_instagram , url:e.target.value  }   }))}
-              placeholder="https://instagram.com/..."
-              sx={inputStyle}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FaInstagram size={30} color="#E1306C" />
-                    </InputAdornment>
-                  ),
-                },
-              }}
-            />
-
-            {/* X / Twitter */}
-            <TextField
-              fullWidth
-              value={secondtInfo.company_x.url}
-              onChange={(e)=>setSecondInfo((prev)=>({...prev, company_x : {...prev.company_x , url:e.target.value  }   }))}
-              placeholder="https://x.com/..."
-              sx={inputStyle}
-              slotProps={{
-                input: {
-                  startAdornment: (
-                    <InputAdornment position="start">
-                      <FaXTwitter size={30} color="#353d49" />
-                    </InputAdornment>
-                  ),
-                },
-              }}
-            />
-          </Box>
-        </Box>
+          Save
+        </Button>
       </Box>
     </>
   );
 }
-
-const inputStyle = {
-  border: "none",
-  outline: "none",
-  width: "100%",
-  background: "transparent",
-  fontSize: "13px",
-};

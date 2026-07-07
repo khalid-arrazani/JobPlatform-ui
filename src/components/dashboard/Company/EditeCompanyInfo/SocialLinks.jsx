@@ -3,19 +3,25 @@ import {
   Box,
   Divider,
   TextField,
-  MenuItem,
+
   InputAdornment,
-  Autocomplete,Button
+
+  Button,
 } from "@mui/material";
 
-import { Globe, Phone, Mail } from "lucide-react";
 
- 
+import {
+  FaLinkedin,
+  FaFacebook,
+  FaXTwitter,
+  FaInstagram,
+} from "react-icons/fa6";
+
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
-    minWidth:"170%"
+    maxWidth: "100%",
   },
 };
 
@@ -41,107 +47,92 @@ export default function SocialInfo() {
 
         <Box
           sx={{
+            width: "100%",
             display: "flex",
-            flexDirection:"column",
-            gap: 1,
-            justifyContent: "center",
-            px: 2,
-            pt: 3,
-            height:"80%"
+            flexDirection: "column",
+            flex: 1,
+            gap: 2,
+            border: "dashed 0.5px #c8c8c8",
+            px: 10,
+            boxSizing: "border-box",
+            overflow: "auto",
+            height: "70%",
+            mt:4,
+            justifyContent:"space-evenly",
+            alignItems:"center"
           }}
         >
-          
-
-          {/* Email */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Email <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
-
+          {/* LinkedIn */}
           <TextField
-            
-            //   value={firstInfo.company_email}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_email: e.target.value,
-            //     }));
-            //   }}
-            
-            placeholder="contact@company.com"
+            //    value={secondtInfo.company_linkdin.url}
+            //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
+            fullWidth
+            placeholder="https://linkedin.com/company/..."
             sx={inputStyle}
             slotProps={{
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Mail size={18} color="#64748B" />
+                    <FaLinkedin size={30} color="#3376d5" />
                   </InputAdornment>
                 ),
               },
             }}
           />
-        </Box>
 
-          {/* Phone */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Phone Number <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
-
+          {/* Facebook */}
           <TextField
-           
-            //   value={firstInfo.company_number}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_number: e.target.value,
-            //     }));
-            //   }}
-           
-            placeholder="+212 6 12 34 56 78"
+            fullWidth
+            //      value={secondtInfo.company_facebook.url}
+            //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_facebook : {...prev.company_facebook , url:e.target.value  }   }))}
+            placeholder="https://facebook.com/..."
             sx={inputStyle}
             slotProps={{
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Phone size={18} color="#64748B" />
+                    <FaFacebook size={30} color="#1f62c1" />
                   </InputAdornment>
                 ),
               },
             }}
           />
-        </Box>
 
-          {/* Website */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Website
-          </Typography>
-
+          {/* Instagram */}
           <TextField
-            //   value={firstInfo.company_webSite}
-            
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_webSite: e.target.value,
-            //     }));
-            //   }}
-            
-            placeholder="https://www.yourcompany.com"
+            fullWidth
+            //  value={secondtInfo.company_instagram.url}
+            //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_instagram : {...prev.company_instagram , url:e.target.value  }   }))}
+            placeholder="https://instagram.com/..."
             sx={inputStyle}
             slotProps={{
               input: {
                 startAdornment: (
                   <InputAdornment position="start">
-                    <Globe size={18} color="#64748B" />
+                    <FaInstagram size={30} color="#E1306C" />
                   </InputAdornment>
                 ),
               },
             }}
           />
-        </Box>
 
+          {/* X / Twitter */}
+          <TextField
+            fullWidth
+            //  value={secondtInfo.company_x.url}
+            //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_x : {...prev.company_x , url:e.target.value  }   }))}
+            placeholder="https://x.com/..."
+            sx={inputStyle}
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <FaXTwitter size={30} color="#353d49" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />
         </Box>
       </Box>
 
@@ -150,17 +141,21 @@ export default function SocialInfo() {
           height: "15%",
           boxSizing: "border-box",
           alignSelf: "end",
-          borderTop:" solid 1px #d0d0d0",
-          display:"flex",
-          alignItems:"center",
-          justifyContent:"end",pb:1.5,
-          px:4
-          
+          borderTop: " solid 1px #d0d0d0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "end",
+          pb: 1.5,
+          px: 4,
         }}
       >
-        <Button variant="contained" size="large" sx={{  display:"flex", gap:2,height:"2.5rem",fontSize:"1.1rem"}} >
-              Save
-         </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
+        >
+          Save
+        </Button>
       </Box>
     </>
   );
