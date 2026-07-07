@@ -243,6 +243,8 @@ export default function CompanyBenefits() {
     "Vision Insurance",
   ]);
 
+  const [CompanyBenefits, setCompanyBenefits] = useState([]);
+
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     company_benefit.includes(benefit.label),
   );

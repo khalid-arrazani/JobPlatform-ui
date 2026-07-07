@@ -3,7 +3,6 @@ import {
   Box,
   Divider,
   TextField,
-  MenuItem,
   InputAdornment,
   Autocomplete,Button
 } from "@mui/material";
@@ -51,7 +50,21 @@ const inputStyle = {
   },
 };
 
+
+
 export default function Companyinfo() {
+
+  const [companyinfo, setCompanyinfo] = useState({
+      company_name: "",
+      company_locatin: "",
+      company_industry: "",
+      company_about: "",
+      company_founded: "2026",
+      company_size: "1-10",
+      company_specialties : "",
+    });
+
+
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
