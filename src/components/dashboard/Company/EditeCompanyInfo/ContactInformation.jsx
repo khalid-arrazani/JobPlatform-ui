@@ -56,13 +56,7 @@ export default function ContactInfo() {
             </Typography>
 
             <TextField
-              //   value={firstInfo.company_email}
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_email: e.target.value,
-              //     }));
-              //   }}
+             
 
               placeholder="contact@company.com"
               sx={inputStyle}
