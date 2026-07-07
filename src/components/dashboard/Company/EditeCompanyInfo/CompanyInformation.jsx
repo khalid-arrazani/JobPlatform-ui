@@ -90,13 +90,7 @@ export default function Companyinfo() {
             </Typography>
 
             <TextField
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_name: e.target.value,
-              //     }));
-              //   }}
-              //   value={firstInfo.company_name}
+             
               fullWidth
               placeholder="Enter company name"
               sx={inputStyle}
@@ -112,95 +106,6 @@ export default function Companyinfo() {
             />
           </Box>
 
-          {/* Email */}
-          {/* <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Email <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
-
-          <TextField
-            fullWidth
-            //   value={firstInfo.company_email}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_email: e.target.value,
-            //     }));
-            //   }}
-            size="small"
-            placeholder="contact@company.com"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Mail size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box> */}
-
-          {/* Phone */}
-          {/* <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Phone Number <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
-
-          <TextField
-            fullWidth
-            //   value={firstInfo.company_number}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_number: e.target.value,
-            //     }));
-            //   }}
-            size="small"
-            placeholder="+212 6 12 34 56 78"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Phone size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box> */}
-
-          {/* Website */}
-          {/* <Box sx={{ minWidth: "32%", flex: 1 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Website
-          </Typography>
-
-          <TextField
-            //   value={firstInfo.company_webSite}
-            fullWidth
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_webSite: e.target.value,
-            //     }));
-            //   }}
-            size="small"
-            placeholder="https://www.yourcompany.com"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Globe size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box> */}
 
           {/* Industry */}
           <Box sx={{ minWidth: "32%", flex: 1 }}>
@@ -212,15 +117,7 @@ export default function Companyinfo() {
 
             <TextField
               placeholder="Select industry"
-              //   value={firstInfo.company_industry}
               fullWidth
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_industry: e.target.value,
-              //     }));
-              //   }}
-
               defaultValue=""
               sx={inputStyle}
               slotProps={{
@@ -233,12 +130,6 @@ export default function Companyinfo() {
                 },
               }}
             >
-              <MenuItem value="">Select industry</MenuItem>
-              <MenuItem value="Technology">Technology</MenuItem>
-              <MenuItem value="Finance">Finance</MenuItem>
-              <MenuItem value="Healthcare">Healthcare</MenuItem>
-              <MenuItem value="Marketing">Marketing</MenuItem>
-              <MenuItem value="Construction">Construction</MenuItem>
             </TextField>
           </Box>
 
@@ -251,16 +142,9 @@ export default function Companyinfo() {
             </Typography>
 
             <TextField
-              //   value={firstInfo.company_locatin}
               placeholder="Select Location"
               fullWidth
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_locatin: e.target.value,
-              //     }));
-              //   }}
-
+              
               defaultValue=""
               sx={inputStyle}
               slotProps={{
@@ -284,7 +168,7 @@ export default function Companyinfo() {
             </Typography>
 
             <CompanyFounded
-            //  setFirstInfo={setFirstInfo} firstInfo={firstInfo}
+            
             />
           </Box>
 
@@ -297,17 +181,8 @@ export default function Companyinfo() {
             </Typography>
 
             <Autocomplete
-              //   value={firstInfo.company_size}
               defaultValue={"1-10"}
               options={optionSize}
-              //   onInputChange={(event, newInputValue) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_size: newInputValue,
-              //     }));
-              //    console.log(newInputValue);
-              //   }}
-
               sx={{ width: "100%", bgcolor: "#fff" }}
               renderInput={(params) => (
                 <TextField {...params} placeholder="Select Company Size " />
@@ -319,7 +194,6 @@ export default function Companyinfo() {
           </Box>
 
           {/* Company Specialties*/}
-
           <Box sx={{ minWidth: "32%", flex: 1 }}>
             <Typography
               sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}
@@ -330,15 +204,6 @@ export default function Companyinfo() {
               freeSolo
               sx={{ width: "100%", bgcolor: "#fff" }}
               options={specialties}
-              //   value={firstInfo.company_specialties}
-              //   onInputChange={(event, newInputValue) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_specialties: newInputValue,
-              //     }));
-
-              //   }}
-
               slotProps={{
                 popper: { sx: { transition: "none", animation: "none" } },
               }}
