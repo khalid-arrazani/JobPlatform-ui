@@ -12,21 +12,7 @@ import {
   Divider,
 } from "@mui/material";
 
-import {
-  TextField,
-  MenuItem,
-  InputAdornment,
-  Autocomplete,
-} from "@mui/material";
-
-import {
-  Building2,
-  Mail,
-  Phone,
-  Globe,
-  BriefcaseBusiness,
-  MapPin,
-} from "lucide-react";
+import { Building2, Mail } from "lucide-react";
 
 import { Share2, Gift } from "lucide-react";
 import Companyinfo from "./CompanyInformation";
@@ -102,6 +88,20 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  const page = part == "Company Information" ? 
+      <Companyinfo />
+     : part == "Contact Information" ? 
+      <ContactInfo />
+     : part == "Social Links" ? 
+      <SocialInfo />
+     : part == "Benefits" ? 
+      <CompanyBenefits />
+     : null;
+  
+
+
+
   return (
     <>
       <Modal
@@ -228,9 +228,8 @@ export default function ModalInfo({ open, setOpen, fetchCompany }) {
                 boxSizing: "border-box",
               }}
             >
-              <CompanyBenefits/>
+              {page}
             </Box>
-
           </Box>
         </Box>
       </Modal>
