@@ -3,9 +3,9 @@ import {
   Box,
   Divider,
   TextField,
-  MenuItem,
+
   InputAdornment,
-  Autocomplete,Button
+Button
 } from "@mui/material";
 
 import { Globe, Phone, Mail } from "lucide-react";
@@ -15,7 +15,7 @@ const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
-    minWidth:"170%"
+    minWidth:"190%"
   },
 };
 
@@ -43,22 +43,24 @@ export default function ContactInfo() {
           sx={{
             display: "flex",
             flexDirection:"column",
-            gap: 1,
-            justifyContent: "center",
-            px: 2,
-            pt: 3,
-            height:"80%"
+            justifyContent: "space-evenly",
+            px: 3,
+            height:"86%",
+            boxSizing:"border-box"
+        
+         
           }}
         >
           
 
           {/* Email */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Box sx={{ minWidth: "32%"}}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             Company Email <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
 
           <TextField
+          
             
             //   value={firstInfo.company_email}
             //   onChange={(e) => {
@@ -83,7 +85,7 @@ export default function ContactInfo() {
         </Box>
 
           {/* Phone */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Box sx={{ minWidth: "32%" }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             Phone Number <span style={{ color: "#EF4444" }}>*</span>
           </Typography>
@@ -113,7 +115,7 @@ export default function ContactInfo() {
         </Box>
 
           {/* Website */}
-          <Box sx={{ minWidth: "32%", flex: 1 }}>
+          <Box sx={{ minWidth: "32%" }}>
           <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
             Company Website
           </Typography>
@@ -143,6 +145,9 @@ export default function ContactInfo() {
         </Box>
 
         </Box>
+
+
+        
       </Box>
 
       <Box
