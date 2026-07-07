@@ -58,6 +58,7 @@ export default function SocialInfo() {
             overflow: "auto",
             height: "70%",
             mt:4,
+            py:3.5,
             justifyContent:"space-evenly",
             alignItems:"center"
           }}
