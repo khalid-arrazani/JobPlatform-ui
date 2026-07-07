@@ -276,21 +276,20 @@ export default function CompanyBenefits() {
         <Box
           sx={{
             width: "100%",
-            height: "85.5%",
+            height: "84%",
             boxSizing: "border-box",
             display:"flex",
-            justifyContent:"center"
+            justifyContent:"center",
+            alignItems:"center"
           }}
         >
 
-            
           <Box
           sx={{
             width: "95%",
             height: "100%",
-            borderRadius: "15px",
             boxSizing: "border-box",
-            p: 3,
+            p: 2.5,
           }}
         >
 
@@ -301,14 +300,14 @@ export default function CompanyBenefits() {
               display: "flex",
               flexWrap: "wrap",
               gap: 1.5,
-              mb: 1,
+              mb: 1.5,
               width: "100%",
               height: "90%",
               border: "dashed 0.5px #c8c8c8",
               p: 2,
               px: 3,
               boxSizing: "border-box",
-              overflow: "auto",
+              overflow: "auto", borderRadius: "25px",
             }}
           >
             {selectedBenefitObjects?.map((benefit) => {
