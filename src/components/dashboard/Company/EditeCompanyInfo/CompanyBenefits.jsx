@@ -254,7 +254,6 @@ export default function CompanyBenefits() {
           width: "100%",
           height: "85%",
           boxSizing: "border-box",
-   
         }}
       >
         <Typography
@@ -278,125 +277,122 @@ export default function CompanyBenefits() {
             width: "100%",
             height: "84%",
             boxSizing: "border-box",
-            display:"flex",
-            justifyContent:"center",
-            alignItems:"center"
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
-
-          <Box
-          sx={{
-            width: "95%",
-            height: "100%",
-            boxSizing: "border-box",
-            p: 2.5,
-          }}
-        >
-
-
           <Box
             sx={{
-              justifyContent: "space-between",
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 1.5,
-              mb: 1.5,
-              width: "100%",
-              height: "90%",
-              border: "dashed 0.5px #c8c8c8",
-              p: 2,
-              px: 3,
+              width: "95%",
+              height: "100%",
               boxSizing: "border-box",
-              overflow: "auto", borderRadius: "25px",
+              p: 2.5,
             }}
           >
-            {selectedBenefitObjects?.map((benefit) => {
-              return (
-                <Card
-                  key={benefit.label}
-                  sx={{
-                    boxSizing: "border-box",
-                    width: "11.5rem",
-                    height: "8.5rem",
-                    px: 1.8,
-                    py: 1.5,
-                    display: "flex",
-                    flexDirection: "column",
-                    alignItems: "center",
-                    borderRadius: "14px",
-                    border: "1px solid #b8b8b89b",
-                    cursor: "pointer",
-                    boxShadow: "0 8px 24px rgba(39, 38, 38, 0)",
-                    transition: "0.5s",
-                    "&:hover": {
-                      transform: "translateY(-4px)",
-                      boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
-                    },
-                  }}
-                >
-                  <Box
+            <Box
+              sx={{
+                justifyContent: "space-between",
+                display: "flex",
+                flexWrap: "wrap",
+                gap: 1.5,
+                mb: 1.5,
+                width: "100%",
+                height: "90%",
+                border: "dashed 0.5px #c8c8c8",
+                p: 2,
+                px: 3,
+                boxSizing: "border-box",
+                overflow: "auto",
+                borderRadius: "25px",
+              }}
+            >
+              {selectedBenefitObjects?.map((benefit) => {
+                return (
+                  <Card
+                    key={benefit.label}
                     sx={{
-                      width: "4rem",
-                      height: "3.2rem",
-                      p: "0.7rem",
-                      borderRadius: "12px",
-                      bgcolor: benefit.bg,
+                      boxSizing: "border-box",
+                      width: "11.5rem",
+                      height: "8.5rem",
+                      px: 1.8,
+                      py: 1.5,
                       display: "flex",
+                      flexDirection: "column",
                       alignItems: "center",
-                      justifyContent: "center",
-                      mb: 1,
+                      borderRadius: "14px",
+                      border: "1px solid #b8b8b89b",
+                      cursor: "pointer",
+                      boxShadow: "0 8px 24px rgba(39, 38, 38, 0)",
+                      transition: "0.5s",
+                      "&:hover": {
+                        transform: "translateY(-4px)",
+                        boxShadow: "0 8px 10px rgba(15, 23, 42, 0.2)",
+                      },
                     }}
                   >
-                    {<benefit.icon size={"2rem"} color={benefit.color} />}
-                  </Box>
+                    <Box
+                      sx={{
+                        width: "4rem",
+                        height: "3.2rem",
+                        p: "0.7rem",
+                        borderRadius: "12px",
+                        bgcolor: benefit.bg,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        mb: 1,
+                      }}
+                    >
+                      {<benefit.icon size={"2rem"} color={benefit.color} />}
+                    </Box>
 
-                  <Typography
-                    sx={{
-                      textAlign: "center",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      color: "#06051cd1",
-                    }}
-                  >
-                    {benefit.label}
-                  </Typography>
-                </Card>
-              );
-            })}
-          </Box>
+                    <Typography
+                      sx={{
+                        textAlign: "center",
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        color: "#06051cd1",
+                      }}
+                    >
+                      {benefit.label}
+                    </Typography>
+                  </Card>
+                );
+              })}
+            </Box>
 
-          <Autocomplete
-            multiple
-            size="small"
-            disableCloseOnSelect
-            options={companyBenefit}
-            value={company_benefit}
-            onChange={(event, newValue) => {
-              if (newValue.length <= 6) {
-                setCompany_benefit(newValue);
+            <Autocomplete
+              multiple
+              size="small"
+              disableCloseOnSelect
+              options={companyBenefit}
+              value={company_benefit}
+              onChange={(event, newValue) => {
+                if (newValue.length <= 6) {
+                  setCompany_benefit(newValue);
+                }
+              }}
+              getOptionDisabled={(option) =>
+                company_benefit.length >= 6 && !company_benefit.includes(option)
               }
-            }}
-            getOptionDisabled={(option) =>
-              company_benefit.length >= 6 &&
-              !company_benefit.includes(option)
-            }
-            renderTags={() => null}
-            sx={{
-              "& .MuiAutocomplete-tag": {
-                display: "none",
-              },
-            }}
-            slotProps={{
-              popper: { sx: { transition: "none", animation: "none", m: 5 } },
-            }}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                placeholder={`${company_benefit.length}/6 benefits selected`}
-              />
-            )}
-          />
-        </Box> 
+              renderTags={() => null}
+              sx={{
+                "& .MuiAutocomplete-tag": {
+                  display: "none",
+                },
+              }}
+              slotProps={{
+                popper: { sx: { transition: "none", animation: "none", m: 5 } },
+              }}
+              renderInput={(params) => (
+                <TextField
+                  {...params}
+                  placeholder={`${company_benefit.length}/6 benefits selected`}
+                />
+              )}
+            />
+          </Box>
         </Box>
 
         {/* Benefits */}
