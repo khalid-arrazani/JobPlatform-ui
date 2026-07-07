@@ -249,7 +249,14 @@ export default function CompanyBenefits() {
 
   return (
     <>
-      <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
+      <Box
+        sx={{
+          width: "100%",
+          height: "85%",
+          boxSizing: "border-box",
+   
+        }}
+      >
         <Typography
           sx={{
             fontSize: "1.5rem",
@@ -266,16 +273,24 @@ export default function CompanyBenefits() {
 
         <Divider />
 
-        {/* Benefits */}
-
-        {/* <Box
+        <Box
           sx={{
-            width: "80%",
-            height: "85%",
-            borderRadius: "15px",
-            border: "solid 0.5px #b3b0b069",
+            width: "100%",
+            height: "85.5%",
             boxSizing: "border-box",
-            p: 2,
+            display:"flex",
+            justifyContent:"center"
+          }}
+        >
+
+            
+          <Box
+          sx={{
+            width: "95%",
+            height: "100%",
+            borderRadius: "15px",
+            boxSizing: "border-box",
+            p: 3,
           }}
         >
 
@@ -290,7 +305,8 @@ export default function CompanyBenefits() {
               width: "100%",
               height: "90%",
               border: "dashed 0.5px #c8c8c8",
-              p: 1,
+              p: 2,
+              px: 3,
               boxSizing: "border-box",
               overflow: "auto",
             }}
@@ -301,8 +317,8 @@ export default function CompanyBenefits() {
                   key={benefit.label}
                   sx={{
                     boxSizing: "border-box",
-                    width: "10rem",
-                    height: "9rem",
+                    width: "11.5rem",
+                    height: "8.5rem",
                     px: 1.8,
                     py: 1.5,
                     display: "flex",
@@ -321,8 +337,8 @@ export default function CompanyBenefits() {
                 >
                   <Box
                     sx={{
-                      width: "2.2rem",
-                      height: "2.2rem",
+                      width: "4rem",
+                      height: "3.2rem",
                       p: "0.7rem",
                       borderRadius: "12px",
                       bgcolor: benefit.bg,
@@ -332,13 +348,13 @@ export default function CompanyBenefits() {
                       mb: 1,
                     }}
                   >
-                    {<benefit.icon color={benefit.color} />}
+                    {<benefit.icon size={"2rem"} color={benefit.color} />}
                   </Box>
 
                   <Typography
                     sx={{
                       textAlign: "center",
-                      fontSize: "1rem",
+                      fontSize: "1.1rem",
                       fontWeight: 600,
                       color: "#06051cd1",
                     }}
@@ -381,8 +397,10 @@ export default function CompanyBenefits() {
               />
             )}
           />
-        </Box> */}
+        </Box> 
+        </Box>
 
+        {/* Benefits */}
       </Box>
 
       <Box
