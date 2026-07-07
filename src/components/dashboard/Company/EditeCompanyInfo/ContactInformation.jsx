@@ -3,19 +3,17 @@ import {
   Box,
   Divider,
   TextField,
-
   InputAdornment,
-Button
+  Button,
 } from "@mui/material";
 
 import { Globe, Phone, Mail } from "lucide-react";
 
- 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
-    minWidth:"190%"
+    minWidth: "190%",
   },
 };
 
@@ -42,112 +40,107 @@ export default function ContactInfo() {
         <Box
           sx={{
             display: "flex",
-            flexDirection:"column",
+            flexDirection: "column",
             justifyContent: "space-evenly",
             px: 3,
-            height:"86%",
-            boxSizing:"border-box"
-        
-         
+            height: "86%",
+            boxSizing: "border-box",
           }}
         >
-          
-
           {/* Email */}
-          <Box sx={{ minWidth: "32%"}}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Email <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
+          <Box sx={{ minWidth: "32%" }}>
+            <Typography
+              sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}
+            >
+              Company Email <span style={{ color: "#EF4444" }}>*</span>
+            </Typography>
 
-          <TextField
-          
-            
-            //   value={firstInfo.company_email}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_email: e.target.value,
-            //     }));
-            //   }}
-            
-            placeholder="contact@company.com"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Mail size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box>
+            <TextField
+              //   value={firstInfo.company_email}
+              //   onChange={(e) => {
+              //     setFirstInfo((prev) => ({
+              //       ...prev,
+              //       company_email: e.target.value,
+              //     }));
+              //   }}
+
+              placeholder="contact@company.com"
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Mail size={18} color="#64748B" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
+          </Box>
 
           {/* Phone */}
           <Box sx={{ minWidth: "32%" }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Phone Number <span style={{ color: "#EF4444" }}>*</span>
-          </Typography>
+            <Typography
+              sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}
+            >
+              Phone Number <span style={{ color: "#EF4444" }}>*</span>
+            </Typography>
 
-          <TextField
-           
-            //   value={firstInfo.company_number}
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_number: e.target.value,
-            //     }));
-            //   }}
-           
-            placeholder="+212 6 12 34 56 78"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Phone size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box>
+            <TextField
+              //   value={firstInfo.company_number}
+              //   onChange={(e) => {
+              //     setFirstInfo((prev) => ({
+              //       ...prev,
+              //       company_number: e.target.value,
+              //     }));
+              //   }}
+
+              placeholder="+212 6 12 34 56 78"
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Phone size={18} color="#64748B" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
+          </Box>
 
           {/* Website */}
           <Box sx={{ minWidth: "32%" }}>
-          <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
-            Company Website
-          </Typography>
+            <Typography
+              sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}
+            >
+              Company Website
+            </Typography>
 
-          <TextField
-            //   value={firstInfo.company_webSite}
-            
-            //   onChange={(e) => {
-            //     setFirstInfo((prev) => ({
-            //       ...prev,
-            //       company_webSite: e.target.value,
-            //     }));
-            //   }}
-            
-            placeholder="https://www.yourcompany.com"
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Globe size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
+            <TextField
+              //   value={firstInfo.company_webSite}
+
+              //   onChange={(e) => {
+              //     setFirstInfo((prev) => ({
+              //       ...prev,
+              //       company_webSite: e.target.value,
+              //     }));
+              //   }}
+
+              placeholder="https://www.yourcompany.com"
+              sx={inputStyle}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Globe size={18} color="#64748B" />
+                    </InputAdornment>
+                  ),
+                },
+              }}
+            />
+          </Box>
         </Box>
-
-        </Box>
-
-
-        
       </Box>
 
       <Box
@@ -155,17 +148,21 @@ export default function ContactInfo() {
           height: "15%",
           boxSizing: "border-box",
           alignSelf: "end",
-          borderTop:" solid 1px #d0d0d0",
-          display:"flex",
-          alignItems:"center",
-          justifyContent:"end",pb:1.5,
-          px:4
-          
+          borderTop: " solid 1px #d0d0d0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "end",
+          pb: 1.5,
+          px: 4,
         }}
       >
-        <Button variant="contained" size="large" sx={{  display:"flex", gap:2,height:"2.5rem",fontSize:"1.1rem"}} >
-              Save
-         </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
+        >
+          Save
+        </Button>
       </Box>
     </>
   );
