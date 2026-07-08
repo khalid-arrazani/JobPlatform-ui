@@ -48,12 +48,10 @@ export default function SocialInfo({ CompanyInfo }) {
       platform: item.platform,
       url: item.url,
     }));
-    setSocialInfo(socialLinks) 
+    setSocialInfo(socialLinks);
   }, [CompanyInfo]);
 
-
-
- console.log(socialInfo);
+  console.log(socialInfo);
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
@@ -93,7 +91,9 @@ export default function SocialInfo({ CompanyInfo }) {
         >
           {/* LinkedIn */}
           <TextField
-               value={socialInfo.company_linkdin.url}
+            value={
+              socialInfo.find((item) => item.platform === "linkdin")?.url || ""
+            }
             //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
             fullWidth
             placeholder="https://linkedin.com/company/..."
@@ -112,7 +112,9 @@ export default function SocialInfo({ CompanyInfo }) {
           {/* Facebook */}
           <TextField
             fullWidth
-            //      value={secondtInfo.company_facebook.url}
+            value={
+              socialInfo.find((item) => item.platform === "facebook")?.url || ""
+            }
             //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_facebook : {...prev.company_facebook , url:e.target.value  }   }))}
             placeholder="https://facebook.com/..."
             sx={inputStyle}
@@ -130,7 +132,9 @@ export default function SocialInfo({ CompanyInfo }) {
           {/* Instagram */}
           <TextField
             fullWidth
-            //  value={secondtInfo.company_instagram.url}
+            value={
+              socialInfo.find((item) => item.platform === "instagram")?.url || ""
+            }
             //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_instagram : {...prev.company_instagram , url:e.target.value  }   }))}
             placeholder="https://instagram.com/..."
             sx={inputStyle}
@@ -148,7 +152,9 @@ export default function SocialInfo({ CompanyInfo }) {
           {/* X / Twitter */}
           <TextField
             fullWidth
-            //  value={secondtInfo.company_x.url}
+            value={
+              socialInfo.find((item) => item.platform === "x")?.url || ""
+            }
             //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_x : {...prev.company_x , url:e.target.value  }   }))}
             placeholder="https://x.com/..."
             sx={inputStyle}
