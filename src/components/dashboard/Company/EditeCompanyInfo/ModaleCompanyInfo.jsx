@@ -22,7 +22,7 @@ import ContactInfo from "./ContactInformation";
 import SocialInfo from "./SocialLinks";
 import CompanyBenefits from "./CompanyBenefits";
 
-export default function ModalInfo({ open, setOpen, fetchCompany }) {
+export default function ModalInfo({ open, setOpen, fetchCompany, }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
 

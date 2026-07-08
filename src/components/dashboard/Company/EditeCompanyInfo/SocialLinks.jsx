@@ -26,6 +26,8 @@ const inputStyle = {
 };
 
 export default function SocialInfo() {
+
+
    const [socialInfo, setSocialInfo] = useState({
     company_linkdin: {
       platform: "linkdin",
@@ -43,6 +45,7 @@ export default function SocialInfo() {
       platform: "x",
       url: "",
     },
+    
   });
   return (
     <>
