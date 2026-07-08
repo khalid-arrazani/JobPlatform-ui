@@ -6,7 +6,7 @@ import {
   InputAdornment,
   Button,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import {
   FaLinkedin,
@@ -44,28 +44,14 @@ export default function SocialInfo({ CompanyInfo }) {
   ]);
 
   useEffect(() => {
-    // setContactInfo({
-    //   company_linkdin: {
-    //     platform: "linkdin",
-    //     url: "",
-    //   },
-    //   company_facebook: {
-    //     platform: "facebook",
-    //     url: "",
-    //   },
-    //   company_instagram: {
-    //     platform: "instagram",
-    //     url: "",
-    //   },
-    //   company_x: {
-    //     platform: "x",
-    //     url: "",
-    //   },
-    // });
-
-    const socialLinks = CompanyInfo?.socialLinks.map((item, index) => {});
+    const socialLinks = CompanyInfo?.socialLinks.map((item) => ({
+      platform: item.platform,
+      url: item.url,
+    }));
+    setSocialInfo(socialLinks) 
   }, [CompanyInfo]);
 
+ console.log(socialInfo);
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
