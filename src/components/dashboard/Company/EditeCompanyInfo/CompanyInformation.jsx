@@ -13,6 +13,9 @@ import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
 import CompanyFounded from "./CompanyFounded";
 import { useEffect, useState } from "react";
 
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../logic/api/company/Company";
+
 const optionSize = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"];
 const specialties = [
   "Frontend Development",
@@ -52,8 +55,9 @@ const inputStyle = {
   },
 };
 
-export default function Companyinfo({ CompanyInfo }) {
-
+export default function Companyinfo({ CompanyInfo ,fetchCompany}) {
+  const { setSnackBar } = useAuth();
+  const [reload , setReload]= useState(false)
 
   const [companyinfo, setCompanyinfo] = useState({
     company_name: "",
@@ -76,7 +80,37 @@ export default function Companyinfo({ CompanyInfo }) {
     });
   }, [CompanyInfo]);
 
-
+const UpdateMyCompanyinfo = async () => {
+        setReload(true)
+      try {
+  
+        const res = await UpdateMyCompany({
+          name:companyinfo.company_name,
+          headquarters:companyinfo.company_locatin,
+          industry:companyinfo.company_industry,
+          description:companyinfo.company_about,
+          foundedYear:companyinfo.company_founded,
+          companySize:companyinfo.company_size,
+          specialties:companyinfo.company_specialties,
+        });
+  
+       setSnackBar({
+          open: true,
+          message: res?.message,
+          severity: "success",
+        });
+  
+        fetchCompany()
+      } catch (error) {
+        setSnackBar({
+          open: true,
+          message: error?.response?.data?.message,
+          severity: "error",
+        });
+      }finally{
+        setReload(false)
+      }
+    };
 
   
 
@@ -326,6 +360,7 @@ export default function Companyinfo({ CompanyInfo }) {
         }}
       >
         <Button
+        onClick={UpdateMyCompanyinfo}
           variant="contained"
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
