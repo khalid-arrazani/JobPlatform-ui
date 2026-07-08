@@ -243,7 +243,7 @@ export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
 
   const [company_benefit, setCompany_benefit] = useState([]);
 
-  console.log(company_benefit);
+  console.log("111",company_benefit);
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     company_benefit.includes(benefit.label),
