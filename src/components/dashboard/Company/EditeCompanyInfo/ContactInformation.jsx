@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 
 import { Globe, Phone, Mail } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -17,12 +18,23 @@ const inputStyle = {
   },
 };
 
-export default function ContactInfo() {
+
+export default function ContactInfo({CompanyInfo}) {
+
     const [contactInfo, setContactInfo] = useState({
       company_email: "",
       company_number: "",
       company_webSite: "",
     });
+
+useEffect(() => {
+    setContactInfo({
+      company_email: CompanyInfo.company_email,
+      company_number: CompanyInfo.company_number,
+      company_webSite: CompanyInfo.website 
+    });
+  }, [CompanyInfo]);
+
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
@@ -61,7 +73,12 @@ export default function ContactInfo() {
             </Typography>
 
             <TextField
-             
+             value={contactInfo.company_email}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_email: e.target.value,
+                }))}}
 
               placeholder="contact@company.com"
               sx={inputStyle}
@@ -86,13 +103,12 @@ export default function ContactInfo() {
             </Typography>
 
             <TextField
-              //   value={firstInfo.company_number}
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_number: e.target.value,
-              //     }));
-              //   }}
+              value={contactInfo.company_number}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_number: e.target.value,
+                }))}}
 
               placeholder="+212 6 12 34 56 78"
               sx={inputStyle}
@@ -117,14 +133,12 @@ export default function ContactInfo() {
             </Typography>
 
             <TextField
-              //   value={firstInfo.company_webSite}
-
-              //   onChange={(e) => {
-              //     setFirstInfo((prev) => ({
-              //       ...prev,
-              //       company_webSite: e.target.value,
-              //     }));
-              //   }}
+              value={contactInfo.company_webSite}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_webSite: e.target.value,
+                }))}}
 
               placeholder="https://www.yourcompany.com"
               sx={inputStyle}

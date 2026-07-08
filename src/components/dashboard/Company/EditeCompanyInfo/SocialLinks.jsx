@@ -3,12 +3,10 @@ import {
   Box,
   Divider,
   TextField,
-
   InputAdornment,
-
   Button,
 } from "@mui/material";
-
+import { useState } from "react";
 
 import {
   FaLinkedin,
@@ -25,28 +23,49 @@ const inputStyle = {
   },
 };
 
-export default function SocialInfo() {
-
-
-   const [socialInfo, setSocialInfo] = useState({
-    company_linkdin: {
+export default function SocialInfo({ CompanyInfo }) {
+  const [socialInfo, setSocialInfo] = useState([
+    {
       platform: "linkdin",
       url: "",
     },
-    company_facebook: {
+    {
       platform: "facebook",
       url: "",
     },
-    company_instagram: {
+    {
       platform: "instagram",
       url: "",
     },
-    company_x: {
+    {
       platform: "x",
       url: "",
     },
-    
-  });
+  ]);
+
+  useEffect(() => {
+    // setContactInfo({
+    //   company_linkdin: {
+    //     platform: "linkdin",
+    //     url: "",
+    //   },
+    //   company_facebook: {
+    //     platform: "facebook",
+    //     url: "",
+    //   },
+    //   company_instagram: {
+    //     platform: "instagram",
+    //     url: "",
+    //   },
+    //   company_x: {
+    //     platform: "x",
+    //     url: "",
+    //   },
+    // });
+
+    const socialLinks = CompanyInfo?.socialLinks.map((item, index) => {});
+  }, [CompanyInfo]);
+
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
@@ -78,10 +97,10 @@ export default function SocialInfo() {
             boxSizing: "border-box",
             overflow: "auto",
             height: "70%",
-            mt:4,
-            py:3.5,
-            justifyContent:"space-evenly",
-            alignItems:"center"
+            mt: 4,
+            py: 3.5,
+            justifyContent: "space-evenly",
+            alignItems: "center",
           }}
         >
           {/* LinkedIn */}

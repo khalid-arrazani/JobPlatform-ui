@@ -4,12 +4,14 @@ import {
   Divider,
   TextField,
   InputAdornment,
-  Autocomplete,Button
+  Autocomplete,
+  Button,
 } from "@mui/material";
 
 import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
 
 import CompanyFounded from "./CompanyFounded";
+import { useEffect, useState } from "react";
 
 const optionSize = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"];
 const specialties = [
@@ -50,20 +52,33 @@ const inputStyle = {
   },
 };
 
+export default function Companyinfo({ CompanyInfo }) {
 
-
-export default function Companyinfo({CompanyInfo}) {
 
   const [companyinfo, setCompanyinfo] = useState({
-      company_name: "",
-      company_locatin: "",
-      company_industry: "",
-      company_about: "",
-      company_founded: "2026",
-      company_size: "1-10",
-      company_specialties : "",
+    company_name: "",
+    company_locatin: "",
+    company_industry: "",
+    company_about: "",
+    company_founded: "2026",
+    company_size: "1-10",
+    company_specialties: "",
+  });
+  useEffect(() => {
+    setCompanyinfo({
+      company_name: CompanyInfo.name,
+      company_locatin: CompanyInfo.headquarters,
+      company_industry: CompanyInfo.industry,
+      company_about: CompanyInfo.description,
+      company_founded: CompanyInfo.foundedYear,
+      company_size: CompanyInfo.companySize,
+      company_specialties: CompanyInfo.specialties,
     });
+  }, [CompanyInfo]);
 
+
+
+  
 
   return (
     <>
@@ -103,7 +118,13 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <TextField
-             
+              value={companyinfo.company_name}
+              onChange={(e) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_name: e.target.value,
+                }));
+              }}
               fullWidth
               placeholder="Enter company name"
               sx={inputStyle}
@@ -119,7 +140,6 @@ export default function Companyinfo({CompanyInfo}) {
             />
           </Box>
 
-
           {/* Industry */}
           <Box sx={{ minWidth: "32%", flex: 1 }}>
             <Typography
@@ -129,6 +149,13 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <TextField
+              value={companyinfo.company_industry}
+              onChange={(e) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_industry: e.target.value,
+                }));
+              }}
               placeholder="Select industry"
               fullWidth
               defaultValue=""
@@ -142,8 +169,7 @@ export default function Companyinfo({CompanyInfo}) {
                   ),
                 },
               }}
-            >
-            </TextField>
+            ></TextField>
           </Box>
 
           {/* headquarters */}
@@ -155,9 +181,15 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <TextField
+              value={companyinfo.company_locatin}
+              onChange={(e) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_locatin: e.target.value,
+                }));
+              }}
               placeholder="Select Location"
               fullWidth
-              
               defaultValue=""
               sx={inputStyle}
               slotProps={{
@@ -181,7 +213,7 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <CompanyFounded
-            
+              setCompanyinfo={setCompanyinfo}
             />
           </Box>
 
@@ -194,6 +226,13 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <Autocomplete
+              value={companyinfo.company_size}
+              onChange={(event, newValue) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_size: newValue,
+                }));
+              }}
               defaultValue={"1-10"}
               options={optionSize}
               sx={{ width: "100%", bgcolor: "#fff" }}
@@ -214,6 +253,13 @@ export default function Companyinfo({CompanyInfo}) {
               Specialties <span style={{ color: "#EF4444" }}>*</span>
             </Typography>
             <Autocomplete
+              value={companyinfo.company_specialties}
+              onChange={(event, newValue) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_specialties: newValue,
+                }));
+              }}
               freeSolo
               sx={{ width: "100%", bgcolor: "#fff" }}
               options={specialties}
@@ -231,7 +277,6 @@ export default function Companyinfo({CompanyInfo}) {
           </Box>
 
           {/* About Company */}
-
           <Box sx={{ minWidth: "80%", flex: 1 }}>
             <Typography
               sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}
@@ -240,14 +285,13 @@ export default function Companyinfo({CompanyInfo}) {
             </Typography>
 
             <TextField
-              //   value={firstInfo.company_about}
-              //   onChange={(e) => {
-              //     e.target.value.length <= 2000 &&
-              //       setFirstInfo((prev) => ({
-              //         ...prev,
-              //         company_about: e.target.value,
-              //       }));
-              //   }}
+              value={companyinfo.company_about}
+              onChange={(e) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_about: e.target.value,
+                }));
+              }}
               fullWidth
               multiline
               rows={4}
@@ -273,17 +317,21 @@ export default function Companyinfo({CompanyInfo}) {
           height: "15%",
           boxSizing: "border-box",
           alignSelf: "end",
-          borderTop:" solid 1px #d0d0d0",
-          display:"flex",
-          alignItems:"center",
-          justifyContent:"end",pb:1.5,
-          px:4
-          
+          borderTop: " solid 1px #d0d0d0",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "end",
+          pb: 1.5,
+          px: 4,
         }}
       >
-        <Button variant="contained" size="large" sx={{  display:"flex", gap:2,height:"2.5rem",fontSize:"1.1rem"}} >
-              Save
-         </Button>
+        <Button
+          variant="contained"
+          size="large"
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
+        >
+          Save
+        </Button>
       </Box>
     </>
   );

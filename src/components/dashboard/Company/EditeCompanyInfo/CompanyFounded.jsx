@@ -4,14 +4,14 @@ import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DatePicker } from "@mui/x-date-pickers/DatePicker";
 import { useEffect, useState } from "react";
 
-export default function CompanyFounded({ setFirstInfo }) {
+export default function CompanyFounded({setCompanyinfo }) {
   const [value, setValue] = useState(dayjs());
 
-  // useEffect(()=>{
-  //   setFirstInfo((prev)=>({
-  //   ...prev , company_founded : value.year()
-  //   }))
-  // },[value])
+  useEffect(()=>{
+    setCompanyinfo((prev)=>({
+    ...prev , company_founded : value.year()
+    }))
+  },[value])
 
   return (
     <LocalizationProvider  dateAdapter={AdapterDayjs}>
