@@ -250,7 +250,6 @@ export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
   );
 
 
-
   useEffect(() => {
     setCompany_benefit(CompanyInfo?.benefits);
   }, [CompanyInfo]);
