@@ -52,7 +52,7 @@ const inputStyle = {
 
 
 
-export default function Companyinfo() {
+export default function Companyinfo({CompanyInfo}) {
 
   const [companyinfo, setCompanyinfo] = useState({
       company_name: "",

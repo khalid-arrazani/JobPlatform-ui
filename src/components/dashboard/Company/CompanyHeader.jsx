@@ -125,6 +125,8 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           open={openCompanyInfoEdite}
           setOpen={setOpenCompanyInfoEdite}
           fetchCompany={fetchCompany}
+          CompanyInfo={CompanyInfo}
+
         />
         {/* ============================================================================== */}
 

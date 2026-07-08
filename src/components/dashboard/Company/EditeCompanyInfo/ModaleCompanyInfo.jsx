@@ -22,7 +22,7 @@ import ContactInfo from "./ContactInformation";
 import SocialInfo from "./SocialLinks";
 import CompanyBenefits from "./CompanyBenefits";
 
-export default function ModalInfo({ open, setOpen, fetchCompany, }) {
+export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
 
@@ -90,13 +90,13 @@ export default function ModalInfo({ open, setOpen, fetchCompany, }) {
   };
 
   const page = part == "Company Information" ? 
-      <Companyinfo />
+      <Companyinfo CompanyInfo={CompanyInfo} />
      : part == "Contact Information" ? 
-      <ContactInfo />
+      <ContactInfo CompanyInfo={CompanyInfo}  />
      : part == "Social Links" ? 
-      <SocialInfo />
+      <SocialInfo  CompanyInfo={CompanyInfo} />
      : part == "Benefits" ? 
-      <CompanyBenefits />
+      <CompanyBenefits CompanyInfo={CompanyInfo} />
      : null;
   
 
