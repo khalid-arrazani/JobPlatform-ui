@@ -261,11 +261,8 @@ export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
       setReload(true)
 
       try {
-        const formData = new FormData();
   
-        formData.append("benefits",company_benefit);
-  
-        const res = await UpdateMyCompany(formData);
+        const res = await UpdateMyCompany({benefits:company_benefit});
   
        setSnackBar({
           open: true,
