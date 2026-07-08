@@ -43,6 +43,8 @@ export default function SocialInfo({ CompanyInfo }) {
     },
   ]);
 
+
+
   useEffect(() => {
     const socialLinks = CompanyInfo?.socialLinks.map((item) => ({
       platform: item.platform,
@@ -51,7 +53,7 @@ export default function SocialInfo({ CompanyInfo }) {
     setSocialInfo(socialLinks);
   }, [CompanyInfo]);
 
-  console.log(socialInfo);
+
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
@@ -94,7 +96,15 @@ export default function SocialInfo({ CompanyInfo }) {
             value={
               socialInfo.find((item) => item.platform === "linkdin")?.url || ""
             }
-            //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
+            onChange={(e) => {
+              setSocialInfo((prev) =>
+                prev.map((item) =>
+                  item.platform === "linkdin"
+                    ? { ...item, url: e.target.value }
+                    : item,
+                ),
+              );
+            }}
             fullWidth
             placeholder="https://linkedin.com/company/..."
             sx={inputStyle}
@@ -115,7 +125,15 @@ export default function SocialInfo({ CompanyInfo }) {
             value={
               socialInfo.find((item) => item.platform === "facebook")?.url || ""
             }
-            //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_facebook : {...prev.company_facebook , url:e.target.value  }   }))}
+            onChange={(e) => {
+              setSocialInfo((prev) =>
+                prev.map((item) =>
+                  item.platform === "facebook"
+                    ? { ...item, url: e.target.value }
+                    : item,
+                ),
+              );
+            }}
             placeholder="https://facebook.com/..."
             sx={inputStyle}
             slotProps={{
@@ -133,9 +151,18 @@ export default function SocialInfo({ CompanyInfo }) {
           <TextField
             fullWidth
             value={
-              socialInfo.find((item) => item.platform === "instagram")?.url || ""
+              socialInfo.find((item) => item.platform === "instagram")?.url ||
+              ""
             }
-            //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_instagram : {...prev.company_instagram , url:e.target.value  }   }))}
+            onChange={(e) => {
+              setSocialInfo((prev) =>
+                prev.map((item) =>
+                  item.platform === "instagram"
+                    ? { ...item, url: e.target.value }
+                    : item,
+                ),
+              );
+            }}
             placeholder="https://instagram.com/..."
             sx={inputStyle}
             slotProps={{
@@ -152,10 +179,16 @@ export default function SocialInfo({ CompanyInfo }) {
           {/* X / Twitter */}
           <TextField
             fullWidth
-            value={
-              socialInfo.find((item) => item.platform === "x")?.url || ""
-            }
-            //  onChange={(e)=>setSecondInfo((prev)=>({...prev, company_x : {...prev.company_x , url:e.target.value  }   }))}
+            value={socialInfo.find((item) => item.platform === "x")?.url || ""}
+            onChange={(e) => {
+              setSocialInfo((prev) =>
+                prev.map((item) =>
+                  item.platform === "x"
+                    ? { ...item, url: e.target.value }
+                    : item,
+                ),
+              );
+            }}
             placeholder="https://x.com/..."
             sx={inputStyle}
             slotProps={{
