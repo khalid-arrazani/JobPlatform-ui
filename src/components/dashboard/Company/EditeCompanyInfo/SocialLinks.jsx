@@ -26,6 +26,24 @@ const inputStyle = {
 };
 
 export default function SocialInfo() {
+   const [socialInfo, setSocialInfo] = useState({
+    company_linkdin: {
+      platform: "linkdin",
+      url: "",
+    },
+    company_facebook: {
+      platform: "facebook",
+      url: "",
+    },
+    company_instagram: {
+      platform: "instagram",
+      url: "",
+    },
+    company_x: {
+      platform: "x",
+      url: "",
+    },
+  });
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>

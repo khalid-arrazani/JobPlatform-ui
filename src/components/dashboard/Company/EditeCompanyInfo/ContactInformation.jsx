@@ -18,6 +18,11 @@ const inputStyle = {
 };
 
 export default function ContactInfo() {
+    const [contactInfo, setContactInfo] = useState({
+      company_email: "",
+      company_number: "",
+      company_webSite: "",
+    });
   return (
     <>
       <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
