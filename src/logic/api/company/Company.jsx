@@ -20,13 +20,24 @@ export const getmyCompany = async (
     "/company/my-company",
      { withCredentials: true }
   );
-
   return response.data;
 };
 
 
-// Get my Company
-export const getCompanyById = async ( ) => {
+// Update  my Company
+export const UpdateMyCompany = async (
+  formData
+) => {
+  const response = await API.put(
+    "/company/me",
+    formData, { withCredentials: true }
+  );
+  return response.data;
+};
+
+
+// Get Company by Id
+export const getCompanyById = async () => {
   const response = await API.get(
    `/company/6a42d392ef9e67e39f882ace`,
      { withCredentials: true }
@@ -58,7 +69,6 @@ export const uptadeCompanyLogo = async (
   console.log(response.data);
   return response.data;
 };
-
 
 // delete Company Bnner
 export const deleteCompanyBnner = async ( ) => {

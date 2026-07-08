@@ -90,13 +90,13 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
   };
 
   const page = part == "Company Information" ? 
-      <Companyinfo CompanyInfo={CompanyInfo} />
+      <Companyinfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany} />
      : part == "Contact Information" ? 
-      <ContactInfo CompanyInfo={CompanyInfo}  />
+      <ContactInfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}   />
      : part == "Social Links" ? 
-      <SocialInfo  CompanyInfo={CompanyInfo} />
+      <SocialInfo  CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}  />
      : part == "Benefits" ? 
-      <CompanyBenefits CompanyInfo={CompanyInfo} />
+      <CompanyBenefits CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}  />
      : null;
   
 

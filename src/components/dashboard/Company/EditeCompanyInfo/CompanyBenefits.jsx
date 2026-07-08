@@ -29,7 +29,9 @@ import {
   Baby,
   Monitor,
 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../logic/api/company/Company";
 
 const companyBenefits = [
   {
@@ -233,21 +235,55 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
-export default function CompanyBenefits() {
-  const [company_benefit, setCompany_benefit] = useState([
-    "Remote Work",
-    "Hybrid Work",
-    "Flexible Hours",
-    "Health Insurance",
-    "Dental Insurance",
-    "Vision Insurance",
-  ]);
+export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
 
-  const [CompanyBenefits, setCompanyBenefits] = useState([]);
+  const { setSnackBar } = useAuth();
+  const [reload , setReload]= useState(false)
+
+
+  const [company_benefit, setCompany_benefit] = useState([]);
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     company_benefit.includes(benefit.label),
   );
+
+
+
+  useEffect(() => {
+    setCompany_benefit(CompanyInfo?.benefits);
+  }, [CompanyInfo]);
+
+
+
+  const UpdateMyCompanyBenefits = async () => {
+  
+      setReload(true)
+
+      try {
+        const formData = new FormData();
+  
+        formData.append("benefits",company_benefit);
+  
+        const res = await UpdateMyCompany(formData);
+  
+       setSnackBar({
+          open: true,
+          message: res?.message,
+          severity: "success",
+        });
+  
+        fetchCompany()
+      } catch (error) {
+        setSnackBar({
+          open: true,
+          message: error?.response?.data?.message,
+          severity: "error",
+        });
+      }finally{
+        setReload(false)
+      }
+    };
+
 
   return (
     <>
@@ -414,6 +450,7 @@ export default function CompanyBenefits() {
         }}
       >
         <Button
+          onClick={UpdateMyCompanyBenefits}
           variant="contained"
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
