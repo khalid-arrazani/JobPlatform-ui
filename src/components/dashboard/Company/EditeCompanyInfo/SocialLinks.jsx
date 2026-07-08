@@ -51,6 +51,8 @@ export default function SocialInfo({ CompanyInfo }) {
     setSocialInfo(socialLinks) 
   }, [CompanyInfo]);
 
+
+
  console.log(socialInfo);
   return (
     <>
@@ -91,7 +93,7 @@ export default function SocialInfo({ CompanyInfo }) {
         >
           {/* LinkedIn */}
           <TextField
-            //    value={secondtInfo.company_linkdin.url}
+               value={socialInfo.company_linkdin.url}
             //    onChange={(e)=>setSecondInfo((prev)=>({...prev, company_linkdin : {...prev.company_linkdin, url:e.target.value  }   }))}
             fullWidth
             placeholder="https://linkedin.com/company/..."
