@@ -238,12 +238,10 @@ const companyBenefit = [
 export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
 
   const { setSnackBar } = useAuth();
-  
+
   const [reload , setReload]= useState(false)
 
-
   const [company_benefit, setCompany_benefit] = useState([]);
-
 
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     company_benefit.includes(benefit.label),
@@ -279,6 +277,8 @@ export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
         setReload(false)
       }
     };
+
+    
 
 
   return (

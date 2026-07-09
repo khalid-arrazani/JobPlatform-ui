@@ -55,9 +55,9 @@ const inputStyle = {
   },
 };
 
-export default function Companyinfo({ CompanyInfo ,fetchCompany}) {
+export default function Companyinfo({ CompanyInfo, fetchCompany }) {
   const { setSnackBar } = useAuth();
-  const [reload , setReload]= useState(false)
+  const [reload, setReload] = useState(false);
 
   const [companyinfo, setCompanyinfo] = useState({
     company_name: "",
@@ -68,8 +68,7 @@ export default function Companyinfo({ CompanyInfo ,fetchCompany}) {
     company_size: "1-10",
     company_specialties: "",
   });
-  console.log(companyinfo)
-
+  console.log(companyinfo);
 
   useEffect(() => {
     setCompanyinfo({
@@ -83,39 +82,48 @@ export default function Companyinfo({ CompanyInfo ,fetchCompany}) {
     });
   }, [CompanyInfo]);
 
-const UpdateMyCompanyinfo = async () => {
-        setReload(true)
-      try {
   
-        const res = await UpdateMyCompany({
-          name:companyinfo.company_name,
-          headquarters:companyinfo.company_locatin,
-          industry:companyinfo.company_industry,
-          description:companyinfo.company_about,
-          foundedYear:companyinfo.company_founded,
-          companySize:companyinfo.company_size,
-          specialties:companyinfo.company_specialties,
-        });
-  
-       setSnackBar({
-          open: true,
-          message: res?.message,
-          severity: "success",
-        });
-  
-        fetchCompany()
-      } catch (error) {
-        setSnackBar({
-          open: true,
-          message: error?.response?.data?.message,
-          severity: "error",
-        });
-      }finally{
-        setReload(false)
-      }
-    };
 
-  
+  const UpdateMyCompanyinfo = async () => {
+    if (
+    companyinfo.company_name == CompanyInfo.name &&
+    companyinfo.company_locatin == CompanyInfo.headquarters &&
+    companyinfo.company_industry == CompanyInfo.industry &&
+    companyinfo.company_founded == CompanyInfo.foundedYear &&
+    companyinfo.company_size == CompanyInfo.companySize && 
+    companyinfo.company_specialties == CompanyInfo.specialties 
+  ) {
+   return console.log("u did'nt change nothing ");
+  }
+    setReload(true);
+    try {
+      const res = await UpdateMyCompany({
+        name: companyinfo.company_name,
+        headquarters: companyinfo.company_locatin,
+        industry: companyinfo.company_industry,
+        description: companyinfo.company_about,
+        foundedYear: companyinfo.company_founded,
+        companySize: companyinfo.company_size,
+        specialties: companyinfo.company_specialties,
+      });
+
+      setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
+
+      fetchCompany();
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      setReload(false);
+    }
+  };
 
   return (
     <>
@@ -249,9 +257,7 @@ const UpdateMyCompanyinfo = async () => {
               Founded <span style={{ color: "#EF4444" }}>*</span>
             </Typography>
 
-            <CompanyFounded
-              setCompanyinfo={setCompanyinfo}
-            />
+            <CompanyFounded setCompanyinfo={setCompanyinfo} />
           </Box>
 
           {/* Company Size*/}
@@ -292,7 +298,6 @@ const UpdateMyCompanyinfo = async () => {
             <Autocomplete
               value={companyinfo.company_specialties}
               onChange={(event, newValue) => {
-
                 setCompanyinfo((prev) => ({
                   ...prev,
                   company_specialties: newValue,
@@ -306,12 +311,12 @@ const UpdateMyCompanyinfo = async () => {
               }}
               renderInput={(params) => (
                 <TextField
-                onChange={(e) => {
-                setCompanyinfo((prev) => ({
-                  ...prev,
-                  company_specialties: e.target.value,
-                }));
-              }}
+                  onChange={(e) => {
+                    setCompanyinfo((prev) => ({
+                      ...prev,
+                      company_specialties: e.target.value,
+                    }));
+                  }}
                   {...params}
                   label="Specialty"
                   placeholder="Select or type a specialty"
@@ -370,7 +375,7 @@ const UpdateMyCompanyinfo = async () => {
         }}
       >
         <Button
-        onClick={UpdateMyCompanyinfo}
+          onClick={UpdateMyCompanyinfo}
           variant="contained"
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
