@@ -82,19 +82,22 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
     });
   }, [CompanyInfo]);
 
-  
+  const hasChanges =
+    companyinfo.company_name !== CompanyInfo.name ||
+    companyinfo.company_locatin !== CompanyInfo.headquarters ||
+    companyinfo.company_industry !== CompanyInfo.industry ||
+    companyinfo.company_founded !== CompanyInfo.foundedYear ||
+    companyinfo.company_size !== CompanyInfo.companySize ||
+    companyinfo.company_specialties !== CompanyInfo.specialties;
 
   const UpdateMyCompanyinfo = async () => {
-    if (
-    companyinfo.company_name == CompanyInfo.name &&
-    companyinfo.company_locatin == CompanyInfo.headquarters &&
-    companyinfo.company_industry == CompanyInfo.industry &&
-    companyinfo.company_founded == CompanyInfo.foundedYear &&
-    companyinfo.company_size == CompanyInfo.companySize && 
-    companyinfo.company_specialties == CompanyInfo.specialties 
-  ) {
-   return console.log("u did'nt change nothing ");
-  }
+    if (!hasChanges) {
+      return setSnackBar({
+        open: true,
+        message: "You didn't make any changes.",
+        severity: "warning",
+      });
+    }
     setReload(true);
     try {
       const res = await UpdateMyCompany({
