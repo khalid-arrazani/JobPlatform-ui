@@ -235,11 +235,10 @@ const companyBenefit = [
   "Mental Health Support",
 ];
 
-export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
-
+export default function CompanyBenefits({ CompanyInfo, fetchCompany }) {
   const { setSnackBar } = useAuth();
 
-  const [reload , setReload]= useState(false)
+  const [reload, setReload] = useState(false);
 
   const [company_benefit, setCompany_benefit] = useState([]);
 
@@ -247,39 +246,41 @@ export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
     company_benefit.includes(benefit.label),
   );
 
-
   useEffect(() => {
     setCompany_benefit(CompanyInfo?.benefits);
   }, [CompanyInfo]);
 
-
+  const hasChanges = company_benefit !== CompanyInfo?.benefits;
 
   const UpdateMyCompanyBenefits = async () => {
-        setReload(true)
-      try {
-  
-        const res = await UpdateMyCompany({benefits:company_benefit});
-  
-       setSnackBar({
-          open: true,
-          message: res?.message,
-          severity: "success",
-        });
-  
-        fetchCompany()
-      } catch (error) {
-        setSnackBar({
-          open: true,
-          message: error?.response?.data?.message,
-          severity: "error",
-        });
-      }finally{
-        setReload(false)
-      }
-    };
+    if (!hasChanges) {
+      return setSnackBar({
+        open: true,
+        message: "You didn't make any changes.",
+        severity: "warning",
+      });
+    }
+    setReload(true);
+    try {
+      const res = await UpdateMyCompany({ benefits: company_benefit });
 
-    
+      setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
 
+      fetchCompany();
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      setReload(false);
+    }
+  };
 
   return (
     <>
