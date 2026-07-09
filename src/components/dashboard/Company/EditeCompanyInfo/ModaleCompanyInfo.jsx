@@ -58,32 +58,6 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
   const handleDelete = () => {
     setPart("delete");
   };
-  // const DeleteCompanyBanner = async () => {
-  //     setReload(true)
-  //       try {
-  //         const res = await deleteCompanyBnner();
-
-  //         setSnackBar({
-  //           open: true,
-  //           message: res?.message,
-  //           severity: "success",
-  //         });
-
-  //         fetchCompany();
-
-  //         setOpen(false);
-
-  //       } catch (error) {
-  //         console.log(error?.response?.data);
-  //         setSnackBar({
-  //           open: true,
-  //           message: error?.response?.data?.message,
-  //           severity: "error",
-  //         });
-  //       }finally{
-  //         setReload(false)
-  //       }
-  //     };
 
   const handleClose = () => {
     setOpen(false);
