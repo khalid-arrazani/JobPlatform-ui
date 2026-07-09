@@ -381,7 +381,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           onClick={UpdateMyCompanyinfo}
           variant="contained"
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem",bgcolor: !hasChanges ? '#969696' : null }}
         >
           Save
         </Button>

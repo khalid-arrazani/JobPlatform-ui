@@ -47,7 +47,7 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
       url: "",
     },
   ]);
-  
+
   const [socialInfoHasChanj, setSocialInfoHasChang] = useState([
     {
       platform: "linkdin",
@@ -279,7 +279,7 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
           variant="contained"
           onClick={UpdateMyCompanySocial}
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
+          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" ,bgcolor: !hasChanges ? '#969696' : null}}
         >
           Save
         </Button>
