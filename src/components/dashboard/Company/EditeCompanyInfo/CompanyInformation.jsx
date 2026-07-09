@@ -382,9 +382,28 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           onClick={UpdateMyCompanyinfo}
           variant="contained"
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem",bgcolor: !hasChanges ? '#969696' : null }}
+          sx={{
+            display: "flex",
+            gap: 2,
+            height: "2.5rem",
+            fontSize: "1.1rem",
+            bgcolor: !hasChanges ? "#969696" : null,
+          }}
         >
-          Save {reload ? <CircularProgress  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
+          Save{" "}
+          {reload ? (
+            <CircularProgress
+              sx={{
+                color: "#ffffff",
+                "& .MuiCircularProgress-track": {
+                  stroke: "#000000",
+                },
+              }}
+              enableTrackSlot
+              size="25px"
+              aria-label="Loading…"
+            />
+          ) : null}
         </Button>
       </Box>
     </>

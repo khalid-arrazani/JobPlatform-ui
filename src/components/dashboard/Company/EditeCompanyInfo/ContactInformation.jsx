@@ -21,31 +21,29 @@ const inputStyle = {
   },
 };
 
+export default function ContactInfo({ CompanyInfo, fetchCompany }) {
+  const { setSnackBar } = useAuth();
+  const [reload, setReload] = useState(false);
 
-export default function ContactInfo({CompanyInfo,fetchCompany}) {
+  const [contactInfo, setContactInfo] = useState({
+    company_email: "",
+    company_number: "",
+    company_webSite: "",
+  });
 
-    const { setSnackBar } = useAuth();
-    const [reload , setReload]= useState(false)
-
-    const [contactInfo, setContactInfo] = useState({
-      company_email: "",
-      company_number: "",
-      company_webSite: "",
-    });
-
-useEffect(() => {
+  useEffect(() => {
     setContactInfo({
       company_email: CompanyInfo.company_email,
       company_number: CompanyInfo.company_number,
-      company_webSite: CompanyInfo.website 
+      company_webSite: CompanyInfo.website,
     });
   }, [CompanyInfo]);
 
-const hasChanges =
+  const hasChanges =
     contactInfo.company_email !== CompanyInfo.company_email ||
     contactInfo.company_number !== CompanyInfo.company_number ||
-    contactInfo.company_webSite !== CompanyInfo.website 
-  
+    contactInfo.company_webSite !== CompanyInfo.website;
+
   const UpdateMyCompanyContact = async () => {
     if (!hasChanges) {
       return setSnackBar({
@@ -54,31 +52,31 @@ const hasChanges =
         severity: "warning",
       });
     }
-          setReload(true)
-        try {
-          const res = await UpdateMyCompany({
-            company_email:contactInfo.company_email,
-            company_number:contactInfo.company_number,
-            website:contactInfo.company_webSite,
-          });
-    
-         setSnackBar({
-            open: true,
-            message: res?.message,
-            severity: "success",
-          });
-    
-          fetchCompany()
-        } catch (error) {
-          setSnackBar({
-            open: true,
-            message: error?.response?.data?.message,
-            severity: "error",
-          });
-        }finally{
-          setReload(false)
-        }
-      };
+    setReload(true);
+    try {
+      const res = await UpdateMyCompany({
+        company_email: contactInfo.company_email,
+        company_number: contactInfo.company_number,
+        website: contactInfo.company_webSite,
+      });
+
+      setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
+
+      fetchCompany();
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      setReload(false);
+    }
+  };
 
   return (
     <>
@@ -118,13 +116,13 @@ const hasChanges =
             </Typography>
 
             <TextField
-             value={contactInfo.company_email}
+              value={contactInfo.company_email}
               onChange={(e) => {
                 setContactInfo((prev) => ({
                   ...prev,
                   company_email: e.target.value,
-                }))}}
-
+                }));
+              }}
               placeholder="contact@company.com"
               sx={inputStyle}
               slotProps={{
@@ -153,8 +151,8 @@ const hasChanges =
                 setContactInfo((prev) => ({
                   ...prev,
                   company_number: e.target.value,
-                }))}}
-
+                }));
+              }}
               placeholder="+212 6 12 34 56 78"
               sx={inputStyle}
               slotProps={{
@@ -183,8 +181,8 @@ const hasChanges =
                 setContactInfo((prev) => ({
                   ...prev,
                   company_webSite: e.target.value,
-                }))}}
-
+                }));
+              }}
               placeholder="https://www.yourcompany.com"
               sx={inputStyle}
               slotProps={{
@@ -218,9 +216,28 @@ const hasChanges =
           variant="contained"
           onClick={UpdateMyCompanyContact}
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem",bgcolor: !hasChanges ? '#969696' : null }}
+          sx={{
+            display: "flex",
+            gap: 2,
+            height: "2.5rem",
+            fontSize: "1.1rem",
+            bgcolor: !hasChanges ? "#969696" : null,
+          }}
         >
-          Save{reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
+          Save
+          {reload ? (
+            <CircularProgress
+              sx={{
+                color: "#ffffff",
+                "& .MuiCircularProgress-track": {
+                  stroke: "#000000",
+                },
+              }}
+              enableTrackSlot
+              size="25px"
+              aria-label="Loading…"
+            />
+          ) : null}
         </Button>
       </Box>
     </>
