@@ -68,6 +68,9 @@ export default function Companyinfo({ CompanyInfo ,fetchCompany}) {
     company_size: "1-10",
     company_specialties: "",
   });
+  console.log(companyinfo)
+
+
   useEffect(() => {
     setCompanyinfo({
       company_name: CompanyInfo.name,
@@ -289,6 +292,7 @@ const UpdateMyCompanyinfo = async () => {
             <Autocomplete
               value={companyinfo.company_specialties}
               onChange={(event, newValue) => {
+
                 setCompanyinfo((prev) => ({
                   ...prev,
                   company_specialties: newValue,
@@ -302,6 +306,12 @@ const UpdateMyCompanyinfo = async () => {
               }}
               renderInput={(params) => (
                 <TextField
+                onChange={(e) => {
+                setCompanyinfo((prev) => ({
+                  ...prev,
+                  company_specialties: e.target.value,
+                }));
+              }}
                   {...params}
                   label="Specialty"
                   placeholder="Select or type a specialty"

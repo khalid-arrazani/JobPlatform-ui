@@ -14,6 +14,8 @@ import {
   FaXTwitter,
   FaInstagram,
 } from "react-icons/fa6";
+import { UpdateMyCompany } from "../../../../logic/api/company/Company";
+import { useAuth } from "../../../../logic/context/AuthContext";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -23,7 +25,9 @@ const inputStyle = {
   },
 };
 
-export default function SocialInfo({ CompanyInfo }) {
+export default function SocialInfo({ CompanyInfo,fetchCompany }) {
+  const { setSnackBar } = useAuth();
+      const [reload , setReload]= useState(false)
   const [socialInfo, setSocialInfo] = useState([
     {
       platform: "linkdin",
@@ -52,6 +56,32 @@ export default function SocialInfo({ CompanyInfo }) {
     }));
     setSocialInfo(socialLinks);
   }, [CompanyInfo]);
+
+
+    const UpdateMyCompanySocial = async () => {
+            setReload(true)
+          try {
+            const res = await UpdateMyCompany({
+              socialLinks:socialInfo
+            });
+      
+           setSnackBar({
+              open: true,
+              message: res?.message,
+              severity: "success",
+            });
+      
+            fetchCompany()
+          } catch (error) {
+            setSnackBar({
+              open: true,
+              message: error?.response?.data?.message,
+              severity: "error",
+            });
+          }finally{
+            setReload(false)
+          }
+        };
 
 
   return (
@@ -219,6 +249,7 @@ export default function SocialInfo({ CompanyInfo }) {
       >
         <Button
           variant="contained"
+          onClick={UpdateMyCompanySocial}
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
         >

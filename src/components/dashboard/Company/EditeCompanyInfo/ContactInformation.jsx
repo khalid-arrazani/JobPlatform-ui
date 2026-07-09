@@ -9,6 +9,8 @@ import {
 
 import { Globe, Phone, Mail } from "lucide-react";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../logic/api/company/Company";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {
@@ -19,7 +21,10 @@ const inputStyle = {
 };
 
 
-export default function ContactInfo({CompanyInfo}) {
+export default function ContactInfo({CompanyInfo,fetchCompany}) {
+
+    const { setSnackBar } = useAuth();
+    const [reload , setReload]= useState(false)
 
     const [contactInfo, setContactInfo] = useState({
       company_email: "",
@@ -34,6 +39,35 @@ useEffect(() => {
       company_webSite: CompanyInfo.website 
     });
   }, [CompanyInfo]);
+
+
+  
+  const UpdateMyCompanyContact = async () => {
+          setReload(true)
+        try {
+          const res = await UpdateMyCompany({
+            company_email:contactInfo.company_email,
+            company_number:contactInfo.company_number,
+            website:contactInfo.company_webSite,
+          });
+    
+         setSnackBar({
+            open: true,
+            message: res?.message,
+            severity: "success",
+          });
+    
+          fetchCompany()
+        } catch (error) {
+          setSnackBar({
+            open: true,
+            message: error?.response?.data?.message,
+            severity: "error",
+          });
+        }finally{
+          setReload(false)
+        }
+      };
 
   return (
     <>
@@ -171,6 +205,7 @@ useEffect(() => {
       >
         <Button
           variant="contained"
+          onClick={UpdateMyCompanyContact}
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" }}
         >
