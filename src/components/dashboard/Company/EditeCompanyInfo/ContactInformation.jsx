@@ -5,6 +5,7 @@ import {
   TextField,
   InputAdornment,
   Button,
+  CircularProgress,
 } from "@mui/material";
 
 import { Globe, Phone, Mail } from "lucide-react";
@@ -219,7 +220,7 @@ const hasChanges =
           size="large"
           sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem",bgcolor: !hasChanges ? '#969696' : null }}
         >
-          Save
+          Save{reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
         </Button>
       </Box>
     </>
