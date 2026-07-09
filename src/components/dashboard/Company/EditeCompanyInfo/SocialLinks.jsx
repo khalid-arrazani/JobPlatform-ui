@@ -25,9 +25,10 @@ const inputStyle = {
   },
 };
 
-export default function SocialInfo({ CompanyInfo,fetchCompany }) {
+export default function SocialInfo({ CompanyInfo, fetchCompany }) {
   const { setSnackBar } = useAuth();
-      const [reload , setReload]= useState(false)
+  const [reload, setReload] = useState(false);
+
   const [socialInfo, setSocialInfo] = useState([
     {
       platform: "linkdin",
@@ -46,8 +47,25 @@ export default function SocialInfo({ CompanyInfo,fetchCompany }) {
       url: "",
     },
   ]);
-
-
+  
+  const [socialInfoHasChanj, setSocialInfoHasChang] = useState([
+    {
+      platform: "linkdin",
+      url: "",
+    },
+    {
+      platform: "facebook",
+      url: "",
+    },
+    {
+      platform: "instagram",
+      url: "",
+    },
+    {
+      platform: "x",
+      url: "",
+    },
+  ]);
 
   useEffect(() => {
     const socialLinks = CompanyInfo?.socialLinks.map((item) => ({
@@ -55,34 +73,44 @@ export default function SocialInfo({ CompanyInfo,fetchCompany }) {
       url: item.url,
     }));
     setSocialInfo(socialLinks);
+    setSocialInfoHasChang(socialLinks)
   }, [CompanyInfo]);
 
+  const hasChanges = socialInfo !== socialInfoHasChanj;
 
-    const UpdateMyCompanySocial = async () => {
-            setReload(true)
-          try {
-            const res = await UpdateMyCompany({
-              socialLinks:socialInfo
-            });
-      
-           setSnackBar({
-              open: true,
-              message: res?.message,
-              severity: "success",
-            });
-      
-            fetchCompany()
-          } catch (error) {
-            setSnackBar({
-              open: true,
-              message: error?.response?.data?.message,
-              severity: "error",
-            });
-          }finally{
-            setReload(false)
-          }
-        };
 
+
+  const UpdateMyCompanySocial = async () => {
+    if (!hasChanges) {
+      return setSnackBar({
+        open: true,
+        message: "You didn't make any changes.",
+        severity: "warning",
+      });
+    }
+    setReload(true);
+    try {
+      const res = await UpdateMyCompany({
+        socialLinks: socialInfo,
+      });
+
+      setSnackBar({
+        open: true,
+        message: res?.message,
+        severity: "success",
+      });
+
+      fetchCompany();
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error?.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      setReload(false);
+    }
+  };
 
   return (
     <>

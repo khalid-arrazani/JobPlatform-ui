@@ -40,9 +40,19 @@ useEffect(() => {
     });
   }, [CompanyInfo]);
 
-
+const hasChanges =
+    contactInfo.company_email !== CompanyInfo.company_email ||
+    contactInfo.company_number !== CompanyInfo.company_number ||
+    contactInfo.company_webSite !== CompanyInfo.website 
   
   const UpdateMyCompanyContact = async () => {
+    if (!hasChanges) {
+      return setSnackBar({
+        open: true,
+        message: "You didn't make any changes.",
+        severity: "warning",
+      });
+    }
           setReload(true)
         try {
           const res = await UpdateMyCompany({
