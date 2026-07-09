@@ -238,6 +238,7 @@ const companyBenefit = [
 export default function CompanyBenefits({ CompanyInfo,fetchCompany }) {
 
   const { setSnackBar } = useAuth();
+  
   const [reload , setReload]= useState(false)
 
 
