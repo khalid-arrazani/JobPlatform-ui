@@ -136,14 +136,19 @@ export default function JobList() {
             </Box>
 
             {/* Info */}
+            
             <Box sx={{ flex: 1, height: "100%" }}>
-              <Typography
+
+              <Box
                 sx={{
                   fontSize: "1.4rem",
                   display: "flex",
                   justifyContent: "space-between",
+                  alignContent:"center"
                 }}
               >
+
+
                 <Box>
                   {job?.title}
                   <Chip
@@ -168,7 +173,8 @@ export default function JobList() {
                     <TurnedInNotOutlinedIcon />
                   )}
                 </Button>
-              </Typography>
+              </Box>
+
 
               <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
                 {job?.createdBy?.companyName} • {job.location}
@@ -256,6 +262,9 @@ export default function JobList() {
                 Open position
               </Button>
             </Box>
+
+
+
           </Card>
         ))}
       </Box>
