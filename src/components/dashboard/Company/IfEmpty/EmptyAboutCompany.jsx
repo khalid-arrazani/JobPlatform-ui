@@ -1,8 +1,9 @@
 import {Typography, Box, Button } from "@mui/material";
-import { CircleCheckBig } from "lucide-react";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+
 import AddIcon from '@mui/icons-material/Add';
 
-export default function EmptyBenefits() {
+export default function EmptyAboutCompany() {
   return (
     <>
       <Box
@@ -15,11 +16,12 @@ export default function EmptyBenefits() {
           flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
-          gap:1,
-          py:2
+          gap:1.5,
+          py:2,
+          mt:1
         }}
       >
-        <CircleCheckBig  style={{margin:"0px",height:"4rem",width:"10rem"}} color="#7fbffb" />
+        <InfoOutlinedIcon  style={{margin:"0px",height:"4rem",width:"10rem",color:"#7fbffb"}} color="#7fbffb" />
 
         <Typography
           sx={{
@@ -29,7 +31,7 @@ export default function EmptyBenefits() {
             fontSize: "1.8rem",
           }}
         >
-          No benefits added yet
+          No company description yet
         </Typography>
 
         <Typography
@@ -42,10 +44,9 @@ export default function EmptyBenefits() {
          
           }}
         >
-          Start adding employee benefits to help candidates understand what
-          makes your company unique
+         Write a compelling company overview to showcase your mission, values, and what makes your workplace unique.
         </Typography>
-        <Button sx={{gap:1.5}} variant="contained"> <AddIcon/>  Add Benefit</Button>
+        <Button sx={{gap:1.5}} variant="contained"> <AddIcon/>Add Company Description</Button>
       </Box>
     </>
   );

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, Typography, Box, Button, Collapse } from "@mui/material";
 
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+import EmptyAboutCompany from "./IfEmpty/EmptyAboutCompany";
 export default function AboutCompany({CompanyInfo}) {
   const [expanded, setExpanded] = useState(false);
   return (
@@ -31,7 +32,10 @@ export default function AboutCompany({CompanyInfo}) {
           </Typography>
         </Box>
 
-        <Collapse in={expanded} collapsedSize={70}>
+        <EmptyAboutCompany/>
+        
+
+        {/* <Collapse in={expanded} collapsedSize={70}>
           <Typography
             sx={{
               mt: 1.5,
@@ -42,9 +46,9 @@ export default function AboutCompany({CompanyInfo}) {
           >
             {CompanyInfo?.description}
           </Typography>
-        </Collapse>
+        </Collapse> */}
 
-        <Button
+        {/* <Button
           size="small"
           onClick={() => setExpanded(!expanded)}
           sx={{
@@ -54,7 +58,9 @@ export default function AboutCompany({CompanyInfo}) {
           }}
         >
           {expanded ? "Show Less" : "Read More"}
-        </Button>
+        </Button> */}
+
+
       </Card>
     </>
   );
