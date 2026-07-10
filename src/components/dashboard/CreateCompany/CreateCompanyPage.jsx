@@ -35,10 +35,8 @@ export default function CreateCompanyPage() {
     company_founded: "2026",
     company_size: "1-10",
 
-    company_specialties : "",
+    company_specialties: "",
   });
-
-
 
   const [secondtInfo, setSecondInfo] = useState({
     company_linkdin: {
@@ -108,12 +106,13 @@ export default function CreateCompanyPage() {
     }
 
     if (
-      validator.isEmpty(firstInfo.company_about.trim()) ||
+      !validator.isEmpty(firstInfo.company_about.trim()) &&
       !validator.isLength(firstInfo.company_about, { min: 20, max: 2000 })
     ) {
       setErr("About company must be between 20 and 2000 characters");
       return false;
-    }if (
+    }
+    if (
       !validator.isEmpty(firstInfo.company_specialties.trim()) &&
       !validator.isLength(firstInfo.company_specialties, { min: 3, max: 30 })
     ) {
@@ -248,7 +247,6 @@ export default function CreateCompanyPage() {
         type: "RELOADCOMPANY",
         payload: 1,
       });
-
     } catch (error) {
       setSnackBar({
         open: true,
@@ -263,7 +261,6 @@ export default function CreateCompanyPage() {
       });
     }
   };
-
 
   return (
     <>

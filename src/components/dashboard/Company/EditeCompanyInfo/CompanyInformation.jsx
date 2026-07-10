@@ -89,6 +89,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
     companyinfo.company_industry !== CompanyInfo.industry ||
     companyinfo.company_founded !== CompanyInfo.foundedYear ||
     companyinfo.company_size !== CompanyInfo.companySize ||
+    companyinfo.company_about !== CompanyInfo.description ||
     companyinfo.company_specialties !== CompanyInfo.specialties;
 
   const UpdateMyCompanyinfo = async () => {
