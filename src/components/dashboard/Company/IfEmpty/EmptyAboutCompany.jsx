@@ -2,8 +2,11 @@ import {Typography, Box, Button } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import AddIcon from '@mui/icons-material/Add';
+import { useCompany } from "../../../../logic/context/CompanyContext";
 
 export default function EmptyAboutCompany() {
+      const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
+
   return (
     <>
       <Box
@@ -46,7 +49,7 @@ export default function EmptyAboutCompany() {
         >
          Write a compelling company overview to showcase your mission, values, and what makes your workplace unique.
         </Typography>
-        <Button sx={{gap:1.5}} variant="contained"> <AddIcon/>Add Company Description</Button>
+        <Button sx={{gap:1.5}} onClick={()=>setOpenCompanyInfoEdite(true)} variant="contained"> <AddIcon/>Add Company Description</Button>
       </Box>
     </>
   );

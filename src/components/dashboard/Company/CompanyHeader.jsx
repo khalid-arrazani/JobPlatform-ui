@@ -25,7 +25,8 @@ const banners = {
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
 
-const Default = "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
+const Default =
+  "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 import ModalChoise from "./banner/ModalChoise";
 import Modalbanner from "./banner/Modalbanner";
@@ -35,14 +36,16 @@ import ModalDeleteBanner from "./banner/ModalDeleteBanner";
 import ModalInfo from "./EditeCompanyInfo/ModaleCompanyInfo";
 
 import { useState } from "react";
+import { useCompany } from "../../../logic/context/CompanyContext";
 
 export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
+  const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
+
   const [modalChoise, setModalChoise] = useState(false);
   const [modalBanner, setModalBanner] = useState(false);
   const [openEditor, setOpenEditor] = useState(false);
   const [openEditorLogo, setOpenEditorLogo] = useState(false);
   const [openDeleteBanner, setOpenDeleteBanner] = useState(false);
-  const [openCompanyInfoEdite, setOpenCompanyInfoEdite] = useState(false);
 
 
   const [image, setImage] = useState(false);
@@ -126,7 +129,6 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           setOpen={setOpenCompanyInfoEdite}
           fetchCompany={fetchCompany}
           CompanyInfo={CompanyInfo}
-
         />
         {/* ============================================================================== */}
 
@@ -141,7 +143,9 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           }}
         >
           <Button
-          onClick={()=>{setOpenCompanyInfoEdite(true)}}
+            onClick={() => {
+              setOpenCompanyInfoEdite(true);
+            }}
             variant="contained"
             startIcon={<EditOutlinedIcon />}
             sx={{

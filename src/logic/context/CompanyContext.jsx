@@ -1,7 +1,8 @@
 import {
   createContext,
   useReducer,
-  useContext
+  useContext,
+  useState
 } from "react";
 
 
@@ -27,6 +28,7 @@ export default function CompanyProvider({
       initialState
     );
 
+ const [openCompanyInfoEdite, setOpenCompanyInfoEdite] = useState(false);
     
 
 
@@ -36,6 +38,8 @@ export default function CompanyProvider({
       value={{
         ...state,
         dispatch,
+        openCompanyInfoEdite,
+        setOpenCompanyInfoEdite
 
       }}
     >
