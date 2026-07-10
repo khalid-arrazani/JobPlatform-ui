@@ -1,4 +1,10 @@
-import { Box, Avatar, IconButton, Typography, CircularProgress } from "@mui/material";
+import {
+  Box,
+  Avatar,
+  IconButton,
+  Typography,
+  CircularProgress,
+} from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
 import MainList from "./mainList.jsx";
@@ -20,11 +26,12 @@ import { useState } from "react";
 import { useProfile } from "../../logic/context/profileContext.jsx";
 import PostJobModal from "./PostJobModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useJob } from "../../logic/context/JobContext.jsx";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const [openModal, setOpenModal] = useState(false);
+  const { openModal, setOpenModal}= useJob()
 
   const { ...state } = useProfile();
 
@@ -164,7 +171,13 @@ export default function Navbar() {
               }}
               style={{ position: "relative", right: "-3rem" }}
             >
-              {      state.isLoading ?   <CircularProgress color="success" aria-label="Loading…" sx={{mx:3}} /> :    (!state?.user?.hasCompany ? (
+              {state.isLoading ? (
+                <CircularProgress
+                  color="success"
+                  aria-label="Loading…"
+                  sx={{ mx: 3 }}
+                />
+              ) : !state?.user?.hasCompany ? (
                 <Box sx={{ display: "flex", alignItems: "center" }}>
                   <Badge
                     overlap="circular"
@@ -200,7 +213,7 @@ export default function Navbar() {
                     {state.user.profile.company.name}{" "}
                   </Typography>
                 </Box>
-              )    )    }   
+              )}
             </IconButton>
           </Tabs>
         </Box>

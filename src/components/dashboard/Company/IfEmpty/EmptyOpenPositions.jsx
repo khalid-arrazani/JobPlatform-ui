@@ -2,9 +2,12 @@ import {Typography, Box, Button } from "@mui/material";
 import { CircleCheckBig } from "lucide-react";
 import AddIcon from '@mui/icons-material/Add';
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
+import { useJob } from "../../../../logic/context/JobContext";
 
 
 export default function EmptyOpenPositions() {
+    const { openModal, setOpenModal}= useJob()
+  
   return (
     <>
       <Box
@@ -46,7 +49,7 @@ export default function EmptyOpenPositions() {
         >
           Create your first job posting to start attracting qualified candidates.
         </Typography>
-        <Button sx={{gap:1.5}} variant="contained"> <AddIcon/> Post a Job</Button>
+        <Button onClick={()=>setOpenModal(true)} sx={{gap:1.5}} variant="contained"> <AddIcon/> Post a Job</Button>
       </Box>
     </>
   );

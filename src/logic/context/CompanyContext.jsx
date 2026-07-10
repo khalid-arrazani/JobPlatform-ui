@@ -29,7 +29,7 @@ export default function CompanyProvider({
     );
 
  const [openCompanyInfoEdite, setOpenCompanyInfoEdite] = useState(false);
-    
+  const [part, setPart] = useState("Company Information");
 
 
 
@@ -39,7 +39,8 @@ export default function CompanyProvider({
         ...state,
         dispatch,
         openCompanyInfoEdite,
-        setOpenCompanyInfoEdite
+        setOpenCompanyInfoEdite,
+        part, setPart
 
       }}
     >

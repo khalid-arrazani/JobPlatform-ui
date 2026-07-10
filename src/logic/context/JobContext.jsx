@@ -1,7 +1,8 @@
 import {
   createContext,
   useReducer,
-  useContext
+  useContext,
+  useState
 } from "react";
 
 
@@ -26,6 +27,7 @@ export default function JobProvider({
       JobReducer,
       initialState
     );
+  const [openModal, setOpenModal] = useState(false);
 
 
 
@@ -33,7 +35,7 @@ export default function JobProvider({
     <JobContext.Provider
       value={{
         ...state,
-        dispatch,
+        dispatch,openModal, setOpenModal
 
       }}
     >

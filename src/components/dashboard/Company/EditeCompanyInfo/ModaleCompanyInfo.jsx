@@ -21,12 +21,13 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ContactInfo from "./ContactInformation";
 import SocialInfo from "./SocialLinks";
 import CompanyBenefits from "./CompanyBenefits";
+import { useCompany } from "../../../../logic/context/CompanyContext";
 
 export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
-
-  const [part, setPart] = useState("Company Information");
+  const { part, setPart } = useCompany();
+  
 
   const companyEditSections = [
     {

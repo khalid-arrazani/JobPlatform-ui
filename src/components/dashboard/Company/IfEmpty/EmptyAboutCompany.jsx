@@ -5,7 +5,9 @@ import AddIcon from '@mui/icons-material/Add';
 import { useCompany } from "../../../../logic/context/CompanyContext";
 
 export default function EmptyAboutCompany() {
-      const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
+ 
+        const { setOpenCompanyInfoEdite,part, setPart } = useCompany();
+
 
   return (
     <>
@@ -49,7 +51,10 @@ export default function EmptyAboutCompany() {
         >
          Write a compelling company overview to showcase your mission, values, and what makes your workplace unique.
         </Typography>
-        <Button sx={{gap:1.5}} onClick={()=>setOpenCompanyInfoEdite(true)} variant="contained"> <AddIcon/>Add Company Description</Button>
+        
+        <Button sx={{gap:1.5}} onClick={()=>{setOpenCompanyInfoEdite(true) 
+          setPart("Company Information")}
+        }  variant="contained"> <AddIcon/>Add Company Description</Button>
       </Box>
     </>
   );
