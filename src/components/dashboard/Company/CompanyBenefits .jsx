@@ -217,6 +217,7 @@ const CompanyBenefits = ({CompanyInfo}) => {
         }}
       >
         <CircleCheckBig color="#389af5" />
+        
         Company Benefits
       </Typography>
 
