@@ -190,6 +190,7 @@ const companyBenefits = [
 
 
 import { CircleCheckBig } from "lucide-react";
+import EmptyBenefits from "./IfEmpty/EmptyBenefits";
 
 const CompanyBenefits = ({CompanyInfo}) => {
 
@@ -219,7 +220,7 @@ const CompanyBenefits = ({CompanyInfo}) => {
         Company Benefits
       </Typography>
 
-      <Box
+      {/* <Box
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -227,6 +228,9 @@ const CompanyBenefits = ({CompanyInfo}) => {
           justifyContent: "space-around",
         }}
       >
+
+
+
         {selectedBenefitObjects.map((item) =>{ 
 
        const Icon = item.icon;
@@ -261,7 +265,17 @@ const CompanyBenefits = ({CompanyInfo}) => {
             </Card>
           </Box>
         )})}
-      </Box>
+
+
+
+      </Box> */}
+
+
+      <EmptyBenefits/>
+
+
+
+
     </Card>
   );
 };
