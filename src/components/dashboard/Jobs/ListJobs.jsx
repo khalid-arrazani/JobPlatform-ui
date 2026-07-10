@@ -137,7 +137,9 @@ export default function JobList() {
 
             {/* Info */}
 
-            <Box sx={{ flex: 1, height: "100%" }}>
+            <Box sx={{ flex: 1, height: "100%" ,display:"flex",alignContent:"center",width: "80%" ,position: "relative",}}>
+
+              <Box sx={{ width: "100%" }}>
               <Box
                 sx={{
                   fontSize: "1.4rem",
@@ -198,11 +200,10 @@ export default function JobList() {
                   <Chip
                     label={job.workMode}
                     size="small"
-                   
                     sx={{
                       fontSize: "0.7rem",
                       height: "22px",
-                      bgcolor:"#f6d8ff"
+                      bgcolor: "#f6d8ff",
                     }}
                   />
                 )}
@@ -242,6 +243,10 @@ export default function JobList() {
                   }}
                 />
               </Box>
+              </Box>
+
+
+
 
               <Button
                 variant="contained"
@@ -249,9 +254,9 @@ export default function JobList() {
                 onClick={openJob}
                 endIcon={<ArrowOutwardIcon />}
                 sx={{
-                  position: "relative",
-                  top: "-2.5rem",
-                  right: "-71%",
+                  position: "absolute",
+                  bottom: "1rem",
+                  right: "1rem",
 
                   textTransform: "none",
                   borderRadius: "10px",
@@ -269,6 +274,9 @@ export default function JobList() {
               >
                 Open position
               </Button>
+
+
+
             </Box>
           </Card>
         ))}
