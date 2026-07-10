@@ -1,4 +1,4 @@
-import {  Card, Typography, Box } from "@mui/material";
+import { Card, Typography, Box } from "@mui/material";
 import {
   Laptop,
   Briefcase,
@@ -18,7 +18,7 @@ import {
 const companyBenefits = [
   {
     label: "Remote Work",
-    icon:  Laptop ,
+    icon: Laptop,
     color: "#06B6D4",
     bg: "#ECFEFF",
   },
@@ -186,20 +186,13 @@ const companyBenefits = [
   },
 ];
 
-
-
 import { CircleCheckBig } from "lucide-react";
 import EmptyBenefits from "./IfEmpty/EmptyBenefits";
 
-const CompanyBenefits = ({CompanyInfo}) => {
-
-
-
+const CompanyBenefits = ({ CompanyInfo }) => {
   const selectedBenefitObjects = companyBenefits.filter((benefit) =>
     CompanyInfo?.benefits.includes(benefit.label),
   );
-
-
 
   return (
     <Card sx={{ p: 2, borderRadius: "12px", mt: 2 }}>
@@ -216,76 +209,65 @@ const CompanyBenefits = ({CompanyInfo}) => {
         }}
       >
         <CircleCheckBig color="#389af5" />
-
         Company Benefits
       </Typography>
 
-      {/* <Box
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 1,
-          justifyContent: "space-around",
-        }}
-      >
+      { CompanyInfo?.benefits?.length === 0 ? (
+        <EmptyBenefits />
+      ) : (
 
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 1,
+            justifyContent: "space-around",
+          }}
+        >
+          {selectedBenefitObjects.map((item) => {
+            const Icon = item.icon;
 
+            return (
+              <Box>
+                <Card
+                  sx={{
+                    p: 2,
+                    borderRadius: "12px",
+                    display: "flex",
+                    transition: "0.5s",
+                    "&:hover": {
+                      transform: "translateY(-3px)",
+                      boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                      borderColor: "#dbeafe",
+                    },
+                    alignItems: "center",
+                    gap: 2,
+                    backgroundColor: `${item.bg}`,
+                    boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
+                    cursor: "pointer",
+                    border: "solid 0.5px #8d8d8d1f",
+                  }}
+                >
+                  <Box sx={{ color: item.color }}>
+                    <Icon color={item.color} />{" "}
+                  </Box>
 
-        {selectedBenefitObjects.map((item) =>{ 
+                  <Typography variant="body2" fontWeight="bold">
+                    {item.label}
+                  </Typography>
+                </Card>
+              </Box>
+            );
+          })}
+        </Box>
 
-       const Icon = item.icon;
-
-        return (
-           <Box >
-            <Card
-              sx={{
-                p: 2,
-                borderRadius: "12px",
-                display: "flex",
-                transition:"0.5s",
-                "&:hover": {
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
-                  borderColor: "#dbeafe",
-                },
-                alignItems: "center",
-                gap: 2,
-                backgroundColor: `${item.bg}`,
-                boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-                cursor:"pointer",
-                border:"solid 0.5px #8d8d8d1f"
-              }}
-            >
-              <Box sx={{ color: item.color }}><Icon  color={item.color} /> </Box>
-
-              <Typography variant="body2" fontWeight="bold">
-                 {item.label }
-              </Typography>
-
-            </Card>
-          </Box>
-        )})}
-
-
-
-      </Box> */}
-
-
-      <EmptyBenefits/>
-
-
-
-
+      )}
     </Card>
   );
 };
 
-
-
-
-
-
-{/* <Box key={index}>
+{
+  /* <Box key={index}>
             <Card
               sx={{
                 p: 2,
@@ -311,5 +293,6 @@ const CompanyBenefits = ({CompanyInfo}) => {
                 {item.title} 
               </Typography>
             </Card>
-          </Box> */}
+          </Box> */
+}
 export default CompanyBenefits;
