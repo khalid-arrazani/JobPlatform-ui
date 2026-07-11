@@ -10,6 +10,7 @@ import {
   Autocomplete,
   Card,
   Stack,
+  IconButton,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -20,7 +21,7 @@ import {
 
 import { useCompany } from "../../../logic/context/CompanyContext";
 
-import MoreVertIcon from '@mui/icons-material/MoreVert';
+import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import AddIcon from "@mui/icons-material/Add";
 import { Building2, Search } from "lucide-react";
@@ -313,11 +314,14 @@ export default function MyJobsPage() {
                   width: "84%",
                   borderLeft: "solid 1px #ddd",
                   height: "100%",
-                 pb:1,
-                  px:2,
-                  
-                  display:"flex",
-                  flexDirection:"column",boxSizing: "border-box",justifyContent:"center",position:"relative"
+                  pb: 1,
+                  px: 2,
+
+                  display: "flex",
+                  flexDirection: "column",
+                  boxSizing: "border-box",
+                  justifyContent: "center",
+                  position: "relative",
                 }}
               >
                 <Typography
@@ -354,7 +358,7 @@ export default function MyJobsPage() {
                       fontSize: "0.7rem",
                       height: "22px",
                       bgcolor: "#d8f3ff",
-                      borderRadius:"5px",
+                      borderRadius: "5px",
                       color: "#0150b7",
                       fontWeight: 600,
                     }}
@@ -368,7 +372,7 @@ export default function MyJobsPage() {
                       height: "22px",
                       bgcolor: "#ffd8de",
                       color: "rgb(158, 64, 64)",
-                      borderRadius:"5px",
+                      borderRadius: "5px",
                       fontWeight: 600,
                     }}
                   />
@@ -380,49 +384,49 @@ export default function MyJobsPage() {
                       height: "22px",
                       bgcolor: "#f6d8ff",
                       color: "#72037c",
-                      borderRadius:"5px",
+                      borderRadius: "5px",
                       fontWeight: 600,
                     }}
                   />
                 </Stack>
 
                 <Chip
-                    label={"Posted May 24,2024"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.78rem",
-                      height: "25px",
-                      width: "9rem",
-                      bgcolor: "#e4e4e4",
-                      color: "#515151",
-                      fontWeight: 500,
-                      borderRadius:"5px"
-                    }}
+                  label={"Posted May 24,2024"}
+                  size="small"
+                  sx={{
+                    fontSize: "0.78rem",
+                    height: "25px",
+                    width: "9rem",
+                    bgcolor: "#e4e4e4",
+                    color: "#515151",
+                    fontWeight: 500,
+                    borderRadius: "5px",
+                  }}
                 />
-
-
 
                 <Chip
-                    label={"• Active"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.9rem",
-                      height: "22px",
-                      bgcolor: "#d8ffda",
-                      color: "rgb(27, 137, 10)",
-                      borderRadius:"10px",
-                      fontWeight: 600,
-                      fontFamily:"monospace",
-                      position:"absolute",
-                      top:"18%",
-                      right:"20%"
-                    }}
+                  label={"• Active"}
+                  size="small"
+                  sx={{
+                    fontSize: "0.9rem",
+                    height: "22px",
+                    bgcolor: "#d8ffda",
+                    color: "rgb(27, 137, 10)",
+                    borderRadius: "10px",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    position: "absolute",
+                    top: "18%",
+                    right: "20%",
+                  }}
                 />
 
-
-
-
-
+                <IconButton
+                  sx={{ position: "absolute", top: "13%", right: "2%" }}
+                >
+                  {" "}
+                  <MoreVertIcon />{" "}
+                </IconButton>
               </Box>
             </Card>
           </Box>
