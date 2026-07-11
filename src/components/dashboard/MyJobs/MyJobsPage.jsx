@@ -7,6 +7,7 @@ import {
   Chip,
   TextField,
   InputAdornment,
+  Autocomplete,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -24,6 +25,8 @@ export default function MyJobsPage() {
   const { dispatch, ...state } = useCompany();
 
   const [currentTab, setCurrentTab] = useState(0);
+
+  const [sort, setSort] = useState("Newest First");
 
   useEffect(() => {
     fetchCompany();
@@ -231,13 +234,15 @@ export default function MyJobsPage() {
               sx={{
                 width: "100%",
                 height: "10%",
-                my:2
+                my: 2,
+                display: "flex",
+                justifyContent: "space-between",
               }}
             >
               <TextField
                 size="small"
                 placeholder="Search Jobs..."
-                sx={{width:"45%",borderRadius:"20px"}}
+                sx={{ width: "45%", borderRadius: "20px" }}
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -245,11 +250,32 @@ export default function MyJobsPage() {
                         <Search size={18} color="#64748B" />
                       </InputAdornment>
                     ),
-                  }
+                  },
                 }}
               />
-              
 
+              <Autocomplete
+                size="small"
+                sx={{ width: 220 ,"& .MuiAutocomplete-clearIndicator":{
+                    display:"none"
+                }}}
+                options={["Newest First", "Oldest First"]}
+                value={sort}
+                onChange={(event, newValue) => {
+                  setSort(newValue);
+                }}
+                slotProps={{
+                  popper: {
+                    sx: {
+                      transition: "none",
+                      animation: "none",
+                    },
+                  },
+                }}
+                renderInput={(params) => (
+                  <TextField {...params} placeholder="Sort by" />
+                )}
+              />
             </Box>
           </Box>
         </Box>
