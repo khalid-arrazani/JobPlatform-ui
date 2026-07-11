@@ -376,6 +376,17 @@ export default function MyJobsPage() {
                     }}
                   />
                 </Stack>
+                <Chip
+                    label={"Posted May 24,2024"}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                      bgcolor: "#e4e4e4",
+                      color: "#515151",
+                      fontWeight: 600,
+                    }}
+                  />
               </Box>
             </Card>
           </Box>
