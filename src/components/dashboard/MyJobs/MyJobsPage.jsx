@@ -294,7 +294,7 @@ export default function MyJobsPage() {
             <Card
               sx={{
                 bgcolor: "#ffffff",
-                height: "10rem",
+                height: "9.5rem",
                 border: "1px solid #ddddddb9",
                 borderRadius: "10px",
                 display: "flex",
@@ -311,7 +311,11 @@ export default function MyJobsPage() {
                   width: "84%",
                   borderLeft: "solid 1px #ddd",
                   height: "100%",
-                  p: 1,
+                 pb:1,
+                  px:2,
+                  
+                  display:"flex",
+                  flexDirection:"column",boxSizing: "border-box",justifyContent:"center"
                 }}
               >
                 <Typography
@@ -336,10 +340,10 @@ export default function MyJobsPage() {
                 </Typography>
                 <Stack
                   direction="row"
-                  spacing={0.5}
+                  spacing={1.5}
                   flexWrap="wrap"
                   useFlexGap
-                  sx={{ mt: 0.5, mb: 1 }}
+                  sx={{ mt: 1, mb: 1 }}
                 >
                   <Chip
                     label={"Full Time"}
@@ -348,6 +352,7 @@ export default function MyJobsPage() {
                       fontSize: "0.7rem",
                       height: "22px",
                       bgcolor: "#d8f3ff",
+                      borderRadius:"5px",
                       color: "#0150b7",
                       fontWeight: 600,
                     }}
@@ -361,6 +366,7 @@ export default function MyJobsPage() {
                       height: "22px",
                       bgcolor: "#ffd8de",
                       color: "rgb(158, 64, 64)",
+                      borderRadius:"5px",
                       fontWeight: 600,
                     }}
                   />
@@ -372,6 +378,7 @@ export default function MyJobsPage() {
                       height: "22px",
                       bgcolor: "#f6d8ff",
                       color: "#72037c",
+                      borderRadius:"5px",
                       fontWeight: 600,
                     }}
                   />
@@ -380,11 +387,13 @@ export default function MyJobsPage() {
                     label={"Posted May 24,2024"}
                     size="small"
                     sx={{
-                      fontSize: "0.7rem",
-                      height: "22px",
+                      fontSize: "0.78rem",
+                      height: "25px",
+                      width: "9rem",
                       bgcolor: "#e4e4e4",
                       color: "#515151",
-                      fontWeight: 600,
+                      fontWeight: 500,
+                      borderRadius:"5px"
                     }}
                   />
               </Box>
