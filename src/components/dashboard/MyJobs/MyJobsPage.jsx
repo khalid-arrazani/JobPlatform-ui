@@ -7,7 +7,9 @@ import {
   Chip,
   TextField,
   InputAdornment,
-  Autocomplete,Card,Stack
+  Autocomplete,
+  Card,
+  Stack,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -221,8 +223,6 @@ export default function MyJobsPage() {
             </Tabs>
           </Box>
 
-
-
           {/* foter */}
           <Box
             sx={{
@@ -232,9 +232,7 @@ export default function MyJobsPage() {
               boxSizing: "border-box",
             }}
           >
-
-
-          {/* filter and search */}
+            {/* filter and search */}
             <Box
               sx={{
                 width: "100%",
@@ -247,7 +245,11 @@ export default function MyJobsPage() {
               <TextField
                 size="small"
                 placeholder="Search Jobs..."
-                sx={{ width: "45%", borderRadius: "20px","& .MuiInputBase-root":{borderRadius:"10px"} }}
+                sx={{
+                  width: "45%",
+                  borderRadius: "20px",
+                  "& .MuiInputBase-root": { borderRadius: "10px" },
+                }}
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -261,11 +263,13 @@ export default function MyJobsPage() {
 
               <Autocomplete
                 size="small"
-                sx={{ width: 220 ,"& .MuiAutocomplete-clearIndicator":{
-                    display:"none"
-                },"& .MuiInputBase-root":{borderRadius:"8px"}     
-            
-            }}
+                sx={{
+                  width: 220,
+                  "& .MuiAutocomplete-clearIndicator": {
+                    display: "none",
+                  },
+                  "& .MuiInputBase-root": { borderRadius: "8px" },
+                }}
                 options={["Newest First", "Oldest First"]}
                 value={sort}
                 onChange={(event, newValue) => {
@@ -276,7 +280,6 @@ export default function MyJobsPage() {
                     sx: {
                       transition: "none",
                       animation: "none",
-                     
                     },
                   },
                 }}
@@ -286,81 +289,96 @@ export default function MyJobsPage() {
               />
             </Box>
 
+            {/* list jobs */}
 
-          {/* list jobs */}
-          
+            <Card
+              sx={{
+                bgcolor: "#ffffff",
+                height: "10rem",
+                border: "1px solid #ddddddb9",
+                borderRadius: "10px",
+                display: "flex",
+                boxSizing: "border-box",
+                boxShadow: "none",
+              }}
+            >
+              {/* card job left side */}
+              <Box sx={{ width: "16%", height: "100%" }}></Box>
 
-            <Card sx={{bgcolor:"#ffffff" , height:"10rem",border:"1px solid #ddddddb9",borderRadius:"10px",display:"flex",boxSizing:"border-box",boxShadow:"none"}}>
-                   
-                   {/* card job left side */}
-                   <Box sx={{width:"16%",height:"100%"}} ></Box>
-
-
-
-                   {/* card job right side */}
-                   <Box sx={{width:"84%",borderLeft:"solid 1px #ddd",height:"100%",p:1}}>
-                      <Typography  sx={{fontSize:"1.7rem",fontWeight:600,fontFamily:"ui-monospace",color:"#02020dda"}} >Full Stack developer</Typography>
-                      <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#02020db4"}} >Marrakesh, Morocco</Typography>
-                    <Stack
+              {/* card job right side */}
+              <Box
+                sx={{
+                  width: "84%",
+                  borderLeft: "solid 1px #ddd",
+                  height: "100%",
+                  p: 1,
+                }}
+              >
+                <Typography
+                  sx={{
+                    fontSize: "1.7rem",
+                    fontWeight: 600,
+                    fontFamily: "ui-monospace",
+                    color: "#02020dda",
+                  }}
+                >
+                  Full Stack developer
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    color: "#02020db4",
+                  }}
+                >
+                  Marrakesh, Morocco
+                </Typography>
+                <Stack
                   direction="row"
                   spacing={0.5}
                   flexWrap="wrap"
                   useFlexGap
                   sx={{ mt: 0.5, mb: 1 }}
                 >
-                
-                    <Chip
-                      label={"Full Time"}
-                      size="small"
-                    
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#d8f3ff",
-                        color:"#0150b7",
-                        fontWeight:600
+                  <Chip
+                    label={"Full Time"}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                      bgcolor: "#d8f3ff",
+                      color: "#0150b7",
+                      fontWeight: 600,
+                    }}
+                  />
 
-                      }}
-                    />
-           
-            
-                    <Chip
-                      label={"Mid Level"}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#ffd8de",   color:"rgb(158, 64, 64)", fontWeight:600
-                      }}
-                    />
-                    <Chip
-                      label={"Hybrid"}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#f6d8ff",    color:"#72037c",fontWeight:600
-                      }}
-                    />
-          
+                  <Chip
+                    label={"Mid Level"}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                      bgcolor: "#ffd8de",
+                      color: "rgb(158, 64, 64)",
+                      fontWeight: 600,
+                    }}
+                  />
+                  <Chip
+                    label={"Hybrid"}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                      bgcolor: "#f6d8ff",
+                      color: "#72037c",
+                      fontWeight: 600,
+                    }}
+                  />
                 </Stack>
-                   </Box>
-                
+              </Box>
             </Card>
-
-           
-
-          
-
-
-
-
-
           </Box>
-
-
-
-
         </Box>
 
         {/* right side */}
