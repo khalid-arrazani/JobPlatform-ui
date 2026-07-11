@@ -315,7 +315,7 @@ export default function MyJobsPage() {
                   px:2,
                   
                   display:"flex",
-                  flexDirection:"column",boxSizing: "border-box",justifyContent:"center"
+                  flexDirection:"column",boxSizing: "border-box",justifyContent:"center",position:"relative"
                 }}
               >
                 <Typography
@@ -383,6 +383,7 @@ export default function MyJobsPage() {
                     }}
                   />
                 </Stack>
+
                 <Chip
                     label={"Posted May 24,2024"}
                     size="small"
@@ -395,7 +396,29 @@ export default function MyJobsPage() {
                       fontWeight: 500,
                       borderRadius:"5px"
                     }}
-                  />
+                />
+
+
+
+                <Chip
+                    label={"• Active"}
+                    size="small"
+                    sx={{
+                      fontSize: "0.9rem",
+                      height: "22px",
+                      bgcolor: "#d8ffda",
+                      color: "rgb(27, 137, 10)",
+                      borderRadius:"10px",
+                      fontWeight: 600,
+                      fontFamily:"monospace",
+                      position:"absolute",
+                      top:"18%",
+                      right:"20%"
+                    }}
+                />
+
+
+
               </Box>
             </Card>
           </Box>
