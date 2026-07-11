@@ -61,28 +61,30 @@ export default function MyJobsPage() {
         }}
       >
         {/* left side */}
-        <Box sx={{width:"75%",height:"100%",bgcolor:"#ffffff",boxSizing: "border-box",overflow:"hidden",borderRadius:"10px 10px 0px 0px",pt:1.5}} >
-           <Box sx={{width:"100%",height:"6rem" ,px:2.5,boxSizing: "border-box",display:"flex",alignContent:"center"}} >
+        <Box sx={{width:"75%",height:"100%",bgcolor:"#ffffff",boxSizing: "border-box",overflow:"hidden",borderRadius:"10px 10px 0px 0px",pt:1}} >
+           <Box sx={{width:"100%",height:"6rem" ,px:2.5,boxSizing: "border-box",display:"flex",alignItems:"center",justifyContent:"space-between"}} >
 
              <Box>
-                <Typography sx={{fontSize:"2rem",fontWeight:600,color:"#050713e7"}} >
+                <Typography sx={{fontSize:"1.8rem",fontWeight:600,color:"#050713ee"}} >
                     My Jobs
                 </Typography>
-                 <Typography sx={{fontSize:"1rem",fontWeight:400,color:"#373737e7"}}>
+                 <Typography sx={{fontSize:"0.9rem",fontWeight:600,color:"#6f6e6ee7"}}>
                     Manage and track all the job positions you have posted.
                 </Typography>
              </Box>
 
 
 
-             <Button variant="contained"  sx={{gap:1.5 ,textTransform:"none"}}
-             style={{flexShrink:0}} >
+             <Button variant="contained"  sx={{gap:1.5 ,textTransform:"none",flexShrink: 0,height:"2.3rem",bgcolor:"#6a36eb",fontSize:"0.8rem"}}
+           >
                 <AddIcon/> Post a New Job
              </Button>
 
 
              
            </Box>
+
+           
 
         </Box>
 
