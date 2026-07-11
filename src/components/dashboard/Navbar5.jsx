@@ -44,8 +44,9 @@ export default function Navbar() {
       "/Dashboard/Jobs": 0,
       "/Dashboard/Companies": 1,
       "/Dashboard/Saved": 2,
-      "/Dashboard/applications": 3,
-      "/Dashboard/My_Company": 4,
+      "/Dashboard/My_Jobs": 3,
+      "/Dashboard/applications": 4,
+      "/Dashboard/My_Company": 5,
     }[location.pathname] ?? 0;
 
   return (
@@ -140,6 +141,15 @@ export default function Navbar() {
             <Tab
               onClick={() => navigate("/Dashboard/Saved")}
               label="Saved"
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
+                minHeight: 64,
+              }}
+            />
+            <Tab
+              onClick={() => navigate("/Dashboard/My_Jobs")}
+              label="My Jobs"
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
