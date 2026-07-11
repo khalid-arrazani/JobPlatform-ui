@@ -7,7 +7,7 @@ import {
   Chip,
   TextField,
   InputAdornment,
-  Autocomplete,Card
+  Autocomplete,Card,Stack
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -301,7 +301,49 @@ export default function MyJobsPage() {
                    <Box sx={{width:"84%",borderLeft:"solid 1px #ddd",height:"100%",p:1}}>
                       <Typography  sx={{fontSize:"1.7rem",fontWeight:600,fontFamily:"ui-monospace",color:"#02020dda"}} >Full Stack developer</Typography>
                       <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#02020db4"}} >Marrakesh, Morocco</Typography>
+                    <Stack
+                  direction="row"
+                  spacing={0.5}
+                  flexWrap="wrap"
+                  useFlexGap
+                  sx={{ mt: 0.5, mb: 1 }}
+                >
+                
+                    <Chip
+                      label={"Full Time"}
+                      size="small"
+                    
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#d8f3ff",
+                        color:"#0150b7",
+                        fontWeight:600
 
+                      }}
+                    />
+           
+            
+                    <Chip
+                      label={"Mid Level"}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#ffd8de",   color:"rgb(158, 64, 64)", fontWeight:600
+                      }}
+                    />
+                    <Chip
+                      label={"Hybrid"}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#f6d8ff",    color:"#72037c",fontWeight:600
+                      }}
+                    />
+          
+                </Stack>
                    </Box>
                 
             </Card>
