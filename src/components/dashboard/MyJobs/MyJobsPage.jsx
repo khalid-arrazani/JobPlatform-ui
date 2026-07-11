@@ -20,6 +20,8 @@ import {
 
 import { useCompany } from "../../../logic/context/CompanyContext";
 
+import MoreVertIcon from '@mui/icons-material/MoreVert';
+
 import AddIcon from "@mui/icons-material/Add";
 import { Building2, Search } from "lucide-react";
 
@@ -416,6 +418,8 @@ export default function MyJobsPage() {
                       right:"20%"
                     }}
                 />
+
+
 
 
 
