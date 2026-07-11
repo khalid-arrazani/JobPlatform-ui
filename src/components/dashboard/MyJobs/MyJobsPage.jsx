@@ -298,9 +298,10 @@ export default function MyJobsPage() {
 
 
                    {/* card job right side */}
-                   <Box sx={{width:"84%",borderLeft:"solid 1px #ddd",height:"100%"}}>
+                   <Box sx={{width:"84%",borderLeft:"solid 1px #ddd",height:"100%",p:1}}>
+                      <Typography  sx={{fontSize:"1.7rem",fontWeight:600,fontFamily:"ui-monospace",color:"#02020dda"}} >Full Stack developer</Typography>
+                      <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#02020db4"}} >Marrakesh, Morocco</Typography>
 
-                    
                    </Box>
                 
             </Card>
