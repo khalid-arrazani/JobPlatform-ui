@@ -137,116 +137,121 @@ export default function JobList() {
 
             {/* Info */}
 
-            <Box sx={{ flex: 1, height: "100%" ,display:"flex",alignContent:"center",width: "80%" ,position: "relative",}}>
-
+            <Box
+              sx={{
+                flex: 1,
+                height: "100%",
+                display: "flex",
+                alignContent: "center",
+                width: "80%",
+                position: "relative",
+              }}
+            >
               <Box sx={{ width: "100%" }}>
-              <Box
-                sx={{
-                  fontSize: "1.4rem",
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignContent: "center",
-                }}
-              >
-                <Box>
-                  {job?.title}
+                <Box
+                  sx={{
+                    fontSize: "1.4rem",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignContent: "center",
+                  }}
+                >
+                  <Box>
+                    {job?.title}
+                    <Chip
+                      icon={<AccessTimeIcon />}
+                      label={formatDistanceToNow(new Date(job.createdAt), {
+                        addSuffix: true,
+                      })}
+                      size="small"
+                      variant="outlined"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "24px",
+                        ml: "0.5rem",
+                      }}
+                    />
+                  </Box>
+
+                  <Button data-id={job._id} onClick={saveJob}>
+                    {job.isSaved ? (
+                      <TurnedInIcon sx={{ color: "#1976d2" }} />
+                    ) : (
+                      <TurnedInNotOutlinedIcon />
+                    )}
+                  </Button>
+                </Box>
+
+                <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
+                  {job?.createdBy?.name} • {job.location}
+                </Typography>
+
+                <Stack
+                  direction="row"
+                  spacing={0.5}
+                  flexWrap="wrap"
+                  useFlexGap
+                  sx={{ mt: 0.5, mb: 1 }}
+                >
+                  {job.jobType && (
+                    <Chip
+                      label={job.jobType}
+                      size="small"
+                      color="primary"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                      }}
+                    />
+                  )}
+                  {job.workMode && (
+                    <Chip
+                      label={job.workMode}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#f6d8ff",
+                      }}
+                    />
+                  )}
+                </Stack>
+                <Stack
+                  direction="row"
+                  spacing={0.5}
+                  flexWrap="wrap"
+                  useFlexGap
+                  sx={{ mt: 1, mb: 0.5 }}
+                >
+                  {job.skills?.slice(0, 3).map((skill, index) => (
+                    <Chip
+                      key={index}
+                      label={skill}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                      }}
+                    />
+                  ))}
+                </Stack>
+
+                <Box sx={{ mt: 1 }}>
                   <Chip
-                    icon={<AccessTimeIcon />}
-                    label={formatDistanceToNow(new Date(job.createdAt), {
-                      addSuffix: true,
-                    })}
+                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
                     size="small"
-                    variant="outlined"
                     sx={{
                       fontSize: "0.7rem",
-                      height: "24px",
-                      ml: "0.5rem",
+                      height: "22px",
+                      bgcolor: "#c4e6d2",
+                      color: "#289e5d",
+                      fontWeight: 400,
+                      py: 1.5,
+                      borderRadius: "8px",
                     }}
                   />
                 </Box>
-
-                <Button data-id={job._id} onClick={saveJob}>
-                  {job.isSaved ? (
-                    <TurnedInIcon sx={{ color: "#1976d2" }} />
-                  ) : (
-                    <TurnedInNotOutlinedIcon />
-                  )}
-                </Button>
               </Box>
-
-              <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
-                {job?.createdBy?.name} • {job.location}
-              </Typography>
-
-              <Stack
-                direction="row"
-                spacing={0.5}
-                flexWrap="wrap"
-                useFlexGap
-                sx={{ mt: 0.5, mb: 1 }}
-              >
-                {job.jobType && (
-                  <Chip
-                    label={job.jobType}
-                    size="small"
-                    color="primary"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "22px",
-                    }}
-                  />
-                )}
-                {job.workMode && (
-                  <Chip
-                    label={job.workMode}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "22px",
-                      bgcolor: "#f6d8ff",
-                    }}
-                  />
-                )}
-              </Stack>
-              <Stack
-                direction="row"
-                spacing={0.5}
-                flexWrap="wrap"
-                useFlexGap
-                sx={{ mt: 1, mb: 0.5 }}
-              >
-                {job.skills?.slice(0, 3).map((skill, index) => (
-                  <Chip
-                    key={index}
-                    label={skill}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "22px",
-                    }}
-                  />
-                ))}
-              </Stack>
-
-              <Box sx={{ mt: 1 }}>
-                <Chip
-                  label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
-                  size="small"
-                  sx={{
-                    fontSize: "0.7rem",
-                    height: "22px",
-                    bgcolor: "#c4e6d2",
-                    color: "#289e5d",
-                    fontWeight: 400,
-                    py: 1.5,
-                    borderRadius: "8px",
-                  }}
-                />
-              </Box>
-              </Box>
-
-
-
 
               <Button
                 variant="contained"
@@ -274,9 +279,6 @@ export default function JobList() {
               >
                 Open position
               </Button>
-
-
-
             </Box>
           </Card>
         ))}
