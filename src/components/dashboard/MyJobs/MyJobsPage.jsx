@@ -242,7 +242,7 @@ export default function MyJobsPage() {
               <TextField
                 size="small"
                 placeholder="Search Jobs..."
-                sx={{ width: "45%", borderRadius: "20px" }}
+                sx={{ width: "45%", borderRadius: "20px","& .MuiInputBase-root":{borderRadius:"10px"} }}
                 slotProps={{
                   input: {
                     startAdornment: (
@@ -258,7 +258,9 @@ export default function MyJobsPage() {
                 size="small"
                 sx={{ width: 220 ,"& .MuiAutocomplete-clearIndicator":{
                     display:"none"
-                }}}
+                },"& .MuiInputBase-root":{borderRadius:"8px"}     
+            
+            }}
                 options={["Newest First", "Oldest First"]}
                 value={sort}
                 onChange={(event, newValue) => {
@@ -269,6 +271,7 @@ export default function MyJobsPage() {
                     sx: {
                       transition: "none",
                       animation: "none",
+                     
                     },
                   },
                 }}
