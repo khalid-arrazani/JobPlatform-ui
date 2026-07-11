@@ -50,12 +50,12 @@ export default function MyJobsPage() {
           width: "100vw",
           bgcolor: "#f2f2f5",
           boxSizing: "border-box",
-
           pt: 3,
           px: 2,
           overflow: "auto",
           display: "flex",
           gap: 1.5,
+
         }}
       >
         {/* left side */}
@@ -68,6 +68,7 @@ export default function MyJobsPage() {
             overflow: "hidden",
             borderRadius: "10px 10px 0px 0px",
             pt: 1,
+            borderBottom:"solid"
           }}
         >
           <Box
@@ -92,6 +93,8 @@ export default function MyJobsPage() {
               >
                 Manage and track all the job positions you have posted.
               </Typography>
+
+
             </Box>
 
             <Button
@@ -107,6 +110,8 @@ export default function MyJobsPage() {
             >
               <AddIcon /> Post a New Job
             </Button>
+
+            
           </Box>
 
           <Tabs
