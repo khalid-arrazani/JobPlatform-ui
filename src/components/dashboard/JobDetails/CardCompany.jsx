@@ -148,7 +148,7 @@ export default function CardCompany({ jobInfo, JobId }) {
                   mb: 1.5,
                 }}
               >
-                {jobInfo?.createdBy.companyName} • {jobInfo?.location}
+                {jobInfo?.createdBy.name} • {jobInfo?.location}
               </Typography>
 
               <Stack direction="row" spacing={1.5}>
