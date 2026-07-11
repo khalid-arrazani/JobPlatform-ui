@@ -75,7 +75,7 @@ export default function JobOverview({jobInfo}) {
           color: "#8B5CF6",
         }}
       >
-        {jobInfo?.createdBy.companyName}
+        {jobInfo?.createdBy.name}
       </Typography>
     </Box>
   </Box>
