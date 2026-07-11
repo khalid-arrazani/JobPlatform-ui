@@ -422,10 +422,10 @@ export default function MyJobsPage() {
                 />
 
                 <IconButton
-                  sx={{ position: "absolute", top: "13%", right: "2%" }}
+                  sx={{ position: "absolute", top: "13%", right: "2%", ":hover":{bgcolor:"#dddddd00"} }}
                 >
-                  {" "}
-                  <MoreVertIcon />{" "}
+                 
+                  <MoreVertIcon />
                 </IconButton>
               </Box>
             </Card>
