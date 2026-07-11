@@ -7,7 +7,7 @@ import {
   Chip,
   TextField,
   InputAdornment,
-  Autocomplete,
+  Autocomplete,Card
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
@@ -221,15 +221,20 @@ export default function MyJobsPage() {
             </Tabs>
           </Box>
 
+
+
           {/* foter */}
           <Box
             sx={{
               width: "100%",
               height: "74%",
-              px: 2.5,
+              px: 4,
               boxSizing: "border-box",
             }}
           >
+
+
+          {/* filter and search */}
             <Box
               sx={{
                 width: "100%",
@@ -280,7 +285,39 @@ export default function MyJobsPage() {
                 )}
               />
             </Box>
+
+
+          {/* list jobs */}
+          
+
+            <Card sx={{bgcolor:"#ffffff" , height:"10rem",border:"1px solid #ddddddb9",borderRadius:"10px",display:"flex",boxSizing:"border-box",boxShadow:"none"}}>
+                   
+                   {/* card job left side */}
+                   <Box sx={{width:"16%",height:"100%"}} ></Box>
+
+
+
+                   {/* card job right side */}
+                   <Box sx={{width:"84%",borderLeft:"solid 1px #ddd",height:"100%"}}>
+
+                    
+                   </Box>
+                
+            </Card>
+
+           
+
+          
+
+
+
+
+
           </Box>
+
+
+
+
         </Box>
 
         {/* right side */}
