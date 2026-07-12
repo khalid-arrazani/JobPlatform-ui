@@ -16,6 +16,7 @@ export const JobContext = createContext();
 const initialState = {
   JobInfo: null,
   isLoading: false,
+  MyJobs:null
 };
 
 export default function JobProvider({

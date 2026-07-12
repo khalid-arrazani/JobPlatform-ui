@@ -15,11 +15,13 @@ import {
 
 
 import MenuCard from "./Menu";
+import { useJob } from "../../../logic/context/JobContext";
 
 
 
 
 export default function CardJobs (){
+  const { dispatch, ...state } = useJob();
 
 
 

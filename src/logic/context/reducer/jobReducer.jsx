@@ -9,6 +9,11 @@ export const JobReducer = (
         ...state,
         JobInfo: action.payload,
       }; 
+       case "SETMYJOBS":
+      return {
+        ...state,
+        MyJobs: action.payload,
+      }; 
       case "SET_LOADING":
       return {
         ...state,

@@ -13,12 +13,11 @@ import { useCompany } from "../../../logic/context/CompanyContext";
 
 import Header from "./Header";
 import Footer from "./Footer";
+import { GetMyJobs } from "../../../logic/api/job/Job";
+import { useJob } from "../../../logic/context/JobContext";
 
 export default function MyJobsPage() {
-  const { dispatch, ...state } = useCompany();
-
-
-
+  const { dispatch, ...state } = useJob();
 
 
   useEffect(() => {
@@ -31,10 +30,10 @@ export default function MyJobsPage() {
       payload: true,
     });
     try {
-      const data = await getmyCompany();
+      const data = await GetMyJobs();
 
       dispatch({
-        type: "SETCOMPANY",
+        type: "SETMYJOBS",
         payload: data,
       });
       console.log(data);
