@@ -40,6 +40,14 @@ export const GetMyJobs = async () => {
   return response.data;
 };
 
+export const DeleteMyJobs = async (JobId) => {
+  const response = await API.delete(
+     `/jobs/Delete_My-Jobs/${JobId}`,
+    { withCredentials: true }
+  );
+  return response.data;
+};
+
 
 //this for save jobds part 
 export const toggleSaveJob  = async (jobData) => {

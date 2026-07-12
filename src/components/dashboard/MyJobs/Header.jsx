@@ -26,7 +26,7 @@ export default function Header (){
      <Box
             sx={{
               width: "100%",
-              height: "26%",
+              height: "fit-Content",
               px: 2.5,
               boxSizing: "border-box",
               borderBottom: "solid 1px #ddd",
@@ -91,6 +91,7 @@ export default function Header (){
                   top: "51px",
                 },
                 ml: 2,
+                
               }}
             >
               <Tab

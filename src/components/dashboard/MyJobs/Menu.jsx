@@ -14,20 +14,36 @@ import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PauseCircleOutlineOutlinedIcon from "@mui/icons-material/PauseCircleOutlineOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
+import { DeleteMyJobs } from "../../../logic/api/job/Job";
 
-export default function MenuCard({JobId}) {
+export default function MenuCard({ JobId }) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
 
   const handleOpen = (event, jobId) => {
-   console.log(jobId);
+    console.log(jobId);
     setAnchorEl(event.currentTarget);
   };
 
   const handleClose = () => {
     setAnchorEl(null);
   };
+
+
+
+  const handleDelete = async (jobId) => {
+
+    try {
+      const deleteJob = await DeleteMyJobs(jobId);
+      console.log(deleteJob);
+    } catch (err) {
+        console.log(err);
+    }
+
+    // setAnchorEl(null);
+  };
+
   return (
     <>
       <IconButton
@@ -72,8 +88,6 @@ export default function MenuCard({JobId}) {
           Edit Job
         </MenuItem>
 
-        
-
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
             <VisibilityOutlinedIcon fontSize="small" />
@@ -90,7 +104,7 @@ export default function MenuCard({JobId}) {
 
         <Divider sx={{ my: 0.5 }} />
 
-        <MenuItem onClick={handleClose} sx={{ color: "error.main" }}>
+        <MenuItem onClick={handleDelete} sx={{ color: "error.main" }}>
           <ListItemIcon>
             <DeleteOutlineOutlinedIcon fontSize="small" color="error" />
           </ListItemIcon>
