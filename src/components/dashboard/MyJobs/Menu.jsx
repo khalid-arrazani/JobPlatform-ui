@@ -20,8 +20,8 @@ export default function MenuCard({JobId}) {
 
   const open = Boolean(anchorEl);
 
-  const handleOpen = (event) => {
-   console.log(event.keyValue);
+  const handleOpen = (event, jobId) => {
+   console.log(jobId);
     setAnchorEl(event.currentTarget);
   };
 
@@ -31,7 +31,7 @@ export default function MenuCard({JobId}) {
   return (
     <>
       <IconButton
-        onClick={handleOpen}
+        onClick={(e) => handleOpen(e, JobId)}
         sx={{
           position: "absolute",
           top: "13%",
