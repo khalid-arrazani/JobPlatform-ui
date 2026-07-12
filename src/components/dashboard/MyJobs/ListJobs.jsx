@@ -56,7 +56,7 @@ export default function CardJobs() {
                 color: "#02020dda",
               }}
             >
-              Full Stack developer
+              {job?.title}
             </Typography>
             <Typography
               sx={{
@@ -66,7 +66,7 @@ export default function CardJobs() {
                 color: "#02020db4",
               }}
             >
-              Marrakesh, Morocco
+              {job?.location}
             </Typography>
             <Stack
               direction="row"
@@ -76,7 +76,7 @@ export default function CardJobs() {
               sx={{ mt: 1, mb: 1 }}
             >
               <Chip
-                label={"Full Time"}
+                label={job?.jobType}
                 size="small"
                 sx={{
                   fontSize: "0.7rem",
@@ -89,7 +89,7 @@ export default function CardJobs() {
               />
 
               <Chip
-                label={"Mid Level"}
+                label={job?.experienceLevel}
                 size="small"
                 sx={{
                   fontSize: "0.7rem",
@@ -101,7 +101,7 @@ export default function CardJobs() {
                 }}
               />
               <Chip
-                label={"Hybrid"}
+                label={job?.workMode}
                 size="small"
                 sx={{
                   fontSize: "0.7rem",
