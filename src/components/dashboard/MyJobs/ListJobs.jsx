@@ -30,7 +30,12 @@ export default function CardJobs() {
           }}
         >
           {/* card job left side */}
-          <Box sx={{ width: "10rem", height: "100%" }}></Box>
+          <Box sx={{ width: "10rem", height: "100%",placeContent:"center",placeItems:"center" }}>
+
+            <Box sx={{ width: "80%", height: "80%", border:"solid 1px #ddd",borderRadius:"8px",backgroundImage:"url()" }}>
+
+            </Box>
+          </Box>
 
           {/* card job right side */}
           <Box
