@@ -3,49 +3,24 @@ import {
 } from "@mui/material";
 
 import { useEffect} from "react";
-import {
 
-  getmyCompany,
-} from "../../../logic/api/company/Company";
 
-import { useCompany } from "../../../logic/context/CompanyContext";
+
 
 
 import Header from "./Header";
 import Footer from "./Footer";
-import { GetMyJobs } from "../../../logic/api/job/Job";
+
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function MyJobsPage() {
-  const { dispatch, ...state } = useJob();
-
+  const {fetchCompany } = useJob();
 
   useEffect(() => {
     fetchCompany();
   }, []);
 
-  const fetchCompany = async () => {
-    dispatch({
-      type: "SET_LOADING",
-      payload: true,
-    });
-    try {
-      const data = await GetMyJobs();
-
-      dispatch({
-        type: "SETMYJOBS",
-        payload: data,
-      });
-      console.log(data);
-    } catch (error) {
-      console.log(error.response?.data);
-    } finally {
-      dispatch({
-        type: "SET_LOADING",
-        payload: false,
-      });
-    }
-  };
+ 
 
   return (
     <>
@@ -78,7 +53,7 @@ export default function MyJobsPage() {
           <Header/>
 
           {/* Footer */}
-          <Footer/>
+          <Footer  fetchCompany={fetchCompany}  />
 
 
         </Box>

@@ -7,6 +7,7 @@ import {
 
 
 import { JobReducer } from "./reducer/jobReducer";
+import { GetMyJobs } from "../api/job/Job";
 
 
 
@@ -29,14 +30,35 @@ export default function JobProvider({
       initialState
     );
   const [openModal, setOpenModal] = useState(false);
+const fetchCompany = async () => {
+    dispatch({
+      type: "SET_LOADING",
+      payload: true,
+    });
+    try {
+      const data = await GetMyJobs();
 
+      dispatch({
+        type: "SETMYJOBS",
+        payload: data,
+      });
+      console.log(data);
+    } catch (error) {
+      console.log(error.response?.data);
+    } finally {
+      dispatch({
+        type: "SET_LOADING",
+        payload: false,
+      });
+    }
+  };
 
 
   return (
     <JobContext.Provider
       value={{
         ...state,
-        dispatch,openModal, setOpenModal
+        dispatch,openModal, setOpenModal,fetchCompany
 
       }}
     >

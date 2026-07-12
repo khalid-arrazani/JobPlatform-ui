@@ -10,19 +10,22 @@ import {
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
-import ContentCopyOutlinedIcon from "@mui/icons-material/ContentCopyOutlined";
+
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PauseCircleOutlineOutlinedIcon from "@mui/icons-material/PauseCircleOutlineOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import { DeleteMyJobs } from "../../../logic/api/job/Job";
+import { useJob } from "../../../logic/context/JobContext";
+import { useAuth } from "../../../logic/context/AuthContext";
 
 export default function MenuCard({ JobId }) {
   const [anchorEl, setAnchorEl] = useState(null);
+  const {fetchCompany} = useJob();
+    const { setSnackBar } = useAuth();
 
   const open = Boolean(anchorEl);
 
-  const handleOpen = (event, jobId) => {
-    console.log(jobId);
+  const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
 
@@ -30,18 +33,26 @@ export default function MenuCard({ JobId }) {
     setAnchorEl(null);
   };
 
-
-
-  const handleDelete = async (jobId) => {
-
+  const handleDelete = async (event, jobId) => {
     try {
       const deleteJob = await DeleteMyJobs(jobId);
-      console.log(deleteJob);
+      setSnackBar({
+        open: true,
+        message: deleteJob.message,
+        severity: "success",
+      });
+      fetchCompany()
+      setAnchorEl(null);
     } catch (err) {
-        console.log(err);
+      console.log(err);
+    setSnackBar({
+        open: true,
+        message: err?.response?.data.message,
+        severity: "error",
+      });
     }
 
-    // setAnchorEl(null);
+    
   };
 
   return (
@@ -104,7 +115,10 @@ export default function MenuCard({ JobId }) {
 
         <Divider sx={{ my: 0.5 }} />
 
-        <MenuItem onClick={handleDelete} sx={{ color: "error.main" }}>
+        <MenuItem
+          onClick={(e) => handleDelete(e, JobId)}
+          sx={{ color: "error.main" }}
+        >
           <ListItemIcon>
             <DeleteOutlineOutlinedIcon fontSize="small" color="error" />
           </ListItemIcon>

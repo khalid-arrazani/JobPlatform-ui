@@ -13,7 +13,7 @@ import { useState } from "react";
 import { Search } from "lucide-react";
 import CardJobs from "./ListJobs";
 
-export default function Footer() {
+export default function Footer({fetchCompany}) {
   const [sort, setSort] = useState("Newest First");
   return (
     <>
@@ -83,7 +83,7 @@ export default function Footer() {
         </Box>
 
         {/* list jobs */}
-        <CardJobs />
+        <CardJobs fetchCompany={fetchCompany} />
 
     
       </Box>
