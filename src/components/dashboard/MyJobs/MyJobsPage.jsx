@@ -303,6 +303,11 @@ export default function MyJobsPage() {
                 display: "flex",
                 boxSizing: "border-box",
                 boxShadow: "none",
+                transition: "0.5s",
+                "&:hover": {
+                  transform: "translateY(-4px)",
+                  boxShadow: "0 8px 20px rgba(0, 0, 0, 0.06)",
+                },
               }}
             >
               {/* card job left side */}
@@ -422,11 +427,62 @@ export default function MyJobsPage() {
                 />
 
                 <IconButton
-                  sx={{ position: "absolute", top: "13%", right: "2%", ":hover":{bgcolor:"#dddddd00"} }}
+                  sx={{
+                    position: "absolute",
+                    top: "13%",
+                    right: "2%",
+                    ":hover": { bgcolor: "#dddddd00" },
+                  }}
                 >
-                 
                   <MoreVertIcon />
                 </IconButton>
+
+                <Box
+                  sx={{
+                    width: "10rem",
+                    height: "3.5rem",
+                    position: "absolute",
+                    right: "15%",
+                    bottom: "10%",
+                    display: "flex",
+                    textAlign: "center",
+                  }}
+                >
+                  <Box sx={{ height: "100%", width: "50%" }}>
+                    <Typography
+                      sx={{ fontWeight: 600, fontFamily: "system-ui" }}
+                    >
+                      24
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 500,
+                        color: "#04020e9a",
+                        fontSize: "0.85rem",
+                        fontFamily: "system-ui",
+                      }}
+                    >
+                      Applicants
+                    </Typography>
+                  </Box>
+                  <Box sx={{ height: "100%", width: "50%" }}>
+                    <Typography
+                      sx={{ fontWeight: 600, fontFamily: "system-ui" }}
+                    >
+                      145
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontWeight: 500,
+                        color: "#04020e9a",
+                        fontSize: "0.85rem",
+                        fontFamily: "system-ui",
+                      }}
+                    >
+                      Views
+                    </Typography>
+                  </Box>
+                </Box>
               </Box>
             </Card>
           </Box>
