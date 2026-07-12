@@ -23,9 +23,14 @@ import { useJob } from "../../../logic/context/JobContext";
 export default function CardJobs (){
   const { dispatch, ...state } = useJob();
 
-
+  console.log(state.MyJobs?.jobs
+);
 
     return <>
+     {state.MyJobs?.jobs.map((job)=>(
+        
+     
+
      <Card
 
      key={123456789}
@@ -42,6 +47,7 @@ export default function CardJobs (){
               transform: "translateY(-4px)",
               boxShadow: "0 8px 20px rgba(0, 0, 0, 0.06)",
             },
+            my:2
           }}
         >
           {/* card job left side */}
@@ -161,7 +167,7 @@ export default function CardJobs (){
             />
 
             {/* MoreVertIcon - Menu  */}
-            <MenuCard JobId={5} />
+            <MenuCard JobId={job._id} />
 
             <Box
               sx={{
@@ -207,5 +213,9 @@ export default function CardJobs (){
             </Box>
           </Box>
         </Card>
+    ))}
+
+
+
     </>
 }
