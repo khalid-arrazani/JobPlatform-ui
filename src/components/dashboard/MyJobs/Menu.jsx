@@ -15,13 +15,13 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PauseCircleOutlineOutlinedIcon from "@mui/icons-material/PauseCircleOutlineOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
-export default function MenuCard() {
+export default function MenuCard({JobId}) {
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
 
   const handleOpen = (event) => {
-   
+   console.log(event.keyValue);
     setAnchorEl(event.currentTarget);
   };
 
