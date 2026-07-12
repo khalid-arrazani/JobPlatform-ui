@@ -163,7 +163,7 @@ export default function CardJobs() {
             >
               <Box sx={{ height: "100%", width: "50%" }}>
                 <Typography sx={{ fontWeight: 600, fontFamily: "system-ui" }}>
-                  24
+                  {job.applicationsCount}
                 </Typography>
                 <Typography
                   sx={{
