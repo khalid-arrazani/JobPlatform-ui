@@ -1,4 +1,4 @@
-import { Box, Typography, Chip, Card, Stack } from "@mui/material";
+import { Box, Typography, Chip, Card, Stack, Avatar } from "@mui/material";
 
 import MenuCard from "./Menu";
 import { useJob } from "../../../logic/context/JobContext";
@@ -30,9 +30,42 @@ export default function CardJobs() {
           }}
         >
           {/* card job left side */}
-          <Box sx={{ width: "10rem", height: "100%",placeContent:"center",placeItems:"center" }}>
-
-            <Box sx={{ width: "80%", height: "80%", border:"solid 1px #ddd",borderRadius:"8px",backgroundImage:"url()" }}>
+          <Box
+            sx={{
+              width: "10rem",
+              height: "100%",
+              placeContent: "center",
+              placeItems: "center",
+            }}
+          >
+            <Box
+              sx={{
+                width: "75%",
+                height: "75%",
+            
+               border:"solid 1px #ddd",
+               borderRadius:"8px",
+                
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                
+                boxSizing:"border-box",
+                 placeContent: "center",
+              placeItems: "center",p:1
+              }}
+            >
+            <Avatar
+            src="https://res.cloudinary.com/dzppmepd9/image/upload/v1783326973/profile-images/iz9nipilnvjbpxkkizbi.png"
+             sx={{
+                width: "100%",
+                height: "100%",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                boxSizing:"border-box",borderRadius:"8px"
+              }}
+            />
 
             </Box>
           </Box>
@@ -121,8 +154,8 @@ export default function CardJobs() {
 
             <Chip
               label={formatDistanceToNow(new Date(job.createdAt), {
-                        addSuffix: true,
-                      })}
+                addSuffix: true,
+              })}
               size="small"
               sx={{
                 fontSize: "0.78rem",

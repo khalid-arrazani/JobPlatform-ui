@@ -72,12 +72,7 @@ export default function MenuCard({JobId}) {
           Edit Job
         </MenuItem>
 
-        <MenuItem onClick={handleClose}>
-          <ListItemIcon>
-            <ContentCopyOutlinedIcon fontSize="small" />
-          </ListItemIcon>
-          Duplicate Job
-        </MenuItem>
+        
 
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
