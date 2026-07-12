@@ -1,39 +1,18 @@
-import {
-  Box,
-  Typography,
- 
-  Chip,
-   
-  Card,
-  Stack,
-
-} from "@mui/material";
-
-
-
-
-
+import { Box, Typography, Chip, Card, Stack } from "@mui/material";
 
 import MenuCard from "./Menu";
 import { useJob } from "../../../logic/context/JobContext";
 
-
-
-
-export default function CardJobs (){
+export default function CardJobs() {
   const { dispatch, ...state } = useJob();
 
-  console.log(state.MyJobs?.jobs
-);
+  console.log(state.MyJobs?.jobs);
 
-    return <>
-     {state.MyJobs?.jobs.map((job)=>(
-        
-     
-
-     <Card
-
-     key={123456789}
+  return (
+    <>
+      {state.MyJobs?.jobs.map((job) => (
+        <Card
+          key={job._id}
           sx={{
             bgcolor: "#ffffff",
             height: "9.5rem",
@@ -47,7 +26,7 @@ export default function CardJobs (){
               transform: "translateY(-4px)",
               boxShadow: "0 8px 20px rgba(0, 0, 0, 0.06)",
             },
-            my:2
+            my: 2,
           }}
         >
           {/* card job left side */}
@@ -213,9 +192,7 @@ export default function CardJobs (){
             </Box>
           </Box>
         </Card>
-    ))}
-
-
-
+      ))}
     </>
+  );
 }
