@@ -2,7 +2,7 @@ import { Box, Typography, Chip, Card, Stack } from "@mui/material";
 
 import MenuCard from "./Menu";
 import { useJob } from "../../../logic/context/JobContext";
-
+import { formatDistanceToNow } from "date-fns";
 export default function CardJobs() {
   const { dispatch, ...state } = useJob();
 
@@ -115,12 +115,14 @@ export default function CardJobs() {
             </Stack>
 
             <Chip
-              label={"Posted May 24,2024"}
+              label={formatDistanceToNow(new Date(job.createdAt), {
+                        addSuffix: true,
+                      })}
               size="small"
               sx={{
                 fontSize: "0.78rem",
                 height: "25px",
-                width: "9rem",
+                width: "fit-Content",
                 bgcolor: "#e4e4e4",
                 color: "#515151",
                 fontWeight: 500,
@@ -129,7 +131,7 @@ export default function CardJobs() {
             />
 
             <Chip
-              label={"• Active"}
+              label={`• ${job.status}`}
               size="small"
               sx={{
                 fontSize: "0.9rem",
@@ -176,7 +178,7 @@ export default function CardJobs() {
               </Box>
               <Box sx={{ height: "100%", width: "50%" }}>
                 <Typography sx={{ fontWeight: 600, fontFamily: "system-ui" }}>
-                  145
+                  {job.jobViews}
                 </Typography>
                 <Typography
                   sx={{
