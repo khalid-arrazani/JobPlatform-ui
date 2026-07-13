@@ -53,8 +53,8 @@ const postedJobs = [
 import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 
-export default function OpenPositionsCard({ CompanyInfo,CompanyactiveJobs }) {
-  console.log(CompanyInfo);
+export default function OpenPositionsCard({CompanyactiveJobs }) {
+ 
   return (
     <>
       <Card
@@ -104,6 +104,8 @@ export default function OpenPositionsCard({ CompanyInfo,CompanyactiveJobs }) {
         {/* <EmptyOpenPositions/> */}
 
         {/* Job Item */}
+        {!CompanyactiveJobs?.length && <EmptyOpenPositions />}
+
         {CompanyactiveJobs?.slice(0, 3).map((item) => (
           <Card
             key={item._id}
@@ -236,8 +238,6 @@ export default function OpenPositionsCard({ CompanyInfo,CompanyactiveJobs }) {
             </Box>
           </Card>
         ))}
-
-
       </Card>
     </>
   );

@@ -186,7 +186,7 @@ export default function CardJobs() {
             />
 
             {/* MoreVertIcon - Menu  */}
-            <MenuCard JobId={job?._id} Status={job?.status} />
+            <MenuCard JobId={job?._id} Status={job?.status} jobInfo={job} />
 
             <Box
               sx={{

@@ -46,6 +46,7 @@ export default function CompanyPage() {
     }
   };
 
+  console.log(state);
   // const getCompany = async () => {
 
   //   try {
