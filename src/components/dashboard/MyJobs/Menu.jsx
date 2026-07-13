@@ -110,7 +110,7 @@ export default function MenuCard({ JobId }) {
           <ListItemIcon>
             <PauseCircleOutlineOutlinedIcon fontSize="small" />
           </ListItemIcon>
-          Pause Job
+          Close Job
         </MenuItem>
 
         <Divider sx={{ my: 0.5 }} />
