@@ -18,10 +18,10 @@ import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
 import { useJob } from "../../../logic/context/JobContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function MenuCard({ JobId,Status }) {
+export default function MenuCard({ JobId, Status }) {
   const [anchorEl, setAnchorEl] = useState(null);
-  const {fetchCompany} = useJob();
-    const { setSnackBar } = useAuth();
+  const { fetchCompany } = useJob();
+  const { setSnackBar } = useAuth();
 
   const open = Boolean(anchorEl);
 
@@ -41,11 +41,11 @@ export default function MenuCard({ JobId,Status }) {
         message: deleteJob.message,
         severity: "success",
       });
-      fetchCompany()
+      fetchCompany();
       setAnchorEl(null);
     } catch (err) {
       console.log(err);
-    setSnackBar({
+      setSnackBar({
         open: true,
         message: err?.response?.data.message,
         severity: "error",
@@ -61,11 +61,11 @@ export default function MenuCard({ JobId,Status }) {
         message: deleteJob.message,
         severity: "success",
       });
-      fetchCompany()
+      fetchCompany();
       setAnchorEl(null);
     } catch (err) {
       console.log(err);
-    setSnackBar({
+      setSnackBar({
         open: true,
         message: err?.response?.data.message,
         severity: "error",
@@ -129,8 +129,7 @@ export default function MenuCard({ JobId,Status }) {
             <PauseCircleOutlineOutlinedIcon fontSize="small" />
           </ListItemIcon>
 
-          {Status == "closed" ? "Active Job" : "Close Job" }
-          
+          {Status == "closed" ? "Active Job" : "Close Job"}
         </MenuItem>
 
         <Divider sx={{ my: 0.5 }} />
