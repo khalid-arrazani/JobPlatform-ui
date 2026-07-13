@@ -174,8 +174,8 @@ export default function CardJobs() {
               sx={{
                 fontSize: "0.9rem",
                 height: "22px",
-                bgcolor: "#d8ffda",
-                color: "rgb(27, 137, 10)",
+                bgcolor: job.status == "closed" ? "#fde4af" : job.status == "active"? "#d8ffda" : null ,
+                color: job.status == "closed" ? "rgb(137, 109, 10)" : job.status == "active"? "rgb(27, 137, 10)" : null ,
                 borderRadius: "10px",
                 fontWeight: 600,
                 fontFamily: "monospace",
