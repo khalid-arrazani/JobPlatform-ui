@@ -14,10 +14,12 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
-import { useJob } from "../../../logic/context/JobContext";
-import { useAuth } from "../../../logic/context/AuthContext";
+
+
 import { useEffect, useState } from "react";
-import { toggleSaveJob } from "../../../logic/api/job/Job";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { toggleSaveJob } from "../../../../logic/api/job/Job";
+
 
 export default function CardCompany({ jobInfo, JobId }) {
   const { setSnackBar } = useAuth();

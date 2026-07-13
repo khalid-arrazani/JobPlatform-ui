@@ -20,8 +20,12 @@ import { useAuth } from "../../../logic/context/AuthContext";
 
 import EditeJobModal from "./EditeJobModal";
 
+import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
+
 export default function MenuCard({ JobId, Status, jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
+  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(true);
+  
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompany } = useJob();
   const { setSnackBar } = useAuth();
@@ -135,6 +139,11 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
           </ListItemIcon>
           View Job
         </MenuItem>
+
+      <MyJobDetailsModal
+      open={openMyJobDetailsModal}
+      setOpen={setMyJobDetailsModal}
+      />
 
         <MenuItem onClick={(e) => handleStatus(e, JobId)}>
           <ListItemIcon>

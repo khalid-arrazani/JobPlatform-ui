@@ -1,6 +1,7 @@
-import { Box, Button, Divider } from "@mui/material";
+import { Box, Button, Divider,Modal } from "@mui/material";
 import { useNavigate, useParams } from "react-router-dom";
-import KeyboardBackspaceIcon from "@mui/icons-material/KeyboardBackspace";
+ 
+import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 
 import CardCompany from "./CardCompany";
 import JobOverview from "./CardJobOverview";
@@ -8,11 +9,12 @@ import SkillsCard from "./SkillsCard";
 import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
 import { useEffect, useState } from "react";
-import { getJobID } from "../../../logic/api/job/Job";
 
-import LoadingPage from "../../profile/JobSeekerProfile/LoadingPage";
 
-export default function MyJobDetailsModal() {
+
+import { getJobID } from "../../../../logic/api/job/Job";
+
+export default function MyJobDetailsModal({open , setOpen}) {
   const navigate = useNavigate();
 
   const { JobId } = useParams();
@@ -40,17 +42,28 @@ export default function MyJobDetailsModal() {
 
   console.log("88" ,job);
 
+  const onClose = ()=>{
+    setOpen(false)
+  }
+
   return <>
-    {loading ?( <LoadingPage/>) :
-    (<Box
+   
+    <Modal
+    open={open}
+    onClose={onClose}
+    sx={{display:"flex",alignItems:"center",justifyContent:"center"}}
+    >
+    
+    <Box
       sx={{
-        width: "100%",
-        height: "auto",
+        width: "95%",
+        height: "95%",
 
         display: "flex",
         alignItems: "center",
         flexDirection: "column",
         overflow: "auto",
+        borderRadius:"20px"
       }}
     >
       <Box
@@ -74,8 +87,8 @@ export default function MyJobDetailsModal() {
           }}
         >
           <Button
-            startIcon={<KeyboardBackspaceIcon />}
-            onClick={() => navigate("/dashboard/jobs")}
+            startIcon={<UndoOutlinedIcon />}
+            onClick={()=>setOpen(false)}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -95,7 +108,7 @@ export default function MyJobDetailsModal() {
               alignContent: "center",
             }}
           >
-            Back to Jobs
+            Back
           </Button>
 
 
@@ -111,6 +124,7 @@ export default function MyJobDetailsModal() {
           <Divider />
         </Box>
       </Box>
-    </Box> ) }
+    </Box> 
+    </Modal> 
  </>
 }
