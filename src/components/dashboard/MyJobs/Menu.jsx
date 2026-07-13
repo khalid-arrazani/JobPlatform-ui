@@ -128,7 +128,7 @@ export default function MenuCard({ JobId, Status,jobInfo }) {
           </ListItemIcon>
           Edit Job
         </MenuItem>
-        <EditeJobModal  open={openEditeJobModal}  setOpen={setEditeJobModal} />
+        <EditeJobModal  open={openEditeJobModal}  setOpen={setEditeJobModal} jobInfo={jobInfo} />
 
         <MenuItem onClick={handleClose}>
           <ListItemIcon>

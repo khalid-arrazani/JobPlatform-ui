@@ -154,26 +154,26 @@ import { createJob } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useProfile } from "../../../logic/context/profileContext";
 
-const EditeJobModal = ({ open, setOpen }) => {
+const EditeJobModal = ({ open, setOpen,jobInfo }) => {
   const { dispatch, ...state } = useProfile();
 
   const { setSnackBar } = useAuth();
 
   const [jobData, setJobData] = useState({
-    title: "",
-    description: "",
-    location: "",
+    title:jobInfo?.title,
+    description:jobInfo?.description,
+    location:jobInfo?.location,
 
-    minSalary: "",
-    maxSalary: "",
-    salaryCurrency: "USD",
-    salaryPeriod: "Per Year",
+    minSalary:jobInfo?.minSalary,
+    maxSalary: jobInfo?.maxSalary,
+    salaryCurrency:jobInfo?.salaryCurrency,
+    salaryPeriod:jobInfo?.salaryPeriod,
 
-    jobType: "",
-    workMode: "",
+    jobType:jobInfo?.jobType,
+    workMode:jobInfo?.workMode,
 
-    experienceLevel: "Mid",
-    skills: [],
+    experienceLevel:jobInfo?.experienceLevel,
+    skills:jobInfo?.skills,
   });
 
   const handleChange = (e) => {
@@ -238,6 +238,8 @@ const EditeJobModal = ({ open, setOpen }) => {
       });
     }
   };
+
+  console.log(jobInfo);
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
