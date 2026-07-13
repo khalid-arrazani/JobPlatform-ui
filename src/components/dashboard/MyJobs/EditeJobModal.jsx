@@ -150,7 +150,7 @@ import logoTitle from "../../../assets/Logo/logo.png";
 
 
 import { green } from "@mui/material/colors";
-import { createJob } from "../../../logic/api/job/Job";
+import { createJob, UpdateJob } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useProfile } from "../../../logic/context/profileContext";
 
@@ -163,15 +163,12 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
     title:jobInfo?.title,
     description:jobInfo?.description,
     location:jobInfo?.location,
-
     minSalary:jobInfo?.minSalary,
     maxSalary: jobInfo?.maxSalary,
     salaryCurrency:jobInfo?.salaryCurrency,
     salaryPeriod:jobInfo?.salaryPeriod,
-
     jobType:jobInfo?.jobType,
     workMode:jobInfo?.workMode,
-
     experienceLevel:jobInfo?.experienceLevel,
     skills:jobInfo?.skills,
   });
@@ -194,7 +191,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
     });
 
     try {
-      const data = await createJob(jobData);
+      const data = await UpdateJob({jobData , JobId : jobInfo._id });
 
       setSnackBar({
         open: true,
@@ -208,15 +205,12 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
         title: "",
         description: "",
         location: "",
-
         minSalary: "",
         maxSalary: "",
         salaryCurrency: "USD",
         salaryPeriod: "Per Year",
-
         jobType: "",
         workMode: "",
-
         experienceLevel: "Mid",
         skills: [],
       });
@@ -239,7 +233,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
     }
   };
 
-  console.log(jobInfo);
+  console.log(jobInfo._id);
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -547,7 +541,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
               }}
             />
           ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>Save</Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Update Info</Box>
           )}
         </Button>
       </DialogActions>

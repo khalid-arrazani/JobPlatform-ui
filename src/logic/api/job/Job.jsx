@@ -11,6 +11,17 @@ export const createJob = async (jobData) => {
 };
 
 
+export const UpdateJob = async (jobData , JobId) => {
+  const response = await API.put(
+    `/jobs/UpdateJob/${JobId}`,
+    jobData,
+    { withCredentials: true }
+  );
+
+  return response.data;
+};
+
+
 export const getJobList = async (page) => {
   const response = await API.get(
      `/jobs/Jobs?page=${page}`,
