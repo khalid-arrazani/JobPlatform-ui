@@ -51,8 +51,26 @@ export default function MenuCard({ JobId }) {
         severity: "error",
       });
     }
+  };
 
-    
+  const handleStatus = async (event, jobId) => {
+    try {
+      const deleteJob = await DeleteMyJobs(jobId);
+      setSnackBar({
+        open: true,
+        message: deleteJob.message,
+        severity: "success",
+      });
+      fetchCompany()
+      setAnchorEl(null);
+    } catch (err) {
+      console.log(err);
+    setSnackBar({
+        open: true,
+        message: err?.response?.data.message,
+        severity: "error",
+      });
+    }
   };
 
   return (
@@ -106,7 +124,7 @@ export default function MenuCard({ JobId }) {
           View Job
         </MenuItem>
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleStatus}>
           <ListItemIcon>
             <PauseCircleOutlineOutlinedIcon fontSize="small" />
           </ListItemIcon>
