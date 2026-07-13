@@ -1,5 +1,5 @@
 import { Box, Button, Divider,Modal } from "@mui/material";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
  
 import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 
@@ -15,7 +15,7 @@ import { useEffect, useState } from "react";
 import { getJobID } from "../../../../logic/api/job/Job";
 
 export default function MyJobDetailsModal({open , setOpen}) {
-  const navigate = useNavigate();
+ 
 
   const { JobId } = useParams();
   const [job , setJob] = useState()

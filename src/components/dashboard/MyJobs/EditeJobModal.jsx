@@ -150,7 +150,7 @@ import logoTitle from "../../../assets/Logo/logo.png";
 
 
 import { green } from "@mui/material/colors";
-import { createJob, UpdateJob } from "../../../logic/api/job/Job";
+import { UpdateJob } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useProfile } from "../../../logic/context/profileContext";
 import { useJob } from "../../../logic/context/JobContext";
