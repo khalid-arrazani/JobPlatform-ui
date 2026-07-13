@@ -150,15 +150,18 @@ export default function JobList() {
               <Box sx={{ width: "100%" }}>
                 <Box
                   sx={{
-                    fontSize: "1.4rem",
+                    fontSize: "1.3rem",
                     display: "flex",
                     justifyContent: "space-between",
                     alignContent: "center",
+                    fontWeight: 600,
+                    fontFamily: "ui-monospace",
                   }}
                 >
-                  <Box>
+                  <Box >
                     {job?.title}
                     <Chip
+                    
                       icon={<AccessTimeIcon />}
                       label={formatDistanceToNow(new Date(job.createdAt), {
                         addSuffix: true,
@@ -167,8 +170,9 @@ export default function JobList() {
                       variant="outlined"
                       sx={{
                         fontSize: "0.7rem",
+                    fontFamily: "monospace",
                         height: "24px",
-                        ml: "0.5rem",
+                        ml: "1rem",fontWeight: 600,
                       }}
                     />
                   </Box>
@@ -182,7 +186,14 @@ export default function JobList() {
                   </Button>
                 </Box>
 
-                <Typography sx={{ fontSize: "0.8rem", color: "#1f1d1d" }}>
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    color: "#02020db4",
+                  }}
+                >
                   {job?.createdBy?.name} • {job.location}
                 </Typography>
 

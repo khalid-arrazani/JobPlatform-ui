@@ -4,9 +4,9 @@ import MenuCard from "./Menu";
 import { useJob } from "../../../logic/context/JobContext";
 import { formatDistanceToNow } from "date-fns";
 export default function CardJobs() {
-  const { dispatch, ...state } = useJob();
+  const { ...state } = useJob();
 
-  console.log(state.MyJobs?.jobs);
+
 
   return (
     <>

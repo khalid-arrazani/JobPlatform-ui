@@ -153,10 +153,11 @@ import { green } from "@mui/material/colors";
 import { createJob, UpdateJob } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useProfile } from "../../../logic/context/profileContext";
+import { useJob } from "../../../logic/context/JobContext";
 
 const EditeJobModal = ({ open, setOpen,jobInfo }) => {
   const { dispatch, ...state } = useProfile();
-
+  const { fetchCompany } = useJob();
   const { setSnackBar } = useAuth();
 
   const [jobData, setJobData] = useState({
@@ -191,14 +192,14 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
     });
 
     try {
-      const data = await UpdateJob({jobData , JobId : jobInfo._id });
+      const data = await UpdateJob(jobData , jobInfo._id );
 
       setSnackBar({
         open: true,
         message: data?.message,
         severity: "success",
       });
-
+      fetchCompany()
       handleClose();
 
       setJobData({
@@ -220,6 +221,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
         payload: true,
       });
     } catch (error) {
+      console.log(error.response?.data)
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -233,7 +235,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
     }
   };
 
-  console.log(jobInfo._id);
+
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>

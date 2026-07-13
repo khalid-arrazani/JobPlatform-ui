@@ -17,7 +17,6 @@ export const UpdateJob = async (jobData , JobId) => {
     jobData,
     { withCredentials: true }
   );
-
   return response.data;
 };
 

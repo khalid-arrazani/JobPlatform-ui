@@ -18,12 +18,10 @@ import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
 import { useJob } from "../../../logic/context/JobContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-
 import EditeJobModal from "./EditeJobModal";
 
-export default function MenuCard({ JobId, Status,jobInfo }) {
-
-    const [openEditeJobModal , setEditeJobModal] = useState(false)
+export default function MenuCard({ JobId, Status, jobInfo }) {
+  const [openEditeJobModal, setEditeJobModal] = useState(false);
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompany } = useJob();
   const { setSnackBar } = useAuth();
@@ -79,23 +77,20 @@ export default function MenuCard({ JobId, Status,jobInfo }) {
   };
 
   const handleModalEdite = async (event, jobId) => {
-     setEditeJobModal(true)
+    setEditeJobModal(true);
   };
 
   return (
     <>
- 
-
-
       <IconButton
         onClick={(e) => handleOpen(e, JobId)}
         sx={{
-            position: "absolute",
+          position: "absolute",
           top: "13%",
           right: "2%",
           ":hover": { bgcolor: "#dddddd00" },
         }}
-        >
+      >
         <MoreVertIcon />
       </IconButton>
       <Menu
@@ -113,7 +108,7 @@ export default function MenuCard({ JobId, Status,jobInfo }) {
         slotProps={{
           paper: {
             sx: {
-                mt: 1,
+              mt: 1,
               borderRadius: 3,
               minWidth: 220,
               p: 1,
@@ -121,14 +116,18 @@ export default function MenuCard({ JobId, Status,jobInfo }) {
             },
           },
         }}
-        >
-        <MenuItem onClick={(e) => handleModalEdite(e, JobId , jobInfo)}>
+      >
+        <MenuItem onClick={(e) => handleModalEdite(e, JobId, jobInfo)}>
           <ListItemIcon>
             <EditOutlinedIcon fontSize="small" />
           </ListItemIcon>
           Edit Job
         </MenuItem>
-        <EditeJobModal  open={openEditeJobModal}  setOpen={setEditeJobModal} jobInfo={jobInfo} />
+        <EditeJobModal
+          open={openEditeJobModal}
+          setOpen={setEditeJobModal}
+          jobInfo={jobInfo}
+        />
 
         <MenuItem onClick={handleClose}>
           <ListItemIcon>
