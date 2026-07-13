@@ -12,7 +12,7 @@ import { getJobID } from "../../../logic/api/job/Job";
 
 import LoadingPage from "../../profile/JobSeekerProfile/LoadingPage";
 
-export default function JobDetailsPage() {
+export default function MyJobDetailsModal() {
   const navigate = useNavigate();
 
   const { JobId } = useParams();
