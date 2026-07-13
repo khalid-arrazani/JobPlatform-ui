@@ -49,6 +49,16 @@ export const DeleteMyJobs = async (JobId) => {
 };
 
 
+
+export const ToggleStatusJob = async (JobId) => {
+  const response = await API.put(
+     `/jobs/Status_My-Jobs/${JobId}`,
+    { withCredentials: true }
+  );
+  return response.data;
+};
+
+
 //this for save jobds part 
 export const toggleSaveJob  = async (jobData) => {
   const response = await API.post(

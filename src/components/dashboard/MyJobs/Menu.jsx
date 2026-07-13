@@ -14,11 +14,11 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import PauseCircleOutlineOutlinedIcon from "@mui/icons-material/PauseCircleOutlineOutlined";
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { DeleteMyJobs } from "../../../logic/api/job/Job";
+import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
 import { useJob } from "../../../logic/context/JobContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-export default function MenuCard({ JobId }) {
+export default function MenuCard({ JobId,Status }) {
   const [anchorEl, setAnchorEl] = useState(null);
   const {fetchCompany} = useJob();
     const { setSnackBar } = useAuth();
@@ -55,7 +55,7 @@ export default function MenuCard({ JobId }) {
 
   const handleStatus = async (event, jobId) => {
     try {
-      const deleteJob = await DeleteMyJobs(jobId);
+      const deleteJob = await ToggleStatusJob(jobId);
       setSnackBar({
         open: true,
         message: deleteJob.message,
@@ -124,11 +124,13 @@ export default function MenuCard({ JobId }) {
           View Job
         </MenuItem>
 
-        <MenuItem onClick={handleStatus}>
+        <MenuItem onClick={(e) => handleStatus(e, JobId)}>
           <ListItemIcon>
             <PauseCircleOutlineOutlinedIcon fontSize="small" />
           </ListItemIcon>
-          Close Job
+
+          {Status == "closed" ? "Active Job" : "Close Job" }
+          
         </MenuItem>
 
         <Divider sx={{ my: 0.5 }} />
