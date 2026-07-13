@@ -24,7 +24,7 @@ import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function MenuCard({ JobId, Status, jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
-  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(true);
+  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
   
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompany } = useJob();
@@ -133,7 +133,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
           jobInfo={jobInfo}
         />
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={()=>setMyJobDetailsModal(true)}>
           <ListItemIcon>
             <VisibilityOutlinedIcon fontSize="small" />
           </ListItemIcon>
@@ -143,6 +143,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
       <MyJobDetailsModal
       open={openMyJobDetailsModal}
       setOpen={setMyJobDetailsModal}
+      jobInfo={jobInfo}
       />
 
         <MenuItem onClick={(e) => handleStatus(e, JobId)}>

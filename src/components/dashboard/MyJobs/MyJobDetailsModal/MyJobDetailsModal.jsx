@@ -14,33 +14,33 @@ import { useEffect, useState } from "react";
 
 import { getJobID } from "../../../../logic/api/job/Job";
 
-export default function MyJobDetailsModal({open , setOpen}) {
+export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
  
 
   const { JobId } = useParams();
   const [job , setJob] = useState()
   const [loading , setLoading] = useState(false)
  
-  useEffect(() => {
-    fetchJobById();
-  }, []);
+  // useEffect(() => {
+  //   fetchJobById();
+  // }, []);
 
-  const fetchJobById = async () => {
-    setLoading(true)
-    try {
-      const jobById = await getJobID(JobId);
-      setJob(jobById);
+  // const fetchJobById = async () => {
+  //   setLoading(true)
+  //   try {
+  //     const jobById = await getJobID(JobId);
+  //     setJob(jobById);
 
-    } catch (error) {
+  //   } catch (error) {
 
-      console.log(error);
+  //     console.log(error);
 
-    }finally{
-      setLoading(false)
-    }
-  };
+  //   }finally{
+  //     setLoading(false)
+  //   }
+  // };
 
-  console.log("88" ,job);
+  console.log("111",jobInfo);
 
   const onClose = ()=>{
     setOpen(false)
@@ -112,15 +112,15 @@ export default function MyJobDetailsModal({open , setOpen}) {
           </Button>
 
 
-          <CardCompany jobInfo={job} JobId={JobId}/>
-          <DescriptionSection jobInfo={job}/>
-          <AbouttheCompany jobInfo={job}/>
+          <CardCompany jobInfo={jobInfo} JobId={JobId}/>
+          <DescriptionSection jobInfo={jobInfo}/>
+          <AbouttheCompany jobInfo={jobInfo}/>
           <Divider />
         </Box>
 
         <Box sx={{ height: "100%", width: "28%" }}>
-          <JobOverview jobInfo={job}/>
-          <SkillsCard jobInfo={job}/>
+          <JobOverview jobInfo={jobInfo}/>
+          <SkillsCard jobInfo={jobInfo}/>
           <Divider />
         </Box>
       </Box>

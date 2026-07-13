@@ -15,50 +15,18 @@ import TelegramIcon from "@mui/icons-material/Telegram";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
-
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../logic/context/AuthContext";
 import { toggleSaveJob } from "../../../../logic/api/job/Job";
 
-
 export default function CardCompany({ jobInfo, JobId }) {
-  const { setSnackBar } = useAuth();
-
   const [jobs, setJobs] = useState();
 
   useEffect(() => {
     setJobs(jobInfo);
   }, [jobInfo]);
 
-  console.log(15644, jobs);
-
-  const saveJob = async () => {
-    try {
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
-
-      const savejobs = await toggleSaveJob({
-        jobId: JobId,
-      });
-      setSnackBar({
-        open: true,
-        message: savejobs?.message,
-        severity: "success",
-      });
-    } catch (error) {
-      setSnackBar({
-        open: true,
-        message: error.response?.data.message,
-        severity: "error",
-      });
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
-    }
-  };
+  const saveJob = async () => {};
   return (
     <>
       <Card
@@ -191,13 +159,7 @@ export default function CardCompany({ jobInfo, JobId }) {
         <Stack direction="row" spacing={2}>
           <Button
             variant="outlined"
-            startIcon={
-              jobs?.isSaved ? (
-                <TurnedInIcon />
-              ) : (
-                <TurnedInNotOutlinedIcon />
-              )
-            }
+            startIcon={<TurnedInNotOutlinedIcon />}
             onClick={saveJob}
             sx={{
               borderRadius: "14px",
@@ -206,8 +168,10 @@ export default function CardCompany({ jobInfo, JobId }) {
               py: 1,
               borderColor: "#DDD",
 
-              color:  jobs?.isSaved ? "#ffffff" : "#a320e5",
-              background: jobs?.isSaved ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)" : "#ffffff" ,
+              color: jobs?.isSaved ? "#ffffff" : "#a320e5",
+              background: jobs?.isSaved
+                ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)"
+                : "#ffffff",
 
               fontSize: "0.8rem",
             }}
@@ -224,8 +188,8 @@ export default function CardCompany({ jobInfo, JobId }) {
               px: 2,
               py: 1.2,
               fontWeight: 300,
-            
-             background:
+
+              background:
                 "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
 
               transition: "all 0.3s ease",
@@ -235,7 +199,6 @@ export default function CardCompany({ jobInfo, JobId }) {
               },
               fontSize: "0.8rem",
             }}
-            
           >
             Apply Now
           </Button>
