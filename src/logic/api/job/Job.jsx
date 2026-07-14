@@ -41,10 +41,11 @@ export const getJobID = async (JobId) => {
 
 
 
-export const GetMyJobs = async () => {
+export const GetMyJobs = async (felterData) => {
+
   const response = await API.get(
      `/jobs/My-Jobs`,
-    { withCredentials: true }
+    {params:felterData, withCredentials: true }
   );
 
   return response.data;
