@@ -23,6 +23,7 @@ export default function Footer({fetchCompany}) {
           height: "74%",
           px: 4,
           boxSizing: "border-box",
+          overflow:"auto"
         }}
       >
         {/* filter and search */}
@@ -33,6 +34,7 @@ export default function Footer({fetchCompany}) {
             my: 2,
             display: "flex",
             justifyContent: "space-between",
+            
           }}
         >
           <TextField
