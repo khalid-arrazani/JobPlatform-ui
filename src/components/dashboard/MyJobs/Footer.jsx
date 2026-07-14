@@ -1,20 +1,20 @@
-import {
-  Box,
-  TextField,
-  InputAdornment,
-  Autocomplete,
+import { Box, TextField, InputAdornment, Autocomplete } from "@mui/material";
 
-} from "@mui/material";
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 import { useState } from "react";
-
-
 
 import { Search } from "lucide-react";
 import CardJobs from "./ListJobs";
 
-export default function Footer({fetchCompany}) {
+export default function Footer({ fetchCompany }) {
   const [sort, setSort] = useState("Newest First");
+  const [page, setPage] = useState(1);
+
+  const handleChange = (event, value) => {
+    setPage(value);
+  };
   return (
     <>
       <Box
@@ -22,72 +22,92 @@ export default function Footer({fetchCompany}) {
           width: "100%",
           height: "74%",
           px: 4,
+          display: "flex",
+          flexDirection: "column",
           boxSizing: "border-box",
-          overflow:"auto"
         }}
       >
-        {/* filter and search */}
         <Box
           sx={{
-            width: "100%",
-            height: "10%",
-            my: 2,
-            display: "flex",
-            justifyContent: "space-between",
-            
+            flex: 1,
+            overflow: "auto",
+            "&::-webkit-scrollbar": {
+              width: "1px",
+            },
+
+
+            "&::-webkit-scrollbar-thumb": {
+              background: "#a1a2d87f",
+              borderRadius: "20px",
+            },
+
+            pr:2
           }}
         >
-          <TextField
-            size="small"
-            placeholder="Search Jobs..."
+          {/* filter and search */}
+          <Box
             sx={{
-              width: "45%",
-              borderRadius: "20px",
-              "& .MuiInputBase-root": { borderRadius: "10px" },
+              width: "100%",
+              height: "10%",
+              my: 2,
+              display: "flex",
+              justifyContent: "space-between",
             }}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <Search size={18} color="#64748B" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
-
-          <Autocomplete
-            size="small"
-            sx={{
-              width: 220,
-              "& .MuiAutocomplete-clearIndicator": {
-                display: "none",
-              },
-              "& .MuiInputBase-root": { borderRadius: "8px" },
-            }}
-            options={["Newest First", "Oldest First"]}
-            value={sort}
-            onChange={(event, newValue) => {
-              setSort(newValue);
-            }}
-            slotProps={{
-              popper: {
-                sx: {
-                  transition: "none",
-                  animation: "none",
+          >
+            <TextField
+              size="small"
+              placeholder="Search Jobs..."
+              sx={{
+                width: "45%",
+                borderRadius: "20px",
+                "& .MuiInputBase-root": { borderRadius: "10px" },
+              }}
+              slotProps={{
+                input: {
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <Search size={18} color="#64748B" />
+                    </InputAdornment>
+                  ),
                 },
-              },
-            }}
-            renderInput={(params) => (
-              <TextField {...params} placeholder="Sort by" />
-            )}
-          />
+              }}
+            />
+
+            <Autocomplete
+              size="small"
+              sx={{
+                width: 220,
+                "& .MuiAutocomplete-clearIndicator": {
+                  display: "none",
+                },
+                "& .MuiInputBase-root": { borderRadius: "8px" },
+              }}
+              options={["Newest First", "Oldest First"]}
+              value={sort}
+              onChange={(event, newValue) => {
+                setSort(newValue);
+              }}
+              slotProps={{
+                popper: {
+                  sx: {
+                    transition: "none",
+                    animation: "none",
+                  },
+                },
+              }}
+              renderInput={(params) => (
+                <TextField {...params} placeholder="Sort by" />
+              )}
+            />
+          </Box>
+
+          {/* list jobs */}
+          <CardJobs fetchCompany={fetchCompany} />
         </Box>
 
-        {/* list jobs */}
-        <CardJobs fetchCompany={fetchCompany} />
-
-    
+        <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
+          <Pagination onChange={handleChange} count={3} />
+        </Stack>
       </Box>
     </>
   );
