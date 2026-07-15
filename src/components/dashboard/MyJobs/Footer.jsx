@@ -3,7 +3,6 @@ import { Box, TextField, InputAdornment, Autocomplete } from "@mui/material";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-import { useState } from "react";
 
 import { Search } from "lucide-react";
 import CardJobs from "./ListJobs";
@@ -14,9 +13,6 @@ export default function Footer() {
     const {fetchCompany , felterData , setFelterData ,...state} = useJob();
   
     
-
-  const [sort, setSort] = useState("Newest First");
-  const [page, setPage] = useState(1);
 
   const handleChange = (event, value) => {
     setFelterData((prev)=>({...prev , page:value}))
