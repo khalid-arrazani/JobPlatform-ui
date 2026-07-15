@@ -98,7 +98,7 @@ export default function Footer() {
               options={["Newest First", "Oldest First"]}
               value={sort}
               onChange={(event, newValue) => {
-                setSort(newValue);
+                setFelterData((prev)=>({...prev , sort:newValue}))
               }}
               slotProps={{
                 popper: {
