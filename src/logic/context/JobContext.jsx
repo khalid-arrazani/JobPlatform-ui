@@ -15,8 +15,12 @@ export default function JobProvider({ children }) {
   const [state, dispatch] = useReducer(JobReducer, initialState);
   const [openModal, setOpenModal] = useState(false);
 
-  const type = "-1";
-  const search = "react";
+  const [felterData,setFelterData] = useState({
+      status: "",
+      search: "",
+      sort: "Newest First",
+      page: 1,
+    });
 
    
 
@@ -50,7 +54,7 @@ export default function JobProvider({ children }) {
         dispatch,
         openModal,
         setOpenModal,
-        fetchCompany,
+        fetchCompany,felterData,setFelterData
       }}
     >
       {children}

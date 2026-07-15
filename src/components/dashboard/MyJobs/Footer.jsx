@@ -7,14 +7,26 @@ import { useState } from "react";
 
 import { Search } from "lucide-react";
 import CardJobs from "./ListJobs";
+import { useJob } from "../../../logic/context/JobContext";
 
-export default function Footer({ fetchCompany }) {
+export default function Footer() {
+
+    const {fetchCompany , felterData , setFelterData ,...state} = useJob();
+  
+    
+
   const [sort, setSort] = useState("Newest First");
   const [page, setPage] = useState(1);
 
   const handleChange = (event, value) => {
-    setPage(value);
+    setFelterData((prev)=>({...prev , page:value}))
   };
+
+  const handleSearch = (e) => {
+    setFelterData((prev)=>({...prev , search:e.target.value}))
+  };
+
+  console.log(felterData);
   return (
     <>
       <Box
@@ -56,6 +68,7 @@ export default function Footer({ fetchCompany }) {
           >
             <TextField
               size="small"
+              onChange={(e)=>{handleSearch(e)}}
               placeholder="Search Jobs..."
               sx={{
                 width: "45%",
@@ -106,7 +119,7 @@ export default function Footer({ fetchCompany }) {
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
-          <Pagination onChange={handleChange} count={3} />
+          <Pagination onChange={handleChange} count={state.MyJobs.totalPages} />
         </Stack>
       </Box>
     </>

@@ -1,165 +1,151 @@
+import { Box, Typography, Button, Tab, Tabs, Chip } from "@mui/material";
 
-import {
-  Box,
-  Typography,
-  Button,
-  Tab,
-  Tabs,
-  Chip,
- 
-} from "@mui/material";
-
-import {  useState } from "react";
-
-
-
+import { useState } from "react";
 
 import AddIcon from "@mui/icons-material/Add";
 
+export default function Header() {
+  const [currentTab, setCurrentTab] = useState(0);
 
-export default function Header (){
-    const [currentTab, setCurrentTab] = useState(0);
-    
+  return (
+    <>
+      <Box
+        sx={{
+          width: "100%",
+          height: "fit-Content",
+          px: 2.5,
+          boxSizing: "border-box",
+          borderBottom: "solid 1px #ddd",
+        }}
+      >
+        <Box
+          sx={{
+            width: "100%",
+            height: "6rem",
+            px: 2.5,
+            boxSizing: "border-box",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          <Box>
+            <Typography
+              sx={{
+                fontSize: "1.8rem",
+                fontWeight: 600,
+                color: "#050713ee",
+              }}
+            >
+              My Jobs
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                color: "#6f6e6ee7",
+              }}
+            >
+              Manage and track all the job positions you have posted.
+            </Typography>
+          </Box>
 
-
-    return <>
-     <Box
+          <Button
+            variant="contained"
             sx={{
-              width: "100%",
-              height: "fit-Content",
-              px: 2.5,
-              boxSizing: "border-box",
-              borderBottom: "solid 1px #ddd",
+              gap: 1.5,
+              textTransform: "none",
+              flexShrink: 0,
+              height: "2.3rem",
+              bgcolor: "#6a36eb",
+              fontSize: "0.8rem",
             }}
           >
-            <Box
-              sx={{
-                width: "100%",
-                height: "6rem",
-                px: 2.5,
-                boxSizing: "border-box",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-              }}
-            >
-              <Box>
-                <Typography
-                  sx={{
-                    fontSize: "1.8rem",
-                    fontWeight: 600,
-                    color: "#050713ee",
-                  }}
-                >
-                  My Jobs
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    color: "#6f6e6ee7",
-                  }}
-                >
-                  Manage and track all the job positions you have posted.
-                </Typography>
+            <AddIcon /> Post a New Job
+          </Button>
+        </Box>
+
+        <Tabs
+          value={currentTab}
+          textColor="inherit"
+          sx={{
+            maxHeight: 53,
+            "& .MuiTabs-indicator": {
+              backgroundColor: "#5590ff",
+              height: "2px",
+              borderRadius: "999px",
+              top: "51px",
+            },
+            ml: 2,
+          }}
+        >
+          <Tab
+            label="All Jobs"
+            onClick={() => setCurrentTab(0)}
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              minHeight: 64,
+              padding: 0,
+            }}
+          />
+
+          <Tab
+            label={
+              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                <span>Active</span>
+
+                <Chip
+                  label="8"
+                  size="small"
+                  sx={{ color: "#02310e", bgcolor: "#8efb88" }}
+                />
               </Box>
+            }
+            onClick={() => setCurrentTab(1)}
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              minHeight: 64,
+            }}
+          />
 
-              <Button
-                variant="contained"
-                sx={{
-                  gap: 1.5,
-                  textTransform: "none",
-                  flexShrink: 0,
-                  height: "2.3rem",
-                  bgcolor: "#6a36eb",
-                  fontSize: "0.8rem",
-                }}
-              >
-                <AddIcon /> Post a New Job
-              </Button>
-            </Box>
+          <Tab
+            onClick={() => setCurrentTab(2)}
+            label={
+              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                <span>Closed</span>
 
-            <Tabs
-              value={currentTab}
-              textColor="inherit"
-              sx={{
-                maxHeight: 53,
-                "& .MuiTabs-indicator": {
-                  backgroundColor: "#5590ff",
-                  height: "2px",
-                  borderRadius: "999px",
-                  top: "51px",
-                },
-                ml: 2,
-                
-              }}
-            >
-              <Tab
-                label="All Jobs"
-                onClick={() => setCurrentTab(0)}
-                sx={{
-                  textTransform: "none",
-                  fontWeight: 600,
-                  minHeight: 64,
-                  padding: 0,
-                }}
-              />
+                <Chip
+                  label="8"
+                  size="small"
+                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                />
+              </Box>
+            }
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              minHeight: 64,
+            }}
+          />
+          <Tab
+            onClick={() => setCurrentTab(3)}
+            label={
+              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                <span>Draft</span>
 
-              <Tab
-                label={
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                    <span>Active</span>
-
-                    <Chip
-                      label="8"
-                      size="small"
-                      sx={{ color: "#02310e", bgcolor: "#8efb88" }}
-                    />
-                  </Box>
-                }
-                onClick={() => setCurrentTab(1)}
-                sx={{
-                  textTransform: "none",
-                  fontWeight: 600,
-                  minHeight: 64,
-                }}
-              />
-
-              <Tab
-                onClick={() => setCurrentTab(2)}
-                label={
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                    <span>Closed</span>
-
-                    <Chip
-                      label="8"
-                      size="small"
-                      sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
-                    />
-                  </Box>
-                }
-                sx={{
-                  textTransform: "none",
-                  fontWeight: 600,
-                  minHeight: 64,
-                }}
-              />
-              <Tab
-                onClick={() => setCurrentTab(3)}
-                label={
-                  <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                    <span>Draft</span>
-
-                    <Chip label="1" size="small" sx={{}} />
-                  </Box>
-                }
-                sx={{
-                  textTransform: "none",
-                  fontWeight: 600,
-                  minHeight: 64,
-                }}
-              />
-            </Tabs>
-          </Box>
+                <Chip label="1" size="small" sx={{}} />
+              </Box>
+            }
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              minHeight: 64,
+            }}
+          />
+        </Tabs>
+      </Box>
     </>
+  );
 }

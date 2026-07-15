@@ -14,17 +14,11 @@ import Footer from "./Footer";
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function MyJobsPage() {
-  const {fetchCompany } = useJob();
+  const {fetchCompany , felterData , setFelterData } = useJob();
 
-  const [felterData,setFelterData] = useState({
-    status: "active",
-    search: "react",
-    sort: "Newest First",
-    page: 1,
-  });
-
+  
   useEffect(() => {
-    fetchCompany(felterData);
+    fetchCompany();
   }, []);
 
  
