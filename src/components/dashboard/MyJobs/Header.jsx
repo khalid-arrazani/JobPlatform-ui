@@ -14,6 +14,8 @@ export default function Header() {
  const onChange = (Tap)=>{
   let tap
   Tap == 0 ? tap = null : Tap == 1 ? tap = "active" : Tap == 2 ? tap = "closed": Tap == 3 ? tap = "draft": null
+
+  setFelterData((prev)=>({...prev , status : Tap }))
  }
 
   return (
@@ -90,7 +92,7 @@ export default function Header() {
         >
           <Tab
             label="All Jobs"
-            onClick={() => setCurrentTab(0)}
+            onClick={() => onChange(0)}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -111,7 +113,7 @@ export default function Header() {
                 />
               </Box>
             }
-            onClick={() => setCurrentTab(1)}
+            onClick={() => onChange(1)}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -120,7 +122,7 @@ export default function Header() {
           />
 
           <Tab
-            onClick={() => setCurrentTab(2)}
+            onClick={() => onChange(2)}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Closed</span>
@@ -139,7 +141,7 @@ export default function Header() {
             }}
           />
           <Tab
-            onClick={() => setCurrentTab(3)}
+            onClick={() => onChange(3)}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
