@@ -12,10 +12,16 @@ export default function Header() {
   
 
  const onChange = (Tap)=>{
+  console.log(Tab);  setCurrentTab(Tab)
+
   let tap
   Tap == 0 ? tap = null : Tap == 1 ? tap = "active" : Tap == 2 ? tap = "closed": Tap == 3 ? tap = "draft": null
   setFelterData((prev)=>({...prev , status : tap }))
+
+ 
  }
+
+ console.log(currentTab);
 
 
  
