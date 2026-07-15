@@ -63,6 +63,7 @@ export default function Footer() {
             <TextField
               size="small"
               onChange={(e)=>{handleSearch(e)}}
+              value={felterData.search}
               placeholder="Search Jobs..."
               sx={{
                 width: "45%",
