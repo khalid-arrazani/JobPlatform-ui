@@ -6,25 +6,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
-    const {fetchCompany , felterData , setFelterData ,...state} = useJob();
+  const { fetchCompany, felterData, setFelterData, ...state } = useJob();
 
-  const [currentTab, setCurrentTab] = useState(0);
-  
+  const [currentTab, setCurrentTab] = useState("");
 
- const onChange = (Tap)=>{
-  console.log(Tab);  setCurrentTab(Tab)
-
-  let tap
-  Tap == 0 ? tap = null : Tap == 1 ? tap = "active" : Tap == 2 ? tap = "closed": Tap == 3 ? tap = "draft": null
-  setFelterData((prev)=>({...prev , status : tap }))
-
- 
- }
-
- console.log(currentTab);
-
-
- 
 
   return (
     <>
@@ -85,7 +70,10 @@ export default function Header() {
         </Box>
 
         <Tabs
-          value={currentTab}
+          value={felterData.status}
+          onChange={(event, newValue) => {
+            setFelterData((prev)=>({...prev , status :newValue }))
+          }}
           textColor="inherit"
           sx={{
             maxHeight: 53,
@@ -100,7 +88,7 @@ export default function Header() {
         >
           <Tab
             label="All Jobs"
-            onClick={() => onChange(0)}
+            value={""}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -121,7 +109,7 @@ export default function Header() {
                 />
               </Box>
             }
-            onClick={() => onChange(1)}
+            value={"active"}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -130,7 +118,7 @@ export default function Header() {
           />
 
           <Tab
-            onClick={() => onChange(2)}
+            value={"closed"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Closed</span>
@@ -149,7 +137,7 @@ export default function Header() {
             }}
           />
           <Tab
-            onClick={() => onChange(3)}
+            value={"draft"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
