@@ -14,7 +14,8 @@ import Footer from "./Footer";
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function MyJobsPage() {
-  const {fetchCompany , felterData , setFelterData } = useJob();
+  const {fetchCompany } = useJob();
+  
 
   
   useEffect(() => {

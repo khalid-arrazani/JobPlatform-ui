@@ -3,13 +3,15 @@ import { Box, Typography, Button, Tab, Tabs, Chip } from "@mui/material";
 import { useState } from "react";
 
 import AddIcon from "@mui/icons-material/Add";
+import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
+    const {fetchCompany , felterData , setFelterData ,...state} = useJob();
 
   const [currentTab, setCurrentTab] = useState(0);
 
 
-  
+
   return (
     <>
       <Box
