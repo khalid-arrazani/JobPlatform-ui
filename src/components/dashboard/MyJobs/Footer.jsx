@@ -96,7 +96,7 @@ export default function Footer() {
                 "& .MuiInputBase-root": { borderRadius: "8px" },
               }}
               options={["Newest First", "Oldest First"]}
-              value={sort}
+              value={felterData.sort}
               onChange={(event, newValue) => {
                 setFelterData((prev)=>({...prev , sort:newValue}))
               }}
@@ -119,7 +119,7 @@ export default function Footer() {
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
-          <Pagination onChange={handleChange} count={state.MyJobs.totalPages} />
+          <Pagination onChange={handleChange} count={state?.MyJobs?.totalPages} />
         </Stack>
       </Box>
     </>
