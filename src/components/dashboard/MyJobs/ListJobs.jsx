@@ -10,6 +10,14 @@ export default function CardJobs() {
 
   return (
     <>
+
+      <Box sx={{border:"dashed 1px #ddd",width:"95%",height:"80%",placeSelf:"center", borderRadius:"10px"}}>
+
+      </Box>
+
+
+
+
       {state.MyJobs?.jobs.map((job) => (
         <Card
           key={job._id}
@@ -233,6 +241,10 @@ export default function CardJobs() {
           </Box>
         </Card>
       ))}
+
+
+
+
     </>
   );
 }
