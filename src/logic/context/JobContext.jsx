@@ -18,14 +18,9 @@ export default function JobProvider({ children }) {
   const type = "-1";
   const search = "react";
 
-  const felterData = {
-    status: "active",
-    search: "re",
-    sort: "Newest First",
-    page: 1,
-  };
+   
 
-  const fetchCompany = async () => {
+  const fetchCompany = async (felterData) => {
     dispatch({
       type: "SET_LOADING",
       payload: true,
