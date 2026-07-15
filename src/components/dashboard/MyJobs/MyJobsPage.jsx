@@ -17,8 +17,8 @@ export default function MyJobsPage() {
   const {fetchCompany } = useJob();
 
   const [felterData,setFelterData] = useState({
-    status: "",
-    search: "",
+    status: "active",
+    search: "react",
     sort: "Newest First",
     page: 1,
   });
