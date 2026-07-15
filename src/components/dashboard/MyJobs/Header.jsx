@@ -14,7 +14,6 @@ export default function Header() {
  const onChange = (Tap)=>{
   let tap
   Tap == 0 ? tap = null : Tap == 1 ? tap = "active" : Tap == 2 ? tap = "closed": Tap == 3 ? tap = "draft": null
-
   setFelterData((prev)=>({...prev , status : Tap }))
  }
 
@@ -77,7 +76,7 @@ export default function Header() {
         </Box>
 
         <Tabs
-          value={currentTab}
+          value={felterData}
           textColor="inherit"
           sx={{
             maxHeight: 53,
