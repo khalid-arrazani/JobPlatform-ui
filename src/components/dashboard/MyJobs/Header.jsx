@@ -6,7 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
-  const { fetchCompany, felterData, setFelterData, ...state } = useJob();
+  const { felterData, setFelterData, ...state } = useJob();
 
 
 
