@@ -71,7 +71,7 @@ export default function Header() {
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData((prev)=>({...prev , status :newValue ,page:0 }))
+            setFelterData((prev)=>({...prev , status :newValue ,page:1 }))
           }}
           textColor="inherit"
           sx={{
@@ -140,7 +140,6 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
-
                 <Chip label="1" size="small" sx={{}} />
               </Box>
             }

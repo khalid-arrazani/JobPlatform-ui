@@ -16,7 +16,7 @@ export default function JobProvider({ children }) {
   const [openModal, setOpenModal] = useState(false);
 
   const [felterData,setFelterData] = useState({
-      status: "active",
+      status: "",
       search: "",
       sort: "Newest First",
       page: 1,
