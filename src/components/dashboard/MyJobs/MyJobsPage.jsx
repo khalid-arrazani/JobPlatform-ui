@@ -15,10 +15,10 @@ import { useJob } from "../../../logic/context/JobContext";
 
 export default function MyJobsPage() {
   const {fetchCompany } = useJob();
-  
+
   const felterData = {
-    status: "closed",
-    search: "re",
+    // status: "",
+    search: "",
     sort: "Newest First",
     page: 1,
   };
