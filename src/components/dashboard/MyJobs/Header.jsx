@@ -6,7 +6,7 @@ import AddIcon from "@mui/icons-material/Add";
 import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
-  const { felterData, setFelterData, ...state } = useJob();
+  const { felterData, setFelterData} = useJob();
 
 
 
@@ -71,7 +71,7 @@ export default function Header() {
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData((prev)=>({...prev , status :newValue ,page:1 }))
+            setFelterData((prev)=>({...prev , status :newValue ,page:1 , search:""}))
           }}
           textColor="inherit"
           sx={{
