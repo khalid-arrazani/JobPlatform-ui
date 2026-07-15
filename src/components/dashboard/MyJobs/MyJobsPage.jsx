@@ -2,7 +2,7 @@ import {
   Box,
 } from "@mui/material";
 
-import { useEffect} from "react";
+import { useEffect, useState} from "react";
 
 
 
@@ -16,12 +16,12 @@ import { useJob } from "../../../logic/context/JobContext";
 export default function MyJobsPage() {
   const {fetchCompany } = useJob();
 
-  const felterData = {
+  const [felterData,setFelterData] = useState({
     // status: "",
     search: "",
     sort: "Newest First",
     page: 1,
-  };
+  });
 
   useEffect(() => {
     fetchCompany(felterData);
