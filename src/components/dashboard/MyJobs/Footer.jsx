@@ -10,10 +10,8 @@ import { useJob } from "../../../logic/context/JobContext";
 
 export default function Footer() {
 
-    const {fetchCompany , felterData , setFelterData ,...state} = useJob();
+  const {fetchCompany , felterData , setFelterData ,...state} = useJob();
   
-    
-
   const handleChange = (event, value) => {
     setFelterData((prev)=>({...prev , page:value}))
   };

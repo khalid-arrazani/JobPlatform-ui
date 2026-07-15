@@ -8,7 +8,6 @@ import { useJob } from "../../../logic/context/JobContext";
 export default function Header() {
   const { fetchCompany, felterData, setFelterData, ...state } = useJob();
 
-  const [currentTab, setCurrentTab] = useState("");
 
 
   return (
@@ -72,7 +71,7 @@ export default function Header() {
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData((prev)=>({...prev , status :newValue }))
+            setFelterData((prev)=>({...prev , status :newValue ,page:0 }))
           }}
           textColor="inherit"
           sx={{
