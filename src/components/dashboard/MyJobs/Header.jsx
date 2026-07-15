@@ -9,8 +9,12 @@ export default function Header() {
     const {fetchCompany , felterData , setFelterData ,...state} = useJob();
 
   const [currentTab, setCurrentTab] = useState(0);
+  
 
-
+ const onChange = (Tap)=>{
+  let tap
+  Tap == 0 ? tap = null : Tap == 1 ? tap = "active" : Tap == 2 ? tap = "closed": Tap == 3 ? tap = "draft": null
+ }
 
   return (
     <>

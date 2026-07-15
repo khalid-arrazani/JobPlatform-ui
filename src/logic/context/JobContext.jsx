@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext, useState } from "react";
+import { createContext, useReducer, useContext, useState, useEffect } from "react";
 
 import { JobReducer } from "./reducer/jobReducer";
 import { GetMyJobs } from "../api/job/Job";
@@ -16,15 +16,14 @@ export default function JobProvider({ children }) {
   const [openModal, setOpenModal] = useState(false);
 
   const [felterData,setFelterData] = useState({
-      status: "",
+      status: "active",
       search: "",
       sort: "Newest First",
       page: 1,
     });
 
    
-
-  const fetchCompany = async (felterData) => {
+  const fetchCompany = async () => {
     dispatch({
       type: "SET_LOADING",
       payload: true,
@@ -46,6 +45,11 @@ export default function JobProvider({ children }) {
       });
     }
   };
+
+
+  useEffect(()=>{
+    fetchCompany()
+  },[felterData])
 
   return (
     <JobContext.Provider
