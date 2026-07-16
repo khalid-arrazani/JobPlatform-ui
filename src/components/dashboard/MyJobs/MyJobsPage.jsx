@@ -22,7 +22,6 @@ export default function MyJobsPage() {
     fetchCompany();
   }, []);
 
- 
 
   return (
     <>
@@ -55,7 +54,7 @@ export default function MyJobsPage() {
           <Header/>
 
           {/* Footer */}
-          <Footer  fetchCompany={fetchCompany}  />
+          <Footer />
 
 
         </Box>

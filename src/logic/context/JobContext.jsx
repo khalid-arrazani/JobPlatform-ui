@@ -31,10 +31,7 @@ export default function JobProvider({ children }) {
   });
 
   const fetchCompany = async () => {
-
-
     setMyJobsLoading(true);
-
 
     try {
       const data = await GetMyJobs(felterData);
@@ -46,6 +43,18 @@ export default function JobProvider({ children }) {
       console.log(error.response?.data);
     } finally {
       setMyJobsLoading(false);
+    }
+  };
+
+  const fetchCompanyWitoutReload = async () => {
+    try {
+      const data = await GetMyJobs(felterData);
+      dispatch({
+        type: "SETMYJOBS",
+        payload: data,
+      });
+    } catch (error) {
+      console.log(error.response?.data);
     }
   };
 
@@ -64,6 +73,7 @@ export default function JobProvider({ children }) {
         felterData,
         setFelterData,
         myJobsLoading,
+        fetchCompanyWitoutReload,
       }}
     >
       {children}

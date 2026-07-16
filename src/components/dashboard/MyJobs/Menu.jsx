@@ -27,7 +27,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
   const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
   
   const [anchorEl, setAnchorEl] = useState(null);
-  const { fetchCompany } = useJob();
+  const { fetchCompanyWitoutReload } = useJob();
   const { setSnackBar } = useAuth();
 
   const open = Boolean(anchorEl);
@@ -48,7 +48,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
         message: deleteJob.message,
         severity: "success",
       });
-      fetchCompany();
+      fetchCompanyWitoutReload();
       setAnchorEl(null);
     } catch (err) {
       console.log(err);
@@ -68,7 +68,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
         message: deleteJob.message,
         severity: "success",
       });
-      fetchCompany();
+      fetchCompanyWitoutReload();
       setAnchorEl(null);
     } catch (err) {
       console.log(err);
@@ -80,7 +80,7 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
     }
   };
 
-  const handleModalEdite = async (event, jobId) => {
+  const handleModalEdite = async () => {
     setEditeJobModal(true);
   };
 

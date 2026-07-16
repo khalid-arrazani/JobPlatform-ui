@@ -38,7 +38,6 @@ export default function Footer() {
     setSearch(e.target.value);
   };
 
-  console.log(state);
 
   const page = myJobsLoading ? (
     <SkeletonJobs />

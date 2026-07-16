@@ -2,7 +2,7 @@ import { Box,Typography } from "@mui/material";
 import { useJob } from "../../../../logic/context/JobContext";
 
 export default function NoSearchResults () {
-    const { fetchCompany, felterData, setFelterData, ...state } = useJob();
+    const { felterData} = useJob();
   
   return (
     <>
