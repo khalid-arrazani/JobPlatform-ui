@@ -16,7 +16,7 @@ import NoSearchResults from "./emptyList/NoSearchResults ";
 
 export default function Footer() {
   const [search, setSearch] = useState("");
-  const { fetchCompany, felterData, setFelterData, ...state } = useJob();
+  const { felterData, setFelterData, ...state } = useJob();
 
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
