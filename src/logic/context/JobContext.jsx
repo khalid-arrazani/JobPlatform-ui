@@ -59,7 +59,9 @@ export default function JobProvider({ children }) {
   };
 
   useEffect(() => {
+    
     fetchCompany();
+
   }, [felterData]);
 
   return (
