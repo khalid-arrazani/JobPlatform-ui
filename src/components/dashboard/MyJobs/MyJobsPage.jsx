@@ -15,9 +15,7 @@ export default function MyJobsPage() {
   
 
   
-  useEffect(() => {
-    fetchCompany();
-  }, []);
+ 
 
 
   return (
