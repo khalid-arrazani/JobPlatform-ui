@@ -9,7 +9,7 @@ export default function Header() {
 
   const { felterData, setFelterData,...state } = useJob();
 
-console.log(state );
+
 
   return (
     <>
