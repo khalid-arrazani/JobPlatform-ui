@@ -13,10 +13,11 @@ import NoActiveJobsYet from "./emptyList/NoActiveJobsYet";
 import NoClosedJobsYet from "./emptyList/NoClosedJobsYet";
 import NoDraftsJobsYet from "./emptyList/NoDraftsJobsYet";
 import NoSearchResults from "./emptyList/NoSearchResults ";
+import SkeletonJobs from "./SkeletonJobs";
 
 export default function Footer() {
   const [search, setSearch] = useState("");
-  const { felterData, setFelterData, ...state } = useJob();
+  const {myJobsLoading, felterData, setFelterData, ...state } = useJob();
 
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
@@ -39,7 +40,9 @@ export default function Footer() {
 
   console.log(state);
 
-  const page = !state.MyJobs?.hasJobs ? (
+  const page = myJobsLoading ? (
+    <SkeletonJobs />
+  ) :!state.MyJobs?.hasJobs ? (
     <NoJobsYet />
   ) : state.MyJobs?.jobs.length === 0 && search ? (
     <NoSearchResults />
@@ -140,6 +143,7 @@ export default function Footer() {
             />
           </Box>
 
+          
           {page}
 
   

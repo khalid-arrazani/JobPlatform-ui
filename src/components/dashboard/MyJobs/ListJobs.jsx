@@ -22,6 +22,7 @@ export default function CardJobs() {
           sx={{
             bgcolor: "#ffffff",
             height: "9.5rem",
+            width:"100%",
             border: "1px solid #ddddddb9",
             borderRadius: "10px",
             display: "flex",
