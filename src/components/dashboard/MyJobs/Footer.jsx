@@ -122,6 +122,9 @@ const handleSearch = (e) => {
           </Box>
 
           {/* list jobs */}
+          <Box sx={{border:"dashed 1px #ddd",width:"95%",height:"80%",placeSelf:"center", borderRadius:"10px"}}>
+        
+      </Box>
           <CardJobs fetchCompany={fetchCompany} />
         </Box>
 

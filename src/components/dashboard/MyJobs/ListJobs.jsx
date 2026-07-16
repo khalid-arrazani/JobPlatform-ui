@@ -11,9 +11,7 @@ export default function CardJobs() {
   return (
     <>
 
-      <Box sx={{border:"dashed 1px #ddd",width:"95%",height:"80%",placeSelf:"center", borderRadius:"10px"}}>
-        
-      </Box>
+      
 
 
 
