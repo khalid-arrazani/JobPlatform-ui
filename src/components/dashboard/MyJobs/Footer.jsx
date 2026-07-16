@@ -7,7 +7,11 @@ import { Search } from "lucide-react";
 import CardJobs from "./ListJobs";
 import { useJob } from "../../../logic/context/JobContext";
 import { useEffect, useState } from "react";
+
 import NoJobsYet from "./emptyList/NoJobsYet";
+import NoActiveJobsYet from "./emptyList/NoActiveJobsYet";
+import NoClosedJobsYet from "./emptyList/NoClosedJobsYet";
+import NoDraftsJobsYet from "./emptyList/NoDraftsJobsYet";
 
 export default function Footer() {
   const [search, setSearch] = useState("");
@@ -27,6 +31,7 @@ export default function Footer() {
 
   return () => clearTimeout(timeout);
 }, [search]);
+
 
 const handleSearch = (e) => {
   setSearch(e.target.value);
@@ -125,7 +130,7 @@ const handleSearch = (e) => {
 
 
 
-          <NoJobsYet/>
+          <NoDraftsJobsYet/>
 
           {/* list jobs */}   
           <CardJobs fetchCompany={fetchCompany} />

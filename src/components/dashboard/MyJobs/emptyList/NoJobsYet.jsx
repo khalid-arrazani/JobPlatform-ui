@@ -1,6 +1,4 @@
-import { Box, TextField, InputAdornment, Autocomplete,Typography } from "@mui/material";
-
-import NoJobsimage from "./../../../../assets/NoJobsYet.svg"
+import { Box,Typography } from "@mui/material";
 
 export default function NoJobsYet() {
   return (
@@ -16,14 +14,14 @@ export default function NoJobsYet() {
           display:"flex",
           justifyContent:"center",
           alignItems:"center",
-          flexDirection:"column"
+          flexDirection:"column",boxSizing:"border-box",bgcolor:"#fff9f891",gap:1
         }}
       >
-      <img src={NoJobsimage} alt="" srcset="" style={{width:"20%"}} />
+    
       
-      <Typography sx={{fontWeight:600,fontSize:"2rem",color:"#010214ce"}} >No jobs posted yet</Typography>
+      <Typography sx={{fontWeight:600,fontSize:"2rem",color:"#010214ce",fontFamily:"ui-rounded"}} >No jobs posted yet</Typography>
       <Typography sx={{fontWeight:600,fontSize:"1rem",color:"#5f5f5fd6",fontFamily:"ui-rounded"}} >You haven't posted any job positions yet.</Typography>
-      <Typography sx={{fontWeight:600,fontSize:"1rem",color:"#5f5f5fd6",fontFamily:"ui-rounded"}} >Get started by posting your first job and find the perfect candidate</Typography>
+      <Typography sx={{fontWeight:600,fontSize:"1rem",color:"#5f5f5fd6",fontFamily:"ui-rounded"}} >Get started by posting your first job and find the perfect candidate.</Typography>
 
 
       </Box>
