@@ -13,7 +13,7 @@ export default function Draft() {
           bgcolor: "#ffffff",
           height: "9.5rem",
           width: "100%",
-          border: "1px solid #ddddddb9",
+          border: "1px dashed #dddddd",
           borderRadius: "10px",
           display: "flex",
           boxSizing: "border-box",
