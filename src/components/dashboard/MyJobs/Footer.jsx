@@ -24,15 +24,20 @@ export default function Footer() {
   };
 
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setFelterData((prev) => ({
+  const timeout = setTimeout(() => {
+    setFelterData(prev => {
+      if (prev.search === search) return prev;
+
+      return {
         ...prev,
         search,
-      }));
-    }, 500);
+        page: 1,
+      };
+    });
+  }, 500);
 
-    return () => clearTimeout(timeout);
-  }, [search]);
+  return () => clearTimeout(timeout);
+}, [search]);
 
   const handleSearch = (e) => {
     setSearch(e.target.value);

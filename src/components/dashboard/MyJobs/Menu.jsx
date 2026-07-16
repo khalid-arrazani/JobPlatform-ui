@@ -25,7 +25,7 @@ import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 export default function MenuCard({ JobId, Status, jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
   const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
-  
+
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompanyWitoutReload } = useJob();
   const { setSnackBar } = useAuth();
@@ -133,18 +133,18 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
           jobInfo={jobInfo}
         />
 
-        <MenuItem onClick={()=>setMyJobDetailsModal(true)}>
+        <MenuItem onClick={() => setMyJobDetailsModal(true)}>
           <ListItemIcon>
             <VisibilityOutlinedIcon fontSize="small" />
           </ListItemIcon>
           View Job
         </MenuItem>
 
-      <MyJobDetailsModal
-      open={openMyJobDetailsModal}
-      setOpen={setMyJobDetailsModal}
-      jobInfo={jobInfo}
-      />
+        <MyJobDetailsModal
+          open={openMyJobDetailsModal}
+          setOpen={setMyJobDetailsModal}
+          jobInfo={jobInfo}
+        />
 
         <MenuItem onClick={(e) => handleStatus(e, JobId)}>
           <ListItemIcon>
