@@ -12,6 +12,7 @@ import NoJobsYet from "./emptyList/NoJobsYet";
 import NoActiveJobsYet from "./emptyList/NoActiveJobsYet";
 import NoClosedJobsYet from "./emptyList/NoClosedJobsYet";
 import NoDraftsJobsYet from "./emptyList/NoDraftsJobsYet";
+import NoSearchResults from "./emptyList/NoSearchResults ";
 
 export default function Footer() {
   const [search, setSearch] = useState("");
@@ -22,20 +23,33 @@ export default function Footer() {
   };
 
   useEffect(() => {
-  const timeout = setTimeout(() => {
-    setFelterData((prev) => ({
-      ...prev,
-      search,
-    }));
-  }, 500);
+    const timeout = setTimeout(() => {
+      setFelterData((prev) => ({
+        ...prev,
+        search,
+      }));
+    }, 500);
 
-  return () => clearTimeout(timeout);
-}, [search]);
+    return () => clearTimeout(timeout);
+  }, [search]);
 
+  const handleSearch = (e) => {
+    setSearch(e.target.value);
+  };
 
-const handleSearch = (e) => {
-  setSearch(e.target.value);
-};
+  console.log(state);
+
+  const page = !state.MyJobs?.hasJobs ? (
+    <NoJobsYet />
+  ) : state.MyJobs?.jobs.length === 0 && search ? (
+    <NoSearchResults />
+  ) : felterData.status === "active" && state.MyJobs?.jobs.length === 0 ? (
+    <NoActiveJobsYet />
+  ) : felterData.status === "closed" && state.MyJobs?.jobs.length === 0 ? (
+    <NoClosedJobsYet />
+  ) : felterData.status === "draft" && state.MyJobs?.jobs.length === 0 ? (
+    <NoDraftsJobsYet />
+  ): <CardJobs />
 
   return (
     <>
@@ -126,16 +140,9 @@ const handleSearch = (e) => {
             />
           </Box>
 
+          {page}
 
-
-
-          <NoDraftsJobsYet/>
-
-          {/* list jobs */}   
-          <CardJobs fetchCompany={fetchCompany} />
-
-
-          
+  
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
