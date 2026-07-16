@@ -233,10 +233,9 @@ export default function CardJobs() {
             </Box>
           </Box>
         </Card>
-      ))}
+      ))} 
 
-
-
+      
 
     </>
   );

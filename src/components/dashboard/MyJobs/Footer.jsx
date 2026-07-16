@@ -14,6 +14,7 @@ import NoClosedJobsYet from "./emptyList/NoClosedJobsYet";
 import NoDraftsJobsYet from "./emptyList/NoDraftsJobsYet";
 import NoSearchResults from "./emptyList/NoSearchResults ";
 import SkeletonJobs from "./SkeletonJobs";
+import Draft from "./draft";
 
 export default function Footer() {
   const [search, setSearch] = useState("");
@@ -147,10 +148,23 @@ export default function Footer() {
             />
           </Box>
 
-          
-          {page}
 
-  
+
+
+
+
+
+          
+          {/* {page} */}
+
+          <Draft/>
+
+
+
+
+
+
+
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
