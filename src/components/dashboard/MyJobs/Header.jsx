@@ -7,8 +7,9 @@ import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
 
-  const { felterData, setFelterData} = useJob();
+  const { felterData, setFelterData,...state } = useJob();
 
+console.log(state );
 
   return (
     <>
@@ -102,7 +103,7 @@ export default function Header() {
                 <span>Active</span>
 
                 <Chip
-                  label="8"
+                  label={state?.MyJobs?.countActive}
                   size="small"
                   sx={{ color: "#02310e", bgcolor: "#8efb88" }}
                 />
@@ -123,7 +124,7 @@ export default function Header() {
                 <span>Closed</span>
 
                 <Chip
-                  label="8"
+                  label={state?.MyJobs?.countClosed}
                   size="small"
                   sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
                 />
@@ -140,7 +141,7 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
-                <Chip label="1" size="small" sx={{}} />
+                <Chip label={state?.MyJobs?.countDraft} size="small" sx={{}} />
               </Box>
             }
             sx={{

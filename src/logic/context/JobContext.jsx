@@ -36,7 +36,7 @@ export default function JobProvider({ children }) {
     setMyJobsLoading(true);
     
     try {
-      console.count("API");
+     
       const data = await GetMyJobs(felterData);
       dispatch({
         type: "SETMYJOBS",
@@ -62,7 +62,7 @@ export default function JobProvider({ children }) {
   };
 
   useEffect(() => {
-    console.log("felterData changed", felterData);
+ 
     fetchCompany();
   }, [felterData]);
 
