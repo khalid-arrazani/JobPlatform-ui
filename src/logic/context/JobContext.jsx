@@ -31,7 +31,11 @@ export default function JobProvider({ children }) {
   });
 
   const fetchCompany = async () => {
+
+
     setMyJobsLoading(true);
+
+
     try {
       const data = await GetMyJobs(felterData);
       dispatch({
