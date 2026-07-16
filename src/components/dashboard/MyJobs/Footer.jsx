@@ -37,7 +37,6 @@ const handleSearch = (e) => {
   setSearch(e.target.value);
 };
 
-  console.log(felterData);
   return (
     <>
       <Box
@@ -134,6 +133,9 @@ const handleSearch = (e) => {
 
           {/* list jobs */}   
           <CardJobs fetchCompany={fetchCompany} />
+
+
+          
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
