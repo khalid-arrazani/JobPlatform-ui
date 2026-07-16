@@ -156,9 +156,10 @@ export default function JobList() {
                     alignContent: "center",
                     fontWeight: 600,
                     fontFamily: "ui-monospace",
+                    alignItems:"center"
                   }}
                 >
-                  <Box >
+                  <Box sx={{display:"flex",alignItems:"end",height:"fit-Content"}} >
                     {job?.title}
                     <Chip
                     
