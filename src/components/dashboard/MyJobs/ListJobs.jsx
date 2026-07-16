@@ -11,11 +11,6 @@ export default function CardJobs() {
   return (
     <>
 
-      
-
-
-
-
       {state.MyJobs?.jobs.map((job) => (
         <Card
           key={job._id}
@@ -116,8 +111,7 @@ export default function CardJobs() {
             <Stack
               direction="row"
               spacing={1.5}
-              flexWrap="wrap"
-              useFlexGap
+               
               sx={{ mt: 1, mb: 1 }}
             >
               <Chip

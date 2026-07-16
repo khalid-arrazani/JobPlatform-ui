@@ -32,7 +32,7 @@ export default function JobProvider({ children }) {
 
   const fetchCompany = async () => {
     setMyJobsLoading(true);
-
+    console.log(22);
     try {
       const data = await GetMyJobs(felterData);
       dispatch({
@@ -59,9 +59,9 @@ export default function JobProvider({ children }) {
   };
 
   useEffect(() => {
-    
-    fetchCompany();
 
+    fetchCompany();
+    
   }, [felterData]);
 
   return (
