@@ -20,7 +20,7 @@ import { defineElement } from "@lordicon/element";
 defineElement(lottie);
 
 createRoot(document.getElementById("root")).render(
-
+  <StrictMode>
     <BrowserRouter>
       <JobProvider>
         <CompanyProvider>
@@ -32,5 +32,5 @@ createRoot(document.getElementById("root")).render(
         </CompanyProvider>
       </JobProvider>
     </BrowserRouter>
-
+  </StrictMode>,
 );
