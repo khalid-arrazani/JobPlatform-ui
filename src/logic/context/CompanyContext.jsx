@@ -21,7 +21,7 @@ const initialState = {
 export default function CompanyProvider({
   children,
 }) {
-
+console.count("CompanyProvider");
   const [state, dispatch] =
     useReducer(
       companyReducer,

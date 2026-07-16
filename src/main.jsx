@@ -24,12 +24,12 @@ createRoot(document.getElementById("root")).render(
     <BrowserRouter>
       <JobProvider>
         <CompanyProvider>
-      <AuthProvider>
-        <ProfileProvider>
-          <App />
-        </ProfileProvider>
-      </AuthProvider>
-      </CompanyProvider>
+          <AuthProvider>
+            <ProfileProvider>
+              <App />
+            </ProfileProvider>
+          </AuthProvider>
+        </CompanyProvider>
       </JobProvider>
     </BrowserRouter>
   </StrictMode>,

@@ -37,6 +37,8 @@ export default function ProfileProvider({
     );
 
 
+console.count("ProfileProvider");
+
 
     const [aboutOpen , setAboutOpen ] = useState(false)
     const [skillOpen , setSkillOpen ] = useState(false)

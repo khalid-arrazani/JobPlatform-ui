@@ -2,7 +2,6 @@ import {
   Box,
 } from "@mui/material";
 
-import { useEffect, useState} from "react";
 
 
 import Header from "./Header";
@@ -15,9 +14,6 @@ export default function MyJobsPage() {
   
 
   
- 
-
-
   return (
     <>
       <Box

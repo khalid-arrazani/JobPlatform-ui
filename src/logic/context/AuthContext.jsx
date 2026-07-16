@@ -26,7 +26,7 @@ export default function AuthProvider({
   severity: "success",
 });
 
-
+console.count("AuthProvider");
 
   const [state, dispatch] =
     useReducer(
