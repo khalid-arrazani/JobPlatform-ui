@@ -54,6 +54,7 @@ export default function Header() {
             </Typography>
           </Box>
 
+
           <Button
             variant="contained"
             sx={{
@@ -67,6 +68,9 @@ export default function Header() {
           >
             <AddIcon /> Post a New Job
           </Button>
+
+
+
         </Box>
 
         <Tabs
