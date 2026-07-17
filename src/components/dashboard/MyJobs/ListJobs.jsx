@@ -153,7 +153,9 @@ export default function CardJobs() {
                       />
 
                       {/* Menu */}
-                      <MenuCardDraft />
+                      <MenuCardDraft JobId={job._id} />
+
+
                     </Box>
                   </Stack>
                   <Typography
