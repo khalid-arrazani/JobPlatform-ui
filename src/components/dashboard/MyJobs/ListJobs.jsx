@@ -56,7 +56,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src="https://images.unsplash.com/photo-1549924231-f129b911e442?w=200"
+                      src=  {job.createdBy.companyLogo.url}
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -274,7 +274,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src=""
+                      src= {job.createdBy.companyLogo.url}
                       sx={{
                         width: "100%",
                         height: "100%",
