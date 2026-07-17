@@ -153,7 +153,7 @@ export default function CardJobs() {
                       />
 
                       {/* Menu */}
-                      <MenuCardDraft JobId={job._id} />
+                      <MenuCardDraft JobId={job._id} jobInfo={job} />
 
 
                     </Box>
