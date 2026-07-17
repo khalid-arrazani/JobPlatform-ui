@@ -274,7 +274,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src="https://res.cloudinary.com/dzppmepd9/image/upload/v1783326973/profile-images/iz9nipilnvjbpxkkizbi.png"
+                      src=""
                       sx={{
                         width: "100%",
                         height: "100%",
