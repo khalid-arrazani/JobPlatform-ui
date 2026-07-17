@@ -13,16 +13,19 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
-import { useJob } from "../../../logic/context/JobContext";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useJob } from "../../../../logic/context/JobContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { DeleteMyJobs } from "../../../../logic/api/job/Job";
+import EditeJobModal from "./EditeDraftModal";
 
-import EditeJobModal from "./EditeJobModal";
 
-import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
+
+
+
 
 export default function MenuCardDraft({ JobId,  jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
+
   const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
@@ -62,25 +65,6 @@ export default function MenuCardDraft({ JobId,  jobInfo }) {
     }
   };
 
-  const handleStatus = async (event, jobId) => {
-    try {
-      const deleteJob = await ToggleStatusJob(jobId);
-      setSnackBar({
-        open: true,
-        message: deleteJob.message,
-        severity: "success",
-      });
-      fetchCompanyWitoutReload();
-      setAnchorEl(null);
-    } catch (err) {
-      console.log(err);
-      setSnackBar({
-        open: true,
-        message: err?.response?.data.message,
-        severity: "error",
-      });
-    }
-  };
 
   const handleModalEdite = async () => {
     setEditeJobModal(true);
@@ -132,6 +116,7 @@ export default function MenuCardDraft({ JobId,  jobInfo }) {
           </ListItemIcon>
           Edit Job
         </MenuItem>
+        
         <EditeJobModal
           open={openEditeJobModal}
           setOpen={setEditeJobModal}

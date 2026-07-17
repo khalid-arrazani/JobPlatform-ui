@@ -18,7 +18,7 @@ import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
 import { useJob } from "../../../logic/context/JobContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-import EditeJobModal from "./EditeJobModal";
+import EditeJobModal from "./draft/EditeDraftModal";
 
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
