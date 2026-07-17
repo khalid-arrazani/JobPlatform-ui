@@ -224,6 +224,7 @@ const EditeDraftJobModal = ({ open, setOpen , jobInfo }) => {
         payload: true,
       });
     } catch (error) {
+      
       console.log(error.response?.data)
       setSnackBar({
         open: true,
@@ -285,7 +286,7 @@ const EditeDraftJobModal = ({ open, setOpen , jobInfo }) => {
           severity: "error",
         });
   
-        console.log(error.response);
+        console.log(error?.response?.data);
       } finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",
@@ -608,7 +609,7 @@ const EditeDraftJobModal = ({ open, setOpen , jobInfo }) => {
               }}
             />
           ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>Draft</Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>New Draft</Box>
           )}
         </Button>
 
