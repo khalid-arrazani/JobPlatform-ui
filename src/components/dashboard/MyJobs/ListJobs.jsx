@@ -13,6 +13,34 @@ export default function CardJobs() {
   return (
     <>
       {state.MyJobs?.jobs.map((job) => {
+
+        const fields = [
+          "title",
+          "description",
+          "location",
+          "minSalary",
+          "maxSalary",
+          "jobType",
+          "workMode",
+          "experienceLevel",
+          "skills",
+        ];
+
+        let completed = 0;
+
+        fields.forEach((field) => {
+          const value = job[field];
+
+          if (
+            value !== undefined &&
+            value !== null &&
+            value !== "" &&
+            (!Array.isArray(value) || value.length > 0)
+          ) {
+            completed++;
+          }
+        });
+
         return (
           <>
             {job.status === "draft" ? (
@@ -136,8 +164,7 @@ export default function CardJobs() {
                       color: "#02020dda",
                     }}
                   >
-                    {job?.title  || "-----------------------" }
-                    
+                    {job?.title || "-----------------------"}
                   </Typography>
 
                   <Stack direction="row" spacing={1.5} sx={{ mt: 1, mb: 1 }}>
@@ -149,7 +176,7 @@ export default function CardJobs() {
                         color: "#02020db4",
                       }}
                     >
-                      {job?.location  || "---------------" }
+                      {job?.location || "---------------"}
                     </Typography>
 
                     <Chip
@@ -210,12 +237,12 @@ export default function CardJobs() {
                       color: "#727272",
                     }}
                   >
-                    2 of 11 completed
+                    {completed} of 11 completed
                   </Typography>
 
                   <LinearProgress
                     variant="determinate"
-                    value={(4 / 11) * 100}
+                    value={(completed / 11) * 100}
                     sx={{
                       width: 170,
                       height: 8,
