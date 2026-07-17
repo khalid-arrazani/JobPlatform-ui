@@ -56,7 +56,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src=  {job.createdBy.companyLogo.url}
+                      src={job.createdBy.companyLogo.url}
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -107,11 +107,11 @@ export default function CardJobs() {
                     <Box
                       sx={{ display: "flex", height: "fit-Content", gap: 3 }}
                     >
-
                       <Chip
-                        label={formatDistanceToNow(new Date(job.createdAt), {
-                      addSuffix: true,
-                    })}
+                        label={`Last saved ${formatDistanceToNow(
+                          new Date(job.updatedAt),
+                          { addSuffix: true },
+                        )}`}
                         size="small"
                         sx={{
                           fontSize: "0.8rem",
@@ -277,7 +277,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src= {job.createdBy.companyLogo.url}
+                      src={job.createdBy.companyLogo.url}
                       sx={{
                         width: "100%",
                         height: "100%",
