@@ -155,9 +155,9 @@ export default function Footer() {
 
 
           
-          {/* {page} */}
+          {page}
 
-          <Draft/>
+          
 
 
 
