@@ -56,7 +56,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src={job.createdBy.companyLogo.url}
+                      src={job.createdBy?.companyLogo?.url}
                       sx={{
                         width: "100%",
                         height: "100%",
@@ -136,7 +136,8 @@ export default function CardJobs() {
                       color: "#02020dda",
                     }}
                   >
-                    Senior Frontend Developer
+                    {job?.title  || "-----------------------" }
+                    
                   </Typography>
 
                   <Stack direction="row" spacing={1.5} sx={{ mt: 1, mb: 1 }}>
@@ -148,7 +149,7 @@ export default function CardJobs() {
                         color: "#02020db4",
                       }}
                     >
-                      Casablanca, Morocco
+                      {job?.location  || "---------------" }
                     </Typography>
 
                     <Chip
@@ -277,7 +278,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src={job.createdBy.companyLogo.url}
+                      src={job.createdBy?.companyLogo?.url}
                       sx={{
                         width: "100%",
                         height: "100%",
