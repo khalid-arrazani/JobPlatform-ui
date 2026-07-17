@@ -40,6 +40,7 @@ export default function JobProvider({ children }) {
         type: "SETMYJOBS",
         payload: data,
       });
+      console.log(data);
     } catch (error) {
       console.log(error.response?.data);
     } finally {

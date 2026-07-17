@@ -157,6 +157,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
   const { setSnackBar } = useAuth();
 
+
   const [jobData, setJobData] = useState({
     title: "",
     description: "",
