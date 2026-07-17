@@ -179,8 +179,9 @@ export default function CardJobs() {
                       {job?.location || "---------------"}
                     </Typography>
 
-                    <Chip
-                      label="Full Time"
+                    
+                    {job.jobType ? <Chip
+                      label={job.jobType}
                       size="small"
                       sx={{
                         fontSize: "0.7rem",
@@ -190,22 +191,9 @@ export default function CardJobs() {
                         borderRadius: "5px",
                         fontWeight: 600,
                       }}
-                    />
+                    />:null}
 
-                    <Chip
-                      label="Mid Level"
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#ffd8de",
-                        color: "rgb(158,64,64)",
-                        borderRadius: "5px",
-                        fontWeight: 600,
-                      }}
-                    />
-
-
+                  
                     {job.experienceLevel ? <Chip
                       label={job.experienceLevel}
                       size="small"
