@@ -210,12 +210,12 @@ export default function CardJobs() {
                       color: "#727272",
                     }}
                   >
-                    4 of 7 completed
+                    2 of 11 completed
                   </Typography>
 
                   <LinearProgress
                     variant="determinate"
-                    value={(4 / 7) * 100}
+                    value={(4 / 11) * 100}
                     sx={{
                       width: 170,
                       height: 8,
