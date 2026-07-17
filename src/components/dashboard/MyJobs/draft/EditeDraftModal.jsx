@@ -285,7 +285,7 @@ const EditeDraftJobModal = ({ open, setOpen , jobInfo }) => {
           severity: "error",
         });
   
-        console.log(error);
+        console.log(error.response);
       } finally {
         dispatch({
           type: "SET_LOADING_UPDATE_PROFILE",
