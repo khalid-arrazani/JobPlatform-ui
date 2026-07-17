@@ -107,8 +107,11 @@ export default function CardJobs() {
                     <Box
                       sx={{ display: "flex", height: "fit-Content", gap: 3 }}
                     >
+
                       <Chip
-                        label="Last saved: May 20,2024"
+                        label={formatDistanceToNow(new Date(job.createdAt), {
+                      addSuffix: true,
+                    })}
                         size="small"
                         sx={{
                           fontSize: "0.8rem",
