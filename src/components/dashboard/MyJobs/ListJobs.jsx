@@ -205,8 +205,22 @@ export default function CardJobs() {
                       }}
                     />
 
-                    <Chip
-                      label="Remote"
+
+                    {job.experienceLevel ? <Chip
+                      label={job.experienceLevel}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#ffd8de",
+                        color: "rgb(158,64,64)",
+                        borderRadius: "5px",
+                        fontWeight: 600,
+                      }}
+                    />:null}
+
+                  {job.workMode ? <Chip
+                      label={job.workMode}
                       size="small"
                       sx={{
                         fontSize: "0.7rem",
@@ -216,7 +230,9 @@ export default function CardJobs() {
                         borderRadius: "5px",
                         fontWeight: 600,
                       }}
-                    />
+                    />:null}
+
+                    
                   </Stack>
                 </Box>
 
