@@ -191,7 +191,7 @@ const PostJobModal = ({ open, setOpen }) => {
       payload: true,
     });
     try {
-      const data = await createJob(jobData);
+      const data = await createJob({ ...jobData, status: "active" });
 
       setSnackBar({
         open: true,
@@ -235,6 +235,62 @@ const PostJobModal = ({ open, setOpen }) => {
       });
     }
   };
+
+  const handleSubmitDraft = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+
+    try {
+      const data = await createJob({ ...jobData, status: "draft" });
+
+      setSnackBar({
+        open: true,
+        message: data?.message,
+        severity: "success",
+      });
+
+      handleClose();
+
+      setJobData({
+        title: "",
+        description: "",
+        location: "",
+
+        minSalary: "",
+        maxSalary: "",
+        salaryCurrency: "USD",
+        salaryPeriod: "Per Year",
+
+        jobType: "",
+        workMode: "",
+
+        experienceLevel: "Mid",
+        skills: [],
+      });
+
+      dispatch({
+        type: "RELOADLISTJOB",
+        payload: true,
+      });
+    } catch (error) {
+      
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+
+      console.log(error);
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+  };
+  
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -522,6 +578,37 @@ const PostJobModal = ({ open, setOpen }) => {
       </DialogContent>
 
       <DialogActions sx={{ p: 2 }}>
+        <Button
+          variant="contained"
+          disabled={state.isLoadingUptadeProfile}
+          sx={{
+            width: "15%",
+            height: "2.5rem",
+            position: "absolute",
+            left: 10,
+            bgcolor: "#FFF7E6",
+            color: "#A16207",
+            border: "1px solid #F5D58B",
+            "&:hover": {
+              bgcolor: "#FDECC8",
+            },
+          }}
+          onClick={handleSubmitDraft}
+        >
+          {state.isLoadingUptadeProfile ? (
+            <CircularProgress
+              aria-label="Loading…"
+              size={30}
+              sx={{
+                color: green[800],
+                position: "absolute",
+              }}
+            />
+          ) : (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Draft</Box>
+          )}
+        </Button>
+
         <Button onClick={handleClose} variant="outlined">
           Cancel
         </Button>

@@ -188,7 +188,7 @@ export default function Draft() {
           <Typography
             sx={{
               fontSize: ".9rem",
-              fontWeight: 500,
+              fontWeight: 400,
               color:"#727272"
             }}
           >

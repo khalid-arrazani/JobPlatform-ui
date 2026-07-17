@@ -44,7 +44,7 @@ export default function SignIn() {
       if (data.user.isComplete == false) {
         navigate("/CompleteProfile");
       } else {
-        navigate("/");
+        navigate("/Dashboard/Jobs");
       };
 
     } catch (error) {

@@ -16,7 +16,7 @@ const initialState = {
   isLoading: false,
   MyJobs: null,
 };
-
+import { useLocation } from "react-router-dom";
 export default function JobProvider({ children }) {
   const [state, dispatch] = useReducer(JobReducer, initialState);
   const [openModal, setOpenModal] = useState(false);
@@ -34,9 +34,7 @@ export default function JobProvider({ children }) {
 
   const fetchCompany = async () => {
     setMyJobsLoading(true);
-    
     try {
-     
       const data = await GetMyJobs(felterData);
       dispatch({
         type: "SETMYJOBS",
@@ -61,11 +59,17 @@ export default function JobProvider({ children }) {
     }
   };
 
-  useEffect(() => {
- 
-    fetchCompany();
-  }, [felterData]);
 
+ const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== "/Dashboard/My_Jobs") return;
+
+    fetchCompany();
+  }, [felterData, location.pathname]);
+
+
+  
   return (
     <JobContext.Provider
       value={{
