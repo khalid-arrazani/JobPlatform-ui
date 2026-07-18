@@ -208,7 +208,7 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     });
 
     try {
-      const data = await UpdateJob(jobData, jobInfo._id);
+      const data = await UpdateJob({...jobData , status:"active"}, jobInfo._id);
 
       setSnackBar({
         open: true,
@@ -252,8 +252,6 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   };
 
   const handleSubmitDraft = async () => {
-      console.log("hasChange" , hasNoChange);
-
     if (hasNoChange){
         return setSnackBar({
         open: true,
