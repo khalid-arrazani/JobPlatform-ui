@@ -2,11 +2,14 @@ import {
   createContext,
   useReducer,
   useState,
-  useContext
+  useContext,
+  useEffect
   
 } from "react";
 
 import { authReducer } from "./reducer/authReducer";
+import { useLocation } from "react-router-dom";
+import { GetMe } from "../api/auth/auth";
 
 
 
@@ -33,6 +36,36 @@ console.count("AuthProvider");
       authReducer,
       initialState
     );
+
+
+
+    const location = useLocation();
+    
+    
+      useEffect(() => {
+      const publicRoutes = [
+        "/login",
+        "/register",
+        "/forgot-password",
+      ];
+
+      
+    
+      if (publicRoutes.includes(location.pathname)) return;
+    
+      const fetchAuth = async () => {
+        try {
+          const data = await GetMe();
+          console.log("1111",data);
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    
+      fetchAuth();
+    }, []);
+
+
 
  const [sign, setSign] = useState("Sign In");
   return (

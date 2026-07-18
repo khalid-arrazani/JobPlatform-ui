@@ -11,7 +11,7 @@ export default function CompleteProfilePage() {
   const {  ...state} = useAuth()
 
  
-
+ 
 
 
   return (

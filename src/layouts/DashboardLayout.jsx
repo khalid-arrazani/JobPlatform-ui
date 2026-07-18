@@ -7,7 +7,7 @@ import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
 import { getMeUser } from "../logic/api/user/user.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
-  const { dispatch , ...state } = useProfile();
+  const { dispatch, ...state } = useProfile();
 
   useEffect(() => {
     fetchUser();
@@ -25,6 +25,7 @@ export default function DashboardLayout({ children, part, setPart }) {
     try {
       let data;
       const user = await getMeUser();
+
       if (user.role == "jobSeeker") {
         data = await getMeJS();
       } else if (user.role == "recruiter") {
@@ -35,6 +36,8 @@ export default function DashboardLayout({ children, part, setPart }) {
         type: "PROFILE",
         payload: data,
       });
+
+      dispatch({});
     } catch (error) {
       console.log(error.response?.data);
     } finally {
@@ -45,6 +48,7 @@ export default function DashboardLayout({ children, part, setPart }) {
     }
   };
 
+  
   return (
     <Box
       sx={{
