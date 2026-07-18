@@ -237,10 +237,12 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   };
 
   const handleSubmitDraft = async () => {
+
     dispatch({
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
+    
 
     try {
       const data = await UpdateJob(
