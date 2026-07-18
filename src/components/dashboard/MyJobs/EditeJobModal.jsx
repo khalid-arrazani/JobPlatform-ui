@@ -546,6 +546,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
             <Box sx={{ display: "flex", justifyContent: "center" }}>Update Info</Box>
           )}
         </Button>
+
       </DialogActions>
     </Dialog>
   );

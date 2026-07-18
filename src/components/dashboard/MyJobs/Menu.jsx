@@ -18,14 +18,13 @@ import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
 import { useJob } from "../../../logic/context/JobContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 
-import EditeJobModal from "./draft/EditeDraftModal";
+import EditeJobModal from "./EditeJobModal";
 
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function MenuCard({ JobId, Status, jobInfo }) {
-
   const [openEditeJobModal, setEditeJobModal] = useState(false);
-  
+
   const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);
