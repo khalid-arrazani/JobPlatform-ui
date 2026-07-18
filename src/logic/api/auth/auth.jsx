@@ -25,15 +25,9 @@ export const RegisterUser = async (
 
 export const Logout = async (
 ) => {
-  const response = await API.get( "/auth/logout");
+  const response = await API.post( "/auth/logout");
   console.log(response.data);
   return response.data;
 };
 
 
-export const GetMe = async (
-) => {
-  const response = await API.post( "/auth/logout" );
-  console.log(response.data);
-  return response.data;
-};

@@ -9,8 +9,7 @@ import {
 
 import { authReducer } from "./reducer/authReducer";
 import { useLocation } from "react-router-dom";
-import { GetMe } from "../api/auth/auth";
-import { getMeJS } from "../api/profile/GetMe";
+
 
 
 
