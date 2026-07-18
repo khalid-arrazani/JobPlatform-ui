@@ -7,7 +7,7 @@ import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
 
-  const { openModal, setOpenModal, felterData, setFelterData,...state } = useJob();
+  const { setOpenModal, felterData, setFelterData,...state } = useJob();
   
 
 
