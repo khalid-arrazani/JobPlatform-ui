@@ -175,7 +175,20 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     skills: jobInfo?.skills,
   });
 
-  const hasChange = 
+  const hasNoChange =
+    jobData.title === jobInfo?.title &&
+    jobData.description === jobInfo?.description &&
+    jobData.location=== jobInfo?.location &&
+    jobData.minSalary=== jobInfo?.minSalary &&
+    jobData.maxSalary=== jobInfo?.maxSalary &&
+    jobData.salaryCurrency=== jobInfo?.salaryCurrency &&
+    jobData.salaryPeriod=== jobInfo?.salaryPeriod &&
+    jobData.jobType===jobInfo?.jobType &&
+    jobData.workMode=== jobInfo?.workMode &&
+    jobData.experienceLevel=== jobInfo?.experienceLevel &&
+    jobData.skills=== jobInfo?.skills 
+
+    console.log("hasChange" , hasNoChange);
 
   const handleChange = (e) => {
     setJobData({
@@ -239,12 +252,20 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   };
 
   const handleSubmitDraft = async () => {
+      console.log("hasChange" , hasNoChange);
+
+    if (hasNoChange){
+        return setSnackBar({
+        open: true,
+        message: "No changes made.",
+        severity: "info",
+      });
+    }
 
     dispatch({
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-
 
     try {
       const data = await UpdateJob(
