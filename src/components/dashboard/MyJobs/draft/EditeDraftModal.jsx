@@ -152,7 +152,7 @@ import { green } from "@mui/material/colors";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { useJob } from "../../../../logic/context/JobContext";
 import { useAuth } from "../../../../logic/context/AuthContext";
-import { createJob, UpdateJob } from "../../../../logic/api/job/Job";
+import { UpdateJob } from "../../../../logic/api/job/Job";
 
 const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   const { dispatch, ...state } = useProfile();
