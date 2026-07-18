@@ -23,7 +23,9 @@ import EditeJobModal from "./draft/EditeDraftModal";
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function MenuCard({ JobId, Status, jobInfo }) {
+
   const [openEditeJobModal, setEditeJobModal] = useState(false);
+  
   const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
 
   const [anchorEl, setAnchorEl] = useState(null);

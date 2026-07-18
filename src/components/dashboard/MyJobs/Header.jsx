@@ -7,7 +7,9 @@ import { useJob } from "../../../logic/context/JobContext";
 
 export default function Header() {
 
-  const { felterData, setFelterData,...state } = useJob();
+  const { openModal, setOpenModal, felterData, setFelterData,...state } = useJob();
+  
+
 
 
 
@@ -57,6 +59,7 @@ export default function Header() {
 
           <Button
             variant="contained"
+            onClick={()=>setOpenModal(true)}
             sx={{
               gap: 1.5,
               textTransform: "none",

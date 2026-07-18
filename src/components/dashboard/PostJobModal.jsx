@@ -336,7 +336,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
       <DialogContent>
         {/* Job Title */}
-        <Box sx={{ mt: 1, mb: 2 }}>
+        <Box sx={{mb: 2 }}>
           <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Job Title *</Typography>
 
           <TextField

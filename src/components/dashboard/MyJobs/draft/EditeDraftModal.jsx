@@ -178,17 +178,17 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   const hasNoChange =
     jobData.title === jobInfo?.title &&
     jobData.description === jobInfo?.description &&
-    jobData.location=== jobInfo?.location &&
-    jobData.minSalary=== jobInfo?.minSalary &&
-    jobData.maxSalary=== jobInfo?.maxSalary &&
-    jobData.salaryCurrency=== jobInfo?.salaryCurrency &&
-    jobData.salaryPeriod=== jobInfo?.salaryPeriod &&
-    jobData.jobType===jobInfo?.jobType &&
-    jobData.workMode=== jobInfo?.workMode &&
-    jobData.experienceLevel=== jobInfo?.experienceLevel &&
-    jobData.skills=== jobInfo?.skills 
+    jobData.location === jobInfo?.location &&
+    jobData.minSalary === jobInfo?.minSalary &&
+    jobData.maxSalary === jobInfo?.maxSalary &&
+    jobData.salaryCurrency === jobInfo?.salaryCurrency &&
+    jobData.salaryPeriod === jobInfo?.salaryPeriod &&
+    jobData.jobType === jobInfo?.jobType &&
+    jobData.workMode === jobInfo?.workMode &&
+    jobData.experienceLevel === jobInfo?.experienceLevel &&
+    jobData.skills === jobInfo?.skills;
 
-    console.log("hasChange" , hasNoChange);
+  console.log("hasChange", hasNoChange);
 
   const handleChange = (e) => {
     setJobData({
@@ -208,7 +208,10 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     });
 
     try {
-      const data = await UpdateJob({...jobData , status:"active"}, jobInfo._id);
+      const data = await UpdateJob(
+        { ...jobData, status: "active" },
+        jobInfo._id,
+      );
 
       setSnackBar({
         open: true,
@@ -252,8 +255,8 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   };
 
   const handleSubmitDraft = async () => {
-    if (hasNoChange){
-        return setSnackBar({
+    if (hasNoChange) {
+      return setSnackBar({
         open: true,
         message: "No changes made.",
         severity: "info",
