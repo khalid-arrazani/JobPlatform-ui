@@ -10,19 +10,9 @@ import SimpleSnackbar from "./logic/context/SnackBars.jsx";
 import JobDetailsPage from "./pages/JobDetailsPage.jsx";
 // import CompanyLayout from "./layouts/CompanyLayout.jsx";
 
-import { Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from "react";
-import { GetMe } from "./logic/api/auth/auth.jsx";
+import { Routes, Route} from "react-router-dom";
 
 function App() {
-
-  
-
-
-
-
-
-
 
   return (
     <>

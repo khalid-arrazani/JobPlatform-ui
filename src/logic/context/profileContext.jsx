@@ -37,7 +37,7 @@ export default function ProfileProvider({
     );
 
 
-console.count("ProfileProvider");
+
 
 
     const [aboutOpen , setAboutOpen ] = useState(false)

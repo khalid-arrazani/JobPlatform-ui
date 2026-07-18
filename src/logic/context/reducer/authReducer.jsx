@@ -8,6 +8,11 @@ export const authReducer = (
         ...state,
         user: action.payload,
       };
+      case "GET-USER":
+      return {
+        ...state,
+        user: action.payload,
+      };
        case "COMPLETEPRPFILE":
       return {
         ...state,

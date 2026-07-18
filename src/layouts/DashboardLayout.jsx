@@ -5,9 +5,12 @@ import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
 import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
 import { getMeUser } from "../logic/api/user/user.jsx";
+import { useAuth } from "../logic/context/AuthContext.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
   const { dispatch, ...state } = useProfile();
+  const { dispatch:dis} = useAuth();
+
 
   useEffect(() => {
     fetchUser();
@@ -22,10 +25,16 @@ export default function DashboardLayout({ children, part, setPart }) {
       type: "SET_LOADING",
       payload: true,
     });
+
     try {
       let data;
       const user = await getMeUser();
 
+      dis({
+      type: "GET-USER",
+      payload: user,
+    });
+    
       if (user.role == "jobSeeker") {
         data = await getMeJS();
       } else if (user.role == "recruiter") {

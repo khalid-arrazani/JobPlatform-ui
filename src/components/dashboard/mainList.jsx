@@ -27,16 +27,13 @@ export default function MainList() {
 
   const handleLogout = async()=>{
   try{
-
     const data = await Logout()
     console.log(data);
     
     navigate("/login") 
 
   }catch(error){
-
     console.log(error);
-
   }
   }
   return (
