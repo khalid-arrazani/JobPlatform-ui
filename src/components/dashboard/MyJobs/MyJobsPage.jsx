@@ -7,11 +7,10 @@ import {
 import Header from "./Header";
 import Footer from "./Footer";
 
-import { useJob } from "../../../logic/context/JobContext";
+
 
 export default function MyJobsPage() {
-  const {fetchCompany } = useJob();
-  
+
 
   
   return (
@@ -32,7 +31,7 @@ export default function MyJobsPage() {
         {/* left side */}
         <Box
           sx={{
-            width: "75%",
+            width: "100%",
             height: "100%",
             bgcolor: "#ffffff",
             boxSizing: "border-box",
@@ -52,14 +51,7 @@ export default function MyJobsPage() {
 
         {/* right side */}
 
-        <Box
-          sx={{
-            width: "25%",
-            height: "100%",
-            bgcolor: "#ddd",
-            borderRadius: "10px 10px 0px 0px",
-          }}
-        ></Box>
+       
       </Box>
     </>
   );

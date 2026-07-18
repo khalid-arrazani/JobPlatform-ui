@@ -13,7 +13,6 @@ export default function CardJobs() {
   return (
     <>
       {state.MyJobs?.jobs.map((job) => {
-
         const fields = [
           "title",
           "description",
@@ -43,12 +42,19 @@ export default function CardJobs() {
 
         return (
           <>
+          <Box sx={{width:"100%",placeItems:"center"}}>
             {job.status === "draft" ? (
               <Card
                 sx={{
                   bgcolor: "#ffffff",
                   height: "9.5rem",
-                  width: "100%",
+                   width: {
+                    xs: "100%",
+                    sm: "98%",
+                    md: "95%",
+                    lg: "90%",
+                    xl: "85%",
+                  },
                   border: "1px dashed #dddddd",
                   borderRadius: "10px",
                   display: "flex",
@@ -154,8 +160,6 @@ export default function CardJobs() {
 
                       {/* Menu */}
                       <MenuCardDraft JobId={job._id} jobInfo={job} />
-
-
                     </Box>
                   </Stack>
                   <Typography
@@ -181,48 +185,50 @@ export default function CardJobs() {
                       {job?.location || "---------------"}
                     </Typography>
 
-                    
-                    {job.jobType ? <Chip
-                      label={job.jobType}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#d8f3ff",
-                        color: "#0150b7",
-                        borderRadius: "5px",
-                        fontWeight: 600,
-                      }}
-                    />:null}
+                    {job.jobType ? (
+                      <Chip
+                        label={job.jobType}
+                        size="small"
+                        sx={{
+                          fontSize: "0.7rem",
+                          height: "22px",
+                          bgcolor: "#d8f3ff",
+                          color: "#0150b7",
+                          borderRadius: "5px",
+                          fontWeight: 600,
+                        }}
+                      />
+                    ) : null}
 
-                  
-                    {job.experienceLevel ? <Chip
-                      label={job.experienceLevel}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#ffd8de",
-                        color: "rgb(158,64,64)",
-                        borderRadius: "5px",
-                        fontWeight: 600,
-                      }}
-                    />:null}
+                    {job.experienceLevel ? (
+                      <Chip
+                        label={job.experienceLevel}
+                        size="small"
+                        sx={{
+                          fontSize: "0.7rem",
+                          height: "22px",
+                          bgcolor: "#ffd8de",
+                          color: "rgb(158,64,64)",
+                          borderRadius: "5px",
+                          fontWeight: 600,
+                        }}
+                      />
+                    ) : null}
 
-                  {job.workMode ? <Chip
-                      label={job.workMode}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#f6d8ff",
-                        color: "#72037c",
-                        borderRadius: "5px",
-                        fontWeight: 600,
-                      }}
-                    />:null}
-
-                    
+                    {job.workMode ? (
+                      <Chip
+                        label={job.workMode}
+                        size="small"
+                        sx={{
+                          fontSize: "0.7rem",
+                          height: "22px",
+                          bgcolor: "#f6d8ff",
+                          color: "#72037c",
+                          borderRadius: "5px",
+                          fontWeight: 600,
+                        }}
+                      />
+                    ) : null}
                   </Stack>
                 </Box>
 
@@ -269,7 +275,13 @@ export default function CardJobs() {
                 sx={{
                   bgcolor: "#ffffff",
                   height: "9.5rem",
-                  width: "100%",
+                  width: {
+                    xs: "100%",
+                    sm: "98%",
+                    md: "95%",
+                    lg: "90%",
+                    xl: "85%",
+                  },
                   border: "1px solid #ddddddb9",
                   borderRadius: "10px",
                   display: "flex",
@@ -500,9 +512,11 @@ export default function CardJobs() {
                 </Box>
               </Card>
             )}
+            </Box>
           </>
         );
       })}
+      
     </>
   );
 }

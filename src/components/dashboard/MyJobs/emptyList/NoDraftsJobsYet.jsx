@@ -16,7 +16,9 @@ export default function NoDraftsJobsYet() {
           display:"flex",
           justifyContent:"center",
           alignItems:"center",
-          flexDirection:"column",gap:1,bgcolor:"#fff9f891"
+          flexDirection:"column",
+          gap:1,
+          bgcolor:"#fff9f891"
         }}
       >
 
