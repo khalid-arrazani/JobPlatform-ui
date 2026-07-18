@@ -175,6 +175,8 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     skills: jobInfo?.skills,
   });
 
+  const hasChange = 
+
   const handleChange = (e) => {
     setJobData({
       ...jobData,
@@ -242,7 +244,7 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-    
+
 
     try {
       const data = await UpdateJob(
