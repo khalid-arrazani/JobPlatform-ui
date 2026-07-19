@@ -56,8 +56,13 @@ export default function CardCompany({ jobInfo, JobId }) {
     }
   };
 
+
+
+
 const apply = async () => {
+
     try {
+      
       setJobs((prev) => ({
         ...prev,
         isSaved: !prev.isSaved,
