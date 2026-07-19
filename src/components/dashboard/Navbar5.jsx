@@ -172,6 +172,8 @@ export default function Navbar() {
               }}
             />
 
+            {authState.user?.role == "jobSeeker" ? null : authState.user?.role == "recruiter" ?  
+
             <IconButton
               onClick={() => navigate("/Dashboard/My_Company")}
               sx={{
@@ -229,7 +231,7 @@ export default function Navbar() {
                   </Typography>
                 </Box>
               )}
-            </IconButton>
+            </IconButton>: null }
             
           </Tabs>
         </Box>
