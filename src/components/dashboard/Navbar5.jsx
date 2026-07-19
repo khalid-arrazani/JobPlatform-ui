@@ -27,6 +27,7 @@ import { useProfile } from "../../logic/context/profileContext.jsx";
 import PostJobModal from "./PostJobModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useJob } from "../../logic/context/JobContext.jsx";
+import { useAuth } from "../../logic/context/AuthContext.jsx";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -34,6 +35,9 @@ export default function Navbar() {
   const { openModal, setOpenModal}= useJob()
 
   const { ...state } = useProfile();
+  const {  ...state } = useAuth()
+  
+  console.log(user);
 
   const navigate = useNavigate();
 
@@ -225,6 +229,7 @@ export default function Navbar() {
                 </Box>
               )}
             </IconButton>
+            
           </Tabs>
         </Box>
 
