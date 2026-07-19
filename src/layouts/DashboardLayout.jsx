@@ -9,8 +9,6 @@ export default function DashboardLayout({ children, part, setPart }) {
 
   const {fetchUser , ...state } = useProfile();
 
-
-
   useEffect(() => {
     fetchUser();
   }, []);
