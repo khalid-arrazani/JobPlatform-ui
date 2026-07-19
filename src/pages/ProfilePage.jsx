@@ -9,47 +9,16 @@ import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx"
 import { useProfile } from "../logic/context/profileContext.jsx"
 
 export default function ProfilePage(){
-  const {...state} = useAuth()
-      const { dispatch } = useProfile();
-    const { dispatch:dis} = useAuth();
+  const { ...state  } = useAuth()
+  const {fetchUser  } = useProfile()
+  
 
   useEffect(() => {
+    console.log(5555);
       fetchUser();
     }, []);
 
-     const fetchUser = async () => {
-       
-    
-        try {
-          let data;
-          const user = await getMeUser();
-    
-          dis({
-          type: "GET-USER",
-          payload: user,
-        });
-        
-          if (user.role == "jobSeeker") {
-            data = await getMeJS();
-          } else if (user.role == "recruiter") {
-            data = await getMeR();
-          }
-    
-          dispatch({
-            type: "PROFILE",
-            payload: data,
-          });
-    
-          dispatch({});
-        } catch (error) {
-          console.log(error.response?.data);
-        } finally {
-          dispatch({
-            type: "SET_LOADING",
-            payload: false,
-          });
-        }
-      };
+ 
 
     return<>
     <ProfileLayout>

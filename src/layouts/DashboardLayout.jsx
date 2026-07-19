@@ -8,6 +8,7 @@ import { getMeUser } from "../logic/api/user/user.jsx";
 import { useAuth } from "../logic/context/AuthContext.jsx";
 
 export default function DashboardLayout({ children, part, setPart }) {
+
   const { dispatch, ...state } = useProfile();
   const { dispatch:dis} = useAuth();
 
@@ -19,6 +20,8 @@ export default function DashboardLayout({ children, part, setPart }) {
   useEffect(() => {
     fetchUser();
   }, [state.reloadCompany]);
+
+
 
   const fetchUser = async () => {
     dispatch({
