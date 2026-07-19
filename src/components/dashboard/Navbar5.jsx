@@ -35,6 +35,7 @@ export default function Navbar() {
   const { openModal, setOpenModal}= useJob()
 
   const { ...state } = useProfile();
+  
   const {  ...state } = useAuth()
   
   console.log(user);
