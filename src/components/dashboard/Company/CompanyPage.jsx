@@ -10,7 +10,6 @@ import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect } from "react";
 import {
-  getCompanyById,
   getmyCompany,
 } from "../../../logic/api/company/Company";
 

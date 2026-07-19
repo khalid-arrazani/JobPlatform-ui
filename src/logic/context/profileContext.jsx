@@ -24,6 +24,7 @@ export default function ProfileProvider({ children }) {
   const [state, dispatch] = useReducer(profileReducer, initialState);
 
   const { dispatch: dis } = useAuth();
+  
   const fetchUser = async () => {
     try {
       let data;

@@ -3,62 +3,23 @@ import { Box } from "@mui/material";
 import Navbar from "../components/dashboard/Navbar5.jsx";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
-import { getMeJS, getMeR } from "../logic/api/profile/GetMe.jsx";
-import { getMeUser } from "../logic/api/user/user.jsx";
-import { useAuth } from "../logic/context/AuthContext.jsx";
+
 
 export default function DashboardLayout({ children, part, setPart }) {
 
-  const { dispatch, ...state } = useProfile();
-  const { dispatch:dis} = useAuth();
+  const {fetchUser , ...state } = useProfile();
+
 
 
   useEffect(() => {
     fetchUser();
   }, []);
 
+
   useEffect(() => {
     fetchUser();
   }, [state.reloadCompany]);
 
-
-
-  const fetchUser = async () => {
-    dispatch({
-      type: "SET_LOADING",
-      payload: true,
-    });
-
-    try {
-      let data;
-      const user = await getMeUser();
-
-      dis({
-      type: "GET-USER",
-      payload: user,
-    });
-    
-      if (user.role == "jobSeeker") {
-        data = await getMeJS();
-      } else if (user.role == "recruiter") {
-        data = await getMeR();
-      }
-
-      dispatch({
-        type: "PROFILE",
-        payload: data,
-      });
-
-      dispatch({});
-    } catch (error) {
-      console.log(error.response?.data);
-    } finally {
-      dispatch({
-        type: "SET_LOADING",
-        payload: false,
-      });
-    }
-  };
 
   
   return (
