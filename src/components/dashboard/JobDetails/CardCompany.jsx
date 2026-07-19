@@ -28,8 +28,6 @@ export default function CardCompany({ jobInfo, JobId }) {
     setJobs(jobInfo);
   }, [jobInfo]);
 
-  console.log(15644, jobs);
-
   const saveJob = async () => {
     try {
       setJobs((prev) => ({
@@ -57,6 +55,37 @@ export default function CardCompany({ jobInfo, JobId }) {
       }));
     }
   };
+
+const apply = async () => {
+    try {
+      setJobs((prev) => ({
+        ...prev,
+        isSaved: !prev.isSaved,
+      }));
+
+      const savejobs = await toggleSaveJob({
+        jobId: JobId,
+      });
+      setSnackBar({
+        open: true,
+        message: savejobs?.message,
+        severity: "success",
+      });
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+      setJobs((prev) => ({
+        ...prev,
+        isSaved: !prev.isSaved,
+      }));
+    }
+  };
+
+
+
   return (
     <>
       <Card
@@ -215,6 +244,7 @@ export default function CardCompany({ jobInfo, JobId }) {
 
           <Button
             variant="contained"
+            onClick={apply}
             startIcon={<TelegramIcon />}
             sx={{
               borderRadius: "14px",
