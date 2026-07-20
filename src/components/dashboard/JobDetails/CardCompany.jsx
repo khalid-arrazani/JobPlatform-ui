@@ -12,6 +12,7 @@ import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 
 import TelegramIcon from "@mui/icons-material/Telegram";
+import CheckIcon from '@mui/icons-material/Check';
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
@@ -70,7 +71,7 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
       fetchJobById()
     } catch (error) {
-
+      console.log(error.response);
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -228,7 +229,7 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
               color: jobs?.isSaved ? "#ffffff" : "#a320e5",
               background: jobs?.isSaved
-                ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)"
+                ? "linear-gradient(30deg, #7100dbaa 0%, #a11aa4c1 35%, #8a2feb 100%)"
                 : "#ffffff",
 
               fontSize: "0.8rem",
@@ -240,7 +241,10 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
           <Button
             variant="contained"
             onClick={apply}
-            startIcon={<TelegramIcon />}
+     
+            startIcon={
+              jobs?.isApply ? <CheckIcon /> : <TelegramIcon />
+            }
             sx={{
               borderRadius: "14px",
               textTransform: "none",
