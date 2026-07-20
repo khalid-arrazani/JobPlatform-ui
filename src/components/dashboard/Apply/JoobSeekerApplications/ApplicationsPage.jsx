@@ -53,7 +53,11 @@ export default function ApplicationsJs() {
           }}
         >
           <Header />
-          
+
+          <Box sx={{width:"100%",height:"60%" , boxSizing:"border-box"}} >
+
+          </Box>
+
 
           <Pagination
             onChange={handleChange}
