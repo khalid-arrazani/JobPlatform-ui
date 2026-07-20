@@ -80,6 +80,31 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
       });
     }
   };
+  
+
+  const CancelApplication = async () => {
+    try {
+      const frontdata = {Company:jobInfo?.createdBy?._id}
+
+      const applyjobs = await ApplyForAJob({JobId, frontdata});
+
+      
+      setSnackBar({
+        open: true,
+        message: applyjobs?.message,
+        severity: "success",
+      });
+
+      fetchJobById()
+    } catch (error) {
+      console.log(error.response);
+      setSnackBar({
+        open: true,
+        message: error.response?.data.message,
+        severity: "error",
+      });
+    }
+  };
 
 
 
@@ -243,10 +268,38 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
           <Button
             variant="contained"
+            onClick={CancelApplication}
+     
+            startIcon={
+             <CheckIcon /> 
+            }
+            sx={{
+              borderRadius: "14px",
+              textTransform: "none",
+              px: 2,
+              py: 1.2,
+              fontWeight: 300,
+
+              background:
+                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+              transition: "all 0.3s ease",
+
+              "&:hover": {
+                background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+              },
+              fontSize: "0.8rem",
+            }}
+          >
+            Applied
+          </Button>
+:
+          <Button
+            variant="contained"
             onClick={apply}
      
             startIcon={
-              jobs?.isApply ? <CheckIcon /> : <TelegramIcon />
+              <TelegramIcon />
             }
             sx={{
               borderRadius: "14px",
@@ -268,34 +321,7 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
           >
             Apply Now
           </Button>
-:
-          <Button
-            variant="contained"
-            onClick={apply}
-     
-            startIcon={
-              jobs?.isApply ? <CheckIcon /> : <TelegramIcon />
-            }
-            sx={{
-              borderRadius: "14px",
-              textTransform: "none",
-              px: 2,
-              py: 1.2,
-              fontWeight: 300,
-
-              background:
-                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
-
-              transition: "all 0.3s ease",
-
-              "&:hover": {
-                background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
-              },
-              fontSize: "0.8rem",
-            }}
-          >
-            Apply Now
-          </Button>}
+          }
 
 
 
