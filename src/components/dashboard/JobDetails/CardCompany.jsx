@@ -20,7 +20,7 @@ import { useEffect, useState } from "react";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
 import { ApplyForAJob } from "../../../logic/api/apply/Apply.jsx";
 
-export default function CardCompany({ jobInfo, JobId }) {
+export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
@@ -60,32 +60,26 @@ export default function CardCompany({ jobInfo, JobId }) {
 
   const apply = async () => {
     try {
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
-
      
       const frontdata = {Company:jobInfo?.createdBy?._id}
 
-      const savejobs = await ApplyForAJob({JobId, frontdata});
+      const applyjobs = await ApplyForAJob({JobId, frontdata});
 
-
+      
       setSnackBar({
         open: true,
-        message: savejobs?.message,
+        message: applyjobs?.message,
         severity: "success",
       });
+
+      fetchJobById()
     } catch (error) {
+
       setSnackBar({
         open: true,
         message: error.response?.data.message,
         severity: "error",
       });
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
     }
   };
 
