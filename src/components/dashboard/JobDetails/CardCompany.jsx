@@ -59,7 +59,6 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
   const apply = async () => {
     try {
-     
       const frontdata = {Company:jobInfo?.createdBy?._id}
 
       const applyjobs = await ApplyForAJob({JobId, frontdata});
