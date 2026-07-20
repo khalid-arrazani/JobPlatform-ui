@@ -212,6 +212,7 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
         </Box>
         {/* Right Side */}
         <Stack direction="row" spacing={2}>
+          
           <Button
             variant="outlined"
             startIcon={
