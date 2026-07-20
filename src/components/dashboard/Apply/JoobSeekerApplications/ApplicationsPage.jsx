@@ -55,7 +55,7 @@ export default function ApplicationsJs() {
           <Header />
 
           <Box sx={{width:"100%",height:"60%" , boxSizing:"border-box"}} >
-
+           <Card sx={{ height:"5rem"}} ></Card>
           </Box>
 
 
