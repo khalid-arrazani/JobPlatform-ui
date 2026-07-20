@@ -77,7 +77,6 @@ export default function CardCompany({ jobInfo, JobId }) {
         severity: "success",
       });
     } catch (error) {
-      console.log(error.response);
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -92,7 +91,7 @@ export default function CardCompany({ jobInfo, JobId }) {
 
 
 
-  
+
   return (
     <>
       <Card
