@@ -11,7 +11,7 @@ export default function AbouttheCompany({ jobInfo }) {
     setDescription(jobInfo?.createdBy?.description);
   }, [jobInfo?.createdBy]);
 
-  console.log(description);
+
   return (
     <Card
       sx={{

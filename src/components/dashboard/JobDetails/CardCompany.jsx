@@ -14,10 +14,11 @@ import TurnedInIcon from "@mui/icons-material/TurnedIn";
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
-import { useJob } from "../../../logic/context/JobContext";
+
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
+import { ApplyForAJob } from "../../../logic/api/apply/Apply.jsx";
 
 export default function CardCompany({ jobInfo, JobId }) {
   const { setSnackBar } = useAuth();
@@ -57,21 +58,18 @@ export default function CardCompany({ jobInfo, JobId }) {
   };
 
 
-
-
-const apply = async () => {
-
+  const apply = async () => {
     try {
-
       setJobs((prev) => ({
         ...prev,
         isSaved: !prev.isSaved,
       }));
 
-      
-      const savejobs = await toggleSaveJob({
-        jobId: JobId,
-      });
+     
+      const frontdata = {Company:jobInfo?.createdBy?._id}
+
+      const savejobs = await ApplyForAJob({JobId, frontdata});
+
 
       setSnackBar({
         open: true,
@@ -79,6 +77,7 @@ const apply = async () => {
         severity: "success",
       });
     } catch (error) {
+      console.log(error.response);
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -90,8 +89,6 @@ const apply = async () => {
       }));
     }
   };
-
-
 
   return (
     <>
@@ -226,11 +223,7 @@ const apply = async () => {
           <Button
             variant="outlined"
             startIcon={
-              jobs?.isSaved ? (
-                <TurnedInIcon />
-              ) : (
-                <TurnedInNotOutlinedIcon />
-              )
+              jobs?.isSaved ? <TurnedInIcon /> : <TurnedInNotOutlinedIcon />
             }
             onClick={saveJob}
             sx={{
@@ -240,8 +233,10 @@ const apply = async () => {
               py: 1,
               borderColor: "#DDD",
 
-              color:  jobs?.isSaved ? "#ffffff" : "#a320e5",
-              background: jobs?.isSaved ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)" : "#ffffff" ,
+              color: jobs?.isSaved ? "#ffffff" : "#a320e5",
+              background: jobs?.isSaved
+                ? "linear-gradient(30deg, #4c078c 0%, #7c197e 35%, #440884 100%)"
+                : "#ffffff",
 
               fontSize: "0.8rem",
             }}
@@ -259,8 +254,8 @@ const apply = async () => {
               px: 2,
               py: 1.2,
               fontWeight: 300,
-            
-             background:
+
+              background:
                 "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
 
               transition: "all 0.3s ease",
@@ -270,7 +265,6 @@ const apply = async () => {
               },
               fontSize: "0.8rem",
             }}
-            
           >
             Apply Now
           </Button>
