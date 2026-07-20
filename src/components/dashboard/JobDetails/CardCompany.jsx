@@ -26,6 +26,8 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
   const [jobs, setJobs] = useState();
 
+  console.log(jobs?.isApply);
+
   useEffect(() => {
     setJobs(jobInfo);
   }, [jobInfo]);
