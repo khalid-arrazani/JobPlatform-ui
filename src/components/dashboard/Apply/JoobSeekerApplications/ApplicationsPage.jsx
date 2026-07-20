@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Button, Collapse,Avatar } from "@mui/material";
+import { Card, Typography, Box, Button, Collapse, Avatar } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -54,23 +54,48 @@ export default function ApplicationsJs() {
         >
           <Header />
 
-          <Box sx={{width:"100%",height:"60%" , boxSizing:"border-box",placeItems:"center"}} >
-           <Card sx={{ height:"7rem",width:"95%",my:1,boxShadow:"none", border:"solid 1px #cfcececa", boxSizing:"border-box",display:"flex"}} >
+          <Box
+            sx={{
+              width: "100%",
+              height: "60%",
+              boxSizing: "border-box",
+              placeItems: "center",
+            }}
+          >
+            <Card
+              sx={{
+                height: "7rem",
+                width: "95%",
+                my: 1,
+                boxShadow: "none",
+                border: "solid 1px #cfcececa",
+                boxSizing: "border-box",
+                display: "flex",
+              }}
+            >
+              <Box
+                sx={{
+                  height: "100%",
+                  width: "7rem",
+                  boxSizing: "border-box",
+                  p: 1,
+                  borderRight: "solid 1px #ddd",
+                }}
+              >
+                <Avatar
+                  src="https://imgs.search.brave.com/1NjKNCJLYkxjPLrKnWVPWI9kpKaExy3iB_VnIqxTbJc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDYv/ODYxLzY0Ny9zbWFs/bC9nb29nbGUtbG9n/by10cmFuc3BhcmVu/dC1iYWNrZ3JvdW5k/LWZyZWUtcG5nLnBu/Zw"
+                  sx={{ width: "100%", height: "100%", borderRadius: "10px" }}
+                />
+              </Box>
 
-            <Box sx={{height:"100%", width:"7rem",  boxSizing:"border-box", p:1,borderRight:"solid 1px #ddd"}}>
-               <Avatar  
-               src="https://imgs.search.brave.com/1NjKNCJLYkxjPLrKnWVPWI9kpKaExy3iB_VnIqxTbJc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDYv/ODYxLzY0Ny9zbWFs/bC9nb29nbGUtbG9n/by10cmFuc3BhcmVu/dC1iYWNrZ3JvdW5k/LWZyZWUtcG5nLnBu/Zw"
-               sx={{width:"100%",height:"100%",borderRadius:"10px"}}
-               />
-            </Box>
+              <Box sx={{ height: "100%", flex: 1 ,display:"flex"}}>
 
+                <Box sx={{height: "100%",width:"50%" }}></Box>
+                <Box sx={{height: "100%",width:"50%" }}></Box>
 
-            <Box sx={{height:"100%" 
-                ,flex:1}}></Box>
-           
-           </Card>
+              </Box>
+            </Card>
           </Box>
-
 
           <Pagination
             onChange={handleChange}
