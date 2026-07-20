@@ -64,7 +64,7 @@ export default function ApplicationsJs() {
           >
             <Card
               sx={{
-                height: "7rem",
+                height: "6.5rem",
                 width: "95%",
                 my: 1,
                 boxShadow: "none",
@@ -76,7 +76,7 @@ export default function ApplicationsJs() {
               <Box
                 sx={{
                   height: "100%",
-                  width: "7rem",
+                  width: "6.5rem",
                   boxSizing: "border-box",
                   p: 1,
                   borderRight: "solid 1px #ddd",
@@ -90,7 +90,30 @@ export default function ApplicationsJs() {
 
               <Box sx={{ height: "100%", flex: 1 ,display:"flex"}}>
 
-                <Box sx={{height: "100%",width:"50%" }}></Box>
+                <Box sx={{height: "100%",width:"50%" ,display:"flex",flexDirection:"column",justifyContent:"center",gap:0.5,pl:1}}>
+                    <Typography sx={{fontSize: "1.5rem",fontWeight:600,fontFamily:"ui-monospace"}} >Frontend Developer</Typography>
+                    <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    color: "#02020db4",
+                  }}
+                >
+                  Google • Zurich , Switzerland
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    color: "#02020db4",
+                    mb:0.5
+                  }}
+                >
+                  Applied on May 18,2025
+                </Typography>
+                </Box>
                 <Box sx={{height: "100%",width:"50%" }}></Box>
 
               </Box>
