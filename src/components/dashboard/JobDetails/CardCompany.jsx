@@ -90,6 +90,9 @@ export default function CardCompany({ jobInfo, JobId }) {
     }
   };
 
+
+
+  
   return (
     <>
       <Card
