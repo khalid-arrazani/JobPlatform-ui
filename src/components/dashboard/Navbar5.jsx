@@ -46,13 +46,13 @@ export default function Navbar() {
 
   const currentTab =
     {
-      "/Dashboard/Jobs": 0,
-      "/Dashboard/Companies": 1,
-      "/Dashboard/Saved": 2,
-      "/Dashboard/My_Jobs": 3,
-      "/Dashboard/applications": 4,
+      "/Dashboard/Jobs": "Jobs",
+      "/Dashboard/Companies": "Companies",
+      "/Dashboard/Saved": "Saved",
+      "/Dashboard/My_Jobs": 'My_Jobs',
+      "/Dashboard/Applications": "Applications",
       "/Dashboard/My_Company": 5,
-    }[location.pathname] ?? 0;
+    }[location.pathname] ?? null;
 
   return (
     <Box
@@ -123,6 +123,7 @@ export default function Navbar() {
             }}
           >
             <Tab
+              value={"Jobs"}
               label="Jobs"
               onClick={() => navigate("/Dashboard/Jobs")}
               sx={{
@@ -134,6 +135,7 @@ export default function Navbar() {
             />
 
             <Tab
+              value={"Companies"}
               label="Companies"
               onClick={() => navigate("/Dashboard/Companies")}
               sx={{
@@ -146,6 +148,8 @@ export default function Navbar() {
             <Tab
               onClick={() => navigate("/Dashboard/Saved")}
               label="Saved"
+              value={"Saved"}
+
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -154,6 +158,7 @@ export default function Navbar() {
             />
             <Tab
               onClick={() => navigate("/Dashboard/My_Jobs")}
+              value={"My_Jobs"}
               label="My Jobs"
               sx={{
                 textTransform: "none",
@@ -164,7 +169,8 @@ export default function Navbar() {
 
             <Tab
               label="Applications"
-              onClick={() => setTap(3)}
+              value={"Applications"}
+              onClick={() => navigate("/Dashboard/Applications")}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
