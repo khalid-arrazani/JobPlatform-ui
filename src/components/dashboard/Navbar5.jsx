@@ -32,13 +32,13 @@ import { useAuth } from "../../logic/context/AuthContext.jsx";
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
-  const { openModal, setOpenModal}= useJob()
+  const { openModal, setOpenModal } = useJob();
 
   const { ...state } = useProfile();
 
-  const {  ...authState  } = useAuth()
-  
-  console.log("111" ,authState);
+  const { ...authState } = useAuth();
+
+  console.log("111", authState);
 
   const navigate = useNavigate();
 
@@ -49,7 +49,7 @@ export default function Navbar() {
       "/Dashboard/Jobs": "Jobs",
       "/Dashboard/Companies": "Companies",
       "/Dashboard/Saved": "Saved",
-      "/Dashboard/My_Jobs": 'My_Jobs',
+      "/Dashboard/My_Jobs": "My_Jobs",
       "/Dashboard/Applications": "Applications",
       "/Dashboard/My_Company": 5,
     }[location.pathname] ?? null;
@@ -149,14 +149,18 @@ export default function Navbar() {
               onClick={() => navigate("/Dashboard/Saved")}
               label="Saved"
               value={"Saved"}
-
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
                 minHeight: 64,
               }}
             />
-            <Tab
+
+            
+
+
+             {authState.user?.role == "recruiter" ? (
+             <Tab
               onClick={() => navigate("/Dashboard/My_Jobs")}
               value={"My_Jobs"}
               label="My Jobs"
@@ -166,79 +170,90 @@ export default function Navbar() {
                 minHeight: 64,
               }}
             />
+            ) : null}
 
-            <Tab
-              label="Applications"
-              value={"Applications"}
-              onClick={() => navigate("/Dashboard/Applications")}
-              sx={{
-                textTransform: "none",
-                fontWeight: 600,
-                minHeight: 64,
-              }}
-            />
+            {authState.user?.role == "recruiter" ? (
+              <Tab
+                label="Applications"
+                value={"Applications"}
+                onClick={() => navigate("/Dashboard/Applications")}
+                sx={{
+                  textTransform: "none",
+                  fontWeight: 600,
+                  minHeight: 64,
+                }}
+              />
+            ) : null}
 
-            {authState.user?.role == "jobSeeker" ? null : authState.user?.role == "recruiter" ?  
 
-            <IconButton
-              onClick={() => navigate("/Dashboard/My_Company")}
-              sx={{
-                mr: 1,
-                borderRadius: "5px",
-                height: "90%",
-                alignSelf: "center",
-                fontSize: 13,
-                gap: 0.5,
-                border: "solid 1px #88858535",
-                fontFamily: "-apple-system",
-              }}
-              style={{ position: "relative", right: "-3rem" }}
-            >
-              {state.isLoading ? (
-                <CircularProgress
-                  color="success"
-                  aria-label="Loading…"
-                  sx={{ mx: 3 }}
-                />
-              ) : !state?.user?.hasCompany ? (
-                <Box sx={{ display: "flex", alignItems: "center" }}>
-                  <Badge
-                    overlap="circular"
-                    sx={{ mr: 0.5 }}
-                    anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
-                    badgeContent={
-                      <AddIcon
-                        sx={{
-                          fontSize: 9,
-                          bgcolor: "#1976d2",
-                          color: "white",
-                          borderRadius: "10px",
-                          p: 0.2,
-                        }}
-                      />
-                    }
-                  >
+
+            {authState.user?.role == "recruiter" ? (
+               <IconButton
+                onClick={() => navigate("/Dashboard/My_Company")}
+                sx={{
+                  mr: 1,
+                  borderRadius: "5px",
+                  height: "90%",
+                  alignSelf: "center",
+                  fontSize: 13,
+                  gap: 0.5,
+                  border: "solid 1px #88858535",
+                  fontFamily: "-apple-system",
+                }}
+                style={{ position: "relative", right: "-3rem" }}
+              >
+                {state.isLoading ? (
+                  <CircularProgress
+                    color="success"
+                    aria-label="Loading…"
+                    sx={{ mx: 3 }}
+                  />
+                ) : !state?.user?.hasCompany ? (
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Badge
+                      overlap="circular"
+                      sx={{ mr: 0.5 }}
+                      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                      badgeContent={
+                        <AddIcon
+                          sx={{
+                            fontSize: 9,
+                            bgcolor: "#1976d2",
+                            color: "white",
+                            borderRadius: "10px",
+                            p: 0.2,
+                          }}
+                        />
+                      }
+                    >
+                      <BusinessOutlinedIcon />
+                    </Badge>
+                    add Company
+                  </Box>
+                ) : (
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
                     <BusinessOutlinedIcon />
-                  </Badge>
-                  add Company
-                </Box>
-              ) : (
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <BusinessOutlinedIcon />
-                  <Typography
-                    sx={{
-                      color: "#0a0d2cc7",
-                      fontWeight: 500,
-                      fontFamily: "system-ui",
-                    }}
-                  >
-                    {" "}
-                    {state.user.profile.company.name}{" "}
-                  </Typography>
-                </Box>
-              )}
-            </IconButton>: null }
+                    <Typography
+                      sx={{
+                        color: "#0a0d2cc7",
+                        fontWeight: 500,
+                        fontFamily: "system-ui",
+                      }}
+                    >
+                      {" "}
+                      {state.user.profile.company.name}{" "}
+                    </Typography>
+                  </Box>
+                )}
+              </IconButton>
+            ) : null}
+
+
             
+
+
+
+
           </Tabs>
         </Box>
 
