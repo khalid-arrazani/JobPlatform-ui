@@ -37,6 +37,16 @@ export default function JobDetailsPage() {
 
 
 
+  const fetchJobByIdWithoutReload = async () => {
+    try {
+      const jobById = await getJobID(JobId);
+      setJob(jobById);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setLoading(false);
+    }
+  };
   return (
     <>
       {loading ? (
@@ -98,7 +108,7 @@ export default function JobDetailsPage() {
                 Back to Jobs
               </Button>
 
-              <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobById} />
+              <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobByIdWithoutReload} />
               <DescriptionSection jobInfo={job} />
               <AbouttheCompany jobInfo={job} />
               <Divider />

@@ -31,29 +31,25 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
 
   const saveJob = async () => {
     try {
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
-
       const savejobs = await toggleSaveJob({
         jobId: JobId,
       });
+
+      fetchJobById()
+
       setSnackBar({
         open: true,
         message: savejobs?.message,
         severity: "success",
       });
+   
     } catch (error) {
       setSnackBar({
         open: true,
         message: error.response?.data.message,
         severity: "error",
       });
-      setJobs((prev) => ({
-        ...prev,
-        isSaved: !prev.isSaved,
-      }));
+   
     }
   };
 
