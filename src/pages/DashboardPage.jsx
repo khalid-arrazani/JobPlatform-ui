@@ -11,6 +11,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import MyJobsPage from "../components/dashboard/MyJobs/MyJobsPage.jsx";
+import ApplicationsJs from "../components/dashboard/Apply/JoobSeekerApplications/ApplicationsPage.jsx";
 
 
 export default function DashboardPage() {
@@ -29,6 +30,7 @@ export default function DashboardPage() {
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
+        <Route path="Applications" element={<ApplicationsJs />} />
 
         <Route path="My_Company" element={state.isLoading ? <LoadingPage/> : ( state.user?.hasCompany  ?  <CompanyPage /> :  <CreateCompanyPage /> )  } />
 

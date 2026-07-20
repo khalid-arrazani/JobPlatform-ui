@@ -9,11 +9,12 @@ export default function Header (){
     return <>
       <Box
             sx={{
-              height: "18%",
+              height: "17%",
               width: "100%",
               display:"flex",
               justifyContent:"space-between",
-              borderBottom:"solid 0.1px #8d8d8d3a"
+              borderBottom:"solid 0.1px #8d8d8d3a",
+              boxSizing:"border-box"
             }}
           >
             {/* Left */}

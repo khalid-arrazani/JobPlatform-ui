@@ -22,12 +22,12 @@ export default function ListJobsSaved({ savedJobs  }) {
     <>
       <Box
         sx={{
-          height: "82%",
+          height: "70%",
           overflow: "auto",
           boxSizing: "border-box",
           pt: 2,
           display: "flex",
-          flexDirection: "column",
+          flexDirection: "column"
         }}
       >
         {savedJobs?.jobs?.map((job) => (

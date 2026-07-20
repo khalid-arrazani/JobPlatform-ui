@@ -150,22 +150,11 @@ export default function Footer() {
           </Box>
 
 
-
-
-
-
         
           
           {page}
 
-          
-
-
-
-
-
-
-
+        
         </Box>
 
         <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
