@@ -19,7 +19,7 @@ import { formatDistanceToNow } from "date-fns";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
-import { ApplyForAJob } from "../../../logic/api/apply/Apply.jsx";
+import { ApplyForAJob, CancelApplyForAJob } from "../../../logic/api/apply/Apply.jsx";
 
 export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
   const { setSnackBar } = useAuth();
@@ -80,15 +80,12 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
       });
     }
   };
-  
+
 
   const CancelApplication = async () => {
     try {
-      const frontdata = {Company:jobInfo?.createdBy?._id}
+      const applyjobs = await CancelApplyForAJob(JobId);
 
-      const applyjobs = await ApplyForAJob({JobId, frontdata});
-
-      
       setSnackBar({
         open: true,
         message: applyjobs?.message,
