@@ -35,7 +35,7 @@ export default function JobDetailsPage() {
     }
   };
 
-  console.log("88", job);
+
 
   return (
     <>
