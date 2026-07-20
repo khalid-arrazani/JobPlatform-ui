@@ -239,6 +239,8 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
             Save Job
           </Button>
 
+          { jobs?.isApply ? 
+
           <Button
             variant="contained"
             onClick={apply}
@@ -266,6 +268,37 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
           >
             Apply Now
           </Button>
+:
+          <Button
+            variant="contained"
+            onClick={apply}
+     
+            startIcon={
+              jobs?.isApply ? <CheckIcon /> : <TelegramIcon />
+            }
+            sx={{
+              borderRadius: "14px",
+              textTransform: "none",
+              px: 2,
+              py: 1.2,
+              fontWeight: 300,
+
+              background:
+                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+              transition: "all 0.3s ease",
+
+              "&:hover": {
+                background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+              },
+              fontSize: "0.8rem",
+            }}
+          >
+            Apply Now
+          </Button>}
+
+
+
         </Stack>
       </Card>
     </>
