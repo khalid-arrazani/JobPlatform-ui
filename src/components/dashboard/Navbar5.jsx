@@ -185,6 +185,19 @@ export default function Navbar() {
               />
             ) : null}
 
+            {authState.user?.role == "jobSeeker" ? (
+              <Tab
+                label="Applications"
+                value={"Applications"}
+                onClick={() => navigate("/Dashboard/Applications")}
+                sx={{
+                  textTransform: "none",
+                  fontWeight: 600,
+                  minHeight: 64,
+                }}
+              />
+            ) : null}
+
 
 
             {authState.user?.role == "recruiter" ? (
@@ -247,11 +260,6 @@ export default function Navbar() {
                 )}
               </IconButton>
             ) : null}
-
-
-            
-
-
 
 
           </Tabs>
