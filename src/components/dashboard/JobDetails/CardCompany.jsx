@@ -6,25 +6,37 @@ import {
   Chip,
   Button,
   Stack,
+  Modal,
 } from "@mui/material";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
 
 import TelegramIcon from "@mui/icons-material/Telegram";
-import CheckIcon from '@mui/icons-material/Check';
+import CheckIcon from "@mui/icons-material/Check";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
 import { toggleSaveJob } from "../../../logic/api/job/Job";
-import { ApplyForAJob, CancelApplyForAJob } from "../../../logic/api/apply/Apply.jsx";
+import {
+  ApplyForAJob,
+  CancelApplyForAJob,
+} from "../../../logic/api/apply/Apply.jsx";
 
-export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
+import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
+import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
+import { Badge } from "@mui/material";
+
+import { RiDeleteBinLine } from "react-icons/ri";
+
+export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
+
+  const [openCancelApply, setOpenCancelApply] = useState(false);
 
   console.log(jobInfo);
 
@@ -38,39 +50,35 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
         jobId: JobId,
       });
 
-      fetchJobById()
+      fetchJobById();
 
       setSnackBar({
         open: true,
         message: savejobs?.message,
         severity: "success",
       });
-   
     } catch (error) {
       setSnackBar({
         open: true,
         message: error.response?.data.message,
         severity: "error",
       });
-   
     }
   };
 
-
   const apply = async () => {
     try {
-      const frontdata = {Company:jobInfo?.createdBy?._id}
+      const frontdata = { Company: jobInfo?.createdBy?._id };
 
-      const applyjobs = await ApplyForAJob({JobId, frontdata});
+      const applyjobs = await ApplyForAJob({ JobId, frontdata });
 
-      
       setSnackBar({
         open: true,
         message: applyjobs?.message,
         severity: "success",
       });
 
-      fetchJobById()
+      fetchJobById();
     } catch (error) {
       console.log(error.response);
       setSnackBar({
@@ -80,7 +88,6 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
       });
     }
   };
-
 
   const CancelApplication = async () => {
     try {
@@ -91,8 +98,8 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
         message: applyjobs?.message,
         severity: "success",
       });
-
-      fetchJobById()
+      setOpenCancelApply(false)
+      fetchJobById();
     } catch (error) {
       console.log(error.response);
       setSnackBar({
@@ -103,11 +110,105 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
     }
   };
 
-
-
+  function handleCloose() {
+    setOpenCancelApply(false)
+  }
 
   return (
     <>
+      <Modal
+        open={openCancelApply}
+        onClose={handleCloose}
+        sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      >
+        <Card
+          sx={{
+            width: "28rem",
+            height: "18rem",
+            outline: "none",
+            display: "flex",
+            flexDirection: "column",
+            boxSizing: "border-box",
+          }}
+        >
+          <Box sx={{ height: "75%", width: "100%" ,display:"flex",flexDirection:"column", alignItems:"center",justifyContent:"center",gap:1 ,boxSizing: "border-box", }}>
+
+
+            <Box sx={{p:2.5,bgcolor:"#ffd5d5",width:"fit-Content",borderRadius:"50%",textAlign:"center"}} >
+            <Badge
+              overlap="circular"
+              anchorOrigin={{
+                vertical: "bottom",
+                horizontal: "right",
+              }}
+              badgeContent={
+                <ErrorRoundedIcon
+                  sx={{
+                    color: "#ef4444",
+                    bgcolor: "#ffffff66",
+                    borderRadius: "50%",
+                    fontSize: 30,
+                  }}
+                />
+              }
+            >
+              
+              <RiDeleteBinLine  style={{fontSize: 60, color: "#ef4444",}}/>
+            </Badge></Box>
+
+            <Typography sx={{textAlign:"center",fontWeight:600}}>Cancel Application?</Typography>
+            <Typography sx={{textAlign:"center",width:"85%",fontSize:"0.8rem"}}>Are you sure you want to cancel your application for this job? Thid action cannot be undone.</Typography>
+
+
+
+
+
+
+
+
+          </Box>
+
+          <Box
+            sx={{
+              height: "25%",
+              width: "100%",
+              display: "flex",
+              justifyContent: "space-between",
+              boxSizing: "border-box",
+              px: 2,
+              borderTop: "solid 1px #ddd",
+              alignItems: "center",
+            }}
+          >
+            <Button
+             onClick={()=>setOpenCancelApply(false)}
+              sx={{
+                height: "70%",
+                textTransform: "none",
+                color: "#080616cf",
+                border: "solid 1px #08041d53",
+                fontFamily: "system-ui",
+                fontWeight: 400,
+              }}
+            >
+              Keep Application
+            </Button>
+            <Button
+             onClick={CancelApplication}
+              sx={{
+                height: "70%",
+                textTransform: "none",
+                color: "#ffffff",
+                bgcolor: "#bf0000c6",
+                fontFamily: "system-ui",
+                fontWeight: 400,
+              }}
+            >
+              Yes, Cancel Application
+            </Button>
+          </Box>
+        </Card>
+      </Modal>
       <Card
         sx={{
           flex: 1,
@@ -236,7 +337,6 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
         </Box>
         {/* Right Side */}
         <Stack direction="row" spacing={2}>
-          
           <Button
             variant="outlined"
             startIcon={
@@ -261,67 +361,61 @@ export default function CardCompany({ jobInfo, JobId ,fetchJobById}) {
             Save Job
           </Button>
 
-          { jobs?.isApply ? 
-
-          <Button
-            variant="contained"
-            onClick={CancelApplication}
-     
-            startIcon={
-             <CheckIcon /> 
-            }
-            sx={{
-              borderRadius: "14px",
-              textTransform: "none",
-              px: 2,
-              py: 1.2,
-              fontWeight: 300,
-
-              background:
-                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
-
-              transition: "all 0.3s ease",
-
-              "&:hover": {
-                background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
-              },
-              fontSize: "0.8rem",
-            }}
-          >
-            Applied
-          </Button>
-:
-          <Button
-            variant="contained"
-            onClick={apply}
-     
-            startIcon={
-              <TelegramIcon />
-            }
-            sx={{
-              borderRadius: "14px",
-              textTransform: "none",
-              px: 2,
-              py: 1.2,
-              fontWeight: 300,
-
-              background:
-                "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
-
-              transition: "all 0.3s ease",
-
-              "&:hover": {
-                background: "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
-              },
-              fontSize: "0.8rem",
-            }}
-          >
-            Apply Now
-          </Button>
-          }
 
 
+          {jobs?.isApply ? (
+            <Button
+              variant="contained"
+              onClick={()=>setOpenCancelApply(true)}
+              startIcon={<CheckIcon />}
+              sx={{
+                borderRadius: "14px",
+                textTransform: "none",
+                px: 2,
+                py: 1.2,
+                fontWeight: 300,
 
+                background:
+                  "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+                transition: "all 0.3s ease",
+
+                "&:hover": {
+                  background:
+                    "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+                },
+                fontSize: "0.8rem",
+              }}
+            >
+              Applied
+            </Button>
+          ) : (
+            <Button
+              variant="contained"
+              onClick={apply}
+              startIcon={<TelegramIcon />}
+              sx={{
+                borderRadius: "14px",
+                textTransform: "none",
+                px: 2,
+                py: 1.2,
+                fontWeight: 300,
+
+                background:
+                  "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+                transition: "all 0.3s ease",
+
+                "&:hover": {
+                  background:
+                    "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+                },
+                fontSize: "0.8rem",
+              }}
+            >
+              Apply Now
+            </Button>
+          )}
         </Stack>
       </Card>
     </>
