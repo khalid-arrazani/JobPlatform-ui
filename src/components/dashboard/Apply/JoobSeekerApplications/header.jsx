@@ -5,7 +5,7 @@ import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import { useState } from "react";
 
 export default function Header() {
-  const [felterData, setFelterData] = useState(0);
+  const [felterData, setFelterData] = useState("All");
 
   return (
     <>
@@ -99,14 +99,9 @@ export default function Header() {
         </Box>
 
         <Tabs
-          value={felterData.status}
+          value={felterData}
           onChange={(event, newValue) => {
-            setFelterData((prev) => ({
-              ...prev,
-              status: newValue,
-              page: 1,
-              search: "",
-            }));
+            setFelterData(newValue);
           }}
           textColor="inherit"
           sx={{
@@ -122,7 +117,7 @@ export default function Header() {
         >
           <Tab
             label="All"
-            value={""}
+            value={"All"}
             sx={{
               textTransform: "none",
               fontWeight: 600,

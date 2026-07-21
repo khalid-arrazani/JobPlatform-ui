@@ -2,9 +2,6 @@ import API from "../config/axios";
 
 
 export const ApplyForAJob = async ({JobId,frontdata}) => {
-
-
-
   const response = await API.post(
     `/applications/${JobId}`,
    frontdata,
