@@ -92,6 +92,7 @@ export default function ApplicationsJs() {
                 },
               }}
             >
+              
               <Box
                 sx={{
                   height: "100%",
