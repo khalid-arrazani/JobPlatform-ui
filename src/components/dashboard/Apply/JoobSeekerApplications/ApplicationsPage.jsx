@@ -1,4 +1,4 @@
-import { Card, Typography, Box, Button, Collapse, Avatar } from "@mui/material";
+import { Card, Typography, Box, Button, Collapse, Avatar, Chip } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -114,7 +114,18 @@ export default function ApplicationsJs() {
                   Applied on May 18,2025
                 </Typography>
                 </Box>
-                <Box sx={{height: "100%",width:"50%" }}></Box>
+                <Box sx={{height: "100%",width:"50%",bgcolor:"#ddd" }}>
+
+                  <Chip
+                      label={"job.workMode"}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#f6d8ff",
+                      }}
+                    />
+                </Box>
 
               </Box>
             </Card>
@@ -141,7 +152,10 @@ export default function ApplicationsJs() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></Box>
+        >
+
+          
+        </Box>
       </Box>
     </>
   );
