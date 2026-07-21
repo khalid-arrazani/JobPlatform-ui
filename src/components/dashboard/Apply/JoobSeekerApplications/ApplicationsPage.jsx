@@ -1,10 +1,20 @@
-import { Card, Typography, Box, Button, Collapse, Avatar, Chip } from "@mui/material";
+import {
+  Card,
+  Typography,
+  Box,
+  Button,
+  Collapse,
+  Avatar,
+  Chip,
+} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
 import Header from "./header";
 import { useEffect, useState } from "react";
 import { getSavedJobs } from "../../../../logic/api/job/Job";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 export default function ApplicationsJs() {
   const [savedJobs, setSavedJobs] = useState();
   const [loading, setLoading] = useState(false);
@@ -88,45 +98,88 @@ export default function ApplicationsJs() {
                 />
               </Box>
 
-              <Box sx={{ height: "100%", flex: 1 ,display:"flex"}}>
-
-                <Box sx={{height: "100%",width:"50%" ,display:"flex",flexDirection:"column",justifyContent:"center",gap:0.5,pl:1}}>
-                    <Typography sx={{fontSize: "1.5rem",fontWeight:600,fontFamily:"ui-monospace"}} >Frontend Developer</Typography>
-                    <Typography
+              <Box sx={{ height: "100%", flex: 1, display: "flex" }}>
+                <Box
                   sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    fontFamily: "monospace",
-                    color: "#02020db4",
+                    height: "100%",
+                    width: "50%",
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "center",
+                    gap: 0.5,
+                    pl: 1,
                   }}
                 >
-                  Google • Zurich , Switzerland
-                </Typography>
-                <Typography
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    fontFamily: "monospace",
-                    color: "#02020db4",
-                    mb:0.5
-                  }}
-                >
-                  Applied on May 18,2025
-                </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "1.5rem",
+                      fontWeight: 600,
+                      fontFamily: "ui-monospace",
+                    }}
+                  >
+                    Frontend Developer
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "0.8rem",
+                      fontWeight: 600,
+                      fontFamily: "monospace",
+                      color: "#02020db4",
+                    }}
+                  >
+                    Google • Zurich , Switzerland
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "0.8rem",
+                      fontWeight: 600,
+                      fontFamily: "monospace",
+                      color: "#02020db4",
+                      mb: 0.5,
+                    }}
+                  >
+                    Applied on May 18,2025
+                  </Typography>
                 </Box>
-                <Box sx={{height: "100%",width:"50%",bgcolor:"#ddd" }}>
 
+
+                <Box
+                  sx={{
+                    height: "100%",
+                    width: "50%",
+                 
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent:"space-between"
+                  }}
+                >
                   <Chip
-                      label={"job.workMode"}
-                      size="small"
-                      sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
-                        bgcolor: "#f6d8ff",
-                      }}
-                    />
-                </Box>
+                    label={"• Interviewing"}
+                    sx={{
+                      fontSize: "1rem",
+                      borderRadius: "8px",
+                      fontFamily: "system-ui",
+                      color: "#094911ca",
+                      bgcolor: "#c0ffc8",
+                      fontWeight: 600,
+                    }}
+                  />
 
+                  <Box  sx={{display:"flex",width:"40%",justifyContent:"space-between",alignItems:"center"}} >
+                    <Typography
+                      sx={{
+                        fontSize: "0.8rem",
+                        fontWeight: 600,
+                        fontFamily: "monospace",
+                        color: "#02020db4",
+                        mb: 0.5,
+                      }}
+                    >
+                      May 18,2025
+                    </Typography>
+                    <MoreVertIcon />
+                  </Box>
+                </Box>
               </Box>
             </Card>
           </Box>
@@ -152,10 +205,7 @@ export default function ApplicationsJs() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        >
-
-          
-        </Box>
+        ></Box>
       </Box>
     </>
   );

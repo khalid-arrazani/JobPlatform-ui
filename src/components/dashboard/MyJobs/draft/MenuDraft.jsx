@@ -26,7 +26,7 @@ import EditeJobModal from "./EditeDraftModal";
 export default function MenuCardDraft({ JobId,  jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
-  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
+  
 
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompanyWitoutReload } = useJob();
