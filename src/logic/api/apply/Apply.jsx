@@ -20,3 +20,13 @@ export const CancelApplyForAJob = async (JobId) => {
   );
   return response.data;
 };
+
+export const GetMyApply = async () => {
+
+  const response = await API.get(
+    "/applications/my-applications",
+    { withCredentials: true }
+  );
+  return response.data;
+};
+

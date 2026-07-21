@@ -1,8 +1,4 @@
-import {
-
-  Box,
-
-} from "@mui/material";
+import { Box } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -10,30 +6,25 @@ import Header from "./header";
 import { useEffect, useState } from "react";
 import { getSavedJobs } from "../../../../logic/api/job/Job";
 import ListApply from "./ListApply";
-
-
-
-
+import { GetMyApply } from "../../../../logic/api/apply/Apply";
 
 export default function ApplicationsJs() {
-
-  const [savedJobs, setSavedJobs] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (event, value) => {
-    SavedJobs(value);
-  };
+
+
 
   useEffect(() => {
-    SavedJobs();
+    ApplyJobs();
   }, []);
 
-  const SavedJobs = async (value) => {
-    setLoading(true);
-    try {
-      const SavedJobs = await getSavedJobs(value);
+  const ApplyJobs = async () => {
 
-      setSavedJobs(SavedJobs);
+    setLoading(true);
+
+    try {
+      const MyApply = await GetMyApply();
+       console.log(MyApply);
     } catch (err) {
       console.log(err);
     } finally {
@@ -41,8 +32,6 @@ export default function ApplicationsJs() {
     }
   };
 
-
-  
   return (
     <>
       <Box
@@ -76,13 +65,12 @@ export default function ApplicationsJs() {
               placeItems: "center",
             }}
           >
-            <ListApply/>
-
+            <ListApply />
           </Box>
 
           <Pagination
-            onChange={handleChange}
-            count={savedJobs?.totalPages}
+            // onChange={}
+            count={5}
             sx={{
               mt: "auto",
               alignSelf: "center",

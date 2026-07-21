@@ -20,13 +20,10 @@ export const useApply = () => {
 
 
 
-
-
-
 export default function ApplyProvider({ children }) {
 
   const [state, dispatch] = useReducer(applyReducer, initialState);
-  
+
 
   return (
     <ApplyContext.Provider
