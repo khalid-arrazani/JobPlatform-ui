@@ -6,6 +6,7 @@ import {
   Collapse,
   Avatar,
   Chip,
+  IconButton,
 } from "@mui/material";
 
 import { Pagination } from "@mui/material";
@@ -77,10 +78,18 @@ export default function ApplicationsJs() {
                 height: "6.5rem",
                 width: "95%",
                 my: 1,
-                boxShadow: "none",
-                border: "solid 1px #cfcececa",
+                border: "1px solid #cfcececa",
                 boxSizing: "border-box",
                 display: "flex",
+                boxShadow: "0 2px 8px rgba(15, 23, 42, 0.06)",
+                transition: "all 0.25s ease",
+
+                "&:hover": {
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 10px 25px rgba(15, 23, 42, 0.12)",
+                  borderColor: "#b8b8b8",
+                  cursor: "pointer",
+                },
               }}
             >
               <Box
@@ -98,7 +107,7 @@ export default function ApplicationsJs() {
                 />
               </Box>
 
-              <Box sx={{ height: "100%", flex: 1, display: "flex",pr:1 }}>
+              <Box sx={{ height: "100%", flex: 1, display: "flex", pr: 1 }}>
                 <Box
                   sx={{
                     height: "100%",
@@ -142,15 +151,14 @@ export default function ApplicationsJs() {
                   </Typography>
                 </Box>
 
-
                 <Box
                   sx={{
                     height: "100%",
                     width: "50%",
-                 
+
                     display: "flex",
                     alignItems: "center",
-                    justifyContent:"space-between"
+                    justifyContent: "space-between",
                   }}
                 >
                   <Chip
@@ -165,7 +173,14 @@ export default function ApplicationsJs() {
                     }}
                   />
 
-                  <Box  sx={{display:"flex",width:"40%",justifyContent:"space-between",alignItems:"center"}} >
+                  <Box
+                    sx={{
+                      display: "flex",
+                      width: "40%",
+                      justifyContent: "space-between",
+                      alignItems: "center",
+                    }}
+                  >
                     <Typography
                       sx={{
                         fontSize: "0.8rem",
@@ -177,7 +192,9 @@ export default function ApplicationsJs() {
                     >
                       May 18,2025
                     </Typography>
-                    <MoreVertIcon />
+                    <IconButton>
+                      <MoreVertIcon />
+                    </IconButton>
                   </Box>
                 </Box>
               </Box>
