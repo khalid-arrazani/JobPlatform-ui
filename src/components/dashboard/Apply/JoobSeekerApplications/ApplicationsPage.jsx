@@ -98,7 +98,7 @@ export default function ApplicationsJs() {
                 />
               </Box>
 
-              <Box sx={{ height: "100%", flex: 1, display: "flex" }}>
+              <Box sx={{ height: "100%", flex: 1, display: "flex",pr:1 }}>
                 <Box
                   sx={{
                     height: "100%",
@@ -156,11 +156,11 @@ export default function ApplicationsJs() {
                   <Chip
                     label={"• Interviewing"}
                     sx={{
-                      fontSize: "1rem",
+                      fontSize: "0.9rem",
                       borderRadius: "8px",
                       fontFamily: "system-ui",
-                      color: "#094911ca",
-                      bgcolor: "#c0ffc8",
+                      color: "#085d13c2",
+                      bgcolor: "#c0ffc895",
                       fontWeight: 600,
                     }}
                   />
