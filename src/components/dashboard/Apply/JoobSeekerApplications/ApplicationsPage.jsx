@@ -92,7 +92,7 @@ export default function ApplicationsJs() {
                 },
               }}
             >
-              
+
               <Box
                 sx={{
                   height: "100%",
@@ -200,6 +200,9 @@ export default function ApplicationsJs() {
                 </Box>
               </Box>
             </Card>
+
+
+            
           </Box>
 
           <Pagination
