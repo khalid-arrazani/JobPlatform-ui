@@ -145,12 +145,8 @@ export default function ListApply() {
                     {format(new Date(app?.createdAt), "MMM dd, yyyy")}
                   </Typography>
 
-
-               
-                    <MenuApply ApplyId={app._id}/>
-                
-
-
+                    <MenuApply JobId={app?.job?._id}/>
+              
 
                 </Box>
               </Box>

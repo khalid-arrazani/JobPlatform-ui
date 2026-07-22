@@ -9,11 +9,13 @@ import {
 } from "@mui/material";
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
 
 
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
+import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -22,6 +24,8 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 
 
 export default function MenuApply({ JobId}) {
+    const navigate = useNavigate();
+  
 
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
@@ -82,12 +86,15 @@ export default function MenuApply({ JobId}) {
           },
         }}
       >
-        <MenuItem>
+        <MenuItem onClick={ ()=> navigate(`/Dashboard/Jobs/Details/${JobId}`)}>
           <ListItemIcon>
-            <EditOutlinedIcon fontSize="small" />
+         <VisibilityOutlinedIcon fontSize="small" />
+
           </ListItemIcon>
-          Edit Job
+          View Job
         </MenuItem>
+        
+        
         
       
 

@@ -184,6 +184,25 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+          <Tab
+            value={"interview"}
+            label={
+              <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
+                <span style={{fontFamily:"system-ui"}} >Interview</span>
+
+                <Chip
+                  label={2}
+                  size="small"
+                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                />
+              </Box>
+            }
+            sx={{
+              textTransform: "none",
+              fontWeight: 600,
+              minHeight: 64,
+            }}
+          />
           
           <Tab
             value={"rejected"}

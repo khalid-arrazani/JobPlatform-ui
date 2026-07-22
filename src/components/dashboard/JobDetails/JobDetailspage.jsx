@@ -85,7 +85,7 @@ export default function JobDetailsPage() {
             >
               <Button
                 startIcon={<KeyboardBackspaceIcon />}
-                onClick={() => navigate("/dashboard/jobs")}
+                onClick={() => navigate(-1)}
                 sx={{
                   textTransform: "none",
                   fontWeight: 600,
@@ -105,7 +105,7 @@ export default function JobDetailsPage() {
                   alignContent: "center",
                 }}
               >
-                Back to Jobs
+                Go Back
               </Button>
 
               <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobByIdWithoutReload} />
