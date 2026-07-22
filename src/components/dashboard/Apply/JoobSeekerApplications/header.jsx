@@ -134,7 +134,7 @@ export default function Header() {
                 <Chip
                   label={1}
                   size="small"
-                  sx={{ color: "#02310e", bgcolor: "#8efb88" }}
+                  sx={{ color: "#F59E0B", bgcolor: "#FEF3C7" }}
                 />
               </Box>
             }
@@ -145,6 +145,9 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+
+
+
           <Tab
             value={"under review"}
             label={
@@ -154,7 +157,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                  sx={{ color: "#3B82F6", bgcolor: "#DBEAFE" }}
                 />
               </Box>
             }
@@ -164,6 +167,7 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+
 
           <Tab
             value={"accepted"}
@@ -174,7 +178,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#1300bf", bgcolor: "#ababff" }}
+                  sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
                 />
               </Box>
             }
@@ -184,6 +188,9 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+
+
+
           <Tab
             value={"interview"}
             label={
@@ -193,7 +200,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#186b07", bgcolor: "#d3ffc4" }}
+                  sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
                 />
               </Box>
             }
@@ -209,7 +216,7 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{fontFamily:"system-ui"}} >Rejected</span>
-                <Chip label={3} size="small" sx={{ color: "#ba0202d7", bgcolor: "#ffbebe" }} />
+                <Chip label={3} size="small" sx={{ color: "#EF4444", bgcolor: "#FEE2E2" }} />
               </Box>
             }
             sx={{
