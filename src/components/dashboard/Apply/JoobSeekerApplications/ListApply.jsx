@@ -24,7 +24,7 @@ export default function ListApply() {
         }}
       >
 
-    {state?.ListApply?.map(()=>(
+    {state?.ListApply?.map((app)=>(
 
         <Card
           sx={{
@@ -44,6 +44,8 @@ export default function ListApply() {
               cursor: "pointer",
             },
           }}
+
+          key={app._id}
         >
           <Box
             sx={{
@@ -55,8 +57,8 @@ export default function ListApply() {
             }}
           >
             <Avatar
-              src="https://imgs.search.brave.com/1NjKNCJLYkxjPLrKnWVPWI9kpKaExy3iB_VnIqxTbJc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9zdGF0/aWMudmVjdGVlenku/Y29tL3N5c3RlbS9y/ZXNvdXJjZXMvdGh1/bWJuYWlscy8wNDYv/ODYxLzY0Ny9zbWFs/bC9nb29nbGUtbG9n/by10cmFuc3BhcmVu/dC1iYWNrZ3JvdW5k/LWZyZWUtcG5nLnBu/Zw"
-              sx={{ width: "100%", height: "100%", borderRadius: "10px" }}
+              src={app?.company?.companyLogo?.url}        
+               sx={{ width: "100%", height: "100%", borderRadius: "10px" }}
             />
           </Box>
 
@@ -79,7 +81,7 @@ export default function ListApply() {
                   fontFamily: "ui-monospace",
                 }}
               >
-                Frontend Developer
+                {app?.job?.title}
               </Typography>
               <Typography
                 sx={{
@@ -89,7 +91,8 @@ export default function ListApply() {
                   color: "#02020db4",
                 }}
               >
-                Google • Zurich , Switzerland
+                 {app?.job?.location}
+
               </Typography>
               <Typography
                 sx={{

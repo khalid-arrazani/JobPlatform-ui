@@ -38,7 +38,7 @@ export default function Navbar() {
 
   const { ...authState } = useAuth();
 
-  console.log("111", authState);
+
 
   const navigate = useNavigate();
 
