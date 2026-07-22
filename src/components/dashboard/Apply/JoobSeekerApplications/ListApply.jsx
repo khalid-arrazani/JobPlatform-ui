@@ -1,6 +1,6 @@
-import { Card, Typography, Box, Avatar, Chip, IconButton } from "@mui/material";
+import { Card, Typography, Box, Avatar, Chip} from "@mui/material";
 
-import MoreVertIcon from "@mui/icons-material/MoreVert";
+
 import { useApply } from "../../../../logic/context/ApplyContext";
 
 import { formatDistanceToNow, format } from "date-fns";
@@ -145,7 +145,7 @@ export default function ListApply() {
                     {format(new Date(app?.createdAt), "MMM dd, yyyy")}
                   </Typography>
 
-                    <MenuApply JobId={app?.job?._id}/>
+                    <MenuApply JobId={app?.job?._id} />
               
 
                 </Box>

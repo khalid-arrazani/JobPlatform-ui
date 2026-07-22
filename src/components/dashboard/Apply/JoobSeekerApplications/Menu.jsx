@@ -10,9 +10,9 @@ import {
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
+import { MdOutlineCancelScheduleSend } from "react-icons/md"
 
 
-import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
@@ -20,14 +20,14 @@ import { useNavigate } from "react-router-dom";
 
 
 
+import ModalWarning from "./ModalWarning";
 
 
-
-export default function MenuApply({ JobId}) {
+export default function MenuApply({ JobId }) {
     const navigate = useNavigate();
   
 
-  const [openEditeJobModal, setEditeJobModal] = useState(false);
+
 
   
 
@@ -43,12 +43,15 @@ export default function MenuApply({ JobId}) {
     setAnchorEl(null);
   };
 
- 
+ const [openCancelApply, setOpenCancelApply] = useState(false);
 
 
  
   return (
     <>
+    <ModalWarning  JobId={JobId} open={openCancelApply} setOpen={setOpenCancelApply} />
+
+
       <IconButton
         onClick={(e) => handleOpen(e, JobId)}
        
@@ -95,20 +98,17 @@ export default function MenuApply({ JobId}) {
         </MenuItem>
         
         
-        
-      
-
-
 
         <Divider sx={{ my: 0.5 }} />
 
         <MenuItem
+        onClick={()=>setOpenCancelApply(true)}
           sx={{ color: "error.main" }}
         >
           <ListItemIcon>
-            <DeleteOutlineOutlinedIcon fontSize="small" color="error" />
+            <MdOutlineCancelScheduleSend style={{color:"error"}}/>
           </ListItemIcon>
-          Delete Job
+          Withdrawn
         </MenuItem>
       </Menu>
     </>

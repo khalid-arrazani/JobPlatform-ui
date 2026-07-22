@@ -3,45 +3,27 @@ import { Box } from "@mui/material";
 import { Pagination } from "@mui/material";
 
 import Header from "./header";
-import { useEffect, useState } from "react";
-import { getSavedJobs } from "../../../../logic/api/job/Job";
+import { useEffect} from "react";
+
 import ListApply from "./ListApply";
-import { GetMyApply } from "../../../../logic/api/apply/Apply";
+
 
 import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function ApplicationsJs() {
-  const [loading, setLoading] = useState(false);
+ 
 
-  const {dispatch , ...state} = useApply()
+  const {ApplyJobs} = useApply()
 
-  console.log(state);
+
+
 
   useEffect(() => {
     ApplyJobs();
   }, []);
 
-  const ApplyJobs = async () => {
-
-    setLoading(true);
-
-    try {
-      const MyApply = await GetMyApply();
-
-        dispatch({
-        type: "ListApply",
-        payload: MyApply,
-      });
 
 
-    } catch (err) {
-      console.log(err);
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  
   return (
     <>
       <Box
@@ -75,7 +57,7 @@ export default function ApplicationsJs() {
               placeItems: "center",
             }}
           >
-            <ListApply />
+            <ListApply/>
           </Box>
 
           <Pagination
