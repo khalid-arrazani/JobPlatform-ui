@@ -200,7 +200,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
+                  sx={{ color: "#8B5CF6", bgcolor: "#EDE9FE" }}
                 />
               </Box>
             }
