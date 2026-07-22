@@ -1,20 +1,31 @@
 import { Card, Typography, Box, Avatar, Chip, IconButton } from "@mui/material";
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
+import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function ListApply() {
+      const {  ...state} = useApply()
     
   return (
     <>
-      <Box
+
+
+
+<Box
+
+
         sx={{
           width: "100%",
           height: "100%",
           boxSizing: "border-box",
           placeItems: "center",
+          overflow:"auto"
 
         }}
       >
+
+    {state?.ListApply?.map(()=>(
+
         <Card
           sx={{
             height: "6.5rem",
@@ -141,7 +152,21 @@ export default function ListApply() {
             </Box>
           </Box>
         </Card>
+
+
+))}
+
       </Box>
+
+
+    
+
+
+
+      
+
+
+
     </>
   );
 }

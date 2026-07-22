@@ -6,12 +6,8 @@ import { applyReducer } from "./reducer/applyReducer";
 export const ApplyContext = createContext();
 
 const initialState = {
-  user: null,
-  isLoading: false,
-  isLoadingUptadeProfile: false,
-  reloadListJob: false,
-  reloadCompany: 0,
-  isLoadingCompany: false,
+  ListApply: null,
+
 };
 
 export const useApply = () => {

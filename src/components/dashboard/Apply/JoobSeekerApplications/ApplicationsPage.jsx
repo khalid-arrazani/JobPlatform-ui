@@ -8,11 +8,14 @@ import { getSavedJobs } from "../../../../logic/api/job/Job";
 import ListApply from "./ListApply";
 import { GetMyApply } from "../../../../logic/api/apply/Apply";
 
+import { useApply } from "../../../../logic/context/ApplyContext";
+
 export default function ApplicationsJs() {
   const [loading, setLoading] = useState(false);
 
+  const {dispatch , ...state} = useApply()
 
-
+  console.log(state);
 
   useEffect(() => {
     ApplyJobs();
@@ -24,7 +27,13 @@ export default function ApplicationsJs() {
 
     try {
       const MyApply = await GetMyApply();
-       console.log(MyApply);
+
+        dispatch({
+        type: "ListApply",
+        payload: MyApply,
+      });
+
+
     } catch (err) {
       console.log(err);
     } finally {
@@ -32,6 +41,7 @@ export default function ApplicationsJs() {
     }
   };
 
+  
   return (
     <>
       <Box
