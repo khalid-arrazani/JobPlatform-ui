@@ -174,7 +174,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                  sx={{ color: "#1300bf", bgcolor: "#ababff" }}
                 />
               </Box>
             }
@@ -193,7 +193,7 @@ export default function Header() {
                 <Chip
                   label={2}
                   size="small"
-                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                  sx={{ color: "#186b07", bgcolor: "#d3ffc4" }}
                 />
               </Box>
             }
@@ -209,7 +209,7 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{fontFamily:"system-ui"}} >Rejected</span>
-                <Chip label={3} size="small" sx={{}} />
+                <Chip label={3} size="small" sx={{ color: "#ba0202d7", bgcolor: "#ffbebe" }} />
               </Box>
             }
             sx={{
