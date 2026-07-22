@@ -147,7 +147,7 @@ export default function ListApply() {
 
 
                
-                    <MenuApply />
+                    <MenuApply ApplyId={app._id}/>
                 
 
 

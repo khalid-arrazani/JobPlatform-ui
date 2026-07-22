@@ -21,8 +21,8 @@ import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined
 
 
 
-export default function MenuApply({ JobId,  jobInfo }) {
-  
+export default function MenuApply({ JobId}) {
+
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
   
