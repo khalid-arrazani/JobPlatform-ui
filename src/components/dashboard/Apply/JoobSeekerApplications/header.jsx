@@ -129,7 +129,7 @@ export default function Header() {
           <Tab
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span>pending</span>
+                <span style={{fontFamily:"system-ui"}} >Pending</span>
 
                 <Chip
                   label={1}
@@ -145,12 +145,11 @@ export default function Header() {
               minHeight: 64,
             }}
           />
-
           <Tab
-            value={"accepted"}
+            value={"under review"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span>accepted</span>
+                <span style={{fontFamily:"system-ui"}} >Under review</span>
 
                 <Chip
                   label={2}
@@ -165,12 +164,18 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+
           <Tab
-            value={"hired"}
+            value={"accepted"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span>hired</span>
-                <Chip label={3} size="small" sx={{}} />
+                <span style={{fontFamily:"system-ui"}} >Accepted</span>
+
+                <Chip
+                  label={2}
+                  size="small"
+                  sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
+                />
               </Box>
             }
             sx={{
@@ -178,11 +183,13 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 64,
             }}
-          /><Tab
+          />
+          
+          <Tab
             value={"rejected"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span>rejected</span>
+                <span style={{fontFamily:"system-ui"}} >Rejected</span>
                 <Chip label={3} size="small" sx={{}} />
               </Box>
             }

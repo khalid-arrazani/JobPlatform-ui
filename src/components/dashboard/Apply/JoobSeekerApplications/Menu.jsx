@@ -13,24 +13,21 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
 
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { useJob } from "../../../../logic/context/JobContext";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { DeleteMyJobs } from "../../../../logic/api/job/Job";
-import EditeJobModal from "./EditeDraftModal";
 
 
 
 
 
 
-export default function MenuCardDraft({ JobId,  jobInfo }) {
+
+
+export default function MenuApply({ JobId,  jobInfo }) {
+  
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
   
 
   const [anchorEl, setAnchorEl] = useState(null);
-  const { fetchCompanyWitoutReload } = useJob();
-  const { setSnackBar } = useAuth();
 
   const open = Boolean(anchorEl);
 
@@ -42,34 +39,10 @@ export default function MenuCardDraft({ JobId,  jobInfo }) {
     setAnchorEl(null);
   };
 
-  const handleDelete = async (event, jobId) => {
-    console.log(jobId);
-    try {
-      const deleteJob = await DeleteMyJobs(jobId);
-
-      setSnackBar({
-        open: true,
-        message: deleteJob.message,
-        severity: "success",
-      });
-
-      fetchCompanyWitoutReload();
-      setAnchorEl(null);
-    } catch (err) {
-      console.log(err?.response);
-      setSnackBar({
-        open: true,
-        message: err?.response?.data.message,
-        severity: "error",
-      });
-    }
-  };
+ 
 
 
-  const handleModalEdite = async () => {
-    setEditeJobModal(true);
-  };
-
+ 
   return (
     <>
       <IconButton
@@ -109,25 +82,20 @@ export default function MenuCardDraft({ JobId,  jobInfo }) {
           },
         }}
       >
-        <MenuItem onClick={(e) => handleModalEdite(e, JobId, jobInfo)}>
+        <MenuItem>
           <ListItemIcon>
             <EditOutlinedIcon fontSize="small" />
           </ListItemIcon>
           Edit Job
         </MenuItem>
         
-        <EditeJobModal
-          open={openEditeJobModal}
-          setOpen={setEditeJobModal}
-          jobInfo={jobInfo}
-        />
+      
 
 
 
         <Divider sx={{ my: 0.5 }} />
 
         <MenuItem
-          onClick={(e) => handleDelete(e, JobId)}
           sx={{ color: "error.main" }}
         >
           <ListItemIcon>

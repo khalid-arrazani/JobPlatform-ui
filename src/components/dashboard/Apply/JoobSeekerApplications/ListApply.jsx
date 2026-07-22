@@ -4,6 +4,7 @@ import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
 import { formatDistanceToNow, format } from "date-fns";
+import MenuApply from "./Menu";
 
 export default function ListApply() {
   const { ...state } = useApply();
@@ -143,9 +144,14 @@ export default function ListApply() {
                   >
                     {format(new Date(app?.createdAt), "MMM dd, yyyy")}
                   </Typography>
-                  <IconButton>
-                    <MoreVertIcon />
-                  </IconButton>
+
+
+               
+                    <MenuApply />
+                
+
+
+
                 </Box>
               </Box>
             </Box>
