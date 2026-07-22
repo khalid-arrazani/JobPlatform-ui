@@ -3,6 +3,11 @@ import { Card, Typography, Box, Avatar, Chip, IconButton } from "@mui/material";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
+import { formatDistanceToNow ,format} from "date-fns";
+
+
+
+
 export default function ListApply() {
       const {  ...state} = useApply()
     
@@ -103,7 +108,10 @@ export default function ListApply() {
                   mb: 0.5,
                 }}
               >
-                Applied on May 18,2025
+                Applied on {formatDistanceToNow(
+                          new Date(app?.createdAt),
+                          { addSuffix: true },
+                        )}
               </Typography>
             </Box>
 
@@ -146,7 +154,7 @@ export default function ListApply() {
                     mb: 0.5,
                   }}
                 >
-                  May 18,2025
+                  {format(new Date(app?.createdAt), "MMM dd, yyyy")}
                 </Typography>
                 <IconButton>
                   <MoreVertIcon />
