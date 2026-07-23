@@ -24,11 +24,6 @@ export default function ModalWarning ({JobId,open, setOpen}){
  const { setSnackBar } = useAuth();
   const {ApplyJobs} = useApply()
 
-
-  
-
- 
-
   const CancelApplication = async () => {
     try {
       const applyjobs = await CancelApplyForAJob(JobId);
