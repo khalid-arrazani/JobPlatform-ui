@@ -12,12 +12,9 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function ApplicationsJs() {
  
-  const [felterData, setFelterData] = useState("All");
+  const [felterData, setFelterData] = useState("");
 
   const {ApplyJobs} = useApply()
-
-
-
 
   useEffect(() => {
     ApplyJobs();

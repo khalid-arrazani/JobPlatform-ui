@@ -117,7 +117,7 @@ export default function Header({felterData, setFelterData}) {
         >
           <Tab
             label="All"
-            value={"All"}
+            value={""}
             sx={{
               textTransform: "none",
               fontWeight: 600,
