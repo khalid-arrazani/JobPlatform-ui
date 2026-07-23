@@ -25,6 +25,8 @@ export default function ModalWarning ({JobId,open, setOpen}){
   const {ApplyJobs} = useApply()
 
 
+  
+
  
 
   const CancelApplication = async () => {
