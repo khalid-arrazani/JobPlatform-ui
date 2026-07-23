@@ -2,10 +2,10 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import { Tab, Tabs, Chip } from "@mui/material";
 
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
-import { useState } from "react";
 
-export default function Header() {
-  const [felterData, setFelterData] = useState("All");
+
+export default function Header({felterData, setFelterData}) {
+  
 
   return (
     <>
