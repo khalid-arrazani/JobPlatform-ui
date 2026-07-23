@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import { Pagination } from "@mui/material";
 
 import Header from "./header";
-import { useEffect, useState} from "react";
+import { useEffect,  } from "react";
 
 import ListApply from "./ListApply";
 
@@ -12,7 +12,7 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function ApplicationsJs() {
  
-  const [felterData, setFelterData] = useState("");
+ 
 
   const {ApplyJobs} = useApply()
 
@@ -45,7 +45,7 @@ export default function ApplicationsJs() {
             px: 5,
           }}
         >
-          <Header felterData={felterData} setFelterData={setFelterData} />
+          <Header  />
 
           <Box
             sx={{

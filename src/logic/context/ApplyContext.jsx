@@ -14,9 +14,13 @@ export const useApply = () => {
 
 export default function ApplyProvider({ children }) {
   const [state, dispatch] = useReducer(applyReducer, initialState);
-  const ApplyJobs = async () => {
+
+  const [felterData, setFelterData] = useState("");
+
+
+  const ApplyJobs = async (felterData) => {
     try {
-      const MyApply = await GetMyApply();
+      const MyApply = await GetMyApply({status:felterData});
 
       dispatch({
         type: "ListApply",
@@ -26,13 +30,14 @@ export default function ApplyProvider({ children }) {
       console.log(err);
     }
   };
+  
 
   return (
     <ApplyContext.Provider
       value={{
         ...state,
         dispatch,
-        ApplyJobs,
+        ApplyJobs,felterData, setFelterData
       }}
     >
       {children}

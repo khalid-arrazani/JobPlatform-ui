@@ -21,12 +21,11 @@ export const CancelApplyForAJob = async (JobId) => {
   return response.data;
 };
 
-export const GetMyApply = async () => {
-
-  const response = await API.get(
-    "/applications/my-applications",
-    { withCredentials: true }
-  );
+export const GetMyApply = async (frontdata) => {
+  const response = await API.get("/applications/my-applications", {
+    params: frontdata,
+    withCredentials: true,
+  });
   return response.data;
 };
 

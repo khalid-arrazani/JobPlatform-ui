@@ -2,11 +2,16 @@ import { Box, Typography, TextField, Button } from "@mui/material";
 import { Tab, Tabs, Chip } from "@mui/material";
 
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
+import { useApply } from "../../../../logic/context/ApplyContext";
+import { useEffect } from "react";
 
+export default function Header() {
+  const { felterData, setFelterData, ApplyJobs } = useApply();
 
-export default function Header({felterData, setFelterData}) {
-  
-
+  useEffect(() => {
+    console.log(555);
+    ApplyJobs(felterData);
+  }, [felterData]);
   return (
     <>
       <Box
@@ -18,10 +23,17 @@ export default function Header({felterData, setFelterData}) {
           justifyContent: "space-between",
           borderBottom: "solid 0.1px #8d8d8d3a",
           boxSizing: "border-box",
-          pt:4
+          pt: 4,
         }}
       >
-        <Box sx={{ width: "100%", display: "flex",justifyContent:"space-between",alignItems:"end" }}>
+        <Box
+          sx={{
+            width: "100%",
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "end",
+          }}
+        >
           {/* Left */}
           <Box
             sx={{
@@ -129,7 +141,7 @@ export default function Header({felterData, setFelterData}) {
           <Tab
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span style={{fontFamily:"system-ui"}} >Pending</span>
+                <span style={{ fontFamily: "system-ui" }}>Pending</span>
 
                 <Chip
                   label={1}
@@ -146,13 +158,11 @@ export default function Header({felterData, setFelterData}) {
             }}
           />
 
-
-
           <Tab
             value={"under review"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span style={{fontFamily:"system-ui"}} >Under review</span>
+                <span style={{ fontFamily: "system-ui" }}>Under review</span>
 
                 <Chip
                   label={2}
@@ -168,12 +178,11 @@ export default function Header({felterData, setFelterData}) {
             }}
           />
 
-
           <Tab
             value={"accepted"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span style={{fontFamily:"system-ui"}} >Accepted</span>
+                <span style={{ fontFamily: "system-ui" }}>Accepted</span>
 
                 <Chip
                   label={2}
@@ -189,13 +198,11 @@ export default function Header({felterData, setFelterData}) {
             }}
           />
 
-
-
           <Tab
             value={"interview"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span style={{fontFamily:"system-ui"}} >Interview</span>
+                <span style={{ fontFamily: "system-ui" }}>Interview</span>
 
                 <Chip
                   label={2}
@@ -210,13 +217,17 @@ export default function Header({felterData, setFelterData}) {
               minHeight: 64,
             }}
           />
-          
+
           <Tab
             value={"rejected"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span style={{fontFamily:"system-ui"}} >Rejected</span>
-                <Chip label={3} size="small" sx={{ color: "#EF4444", bgcolor: "#FEE2E2" }} />
+                <span style={{ fontFamily: "system-ui" }}>Rejected</span>
+                <Chip
+                  label={3}
+                  size="small"
+                  sx={{ color: "#EF4444", bgcolor: "#FEE2E2" }}
+                />
               </Box>
             }
             sx={{
