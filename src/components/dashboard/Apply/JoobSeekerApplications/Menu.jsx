@@ -28,9 +28,6 @@ export default function MenuApply({ JobId }) {
   
 
 
-
-  
-
   const [anchorEl, setAnchorEl] = useState(null);
 
   const open = Boolean(anchorEl);
