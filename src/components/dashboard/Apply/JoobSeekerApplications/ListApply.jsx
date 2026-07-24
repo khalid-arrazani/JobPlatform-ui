@@ -8,7 +8,7 @@ import MenuApply from "./Menu";
 export default function ListApply() {
   const { ...state } = useApply();
 
-
+  console.log(state);
   return (
     <>
       <Box

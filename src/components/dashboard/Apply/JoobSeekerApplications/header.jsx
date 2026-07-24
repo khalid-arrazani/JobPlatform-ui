@@ -145,7 +145,7 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Pending</span>
 
                 <Chip
-                  label={1}
+                  label={state?.ListApply?.countPending || 0}
                   size="small"
                   sx={{ color: "#F59E0B", bgcolor: "#FEF3C7" }}
                 />
@@ -186,7 +186,7 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Accepted</span>
 
                 <Chip
-                  label={state?.ListApply?.Accepted || 0}
+                  label={state?.ListApply?.countAccepted || 0}
 
                   size="small"
                   sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
@@ -207,7 +207,7 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Interview</span>
 
                 <Chip
-                  label={state?.ListApply?.Accepted || 0}
+                  label={state?.ListApply?.countInterview || 0}
                   size="small"
                   sx={{ color: "#8B5CF6", bgcolor: "#EDE9FE" }}
                 />
@@ -226,7 +226,7 @@ export default function Header() {
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{ fontFamily: "system-ui" }}>Rejected</span>
                 <Chip
-                  label={3}
+                  label={state?.ListApply?.countRejected || 0}
                   size="small"
                   sx={{ color: "#EF4444", bgcolor: "#FEE2E2" }}
                 />
