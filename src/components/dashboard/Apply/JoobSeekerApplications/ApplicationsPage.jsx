@@ -9,6 +9,7 @@ import ListApply from "./ListApply";
 
 
 import { useApply } from "../../../../logic/context/ApplyContext";
+import LoadingList from "./LoadingList";
 
 export default function ApplicationsJs() {
  
@@ -56,6 +57,7 @@ export default function ApplicationsJs() {
               height: "60%",
               boxSizing: "border-box",
               placeItems: "center",
+              overflow:"hidden"
             }}
           >
             {isLoading ? <LoadingList/>:<ListApply/>}
