@@ -6,7 +6,8 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 import { useEffect } from "react";
 
 export default function Header() {
-  const { felterData, setFelterData, ApplyJobs } = useApply();
+  const { felterData, setFelterData, ApplyJobs,...state } = useApply();
+
 
   useEffect(() => {
     console.log(555);
@@ -165,7 +166,7 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Under review</span>
 
                 <Chip
-                  label={2}
+                  label={state?.ListApply?.countUnder_review || 0}
                   size="small"
                   sx={{ color: "#3B82F6", bgcolor: "#DBEAFE" }}
                 />
@@ -185,7 +186,8 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Accepted</span>
 
                 <Chip
-                  label={2}
+                  label={state?.ListApply?.Accepted || 0}
+
                   size="small"
                   sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
                 />
@@ -205,7 +207,7 @@ export default function Header() {
                 <span style={{ fontFamily: "system-ui" }}>Interview</span>
 
                 <Chip
-                  label={2}
+                  label={state?.ListApply?.Accepted || 0}
                   size="small"
                   sx={{ color: "#8B5CF6", bgcolor: "#EDE9FE" }}
                 />

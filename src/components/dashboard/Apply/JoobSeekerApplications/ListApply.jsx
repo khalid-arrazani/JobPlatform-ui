@@ -8,6 +8,7 @@ import MenuApply from "./Menu";
 export default function ListApply() {
   const { ...state } = useApply();
 
+
   return (
     <>
       <Box
@@ -19,7 +20,7 @@ export default function ListApply() {
           overflow: "auto",
         }}
       >
-        {state?.ListApply?.map((app) => (
+        {state?.ListApply?.applications?.map((app) => (
           <Card
             sx={{
               height: "6.5rem",
