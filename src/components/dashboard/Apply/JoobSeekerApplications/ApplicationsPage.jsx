@@ -16,6 +16,7 @@ export default function ApplicationsJs() {
  
 
   const {ApplyJobs,isLoading,felterData,setFelterData,...state} = useApply()
+  
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
