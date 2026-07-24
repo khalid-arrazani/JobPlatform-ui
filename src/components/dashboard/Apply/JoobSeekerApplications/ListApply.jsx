@@ -1,5 +1,4 @@
-import { Card, Typography, Box, Avatar, Chip} from "@mui/material";
-
+import { Card, Typography, Box, Avatar, Chip } from "@mui/material";
 
 import { useApply } from "../../../../logic/context/ApplyContext";
 
@@ -96,7 +95,7 @@ export default function ListApply() {
                     mb: 0.5,
                   }}
                 >
-                  Applied on{" "}
+                  Applied on
                   {formatDistanceToNow(new Date(app?.createdAt), {
                     addSuffix: true,
                   })}
@@ -114,13 +113,36 @@ export default function ListApply() {
                 }}
               >
                 <Chip
-                  label={"• Interviewing"}
+                  label={`• ${app?.status}`}
                   sx={{
                     fontSize: "0.9rem",
                     borderRadius: "8px",
                     fontFamily: "system-ui",
-                    color: "#085d13c2",
-                    bgcolor: "#c0ffc895",
+                    color:
+                      app?.status == "Pending"
+                        ? "#F59E0B"
+                        : app?.status == "Accepted"
+                          ? "#10B981"
+                          : app?.status == "Interview"
+                            ? "#8B5CF6"
+                            : app?.status == "Rejected"
+                              ? "#EF4444"
+                              : app?.status == "Under review"
+                                ? "#3B82F6"
+                                : null,
+
+                    bgcolor:
+                      app?.status == "Pending"
+                        ? "#FEF3C7"
+                        : app?.status == "Accepted"
+                          ? "#D1FAE5"
+                          : app?.status == "Interview"
+                            ? "#EDE9FE"
+                            : app?.status == "Rejected"
+                              ? "#FEE2E2"
+                              : app?.status == "Under review"
+                                ? "#DBEAFE"
+                                : null,
                     fontWeight: 600,
                   }}
                 />
@@ -145,9 +167,7 @@ export default function ListApply() {
                     {format(new Date(app?.createdAt), "MMM dd, yyyy")}
                   </Typography>
 
-                    <MenuApply JobId={app?.job?._id} />
-              
-
+                  <MenuApply JobId={app?.job?._id} />
                 </Box>
               </Box>
             </Box>

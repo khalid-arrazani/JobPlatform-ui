@@ -150,7 +150,7 @@ export default function Header() {
                 />
               </Box>
             }
-            value={"pending"}
+            value={"Pending"}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -159,7 +159,7 @@ export default function Header() {
           />
 
           <Tab
-            value={"under review"}
+            value={"Under review"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{ fontFamily: "system-ui" }}>Under review</span>
@@ -179,7 +179,7 @@ export default function Header() {
           />
 
           <Tab
-            value={"accepted"}
+            value={"Accepted"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{ fontFamily: "system-ui" }}>Accepted</span>
@@ -199,7 +199,7 @@ export default function Header() {
           />
 
           <Tab
-            value={"interview"}
+            value={"Interview"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{ fontFamily: "system-ui" }}>Interview</span>
@@ -219,7 +219,7 @@ export default function Header() {
           />
 
           <Tab
-            value={"rejected"}
+            value={"Rejected"}
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span style={{ fontFamily: "system-ui" }}>Rejected</span>
