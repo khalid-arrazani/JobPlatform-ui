@@ -1,13 +1,18 @@
 import { Box, Typography } from "@mui/material";
+import { useApply } from "../../../../../logic/context/ApplyContext";
 
-export default function NoActiveJobsYet() {
+export default function NoApplyFound() {
+    const {felterData} = useApply()
+
+
+   
   return (
     <>
       <Box
         sx={{
           border: "dashed 1px #ddd",
           width: "95%",
-          height: "80%",
+          height: "90%",
           placeSelf: "center",
           borderRadius: "10px",
           overflow: "hidden",
@@ -17,6 +22,7 @@ export default function NoActiveJobsYet() {
           flexDirection: "column",
           gap: 1,
           bgcolor: "#fff9f891",
+          my:2
         }}
       >
         <Typography
@@ -37,7 +43,7 @@ export default function NoActiveJobsYet() {
             fontFamily: "ui-rounded",
           }}
         >
-          You don't have any active job listings.
+          No {felterData.status} applications found.
         </Typography>
         <Typography
           sx={{
@@ -47,7 +53,7 @@ export default function NoActiveJobsYet() {
             fontFamily: "ui-rounded",
           }}
         >
-          Drafts and closed jobs are available in their tabs.
+          Try adjusting your filters or apply to more jobs to see applications here.
         </Typography>
       </Box>
     </>

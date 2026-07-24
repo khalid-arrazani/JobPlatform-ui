@@ -4,6 +4,7 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 import { formatDistanceToNow, format } from "date-fns";
 import MenuApply from "./Menu";
+import NoApplyFound from "./EmptyList/NoApplyFound";
  
 
 export default function ListApply() {
@@ -21,8 +22,8 @@ export default function ListApply() {
           overflow: "auto",
         }}
       >
-       
-        {state?.ListApply?.applications?.map((app) => (
+        {state?.ListApply?.hasApply ? 
+        state?.ListApply?.applications?.map((app) => (
           <Card
             sx={{
               height: "6.5rem",
@@ -175,7 +176,10 @@ export default function ListApply() {
               </Box>
             </Box>
           </Card>
-        ))}
+        )):
+        <NoApplyFound/> }
+       
+       
       </Box>
     </>
   );
