@@ -14,7 +14,10 @@ export default function ApplicationsJs() {
  
  
 
-  const {ApplyJobs} = useApply()
+  const {felterData,setFelterData,ApplyJobs,...state} = useApply()
+  const handleChange = (event, value) => {
+    setFelterData((prev) => ({ ...prev, page: value }));
+  };
 
   useEffect(() => {
     ApplyJobs();
@@ -59,8 +62,9 @@ export default function ApplicationsJs() {
           </Box>
 
           <Pagination
-            // onChange={}
-            count={5}
+            onChange={handleChange}
+            page={felterData.page}
+            count={state?.ListApply?.totalPages}
             sx={{
               mt: "auto",
               alignSelf: "center",

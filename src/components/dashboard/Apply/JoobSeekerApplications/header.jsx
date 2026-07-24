@@ -9,10 +9,7 @@ export default function Header() {
   const { felterData, setFelterData, ApplyJobs,...state } = useApply();
 
 
-  useEffect(() => {
-    console.log(555);
-    ApplyJobs(felterData);
-  }, [felterData]);
+
   return (
     <>
       <Box
@@ -112,9 +109,9 @@ export default function Header() {
         </Box>
 
         <Tabs
-          value={felterData}
+          value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData(newValue);
+            setFelterData((prev)=>({...prev , status :newValue ,page:1 , search:""}))
           }}
           textColor="inherit"
           sx={{

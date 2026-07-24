@@ -10,9 +10,6 @@ export default function Header() {
   const { setOpenModal, felterData, setFelterData,...state } = useJob();
   
 
-
-
-
   return (
     <>
       <Box

@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext, useState } from "react";
+import { createContext, useReducer, useContext, useState, useEffect } from "react";
 import { applyReducer } from "./reducer/applyReducer";
 import { GetMyApply } from "../api/apply/Apply";
 
@@ -15,12 +15,17 @@ export const useApply = () => {
 export default function ApplyProvider({ children }) {
   const [state, dispatch] = useReducer(applyReducer, initialState);
 
-  const [felterData, setFelterData] = useState("");
+  const [felterData, setFelterData] = useState({
+    status: "",
+    search: "",
+    sort: "Newest First",
+    page: 1,
+  });
 
 
   const ApplyJobs = async (felterData) => {
     try {
-      const MyApply = await GetMyApply({status:felterData});
+      const MyApply = await GetMyApply(felterData);
 
       dispatch({
         type: "ListApply",
@@ -31,6 +36,9 @@ export default function ApplyProvider({ children }) {
     }
   };
   
+    useEffect(() => {
+    ApplyJobs(felterData);
+  }, [felterData]);
 
   return (
     <ApplyContext.Provider
