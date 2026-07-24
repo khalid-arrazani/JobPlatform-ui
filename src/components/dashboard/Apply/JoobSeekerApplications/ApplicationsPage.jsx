@@ -14,7 +14,7 @@ export default function ApplicationsJs() {
  
  
 
-  const {felterData,setFelterData,ApplyJobs,...state} = useApply()
+  const {LoadingList,felterData,setFelterData,ApplyJobs,...state} = useApply()
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
@@ -58,7 +58,8 @@ export default function ApplicationsJs() {
               placeItems: "center",
             }}
           >
-            <ListApply/>
+            {LoadingList ? <LoadingList/> : <ListApply/>}
+           
           </Box>
 
           <Pagination

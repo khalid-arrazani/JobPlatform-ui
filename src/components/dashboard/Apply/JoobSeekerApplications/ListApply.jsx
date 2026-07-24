@@ -4,9 +4,10 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 import { formatDistanceToNow, format } from "date-fns";
 import MenuApply from "./Menu";
+import LoadingList from "./LoadingList";
 
 export default function ListApply() {
-  const { ...state } = useApply();
+  const {...state } = useApply();
 
   console.log(state);
   return (
@@ -20,6 +21,7 @@ export default function ListApply() {
           overflow: "auto",
         }}
       >
+       
         {state?.ListApply?.applications?.map((app) => (
           <Card
             sx={{

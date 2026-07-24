@@ -21,9 +21,11 @@ export default function ApplyProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
+  const [LoadingList , setLoadingList] = useState(false)
 
 
   const ApplyJobs = async (felterData) => {
+    setLoadingList(true)
     try {
       const MyApply = await GetMyApply(felterData);
 
@@ -33,6 +35,8 @@ export default function ApplyProvider({ children }) {
       });
     } catch (err) {
       console.log(err);
+    }finally{
+      setLoadingList(false)
     }
   };
   
@@ -45,7 +49,7 @@ export default function ApplyProvider({ children }) {
       value={{
         ...state,
         dispatch,
-        ApplyJobs,felterData, setFelterData
+        ApplyJobs,felterData, setFelterData,LoadingList
       }}
     >
       {children}
