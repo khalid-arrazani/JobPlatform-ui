@@ -1,14 +1,17 @@
-import { Box, Typography, TextField, Button } from "@mui/material";
+import {
+  Box,
+  Typography,
+  TextField,
+  Button,
+  Autocomplete,
+} from "@mui/material";
 import { Tab, Tabs, Chip } from "@mui/material";
 
 import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
 import { useApply } from "../../../../logic/context/ApplyContext";
-import { useEffect } from "react";
 
 export default function Header() {
-  const { felterData, setFelterData, ApplyJobs,...state } = useApply();
-
-
+  const { felterData, setFelterData, ...state } = useApply();
 
   return (
     <>
@@ -70,48 +73,44 @@ export default function Header() {
               flexWrap: "wrap",
             }}
           >
-            <TextField
-              placeholder="Search jobs..."
+            <Autocomplete
               size="small"
               sx={{
-                width: 280,
-
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "8px",
-                  bgcolor: "#fff",
-                  height: 40,
+                width: 220,
+                "& .MuiAutocomplete-clearIndicator": {
+                  display: "none",
+                },
+                "& .MuiInputBase-root": { borderRadius: "8px" },
+              }}
+              options={["Newest First", "Oldest First"]}
+              value={felterData.sort}
+              onChange={(event, newValue) => {
+                setFelterData((prev) => ({ ...prev, sort: newValue }));
+              }}
+              slotProps={{
+                popper: {
+                  sx: {
+                    transition: "none",
+                    animation: "none",
+                  },
                 },
               }}
+              renderInput={(params) => (
+                <TextField {...params} placeholder="Sort by" />
+              )}
             />
-
-            <Button
-              variant="outlined"
-              size="small"
-              startIcon={<TuneOutlinedIcon />}
-              sx={{
-                height: 45,
-                px: 3,
-                borderRadius: "14px",
-                textTransform: "none",
-                fontWeight: 600,
-                color: "#475569",
-                borderColor: "#E2E8F0",
-
-                "&:hover": {
-                  borderColor: "#8B5CF6",
-                  bgcolor: "#FAF5FF",
-                },
-              }}
-            >
-              Filters
-            </Button>
           </Box>
         </Box>
 
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData((prev)=>({...prev , status :newValue ,page:1 , search:""}))
+            setFelterData((prev) => ({
+              ...prev,
+              status: newValue,
+              page: 1,
+              search: "",
+            }));
           }}
           textColor="inherit"
           sx={{
@@ -184,7 +183,6 @@ export default function Header() {
 
                 <Chip
                   label={state?.ListApply?.countAccepted || 0}
-
                   size="small"
                   sx={{ color: "#10B981", bgcolor: "#D1FAE5" }}
                 />
