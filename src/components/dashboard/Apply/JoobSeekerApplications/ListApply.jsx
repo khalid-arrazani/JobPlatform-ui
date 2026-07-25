@@ -10,7 +10,7 @@ import NoApplyFound from "./EmptyList/NoApplyFound";
 export default function ListApply() {
   const {...state } = useApply();
 
-  console.log(state);
+
   return (
     <>
       <Box
