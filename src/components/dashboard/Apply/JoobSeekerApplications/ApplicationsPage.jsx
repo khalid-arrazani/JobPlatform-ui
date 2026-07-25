@@ -10,6 +10,7 @@ import ListApply from "./ListApply";
 
 import { useApply } from "../../../../logic/context/ApplyContext";
 import LoadingList from "./LoadingList";
+import ProfileCard from "./ProfileCard";
 
 export default function ApplicationsJs() {
  
@@ -87,7 +88,9 @@ export default function ApplicationsJs() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></Box>
+        >
+          <ProfileCard/>
+        </Box>
       </Box>
     </>
   );
