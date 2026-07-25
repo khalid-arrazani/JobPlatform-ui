@@ -2,12 +2,11 @@ import {
   Box,
   Typography,
   TextField,
-  Button,
   Autocomplete,
 } from "@mui/material";
 import { Tab, Tabs, Chip } from "@mui/material";
 
-import TuneOutlinedIcon from "@mui/icons-material/TuneOutlined";
+
 import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function Header() {
