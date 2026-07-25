@@ -33,7 +33,7 @@ export default function NoApplyFound() {
             fontFamily: "ui-rounded",
           }}
         >
-          No active jobs
+          No {felterData.status} applications
         </Typography>
         <Typography
           sx={{
