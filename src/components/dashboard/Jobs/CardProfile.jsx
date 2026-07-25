@@ -12,15 +12,30 @@ export default function CardProfile() {
           width: "15rem",
           borderRadius: "20px",
           mt: "20px",
-          ml:"1.5rem",
+          ml: "1.5rem",
           overflow: "hidden",
           boxShadow: "0 6px 20px rgba(0,0,0,0.1)",
+          boxSizing: "border-box",
         }}
       >
+        <Box sx={{ display: "flex", justifyContent: "center" }}>
+          <Avatar
+            src={state.user?.profile?.ProfileImage?.url}
+            sx={{
+              width: "8rem",
+              height: "8rem",
+              border: "4px solid white",
+              boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
+              position: "absolute",
+              mt: 0.5,
+            }}
+          />
+        </Box>
+
         {/* Header */}
         <Box
           sx={{
-            height: "25%",
+            height: "30%",
             background: "linear-gradient(135deg, #6a11cb, #2575fc)",
           }}
         />
@@ -28,27 +43,17 @@ export default function CardProfile() {
         {/* Content */}
         <Box
           sx={{
-            height: "75%",
+            height: "70%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            mt: "-50px",
+
             textAlign: "center",
-            p: 2,
+            pt: 3,
+            boxSizing: "border-box",
           }}
         >
-          {/* Image */}
-          <Avatar
-            src={state.user?.profile?.ProfileImage?.url}
-            sx={{
-              width: "8.5rem",
-              height:"8.5rem",
-              border: "4px solid white",
-              boxShadow: "0 4px 10px rgba(0,0,0,0.2)",
-            }}
-          />
-
           {/* Name */}
           <Typography
             sx={{
@@ -61,8 +66,9 @@ export default function CardProfile() {
           </Typography>
 
           {/* Description */}
-          <Typography sx={{ fontSize: "0.9rem", color: "#666", mt: 1 }}>
-            {state.user?.profile?.headline}
+          <Typography sx={{ fontSize: "0.8rem", color: "#666", mt: 1 }}>
+            {state.user?.profile?.headline?.split(" ").slice(0, 15).join(" ")}
+            {state.user?.profile?.headline?.split(" ").length > 15 && "..."}
           </Typography>
 
           {/* Address */}
