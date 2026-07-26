@@ -119,7 +119,8 @@ export default function Header() {
               borderRadius: "999px",
               
             },
-            "& .MuiButtonBase-root":{p:1.5,height:"10px"},
+            "& .MuiButtonBase-root":{p:1,height:"fit-Content",minHeight:"2rem"},
+            "& .MuiTabs-list":{p:0,height:"fit-Content"},
       
           }}
         >
