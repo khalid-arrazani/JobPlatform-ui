@@ -16,7 +16,7 @@ export default function Header() {
     <>
       <Box
         sx={{
-          height: "25%",
+          height: "30%",
           width: "100%",
           display: "flex",
           flexDirection: "column",
@@ -117,10 +117,11 @@ export default function Header() {
               backgroundColor: "#5590ff",
               height: "1px",
               borderRadius: "999px",
+            
               
             },
-            "& .MuiButtonBase-root":{p:1,height:"fit-Content",minHeight:"2rem"},
-            "& .MuiTabs-list":{p:0,height:"fit-Content"},
+            "& .MuiButtonBase-root":{p:1,minHeight:"2rem"},
+            "& .MuiTabs-list":{p:0,gap:0.5},
       
           }}
         >
