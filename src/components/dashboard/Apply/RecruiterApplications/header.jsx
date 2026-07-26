@@ -120,6 +120,7 @@ export default function Header() {
               borderRadius: "999px",
               top: "51px",
             },
+            "& .MuiButtonBase-root":{p:1},
             ml: 2,
           }}
         >

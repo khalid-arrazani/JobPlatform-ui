@@ -57,8 +57,9 @@ export default function ApplicationsRc() {
           <Box
             sx={{
               width: "100%",
-              height: "60%",
+              height: "65%",
               boxSizing: "border-box",
+        
               placeItems: "center",
               overflow:"hidden"
             }}
