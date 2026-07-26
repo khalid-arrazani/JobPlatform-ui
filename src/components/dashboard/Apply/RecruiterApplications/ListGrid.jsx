@@ -81,8 +81,8 @@ export default function ListGrid() {
   };
   return (
     <>
-      <div style={{ height: "100%", width: "100%",boxSizing:"border-box",overflow:"auto" }}>
-        <TableContainer component={Paper} sx={{}}  >
+      <div style={{ height: "100%", width: "100%",boxSizing:"border-box" }}>
+        <TableContainer component={Paper} sx={{border:"solid",boxSizing:"border-box",height:"100%",overflow:"hidden"}}  >
           <Table>
             <TableHead>
               <TableRow>
