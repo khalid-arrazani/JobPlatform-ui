@@ -113,14 +113,13 @@ export default function Header() {
           }}
           textColor="inherit"
           sx={{
-            maxHeight: 53,
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
               height: "2px",
               borderRadius: "999px",
-              top: "51px",
+              
             },
-            "& .MuiButtonBase-root":{p:1},
+            "& .MuiButtonBase-root":{p:1,minHeight:"fit-Content"},
             ml: 2,
           }}
         >
