@@ -82,33 +82,37 @@ export default function ListGrid() {
   return (
     <>
       <div style={{ height: "100%", width: "100%",boxSizing:"border-box" }}>
-        <TableContainer component={Paper} sx={{border:"solid",boxSizing:"border-box",height:"100%",overflow:"hidden"}}  >
-          <Table>
-            <TableHead>
+        <TableContainer component={Paper} sx={{boxSizing:"border-box",height:"100%",borderTop:"solid 1px #DDD",borderBottom:"solid 1px #DDD",px:1,borderRadius:0,boxShadow:"none"}}  >
+            
+          <Table sx={{boxSizing:"border-box",height:"99%",my:1,borderTop:"solid 1px #DDD",px:1,borderRadius:0}}>
+            <TableHead sx={{ border :"solid 1px #DDD"}}>
               <TableRow>
-                <TableCell>Applicant</TableCell>
-                <TableCell>Job Position</TableCell>
-                <TableCell>Experience</TableCell>
-                <TableCell>Location</TableCell>
-                <TableCell>Status</TableCell>
-                <TableCell>Applied On</TableCell>
-                <TableCell align="center">Actions</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}} >Applicant</TableCell>
+                <TableCell  sx={{border :"solid 1px #DDD"}}>Job Position</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}}>Experience</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}}>Location</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}}>Status</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}}>Applied On</TableCell>
+                
               </TableRow>
             </TableHead>
 
-            <TableBody>
+            <TableBody  sx={{boxSizing:"border-box" }}>
               {applications.map((application) => (
                 <TableRow
                   onClick={() => handleClick(application.id)}
+                  sx={{mr:5,border :"solid 1px #DDD"}}
                   key={application._id}
                 >
-                  <TableCell>{application.applicant}</TableCell>
-                  <TableCell>{application.experience}</TableCell>
-                  <TableCell>{application.location}</TableCell>
-                  <TableCell>{application.status}</TableCell>
-                  <TableCell>{application.appliedOn}</TableCell>
-                  <TableCell>{application.status}</TableCell>
-                  <TableCell>{application.status}</TableCell>
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.applicant}</TableCell>
+
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.job}</TableCell>
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.experience}</TableCell>
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.location}</TableCell>
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.status}</TableCell>
+                  
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.appliedOn}</TableCell>
+                 
                 </TableRow>
               ))}
             </TableBody>
