@@ -9,6 +9,7 @@ import { useEffect,  } from "react";
 
 
 import { useApply } from "../../../../logic/context/ApplyContext";
+import Header from "./header";
 
 
 
@@ -50,6 +51,7 @@ export default function ApplicationsRc() {
             px: 5,
           }}
         >
+          <Header/>
 
 
           <Box
