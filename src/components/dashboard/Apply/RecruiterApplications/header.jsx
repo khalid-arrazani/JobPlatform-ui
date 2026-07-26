@@ -115,12 +115,12 @@ export default function Header() {
           sx={{
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
-              height: "2px",
+              height: "1px",
               borderRadius: "999px",
               
             },
-            "& .MuiButtonBase-root":{p:1,minHeight:"fit-Content"},
-            ml: 2,
+            "& .MuiButtonBase-root":{p:1.5,height:"10px"},
+      
           }}
         >
           <Tab
