@@ -2,10 +2,10 @@ import { Box } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
-import Header from "./header";
+ 
 import { useEffect,  } from "react";
 
-import ListApply from "./ListApply";
+ 
 
 
 import { useApply } from "../../../../logic/context/ApplyContext";
