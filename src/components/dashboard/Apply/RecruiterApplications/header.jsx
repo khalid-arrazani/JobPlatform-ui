@@ -49,7 +49,7 @@ export default function Header() {
                 color: "#0F172A",
               }}
             >
-              My Application
+             Applications
             </Typography>
 
             <Typography
@@ -59,7 +59,7 @@ export default function Header() {
                 fontSize: "0.95rem",
               }}
             >
-              Track the status of your job application
+              Review and mange applications for your job posts
             </Typography>
           </Box>
 
