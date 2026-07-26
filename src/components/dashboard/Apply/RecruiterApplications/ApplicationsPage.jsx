@@ -9,8 +9,8 @@ import { useEffect,  } from "react";
 
 
 import { useApply } from "../../../../logic/context/ApplyContext";
-import LoadingList from "./LoadingList";
-import ProfileCard from "./ProfileCard";
+
+
 
 export default function ApplicationsRc() {
  
@@ -25,7 +25,6 @@ export default function ApplicationsRc() {
   useEffect(() => {
     ApplyJobs();
   }, []);
-
 
 
   return (
@@ -89,7 +88,7 @@ export default function ApplicationsRc() {
             justifyContent: "center",
           }}
         >
-          <ProfileCard/>
+          
         </Box>
       </Box>
     </>
