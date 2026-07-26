@@ -10,6 +10,7 @@ import { useEffect,  } from "react";
 
 import { useApply } from "../../../../logic/context/ApplyContext";
 import Header from "./header";
+import ListGrid from "./ListGrid";
 
 
 
@@ -61,11 +62,14 @@ export default function ApplicationsRc() {
               boxSizing: "border-box",
         
               placeItems: "center",
-              overflow:"hidden"
+              overflow:"hidden",
+              py:1
             }}
           >
+            <ListGrid/>
 
-           
+      
+
           </Box>
 
           <Pagination
