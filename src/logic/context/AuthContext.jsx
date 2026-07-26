@@ -18,6 +18,8 @@ const initialState = {
   user: null,
 };
 
+
+
 export default function AuthProvider({
   children,
 }) {
@@ -35,14 +37,18 @@ export default function AuthProvider({
       initialState
     );
 
-
+   console.log(state);
 
 
  const [sign, setSign] = useState("Sign In");
+ const checkRole = state.user?.role
+
+
   return (
     <AuthContext.Provider
       value={{
         ...state,
+        checkRole,
         dispatch,
         snackBar,
          setSnackBar,

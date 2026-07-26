@@ -12,7 +12,7 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 import LoadingList from "./LoadingList";
 import ProfileCard from "./ProfileCard";
 
-export default function ApplicationsJs() {
+export default function ApplicationsRc() {
  
  
 

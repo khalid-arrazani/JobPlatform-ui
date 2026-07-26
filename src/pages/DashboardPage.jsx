@@ -12,15 +12,18 @@ import { Routes, Route } from "react-router-dom";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import MyJobsPage from "../components/dashboard/MyJobs/MyJobsPage.jsx";
 import ApplicationsJs from "../components/dashboard/Apply/JoobSeekerApplications/ApplicationsPage.jsx";
+import { useAuth } from "../logic/context/AuthContext.jsx";
+import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/ApplicationsPage.jsx";
 
 
 export default function DashboardPage() {
   const [part, setPart] = useState(0);
 
   const { ...state  } = useProfile();
+  const { checkRole} = useAuth();
   
 
-
+ console.log(state);
   return (
     <DashboardLayout part={part} setPart={setPart}>
 
@@ -30,6 +33,9 @@ export default function DashboardPage() {
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
+        
+   
+        <Route path="My_Company" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <ApplicationsRc /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
         <Route path="Applications" element={<ApplicationsJs />} />
 
         <Route path="My_Company" element={state.isLoading ? <LoadingPage/> : ( state.user?.hasCompany  ?  <CompanyPage /> :  <CreateCompanyPage /> )  } />
