@@ -10,8 +10,6 @@ import {
   Paper,
 } from "@mui/material";
 
-
-
 const applications = [
   {
     id: 1,
@@ -78,42 +76,44 @@ const applications = [
   },
 ];
 export default function ListGrid() {
-
-    const handleClick = (application) => {
-  console.log(application);
-};
+  const handleClick = (application) => {
+    console.log(application);
+  };
   return (
     <>
-      <div style={{ height: "100%", width: "100%" }}>
-        <TableContainer component={Paper}>
-  <Table>
-    <TableHead>
-  <TableRow>
-    <TableCell>Applicant</TableCell>
-    <TableCell>Job Position</TableCell>
-    <TableCell>Experience</TableCell>
-    <TableCell>Location</TableCell>
-    <TableCell>Status</TableCell>
-    <TableCell>Applied On</TableCell>
-    <TableCell align="center">Actions</TableCell>
-  </TableRow>
-</TableHead>
+      <div style={{ height: "100%", width: "100%",boxSizing:"border-box",overflow:"auto" }}>
+        <TableContainer component={Paper} sx={{}}  >
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Applicant</TableCell>
+                <TableCell>Job Position</TableCell>
+                <TableCell>Experience</TableCell>
+                <TableCell>Location</TableCell>
+                <TableCell>Status</TableCell>
+                <TableCell>Applied On</TableCell>
+                <TableCell align="center">Actions</TableCell>
+              </TableRow>
+            </TableHead>
 
-    <TableBody   >
-      {applications.map((application) => (
-        <TableRow   onClick={() => handleClick(application.id)} key={application._id}>
-          <TableCell>{application.applicant}</TableCell>
-          <TableCell>{application.experience}</TableCell>
-          <TableCell>{application.location}</TableCell>
-          <TableCell>{application.status}</TableCell>
-          <TableCell>{application.appliedOn}</TableCell>
-          <TableCell>{application.status}</TableCell>
-          <TableCell>{application.status}</TableCell>
-        </TableRow>
-      ))}
-    </TableBody>
-  </Table>
-</TableContainer>
+            <TableBody>
+              {applications.map((application) => (
+                <TableRow
+                  onClick={() => handleClick(application.id)}
+                  key={application._id}
+                >
+                  <TableCell>{application.applicant}</TableCell>
+                  <TableCell>{application.experience}</TableCell>
+                  <TableCell>{application.location}</TableCell>
+                  <TableCell>{application.status}</TableCell>
+                  <TableCell>{application.appliedOn}</TableCell>
+                  <TableCell>{application.status}</TableCell>
+                  <TableCell>{application.status}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </div>
     </>
   );
