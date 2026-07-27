@@ -116,11 +116,12 @@ export default function Header() {
               backgroundColor: "#5590ff",
               height: "1px",
               borderRadius: "999px",
+             
             
               
             },
             "& .MuiButtonBase-root":{p:1,minHeight:"2rem",},
-            "& .MuiTabs-list":{p:0,gap:0.5},
+            "& .MuiTabs-list":{p:0,gap:0.5}, pl:2
       
           }}
         >
