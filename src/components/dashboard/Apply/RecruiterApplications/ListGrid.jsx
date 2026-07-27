@@ -81,39 +81,62 @@ export default function ListGrid() {
   };
   return (
     <>
-      <div style={{ height: "100%", width: "100%",boxSizing:"border-box" }}>
-        <TableContainer sx={{boxSizing:"border-box",height:"100%",borderTop:"solid 1px #DDD",borderBottom:"solid 1px #DDD",px:1,borderRadius:0,boxShadow:"none"}}  >
-            
-          <Table sx={{boxSizing:"border-box",height:"99%",my:1,borderTop:"solid 1px #DDD",px:1,borderRadius:0}}>
-            <TableHead sx={{ border :"solid 1px #DDD"}}>
+      <div style={{ height: "98%", width: "100%", boxSizing: "border-box" }}>
+        <TableContainer
+          sx={{
+            boxSizing: "border-box",
+            height: "100%",
+            borderBottom: "solid 1px #dddddd",
+            px: 1,
+            borderRadius: 0,
+            boxShadow: "none",
+          }}
+        >
+          <Table
+            sx={{
+              boxSizing: "border-box",
+              height: "99%",
+              my: 1,
+              borderTop: "solid 1px #DDD",
+              px: 1,
+              borderRadius: 0,
+            }}
+          >
+            <TableHead sx={{ border: "solid 1px #ddddddf9" }}>
               <TableRow>
-                <TableCell sx={{border :"solid 1px #DDD"}} >Applicant</TableCell>
-                <TableCell  sx={{border :"solid 1px #DDD"}}>Job Position</TableCell>
-                <TableCell sx={{border :"solid 1px #DDD"}}>Status</TableCell>
-                <TableCell sx={{border :"solid 1px #DDD"}}>Applied On</TableCell>
-                <TableCell sx={{border :"solid 1px #DDD"}}>Actions</TableCell>
-
-                
+                <TableCell sx={{ border: "solid 1px #221b1b00" }}>
+                  Applicant
+                </TableCell>
+                <TableCell>Job Position</TableCell>
+                <TableCell>Status</TableCell>
+                <TableCell>Applied On</TableCell>
+                <TableCell>Actions</TableCell>
               </TableRow>
             </TableHead>
 
-            <TableBody  sx={{boxSizing:"border-box" }}>
+            <TableBody sx={{ boxSizing: "border-box" }}>
               {applications.map((application) => (
                 <TableRow
                   onClick={() => handleClick(application.id)}
-                  sx={{mr:5,border :"solid 1px #DDD"}}
+                  sx={{ mr: 5, border: "solid 1px #DDD" }}
                   key={application._id}
                 >
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.applicant}</TableCell>
+                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                    {application.applicant}
+                  </TableCell>
 
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.job}</TableCell>
+                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                    {application.job}
+                  </TableCell>
 
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.status}</TableCell> 
+                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                    {application.status}
+                  </TableCell>
 
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.appliedOn}</TableCell>
-                  <TableCell sx={{border :"solid 1px #DDD"}} >---</TableCell>
-
-                 
+                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                    {application.appliedOn}
+                  </TableCell>
+                  <TableCell sx={{ border: "solid 1px #DDD" }}>---</TableCell>
                 </TableRow>
               ))}
             </TableBody>
