@@ -191,7 +191,7 @@ export default function ListGrid() {
           >
             <Box
               sx={{
-                width: "30%",
+                width: "32%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -199,7 +199,7 @@ export default function ListGrid() {
                 fontWeight: 600,
                 color: "#02010e9c",
                 fontSize: "0.9rem",
-                gap:0.5
+                gap:1.5
               }}
             >
               <Avatar sx={{ height: "3rem", width: "3rem" }} />
@@ -210,14 +210,16 @@ export default function ListGrid() {
                 width: "auto",
                 height: "100%",
                 display: "flex",
-                alignItems: "center",
                 fontFamily: "system-ui",
-                fontWeight: 600,
-                color: "#02010e9c",
-                fontSize: "0.9rem",
+                flexDirection:"column",
+                justifyContent:"center",
+                overflow:"hidden",
+                gap:0.2
               }}
             >
-              
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >Khalid Arrazani</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >Khalid.arrazani@email.com</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >+212 777 964 129</Typography>
               
             </Box>
 
@@ -227,22 +229,24 @@ export default function ListGrid() {
 
             <Box
               sx={{
-                width: "20%",
+                width: "27%",
                 height: "100%",
                 display: "flex",
-                alignItems: "center",
-                fontFamily: "system-ui",
-                fontWeight: 600,
-                color: "#02010e9c",
-                fontSize: "0.9rem",
+              
+               
+              
+                flexDirection:"column",
+                justifyContent:"center"
               }}
             >
-              Frontend Developer
+            
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.9rem", color:"#020210df"}} >Frontend Developer</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem", color:"#6a6969"}} >Khalid.arrazani@email.com</Typography>
             </Box>
 
             <Box
               sx={{
-                width: "15%",
+                width: "16%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -270,7 +274,7 @@ export default function ListGrid() {
             </Box>
             <Box
               sx={{
-                width: "20%",
+                width: "10%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
