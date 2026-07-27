@@ -86,13 +86,13 @@ export default function ListGrid() {
   return (
     <>
       <Box sx={{height:"100%",width:"100%",px:1,boxSizing:"border-box" }} >
-      <Box sx={{height:"4rem",width:"100%",boxSizing:"border-box",display:"flex",px:2}}> 
+      <Box sx={{height:"3.5rem",width:"100%",boxSizing:"border-box",display:"flex",px:2}}> 
 
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >Applicant</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >Job Post</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >Status</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >Applied On</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center", direction: "rtl", }} >Actions</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applicant</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Job Post</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Status</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applied On</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center", direction: "rtl",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Actions</Box>
 
       </Box>
 
