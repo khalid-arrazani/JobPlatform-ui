@@ -58,12 +58,11 @@ export default function ApplicationsRc() {
           <Box
             sx={{
               width: "100%",
-              height: "65%",
+              height: "62%",
               boxSizing: "border-box",
-        
               placeItems: "center",
               overflow:"hidden",
-              
+              border: "solid 0.1px #8d8d8d3a",
             }}
           >
             <ListGrid/>
@@ -79,7 +78,7 @@ export default function ApplicationsRc() {
             sx={{
               mt: "auto",
               alignSelf: "center",
-              mb: 2,
+              mb: 1
             }}
           />
         </Box>

@@ -21,7 +21,6 @@ export default function Header() {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          borderBottom: "solid 0.1px #8d8d8d3a",
           boxSizing: "border-box",
           pt: 4,
         }}
