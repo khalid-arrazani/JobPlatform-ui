@@ -110,7 +110,7 @@ export default function Header() {
               search: "",
             }));
           }}
-          textColor="inherit"
+         
           sx={{
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
@@ -119,7 +119,7 @@ export default function Header() {
             
               
             },
-            "& .MuiButtonBase-root":{p:1,minHeight:"2rem"},
+            "& .MuiButtonBase-root":{p:1,minHeight:"2rem",},
             "& .MuiTabs-list":{p:0,gap:0.5},
       
           }}
