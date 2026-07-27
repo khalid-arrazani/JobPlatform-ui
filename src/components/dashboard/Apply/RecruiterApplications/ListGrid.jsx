@@ -8,6 +8,9 @@ import {
   TableHead,
   TableRow,
   Paper,
+  Avatar,
+  Box,
+  Typography,
 } from "@mui/material";
 
 const applications = [
@@ -88,7 +91,7 @@ export default function ListGrid() {
             height: "100%",
             borderBottom: "solid 1px #dddddd",
             px: 1,
-        
+
             boxShadow: "none",
           }}
         >
@@ -97,16 +100,13 @@ export default function ListGrid() {
               boxSizing: "border-box",
               height: "99%",
               my: 1,
-               
+
               px: 1,
-           
             }}
           >
             <TableHead sx={{ border: "solid 1px #ddddddf9" }}>
               <TableRow sx={{ border: "solid 1px #221b1b00" }}>
-                <TableCell >
-                  Applicant
-                </TableCell>
+                <TableCell>Applicant</TableCell>
                 <TableCell>Job Position</TableCell>
                 <TableCell>Status</TableCell>
                 <TableCell>Applied On</TableCell>
@@ -114,29 +114,59 @@ export default function ListGrid() {
               </TableRow>
             </TableHead>
 
-            <TableBody sx={{ boxSizing: "border-box" ,border:"solid 1px #ddd",  }}   >
+            <TableBody
+              sx={{ boxSizing: "border-box", border: "solid 1px #ddd" }}
+            >
               {applications.map((application) => (
                 <TableRow
                   onClick={() => handleClick(application.id)}
-                  sx={{ height:"5rem"}}
+                  sx={{
+                    height: "5rem",
+                    p: 0,
+                    "& .css-1dc80h3-MuiTableCell-root": {
+                      p: 0,
+                      boxSizing: "border-box",
+                    },
+                    "& .MuiTableCell-root ": { p: 0, boxSizing: "border-box" },
+                  }}
                   key={application._id}
                 >
-                  <TableCell  >
-                    {application.applicant}
+                  <TableCell sx={{}}>
+                    <Box
+                      sx={{
+                        height: "100%",
+                        width: "80%",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1.5,
+                        boxSizing: "border-box",
+                      }}
+                    >
+                      <Avatar
+                        sx={{ m: 1, height: "3.5rem", width: "3.5rem" }}
+                      />
+
+                      <Box sx={{
+                        height: "100%",
+                        width: "80%",
+                        display: "flex",
+                        boxSizing: "border-box",
+                        flexDirection:"column",justifyContent:"center",gap:0.5
+                      }}>
+                        <Typography>{application.applicant} </Typography>
+                        <Typography>{application.applicant} </Typography>
+                      </Box>
+
+                    </Box>
                   </TableCell>
 
-                  <TableCell  >
-                    {application.job}
-                  </TableCell>
 
-                  <TableCell  >
-                    {application.status}
-                  </TableCell>
+                  <TableCell>{application.job}</TableCell>
 
-                  <TableCell  >
-                    {application.appliedOn}
-                  </TableCell>
-                  <TableCell  >---</TableCell>
+                  <TableCell>{application.status}</TableCell>
+
+                  <TableCell>{application.appliedOn}</TableCell>
+                  <TableCell>---</TableCell>
                 </TableRow>
               ))}
             </TableBody>
