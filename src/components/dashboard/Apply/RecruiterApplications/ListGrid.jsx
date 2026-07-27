@@ -85,8 +85,8 @@ export default function ListGrid() {
   };
   return (
     <>
-      <Container sx={{height:"100%",width:"100%" }} >
-      <Box sx={{height:"5rem",width:"100%",border:"solid 1px #ddd"}} ></Box>
+      <Box sx={{height:"100%",width:"100%" }} >
+      <Box sx={{height:"4rem",width:"100%",border:"solid 1px #ddd"}} ></Box>
 
        
 
@@ -94,7 +94,7 @@ export default function ListGrid() {
 
 
 
-      </Container>
+      </Box>
     </>
   );
 }
