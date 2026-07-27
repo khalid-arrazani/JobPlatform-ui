@@ -87,11 +87,13 @@ export default function ListGrid() {
     <>
       <Box sx={{height:"100%",width:"100%",px:1,boxSizing:"border-box" }} >
       <Box sx={{height:"4rem",width:"100%",boxSizing:"border-box",display:"flex",px:1}}> 
-        <Box sx={{width:"20%",height:"100%"}} >s</Box>
-        <Box sx={{width:"20%",height:"100%"}} >s</Box>
-        <Box sx={{width:"20%",height:"100%"}} >s</Box>
-        <Box sx={{width:"20%",height:"100%"}} >s</Box>
-        <Box sx={{width:"20%",height:"100%"}} >s</Box>
+
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >s</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >s</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >s</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >s</Box>
+        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center"}} >s</Box>
+
       </Box>
 
 
