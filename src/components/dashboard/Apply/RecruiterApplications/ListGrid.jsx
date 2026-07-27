@@ -11,7 +11,7 @@ import {
   Avatar,
   Box,
   Typography,
-  Container
+  Container,
 } from "@mui/material";
 
 const applications = [
@@ -85,37 +85,184 @@ export default function ListGrid() {
   };
   return (
     <>
-      <Box sx={{height:"100%",width:"100%",px:1,boxSizing:"border-box" }} >
-      <Box sx={{height:"3.5rem",width:"100%",boxSizing:"border-box",display:"flex",px:2}}> 
-
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applicant</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Job Post</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Status</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applied On</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center", direction: "rtl",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Actions</Box>
-
-      </Box>
-
-
-
-      <Box sx={{height:"83%",width:"100%",border:"solid 1px #ddd",borderRadius:"10px",overflow:"auto"}}> 
-
-        <Box sx={{height:"5.5rem",width:"100%",boxSizing:"border-box",display:"flex",px:2,border:"solid 1px #ddd",}}>
-         <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applicant</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Job Post</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Status</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Applied On</Box>
-        <Box sx={{width:"20%",height:"100%",display:"flex",alignItems:"center", direction: "rtl",fontFamily:"system-ui",fontWeight:600,color:"#02010e9c",fontSize:"0.9rem" }} >Actions</Box>
+      <Box
+        sx={{ height: "100%", width: "100%", px: 1, boxSizing: "border-box" }}
+      >
+        <Box
+          sx={{
+            height: "3.5rem",
+            width: "100%",
+            boxSizing: "border-box",
+            display: "flex",
+            px: 2,
+          }}
+        >
+          <Box
+            sx={{
+              width: "20%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              fontFamily: "system-ui",
+              fontWeight: 600,
+              color: "#02010e9c",
+              fontSize: "0.9rem",
+            }}
+          >
+            Applicant
+          </Box>
+          <Box
+            sx={{
+              width: "20%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              fontFamily: "system-ui",
+              fontWeight: 600,
+              color: "#02010e9c",
+              fontSize: "0.9rem",
+            }}
+          >
+            Job Post
+          </Box>
+          <Box
+            sx={{
+              width: "20%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              fontFamily: "system-ui",
+              fontWeight: 600,
+              color: "#02010e9c",
+              fontSize: "0.9rem",
+            }}
+          >
+            Status
+          </Box>
+          <Box
+            sx={{
+              width: "20%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              fontFamily: "system-ui",
+              fontWeight: 600,
+              color: "#02010e9c",
+              fontSize: "0.9rem",
+            }}
+          >
+            Applied On
+          </Box>
+          <Box
+            sx={{
+              width: "20%",
+              height: "100%",
+              display: "flex",
+              alignItems: "center",
+              direction: "rtl",
+              fontFamily: "system-ui",
+              fontWeight: 600,
+              color: "#02010e9c",
+              fontSize: "0.9rem",
+            }}
+          >
+            Actions
+          </Box>
         </Box>
-      
-      </Box>
 
-       
+        <Box
+          sx={{
+            height: "83%",
+            width: "100%",
+            border: "solid 1px #ddd",
+            borderRadius: "10px",
+            overflow: "auto",
+          }}
+        >
+          <Box
+            sx={{
+              height: "5.5rem",
+              width: "100%",
+              boxSizing: "border-box",
+              display: "flex",
+              px: 2,
+              border: "solid 1px #ddd",
+            }}
+          >
+            <Avatar sx={{ height: "3rem", width: "3rem" }} />
+            <Box
+              sx={{
+                width: "30%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            ></Box>
 
+            <Box
+              sx={{
+                width: "20%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            >
+              Frontend Developer
+            </Box>
 
-
-
-
+            <Box
+              sx={{
+                width: "15%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            >
+              Under Review
+            </Box>
+            <Box
+              sx={{
+                width: "15%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            >
+              May 18,2025
+            </Box>
+            <Box
+              sx={{
+                width: "20%",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                direction: "rtl",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            >
+              --------------
+            </Box>
+          </Box>
+        </Box>
       </Box>
     </>
   );
