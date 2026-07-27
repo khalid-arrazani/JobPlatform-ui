@@ -88,7 +88,7 @@ export default function ListGrid() {
             height: "100%",
             borderBottom: "solid 1px #dddddd",
             px: 1,
-            borderRadius: 0,
+        
             boxShadow: "none",
           }}
         >
@@ -97,14 +97,14 @@ export default function ListGrid() {
               boxSizing: "border-box",
               height: "99%",
               my: 1,
-              borderTop: "solid 1px #DDD",
+               
               px: 1,
-              borderRadius: 0,
+           
             }}
           >
             <TableHead sx={{ border: "solid 1px #ddddddf9" }}>
-              <TableRow>
-                <TableCell sx={{ border: "solid 1px #221b1b00" }}>
+              <TableRow sx={{ border: "solid 1px #221b1b00" }}>
+                <TableCell >
                   Applicant
                 </TableCell>
                 <TableCell>Job Position</TableCell>
@@ -114,29 +114,29 @@ export default function ListGrid() {
               </TableRow>
             </TableHead>
 
-            <TableBody sx={{ boxSizing: "border-box" }}>
+            <TableBody sx={{ boxSizing: "border-box" ,border:"solid 1px #ddd",  }}   >
               {applications.map((application) => (
                 <TableRow
                   onClick={() => handleClick(application.id)}
-                  sx={{ mr: 5, border: "solid 1px #DDD" }}
+                  sx={{ height:"5rem"}}
                   key={application._id}
                 >
-                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                  <TableCell  >
                     {application.applicant}
                   </TableCell>
 
-                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                  <TableCell  >
                     {application.job}
                   </TableCell>
 
-                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                  <TableCell  >
                     {application.status}
                   </TableCell>
 
-                  <TableCell sx={{ border: "solid 1px #DDD" }}>
+                  <TableCell  >
                     {application.appliedOn}
                   </TableCell>
-                  <TableCell sx={{ border: "solid 1px #DDD" }}>---</TableCell>
+                  <TableCell  >---</TableCell>
                 </TableRow>
               ))}
             </TableBody>
