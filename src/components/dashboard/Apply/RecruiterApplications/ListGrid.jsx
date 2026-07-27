@@ -199,9 +199,30 @@ export default function ListGrid() {
                 fontWeight: 600,
                 color: "#02010e9c",
                 fontSize: "0.9rem",
+                gap:0.5
               }}
             >
               <Avatar sx={{ height: "3rem", width: "3rem" }} />
+
+
+              <Box
+              sx={{
+                width: "auto",
+                height: "100%",
+                display: "flex",
+                alignItems: "center",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#02010e9c",
+                fontSize: "0.9rem",
+              }}
+            >
+              
+              
+            </Box>
+
+
+
             </Box>
 
             <Box
