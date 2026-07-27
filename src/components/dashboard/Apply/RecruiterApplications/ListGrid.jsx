@@ -189,7 +189,6 @@ export default function ListGrid() {
               border: "solid 1px #ddd",
             }}
           >
-            <Avatar sx={{ height: "3rem", width: "3rem" }} />
             <Box
               sx={{
                 width: "30%",
@@ -201,7 +200,9 @@ export default function ListGrid() {
                 color: "#02010e9c",
                 fontSize: "0.9rem",
               }}
-            ></Box>
+            >
+              <Avatar sx={{ height: "3rem", width: "3rem" }} />
+            </Box>
 
             <Box
               sx={{

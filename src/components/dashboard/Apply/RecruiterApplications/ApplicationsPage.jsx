@@ -60,6 +60,7 @@ export default function ApplicationsRc() {
               width: "100%",
               height: "62%",
               boxSizing: "border-box",
+
               placeItems: "center",
               overflow:"hidden",
               border: "solid 0.1px #8d8d8d3a",
