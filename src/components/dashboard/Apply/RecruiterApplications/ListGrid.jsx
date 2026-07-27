@@ -89,10 +89,10 @@ export default function ListGrid() {
               <TableRow>
                 <TableCell sx={{border :"solid 1px #DDD"}} >Applicant</TableCell>
                 <TableCell  sx={{border :"solid 1px #DDD"}}>Job Position</TableCell>
-                <TableCell sx={{border :"solid 1px #DDD"}}>Experience</TableCell>
-                <TableCell sx={{border :"solid 1px #DDD"}}>Location</TableCell>
                 <TableCell sx={{border :"solid 1px #DDD"}}>Status</TableCell>
                 <TableCell sx={{border :"solid 1px #DDD"}}>Applied On</TableCell>
+                <TableCell sx={{border :"solid 1px #DDD"}}>Actions</TableCell>
+
                 
               </TableRow>
             </TableHead>
@@ -107,11 +107,12 @@ export default function ListGrid() {
                   <TableCell sx={{border :"solid 1px #DDD"}} >{application.applicant}</TableCell>
 
                   <TableCell sx={{border :"solid 1px #DDD"}} >{application.job}</TableCell>
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.experience}</TableCell>
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.location}</TableCell>
-                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.status}</TableCell>
-                  
+
+                  <TableCell sx={{border :"solid 1px #DDD"}} >{application.status}</TableCell> 
+
                   <TableCell sx={{border :"solid 1px #DDD"}} >{application.appliedOn}</TableCell>
+                  <TableCell sx={{border :"solid 1px #DDD"}} >---</TableCell>
+
                  
                 </TableRow>
               ))}

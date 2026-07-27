@@ -63,7 +63,7 @@ export default function ApplicationsRc() {
         
               placeItems: "center",
               overflow:"hidden",
-              py:1
+              
             }}
           >
             <ListGrid/>
