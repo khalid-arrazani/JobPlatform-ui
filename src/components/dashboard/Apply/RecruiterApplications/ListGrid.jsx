@@ -83,10 +83,17 @@ const applications = [
 ];
 
 const app={status :"Under review"}
+
+
 export default function ListGrid() {
+
+
   const handleClick = (application) => {
     console.log(application);
   };
+
+
+  
   return (
     <>
       <Box
@@ -176,6 +183,11 @@ export default function ListGrid() {
           </Box>
         </Box>
 
+
+
+
+
+
         <Box
           sx={{
             height: "83%",
@@ -199,7 +211,7 @@ export default function ListGrid() {
               "&:hover": {
                 transform: "translateY(-2px)",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
-                bgcolor:"#e9e9e9"
+                bgcolor:"#f6fbff"
               },
             }}
           >
@@ -337,7 +349,7 @@ export default function ListGrid() {
               
               <MenuApply JobId={app?.job?._id} />
 
-              <Button sx={{textTransform:"none",fontSize:"0.8rem",color:"#000000c3" , border:"#ffffff 1px solid",fontWeight:600,fontFamily:"system-ui",bgcolor:"#f3efef"}}  >View Profile</Button>
+              <Button sx={{textTransform:"none",fontSize:"0.8rem",color:"#000000c3" , border:"#ddd 1px solid",fontWeight:600,fontFamily:"system-ui",bgcolor:"#fffefe"}}  >View Profile</Button>
 
             </Box>
           </Box>
@@ -498,6 +510,11 @@ export default function ListGrid() {
           </Box>
 
         </Box>
+
+
+
+
+
       </Box>
     </>
   );
