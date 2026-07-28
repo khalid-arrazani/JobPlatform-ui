@@ -55,8 +55,6 @@ export default function AuthProvider({
          sign, 
          setSign
       }}
-
-
     >
       {children}
     </AuthContext.Provider>
