@@ -15,6 +15,7 @@ import {
   Chip,Button
 } from "@mui/material";
 import MenuApply from "./Menu";
+import { useApply } from "../../../../logic/context/ApplyContext";
 
 const applications = [
   {
@@ -87,13 +88,14 @@ const app={status :"Under review"}
 
 export default function ListGrid() {
 
+ const {...state } = useApply();
 
   const handleClick = (application) => {
     console.log(application);
   };
 
+ console.log("....",state);
 
-  
   return (
     <>
       <Box

@@ -4,6 +4,7 @@ import { GetApplitions, GetMyApply } from "../api/apply/Apply";
 import { useLocation } from "react-router-dom";
 
 import { useAuth } from "./AuthContext";
+import { getMeUser } from "../api/user/user";
 
 export const ApplyContext = createContext();
 
@@ -21,9 +22,7 @@ export default function ApplyProvider({ children }) {
 
   const [state, dispatch] = useReducer(applyReducer, initialState);
 
-  const {checkRole} = useAuth()
-
-  console.log(checkRole);
+  
 
   const [felterData, setFelterData] = useState({
     status: "",
@@ -31,24 +30,30 @@ export default function ApplyProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
+
+
+
+  
   const [isLoading , setisLoading] = useState(false)
   const location = useLocation();
 
   const ApplyJobs = async (felterData) => {
     setisLoading(true)
     try {
+       const user = await getMeUser();
       let Apply
-      checkRole == "recruiter" ? 
+       user?.role == "jobSeeker" ? 
        Apply = await GetMyApply(felterData)
-       :checkRole == "jobSeeker" ?
+       :user?.role == "recruiter" ?
        Apply = await GetApplitions(felterData):null
 
+       console.log(Apply);
       dispatch({
         type: "ListApply",
         payload: Apply,
       });
     } catch (err) {
-      console.log(err);
+      console.log(err?.response.data.message);
     }finally{
       setisLoading(false)
     }

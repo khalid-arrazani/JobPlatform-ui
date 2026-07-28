@@ -42,7 +42,7 @@ export default function AuthProvider({
 
  const [sign, setSign] = useState("Sign In");
 
- const checkRole = state.user?.role
+ const checkRole = state.user?.role 
 
 
 
