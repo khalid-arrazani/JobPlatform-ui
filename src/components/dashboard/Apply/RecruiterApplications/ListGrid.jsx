@@ -241,7 +241,7 @@ export default function ListGrid() {
             >
             
               <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.9rem", color:"#020210df"}} >Frontend Developer</Typography>
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem", color:"#6a6969"}} >Khalid.arrazani@email.com</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem", color:"#6a6969"}} >Full-time • Remote</Typography>
             </Box>
 
             <Box
