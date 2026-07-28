@@ -2,6 +2,7 @@ import { createContext, useReducer, useContext, useState, useEffect } from "reac
 import { applyReducer } from "./reducer/applyReducer";
 import { GetApplitions, GetMyApply } from "../api/apply/Apply";
 import { useLocation } from "react-router-dom";
+
 import { useAuth } from "./AuthContext";
 
 export const ApplyContext = createContext();
@@ -21,7 +22,7 @@ export default function ApplyProvider({ children }) {
   const [state, dispatch] = useReducer(applyReducer, initialState);
 
   const {checkRole} = useAuth()
-  
+
   console.log(checkRole);
 
   const [felterData, setFelterData] = useState({
