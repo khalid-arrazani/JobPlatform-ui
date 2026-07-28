@@ -21,9 +21,9 @@ export default function ApplyProvider({ children }) {
 
   const [state, dispatch] = useReducer(applyReducer, initialState);
 
-  const {checkRole} = useAuth()
+  
 
-  console.log(checkRole);
+ 
 
   const [felterData, setFelterData] = useState({
     status: "",
@@ -31,6 +31,8 @@ export default function ApplyProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
+
+  
   const [isLoading , setisLoading] = useState(false)
   const location = useLocation();
 
