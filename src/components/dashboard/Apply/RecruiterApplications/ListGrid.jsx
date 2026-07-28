@@ -195,7 +195,12 @@ export default function ListGrid() {
               display: "flex",
               px: 2,
               
-              borderBottom: "solid 1px #ddd",
+              borderBottom: "solid 1px #ddd", transition: "0.2s",
+              "&:hover": {
+                transform: "translateY(-2px)",
+                boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
+                bgcolor:"#f7f7f7"
+              },
             }}
           >
             <Box
