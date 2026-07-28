@@ -1,6 +1,6 @@
 import { createContext, useReducer, useContext, useState, useEffect } from "react";
 import { applyReducer } from "./reducer/applyReducer";
-import { GetMyApply } from "../api/apply/Apply";
+import { GetApplitions, GetMyApply } from "../api/apply/Apply";
 import { useLocation } from "react-router-dom";
 import { useAuth } from "./AuthContext";
 
@@ -17,8 +17,12 @@ export const useApply = () => {
 
 
 export default function ApplyProvider({ children }) {
+
   const [state, dispatch] = useReducer(applyReducer, initialState);
+
   const {checkRole} = useAuth()
+  
+  console.log(checkRole);
 
   const [felterData, setFelterData] = useState({
     status: "",
@@ -32,12 +36,15 @@ export default function ApplyProvider({ children }) {
   const ApplyJobs = async (felterData) => {
     setisLoading(true)
     try {
-
-      const MyApply = await GetMyApply(felterData);
+      let Apply
+      checkRole == "recruiter" ? 
+       Apply = await GetMyApply(felterData)
+       :checkRole == "jobSeeker" ?
+       Apply = await GetApplitions(felterData):null
 
       dispatch({
         type: "ListApply",
-        payload: MyApply,
+        payload: Apply,
       });
     } catch (err) {
       console.log(err);
