@@ -199,7 +199,7 @@ export default function ListGrid() {
               "&:hover": {
                 transform: "translateY(-2px)",
                 boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
-                bgcolor:"#f7f7f7"
+                bgcolor:"#e9e9e9"
               },
             }}
           >
