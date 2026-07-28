@@ -337,7 +337,7 @@ export default function ListGrid() {
               
               <MenuApply JobId={app?.job?._id} />
 
-              <Button sx={{textTransform:"none",fontSize:"0.8rem",color:"#000000c3" , border:"#ddd 1px solid",fontWeight:600,fontFamily:"system-ui"}}  >View Profile</Button>
+              <Button sx={{textTransform:"none",fontSize:"0.8rem",color:"#000000c3" , border:"#ffffff 1px solid",fontWeight:600,fontFamily:"system-ui",bgcolor:"#f3efef"}}  >View Profile</Button>
 
             </Box>
           </Box>
