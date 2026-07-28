@@ -1,6 +1,7 @@
 import { createContext, useReducer, useContext, useState, useEffect } from "react";
 import { applyReducer } from "./reducer/applyReducer";
 import { GetMyApply } from "../api/apply/Apply";
+import { useLocation } from "react-router-dom";
 
 export const ApplyContext = createContext();
 
@@ -12,8 +13,11 @@ export const useApply = () => {
   return useContext(ApplyContext);
 };
 
+
+
 export default function ApplyProvider({ children }) {
   const [state, dispatch] = useReducer(applyReducer, initialState);
+  const {}
 
   const [felterData, setFelterData] = useState({
     status: "",
@@ -22,11 +26,12 @@ export default function ApplyProvider({ children }) {
     page: 1,
   });
   const [isLoading , setisLoading] = useState(false)
-
+  const location = useLocation();
 
   const ApplyJobs = async (felterData) => {
     setisLoading(true)
     try {
+
       const MyApply = await GetMyApply(felterData);
 
       dispatch({
@@ -41,6 +46,7 @@ export default function ApplyProvider({ children }) {
   };
   
     useEffect(() => {
+    if (location.pathname !== "/Dashboard/My_Jobs") return;
     ApplyJobs(felterData);
   }, [felterData]);
 
