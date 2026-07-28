@@ -302,7 +302,7 @@ export default function ListGrid() {
                 alignItems: "center",
                 fontFamily: "system-ui",
                 fontWeight: 600,
-                color: "#02010e9c",
+                color: "#02010e50",
                 fontSize: "0.9rem",
               }}
             >
