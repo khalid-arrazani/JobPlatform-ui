@@ -12,6 +12,7 @@ import {
   Box,
   Typography,
   Container,
+  Chip,
 } from "@mui/material";
 
 const applications = [
@@ -79,6 +80,8 @@ const applications = [
     location: "Seoul, South Korea",
   },
 ];
+
+const app={status :"Under review"}
 export default function ListGrid() {
   const handleClick = (application) => {
     console.log(application);
@@ -229,7 +232,7 @@ export default function ListGrid() {
 
             <Box
               sx={{
-                width: "27%",
+                width: "20%",
                 height: "100%",
                 display: "flex",
               
@@ -246,7 +249,7 @@ export default function ListGrid() {
 
             <Box
               sx={{
-                width: "16%",
+                width: "20%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -256,7 +259,40 @@ export default function ListGrid() {
                 fontSize: "0.9rem",
               }}
             >
-              Under Review
+              <Chip
+                  label={`• ${app?.status}`}
+                  sx={{
+                    fontSize: "0.9rem",
+                    borderRadius: "8px",
+                    fontFamily: "system-ui",
+                    color:
+                      app?.status == "Pending"
+                        ? "#F59E0B"
+                        : app?.status == "Accepted"
+                          ? "#10B981"
+                          : app?.status == "Interview"
+                            ? "#8B5CF6"
+                            : app?.status == "Rejected"
+                              ? "#EF4444"
+                              : app?.status == "Under review"
+                                ? "#3B82F6"
+                                : null,
+
+                    bgcolor:
+                      app?.status == "Pending"
+                        ? "#FEF3C7"
+                        : app?.status == "Accepted"
+                          ? "#D1FAE5"
+                          : app?.status == "Interview"
+                            ? "#EDE9FE"
+                            : app?.status == "Rejected"
+                              ? "#FEE2E2"
+                              : app?.status == "Under review"
+                                ? "#DBEAFE"
+                                : null,
+                    fontWeight: 600,
+                  }}
+                />
             </Box>
             <Box
               sx={{
@@ -274,7 +310,7 @@ export default function ListGrid() {
             </Box>
             <Box
               sx={{
-                width: "10%",
+                width: "13%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
