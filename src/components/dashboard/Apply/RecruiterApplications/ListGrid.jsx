@@ -12,8 +12,9 @@ import {
   Box,
   Typography,
   Container,
-  Chip,
+  Chip,Button
 } from "@mui/material";
+import MenuApply from "./Menu";
 
 const applications = [
   {
@@ -249,7 +250,7 @@ export default function ListGrid() {
 
             <Box
               sx={{
-                width: "20%",
+                width: "18%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -262,7 +263,8 @@ export default function ListGrid() {
               <Chip
                   label={`• ${app?.status}`}
                   sx={{
-                    fontSize: "0.9rem",
+                    fontSize: "0.8rem",
+                    alignItems:"center",
                     borderRadius: "8px",
                     fontFamily: "system-ui",
                     color:
@@ -296,7 +298,7 @@ export default function ListGrid() {
             </Box>
             <Box
               sx={{
-                width: "15%",
+                width: "13%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -310,7 +312,7 @@ export default function ListGrid() {
             </Box>
             <Box
               sx={{
-                width: "13%",
+                width: "17%",
                 height: "100%",
                 display: "flex",
                 alignItems: "center",
@@ -319,9 +321,14 @@ export default function ListGrid() {
                 fontWeight: 600,
                 color: "#02010e9c",
                 fontSize: "0.9rem",
+                gap:1
               }}
             >
-              --------------
+              
+              <MenuApply JobId={app?.job?._id} />
+
+              <Button sx={{textTransform:"none",fontSize:"0.8rem",color:"#000000c3" , border:"#ddd 1px solid",fontWeight:600,fontFamily:"system-ui"}}  >View Profile</Button>
+
             </Box>
           </Box>
         </Box>
