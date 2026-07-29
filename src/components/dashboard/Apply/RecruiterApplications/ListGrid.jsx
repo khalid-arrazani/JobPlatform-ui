@@ -233,7 +233,7 @@ export default function ListGrid() {
                 gap:1.5
               }}
             >
-              <Avatar sx={{ height: "3rem", width: "3rem" }} />
+              <Avatar src={apply.profile.ProfileImage.url} sx={{ height: "3rem", width: "3rem" }} />
 
 
               <Box
@@ -250,7 +250,7 @@ export default function ListGrid() {
             >
               <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >{apply.profile.fullName}</Typography>
               <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >{apply.applicant.email}</Typography>
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >{apply.profile.location}</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >{apply.profile.location.slice(0,20) }   {apply.profile.location.length > 20 ? '.....' : null}  </Typography>
               
             </Box>
 
