@@ -202,7 +202,7 @@ export default function ListGrid() {
           }}
         >
 
-         {state?.ListApply?.applications?.map(()=>(
+         {state?.ListApply?.applications?.map((apply)=>(
           <Box
             sx={{
               height: "5.5rem",
