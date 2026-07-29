@@ -204,6 +204,7 @@ export default function ListGrid() {
 
          {state?.ListApply?.applications?.map((apply)=>(
           <Box
+          key={apply._id}
             sx={{
               height: "5.5rem",
               width: "100%",
@@ -247,7 +248,7 @@ export default function ListGrid() {
                 gap:0.2
               }}
             >
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >Khalid Arrazani</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >{apply.applicant.username}</Typography>
               <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >Khalid.arrazani@email.com</Typography>
               <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >+212 777 964 129</Typography>
               
