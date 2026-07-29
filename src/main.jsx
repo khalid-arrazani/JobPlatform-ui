@@ -23,18 +23,17 @@ defineElement(lottie);
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
-
-    <ApplyProvider>
-      <JobProvider>
-        <CompanyProvider>
-          <AuthProvider>
-            <ProfileProvider>
-              <App />
-            </ProfileProvider>
-          </AuthProvider>
-        </CompanyProvider>
-      </JobProvider>
-      </ApplyProvider>
+      <AuthProvider>
+        <ApplyProvider>
+          <JobProvider>
+            <CompanyProvider>
+              <ProfileProvider>
+                <App />
+              </ProfileProvider>
+            </CompanyProvider>
+          </JobProvider>
+        </ApplyProvider>
+      </AuthProvider>
     </BrowserRouter>
   </StrictMode>,
 );

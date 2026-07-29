@@ -32,8 +32,6 @@ export default function ApplyProvider({ children }) {
   });
 
 
-
-  
   const [isLoading , setisLoading] = useState(false)
   const location = useLocation();
 
