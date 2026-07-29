@@ -82,7 +82,7 @@ const applications = [
     location: "Seoul, South Korea",
   },
 ];
-
+import { formatDistanceToNow, format } from "date-fns";
 const app={status :"Under review"}
 
 
@@ -288,35 +288,35 @@ export default function ListGrid() {
               }}
             >
               <Chip
-                  label={`• ${app?.status}`}
+                  label={`• ${apply.status}`}
                   sx={{
                     fontSize: "0.8rem",
                     alignItems:"center",
                     borderRadius: "8px",
                     fontFamily: "system-ui",
                     color:
-                      app?.status == "Pending"
+                      apply?.status == "Pending"
                         ? "#F59E0B"
-                        : app?.status == "Accepted"
+                        : apply?.status == "Accepted"
                           ? "#10B981"
-                          : app?.status == "Interview"
+                          : apply?.status == "Interview"
                             ? "#8B5CF6"
-                            : app?.status == "Rejected"
+                            : apply?.status == "Rejected"
                               ? "#EF4444"
-                              : app?.status == "Under review"
+                              : apply?.status == "Under review"
                                 ? "#3B82F6"
                                 : null,
 
                     bgcolor:
-                      app?.status == "Pending"
+                      apply?.status == "Pending"
                         ? "#FEF3C7"
-                        : app?.status == "Accepted"
+                        : apply?.status == "Accepted"
                           ? "#D1FAE5"
-                          : app?.status == "Interview"
+                          : apply?.status == "Interview"
                             ? "#EDE9FE"
-                            : app?.status == "Rejected"
+                            : apply?.status == "Rejected"
                               ? "#FEE2E2"
-                              : app?.status == "Under review"
+                              : apply?.status == "Under review"
                                 ? "#DBEAFE"
                                 : null,
                     fontWeight: 600,
@@ -335,7 +335,7 @@ export default function ListGrid() {
                 fontSize: "0.9rem",
               }}
             >
-              May 18,2025
+              {format(new Date(apply?.createdAt), "MMM dd, yyyy")}
             </Box>
             <Box
               sx={{
