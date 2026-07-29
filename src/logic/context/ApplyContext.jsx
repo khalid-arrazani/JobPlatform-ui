@@ -33,21 +33,20 @@ export default function ApplyProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
-
+  const {checkRole} = useAuth()
   const location = useLocation();
 
   const ApplyJobs = async (felterData) => {
     setisLoading(true);
     try {
-      const user = await getMeUser();
+     
       let Apply;
-      user?.role == "jobSeeker"
+      checkRole == "jobSeeker"
         ? (Apply = await GetMyApply(felterData))
-        : user?.role == "recruiter"
+        : checkRole == "recruiter"
           ? (Apply = await GetApplitions(felterData))
           : null;
 
-      console.log(Apply);
       dispatch({
         type: "ListApply",
         payload: Apply,
