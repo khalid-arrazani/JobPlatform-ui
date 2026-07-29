@@ -248,9 +248,9 @@ export default function ListGrid() {
                 gap:0.2
               }}
             >
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >{apply.applicant.username}</Typography>
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >Khalid.arrazani@email.com</Typography>
-              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >+212 777 964 129</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"1rem", color:"#020210df"}} >{apply.profile.fullName}</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >{apply.applicant.email}</Typography>
+              <Typography sx={{fontFamily: "system-ui",fontWeight:600,fontSize:"0.75rem"}} >{apply.profile.location}</Typography>
               
             </Box>
 
