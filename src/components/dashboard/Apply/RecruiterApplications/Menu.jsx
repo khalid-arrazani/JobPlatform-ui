@@ -92,11 +92,9 @@ export default function MenuApply({ JobId }) {
          <VisibilityOutlinedIcon fontSize="small" />
 
           </ListItemIcon>
-          View Job
+          View Profile
         </MenuItem>
         
-        
-
         <Divider sx={{ my: 0.5 }} />
 
         <MenuItem
