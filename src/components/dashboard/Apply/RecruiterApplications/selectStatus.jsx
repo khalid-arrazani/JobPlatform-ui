@@ -14,7 +14,10 @@ export default function SelectStatus() {
 
   return (
     <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
-      <InputLabel id="demo-select-small-label">Age</InputLabel>
+
+      <InputLabel id="demo-select-small-label">Status</InputLabel>
+
+
       <Select
         labelId="demo-select-small-label"
         id="demo-select-small"
@@ -26,6 +29,7 @@ export default function SelectStatus() {
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
       </Select>
+      
     </FormControl>
   );
 }
