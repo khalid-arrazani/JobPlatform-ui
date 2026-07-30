@@ -6,10 +6,10 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 
 export default function SelectStatus() {
-  const [age, setAge] =  useState('Pending');
+  const [status, setStatus] =  useState('Pending');
 
   const handleChange = (event) => {
-    setAge(event.target.value);
+    setStatus(event.target.value);
   };
 
   return (
@@ -18,7 +18,7 @@ export default function SelectStatus() {
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
-          value={age}
+          value={status}
           onChange={handleChange}
         >
           <MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7',mb:.5}} value={"Pending"}>Pending</MenuItem>
