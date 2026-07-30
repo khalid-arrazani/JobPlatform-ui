@@ -11,7 +11,7 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
 import { MdOutlineCancelScheduleSend } from "react-icons/md"
-
+import ScheduleSendIcon from '@mui/icons-material/ScheduleSend';
 
 
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
@@ -105,7 +105,7 @@ export default function MenuApply({ JobId }) {
           sx={{ color: "error.main" }}
         >
           <ListItemIcon>
-            <MdOutlineCancelScheduleSend style={{color:"error"}}/>
+            <ScheduleSendIcon  />
           </ListItemIcon>
           < SelectStatus/>
         </MenuItem>

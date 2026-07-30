@@ -21,11 +21,11 @@ export default function SelectStatus() {
           value={age}
           onChange={handleChange}
         >
-          <MenuItem value={"Pending"}>Pending</MenuItem>
-          <MenuItem value={"Under review"}>Under review</MenuItem>
-          <MenuItem value={"Interview"}>Interview</MenuItem>
-          <MenuItem value={"Accepted"}>Accepted</MenuItem>
-          <MenuItem value={"Rejected"}>Rejected</MenuItem>
+          <MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7'}} value={"Pending"}>Pending</MenuItem>
+          <MenuItem sx={{color:"#1664e1",bgcolor:'#DBEAFE'}}  value={"Under review"}>Under review</MenuItem>
+          <MenuItem sx={{color:"#672ded",bgcolor:'#EDE9FE'}}  value={"Interview"}>Interview</MenuItem>
+          <MenuItem sx={{color:"#0c9769",bgcolor:'#D1FAE5'}}  value={"Accepted"}>Accepted</MenuItem>
+          <MenuItem sx={{color:"#e42828",bgcolor:'#FEE2E2'}}  value={"Rejected"}>Rejected</MenuItem>
          
         </Select>
       </FormControl>
