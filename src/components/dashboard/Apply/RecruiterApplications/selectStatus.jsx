@@ -22,7 +22,7 @@ export default function SelectStatus() {
         label="Age"
         onChange={handleChange}
       >
-        <MenuItem value="Pending" defaultValue={"Pending"}>
+        <MenuItem value="Pending"  >
         <em>Pending</em>
         </MenuItem>
 
