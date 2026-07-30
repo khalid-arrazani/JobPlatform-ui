@@ -14,7 +14,7 @@ export default function SelectStatus() {
 
   return (
     <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-        <InputLabel id="demo-simple-select-standard-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-standard-label">Status</InputLabel>
         <Select
           labelId="demo-simple-select-standard-label"
           id="demo-simple-select-standard"
