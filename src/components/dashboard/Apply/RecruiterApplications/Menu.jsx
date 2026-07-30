@@ -43,8 +43,6 @@ export default function MenuApply({ JobId ,ApplyId}) {
   };
 
  
-
-
  
   return (
     <>
