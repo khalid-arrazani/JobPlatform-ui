@@ -4,12 +4,20 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
+import { UpdateApplicationStatus } from '../../../../logic/api/apply/Apply';
 
 export default function SelectStatus() {
   const [status, setStatus] =  useState('Pending');
 
   const handleChange = (event) => {
     setStatus(event.target.value);
+    try {
+        const changeStatus = UpdateApplicationStatus({})
+
+    } catch (error) {
+        console.log(error
+        );
+    }
   };
 
   return (
