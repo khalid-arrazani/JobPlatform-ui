@@ -18,8 +18,7 @@ console.log(ApplyId);
         console.log(changeStatus);
 
     } catch (error) {
-        console.log(error
-        );
+        console.log(error);
     }
   };
 
