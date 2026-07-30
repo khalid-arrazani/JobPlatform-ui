@@ -6,7 +6,7 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 
 export default function SelectStatus() {
-  const [age, setAge] =  useState('');
+  const [age, setAge] =  useState('Pending');
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -23,8 +23,9 @@ export default function SelectStatus() {
         onChange={handleChange}
       >
         <MenuItem value="Pending" defaultValue={"Pending"}>
-        
+
         </MenuItem>
+
         <MenuItem value={10}>Ten</MenuItem>
         <MenuItem value={20}>Twenty</MenuItem>
         <MenuItem value={30}>Thirty</MenuItem>
