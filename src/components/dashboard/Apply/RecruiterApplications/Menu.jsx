@@ -17,6 +17,7 @@ import { MdOutlineCancelScheduleSend } from "react-icons/md"
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
 import ModalWarning from "../JoobSeekerApplications/ModalWarning";
+import SelectStatus from "./selectStatus";
 
 
 
@@ -96,18 +97,22 @@ export default function MenuApply({ JobId }) {
         </MenuItem>
         
         
-
+        
         <Divider sx={{ my: 0.5 }} />
-
+        
         <MenuItem
-        onClick={()=>setOpenCancelApply(true)}
+       
           sx={{ color: "error.main" }}
         >
           <ListItemIcon>
             <MdOutlineCancelScheduleSend style={{color:"error"}}/>
           </ListItemIcon>
-          Withdrawn
+          < SelectStatus/>
         </MenuItem>
+
+        
+
+       
       </Menu>
     </>
   );
