@@ -23,7 +23,7 @@ export default function SelectStatus() {
         onChange={handleChange}
       >
         <MenuItem value="Pending" defaultValue={"Pending"}>
-
+        <em>Pending</em>
         </MenuItem>
 
         <MenuItem value={10}>Ten</MenuItem>
