@@ -7,9 +7,9 @@ export const ApplyForAJob = async ({ JobId, frontdata }) => {
   return response.data;
 };
 
-export const UpdateApplicationStatus = async ({ JobId, status }) => {
-  console.log(JobId, status);
-  const response = await API.patch(`/applications${JobId}/status`, {
+export const UpdateApplicationStatus = async ({ ApplyId, status }) => {
+  console.log(ApplyId, status);
+  const response = await API.patch(`/applications/${ApplyId}/status`, {
     params: status,
     withCredentials: true,
   });

@@ -6,10 +6,10 @@ import Select from '@mui/material/Select';
 import { useState } from 'react';
 import { UpdateApplicationStatus } from '../../../../logic/api/apply/Apply';
 
-export default function SelectStatus({ApplyId} ) {
+export default function SelectStatus({ApplyId}) {
   const [status, setStatus] =  useState('Pending');
 
-
+console.log(ApplyId);
 
   const handleChange = (event) => {
     setStatus(event.target.value);
