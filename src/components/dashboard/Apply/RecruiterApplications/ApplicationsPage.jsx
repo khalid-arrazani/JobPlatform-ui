@@ -11,6 +11,7 @@ import { useEffect,  } from "react";
 
 import Header from "./header";
 import ListGrid from "./ListGrid";
+import { useApply } from "../../../../logic/context/ApplyContext";
 
 
 
@@ -18,7 +19,7 @@ export default function ApplicationsRc() {
  
  
 
-  const {ApplyJobs,isLoading,felterData,setFelterData,...state} = useApply()
+  const {ApplyJobs,felterData,setFelterData,...state} = useApply()
 
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
@@ -96,7 +97,6 @@ export default function ApplicationsRc() {
             justifyContent: "center",
           }}
         >
-          
         </Box>
       </Box>
     </>

@@ -18,9 +18,7 @@ const initialState = {
   ListApply: null,
 };
 
-export const useApply = () => {
-  return useContext(ApplyContext);
-};
+
 
 export default function ApplyProvider({ children }) {
   const [state, dispatch] = useReducer(applyReducer, initialState);
@@ -78,3 +76,6 @@ export default function ApplyProvider({ children }) {
     </ApplyContext.Provider>
   );
 }
+export const useApply = () => {
+  return useContext(ApplyContext);
+};
