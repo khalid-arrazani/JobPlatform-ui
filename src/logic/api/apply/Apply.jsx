@@ -7,15 +7,16 @@ export const ApplyForAJob = async ({ JobId, frontdata }) => {
   return response.data;
 };
 
-export const CancelApplyForAJob = async ({ JobId, status }) => {
-  const response = await API.delete(`/${JobId}/status`, {
+export const UpdateApplicationStatus = async ({ JobId, status }) => {
+  console.log(JobId, status);
+  const response = await API.patch(`/applications${JobId}/status`, {
     params: status,
     withCredentials: true,
   });
   return response.data;
 };
 
-export const UpdateApplicationStatus = async (JobId) => {
+export const CancelApplyForAJob = async (JobId) => {
   const response = await API.delete(`/applications/${JobId}`, {
     withCredentials: true,
   });
