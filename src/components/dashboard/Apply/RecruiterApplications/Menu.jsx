@@ -25,7 +25,7 @@ import SelectStatus from "./selectStatus";
 
 
 
-export default function MenuApply({ JobId }) {
+export default function MenuApply({ JobId ,ApplyId}) {
     const navigate = useNavigate();
   
 
@@ -42,13 +42,13 @@ export default function MenuApply({ JobId }) {
     setAnchorEl(null);
   };
 
- const [openCancelApply, setOpenCancelApply] = useState(false);
+ 
 
 
  
   return (
     <>
-    <ModalWarning JobId={JobId} open={openCancelApply} setOpen={setOpenCancelApply} />
+ 
 
 
       <IconButton
@@ -107,7 +107,7 @@ export default function MenuApply({ JobId }) {
           <ListItemIcon>
             <ScheduleSendIcon  />
           </ListItemIcon>
-          < SelectStatus/>
+          < SelectStatus  ApplyId={ApplyId}  />
         </MenuItem>
 
         

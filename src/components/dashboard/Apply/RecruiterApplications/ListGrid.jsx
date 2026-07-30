@@ -381,7 +381,7 @@ export default function ListGrid() {
                   gap: 1,
                 }}
               >
-                <MenuApply JobId={apply?.job?._id} />
+                <MenuApply ApplyId={apply?._id} JobId={apply?.job._id} />
 
                 <Button
                   sx={{
