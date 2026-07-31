@@ -14,11 +14,11 @@ export default function SelectStatus({ApplyId}) {
   const handleChange = async (event) => {
     setStatus(event.target.value);
     try {
-        const changeStatus = await UpdateApplicationStatus({status,ApplyId})
+        const changeStatus = await UpdateApplicationStatus({status:event.target.value,ApplyId})
         console.log(changeStatus);
      
     } catch (error) {
-        console.log(error.response.data.message);
+        console.log(error.response.data.message );
     }
   };
 
