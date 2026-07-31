@@ -5,18 +5,20 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import { useState } from 'react';
 import { UpdateApplicationStatus } from '../../../../logic/api/apply/Apply';
+import { useApply } from '../../../../logic/context/ApplyContext';
 
-export default function SelectStatus({ApplyId}) {
-  const [status, setStatus] =  useState('Pending');
+export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
+  const [status, setStatus] =  useState(nowStatus);
+  const {ApplyJobs}=useApply()
 
  
 
   const handleChange = async (event) => {
     setStatus(event.target.value);
     try {
-        const changeStatus = await UpdateApplicationStatus({status:event.target.value,ApplyId})
-        console.log(changeStatus);
-     
+       await UpdateApplicationStatus({status:event.target.value,ApplyId})
+       ApplyJobs()
+       setAnchorEl(null)
     } catch (error) {
         console.log(error.response.data.message );
     }
@@ -31,8 +33,9 @@ export default function SelectStatus({ApplyId}) {
           value={status}
           onChange={handleChange}
         >
+          {nowStatus == "Pending" ?<MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7',mb:.5}} value={"Pending"}>Pending</MenuItem> :null}
+
           
-          <MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7',mb:.5}} value={"Pending"}>Pending</MenuItem>
 
 
 

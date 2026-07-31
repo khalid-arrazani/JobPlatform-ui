@@ -25,7 +25,7 @@ import SelectStatus from "./selectStatus";
 
 
 
-export default function MenuApply({ JobId,ApplyId}) {
+export default function MenuApply({ JobId,ApplyId,status}) {
     const navigate = useNavigate();
   
  
@@ -107,7 +107,7 @@ export default function MenuApply({ JobId,ApplyId}) {
           <ListItemIcon>
             <ScheduleSendIcon  />
           </ListItemIcon>
-          < SelectStatus  ApplyId={ApplyId}  />
+          < SelectStatus  ApplyId={ApplyId} nowStatus={status} setAnchorEl={setAnchorEl} />
         </MenuItem>
 
         
