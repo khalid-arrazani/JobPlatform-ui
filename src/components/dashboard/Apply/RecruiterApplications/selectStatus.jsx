@@ -9,16 +9,16 @@ import { UpdateApplicationStatus } from '../../../../logic/api/apply/Apply';
 export default function SelectStatus({ApplyId}) {
   const [status, setStatus] =  useState('Pending');
 
-console.log(ApplyId);
+ 
 
-  const handleChange = (event) => {
+  const handleChange = async (event) => {
     setStatus(event.target.value);
     try {
-        const changeStatus = UpdateApplicationStatus({status,ApplyId})
+        const changeStatus = await UpdateApplicationStatus({status,ApplyId})
         console.log(changeStatus);
-
+     
     } catch (error) {
-        console.log(error);
+        console.log(error.response.data.message);
     }
   };
 
