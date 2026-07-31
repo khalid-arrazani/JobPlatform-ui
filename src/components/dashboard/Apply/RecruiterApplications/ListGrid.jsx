@@ -43,7 +43,7 @@ export default function ListGrid() {
         >
           <Box
             sx={{
-              width: "20%",
+              width: "32%",
               height: "100%",
               display: "flex",
               alignItems: "center",
@@ -71,7 +71,7 @@ export default function ListGrid() {
           </Box>
           <Box
             sx={{
-              width: "20%",
+              width: "18%",
               height: "100%",
               display: "flex",
               alignItems: "center",
@@ -85,7 +85,7 @@ export default function ListGrid() {
           </Box>
           <Box
             sx={{
-              width: "20%",
+              width: "13%%",
               height: "100%",
               display: "flex",
               alignItems: "center",
