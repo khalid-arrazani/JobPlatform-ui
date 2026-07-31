@@ -25,7 +25,7 @@ import SelectStatus from "./selectStatus";
 
 
 
-export default function MenuApply({ JobId ,ApplyId}) {
+export default function MenuApply({ JobId,ApplyId}) {
     const navigate = useNavigate();
   
  
@@ -37,6 +37,8 @@ export default function MenuApply({ JobId ,ApplyId}) {
   const handleOpen = (event) => {
     setAnchorEl(event.currentTarget);
   };
+
+
 
   const handleClose = () => {
     setAnchorEl(null);
