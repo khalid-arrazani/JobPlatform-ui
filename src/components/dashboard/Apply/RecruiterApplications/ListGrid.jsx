@@ -277,7 +277,7 @@ export default function ListGrid() {
                         : apply?.status == "Accepted"
                           ? "#D1FAE5"
                           : apply?.status == "Interview"
-                            ? "# "
+                            ? "#8a5cf620 "
                             : apply?.status == "Rejected"
                               ? "#FEE2E2"
                               : apply?.status == "Under review"
