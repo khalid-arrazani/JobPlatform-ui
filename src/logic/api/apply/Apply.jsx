@@ -8,6 +8,7 @@ export const ApplyForAJob = async ({ JobId, frontdata }) => {
 };
 
 export const UpdateApplicationStatus = async ({ ApplyId, status }) => {
+  console.log(ApplyId,status);
   const response = await API.patch(`/applications/${ApplyId}/status`,null, {
     params:{status},
     withCredentials: true,
