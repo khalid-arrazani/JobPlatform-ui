@@ -31,7 +31,11 @@ export default function SelectStatus({ApplyId}) {
           value={status}
           onChange={handleChange}
         >
+          
           <MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7',mb:.5}} value={"Pending"}>Pending</MenuItem>
+
+
+
           <MenuItem sx={{color:"#1664e1",bgcolor:'#DBEAFE',mb:.5}}  value={"Under review"}>Under review</MenuItem>
           <MenuItem sx={{color:"#672ded",bgcolor:'#EDE9FE',mb:.5}}  value={"Interview"}>Interview</MenuItem>
           <MenuItem sx={{color:"#0c9769",bgcolor:'#D1FAE5',mb:.5}}  value={"Accepted"}>Accepted</MenuItem>
