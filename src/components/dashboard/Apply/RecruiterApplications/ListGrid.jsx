@@ -156,7 +156,7 @@ export default function ListGrid() {
                 }}
               >
                 <Avatar
-                  src={apply.profile.ProfileImage.url}
+                  src={apply?.profile?.ProfileImage?.url}
                   sx={{ height: "3rem", width: "3rem" }}
                 />
 
