@@ -51,6 +51,7 @@ export default function ListGrid() {
               fontWeight: 600,
               color: "#02010e9c",
               fontSize: "0.9rem",
+              pl:0.5
             }}
           >
             Applicant
@@ -79,6 +80,7 @@ export default function ListGrid() {
               fontWeight: 600,
               color: "#02010e9c",
               fontSize: "0.9rem",
+              
             }}
           >
             Status
