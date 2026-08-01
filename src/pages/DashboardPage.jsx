@@ -15,6 +15,8 @@ import ApplicationsJs from "../components/dashboard/Apply/JoobSeekerApplications
 import { useAuth } from "../logic/context/AuthContext.jsx";
 import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/ApplicationsPage.jsx";
 
+import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.jsx";
+
 
 export default function DashboardPage() {
   const [part, setPart] = useState(0);
@@ -34,9 +36,7 @@ export default function DashboardPage() {
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
 
-        <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
-
-        
+        <Route path="Profile/Details/:ProfileId" element={<ProfileDetails />} />       
    
         <Route path="Applications" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <ApplicationsRc /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
        

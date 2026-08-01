@@ -20,12 +20,14 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 
 import { format } from "date-fns";
+import { useNavigate } from "react-router-dom";
 
 
 export default function ListGrid() {
   const { ...state } = useApply();
+  console.log(state);
 
- 
+   const navigate = useNavigate();
 
   return (
     <>
@@ -320,6 +322,8 @@ export default function ListGrid() {
                 <MenuApply ApplyId={apply?._id} JobId={apply?.job._id} status={apply.status}  />
 
                 <Button
+
+                 onClick={ ()=> navigate(`/Dashboard/Profile/Details/${apply?.profile?._id}`)}
                   sx={{
                     textTransform: "none",
                     fontSize: "0.8rem",
