@@ -70,15 +70,23 @@ export const updateProfilePhotoR = async (
 
 
 
-export const BringProfileById = async (JobId) => {
+export const BringProfileByIdR = async (ProfileId) => {
   const response = await API.get(
-     `/jobs/Jobs/${JobId}`,
+     `/jobs/Jobs/${ProfileId}`,
     { withCredentials: true }
   );
 
   return response.data;
 };
 
+export const BringProfileByIdJs = async (ProfileId) => {
+  const response = await API.get(
+     `/jobs/Jobs/${ProfileId}`,
+    { withCredentials: true }
+  );
+
+  return response.data;
+};
 
 
 
