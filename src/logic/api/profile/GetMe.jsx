@@ -31,6 +31,8 @@ export const updateProfileJS = async (
   return response.data;
 };
 
+
+
 export const updateProfileR = async (
   formData
 ) => {
@@ -38,7 +40,6 @@ export const updateProfileR = async (
     "/recuiter/me",
     formData, { withCredentials: true }
   );
-
   return response.data;
 };
 
@@ -64,5 +65,25 @@ export const updateProfilePhotoR = async (
 
   return response.data;
 };
+
+
+
+
+
+export const BringProfileById = async (JobId) => {
+  const response = await API.get(
+     `/jobs/Jobs/${JobId}`,
+    { withCredentials: true }
+  );
+
+  return response.data;
+};
+
+
+
+
+
+
+
 
 
