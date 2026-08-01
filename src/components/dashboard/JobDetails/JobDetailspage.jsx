@@ -16,6 +16,7 @@ export default function JobDetailsPage() {
   const navigate = useNavigate();
 
   const { JobId } = useParams();
+  
   const [job, setJob] = useState();
   const [loading, setLoading] = useState(false);
 
