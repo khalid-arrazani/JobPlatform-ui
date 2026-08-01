@@ -35,7 +35,6 @@ export default function MyProfilePage() {
   const { setSnackBar } = useAuth();
 
   useEffect(() => {
-   
     const fetchUser = async () => {
       dispatch({
         type: "SET_LOADING",
