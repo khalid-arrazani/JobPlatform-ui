@@ -251,7 +251,8 @@ export default function ListGrid() {
                   fontSize: "0.9rem",
                 }}
               >
-                <Chip
+
+              <Chip
                   label={`• ${apply.status}`}
                   sx={{
                     fontSize: "0.8rem",
@@ -285,7 +286,8 @@ export default function ListGrid() {
                                 : null,
                     fontWeight: 600,
                   }}
-                />
+              />
+              
               </Box>
               <Box
                 sx={{
