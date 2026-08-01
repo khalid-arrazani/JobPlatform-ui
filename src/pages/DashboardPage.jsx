@@ -33,6 +33,9 @@ export default function DashboardPage() {
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
+
+        <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
+
         
    
         <Route path="Applications" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <ApplicationsRc /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
