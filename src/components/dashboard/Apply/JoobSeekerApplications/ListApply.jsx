@@ -99,7 +99,8 @@ export default function ListApply() {
                     mb: 0.5,
                   }}
                 >
-                  Applied on
+                  Applied on {""}
+
                   {formatDistanceToNow(new Date(app?.createdAt), {
                     addSuffix: true,
                   })}
