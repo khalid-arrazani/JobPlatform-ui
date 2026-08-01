@@ -323,7 +323,7 @@ export default function ListGrid() {
 
                 <Button
 
-                 onClick={ ()=> navigate(`/Dashboard/Profile/Details/${apply?.profile?._id}/${apply?.profile?._id}`)}
+                 onClick={ ()=> navigate(`/Dashboard/Profile/Details/${apply?.profile?._id}/${apply?.applicant?.role}`)}
                   sx={{
                     textTransform: "none",
                     fontSize: "0.8rem",
