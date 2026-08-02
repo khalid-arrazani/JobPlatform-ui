@@ -8,13 +8,12 @@ import {
   Divider,
 } from "@mui/material";
 
-import { useProfile } from "../../../logic/context/profileContext.jsx";
-import AboutMeModal from "./AboutMeModal.jsx";
+
 
 
 export default function EmptyAboutCard() {
 
-  const {setAboutOpen} = useProfile()
+
 
   return (
     <Paper
@@ -27,8 +26,7 @@ export default function EmptyAboutCard() {
         m: 1,
       }}
     >
-      <AboutMeModal/>
-      <Box
+           <Box
         sx={{
           p: 1,
           display: "flex",

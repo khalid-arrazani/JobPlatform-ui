@@ -21,8 +21,6 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
 export default function AboutMeCard() {
  
 
-
-
   const sx = {
     borderRadius: "0.5rem",
     fontWeight: 500,
