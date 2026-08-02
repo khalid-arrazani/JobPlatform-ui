@@ -1,18 +1,18 @@
 import LinkOutlinedIcon from "@mui/icons-material/LinkOutlined";
-import AddIcon from "@mui/icons-material/Add";
+ 
 import {
   Box,
   Typography,
-  Button,
+   
   Paper,
   Divider,
 } from "@mui/material";
 
-import SocialLinksModal from "./SocialLinksModal"
-import { useProfile } from "../../../logic/context/profileContext";
+ 
+ 
 
 export default function EmptySocialLinksCard() {
-  const { setSocialOpen} = useProfile()
+ 
   
   return (
     <Paper
@@ -25,7 +25,7 @@ export default function EmptySocialLinksCard() {
         m: 1,
       }}
     >
-      <SocialLinksModal/>
+    
 
       {/* Header */}
       <Box
@@ -65,16 +65,7 @@ export default function EmptySocialLinksCard() {
           </Typography>
         </Box>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setSocialOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Link
-        </Button>
+        
       </Box>
 
       <Divider />
@@ -132,17 +123,7 @@ export default function EmptySocialLinksCard() {
           to help employers learn more about you.
         </Typography>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setSocialOpen(true)}}
-
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Link
-        </Button>
+         
       </Box>
     </Paper>
   );

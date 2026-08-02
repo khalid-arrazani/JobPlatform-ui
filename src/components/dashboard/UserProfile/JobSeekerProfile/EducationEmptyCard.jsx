@@ -1,20 +1,17 @@
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
-import AddIcon from "@mui/icons-material/Add";
+ 
 import {
   Box,
   Typography,
-  Button,
+ 
   Paper,
   Divider,
 } from "@mui/material";
-import { useProfile } from "../../../logic/context/profileContext";
-
-import EducationModal  from "./EducationModal"
+ 
 
 export default function EmptyEducationCard() {
   
-  const {setEducationOpen} = useProfile();
-
+ 
   return (
     <Paper
       elevation={0}
@@ -26,7 +23,7 @@ export default function EmptyEducationCard() {
         m: 1,
       }}
     >
-      <EducationModal/>
+ 
 
       {/* Header */}
       <Box
@@ -68,16 +65,7 @@ export default function EmptyEducationCard() {
           </Typography>
         </Box>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setEducationOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Education
-        </Button>
+        
       </Box>
 
       <Divider />
@@ -134,16 +122,7 @@ export default function EmptyEducationCard() {
           academic background.
         </Typography>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setEducationOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Education
-        </Button>
+    
       </Box>
     </Paper>
   );

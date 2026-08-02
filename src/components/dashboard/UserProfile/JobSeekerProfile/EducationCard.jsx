@@ -4,8 +4,7 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
-
-import EducationModal from "./EducationModal";
+ 
 import { useState, useEffect } from "react";
 
 
@@ -17,9 +16,9 @@ export default function EducationCard({data}) {
 
   useEffect(() => {
     setEducations(
-      state.user?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
+     data?.profile?.education?.map(({ _id, ...rest }) => rest) || [],
     );
-  }, [state.user?.profile]);
+  }, [data?.profile]);
 
   return (
     <Card
@@ -31,7 +30,7 @@ export default function EducationCard({data}) {
         m: 1,
       }}
     >
-      <EducationModal/>
+    
 
       <CardContent sx={{ p: "0.1rem !important" }}>
 
@@ -72,22 +71,7 @@ export default function EducationCard({data}) {
             <Typography variant="h6">Education</Typography>
           </Box>
 
-          <IconButton
-            onClick={() => setEducationOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+         
         </Box>
       <Divider sx={{ mb: "0.8rem" }} />
 

@@ -12,15 +12,14 @@ import XIcon from "@mui/icons-material/X";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-import SocialLinksModal from "./SocialLinksModal";
+ 
 import { useEffect, useState } from "react";
 
+ 
 
-import { useProfile } from "../../../logic/context/profileContext";
+export default function SocialLinksCard({data}) {
 
-export default function SocialLinksCard() {
-
-  const { setSocialOpen,...state} = useProfile()
+ 
   
   const [socialLinks, setSocialLinks] = useState([]);
 
@@ -46,8 +45,8 @@ export default function SocialLinksCard() {
 };
 
  useEffect(()=>{
-    setSocialLinks(state.user?.profile?.socialLinks)
-  },[state.user?.profile])
+    setSocialLinks(data?.profile?.socialLinks)
+  },[data?.profile])
 
 
   return (
@@ -60,8 +59,7 @@ export default function SocialLinksCard() {
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
         mx: 1,
       }}
-    >
-      <SocialLinksModal/>
+    > 
       {/* Header */}
       <Box
         sx={{
@@ -98,22 +96,7 @@ export default function SocialLinksCard() {
           }}
         >
           Social Links
-          <IconButton
-            onClick={() => setSocialOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+          
         </Typography>
       </Box>
        <Divider/>
@@ -126,7 +109,7 @@ export default function SocialLinksCard() {
           pt:"1rem"
         }}
       >
-        {/* {socialLinks?.length === 0 ? (
+        {socialLinks?.length === 0 ? (
           <Typography
             sx={{
               color: "#6b7280",
@@ -178,7 +161,7 @@ export default function SocialLinksCard() {
               </Box>
             </Box>
           ))
-        )} */}
+        )}
       </Box>
     </Card>
   );
