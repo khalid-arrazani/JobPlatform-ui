@@ -11,11 +11,11 @@ import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
 import ExperienceCard from "./experiencesCard.jsx";
 import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
 
-// import EducationCard from "./EducationCard.jsx";
-// import EmptyEducationCard from "./EducationEmptyCard.jsx";
+import EducationCard from "./EducationCard.jsx";
+import EmptyEducationCard from "./EducationEmptyCard.jsx";
 
-// import SocialLinksCard from "./SocialLinksCard";
-// import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
+import SocialLinksCard from "./SocialLinksCard";
+import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 
 

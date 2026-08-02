@@ -7,11 +7,11 @@ import SchoolOutlinedIcon from "@mui/icons-material/SchoolOutlined";
 
 import EducationModal from "./EducationModal";
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
 
-export default function EducationCard() {
 
-  const {setEducationOpen, ...state } = useProfile();
+export default function EducationCard({data}) {
+
+
 
   const [educations, setEducations] = useState();
 
