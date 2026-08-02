@@ -1,9 +1,9 @@
 import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
+
 import {
   Box,
   Typography,
-  Button,
+
   Paper,
   Divider,
 } from "@mui/material";

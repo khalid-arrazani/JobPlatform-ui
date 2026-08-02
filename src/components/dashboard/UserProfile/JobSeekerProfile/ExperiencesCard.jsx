@@ -5,21 +5,21 @@ import EditIcon from "@mui/icons-material/Edit";
 import WorkOutlineIcon from '@mui/icons-material/WorkOutlineOutlined';
 
 
-import ExperiencesModal from "./experiencesModal";
+
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-
-export default function ExperienceCard() {
 
 
+export default function ExperienceCard({data}) {
 
-  const { setExperienceOpen , ...state } = useProfile();
+
+
+  
 
   const [experiences, setExperiences] = useState([]);
 
   useEffect(() => {
-    setExperiences(state.user?.profile?.experience);
-  }, [state.user?.profile]);
+    setExperiences(data?.profile?.experience);
+  }, [data?.profile]);
 
 
   return (
@@ -33,7 +33,7 @@ export default function ExperienceCard() {
         m: 1,
       }}
     >
-      <ExperiencesModal />
+    
 
       <CardContent sx={{ p: "0.75rem !important" }}>
         {/* Title */}
@@ -74,22 +74,7 @@ export default function ExperienceCard() {
           </Typography>
         </Box>
 
-           <IconButton
-            onClick={() => setExperienceOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+     
       </Box>
 
 

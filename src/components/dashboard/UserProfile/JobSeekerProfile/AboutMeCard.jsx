@@ -18,7 +18,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
  
  
 
-export default function AboutMeCard() {
+export default function AboutMeCard({data}) {
  
 
   const sx = {
@@ -145,7 +145,7 @@ export default function AboutMeCard() {
               <Typography
                 sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
               >
-                {state.user?.profile?.aboutMe?.availability ||
+                {data?.profile?.aboutMe?.availability ||
                   "----------------------------"}
               </Typography>
             </Box>
@@ -160,7 +160,7 @@ export default function AboutMeCard() {
               <Typography
                 sx={{ fontSize: "0.85rem", color: "#6366f1", fontWeight: 500 }}
               >
-                {state.user?.profile?.aboutMe?.experienceLevel ||
+                {data?.profile?.aboutMe?.experienceLevel ||
                   "-----------------"}
               </Typography>
             </Box>
@@ -191,7 +191,7 @@ export default function AboutMeCard() {
                   width: "100%",
                 }}
               >
-                {state.user?.profile?.aboutMe?.languages.map((l) => (
+                {data?.profile?.aboutMe?.languages.map((l) => (
                   <Chip label={l} size="small" sx={sx} />
                 )) || "-------------------"}
               </Box>
@@ -211,7 +211,7 @@ export default function AboutMeCard() {
                     fontWeight: 500,
                   }}
                 >
-                  {state.user?.profile?.aboutMe?.preferredJobType ||
+                  {data?.profile?.aboutMe?.preferredJobType ||
                     "-----------------"}
                 </Typography>
               </Box>
