@@ -63,16 +63,7 @@ export default function EmptyAboutCard() {
           </Typography>
         </Box>
 
-        <Button
-          startIcon={<EditOutlinedIcon />}
-          onClick={()=>{setAboutOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add About
-        </Button>
+       
       </Box>
 
       <Divider />
@@ -129,16 +120,7 @@ export default function EmptyAboutCard() {
           makes you unique.
         </Typography>
 
-        <Button
-          startIcon={<EditOutlinedIcon />}
-          onClick={()=>{setAboutOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add About
-        </Button>
+        
       </Box>
     </Paper>
   );
