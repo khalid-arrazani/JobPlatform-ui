@@ -16,16 +16,16 @@ export default function ProfileDetails (){
     useEffect(() => {
     
         const fetchUser = async () => {
-           
           try {
             let data  
             Role == "jobSeeker" ? data = await BringProfileByIdJs(ProfileId) :  Role == "recruiter" ? data = await BringProfileByIdR(ProfileId) : null
             console.log(data);
           } catch (error) {
+
             console.log(error.response?.data);
+            
           } 
         };
-        fetchUser();
       }, []);
 
     return <>
