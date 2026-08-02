@@ -23,9 +23,9 @@ export default function DashboardPage() {
 
   const { ...state  } = useProfile();
   const { checkRole} = useAuth();
-  
 
- console.log(state);
+  
+  
   return (
     <DashboardLayout part={part} setPart={setPart}>
 
