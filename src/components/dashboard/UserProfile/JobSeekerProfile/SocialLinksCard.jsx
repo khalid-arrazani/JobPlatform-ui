@@ -21,6 +21,7 @@ import { useProfile } from "../../../logic/context/profileContext";
 export default function SocialLinksCard() {
 
   const { setSocialOpen,...state} = useProfile()
+  
   const [socialLinks, setSocialLinks] = useState([]);
 
  const getIcon = (platform) => {
@@ -125,7 +126,7 @@ export default function SocialLinksCard() {
           pt:"1rem"
         }}
       >
-        {socialLinks?.length === 0 ? (
+        {/* {socialLinks?.length === 0 ? (
           <Typography
             sx={{
               color: "#6b7280",
@@ -177,7 +178,7 @@ export default function SocialLinksCard() {
               </Box>
             </Box>
           ))
-        )}
+        )} */}
       </Box>
     </Card>
   );

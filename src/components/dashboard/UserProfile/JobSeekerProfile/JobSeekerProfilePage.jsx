@@ -2,42 +2,39 @@ import "./ProfileJoobSeeker.css";
 
 import Header from "./header.jsx";
 
-import AboutMeCard from "./AboutMeCard.jsx";
-import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
+// import AboutMeCard from "./AboutMeCard.jsx";
+// import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
 
-import TopSkillsCard from "./TopSkillsCard.jsx";
-import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
+// import TopSkillsCard from "./TopSkillsCard.jsx";
+// import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
 
-import ExperienceCard from "./experiencesCard.jsx";
-import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
+// import ExperienceCard from "./experiencesCard.jsx";
+// import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
 
-import EducationCard from "./EducationCard.jsx";
-import EmptyEducationCard from "./EducationEmptyCard.jsx";
+// import EducationCard from "./EducationCard.jsx";
+// import EmptyEducationCard from "./EducationEmptyCard.jsx";
 
-import SocialLinksCard from "./SocialLinksCard";
-import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
-
-import LoadingPage from "./LoadingPage.jsx";
+// import SocialLinksCard from "./SocialLinksCard";
+// import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 
 
 
-export default function MyProfilePage() {
 
 
- 
+export default function MyProfilePage({data}) {
+
+
 
 
   return (
     <>
-      {state.isLoading ? (
-        <LoadingPage />
-      ) : (
+     
         <div className="par1">
           <div style={{ height: "28vh" }}>
 
 
-            <Header />
+            <Header data={data} />
 
 
           </div>
@@ -52,8 +49,8 @@ export default function MyProfilePage() {
                 width: "50%",
               }}
             >
-              {state.user?.profile?.aboutMe.length !== 0  ? <AboutMeCard/> : <EmptyAboutCard /> }
-              {state.user?.profile?.experience.length !== 0  ? <ExperienceCard/> : <EmptyExperienceCard/> }
+              {/* {state.user?.profile?.aboutMe.length !== 0  ? <AboutMeCard/> : <EmptyAboutCard /> }
+              {state.user?.profile?.experience.length !== 0  ? <ExperienceCard/> : <EmptyExperienceCard/> } */}
             </div>
 
 
@@ -63,9 +60,9 @@ export default function MyProfilePage() {
                 width: "50%",
               }}
             >
-              {state.user?.profile?.skills.length !== 0  ? <TopSkillsCard /> : <EmptySkillsCard /> }
+              {/* {state.user?.profile?.skills.length !== 0  ? <TopSkillsCard /> : <EmptySkillsCard /> }
               {state.user?.profile?.education.length !== 0  ? <EducationCard /> : <EmptyEducationCard /> }
-              {state.user?.profile?.socialLinks.length !== 0  ? <SocialLinksCard /> : <EmptySocialLinksCard /> }
+              {state.user?.profile?.socialLinks.length !== 0  ? <SocialLinksCard /> : <EmptySocialLinksCard /> } */}
       
             </div>
 
@@ -73,7 +70,7 @@ export default function MyProfilePage() {
 
           </div>
         </div>
-      )}
+     
     </>
   );
 }

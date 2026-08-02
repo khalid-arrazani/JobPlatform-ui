@@ -15,6 +15,7 @@ import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
 
 export default function UploadProfilePhoto() {
+  
   const { setSnackBar } = useAuth();
 
   const { dispatch, ...state } = useContext(ProfileContext);
@@ -90,112 +91,16 @@ export default function UploadProfilePhoto() {
           }}
         />
 
-        {/* Upload Button */}
-        <IconButton
-          component="label"
-          sx={{
-            position: "absolute",
-            bottom: "0.2rem",
-            right: "0.2rem",
-
-            width: "2.2rem",
-            height: "2.2rem",
-
-            background: "#312e81",
-            color: "#fff",
-
-            border: "2px solid white",
-
-            "&:hover": {
-              background: "#4338ca",
-            },
-          }}
-        >
-          <input
-            hidden
-            accept="image/*"
-            type="file"
-            onChange={(e) => {
-              const file = e.target.files[0];
-
-              if (file) {
-                setImage(file);
-                setOpen(true);
-              }
-            }}
-          />
-
-          <PhotoCameraIcon sx={{ fontSize: "1rem" }} />
-        </IconButton>
+        
       </Box>
 
-      <Dialog open={open} onClose={() => setOpen(false)}>
-        <DialogContent>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              gap: "1rem",
-            }}
-          >
-            <AvatarEditor
-              ref={editorRef}
-              image={image}
-              width={350}
-              height={350}
-              border={20}
-              borderRadius={200}
-              scale={scale}
-            />
+   
 
-            <Slider
-              min={1}
-              max={3}
-              step={0.1}
-              value={scale}
-              onChange={(e, value) => setScale(value)}
-            />
 
-            <Button
-              onClick={handleSave}
-              fullWidth
-              disabled={state.isLoadingUptadeProfile}
-              variant="contained"
-              sx={{
-                height: "3rem",
-                borderRadius: "0.5rem",
 
-                textTransform: "none",
-                fontWeight: 500,
-                fontSize: "0.9rem",
-                mt: "1rem",
-                background: "#6d28d9",
 
-                "&:hover": {
-                  background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
-                },
-                mb: "2.5rem",
-              }}
-            >
-              {state.isLoadingUptadeProfile ? (
-                <CircularProgress
-                  aria-label="Loading…"
-                  size={30}
-                  sx={{
-                    color: green[800],
-                    position: "absolute",
-                  }}
-                />
-              ) : (
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  Save
-                </Box>
-              )}
-            </Button>
-          </Box>
-        </DialogContent>
-      </Dialog>
+
+
     </>
   );
 }

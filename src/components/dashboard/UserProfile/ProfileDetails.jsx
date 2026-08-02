@@ -1,17 +1,18 @@
 
 // import RecruiterProfilePage from "./RecruiterProfile/RecruiterProfilePage"
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BringProfileByIdJs, BringProfileByIdR } from "../../../logic/api/profile/GetMe";
 
-// import MyProfilePage from "./JobSeekerProfile/JobSeekerProfilePage"
+import MyProfilePage from "./JobSeekerProfile/JobSeekerProfilePage"
 
 export default function ProfileDetails (){
 
+    const [data , setData] = useState()
+
     const { ProfileId , Role } = useParams();
 
-    console.log(ProfileId , Role );
 
     useEffect(() => {
     
@@ -20,9 +21,12 @@ export default function ProfileDetails (){
 
        const fetchUser = async () => {
           try {
-            let data  
-            Role == "jobSeeker" ? data = await BringProfileByIdJs(ProfileId) :  Role == "recruiter" ? data = await BringProfileByIdR(ProfileId) : null
-            console.log(data);
+            let info
+            Role == "jobSeeker" ? info = await BringProfileByIdJs(ProfileId) :  Role == "recruiter" ? info = await BringProfileByIdR(ProfileId) : null
+
+
+            setData(info)
+            
           } catch (error) {
 
             console.log(error.response);
@@ -30,10 +34,12 @@ export default function ProfileDetails (){
           } 
         };
 
+        
+console.log(data);
     return <>
+   <MyProfilePage data={data} />
 
 
-    
      
     </>
 }

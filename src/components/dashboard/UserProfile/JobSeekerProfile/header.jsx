@@ -1,24 +1,22 @@
-import { Box, Typography, Button, Container } from "@mui/material";
+import { Box, Typography,  Container, Avatar } from "@mui/material";
 
-import EditIcon from "@mui/icons-material/Edit";
+
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-import { useState } from "react";
 
-import UploadProfilePhoto from "./UploadProfilePhoto";
-import HeaderModal from "./headerModal.jsx";
 
-import { useProfile } from "../../../logic/context/profileContext.jsx";
 
-export default function Header() {
-  const [open, setOpen] = useState(false);
 
-  const { ...state } = useProfile();
 
+
+export default function Header({data}) {
+
+  console.log(data);
+ 
   return (
     <>
-      <HeaderModal open={open} setOpen={setOpen} />
+
 
       <Container
         sx={{
@@ -59,7 +57,26 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-          <UploadProfilePhoto />
+          <Box
+        sx={{
+          position: "relative",
+          width: "8rem",
+          height: "8rem",
+          mr: "1rem",
+        }}
+      >
+        {/* Avatar */}
+        <Avatar
+          src={state.user?.profile?.ProfileImage?.url}
+          sx={{
+            width: "100%",
+            height: "100%",
+            border: "4px solid white",
+          }}
+        />
+
+        
+      </Box>
 
           {/* INFO */}
           <Box>
@@ -164,35 +181,7 @@ export default function Header() {
           </Box>
         </Box>
 
-        {/* BUTTON */}
-        <Button
-          variant="contained"
-          onClick={() => {
-            setOpen(true);
-          }}
-          sx={{
-            background: "white",
-            color: "#363e53",
-
-            borderRadius: "0.55rem",
-
-            textTransform: "none",
-            fontWeight: "600",
-
-            "&:hover": {
-              background: "#f3f4f621",
-              color: "#fff",
-            },
-            mr: 4,
-            mt: "6%",
-            gap: 1,
-            py: "0.8rem",
-            fontSize: "0.8rem",
-          }}
-        >
-          Edit Profile
-          <EditIcon sx={{ width: "20%", m: 0 }} />
-        </Button>
+       
       </Container>
     </>
   );
