@@ -34,7 +34,7 @@ export default function MyProfilePage({data}) {
           <div style={{ height: "28vh" }}>
 
 
-            <Header data={data} />
+            {/* <Header data={data} /> */}
 
 
           </div>
