@@ -15,11 +15,11 @@ import EditIcon from "@mui/icons-material/Edit";
 import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 
-import AboutMeModal from "./AboutMeModal.jsx";
-import { useProfile  } from "../../../logic/context/profileContext.jsx";
+ 
+ 
 
 export default function AboutMeCard() {
-  const {setAboutOpen, ...state  } = useProfile();
+ 
 
 
 
@@ -50,7 +50,7 @@ export default function AboutMeCard() {
         m: 1,
       }}
     >
-      <AboutMeModal />
+ 
       <CardContent sx={{ p: 0.5 }} style={{ paddingBottom: "0" }}>
 
 
@@ -93,7 +93,7 @@ export default function AboutMeCard() {
         </Box>
 
        <IconButton
-            onClick={() => setAboutOpen(true)}
+       
             sx={{
               background: "#160a7e00",
               color: "#6e6e6e",
@@ -121,7 +121,7 @@ export default function AboutMeCard() {
           variant="body2"
           sx={{ color: "#555", mb: "0.9rem", fontSize: "0.9rem" }}
         >
-          {state.user?.profile?.aboutMe?.about ||
+          {data?.profile?.aboutMe?.about ||
             "----------------------------"}
         </Typography>
 

@@ -2,14 +2,14 @@ import "./ProfileJoobSeeker.css";
 
 import Header from "./header.jsx";
 
-// import AboutMeCard from "./AboutMeCard.jsx";
-// import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
+import AboutMeCard from "./AboutMeCard.jsx";
+import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
 
 // import TopSkillsCard from "./TopSkillsCard.jsx";
 // import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
 
-// import ExperienceCard from "./experiencesCard.jsx";
-// import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
+import ExperienceCard from "./experiencesCard.jsx";
+import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
 
 // import EducationCard from "./EducationCard.jsx";
 // import EmptyEducationCard from "./EducationEmptyCard.jsx";
@@ -34,7 +34,7 @@ export default function MyProfilePage({data}) {
           <div style={{ height: "28vh" }}>
 
 
-            {/* <Header data={data} /> */}
+            <Header data={data} />
 
 
           </div>
@@ -49,8 +49,8 @@ export default function MyProfilePage({data}) {
                 width: "50%",
               }}
             >
-              {/* {state.user?.profile?.aboutMe.length !== 0  ? <AboutMeCard/> : <EmptyAboutCard /> }
-              {state.user?.profile?.experience.length !== 0  ? <ExperienceCard/> : <EmptyExperienceCard/> } */}
+              {data?.profile?.aboutMe.length !== 0  ? <AboutMeCard data={data} /> : <EmptyAboutCard /> }
+              {data?.profile?.experience.length !== 0  ? <ExperienceCard data={data} /> : <EmptyExperienceCard/> }
             </div>
 
 

@@ -1,20 +1,20 @@
 
 import WorkOutlineIcon from '@mui/icons-material/WorkOutlineOutlined';
-import AddIcon from "@mui/icons-material/Add";
+
 
 import {
   Box,
   Typography,
-  Button,
+
   Paper,
   Divider,
 } from "@mui/material";
-import { useProfile } from '../../../logic/context/profileContext.jsx';
 
-import ExperiencesModal from "./ExperiencesModal.jsx"
+
+
 
 export default function EmptyExperienceCard() {
-    const { setExperienceOpen } = useProfile();
+
   
   return (
     <Paper
@@ -28,7 +28,7 @@ export default function EmptyExperienceCard() {
       }}
     >
       
-    <ExperiencesModal/>
+
 
       <Box
         sx={{
@@ -67,16 +67,7 @@ export default function EmptyExperienceCard() {
           </Typography>
         </Box>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setExperienceOpen(true)}}
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Experience
-        </Button>
+     
       </Box>
 
       <Divider />
@@ -132,17 +123,7 @@ export default function EmptyExperienceCard() {
           your professional journey.
         </Typography>
 
-        <Button
-          startIcon={<AddIcon />}
-          onClick={()=>{setExperienceOpen(true)}}
-
-          sx={{
-            textTransform: "none",
-            fontWeight: 600,
-          }}
-        >
-          Add Experience
-        </Button>
+       
       </Box>
     </Paper>
   );
