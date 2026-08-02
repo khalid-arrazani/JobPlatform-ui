@@ -67,16 +67,9 @@ export default function TopSkillsCard({data}) {
             Top Skills
           </Typography>
         </Box>
-
-          
-
-
       </Box>
 
-       
-
       <Divider/>
-
         {/* Skills */}
         <Box
           sx={{

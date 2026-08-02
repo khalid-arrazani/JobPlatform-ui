@@ -61,8 +61,8 @@ export default function MyProfilePage({data}) {
               }}
             >
               {data?.profile?.skills.length !== 0  ? <TopSkillsCard  data={data} /> : <EmptySkillsCard /> }
-              {/* {state.user?.profile?.education.length !== 0  ? <EducationCard /> : <EmptyEducationCard /> }
-              {state.user?.profile?.socialLinks.length !== 0  ? <SocialLinksCard /> : <EmptySocialLinksCard /> } */}
+              {data?.profile?.education.length !== 0  ? <EducationCard   data={data} /> : <EmptyEducationCard /> }
+              {data?.profile?.socialLinks.length !== 0  ? <SocialLinksCard   data={data} /> : <EmptySocialLinksCard /> }
       
             </div>
 
