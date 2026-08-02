@@ -4,14 +4,13 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 
-import TopSkillsModal from "./TopSkillsModal";
+ 
 
-import { useProfile } from "../../../logic/context/profileContext";
+ 
 
-export default function TopSkillsCard() {
+export default function TopSkillsCard({data}) {
 
-
-  const { setSkillOpen ,...state} = useProfile()
+ 
   
 
   return (
@@ -25,7 +24,7 @@ export default function TopSkillsCard() {
         m: 1,
       }}
     >
-      <TopSkillsModal/>
+ 
 
       <CardContent sx={{ p: "0.3rem !important" }}>
 
@@ -69,22 +68,7 @@ export default function TopSkillsCard() {
           </Typography>
         </Box>
 
-          <IconButton
-          onClick={()=>setSkillOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+          
 
 
       </Box>
@@ -102,7 +86,7 @@ export default function TopSkillsCard() {
             pt:'1rem'
           }}
         >
-          {state.user?.profile?.skills.map((skill) => (
+          {data?.profile?.skills.map((skill) => (
             <Chip
               key={skill}
               label={skill}

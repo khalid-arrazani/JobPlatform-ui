@@ -1,9 +1,9 @@
 import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
-import AddIcon from "@mui/icons-material/Add";
+
 import {
   Box,
   Typography,
-  Button,
+
   Paper,
   Divider,
 } from "@mui/material";
@@ -119,7 +119,7 @@ export default function EmptySkillsCard() {
           strengths and expertise.
         </Typography>
 
-       
+      
       </Box>
     </Paper>
   );

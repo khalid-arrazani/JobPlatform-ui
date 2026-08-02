@@ -60,7 +60,7 @@ export default function MyProfilePage({data}) {
                 width: "50%",
               }}
             >
-              {data?.profile?.skills.length !== 0  ? <TopSkillsCard /> : <EmptySkillsCard /> }
+              {data?.profile?.skills.length !== 0  ? <TopSkillsCard  data={data} /> : <EmptySkillsCard /> }
               {/* {state.user?.profile?.education.length !== 0  ? <EducationCard /> : <EmptyEducationCard /> }
               {state.user?.profile?.socialLinks.length !== 0  ? <SocialLinksCard /> : <EmptySocialLinksCard /> } */}
       
