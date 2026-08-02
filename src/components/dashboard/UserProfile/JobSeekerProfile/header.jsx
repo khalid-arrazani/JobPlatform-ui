@@ -65,7 +65,7 @@ export default function Header({data}) {
       >
         {/* Avatar */}
         <Avatar
-          src={state.user?.profile?.ProfileImage?.url}
+          src={data?.profile?.ProfileImage?.url}
           sx={{
             width: "100%",
             height: "100%",
@@ -88,7 +88,7 @@ export default function Header({data}) {
                 alignItems: "center",
               }}
             >
-              {state.user?.profile?.fullName || "------------------"}
+              {data?.profile?.fullName || "------------------"}
               <Box
                 sx={{
                   borderRadius: "0.3rem",
@@ -115,7 +115,7 @@ export default function Header({data}) {
                 mt: "0.3rem",
               }}
             >
-              {state.user?.profile?.headline || "------------------"}
+              {data?.profile?.headline || "------------------"}
             </Typography>
 
             <Box
@@ -147,7 +147,7 @@ export default function Header({data}) {
                     fontSize: "0.8rem",
                   }}
                 >
-                  {state.user?.profile?.location || "------------------"}
+                  {data?.profile?.location || "------------------"}
                 </Typography>
               </Box>
 
@@ -172,7 +172,7 @@ export default function Header({data}) {
                     fontSize: "0.8rem",
                   }}
                 >
-                  {state.user?.profile?.userId?.email || "------------------"}
+                  {data?.profile?.userId?.email || "------------------"}
                 </Typography>
               </Box>
             </Box>
