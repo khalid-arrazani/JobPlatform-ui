@@ -16,8 +16,6 @@ export default function Header({data}) {
  
   return (
     <>
-
-
       <Container
         sx={{
           borderRadius: "1rem",

@@ -25,7 +25,7 @@ import Header from "./header.jsx";
 export default function MyProfilePage({data}) {
 
 
-
+ console.log(data);
 
   return (
     <>
