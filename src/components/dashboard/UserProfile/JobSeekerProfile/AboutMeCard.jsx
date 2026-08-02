@@ -86,26 +86,11 @@ export default function AboutMeCard({data}) {
           </Box>
 
           <Typography variant="h6">
-            About Me
+            About
           </Typography>
         </Box>
 
-       <IconButton
-       
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
 
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
       </Box>
 
       

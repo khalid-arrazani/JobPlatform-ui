@@ -5,8 +5,8 @@ import Header from "./header.jsx";
 import AboutMeCard from "./AboutMeCard.jsx";
 import EmptyAboutCard from "./AboutMeEmptyCard.jsx";
 
-// import TopSkillsCard from "./TopSkillsCard.jsx";
-// import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
+import TopSkillsCard from "./TopSkillsCard.jsx";
+import EmptySkillsCard from "./TopSkillsEmptyCard.jsx";
 
 import ExperienceCard from "./experiencesCard.jsx";
 import EmptyExperienceCard from "./ExperienceEmptyCard.jsx";
@@ -60,8 +60,8 @@ export default function MyProfilePage({data}) {
                 width: "50%",
               }}
             >
-              {/* {state.user?.profile?.skills.length !== 0  ? <TopSkillsCard /> : <EmptySkillsCard /> }
-              {state.user?.profile?.education.length !== 0  ? <EducationCard /> : <EmptyEducationCard /> }
+              {data?.profile?.skills.length !== 0  ? <TopSkillsCard /> : <EmptySkillsCard /> }
+              {/* {state.user?.profile?.education.length !== 0  ? <EducationCard /> : <EmptyEducationCard /> }
               {state.user?.profile?.socialLinks.length !== 0  ? <SocialLinksCard /> : <EmptySocialLinksCard /> } */}
       
             </div>
