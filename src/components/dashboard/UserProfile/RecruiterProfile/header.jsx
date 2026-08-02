@@ -1,32 +1,21 @@
 import {
   Box,
   Typography,
-  Button,
-  Container,
-  Modal,
-  Card,
-  TextField,
-  Divider,
-} from "@mui/material";
-import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
-import EditIcon from "@mui/icons-material/Edit";
+  Container,
+ 
+} from "@mui/material";
+
 
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
-import { useState } from "react";
 
-import UploadProfilePhoto from "./UploadProfilePhoto";
-import { useProfile } from "../../../logic/context/profileContext";
-import HeaderModal from "./headerModal";
-export default function Header() {
-  const [open, setOpen] = useState(false);
+export default function Header({data}) {
 
-  const { ...state } = useProfile();
 
   return (
     <>
-    <HeaderModal setOpen={setOpen} open={open}  />
+
 
       <Container
         sx={{
@@ -67,7 +56,7 @@ export default function Header() {
             paddingLeft: 5,
           }}
         >
-          <UploadProfilePhoto />
+  
 
           {/* INFO */}
           <Box>
@@ -81,7 +70,7 @@ export default function Header() {
                 alignItems: "center",
               }}
             >
-              {state.user?.profile?.fullName}
+              {data?.profile?.fullName}
               <Box
                 sx={{
                   borderRadius: "0.3rem",
@@ -108,7 +97,7 @@ export default function Header() {
                 mt: "0.3rem",
               }}
             >
-              {state.user?.profile?.headline}
+              {data?.profile?.headline}
             </Typography>
 
             <Box
@@ -140,7 +129,7 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  {state.user?.profile?.location}
+                  {data?.profile?.location}
                 </Typography>
               </Box>
 
@@ -165,42 +154,12 @@ export default function Header() {
                     fontSize: "0.8rem",
                   }}
                 >
-                  {state.user?.profile?.userId?.email}
+                  {data?.profile?.userId?.email}
                 </Typography>
               </Box>
             </Box>
           </Box>
         </Box>
-
-        {/* BUTTON */}
-        <Button
-          variant="contained"
-          onClick={() => {
-            setOpen(true);
-          }}
-          sx={{
-            background: "white",
-            color: "#363e53",
-
-            borderRadius: "0.55rem",
-
-            textTransform: "none",
-            fontWeight: "600",
-
-            "&:hover": {
-              background: "#f3f4f621",
-              color: "#fff",
-            },
-            mr: 4,
-            mt: "6%",
-            gap: 1,
-            py: "0.8rem",
-            fontSize: "0.8rem",
-          }}
-        >
-          Edit Profile
-          <EditIcon sx={{ width: "20%", m: 0 }} />
-        </Button>
       </Container>
     </>
   );
