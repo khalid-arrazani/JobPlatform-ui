@@ -1,7 +1,7 @@
 
 import { Player } from "@lottiefiles/react-lottie-player";
 
-import loadingAnimation from "../../../../assets/loadingAnimation.json";
+import loadingAnimation from "../../../assets/loadingAnimation.json";
 
 import { Box } from "@mui/material";
 

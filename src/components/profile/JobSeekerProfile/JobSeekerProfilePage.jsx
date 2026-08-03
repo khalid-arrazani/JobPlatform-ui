@@ -65,6 +65,7 @@ export default function MyProfilePage() {
       {state.isLoading ? (
         <LoadingPage />
       ) : (
+
         <div className="par1">
           <div style={{ height: "28vh" }}>
 
@@ -105,6 +106,7 @@ export default function MyProfilePage() {
 
           </div>
         </div>
+        
       )}
     </>
   );

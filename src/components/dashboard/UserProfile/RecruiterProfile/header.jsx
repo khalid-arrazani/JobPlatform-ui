@@ -74,8 +74,6 @@ export default function Header({data}) {
             border: "4px solid white",
           }}
         />
-
-        
       </Box>
   
 
