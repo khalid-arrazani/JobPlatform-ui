@@ -12,22 +12,21 @@ import XIcon from "@mui/icons-material/X";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import InstagramIcon from "@mui/icons-material/Instagram";
 
-import SocialLinksModal from "./SocialLinksModal";
+ 
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+ 
 
 export default function SocialLinksCard({data}) {
-
-  const {...state} = useProfile()
+ 
   
-  const [open, setOpen] = useState(false);
+ 
   const [socialLinks, setSocialLinks] = useState([]);
 
 
 
   useEffect(()=>{
-    setSocialLinks(state.user?.profile?.socialLinks)
-  },[state.user?.profile])
+    setSocialLinks(data?.profile?.socialLinks)
+  },[data?.profile])
 
 
 
@@ -64,7 +63,7 @@ export default function SocialLinksCard({data}) {
         mx: 1,
       }}
     >
-      <SocialLinksModal open={open} setOpen={setOpen} socialLinks={socialLinks} setSocialLinks={setSocialLinks}  />
+       
       {/* Header */}
       <Box
         sx={{
@@ -101,22 +100,7 @@ export default function SocialLinksCard({data}) {
           }}
         >
           Social Links
-          <IconButton
-            onClick={() => setOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+          
         </Typography>
       </Box>
 
@@ -175,8 +159,6 @@ export default function SocialLinksCard({data}) {
                 >
                   {item.platform}
                 </Typography>
-
-          
               </Box>
             </Box>
           ))
