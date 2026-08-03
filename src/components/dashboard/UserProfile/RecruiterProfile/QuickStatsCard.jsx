@@ -13,7 +13,7 @@ import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 
 
 
-export default function QuickStatsCard() {
+export default function QuickStatsCard({data}) {
   const stats = [
     {
       icon: <WorkOutlineIcon />,

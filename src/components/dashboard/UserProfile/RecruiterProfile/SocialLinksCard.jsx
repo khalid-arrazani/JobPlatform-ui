@@ -16,7 +16,7 @@ import SocialLinksModal from "./SocialLinksModal";
 import { useEffect, useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
-export default function SocialLinksCard() {
+export default function SocialLinksCard({data}) {
 
   const {...state} = useProfile()
   

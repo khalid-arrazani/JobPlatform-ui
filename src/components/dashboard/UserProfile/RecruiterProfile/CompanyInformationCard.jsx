@@ -1,26 +1,26 @@
-import { Card, Box, Typography, IconButton, Avatar } from "@mui/material";
+import { Card, Box, Typography,  Avatar } from "@mui/material";
 
 import BusinessIcon from "@mui/icons-material/Business";
 import ApartmentIcon from "@mui/icons-material/Apartment";
 import LanguageIcon from "@mui/icons-material/Language";
 import LocationOnIcon from "@mui/icons-material/LocationOn";
 
-import EditIcon from "@mui/icons-material/Edit";
+
 
 import BusinessTwoToneIcon from "@mui/icons-material/BusinessTwoTone";
-import CompanyInformationModal from "./CompanyInformationModal";
+
 
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
 
-export default function CompanyInformationCard() {
-  const [open, setOpen] = useState(false);
-  const [profile, setProfile] = useState(null);
-  const { ...state } = useProfile();
 
+export default function CompanyInformationCard({data}) {
+ 
+  const [profile , setProfile]= useState()
+  
+  
   useEffect(() => {
-    setProfile(state.user?.profile);
-  }, [state.user?.profile]);
+    setProfile(data?.profile);
+  }, [data?.profile]);
 
   return (
     <Card
@@ -33,7 +33,7 @@ export default function CompanyInformationCard() {
         m: 1,
       }}
     >
-      <CompanyInformationModal open={open} setOpen={setOpen} />
+    
 
       {/* Header */}
       <Box
@@ -71,24 +71,6 @@ export default function CompanyInformationCard() {
           }}
         >
           Company Information
-          <IconButton
-            onClick={() => {
-              setOpen(true);
-            }}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
         </Typography>
       </Box>
 

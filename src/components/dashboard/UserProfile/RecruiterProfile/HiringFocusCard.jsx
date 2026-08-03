@@ -1,40 +1,30 @@
-import { Card, Box, Typography, Chip, IconButton } from "@mui/material";
+import { Card, Box, Typography, Chip } from "@mui/material";
 
 import WorkIcon from "@mui/icons-material/Work";
 
-import EditIcon from "@mui/icons-material/Edit";
-import HiringFocusModal from "./HiringFocusModal ";
+ 
+ 
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+ 
 
-export default function HiringFocusCard() {
+export default function HiringFocusCard({data}) {
 
-  const {...state} = useProfile()
+ 
 
   const [hiringTypes , setHiringTypes]=useState([])
   const [roles , setRoles]=useState([])
 
 
   useEffect(()=>{
-    setHiringTypes(state.user?.profile?.hiring_Focus?.hiring_Types ||[])
-    setRoles(state.user?.profile?.hiring_Focus?.roles_I_hire_for ||[])
-  },[state.user?.profile])
+    setHiringTypes(data?.profile?.hiring_Focus?.hiring_Types ||[])
+    setRoles(data?.profile?.hiring_Focus?.roles_I_hire_for ||[])
+  },[data?.profile])
 
 
-
-
-  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <HiringFocusModal
-        open={open}
-  setOpen={setOpen}
-  hiringTypes={hiringTypes}
-  setHiringTypes={setHiringTypes}
-  roles={roles}
-  setRoles={setRoles}
-  />
+     
     
       <Card
         sx={{
@@ -82,22 +72,7 @@ export default function HiringFocusCard() {
             }}
           >
             Hiring Focus
-            <IconButton
-            onClick={()=>setOpen(true)}
-              sx={{
-                background: "#160a7e00",
-                color: "#6e6e6e",
-
-                "&:hover": {
-                  background: "#37373849",
-                },
-                width: "2.5rem",
-                height: "2.5rem",
-                p: 1,
-              }}
-            >
-              <EditIcon sx={{ width: "100%", m: 0 }} />
-            </IconButton>
+            
           </Typography>
         </Box>
 

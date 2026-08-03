@@ -9,70 +9,30 @@ import GroupOutlinedIcon from "@mui/icons-material/GroupOutlined";
 
 import EditIcon from "@mui/icons-material/Edit";
 
-import ExperienceModal from "./ExperienceModal";
+ 
 import { useEffect, useState } from "react";
-import { updateProfileR } from "../../../logic/api/profile/GetMe";
-import { useAuth } from "../../../logic/context/AuthContext";
-import { useProfile } from "../../../logic/context/profileContext";
+ 
 
-export default function RecruiterStatsCard() {
+export default function RecruiterStatsCard({data}) {
 
-  const [open, setOpen] = useState(false);
-
-
-
-    const { dispatch, ...state } = useProfile();
   
-        const { setSnackBar } = useAuth();
+  
+     
   
     //---------------------------------
     const [experience, setExperience] = useState("Lead");
 
 
     useEffect(() => {
-      const profile = state.user?.profile;
+      const profile = data?.profile;
       if (!profile) return;
 
       setExperience(profile.experienceLevel || "");
 
-    }, [state.user?.profile]);
+    }, [data?.profile]);
   
   
-    const handleSave = async () => {
-  
-      dispatch({
-          type: "SET_LOADING_UPDATE_PROFILE",
-          payload: true,
-        });
-      setSnackBar({
-          open: true,
-          message: "Education Update Seccesfuly",
-          severity: "success",
-        });
-      try {
-        const data = await updateProfileR({
-          experienceLevel:experience
-        });
-        dispatch({
-          type: "PROFILE",
-          payload: data,
-        });
-        setOpen(false);
-        
-      } catch (error) {
-        setSnackBar({
-          open: true,
-          message: error.response?.data?.message,
-          severity: "error",
-        });
-      }finally {
-          dispatch({
-            type: "SET_LOADING_UPDATE_PROFILE",
-            payload: false,
-          });
-        }
-    };
-
+   
 
 
   const stats = [
@@ -114,11 +74,7 @@ export default function RecruiterStatsCard() {
         m: 1,
       }}
     >
-      <ExperienceModal 
-      open={open}
-      setOpen={setOpen}
-
-      />
+       
       {/* Header */}
       <Box
         sx={{
@@ -155,22 +111,7 @@ export default function RecruiterStatsCard() {
           }}
         >
           Professional Overview
-          <IconButton
-          onClick={()=>setOpen(true)}
-            sx={{
-              background: "#160a7e00",
-              color: "#6e6e6e",
-
-              "&:hover": {
-                background: "#37373849",
-              },
-              width: "2.5rem",
-              height: "2.5rem",
-              p: 1,
-            }}
-          >
-            <EditIcon sx={{ width: "100%", m: 0 }} />
-          </IconButton>
+          
         </Typography>
       </Box>
 
