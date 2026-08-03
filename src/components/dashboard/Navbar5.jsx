@@ -257,7 +257,7 @@ export default function Navbar() {
           <IconButton>
             <NotificationsNoneOutlinedIcon />
           </IconButton>
-
+          {authState.user?.role == "recruiter" ? (
           <IconButton
             onClick={() => {
               setOpenModal(true);
@@ -275,7 +275,7 @@ export default function Navbar() {
                 borderRadius: "50%",
               }}
             />
-          </IconButton>
+          </IconButton>) : null}
 
           <IconButton onClick={() => setOpen(true)} size="small">
             <Avatar
