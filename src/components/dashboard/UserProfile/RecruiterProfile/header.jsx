@@ -3,6 +3,7 @@ import {
   Typography,
 
   Container,
+  Avatar,
  
 } from "@mui/material";
 
@@ -56,6 +57,26 @@ export default function Header({data}) {
             paddingLeft: 5,
           }}
         >
+          <Box
+        sx={{
+          position: "relative",
+          width: "8rem",
+          height: "8rem",
+          mr: "1rem",
+        }}
+      >
+        {/* Avatar */}
+        <Avatar
+          src={data?.profile?.ProfileImage?.url}
+          sx={{
+            width: "100%",
+            height: "100%",
+            border: "4px solid white",
+          }}
+        />
+
+        
+      </Box>
   
 
           {/* INFO */}
