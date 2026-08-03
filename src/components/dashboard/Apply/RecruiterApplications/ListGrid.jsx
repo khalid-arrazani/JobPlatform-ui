@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom";
 
 export default function ListGrid() {
   const { ...state } = useApply();
-  console.log(state);
+
 
    const navigate = useNavigate();
 

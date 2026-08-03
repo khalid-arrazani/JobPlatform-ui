@@ -31,9 +31,10 @@ export default function ApplyProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
+
   const {checkRole} = useAuth()
   const location = useLocation();
-
+  
   const ApplyJobs = async (felterData) => {
     setisLoading(true);
     try {
@@ -57,10 +58,11 @@ export default function ApplyProvider({ children }) {
   };
 
   useEffect(() => {
-     
-    if (location.pathname !== "/Dashboard/Applications") return;
    
+    if (location.pathname !== "/Dashboard/Applications") return;
+
     ApplyJobs(felterData);
+
   }, [felterData]);
 
   return (
