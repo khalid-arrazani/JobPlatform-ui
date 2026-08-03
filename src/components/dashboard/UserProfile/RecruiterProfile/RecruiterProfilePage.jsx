@@ -10,7 +10,7 @@ import SocialLinksCard from "./SocialLinksCard.jsx";
 
 
 
-import LoadingPage from "./LoadingPage.jsx";
+
 
 
 
@@ -20,7 +20,7 @@ export default function RecruiterProfilePage() {
 
   return (
     <>
-    {state.isLoading ? <LoadingPage/> : 
+   
       <div className="par1">
         <div style={{ height: "25vh" }}>
           <Header />
@@ -59,7 +59,7 @@ export default function RecruiterProfilePage() {
             <HiringFocusCard />
           </div>
         </div>
-      </div>}
+      </div>
     </>
   );
 }
