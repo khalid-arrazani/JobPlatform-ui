@@ -5,7 +5,9 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { BringProfileByIdJs, BringProfileByIdR } from "../../../logic/api/profile/GetMe";
 
-import MyProfilePage from "./JobSeekerProfile/JobSeekerProfilePage"
+import MyProfilePagejs from "./JobSeekerProfile/JobSeekerProfilePage"
+
+import RecruiterProfilePage from "./RecruiterProfile/RecruiterProfilePage";
 
 export default function ProfileDetails (){
 
@@ -37,7 +39,11 @@ export default function ProfileDetails (){
         
 console.log(data);
     return <>
-   <MyProfilePage data={data} />
+
+    
+  {Role == "jobSeeker" ? <MyProfilePagejs data={data} /> :  Role == "recruiter" ? <RecruiterProfilePage data={data} /> :null}
+   
+   
 
 
      

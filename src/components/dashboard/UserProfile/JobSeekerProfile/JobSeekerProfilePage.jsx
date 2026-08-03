@@ -22,7 +22,7 @@ import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 
 
-export default function MyProfilePage({data}) {
+export default function MyProfilePagejs({data}) {
 
 
  console.log(data);
