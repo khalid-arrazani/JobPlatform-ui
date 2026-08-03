@@ -57,7 +57,9 @@ export default function ApplyProvider({ children }) {
   };
 
   useEffect(() => {
-    if (location.pathname !== "/Dashboard/My_Jobs") return;
+     
+    if (location.pathname !== "/Dashboard/Applications") return;
+   
     ApplyJobs(felterData);
   }, [felterData]);
 
