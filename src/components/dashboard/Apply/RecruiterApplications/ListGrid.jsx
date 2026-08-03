@@ -184,7 +184,7 @@ export default function ListGrid() {
                       color: "#020210df",
                     }}
                   >
-                    {apply.profile.fullName}
+                    {apply?.profile?.fullName}
                   </Typography>
                   <Typography
                     sx={{
@@ -193,7 +193,7 @@ export default function ListGrid() {
                       fontSize: "0.75rem",
                     }}
                   >
-                    {apply.applicant.email}
+                    {apply?.applicant?.email}
                   </Typography>
                   <Typography
                     sx={{
@@ -202,8 +202,8 @@ export default function ListGrid() {
                       fontSize: "0.75rem",
                     }}
                   >
-                    {apply.profile.location.slice(0, 20)}
-                    {apply.profile.location.length > 20 ? "....." : null}{" "}
+                    {apply?.profile?.location.slice(0, 20)}
+                    {apply?.profile?.location.length > 20 ? "....." : null}{" "}
                   </Typography>
                 </Box>
               </Box>
@@ -226,8 +226,8 @@ export default function ListGrid() {
                     color: "#020210df",
                   }}
                 >
-                  {apply.job.title.slice(0, 26)}
-                  {apply.job.title.length > 26 ? "....." : null}
+                  {apply?.job?.title.slice(0, 26)}
+                  {apply?.job?.title.length > 26 ? "....." : null}
                 </Typography>
                 <Typography
                   sx={{
@@ -237,7 +237,7 @@ export default function ListGrid() {
                     color: "#6a6969",
                   }}
                 >
-                  {apply.job.jobType} • {apply.job.workMode}
+                  {apply?.job?.jobType} • {apply?.job?.workMode}
                 </Typography>
               </Box>
 
@@ -255,7 +255,7 @@ export default function ListGrid() {
               >
 
               <Chip
-                  label={`• ${apply.status}`}
+                  label={`• ${apply?.status}`}
                   sx={{
                     fontSize: "0.8rem",
                     alignItems: "center",
