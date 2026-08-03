@@ -1,17 +1,13 @@
-import { Card, CardContent, Typography, Box, IconButton } from "@mui/material";
+import { Card, CardContent, Typography, Box} from "@mui/material";
 
-import EditIcon from "@mui/icons-material/Edit";
 
-import { useState } from "react";
+
+
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
-import AboutMeModal from "./AboutMeModal";
-import { useProfile } from "../../../logic/context/profileContext";
-export default function AboutMeCard() {
-const {...state} = useProfile()
-  const [open, setOpen] = useState(false);
 
 
+export default function AboutMeCard({data}) {
 
   return (
     <Card
@@ -26,7 +22,7 @@ const {...state} = useProfile()
       }}
     >
 
-    <AboutMeModal  open={open} setOpen={setOpen}/>
+
 
       <CardContent sx={{ p: "0.5rem !important" }}>
         {/* Header */}
@@ -65,24 +61,7 @@ const {...state} = useProfile()
             }}
           >
             About Me
-            <IconButton
-              onClick={() => {
-                setOpen(true);
-              }}
-              sx={{
-                background: "#160a7e00",
-                color: "#6e6e6e",
-
-                "&:hover": {
-                  background: "#37373849",
-                },
-                width: "2.5rem",
-                height: "2.5rem",
-                p: 1,
-              }}
-            >
-              <EditIcon sx={{ width: "100%", m: 0 }} />
-            </IconButton>
+             
           </Typography>
         </Box>
         {/* Description */}
@@ -93,7 +72,7 @@ const {...state} = useProfile()
             color: "#666",
           }}
         >
-          {state.user?.profile?.aboutMe || "info"}
+          {data?.profile?.aboutMe || "info"}
         </Typography>
       </CardContent>
     </Card>

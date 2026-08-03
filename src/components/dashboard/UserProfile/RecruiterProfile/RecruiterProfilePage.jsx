@@ -14,7 +14,7 @@ import SocialLinksCard from "./SocialLinksCard.jsx";
 
 
 
-export default function RecruiterProfilePage() {
+export default function RecruiterProfilePage({data}) {
 
     
 
@@ -23,7 +23,7 @@ export default function RecruiterProfilePage() {
    
       <div className="par1">
         <div style={{ height: "25vh" }}>
-          <Header />
+          <Header data={data}  />
         </div>
 
         <div style={{ height: "maxContent", display: "flex", padding: 20 }}>
@@ -35,17 +35,16 @@ export default function RecruiterProfilePage() {
               width: "50%",
             }}
           >
-            <AboutMeCard />
+            <AboutMeCard data={data} />
 
 
-            <RecruiterStatsCard />
+            <RecruiterStatsCard data={data} />
 
 
-            <SocialLinksCard />
+            <SocialLinksCard data={data} />
 
 
-            <QuickStatsCard />
-
+            <QuickStatsCard data={data} />
 
           </div>
 
@@ -54,9 +53,9 @@ export default function RecruiterProfilePage() {
               width: "50%",
             }}
           >
-            <CompanyInformationCard />
+            <CompanyInformationCard data={data}  />
             
-            <HiringFocusCard />
+            <HiringFocusCard data={data}  />
           </div>
         </div>
       </div>
