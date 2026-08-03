@@ -19,34 +19,7 @@ import LoadingPage from "./LoadingPage.jsx";
 
 export default function RecruiterProfilePage() {
 
-    const { dispatch, ...state } = useProfile();
-  
-    useEffect(() => {
-  
-      const fetchUser = async () => {
-        dispatch({
-          type: "SET_LOADING",
-          payload: true,
-        });
-        try {
-          const data = await getMeR();
-          dispatch({
-            type: "PROFILE",
-            payload: data,
-          });
-        } catch (error) {
-          console.log(error.response?.data);
-        } finally {
-          dispatch({
-            type: "SET_LOADING",
-            payload: false,
-          });
-        }
-      };
-      fetchUser();
-    }, []);
-
-    console.log(state.user);
+    
 
   return (
     <>
