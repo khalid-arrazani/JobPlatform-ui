@@ -39,9 +39,17 @@ export default function RecruiterProfilePage() {
             }}
           >
             <AboutMeCard />
+
+
             <RecruiterStatsCard />
+
+
             <SocialLinksCard />
+
+
             <QuickStatsCard />
+
+            
           </div>
 
           <div
