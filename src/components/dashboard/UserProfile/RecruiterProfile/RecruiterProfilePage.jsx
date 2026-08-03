@@ -9,10 +9,7 @@ import QuickStatsCard from "./QuickStatsCard.jsx";
 import SocialLinksCard from "./SocialLinksCard.jsx";
 
 
-import { useEffect } from "react";
 
-import { getMeR } from "../../../logic/api/profile/GetMe.jsx";
-import { useProfile } from "../../../logic/context/profileContext.jsx";
 import LoadingPage from "./LoadingPage.jsx";
 
 
@@ -49,7 +46,7 @@ export default function RecruiterProfilePage() {
 
             <QuickStatsCard />
 
-            
+
           </div>
 
           <div
