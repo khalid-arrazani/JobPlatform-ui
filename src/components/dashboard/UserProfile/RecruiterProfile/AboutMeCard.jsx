@@ -21,9 +21,6 @@ export default function AboutMeCard({data}) {
         mt: 1,
       }}
     >
-
-
-
       <CardContent sx={{ p: "0.5rem !important" }}>
         {/* Header */}
         <Box
