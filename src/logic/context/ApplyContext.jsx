@@ -10,7 +10,7 @@ import { GetApplitions, GetMyApply } from "../api/apply/Apply";
 import { useLocation } from "react-router-dom";
 
 import { useAuth } from "./AuthContext";
-import { getMeUser } from "../api/user/user";
+
 
 export const ApplyContext = createContext();
 
