@@ -1,13 +1,4 @@
-import { DataGrid } from "@mui/x-data-grid";
-
 import {
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Paper,
   Avatar,
   Box,
   Typography,
@@ -22,12 +13,13 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
 
+import NoApplyFound from "./EmptyList/NoApplyFound";
+
 
 export default function ListGrid() {
   const { ...state } = useApply();
 
-
-   const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -127,7 +119,8 @@ export default function ListGrid() {
             overflow: "auto",
           }}
         >
-          {state?.ListApply?.applications?.map((apply) => (
+           {state?.ListApply?.hasApply ? 
+           state?.ListApply?.applications?.map((apply) => (
             <Box
               key={apply._id}
               sx={{
@@ -340,7 +333,8 @@ export default function ListGrid() {
 
               </Box>
             </Box>
-          ))}
+          )):
+        <NoApplyFound/> }
         </Box>
       </Box>
     </>

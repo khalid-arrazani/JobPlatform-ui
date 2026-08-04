@@ -23,6 +23,7 @@ export default function ListApply() {
         }}
       >
         {state?.ListApply?.hasApply ? 
+        
         state?.ListApply?.applications?.map((app) => (
           <Card
             sx={{

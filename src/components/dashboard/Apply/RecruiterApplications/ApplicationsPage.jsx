@@ -12,6 +12,7 @@ import { useEffect,  } from "react";
 import Header from "./header";
 import ListGrid from "./ListGrid";
 import { useApply } from "../../../../logic/context/ApplyContext";
+import LoadingList from "./LoadingList";
 
 
 
@@ -19,7 +20,7 @@ export default function ApplicationsRc() {
  
  
 
-  const {ApplyJobs,felterData,setFelterData,...state} = useApply()
+  const {isLoading,ApplyJobs,felterData,setFelterData,...state} = useApply()
 
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
@@ -68,8 +69,9 @@ export default function ApplicationsRc() {
               border: "solid 0.1px #8d8d8d3a",
             }}
           >
-            <ListGrid/>
-
+         
+         
+{isLoading ? <LoadingList/>:<ListGrid/>}
       
 
           </Box>

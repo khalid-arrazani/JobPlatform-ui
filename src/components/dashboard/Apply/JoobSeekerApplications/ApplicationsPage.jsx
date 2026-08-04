@@ -22,6 +22,7 @@ export default function ApplicationsJs() {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
 
+  
   useEffect(() => {
     ApplyJobs();
   }, []);
