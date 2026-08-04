@@ -79,7 +79,10 @@ export default function ApplicationsRc() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        ></Box>
+        >
+         
+          
+        </Box>
       </Box>
     </>
   );
