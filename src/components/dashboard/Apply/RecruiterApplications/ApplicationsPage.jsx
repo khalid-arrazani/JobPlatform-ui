@@ -2,26 +2,16 @@ import { Box } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
- 
-import { useEffect,  } from "react";
-
- 
-
-
+import { useEffect } from "react";
 
 import Header from "./header";
 import ListGrid from "./ListGrid";
 import { useApply } from "../../../../logic/context/ApplyContext";
 import LoadingList from "./LoadingList";
 
-
-
 export default function ApplicationsRc() {
- 
- 
-
-  const {isLoading,ApplyJobs,felterData,setFelterData,...state} = useApply()
-
+  const { isLoading, ApplyJobs, felterData, setFelterData, ...state } =
+    useApply();
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
@@ -29,9 +19,6 @@ export default function ApplicationsRc() {
   useEffect(() => {
     ApplyJobs();
   }, []);
-
-
-
 
   return (
     <>
@@ -56,8 +43,7 @@ export default function ApplicationsRc() {
             px: 5,
           }}
         >
-          <Header/>
-
+          <Header />
 
           <Box
             sx={{
@@ -65,17 +51,12 @@ export default function ApplicationsRc() {
               height: "62%",
               boxSizing: "border-box",
               placeItems: "center",
-              overflow:"hidden",
+              overflow: "hidden",
               border: "solid 0.1px #8d8d8d3a",
             }}
           >
-         
-         
-{isLoading ? <LoadingList/>:<ListGrid/>}
-      
-
+            {isLoading ? <LoadingList /> : <ListGrid />}
           </Box>
-
           <Pagination
             onChange={handleChange}
             page={felterData.page}
@@ -83,7 +64,7 @@ export default function ApplicationsRc() {
             sx={{
               mt: "auto",
               alignSelf: "center",
-              mb: 1
+              mb: 1,
             }}
           />
         </Box>
@@ -98,8 +79,7 @@ export default function ApplicationsRc() {
             alignItems: "center",
             justifyContent: "center",
           }}
-        >
-        </Box>
+        ></Box>
       </Box>
     </>
   );
