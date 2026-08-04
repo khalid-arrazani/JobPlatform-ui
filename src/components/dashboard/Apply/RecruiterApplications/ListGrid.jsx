@@ -25,13 +25,7 @@ export default function ListGrid() {
     <>
       {state?.ListApply?.hasApply ?  <Box
         sx={{ height: "100%", width: "100%", px: 1, boxSizing: "border-box" }}
-      >
-
-
-
-
-
-        
+      >   
         <Box
           sx={{
             height: "3.5rem",
@@ -125,7 +119,6 @@ export default function ListGrid() {
             overflow: "auto",
           }}
         >
-          
            {state?.ListApply?.applications?.map((apply) => (
             <Box
               key={apply._id}
