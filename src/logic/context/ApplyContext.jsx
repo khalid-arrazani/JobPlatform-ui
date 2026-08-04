@@ -56,18 +56,44 @@ export default function ApplyProvider({ children }) {
       setisLoading(false);
     }
   };
+  
+  const ApplyWithoutJobs = async (felterData) => {
+    setisLoading(true);
+    try {
+     
+      let Apply;
+      checkRole == "jobSeeker"
+        ? (Apply = await GetMyApply(felterData))
+        : checkRole == "recruiter"
+          ? (Apply = await GetApplitions(felterData))
+          : null;
+      console.log(Apply);
+      dispatch({
+        type: "ListApply",
+        payload: Apply,
+      });
+    } catch (err) {
+      console.log(err?.response.data.message);
+    } finally {
+      setisLoading(false);
+    }
+  };
+
 
   useEffect(() => {
     if (location.pathname !== "/Dashboard/Applications") return;
     ApplyJobs(felterData);
   }, [felterData]);
 
+
+  
   return (
     <ApplyContext.Provider
       value={{
         ...state,
         dispatch,
         ApplyJobs,
+        ApplyWithoutJobs,
         felterData,
         setFelterData,
         isLoading,

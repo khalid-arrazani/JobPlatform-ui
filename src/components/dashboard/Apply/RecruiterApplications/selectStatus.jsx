@@ -9,7 +9,7 @@ import { useApply } from '../../../../logic/context/ApplyContext';
 
 export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
   const [status, setStatus] =  useState(nowStatus);
-  const {ApplyJobs}=useApply()
+  const {ApplyWithoutJobs}=useApply()
 
  
 
@@ -17,12 +17,16 @@ export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
     setStatus(event.target.value);
     try {
        await UpdateApplicationStatus({status:event.target.value,ApplyId})
-       ApplyJobs()
+       ApplyWithoutJobs()
        setAnchorEl(null)
     } catch (error) {
         console.log(error.response.data.message );
     }
   };
+
+
+
+
 
   return (
     <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
@@ -36,8 +40,6 @@ export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
           {nowStatus == "Pending" ?<MenuItem sx={{color:"#de9c04",bgcolor:'#FEF3C7',mb:.5}} value={"Pending"}>Pending</MenuItem> :null}
 
           
-
-
 
           <MenuItem sx={{color:"#1664e1",bgcolor:'#DBEAFE',mb:.5}}  value={"Under review"}>Under review</MenuItem>
           <MenuItem sx={{color:"#672ded",bgcolor:'#EDE9FE',mb:.5}}  value={"Interview"}>Interview</MenuItem>

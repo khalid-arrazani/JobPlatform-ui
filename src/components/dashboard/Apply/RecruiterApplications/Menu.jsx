@@ -10,13 +10,13 @@ import {
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
-import { MdOutlineCancelScheduleSend } from "react-icons/md"
+ 
 import ScheduleSendIcon from '@mui/icons-material/ScheduleSend';
 
 
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
-import ModalWarning from "../JoobSeekerApplications/ModalWarning";
+ 
 import SelectStatus from "./selectStatus";
 
 
