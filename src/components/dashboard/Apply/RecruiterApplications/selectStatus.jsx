@@ -29,6 +29,7 @@ export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
 
 
   return (
+
     <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
         <InputLabel id="demo-simple-select-standard-label">Status</InputLabel>
         <Select
@@ -48,5 +49,6 @@ export default function SelectStatus({ApplyId,nowStatus,setAnchorEl}) {
          
         </Select>
       </FormControl>
+      
   );
 }
