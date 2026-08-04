@@ -45,7 +45,7 @@ export default function ApplyProvider({ children }) {
         : checkRole == "recruiter"
           ? (Apply = await GetApplitions(felterData))
           : null;
-
+      console.log(Apply);
       dispatch({
         type: "ListApply",
         payload: Apply,
