@@ -78,9 +78,14 @@ export default function ApplicationsRc() {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            boxSizing:"border-box",
+            p:2
           }}
         >
-         
+         <Box sx={{border:"1px #ddd dashed",height:"100%",width:"100%", borderRadius:"15px"}}>
+
+
+         </Box>
           
         </Box>
       </Box>
