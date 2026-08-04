@@ -30,7 +30,9 @@ export default function NoApplyFound() {
             fontFamily: "ui-rounded",
           }}
         >
+          
           No {felterData.status} applications
+
         </Typography>
         <Typography
           sx={{
