@@ -40,7 +40,7 @@ export default function NoApplyFound() {
             fontFamily: "ui-rounded",
           }}
         >
-          No {felterData.status} applications found.
+          You haven't received any {felterData.status} applications yet.
         </Typography>
         <Typography
           sx={{
@@ -50,7 +50,7 @@ export default function NoApplyFound() {
             fontFamily: "ui-rounded",
           }}
         >
-          Try adjusting your filters or apply to more jobs to see applications here.
+          Try changing the filters or wait for new candidates to apply.
         </Typography>
       </Box>
     </>
