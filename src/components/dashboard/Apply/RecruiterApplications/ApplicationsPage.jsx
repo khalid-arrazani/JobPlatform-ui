@@ -96,7 +96,7 @@ export default function ApplicationsRc() {
           >
             <Box
               sx={{
-                height: "35%",
+                height: "37%",
                 width: "100%",
                 borderBottom: "1px dashed #ddd",
                 placeItems: "center",
@@ -104,7 +104,7 @@ export default function ApplicationsRc() {
                 p: 2,
               }}
             >
-              <Avatar sx={{ height: "8rem", width: "8rem" }} />
+              <Avatar sx={{ height: "7.5rem", width: "7.5rem" }} />
 
               <Typography
                 sx={{
@@ -136,7 +136,7 @@ export default function ApplicationsRc() {
 
             <Box
               sx={{
-                height: "65%",
+                height: "63%",
                 width: "100%",
                 boxSizing: "border-box",
                 p: 2,
