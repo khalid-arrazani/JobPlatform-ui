@@ -224,8 +224,7 @@ export default function ApplicationsRc() {
                   bt: 1,
                 }}
               >
-                
-                ✔ React - ✔ JavaScript - ✔ Node.js
+               <Chip  label={`✔ React `} /> - <Chip  label={`✔ JavaScript `} /> - <Chip  label={`✔ Node.js `} /> 
               </Typography>
             </Box>
           </Box>
