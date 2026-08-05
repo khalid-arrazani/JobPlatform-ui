@@ -96,7 +96,7 @@ export default function ApplicationsRc() {
           >
             <Box
               sx={{
-                height: "40%",
+                height: "35%",
                 width: "100%",
                 borderBottom: "1px dashed #ddd",
                 placeItems: "center",
@@ -136,7 +136,7 @@ export default function ApplicationsRc() {
 
             <Box
               sx={{
-                height: "60%",
+                height: "65%",
                 width: "100%",
                 boxSizing: "border-box",
                 p: 2,
