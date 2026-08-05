@@ -215,6 +215,7 @@ export default function ApplicationsRc() {
               >
                 📞 +212 777964129
               </Typography>
+
               <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -223,10 +224,11 @@ export default function ApplicationsRc() {
                   color: "#00010eac",
                   bt: 1,
                 }}
-              >
-               <Chip  label={`✔ React `} /> - <Chip  label={`✔ JavaScript `} /> - <Chip  label={`✔ Node.js `} /> 
-               
+              >   
+               <Chip  label={`✔ React `} /> - <Chip  label={`✔ JavaScript `} /> - <Chip  label={`✔ Node.js `} />  
               </Typography>
+
+
             </Box>
           </Box>
         </Box>
