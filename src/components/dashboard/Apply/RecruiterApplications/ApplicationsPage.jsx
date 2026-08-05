@@ -91,8 +91,7 @@ export default function ApplicationsRc() {
               <Avatar sx={{height:"8rem",width:"8rem"}}/>
 
               <Typography sx={{fontSize:"1.6rem",fontFamily:"system-ui",fontWeight:600,color:"#00010ed0",bt:1}} > Khalid Arazani </Typography>
-              <Typography sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > Frontend React Developer   </Typography>
-
+              <Typography sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > Frontend React Developer </Typography>
              </Box>
 
              <Box sx={{height:"60%",width:"100%"}} ></Box>
