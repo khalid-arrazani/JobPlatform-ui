@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box,Avatar ,Typography} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -82,7 +82,21 @@ export default function ApplicationsRc() {
             p:2
           }}
         >
-         <Box sx={{border:"1px #ddd dashed",height:"100%",width:"100%", borderRadius:"15px"}}>
+         <Box sx={{boxSizing:"border-box",border:"1px #ddd dashed",height:"100%",width:"100%", borderRadius:"15px",px:1}}>
+
+
+
+             <Box sx={{height:"40%",width:"100%",borderBottom:"1px dashed #ddd",placeItems:"center",boxSizing:"border-box",p:2}} >
+
+              <Avatar sx={{height:"8rem",width:"8rem"}}/>
+
+              <Typography sx={{fontSize:"1.6rem",fontFamily:"system-ui",fontWeight:600,color:"#00010ed0",bt:1}} > Khalid Arazani </Typography>
+              <Typography sx={{fontSize:"1.6rem",fontFamily:"system-ui",fontWeight:600,color:"#00010ed0",bt:1}} > Khalid Arazani </Typography>
+
+             </Box>
+
+             <Box sx={{height:"60%",width:"100%"}} ></Box>
+
 
 
          </Box>
