@@ -96,7 +96,7 @@ export default function ApplicationsRc() {
               <Typography sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > Frontend React Developer </Typography>
              </Box>
 
-             <Box sx={{height:"60%",width:"100%",boxSizing:"border-box",p:2,display:"flex",flexDirection:"column",alignContent:"center"}}>
+             <Box sx={{height:"60%",width:"100%",boxSizing:"border-box",p:2,display:"flex",flexDirection:"column",alignContent:"center",gap:2}}>
 
               <Chip
                   label={`• ${apply?.status}`}
@@ -131,9 +131,13 @@ export default function ApplicationsRc() {
                                 ? "#DBEAFE"
                                 : null,
                     fontWeight: 600,
+                    mb:2
                   }}
               />
-
+              <Typography sx={{fontSize:"1rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > 📍 Taroudant, Morocco  </Typography>
+              <Typography sx={{fontSize:"1rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > ✉ karazani2003@gmail.com </Typography>
+              <Typography sx={{fontSize:"1rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > 📞 +212 777964129   </Typography>
+              
 
               
              </Box>
