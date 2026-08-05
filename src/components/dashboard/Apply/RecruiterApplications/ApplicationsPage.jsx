@@ -143,7 +143,7 @@ export default function ApplicationsRc() {
                 display: "flex",
                 flexDirection: "column",
                 alignContent:"space-between",
-                gap: 2,
+                gap: 2,justifyContent:""
               }}
             >
               <Chip
@@ -182,6 +182,7 @@ export default function ApplicationsRc() {
                   mb: 1,
                 }}
               />
+
               <Typography
                 sx={{
                   fontSize: "1rem",
@@ -191,8 +192,8 @@ export default function ApplicationsRc() {
                   bt: 1,
                 }}
               >
-                {" "}
-                📍 Taroudant, Morocco{" "}
+
+                📍 Taroudant, Morocco
               </Typography>
               <Typography
                 sx={{
@@ -203,8 +204,7 @@ export default function ApplicationsRc() {
                   bt: 1,
                 }}
               >
-                {" "}
-                ✉ karazani2003@gmail.com{" "}
+                ✉ karazani2003@gmail.com
               </Typography>
               <Typography
                 sx={{
@@ -248,6 +248,9 @@ export default function ApplicationsRc() {
               </Typography>
 
               </Box>
+
+
+              
             </Box>
 
           </Box>
