@@ -94,7 +94,10 @@ export default function ApplicationsRc() {
               <Typography sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > Frontend React Developer </Typography>
              </Box>
 
-             <Box sx={{height:"60%",width:"100%"}} ></Box>
+             <Box sx={{height:"60%",width:"100%",placeItems:"center",boxSizing:"border-box",p:2}}>
+
+              
+             </Box>
 
 
 
