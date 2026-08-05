@@ -213,8 +213,7 @@ export default function ApplicationsRc() {
                   bt: 1,
                 }}
               >
-                {" "}
-                📞 +212 777964129{" "}
+                📞 +212 777964129
               </Typography>
               <Typography
                 sx={{
