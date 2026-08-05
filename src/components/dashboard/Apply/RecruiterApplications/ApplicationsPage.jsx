@@ -1,4 +1,4 @@
-import { Box, Avatar, Typography, Chip } from "@mui/material";
+import { Box} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -8,6 +8,7 @@ import Header from "./header";
 import ListGrid from "./ListGrid";
 import { useApply } from "../../../../logic/context/ApplyContext";
 import LoadingList from "./LoadingList";
+import Profile from "./ProfileCard";
 
 export default function ApplicationsRc() {
   const { isLoading, ApplyJobs, felterData, setFelterData, ...state } =
@@ -20,7 +21,7 @@ export default function ApplicationsRc() {
     ApplyJobs();
   }, []);
 
-  const apply = { status: "Pending" };
+
 
   return (
     <>
@@ -72,245 +73,10 @@ export default function ApplicationsRc() {
         </Box>
 
         {/* right side profile card  */}
-        <Box
-          sx={{
-            width: "30vw",
-            height: "100%",
-            bgcolor: "#ffffff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            boxSizing: "border-box",
-            p: 2,
-          }}
-        >
-          <Box
-            sx={{
-              boxSizing: "border-box",
-              border: "1px #ddd dashed",
-              height: "100%",
-              width: "100%",
-              borderRadius: "15px",
-              px: 1,
-            }}
-          >
-            <Box
-              sx={{
-                height: "37%",
-                width: "100%",
-                borderBottom: "1px dashed #ddd",
-                placeItems: "center",
-                boxSizing: "border-box",
-                p: 2,
-              }}
-            >
-              <Avatar sx={{ height: "7.5rem", width: "7.5rem" }} />
-
-              <Typography
-                sx={{
-                  fontSize: "1.6rem",
-                  fontFamily: "system-ui",
-                  fontWeight: 600,
-                  color: "#00010ed0",
-                  bt: 1,
-                }}
-              >
-                {" "}
-                Khalid Arazani{" "}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "0.9rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                {" "}
-                Frontend React Developer{" "}
-              </Typography>
-            </Box>
+        <Profile/>
 
 
 
-            <Box
-              sx={{
-                height: "63%",
-                width: "100%",
-                boxSizing: "border-box",
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                alignContent:"space-between",
-                gap: 2,justifyContent:""
-              }}
-            >
-              <Chip
-                label={`• ${apply?.status}`}
-                sx={{
-                  fontSize: "1.2rem",
-                  alignItems: "center",
-                  borderRadius: "8px",
-                  fontFamily: "monospace",
-                  color:
-                    apply?.status == "Pending"
-                      ? "#F59E0B"
-                      : apply?.status == "Accepted"
-                        ? "#10B981"
-                        : apply?.status == "Interview"
-                          ? "#8B5CF6"
-                          : apply?.status == "Rejected"
-                            ? "#EF4444"
-                            : apply?.status == "Under review"
-                              ? "#3B82F6"
-                              : null,
-
-                  bgcolor:
-                    apply?.status == "Pending"
-                      ? "#FEF3C7"
-                      : apply?.status == "Accepted"
-                        ? "#D1FAE5"
-                        : apply?.status == "Interview"
-                          ? "#8a5cf620 "
-                          : apply?.status == "Rejected"
-                            ? "#FEE2E2"
-                            : apply?.status == "Under review"
-                              ? "#DBEAFE"
-                              : null,
-                  fontWeight: 600,
-                  mb: 1,
-                }}
-              />
-
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-
-                📍 Taroudant, Morocco
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                ✉ karazani2003@gmail.com
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                📞 +212 777964129
-              </Typography>
-
-               <Box>
-
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eaf",
-                  pb:0.5,
-                  pl:0.1
-                }}
-              >
-                🛠 Skills
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                <Chip label={`✔ React `} /> - <Chip label={`✔ JavaScript `} /> -{" "}
-                <Chip label={`✔ Node.js `} />
-
-              </Typography>
-
-              </Box>
-              <Box>
-
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010ed4",
-                  pb:0.5,
-                  pl:0.1
-                }}
-              >
-                💼 Career Timeline
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-               
-               2020 - 2022   |  Senior Frontend Developer
-              </Typography><Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-               
-               2018 - 2022   |  React Developer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-               
-               2020 - 2022   |  Freelancer
-              </Typography>
-
-              </Box>
-              
-
-
-              
-            </Box>
-
-          </Box>
-
-
-
-        </Box>
       </Box>
     </>
   );
