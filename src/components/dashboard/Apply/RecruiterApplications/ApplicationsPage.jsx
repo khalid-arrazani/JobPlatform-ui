@@ -132,6 +132,8 @@ export default function ApplicationsRc() {
               </Typography>
             </Box>
 
+
+
             <Box
               sx={{
                 height: "60%",
@@ -140,7 +142,7 @@ export default function ApplicationsRc() {
                 p: 2,
                 display: "flex",
                 flexDirection: "column",
-                alignContent: "center",
+                alignContent:"space-between",
                 gap: 2,
               }}
             >
@@ -216,6 +218,21 @@ export default function ApplicationsRc() {
                 📞 +212 777964129
               </Typography>
 
+               <Box>
+
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eaf",
+                  pb:0.5,
+                  pl:0.1
+                }}
+              >
+                🛠 Skills
+              </Typography>
+
               <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -224,13 +241,19 @@ export default function ApplicationsRc() {
                   color: "#00010eac",
                   bt: 1,
                 }}
-              >   
-               <Chip  label={`✔ React `} /> - <Chip  label={`✔ JavaScript `} /> - <Chip  label={`✔ Node.js `} />  
+              >
+                <Chip label={`✔ React `} /> - <Chip label={`✔ JavaScript `} /> -{" "}
+                <Chip label={`✔ Node.js `} />
+
               </Typography>
 
-
+              </Box>
             </Box>
+
           </Box>
+
+
+
         </Box>
       </Box>
     </>
