@@ -273,7 +273,7 @@ export default function ApplicationsRc() {
                 }}
               >
                
-               2026 - Frontend Developer
+               2020 - 2022   |  Senior Frontend Developer
               </Typography><Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -284,7 +284,7 @@ export default function ApplicationsRc() {
                 }}
               >
                
-               2026 - Frontend Developer
+               2018 - 2022   |  React Developer
               </Typography>
               <Typography
                 sx={{
@@ -296,7 +296,7 @@ export default function ApplicationsRc() {
                 }}
               >
                
-               2026 - Frontend Developer
+               2020 - 2022   |  Freelancer
               </Typography>
 
               </Box>
