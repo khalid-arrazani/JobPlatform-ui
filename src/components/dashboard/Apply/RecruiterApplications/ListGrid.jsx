@@ -136,6 +136,13 @@ export default function ListGrid() {
                   boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
                   bgcolor: "#f6fbff",
                 },
+                cursor:"pointer",
+
+                "&:active": {
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
+                  bgcolor: "#f6fbff",
+                },
               }}
             >
               <Box
