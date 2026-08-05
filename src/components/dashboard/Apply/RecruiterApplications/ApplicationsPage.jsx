@@ -177,7 +177,7 @@ export default function ApplicationsRc() {
                               ? "#DBEAFE"
                               : null,
                   fontWeight: 600,
-                  mb: 2,
+                  mb: 1,
                 }}
               />
               <Typography
