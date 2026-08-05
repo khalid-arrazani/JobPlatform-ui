@@ -248,6 +248,59 @@ export default function ApplicationsRc() {
               </Typography>
 
               </Box>
+              <Box>
+
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eaf",
+                  pb:0.5,
+                  pl:0.1
+                }}
+              >
+                🎓 Education
+              </Typography>
+
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eac",
+                  bt: 1,
+                }}
+              >
+               
+               2026 - Frontend Developer
+              </Typography><Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eac",
+                  bt: 1,
+                }}
+              >
+               
+               2026 - Frontend Developer
+              </Typography>
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eac",
+                  bt: 1,
+                }}
+              >
+               
+               2026 - Frontend Developer
+              </Typography>
+
+              </Box>
+              
 
 
               
