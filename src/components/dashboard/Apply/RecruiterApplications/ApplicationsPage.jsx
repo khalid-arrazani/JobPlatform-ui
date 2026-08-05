@@ -255,12 +255,12 @@ export default function ApplicationsRc() {
                   fontSize: "0.8rem",
                   fontFamily: "monospace",
                   fontWeight: 600,
-                  color: "#00010eaf",
+                  color: "#00010ed4",
                   pb:0.5,
                   pl:0.1
                 }}
               >
-                🎓 Education
+                💼 Career Timeline
               </Typography>
 
               <Typography
