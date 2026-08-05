@@ -1,4 +1,4 @@
-import { Box,Avatar ,Typography} from "@mui/material";
+import { Box,Avatar ,Typography, Chip} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
@@ -19,6 +19,8 @@ export default function ApplicationsRc() {
   useEffect(() => {
     ApplyJobs();
   }, []);
+
+  const apply = {status:"Pending"}
 
   return (
     <>
@@ -94,7 +96,44 @@ export default function ApplicationsRc() {
               <Typography sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#00010eac",bt:1}} > Frontend React Developer </Typography>
              </Box>
 
-             <Box sx={{height:"60%",width:"100%",placeItems:"center",boxSizing:"border-box",p:2}}>
+             <Box sx={{height:"60%",width:"100%",boxSizing:"border-box",p:2,display:"flex",flexDirection:"column",alignContent:"center"}}>
+
+              <Chip
+                  label={`• ${apply?.status}`}
+                  sx={{
+                    fontSize: "1.2rem",
+                    alignItems: "center",
+                    borderRadius: "8px",
+                    fontFamily: "monospace",
+                    color:
+                      apply?.status == "Pending"
+                        ? "#F59E0B"
+                        : apply?.status == "Accepted"
+                          ? "#10B981"
+                          : apply?.status == "Interview"
+                            ? "#8B5CF6"
+                            : apply?.status == "Rejected"
+                              ? "#EF4444"
+                              : apply?.status == "Under review"
+                                ? "#3B82F6"
+                                : null,
+
+                    bgcolor:
+                      apply?.status == "Pending"
+                        ? "#FEF3C7"
+                        : apply?.status == "Accepted"
+                          ? "#D1FAE5"
+                          : apply?.status == "Interview"
+                            ? "#8a5cf620 "
+                            : apply?.status == "Rejected"
+                              ? "#FEE2E2"
+                              : apply?.status == "Under review"
+                                ? "#DBEAFE"
+                                : null,
+                    fontWeight: 600,
+                  }}
+              />
+
 
               
              </Box>
