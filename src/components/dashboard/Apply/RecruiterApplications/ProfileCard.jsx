@@ -1,7 +1,8 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
-import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+import Person2Icon from "@mui/icons-material/Person2";
 
 export default function Profile() {
   const { Profile } = useApply();
@@ -19,10 +20,14 @@ export default function Profile() {
           justifyContent: "center",
           boxSizing: "border-box",
           p: 2,
+         
         }}
+        style={{transition:"none"}}
       >
 
-         <Box
+        {!Profile ? 
+
+        <Box
           sx={{
             boxSizing: "border-box",
             border: "1px #ddd dashed",
@@ -30,38 +35,63 @@ export default function Profile() {
             width: "100%",
             borderRadius: "15px",
             px: 1,
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 1.5,
           }}
         >
+          <Box
+            sx={{
+              border: "1px  dashed #ddd ",
+              width: "8rem",
+              height: "8rem",
+              borderRadius: "50%",
+              display:"flex",justifyContent:"center",alignItems:"center"
+            }}
+          >
+            <Person2Icon  sx={{width:"80%",height:"80%",color:"#3b3b3b"}}/>
+          </Box>
 
+          <Typography
+            sx={{
+              fontSize: "1.2rem",
+              fontFamily: "monospace",
+              fontWeight: 600,
+              color: "#00010ec9",
+              bt: 1,
+              textAlign: "center",
+            }}
+          >
+            No profile selected
+          </Typography>
 
+          <Typography
+            sx={{
+              fontSize: "0.9rem",
+              fontFamily: "monospace",
+              fontWeight: 600,
+              color: "#00010eac",
+              bt: 1,
+              textAlign: "center",
+            }}
+          >
+            Select an applicant from the list to view their profile details
+          </Typography>
+        </Box>:
 
-
-         <AccountCircleOutlinedIcon   sx={{width:"50%",height:"50%"}} />
-
-         <Typography>No profile selected</Typography>
-         <Typography>Select an applicant from the list to view their profile details</Typography>
-
-        </Box>
-
-
-       
-
-
-
-
-
-
-
-
-        {/* <Box
+        <Box
           sx={{
             boxSizing: "border-box",
             border: "1px #ddd dashed",
             height: "100%",
             width: "100%",
             borderRadius: "15px",
-            px: 1,
+            px: 1,transition:"none"
           }}
+
+          
         >
 
 
@@ -262,10 +292,8 @@ export default function Profile() {
 
 
 
-        </Box> */}
-
-
-
+        </Box>
+}
 
       </Box>
     </>
