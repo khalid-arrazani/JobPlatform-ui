@@ -127,7 +127,8 @@ export default function Profile() {
                 bt: 1,
               }}
             >
-              📍 {Profile?.profile?.location?.length > 35
+              📍{" "}
+              {Profile?.profile?.location?.length > 35
                 ? `${Profile.profile.location.slice(0, 35)}...`
                 : Profile?.profile?.location}
             </Typography>
@@ -140,7 +141,8 @@ export default function Profile() {
                 bt: 1,
               }}
             >
-              ✉ {Profile?.applicant?.email?.length > 35
+              ✉{" "}
+              {Profile?.applicant?.email?.length > 35
                 ? `${Profile.applicant.email.slice(0, 35)}...`
                 : Profile?.applicant?.email}
             </Typography>
@@ -201,49 +203,24 @@ export default function Profile() {
               </Typography>
 
               {Profile?.profile?.education.slice(0, 3).map((i) => (
-                  <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                {i.period} | {i.title}
-              </Typography>
-                ))}
+
+
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                    color: "#00010eac",
+                    bt: 1,
+                  }}
+                >
+                  {i.title}  |  {i.period} 
+                </Typography>
+                
+
+              ))}
+
              
-              
-
-
-
-
-
-
-
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                2018 - 2022 | React Developer
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                2020 - 2022 | Freelancer
-              </Typography>
             </Box>
           </Box>
         </Box>
