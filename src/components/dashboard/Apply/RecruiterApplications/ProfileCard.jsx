@@ -1,6 +1,8 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+
 export default function Profile() {
   const { Profile } = useApply();
   console.log(Profile);
@@ -31,10 +33,10 @@ export default function Profile() {
           }}
         >
 
-          
 
 
 
+         <AccountCircleOutlinedIcon/>
 
          <Typography>No profile selected</Typography>
          <Typography>Select an applicant from the list to view their profile details</Typography>
