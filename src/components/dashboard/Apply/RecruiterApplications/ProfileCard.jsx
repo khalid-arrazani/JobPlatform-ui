@@ -1,174 +1,165 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
+export default function Profile() {
+  const { Profile } = useApply();
 
-export default function Profile ( ){
-const {  Profile  } = useApply();
-
-
-
- 
-
-    return <>
-    <Box
+  return (
+    <>
+      <Box
+        sx={{
+          width: "30vw",
+          height: "100%",
+          bgcolor: "#ffffff",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          boxSizing: "border-box",
+          p: 2,
+        }}
+      >
+        <Box
           sx={{
-            width: "30vw",
-            height: "100%",
-            bgcolor: "#ffffff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
             boxSizing: "border-box",
-            p: 2,
+            border: "1px #ddd dashed",
+            height: "100%",
+            width: "100%",
+            borderRadius: "15px",
+            px: 1,
           }}
         >
           <Box
             sx={{
-              boxSizing: "border-box",
-              border: "1px #ddd dashed",
-              height: "100%",
+              height: "37%",
               width: "100%",
-              borderRadius: "15px",
-              px: 1,
+              borderBottom: "1px dashed #ddd",
+              placeItems: "center",
+              boxSizing: "border-box",
+              p: 1,
             }}
           >
-            <Box
+            <Avatar sx={{ height: "7rem", width: "7rem" }} />
+
+            <Typography
               sx={{
-                height: "37%",
-                width: "100%",
-                borderBottom: "1px dashed #ddd",
-                placeItems: "center",
-                boxSizing: "border-box",
-                p:1,
+                fontSize: "1.6rem",
+                fontFamily: "system-ui",
+                fontWeight: 600,
+                color: "#00010ed0",
+                bt: 1,
               }}
             >
-              <Avatar sx={{ height: "7rem", width: "7rem" }} />
-
-              <Typography
-                sx={{
-                  fontSize: "1.6rem",
-                  fontFamily: "system-ui",
-                  fontWeight: 600,
-                  color: "#00010ed0",
-                  bt: 1,
-                }}
-              >
-                
-                {Profile?.profile?.fullName}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "0.9rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                  textAlign:"center"
-                }}
-              >
-                {Profile?.profile?.headline?.length > 56
-  ? `${Profile.profile.headline.slice(0, 56)}...`
-  : Profile?.profile?.headline}
-              </Typography>
-            </Box>
-
-
-
-            <Box
+              {Profile?.profile?.fullName}
+            </Typography>
+            <Typography
               sx={{
-                height: "63%",
-                width: "100%",
-                boxSizing: "border-box",
-                p: 2,
-                display: "flex",
-                flexDirection: "column",
-                alignContent:"space-between",
-                gap: 2,justifyContent:""
+                fontSize: "0.9rem",
+                fontFamily: "monospace",
+                fontWeight: 600,
+                color: "#00010eac",
+                bt: 1,
+                textAlign: "center",
               }}
             >
-              <Chip
-                label={`• ${Profile?.status}`}
-                sx={{
-                  fontSize: "1.2rem",
-                  alignItems: "center",
-                  borderRadius: "8px",
-                  fontFamily: "monospace",
-                  color:
-                    Profile?.status == "Pending"
-                      ? "#F59E0B"
-                      : Profile?.status == "Accepted"
-                        ? "#10B981"
-                        : Profile?.status == "Interview"
-                          ? "#8B5CF6"
-                          : Profile?.status == "Rejected"
-                            ? "#EF4444"
-                            : Profile?.status == "Under review"
-                              ? "#3B82F6"
-                              : null,
+              {Profile?.profile?.headline?.length > 60
+                ? `${Profile.profile.headline.slice(0, 60)}...`
+                : Profile?.profile?.headline}
+            </Typography>
+          </Box>
 
-                  bgcolor:
-                    Profile?.status == "Pending"
-                      ? "#FEF3C7"
-                      : Profile?.status == "Accepted"
-                        ? "#D1FAE5"
-                        : Profile?.status == "Interview"
-                          ? "#8a5cf620 "
-                          : Profile?.status == "Rejected"
-                            ? "#FEE2E2"
-                            : Profile?.status == "Under review"
-                              ? "#DBEAFE"
-                              : null,
-                  fontWeight: 600,
-                  mb: 1,
-                }}
-              />
+          <Box
+            sx={{
+              height: "63%",
+              width: "100%",
+              boxSizing: "border-box",
+              p: 2,
+              display: "flex",
+              flexDirection: "column",
+              alignContent: "space-between",
+              gap: 2,
+              justifyContent: "",
+            }}
+          >
+            <Chip
+              label={`• ${Profile?.status}`}
+              sx={{
+                fontSize: "1.2rem",
+                alignItems: "center",
+                borderRadius: "8px",
+                fontFamily: "monospace",
+                color:
+                  Profile?.status == "Pending"
+                    ? "#F59E0B"
+                    : Profile?.status == "Accepted"
+                      ? "#10B981"
+                      : Profile?.status == "Interview"
+                        ? "#8B5CF6"
+                        : Profile?.status == "Rejected"
+                          ? "#EF4444"
+                          : Profile?.status == "Under review"
+                            ? "#3B82F6"
+                            : null,
 
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
+                bgcolor:
+                  Profile?.status == "Pending"
+                    ? "#FEF3C7"
+                    : Profile?.status == "Accepted"
+                      ? "#D1FAE5"
+                      : Profile?.status == "Interview"
+                        ? "#8a5cf620 "
+                        : Profile?.status == "Rejected"
+                          ? "#FEE2E2"
+                          : Profile?.status == "Under review"
+                            ? "#DBEAFE"
+                            : null,
+                fontWeight: 600,
+                mb: 1,
+              }}
+            />
 
-                📍 {Profile?.profile?.location}
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontFamily: "monospace",
+                fontWeight: 600,
+                color: "#00010eac",
+                bt: 1,
+              }}
+            >
+              📍 {Profile?.profile?.location}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontFamily: "monospace",
+                fontWeight: 600,
+                color: "#00010eac",
+                bt: 1,
+              }}
+            >
+              ✉ {Profile?.applicant?.email}
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: "1rem",
+                fontFamily: "monospace",
+                fontWeight: 600,
+                color: "#00010eac",
+                bt: 1,
+              }}
+            >
+              📞 {Profile?.applicant?.number || "----------"}
+            </Typography>
 
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                ✉ {Profile?.applicant?.email}
-              </Typography>
-              <Typography
-                sx={{
-                  fontSize: "1rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-                📞 {Profile?.applicant?.number || "----------"}
-              </Typography>
-
-               <Box>
-
+            <Box>
               <Typography
                 sx={{
                   fontSize: "0.8rem",
                   fontFamily: "monospace",
                   fontWeight: 600,
                   color: "#00010eaf",
-                  pb:0.5,
-                  pl:0.1
+                  pb: 0.5,
+                  pl: 0.1,
                 }}
               >
                 🛠 Skills
@@ -181,27 +172,24 @@ const {  Profile  } = useApply();
                   fontWeight: 600,
                   color: "#00010eac",
                   bt: 1,
-                  display:"flex",
-                  gap:1,
-                  
+                  display: "flex",
+                  gap: 1,
                 }}
               >
-                {Profile?.profile?.skills.slice(0,3).map((i)=>( <Chip label={`✔ ${i} `} />))}
-               
-
+                {Profile?.profile?.skills.slice(0, 3).map((i) => (
+                  <Chip label={`✔ ${i} `} />
+                ))}
               </Typography>
-
-              </Box>
-              <Box>
-
+            </Box>
+            <Box>
               <Typography
                 sx={{
                   fontSize: "0.8rem",
                   fontFamily: "monospace",
                   fontWeight: 600,
                   color: "#00010ed4",
-                  pb:0.5,
-                  pl:0.1
+                  pb: 0.5,
+                  pl: 0.1,
                 }}
               >
                 💼 Career Timeline
@@ -216,19 +204,7 @@ const {  Profile  } = useApply();
                   bt: 1,
                 }}
               >
-               
-               2020 - 2022   |  Senior Frontend Developer
-              </Typography><Typography
-                sx={{
-                  fontSize: "0.8rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00010eac",
-                  bt: 1,
-                }}
-              >
-               
-               2018 - 2022   |  React Developer
+                2020 - 2022 | Senior Frontend Developer
               </Typography>
               <Typography
                 sx={{
@@ -239,21 +215,23 @@ const {  Profile  } = useApply();
                   bt: 1,
                 }}
               >
-               
-               2020 - 2022   |  Freelancer
+                2018 - 2022 | React Developer
               </Typography>
-
-              </Box>
-              
-
-
-              
+              <Typography
+                sx={{
+                  fontSize: "0.8rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00010eac",
+                  bt: 1,
+                }}
+              >
+                2020 - 2022 | Freelancer
+              </Typography>
             </Box>
-
           </Box>
-
-
-
         </Box>
+      </Box>
     </>
+  );
 }
