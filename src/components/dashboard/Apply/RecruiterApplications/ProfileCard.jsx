@@ -4,7 +4,9 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function Profile ( ){
 const {  Profile  } = useApply();
+
 console.log(Profile);
+
  const apply = { status: "Pending" };
 
     return <>
@@ -51,8 +53,8 @@ console.log(Profile);
                   bt: 1,
                 }}
               >
-                {" "}
-                Khalid Arazani{" "}
+                
+                {Profile?.profile?.fullName}
               </Typography>
               <Typography
                 sx={{
@@ -63,8 +65,7 @@ console.log(Profile);
                   bt: 1,
                 }}
               >
-                {" "}
-                Frontend React Developer{" "}
+                {Profile?.profile?.headline}
               </Typography>
             </Box>
 
@@ -129,7 +130,8 @@ console.log(Profile);
                 }}
               >
 
-                📍 Taroudant, Morocco
+                📍 {Profile?.profile?.location}
+
               </Typography>
               <Typography
                 sx={{
@@ -140,7 +142,7 @@ console.log(Profile);
                   bt: 1,
                 }}
               >
-                ✉ karazani2003@gmail.com
+                ✉ {Profile?.applicant?.email}
               </Typography>
               <Typography
                 sx={{
