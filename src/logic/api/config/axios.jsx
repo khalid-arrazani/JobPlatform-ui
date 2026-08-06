@@ -1,13 +1,17 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://job-platform.fly.dev/api",
   withCredentials: true,
 });
 
+
 let refreshPromise = null;
 
+
+
 API.interceptors.response.use(
+
   function (response) {
     return response;
   },
