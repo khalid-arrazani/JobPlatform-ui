@@ -3,6 +3,7 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 
 export default function Profile() {
   const { Profile } = useApply();
+  console.log(Profile);
 
   return (
     <>
@@ -139,9 +140,9 @@ export default function Profile() {
                 bt: 1,
               }}
             >
-              ✉ {Profile?.apllicant?.location?.length > 35
-                ? `${Profile.apllicant.location.slice(0, 35)}...`
-                : Profile?.Apllicant?.email}
+              ✉ {Profile?.applicant?.email?.length > 35
+                ? `${Profile.applicant.email.slice(0, 35)}...`
+                : Profile?.applicant?.email}
             </Typography>
             <Typography
               sx={{
