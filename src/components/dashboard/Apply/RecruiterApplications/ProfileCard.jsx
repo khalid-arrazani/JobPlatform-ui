@@ -1,10 +1,12 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
+import { useApply } from "../../../../logic/context/ApplyContext";
 
 
 export default function Profile ( ){
-
+const {  Profile  } = useApply();
+console.log(Profile);
  const apply = { status: "Pending" };
- 
+
     return <>
     <Box
           sx={{

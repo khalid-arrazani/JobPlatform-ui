@@ -17,7 +17,7 @@ import NoApplyFound from "./EmptyList/NoApplyFound";
 
 
 export default function ListGrid() {
-  const { ...state } = useApply();
+  const { setProfile, ...state } = useApply();
 
   const navigate = useNavigate();
 
@@ -124,7 +124,7 @@ export default function ListGrid() {
            {state?.ListApply?.applications?.map((apply) => (
             <Box
               key={apply._id} 
-              onClick={()=>{console.log(apply);}}
+              onClick={()=>{setProfile(apply);}}
               sx={{
                 height: "5.5rem",
                 width: "100%",

@@ -2,7 +2,7 @@ import { Box} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import Header from "./header";
 import ListGrid from "./ListGrid";
@@ -13,6 +13,10 @@ import Profile from "./ProfileCard";
 export default function ApplicationsRc() {
   const { isLoading, ApplyJobs, felterData, setFelterData, ...state } =
     useApply();
+
+
+
+    
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };

@@ -25,6 +25,8 @@ export default function ApplyProvider({ children }) {
 
   const [isLoading, setisLoading] = useState(false);
 
+  const [Profile,setProfile] = useState(null)
+
   const [felterData, setFelterData] = useState({
     status: "",
     search: "",
@@ -96,7 +98,7 @@ export default function ApplyProvider({ children }) {
         ApplyWithoutJobs,
         felterData,
         setFelterData,
-        isLoading,
+        isLoading,Profile,setProfile
       }}
     >
       {children}
