@@ -19,7 +19,8 @@ export default function Profile() {
           p: 2,
         }}
       >
-        <Box
+
+         <Box
           sx={{
             boxSizing: "border-box",
             border: "1px #ddd dashed",
@@ -29,6 +30,32 @@ export default function Profile() {
             px: 1,
           }}
         >
+
+          
+        </Box>
+
+
+       
+
+
+
+
+
+
+
+
+        {/* <Box
+          sx={{
+            boxSizing: "border-box",
+            border: "1px #ddd dashed",
+            height: "100%",
+            width: "100%",
+            borderRadius: "15px",
+            px: 1,
+          }}
+        >
+
+
           <Box
             sx={{
               height: "37%",
@@ -223,7 +250,14 @@ export default function Profile() {
              
             </Box>
           </Box>
-        </Box>
+
+
+
+        </Box> */}
+
+
+
+
       </Box>
     </>
   );
