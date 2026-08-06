@@ -90,8 +90,6 @@ export default function Profile() {
             borderRadius: "15px",
             px: 1,transition:"none"
           }}
-
-          
         >
 
 
