@@ -5,7 +5,7 @@ import { useApply } from "../../../../logic/context/ApplyContext";
 export default function Profile ( ){
 const {  Profile  } = useApply();
 
-console.log(Profile);
+
 
  
 
