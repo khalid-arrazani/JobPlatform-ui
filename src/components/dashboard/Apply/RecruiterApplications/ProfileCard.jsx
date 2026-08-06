@@ -84,35 +84,36 @@ console.log(Profile);
               }}
             >
               <Chip
-                label={`• ${apply?.status}`}
+                label={`• ${Profile?.status}`}
+
                 sx={{
                   fontSize: "1.2rem",
                   alignItems: "center",
                   borderRadius: "8px",
                   fontFamily: "monospace",
                   color:
-                    apply?.status == "Pending"
+                    Profile?.status == "Pending"
                       ? "#F59E0B"
-                      : apply?.status == "Accepted"
+                      : Profile?.status == "Accepted"
                         ? "#10B981"
-                        : apply?.status == "Interview"
+                        : Profile?.status == "Interview"
                           ? "#8B5CF6"
-                          : apply?.status == "Rejected"
+                          : Profile?.status == "Rejected"
                             ? "#EF4444"
-                            : apply?.status == "Under review"
+                            : Profile?.status == "Under review"
                               ? "#3B82F6"
                               : null,
 
                   bgcolor:
-                    apply?.status == "Pending"
+                    Profile?.status == "Pending"
                       ? "#FEF3C7"
-                      : apply?.status == "Accepted"
+                      : Profile?.status == "Accepted"
                         ? "#D1FAE5"
-                        : apply?.status == "Interview"
+                        : Profile?.status == "Interview"
                           ? "#8a5cf620 "
-                          : apply?.status == "Rejected"
+                          : Profile?.status == "Rejected"
                             ? "#FEE2E2"
-                            : apply?.status == "Under review"
+                            : Profile?.status == "Under review"
                               ? "#DBEAFE"
                               : null,
                   fontWeight: 600,
@@ -153,7 +154,7 @@ console.log(Profile);
                   bt: 1,
                 }}
               >
-                📞 +212 777964129
+                📞 {Profile?.applicant?.number || "----------"}
               </Typography>
 
                <Box>
