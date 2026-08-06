@@ -39,10 +39,10 @@ const {  Profile  } = useApply();
                 borderBottom: "1px dashed #ddd",
                 placeItems: "center",
                 boxSizing: "border-box",
-                p: 2,
+                p:1,
               }}
             >
-              <Avatar sx={{ height: "7.5rem", width: "7.5rem" }} />
+              <Avatar sx={{ height: "7rem", width: "7rem" }} />
 
               <Typography
                 sx={{
@@ -63,9 +63,12 @@ const {  Profile  } = useApply();
                   fontWeight: 600,
                   color: "#00010eac",
                   bt: 1,
+                  textAlign:"center"
                 }}
               >
-                {Profile?.profile?.headline}
+                {Profile?.profile?.headline?.length > 56
+  ? `${Profile.profile.headline.slice(0, 56)}...`
+  : Profile?.profile?.headline}
               </Typography>
             </Box>
 
