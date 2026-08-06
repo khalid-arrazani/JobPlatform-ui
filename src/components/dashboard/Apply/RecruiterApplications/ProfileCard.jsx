@@ -200,6 +200,8 @@ export default function Profile() {
                 💼 Career Timeline
               </Typography>
 
+
+             
               <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -211,6 +213,13 @@ export default function Profile() {
               >
                 2020 - 2022 | Senior Frontend Developer
               </Typography>
+
+
+
+
+
+
+
               <Typography
                 sx={{
                   fontSize: "0.8rem",
