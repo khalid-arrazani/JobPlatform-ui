@@ -36,7 +36,7 @@ export default function Profile() {
 
 
 
-         <AccountCircleOutlinedIcon/>
+         <AccountCircleOutlinedIcon   sx={{width:"50%",height:"50%"}} />
 
          <Typography>No profile selected</Typography>
          <Typography>Select an applicant from the list to view their profile details</Typography>
