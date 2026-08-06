@@ -39,7 +39,7 @@ export default function Profile() {
               p: 1,
             }}
           >
-            <Avatar sx={{ height: "7rem", width: "7rem" }} />
+            <Avatar src={Profile?.profile?.ProfileImage?.url} sx={{ height: "7rem", width: "7rem" }} />
 
             <Typography
               sx={{
