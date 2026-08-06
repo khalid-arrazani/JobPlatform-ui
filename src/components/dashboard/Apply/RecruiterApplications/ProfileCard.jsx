@@ -202,7 +202,7 @@ export default function Profile() {
                 💼 Career Timeline
               </Typography>
 
-              {Profile?.profile?.education.slice(0, 3).map((i) => (
+              {Profile?.profile?.experience.slice(0, 3).map((i) => (
 
 
                 <Typography
@@ -214,9 +214,9 @@ export default function Profile() {
                     bt: 1,
                   }}
                 >
-                  {i.title}  |  {i.period} 
+                  {i.period}  |  {i.title} 
                 </Typography>
-                
+
 
               ))}
 
