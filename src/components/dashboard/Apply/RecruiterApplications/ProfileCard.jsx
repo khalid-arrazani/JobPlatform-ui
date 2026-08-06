@@ -200,7 +200,7 @@ export default function Profile() {
                 💼 Career Timeline
               </Typography>
 
-              {Profile?.profile?.skills.slice(0, 3).map((i) => (
+              {Profile?.profile?.education.slice(0, 3).map((i) => (
                   <Typography
                 sx={{
                   fontSize: "0.8rem",
@@ -210,7 +210,7 @@ export default function Profile() {
                   bt: 1,
                 }}
               >
-                2020 - 2022 | Senior Frontend Developer
+                {i.period} | {i.title}
               </Typography>
                 ))}
              
