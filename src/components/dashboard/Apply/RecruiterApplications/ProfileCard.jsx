@@ -22,7 +22,7 @@ export default function Profile() {
           p: 2,
          
         }}
-        style={{transition:"none"}}
+        style={{transition:"all  none"}}
       >
 
         {!Profile ? 
