@@ -30,7 +30,8 @@ export default function Profile() {
             px: 1,
           }}
         >
-         
+         <Typography>No profile selected</Typography>
+         <Typography>Select an applicant from the list to view their profile details</Typography>
 
         </Box>
 
