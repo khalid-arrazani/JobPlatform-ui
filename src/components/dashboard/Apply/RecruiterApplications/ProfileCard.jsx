@@ -1,7 +1,7 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
 import { useApply } from "../../../../logic/context/ApplyContext";
 
-import AccountCircleOutlinedIcon from "@mui/icons-material/AccountCircleOutlined";
+
 import Person2Icon from "@mui/icons-material/Person2";
 
 export default function Profile() {
