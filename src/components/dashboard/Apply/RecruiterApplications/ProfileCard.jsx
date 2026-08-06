@@ -119,25 +119,29 @@ export default function Profile() {
 
             <Typography
               sx={{
-                fontSize: "1rem",
+                fontSize: "0.9rem",
                 fontFamily: "monospace",
                 fontWeight: 600,
                 color: "#00010eac",
                 bt: 1,
               }}
             >
-              📍 {Profile?.profile?.location}
+              📍 {Profile?.profile?.location?.length > 35
+                ? `${Profile.profile.location.slice(0, 35)}...`
+                : Profile?.profile?.location}
             </Typography>
             <Typography
               sx={{
-                fontSize: "1rem",
+                fontSize: "0.9rem",
                 fontFamily: "monospace",
                 fontWeight: 600,
                 color: "#00010eac",
                 bt: 1,
               }}
             >
-              ✉ {Profile?.applicant?.email}
+              ✉ {Profile?.apllicant?.location?.length > 35
+                ? `${Profile.apllicant.location.slice(0, 35)}...`
+                : Profile?.Apllicant?.email}
             </Typography>
             <Typography
               sx={{
