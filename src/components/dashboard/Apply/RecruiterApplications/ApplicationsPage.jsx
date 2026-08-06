@@ -17,6 +17,8 @@ export default function ApplicationsRc() {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
 
+
+  
   useEffect(() => {
     ApplyJobs();
   }, []);
