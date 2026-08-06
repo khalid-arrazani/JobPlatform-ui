@@ -1,10 +1,10 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
 
 
-
-
 export default function Profile ( ){
+
  const apply = { status: "Pending" };
+ 
     return <>
     <Box
           sx={{
