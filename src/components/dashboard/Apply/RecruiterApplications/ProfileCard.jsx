@@ -7,7 +7,7 @@ const {  Profile  } = useApply();
 
 console.log(Profile);
 
- const apply = { status: "Pending" };
+ 
 
     return <>
     <Box
@@ -85,7 +85,6 @@ console.log(Profile);
             >
               <Chip
                 label={`• ${Profile?.status}`}
-
                 sx={{
                   fontSize: "1.2rem",
                   alignItems: "center",
@@ -179,10 +178,13 @@ console.log(Profile);
                   fontWeight: 600,
                   color: "#00010eac",
                   bt: 1,
+                  display:"flex",
+                  gap:1,
+                  
                 }}
               >
-                <Chip label={`✔ React `} /> - <Chip label={`✔ JavaScript `} /> -{" "}
-                <Chip label={`✔ Node.js `} />
+                {Profile?.profile?.skills.slice(0,3).map((i)=>( <Chip label={`✔ ${i} `} />))}
+               
 
               </Typography>
 
