@@ -6,6 +6,7 @@ import CardCompanies from "./CardCompanies"
 import CardFilterAndSearch from "./CardFilterAndSearch";
 
 import { GetAllCompanies } from "../../../logic/api/company/Company";
+import { useEffect } from "react";
 
 export default function CompaniesPage() {
 
@@ -18,8 +19,9 @@ export default function CompaniesPage() {
   }
  }
 
- fetchCompanies()
 
+ useEffect(()=>{ fetchCompanies()},[])
+console.log(55);
 
   return (
     <>
