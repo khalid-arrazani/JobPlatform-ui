@@ -37,7 +37,7 @@ console.log(companies);
         </div>
 
         <div class="Companiesdiv2" >
-          <CardCompanies/>
+          <CardCompanies  companies={companies}  />
         </div>
         
         <div class="Companiesdiv3">
