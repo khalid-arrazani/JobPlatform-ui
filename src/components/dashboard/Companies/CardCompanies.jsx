@@ -76,7 +76,7 @@ export default function CardCompanies({companies}){
     sx={{
       borderRadius: "1rem",
       p: 1,
-      height: "clamp(150px, 20vw, 140px)",0
+      height: "clamp(150px, 20vw, 140px)",
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
