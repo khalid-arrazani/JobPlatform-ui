@@ -5,10 +5,19 @@ import Stack from "@mui/material/Stack";
 import CardCompanies from "./CardCompanies"
 import CardFilterAndSearch from "./CardFilterAndSearch";
 
+import { GetAllCompanies } from "../../../logic/api/company/Company";
+
 export default function CompaniesPage() {
 
+ const fetchCompanies = ()=>{
+  try {
+    const data = await GetAllCompanies()
+    console.log(data);
+  } catch (error) {
+    
+  }
+ }
 
-  
 
   return (
     <>
