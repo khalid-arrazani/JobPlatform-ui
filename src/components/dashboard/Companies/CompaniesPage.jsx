@@ -9,14 +9,16 @@ import { GetAllCompanies } from "../../../logic/api/company/Company";
 
 export default function CompaniesPage() {
 
- const fetchCompanies = ()=>{
+ const fetchCompanies =async ()=>{
   try {
     const data = await GetAllCompanies()
     console.log(data);
   } catch (error) {
-    
+    console.log(error);
   }
  }
+
+ fetchCompanies()
 
 
   return (
