@@ -70,14 +70,13 @@ export default function CardCompanies({companies}){
         },
       ];
     return <>
-
   {company.map((company) => (
   <Card
     key={company.name}
     sx={{
       borderRadius: "1rem",
       p: 1,
-      height: "clamp(150px, 20vw, 140px)",
+      height: "clamp(150px, 20vw, 140px)",0
       display: "flex",
       flexDirection: "column",
       justifyContent: "space-between",
