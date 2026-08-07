@@ -21,12 +21,10 @@ export default function CompanyCard() {
           gap: 2,
           alignItems: "center",
           flexWrap: "wrap",
-          mb: 3,
           justifyContent: "center",
         }}
       >
-        <Typography></Typography>
-
+        
         {/* 🔍 Search */}
         <Box
           sx={{
@@ -38,6 +36,8 @@ export default function CompanyCard() {
             borderRadius: "12px",
             minWidth: "250px",
             width: "50vw",
+            ml:1,
+            mt:1
           }}
         >
           <SearchIcon sx={{ color: "#777" }} />
@@ -51,36 +51,6 @@ export default function CompanyCard() {
             }}
           />
         </Box>
-
-        {/* 🏢 Industry Filter */}
-        <Select
-          defaultValue="All"
-          size="small"
-          sx={{
-            background: "white",
-            borderRadius: "12px",
-            minWidth: "150px",
-          }}
-        >
-          <MenuItem value="All">All Industries</MenuItem>
-          <MenuItem value="Tech">Tech</MenuItem>
-          <MenuItem value="Finance">Finance</MenuItem>
-        </Select>
-
-        {/* 🌍 Location Filter */}
-        <Select
-          defaultValue="Worldwide"
-          size="small"
-          sx={{
-            background: "white",
-            borderRadius: "12px",
-            minWidth: "150px",
-          }}
-        >
-          <MenuItem value="Worldwide">Worldwide</MenuItem>
-          <MenuItem value="USA">USA</MenuItem>
-          <MenuItem value="Europe">Europe</MenuItem>
-        </Select>
       </Box>
     </Box>
   );
