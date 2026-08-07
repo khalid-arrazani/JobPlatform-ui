@@ -6,22 +6,26 @@ import CardCompanies from "./CardCompanies"
 import CardFilterAndSearch from "./CardFilterAndSearch";
 
 import { GetAllCompanies } from "../../../logic/api/company/Company";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 export default function CompaniesPage() {
+
+  const [companies , setCompanies ] = useState(null)
 
  const fetchCompanies =async ()=>{
   try {
     const data = await GetAllCompanies()
-    console.log(data);
+
+    setCompanies(data)
   } catch (error) {
     console.log(error);
   }
  }
 
-
  useEffect(()=>{ fetchCompanies()},[])
-console.log(55);
+
+
+console.log(companies);
 
   return (
     <>
