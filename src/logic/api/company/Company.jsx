@@ -79,3 +79,13 @@ export const deleteCompanyBnner = async ( ) => {
   return response.data;
 };
 
+
+export const GetAllCompanies = async (formData) => {
+  const response = await API.delete(
+     `/company`,
+   formData, { withCredentials: true }
+  );
+  return response.data;
+};
+
+

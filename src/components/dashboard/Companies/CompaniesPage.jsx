@@ -7,6 +7,9 @@ import CardFilterAndSearch from "./CardFilterAndSearch";
 
 export default function CompaniesPage() {
 
+
+  
+
   return (
     <>
 
