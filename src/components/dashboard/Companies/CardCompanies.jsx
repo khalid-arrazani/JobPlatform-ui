@@ -70,6 +70,7 @@ export default function CardCompanies({ companies }) {
     },
   ];
 
+  
 
   return (
     <>
