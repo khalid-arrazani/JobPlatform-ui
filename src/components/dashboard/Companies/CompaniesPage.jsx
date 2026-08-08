@@ -22,7 +22,8 @@ export default function CompaniesPage() {
   }
  }
 
- useEffect(()=>{ fetchCompanies()},[])
+ 
+ useEffect(()=>{fetchCompanies()},[])
 
 
 console.log(companies);
