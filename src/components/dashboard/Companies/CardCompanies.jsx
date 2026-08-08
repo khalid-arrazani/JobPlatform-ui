@@ -3,7 +3,7 @@ import { Box, Card, Avatar, Typography, Button } from "@mui/material";
 export default function CardCompanies({ companies }) {
 
 
-  
+
   const company = [
     {
       name: "Google",
@@ -69,7 +69,6 @@ export default function CardCompanies({ companies }) {
       employees: "5k+ Employees",
     },
   ];
-
 
 
   return (
