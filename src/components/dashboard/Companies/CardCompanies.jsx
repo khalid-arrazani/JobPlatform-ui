@@ -74,7 +74,7 @@ export default function CardCompanies({ companies }) {
 
   return (
     <>
-      {company.map((company) => (
+      {companies?.JobsWithApply?.map((company) => (
         <Card
           key={company.name}
           sx={{
@@ -99,7 +99,7 @@ export default function CardCompanies({ companies }) {
           {/* TOP */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
             <Avatar
-              src={company.image}
+              src={company.companyLogo.url}
               sx={{
                 width: "2.5rem",
                 height: "2.5rem",
@@ -117,7 +117,7 @@ export default function CardCompanies({ companies }) {
                   fontSize: "0.7rem",
                 }}
               >
-                {company.location}
+                {company.headquarters}
               </Typography>
             </Box>
           </Box>
@@ -131,7 +131,8 @@ export default function CardCompanies({ companies }) {
               lineHeight: 1.4,
             }}
           >
-            Explore opportunities and open positions at {company.name}.
+            {company.industry.slice(0,60)}
+            
           </Typography>
 
           {/* STATS */}

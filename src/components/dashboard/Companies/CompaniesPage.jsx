@@ -18,11 +18,10 @@ export default function CompaniesPage() {
 
     setCompanies(data)
   } catch (error) {
-    console.log(error);
+    console.log(error.response.data);
   }
  }
 
- 
  useEffect(()=>{fetchCompanies()},[])
 
 
