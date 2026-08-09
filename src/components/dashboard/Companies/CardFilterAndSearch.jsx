@@ -1,4 +1,4 @@
-import { Box, InputBase, MenuItem, Select, Typography } from "@mui/material";
+import { Box, InputBase, Typography } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 
@@ -37,17 +37,18 @@ export default function CompanyCard() {
             minWidth: "250px",
             width: "50vw",
             ml:1,
-            mt:1
+            mt:1,border:"solid 1px #ddd",boxSizing:"border-box"
           }}
         >
           <SearchIcon sx={{ color: "#777" }} />
 
           <InputBase
             placeholder="Search companies..."
+            fullWidth
             sx={{
               ml: 1,
-              minWidth: "100%",
-              Width: "50vw",
+             
+              
             }}
           />
         </Box>
