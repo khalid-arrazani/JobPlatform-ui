@@ -4,71 +4,6 @@ export default function CardCompanies({ companies }) {
 
 
 
-  const company = [
-    {
-      name: "Google",
-      image: "/google.png",
-      location: "California, USA",
-      jobs: "120 Jobs",
-      employees: "10k+ Employees",
-    },
-
-    {
-      name: "Microsoft",
-      image: "/microsoft.png",
-      location: "Washington, USA",
-      jobs: "98 Jobs",
-      employees: "10k+ Employees",
-    },
-
-    {
-      name: "Amazon",
-      image: "/amazon.png",
-      location: "Seattle, USA",
-      jobs: "150 Jobs",
-      employees: "10k+ Employees",
-    },
-
-    {
-      name: "Meta",
-      image: "/meta.png",
-      location: "California, USA",
-      jobs: "75 Jobs",
-      employees: "10k+ Employees",
-    },
-
-    {
-      name: "Apple",
-      image: "/apple.png",
-      location: "Cupertino, USA",
-      jobs: "63 Jobs",
-      employees: "10k+ Employees",
-    },
-
-    {
-      name: "Netflix",
-      image: "/netflix.png",
-      location: "Los Gatos, USA",
-      jobs: "45 Jobs",
-      employees: "5k+ Employees",
-    },
-
-    {
-      name: "Spotify",
-      image: "/spotify.png",
-      location: "Stockholm, Sweden",
-      jobs: "32 Jobs",
-      employees: "1k+ Employees",
-    },
-
-    {
-      name: "Airbnb",
-      image: "/airbnb.png",
-      location: "San Francisco, USA",
-      jobs: "28 Jobs",
-      employees: "5k+ Employees",
-    },
-  ];
 
   
 
@@ -91,7 +26,6 @@ export default function CardCompanies({ companies }) {
               transform: "translateY(-0.2rem)",
               boxShadow: "0 0.4rem 1rem rgba(0,0,0,0.10)",
             },
-            m: 1,
             width: "20%",
           }}
           style={{ minWidth: "190px", maxWidth: "250px" }}

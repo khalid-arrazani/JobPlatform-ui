@@ -33,17 +33,17 @@ console.log(companies);
   return (
     <>
 
-      <Box sx={{height:"100%", width:"100%",bgcolor:"#fafdff"}}>
+      <Box sx={{height:"100%", width:"100%",bgcolor:"#fafdff",boxSizing:"border-box"}}>
 
-        <Box  sx={{height:"25%", width:"100%",bgcolor:"#feffff"}}>
+        <Box  sx={{height:"25%", width:"100%",bgcolor:"#feffff",boxSizing:"border-box"}}>
           <CardFilterAndSearch/>
         </Box>
 
-        <Box  sx={{height:"60%", width:"100%",bgcolor:"#feffff"}} >
+        <Box  sx={{height:"60%", width:"100%",bgcolor:"#feffff",boxSizing:"border-box",p:2,border:"solid 1px #dddddd87"}} >
           <CardCompanies  companies={companies}  />
         </Box>
         
-        <Box  sx={{height:"15%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <Box  sx={{height:"15%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center",boxSizing:"border-box"}}>
               <Stack >
                 <Pagination count={10} />
               </Stack>
