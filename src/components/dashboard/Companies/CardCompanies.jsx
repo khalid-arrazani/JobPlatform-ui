@@ -95,6 +95,7 @@ export default function CardCompanies({ companies }) {
           <Button
             fullWidth
             variant="contained"
+            onClick={openCompany}
             sx={{
               mt: 1,
               borderRadius: "0.5rem",
