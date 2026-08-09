@@ -32,13 +32,16 @@ export default function CompanyDetailsPage() {
       const data = await GetCompanyById();
 
       dispatch({
-        type: "SETCOMPANY",
+        type: "SETCOMPANYDETAILS",
         payload: data,
       });
-      
+
       console.log(data);
+
     } catch (error) {
+
       console.log(error.response?.data);
+      
     } finally {
       dispatch({
         type: "SET_LOADING",
