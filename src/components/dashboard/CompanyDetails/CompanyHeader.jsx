@@ -1,13 +1,11 @@
-import { Box, Card, Typography, Chip, Button, IconButton } from "@mui/material";
+import { Box, Card, Typography, Chip} from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 
-import ModeRoundedIcon from "@mui/icons-material/ModeRounded";
 
-import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
@@ -27,29 +25,13 @@ const banners = {
 
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
-
-import ModalChoise from "./banner/ModalChoise";
-import Modalbanner from "./banner/Modalbanner";
-import CompanyBG from "./banner/UploadCompanyBG";
-import CompanyLogo from "./logo/UploadCompanyLogo";
-import ModalDeleteBanner from "./banner/ModalDeleteBanner";
-import ModalInfo from "./EditeCompanyInfo/ModaleCompanyInfo";
-
-import { useState } from "react";
-import { useCompany } from "../../../logic/context/CompanyContext";
-
-export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
-  const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
-
-  const [modalChoise, setModalChoise] = useState(false);
-  const [modalBanner, setModalBanner] = useState(false);
-  const [openEditor, setOpenEditor] = useState(false);
-  const [openEditorLogo, setOpenEditorLogo] = useState(false);
-  const [openDeleteBanner, setOpenDeleteBanner] = useState(false);
+  
 
 
-  const [image, setImage] = useState(false);
-  const [imageLogo, setImageLogo] = useState(false);
+
+ export default function CompanyHeader({ CompanyInfo}) {
+
+
 
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
@@ -81,56 +63,9 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             position: "relative",
           }}
         >
-          <IconButton
-            size="small"
-            sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2 }}
-            onClick={() => setModalChoise(true)}
-          >
-            <ModeRoundedIcon sx={{ color: "#060420de" }} />
-          </IconButton>
+          
         </Box>
 
-        {/* this section for edit Banner  */}
-        {/* ============================================================================== */}
-        <ModalChoise
-          open={modalChoise}
-          setOpen={setModalChoise}
-          bannerid={CompanyInfo?.companyBackground?.bannerId}
-          banner={BG}
-          setBannerModal={setModalBanner}
-          setOpenEditor={setOpenEditor}
-          setImage={setImage}
-          setOpenDeleteBanner={setOpenDeleteBanner}
-        />
-
-        <Modalbanner
-          open={modalBanner}
-          setOpen={setModalBanner}
-          bannerid={CompanyInfo?.companyBackground?.bannerId}
-          fetchCompany={fetchCompany}
-        />
-
-        <CompanyBG
-          openEditor={openEditor}
-          setOpenEditor={setOpenEditor}
-          image={image}
-          setImage={setImage}
-          fetchCompany={fetchCompany}
-        />
-
-        <ModalDeleteBanner
-          open={openDeleteBanner}
-          setOpen={setOpenDeleteBanner}
-          fetchCompany={fetchCompany}
-        />
-
-        <ModalInfo
-          open={openCompanyInfoEdite}
-          setOpen={setOpenCompanyInfoEdite}
-          fetchCompany={fetchCompany}
-          CompanyInfo={CompanyInfo}
-        />
-        {/* ============================================================================== */}
 
         <Box
           sx={{
@@ -142,33 +77,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             pt: "0.2vh",
           }}
         >
-          <Button
-            onClick={() => {
-              setOpenCompanyInfoEdite(true);
-            }}
-            variant="contained"
-            startIcon={<EditOutlinedIcon />}
-            sx={{
-              position: "absolute",
-              bottom: 20,
-              right: 20,
-              textTransform: "none",
-              borderRadius: "5px",
-              px: 2.5,
-              border: "solid 1px #b9b9b959",
-              color: "#434343",
-              fontFamily: "sans-serif",
-              fontWeight: 500,
-              py: 1,
-              bgcolor: "#fdfdfd",
-              boxShadow: "0 4px 12px rgba(203, 226, 249, 0.25)",
-              "&:hover": {
-                bgcolor: "#e2f4fa",
-              },
-            }}
-          >
-            Edit Company Profile
-          </Button>
+          
 
           {/* logo */}
           <Card
@@ -205,28 +114,8 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               alt=""
               srcset=""
             />
-            <input
-              hidden
-              accept="image/*"
-              type="file"
-              onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) {
-                  setImageLogo(file);
-                  setOpenEditorLogo(true);
-                }
-              }}
-            />
           </Card>
-          {/* this section for upload Logo */}
-          {/* ============================================================ */}
-          <CompanyLogo
-            setOpenEditorLogo={setOpenEditorLogo}
-            openEditorLogo={openEditorLogo}
-            imageLogo={imageLogo}
-            fetchCompany={fetchCompany}
-          />
-          {/* ============================================================ */}
+         
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>

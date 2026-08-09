@@ -1,10 +1,10 @@
-import {Typography, Box, Button } from "@mui/material";
+import {Typography, Box} from "@mui/material";
 import { CircleCheckBig } from "lucide-react";
-import AddIcon from '@mui/icons-material/Add';
-import { useCompany } from "../../../../logic/context/CompanyContext";
+
+
 
 export default function EmptyBenefits() {
-        const { setOpenCompanyInfoEdite,part, setPart } = useCompany();
+
   
   return (
     <>
@@ -48,9 +48,7 @@ export default function EmptyBenefits() {
           Start adding employee benefits to help candidates understand what
           makes your company unique
         </Typography>
-        <Button sx={{gap:1.5}} onClick={()=>{setOpenCompanyInfoEdite(true) 
-          setPart("Benefits")}
-        } variant="contained"> <AddIcon/>  Add Benefit</Button>
+       
       </Box>
     </>
   );

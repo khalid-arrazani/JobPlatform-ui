@@ -4,6 +4,7 @@ import { Card, Typography, Box, Button, Collapse } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 import EmptyAboutCompany from "./IfEmpty/EmptyAboutCompany";
 export default function AboutCompany({ CompanyInfo }) {
+  
   const [expanded, setExpanded] = useState(false);
 
   return (
@@ -37,7 +38,6 @@ export default function AboutCompany({ CompanyInfo }) {
           <EmptyAboutCompany />
         ) : (
           <>
-            {" "}
             <Collapse in={expanded} collapsedSize={70}>
               <Typography
                 sx={{
