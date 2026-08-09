@@ -45,19 +45,6 @@ export default function CompanyPage() {
     }
   };
 
-  console.log(state);
-  // const getCompany = async () => {
-
-  //   try {
-
-  //     const data = await getCompanyById();
-  //     console.log("1111" ,data);
-
-  //   } catch (error) {
-  //     console.log(error.response?.data);
-  //   }
-  // };
-
   return (
     <>
       <Box

@@ -47,6 +47,10 @@ import PhoneIcon from "@mui/icons-material/Phone";
 import EmailIcon from "@mui/icons-material/Email";
 
 const SocialContact = ({ CompanyInfo }) => {
+
+
+
+  
   return (
     <Card sx={{ p: 2, borderRadius: "12px", position: "relative" }}>
       <img
