@@ -16,6 +16,7 @@ export const CompanyContext = createContext();
 const initialState = {
   Company: null,
   isLoading: false,
+  CompanyDetails:null
 };
 
 export default function CompanyProvider({

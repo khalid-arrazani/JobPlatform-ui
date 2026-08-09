@@ -8,6 +8,11 @@ export const companyReducer = (
         ...state,
         Company: action.payload,
       }
+      case "SETCOMPANYDETAILS":
+      return {
+        ...state,
+        CompanyDetails: action.payload,
+      }
        case "SET_LOADING":
       return {
         ...state,

@@ -28,7 +28,6 @@ export default function CompanyDetailsPage() {
       payload: true,
     });
 
-
     try {
       const data = await GetCompanyById();
 
@@ -36,6 +35,7 @@ export default function CompanyDetailsPage() {
         type: "SETCOMPANY",
         payload: data,
       });
+      
       console.log(data);
     } catch (error) {
       console.log(error.response?.data);
