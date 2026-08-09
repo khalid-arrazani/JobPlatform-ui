@@ -40,6 +40,9 @@ const Default =
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
 
+
+  
+
   return (
     <>
       <Box
