@@ -33,17 +33,17 @@ console.log(companies);
   return (
     <>
 
-      <Box sx={{height:"100%", width:"100%"}}>
+      <Box sx={{height:"100%", width:"100%",bgcolor:"#fafdff"}}>
 
-        <Box class="Companiesdiv1">
+        <Box  sx={{height:"25%", width:"100%",bgcolor:"#e6fbc6"}}>
           <CardFilterAndSearch/>
         </Box>
 
-        <Box class="Companiesdiv2" >
+        <Box  sx={{height:"60%", width:"100%",bgcolor:"#68c0fa"}} >
           <CardCompanies  companies={companies}  />
         </Box>
         
-        <Box class="Companiesdiv3">
+        <Box  sx={{height:"10%", width:"100%",bgcolor:"#ad95ff",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <Stack >
                 <Pagination count={10} />
               </Stack>
