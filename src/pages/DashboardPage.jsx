@@ -16,6 +16,7 @@ import { useAuth } from "../logic/context/AuthContext.jsx";
 import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/ApplicationsPage.jsx";
 
 import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.jsx";
+import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDetailsPage.jsx";
 
 
 export default function DashboardPage() {
@@ -32,6 +33,9 @@ export default function DashboardPage() {
       <Routes>
         <Route path="Jobs" element={<JobsPage />} />
         <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
+
+        <Route path="Company/:JobId" element={<CompanyDetailsPage />} />
+
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
