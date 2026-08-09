@@ -33,7 +33,7 @@ console.log(companies);
   return (
     <>
 
-      <Box class="Companiesparent">
+      <Box sx={{height:"100%", width:"100%"}}>
 
         <Box class="Companiesdiv1">
           <CardFilterAndSearch/>
