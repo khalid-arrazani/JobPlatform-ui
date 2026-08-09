@@ -8,7 +8,7 @@ import CardFilterAndSearch from "./CardFilterAndSearch";
 import { GetAllCompanies } from "../../../logic/api/company/Company";
 import { useEffect, useState } from "react";
 
-import { Box, Card, Avatar, Typography, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 
 export default function CompaniesPage() {

@@ -37,9 +37,9 @@ export const UpdateMyCompany = async (
 
 
 // Get Company by Id
-export const getCompanyById = async () => {
+export const GetCompanyById = async (Id) => {
   const response = await API.get(
-   `/company/6a42d392ef9e67e39f882ace`,
+   `/company/${Id}`,
      { withCredentials: true }
   );
 
