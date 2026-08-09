@@ -12,7 +12,6 @@ import Footer from "./Footer";
 export default function MyJobsPage() {
 
 
-  
   return (
     <>
       <Box
