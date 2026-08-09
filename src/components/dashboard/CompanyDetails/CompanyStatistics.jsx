@@ -20,7 +20,6 @@ const CompanyStatistics = ({CompanyInfo}) => {
     avgViewsPerJob: CompanyInfo?.companyViews||0,
   };
 
-
   const cardStyle = (color) => ({
     p: 2,
     borderRadius: "12px",
