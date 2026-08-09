@@ -7,10 +7,10 @@ export default function CompanyCard() {
     <Box sx={{ display: "flex", flexDirection: "column",justifyContent:"center",height:"100%",alignItems:"center" }}>
 
        <Box sx={{width:"75%",m:1}}>
-      <Typography variant="h4" sx={{color:"#000000a2",fontWeight:"bold"}}>
+      <Typography variant="h4" sx={{color:"#03021bcf",fontWeight:600,fontFamily:"monospace"}}>
        Companies
       </Typography>
-            <Typography variant="h7" sx={{color:"#161515c4"}}>
+            <Typography variant="h7" sx={{color:"#03021ba2",fontWeight:600,fontFamily:"monospace",fontSize:"1rem"}}>
        Discover top companies and explore their open positions
       </Typography>
       </Box>
