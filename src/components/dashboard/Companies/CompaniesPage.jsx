@@ -45,7 +45,7 @@ console.log(companies);
         
         <Box  sx={{height:"12%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center",boxSizing:"border-box"}}>
               <Stack >
-                <Pagination count={10} />
+                <Pagination count={1} />
               </Stack>
           
         </Box>
