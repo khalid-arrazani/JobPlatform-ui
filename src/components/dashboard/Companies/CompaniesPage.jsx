@@ -35,7 +35,7 @@ console.log(companies);
 
       <Box sx={{height:"100%", width:"100%",bgcolor:"#fafdff"}}>
 
-        <Box  sx={{height:"25%", width:"100%",bgcolor:"#e6fbc6"}}>
+        <Box  sx={{height:"25%", width:"100%",bgcolor:"#feffff"}}>
           <CardFilterAndSearch/>
         </Box>
 
@@ -43,7 +43,7 @@ console.log(companies);
           <CardCompanies  companies={companies}  />
         </Box>
         
-        <Box  sx={{height:"10%", width:"100%",bgcolor:"#ad95ff",display:"flex",justifyContent:"center",alignItems:"center"}}>
+        <Box  sx={{height:"15%", width:"100%",bgcolor:"#ad95ff",display:"flex",justifyContent:"center",alignItems:"center"}}>
               <Stack >
                 <Pagination count={10} />
               </Stack>
