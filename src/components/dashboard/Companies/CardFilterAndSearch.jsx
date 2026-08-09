@@ -47,8 +47,6 @@ export default function CompanyCard() {
             fullWidth
             sx={{
               ml: 1,
-             
-              
             }}
           />
         </Box>
