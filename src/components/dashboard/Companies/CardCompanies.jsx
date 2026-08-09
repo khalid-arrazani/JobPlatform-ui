@@ -27,6 +27,7 @@ export default function CardCompanies({ companies }) {
               boxShadow: "0 0.4rem 1rem rgba(0,0,0,0.10)",
             },
             width: "20%",
+            border:"solid 1px #9e9e9e3d"
           }}
           style={{ minWidth: "190px", maxWidth: "250px" }}
         >

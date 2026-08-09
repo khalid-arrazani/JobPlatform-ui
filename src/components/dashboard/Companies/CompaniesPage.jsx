@@ -39,11 +39,11 @@ console.log(companies);
           <CardFilterAndSearch/>
         </Box>
 
-        <Box  sx={{height:"60%", width:"100%",bgcolor:"#feffff",boxSizing:"border-box",p:2,border:"solid 1px #dddddd87"}} >
+        <Box  sx={{height:"63%", width:"100%",bgcolor:"#feffff",boxSizing:"border-box",p:2,border:"solid 1px #dddddd87",display:"flex",flexWrap:"wrap",justifyContent:"space-evenly",gap:1}} >
           <CardCompanies  companies={companies}  />
         </Box>
         
-        <Box  sx={{height:"15%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center",boxSizing:"border-box"}}>
+        <Box  sx={{height:"12%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center",boxSizing:"border-box"}}>
               <Stack >
                 <Pagination count={10} />
               </Stack>
