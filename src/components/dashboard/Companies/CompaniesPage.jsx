@@ -8,6 +8,9 @@ import CardFilterAndSearch from "./CardFilterAndSearch";
 import { GetAllCompanies } from "../../../logic/api/company/Company";
 import { useEffect, useState } from "react";
 
+import { Box, Card, Avatar, Typography, Button } from "@mui/material";
+
+
 export default function CompaniesPage() {
 
   const [companies , setCompanies ] = useState(null)
@@ -30,24 +33,24 @@ console.log(companies);
   return (
     <>
 
-      <div class="Companiesparent">
+      <Box class="Companiesparent">
 
-        <div class="Companiesdiv1">
+        <Box class="Companiesdiv1">
           <CardFilterAndSearch/>
-        </div>
+        </Box>
 
-        <div class="Companiesdiv2" >
+        <Box class="Companiesdiv2" >
           <CardCompanies  companies={companies}  />
-        </div>
+        </Box>
         
-        <div class="Companiesdiv3">
+        <Box class="Companiesdiv3">
               <Stack >
                 <Pagination count={10} />
               </Stack>
           
-        </div>
+        </Box>
           
-      </div>
+      </Box>
     </>
   );
 }
