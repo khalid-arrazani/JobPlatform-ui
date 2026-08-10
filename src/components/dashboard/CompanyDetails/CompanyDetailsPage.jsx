@@ -14,12 +14,13 @@ import {
 } from "../../../logic/api/company/Company";
 
 import { useCompany } from "../../../logic/context/CompanyContext";
+import { useParams } from "react-router-dom";
 
 export default function CompanyDetailsPage() {
 
   const { dispatch, ...state } = useCompany();
 
- 
+    const { JobId } = useParams();
 
   const fetchCompany = async () => {
 

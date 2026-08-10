@@ -50,7 +50,6 @@ const SocialContact = ({ CompanyInfo }) => {
 
 
 
-  
   return (
     <Card sx={{ p: 2, borderRadius: "12px", position: "relative" }}>
       <img

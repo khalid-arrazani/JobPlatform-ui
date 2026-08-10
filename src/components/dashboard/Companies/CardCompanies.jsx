@@ -1,14 +1,15 @@
 import { Box, Card, Avatar, Typography, Button } from "@mui/material";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
 
 export default function CardCompanies({ companies }) {
 
 
-
+const navigate = useNavigate();
 
   const openCompany = async (e) => {
     const jobId = e.currentTarget.dataset.id;
-    Navigate(`Details/${jobId}`);
+    navigate(`Company/${jobId}`);
   };
 
   return (
@@ -95,6 +96,7 @@ export default function CardCompanies({ companies }) {
           <Button
             fullWidth
             variant="contained"
+              data-id={company._id}
             onClick={openCompany} 
             sx={{
               mt: 1,
