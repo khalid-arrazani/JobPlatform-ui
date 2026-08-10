@@ -38,6 +38,7 @@ export default function BasicInformationSection() {
       formData.append("headline", headline);
       formData.append("location", location);
 
+      
       if (photo) {
         formData.append("image", photo, "profile.png");
       }
