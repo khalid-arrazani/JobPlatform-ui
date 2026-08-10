@@ -38,7 +38,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
 
   const [openCancelApply, setOpenCancelApply] = useState(false);
 
-  console.log(jobInfo);
+ 
 
   useEffect(() => {
     setJobs(jobInfo);
