@@ -9,6 +9,8 @@ import BasicInformationSection from "./BasicInformationSection";
 
 export default function RecruiterCPPage() {
   console.log(5555);
+
+  
   return (
     <>
       <div className="Recruiterpar">
