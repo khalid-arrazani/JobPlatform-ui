@@ -9,67 +9,49 @@ import {
 import { authReducer } from "./reducer/authReducer";
 import { getMeUser } from "../api/user/user";
 
-
-
-
-
 export const AuthContext = createContext();
-
 
 const initialState = {
   user: null,
 };
 
+export default function AuthProvider({ children }) {
+  const [snackBar, setSnackBar] = useState({
+    open: false,
+    message: "",
+    severity: "success",
+  });
 
+  const [state, dispatch] = useReducer(authReducer, initialState);
 
-export default function AuthProvider({
-  children,
-}) {
+  const fetchUser = async () => {
+    try {
+      const user = await getMeUser();
 
- const [snackBar, setSnackBar] = useState({
-  open: false,
-  message: "",
-  severity: "success",
-});
+      dispatch({
+        type: "GET-USER",
+        payload: user,
+      });
+      console.log(user);
+    } catch (error) {
+      console.log(error.response?.data);
+    } finally {
+      dispatch({
+        type: "SET_LOADING",
+        payload: false,
+      });
+    }
+  };
 
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
+  console.log(state);
 
-  const [state, dispatch] =
-    useReducer(
-      authReducer,
-      initialState
-    );
+  const [sign, setSign] = useState("Sign In");
 
-     const fetchUser = async () => {
-        try {
-          const user = await getMeUser();
-    
-          dispatch({
-            type: "GET-USER",
-            payload: user,
-          });
-          console.log(user);
-  
-        } catch (error) {
-          console.log(error.response?.data);
-        } finally {
-          dispatch({
-            type: "SET_LOADING",
-            payload: false,
-          });
-        }
-      };
-      
-      useEffect(()=>{fetchUser()},[])
-
-   console.log(state);
-
-
- const [sign, setSign] = useState("Sign In");
-
- const checkRole = state.user?.role 
-
-
+  const checkRole = state.user?.role;
 
   return (
     <AuthContext.Provider
@@ -78,9 +60,9 @@ export default function AuthProvider({
         checkRole,
         dispatch,
         snackBar,
-         setSnackBar,
-         sign, 
-         setSign
+        setSnackBar,
+        sign,
+        setSign,
       }}
     >
       {children}
@@ -89,7 +71,5 @@ export default function AuthProvider({
 }
 
 export const useAuth = () => {
-  return useContext(
-    AuthContext
-  );
+  return useContext(AuthContext);
 };
