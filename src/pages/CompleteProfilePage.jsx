@@ -16,7 +16,7 @@ console.log(state,5555);
 
   return (
     <CompleteProfileLayout>
-       {state.user?.role == "jobSeeker" ? <JobSeekerCPPage/>  : state.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
+       {state.user?.user?.role == "jobSeeker" ? <JobSeekerCPPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
     </CompleteProfileLayout>
 
   );
