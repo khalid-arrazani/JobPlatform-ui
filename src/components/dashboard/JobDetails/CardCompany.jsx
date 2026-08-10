@@ -30,12 +30,13 @@ import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
 import { Badge } from "@mui/material";
 
 import { RiDeleteBinLine } from "react-icons/ri";
+import { useNavigate } from "react-router-dom";
 
 export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
-
+  const navigate = useNavigate();
   const [openCancelApply, setOpenCancelApply] = useState(false);
 
  
@@ -114,6 +115,11 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
     setOpenCancelApply(false)
   }
 
+  const openCompany = async (e) => {
+    const companyId = e.currentTarget.dataset.id;
+    navigate(`/Dashboard/Company/${companyId}`);
+  };
+
   return (
     <>
       <Modal
@@ -158,9 +164,6 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
 
             <Typography sx={{textAlign:"center",fontWeight:600}}>Cancel Application?</Typography>
             <Typography sx={{textAlign:"center",width:"85%",fontSize:"0.8rem"}}>Are you sure you want to cancel your application for this job? Thid action cannot be undone.</Typography>
-
-
-
 
 
 
@@ -231,6 +234,8 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           }}
         >
           <Avatar
+          data-id={jobInfo?.createdBy?._id}
+             onClick={openCompany}
             src={jobInfo?.createdBy.companyLogo.url}
             sx={{
               width: 90,
@@ -240,6 +245,10 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               borderRadius: "10px",
               m: "2rem",
               p: 2,
+              cursor:"pointer",
+              transition:".2s",
+              
+              ":active":{bgcolor: "#ececec",}
             }}
           />
 

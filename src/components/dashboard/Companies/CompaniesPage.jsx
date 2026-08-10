@@ -14,7 +14,7 @@ import { Box } from "@mui/material";
 export default function CompaniesPage() {
 
   const [companies , setCompanies ] = useState(null)
-
+  
  const fetchCompanies =async ()=>{
   try {
     const data = await GetAllCompanies()
@@ -28,7 +28,6 @@ export default function CompaniesPage() {
  useEffect(()=>{fetchCompanies()},[])
 
 
-console.log(companies);
 
   return (
     <>
