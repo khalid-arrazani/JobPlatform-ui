@@ -8,8 +8,8 @@ export default function CardCompanies({ companies }) {
 const navigate = useNavigate();
 
   const openCompany = async (e) => {
-    const jobId = e.currentTarget.dataset.id;
-    navigate(`Company/${jobId}`);
+    const companyId = e.currentTarget.dataset.id;
+    navigate(`/Dashboard/Company/${companyId}`);
   };
 
   return (
@@ -96,7 +96,7 @@ const navigate = useNavigate();
           <Button
             fullWidth
             variant="contained"
-              data-id={company._id}
+            data-id={company._id}
             onClick={openCompany} 
             sx={{
               mt: 1,

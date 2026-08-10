@@ -21,6 +21,7 @@ export default function CompanyDetailsPage() {
   const { dispatch, ...state } = useCompany();
 
     const { JobId } = useParams();
+    console.log(JobId);
 
   const fetchCompany = async () => {
 
