@@ -19,7 +19,6 @@ function App() {
       <SimpleSnackbar />
 
       <Routes>
-
         <Route path="/Dashboard/*" element={<DashboardPage />} />
 
         <Route path="/profile" element={<ProfilePage />} />
@@ -31,7 +30,6 @@ function App() {
         <Route path="/AccountSettings" element={<AccountSettingsPage />} />
 
         <Route path="/JobDetails" element={<JobDetailsPage />} />
-        
       </Routes>
     </>
   );

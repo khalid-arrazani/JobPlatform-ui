@@ -33,18 +33,16 @@ export default function DashboardPage() {
       <Routes>
         <Route path="Jobs" element={<JobsPage />} />
         <Route path="Jobs/Details/:JobId" element={<JobDetailsPage />} />
-
         <Route path="Company/:CompanyId" element={<CompanyDetailsPage />} />
 
         <Route path="Companies" element={<CompaniesPage />} />
         <Route path="Saved" element={<SavedJobs />} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
 
-        <Route path="Profile/Details/:ProfileId/:Role" element={<ProfileDetails />} />       
-   
+        <Route path="Profile/Details/:ProfileId/:Role" element={<ProfileDetails />} />    
+           
         <Route path="Applications" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <ApplicationsRc /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
        
-
         <Route path="My_Company" element={state.isLoading ? <LoadingPage/> : ( state.user?.hasCompany  ?  <CompanyPage /> :  <CreateCompanyPage /> )  } />
 
       </Routes>

@@ -23,6 +23,7 @@ const initialState = {
 export default function AuthProvider({
   children,
 }) {
+  
  const [snackBar, setSnackBar] = useState({
   open: false,
   message: "",

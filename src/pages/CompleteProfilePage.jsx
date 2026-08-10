@@ -10,8 +10,6 @@ export default function CompleteProfilePage() {
 
   const {  ...state} = useAuth()
 
-  console.log(state);
-  
 
   return (
     <CompleteProfileLayout>

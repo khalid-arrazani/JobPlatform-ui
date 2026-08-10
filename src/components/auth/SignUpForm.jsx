@@ -20,6 +20,7 @@ import { RegisterUser } from "../../logic/api/auth/auth";
 import { AuthContext } from "../../logic/context/AuthContext";
 
 export default function SingUpPage() {
+  
   const [role, setrole] = useState("jobSeeker");
   const [email, setEmail] = useState("");
   const [username, setUsername] = useState("");

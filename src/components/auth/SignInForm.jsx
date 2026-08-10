@@ -26,21 +26,26 @@ export default function SignIn() {
   const navigate = useNavigate();
   const { dispatch, setSnackBar } = useContext(AuthContext);
 
+
+
   const handleLogin = async () => {
     try {
       const data = await LoginUser({
         email,
         password,
       });
+
       setSnackBar({
         open: true,
         message: data.message,
         severity: "success",
       });
+      
       dispatch({
         type: "LOGIN",
         payload: data,
       });
+
       if (data.user.isComplete == false) {
         navigate("/CompleteProfile");
       } else {
