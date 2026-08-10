@@ -19,6 +19,7 @@ function App() {
       <SimpleSnackbar />
 
       <Routes>
+        
         <Route path="/Dashboard/*" element={<DashboardPage />} />
 
         <Route path="/profile" element={<ProfilePage />} />
