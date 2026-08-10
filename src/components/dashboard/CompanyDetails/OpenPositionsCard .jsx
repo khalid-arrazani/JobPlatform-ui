@@ -3,53 +3,7 @@ import { Card, Typography, Box, Chip, Button } from "@mui/material";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-const postedJobs = [
-  {
-    id: 1,
-    title: "Frontend Developer",
-    employmentType: "Full Time",
-    workMode: "Remote",
-    location: "Berlin, Germany",
-    salary: "$70k - $90k",
-    postedAt: "2 days ago",
-  },
-  {
-    id: 2,
-    title: "Senior React Developer",
-    employmentType: "Full Time",
-    workMode: "Hybrid",
-    location: "London, UK",
-    salary: "$90k - $120k",
-    postedAt: "5 hours ago",
-  },
-  {
-    id: 3,
-    title: "UI/UX Designer",
-    employmentType: "Part Time",
-    workMode: "Remote",
-    location: "Paris, France",
-    salary: "$40k - $60k",
-    postedAt: "1 week ago",
-  },
-  {
-    id: 4,
-    title: "Backend Engineer",
-    employmentType: "Full Time",
-    workMode: "On-site",
-    location: "Toronto, Canada",
-    salary: "$85k - $110k",
-    postedAt: "3 days ago",
-  },
-  {
-    id: 5,
-    title: "DevOps Engineer",
-    employmentType: "Contract",
-    workMode: "Hybrid",
-    location: "Amsterdam, Netherlands",
-    salary: "$80k - $100k",
-    postedAt: "12 hours ago",
-  },
-];
+
 import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 
@@ -238,7 +192,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             </Box>
           </Card>
         ))}
-        
+
       </Card>
     </>
   );

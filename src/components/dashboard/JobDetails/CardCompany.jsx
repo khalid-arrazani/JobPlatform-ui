@@ -25,7 +25,7 @@ import {
   CancelApplyForAJob,
 } from "../../../logic/api/apply/Apply.jsx";
 
-import DeleteOutlineRoundedIcon from "@mui/icons-material/DeleteOutlineRounded";
+ 
 import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
 import { Badge } from "@mui/material";
 
