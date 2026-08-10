@@ -9,7 +9,7 @@ import { useProfile } from "../logic/context/profileContext.jsx"
 export default function ProfilePage(){
   const { ...state  } = useAuth()
 
-  const {fetchUser  } = useProfile()
+  const {fetchUser } = useProfile()
   
 
   useEffect(() => {
@@ -17,12 +17,9 @@ export default function ProfilePage(){
     }, []);
 
   
-
- 
     return<>
     <ProfileLayout>
       {state.user?.role == "jobSeeker" ? <JobSeekerProfilePage/>  : state.user?.role == "recruiter" ? <RecruiterProfilePage/> : null }
-    
     </ProfileLayout>
     </>
 }

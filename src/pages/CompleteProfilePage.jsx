@@ -9,9 +9,7 @@ import { useAuth } from "../logic/context/AuthContext.jsx";
 export default function CompleteProfilePage() {
 
   const {...state} = useAuth()
-
-
-console.log(state , 5555);
+  console.log(state , 5555);
 
 
   return (

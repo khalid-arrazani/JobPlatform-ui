@@ -25,12 +25,7 @@ export default function BasicInformationSection() {
   const [location, setLocation] = useState("");
   const [photo, setPhoto] = useState("");
 
-  //------------ Company Info ------------------
 
-  const [companyName, setCompanyName] = useState("");
-  const [industry, setIndustry] = useState("");
-  const [webSite, setWebSite] = useState("");
-  const [companyLocation, setCompanyLocation] = useState("");
 
   const navigate = useNavigate();
 
@@ -42,10 +37,6 @@ export default function BasicInformationSection() {
       formData.append("fullName", fullName);
       formData.append("headline", headline);
       formData.append("location", location);
-      formData.append("companyName", companyName);
-      formData.append("Companylocation", companyLocation);
-      formData.append("website", webSite);
-      formData.append("industry", industry);
 
       if (photo) {
         formData.append("image", photo, "profile.png");
@@ -221,176 +212,9 @@ export default function BasicInformationSection() {
           }}
         />
       </Box>
-      <Divider sx={{ my: "1rem" }} />
-      <Chip
-        label="Company"
-        size="small"
-        sx={{
-          mb: "0.5rem",
-          background: "#f3f0ff",
-          color: "#5b21b6",
-          fontWeight: 600,
-          borderRadius: "0.2rem",
-          fontSize: "0.75rem",
-          p: 2,
-        }}
-      />
-      {/* Company name */}
-      <Box sx={{ mb: "1rem" }}>
-        <Typography
-          sx={{
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            mb: "0.5rem",
-            color: "#111827",
-          }}
-        >
-          Company name*
-        </Typography>
 
-        <TextField
-          fullWidth
-          onChange={(e) => {
-            setCompanyName(e.target.value);
-          }}
-          size="small"
-          required
-          placeholder="Enter your Company name"
-          InputProps={{
-            startAdornment: (
-              <LocationOnOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              borderRadius: "0.3rem",
-            },
-          }}
-        />
-      </Box>
-      {/* industry */}
-      <Box sx={{ mb: "1rem" }}>
-        <Typography
-          sx={{
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            mb: "0.5rem",
-            color: "#111827",
-          }}
-        >
-          industry*
-        </Typography>
 
-        <TextField
-          fullWidth
-          onChange={(e) => {
-            setIndustry(e.target.value);
-          }}
-          size="small"
-          required
-          placeholder="Enter your Company industry"
-          InputProps={{
-            startAdornment: (
-              <LocationOnOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              borderRadius: "0.3rem",
-            },
-          }}
-        />
-      </Box>
-      {/* WebSite */}
-      <Box sx={{ mb: "1rem" }}>
-        <Typography
-          sx={{
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            mb: "0.5rem",
-            color: "#111827",
-          }}
-        >
-          WebSite*
-        </Typography>
 
-        <TextField
-          fullWidth
-          onChange={(e) => {
-            setWebSite(e.target.value);
-          }}
-          size="small"
-          required
-          placeholder="Enter your Company Website"
-          InputProps={{
-            startAdornment: (
-              <LocationOnOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              borderRadius: "0.3rem",
-            },
-          }}
-        />
-      </Box>
-      {/* Company Location */}
-      <Box sx={{ mb: "1rem" }}>
-        <Typography
-          sx={{
-            fontSize: "0.82rem",
-            fontWeight: 600,
-            mb: "0.5rem",
-            color: "#111827",
-          }}
-        >
-          Location*
-        </Typography>
-
-        <TextField
-          fullWidth
-          onChange={(e) => {
-            setCompanyLocation(e.target.value);
-          }}
-          size="small"
-          required
-          placeholder="Enter your Company Location"
-          InputProps={{
-            startAdornment: (
-              <LocationOnOutlinedIcon
-                sx={{
-                  mr: "0.5rem",
-                  color: "#9ca3af",
-                  fontSize: "1rem",
-                }}
-              />
-            ),
-          }}
-          sx={{
-            "& .MuiOutlinedInput-root": {
-              borderRadius: "0.3rem",
-            },
-          }}
-        />
-      </Box>
 
       {/* Button */}
       <Button
