@@ -20,8 +20,8 @@ export default function CompanyDetailsPage() {
 
   const { dispatch, ...state } = useCompany();
 
-    const { JobId } = useParams();
-    console.log(JobId);
+    const { CompanyId } = useParams();
+   
 
   const fetchCompany = async () => {
 
@@ -31,7 +31,7 @@ export default function CompanyDetailsPage() {
     });
 
     try {
-      const data = await GetCompanyById();
+      const data = await GetCompanyById(CompanyId);
 
       dispatch({
         type: "SETCOMPANYDETAILS",
