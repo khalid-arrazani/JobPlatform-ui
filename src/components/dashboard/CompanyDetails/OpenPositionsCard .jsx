@@ -238,6 +238,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             </Box>
           </Card>
         ))}
+        
       </Card>
     </>
   );
