@@ -11,6 +11,9 @@ export default function CompleteProfilePage() {
   const {  ...state} = useAuth()
 
 
+console.log(state,5555);
+
+
   return (
     <CompleteProfileLayout>
        {state.user?.role == "jobSeeker" ? <JobSeekerCPPage/>  : state.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
