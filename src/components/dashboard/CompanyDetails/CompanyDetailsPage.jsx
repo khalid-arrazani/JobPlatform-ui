@@ -22,6 +22,7 @@ export default function CompanyDetailsPage() {
 
     const { CompanyId } = useParams();
    
+    console.log(state);
 
   const fetchCompany = async () => {
 
@@ -75,7 +76,7 @@ export default function CompanyDetailsPage() {
 
         {/* top side or Company Card or  Header   */}
         <CompanyHeader
-          CompanyInfo={state.Company?.company}
+          CompanyInfo={state.CompanyDetails?.company}
         />
 
         {/* Content about Company or bottom side  */}
@@ -97,14 +98,14 @@ export default function CompanyDetailsPage() {
             }}
           >
             {/* About Company Card  */}
-            <AboutCompany CompanyInfo={state.Company?.company} />
+            <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
             {/* Company Statistics  */}
-            <CompanyStatistics CompanyInfo={state?.Company} />
+            <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
 
             {/* Open Positions Card  */}
             <OpenPositionsCard
-              CompanyInfo={state?.Company}
-              CompanyactiveJobs={state?.Company?.activeJobs}
+              CompanyInfo={state?.CompanyDetails}
+              CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
             />
           </Box>
 
@@ -117,13 +118,13 @@ export default function CompanyDetailsPage() {
             }}
           >
             {/* Company Benefits Card  */}
-            <SocialContact CompanyInfo={state.Company?.company} />
+            <SocialContact CompanyInfo={state.CompanyDetails?.company} />
 
             {/* Company Benefits Card  */}
-            <CompanyBenefits CompanyInfo={state.Company?.company} />
+            <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
 
             {/* Company Info Card  */}
-            <CompanyInfo CompanyInfo={state.Company?.company} />
+            <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
           </Box>
         </Box>
       </Box>

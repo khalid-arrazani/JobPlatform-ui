@@ -106,7 +106,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
         {/* Job Item */}
         {!CompanyactiveJobs?.length && <EmptyOpenPositions />}
 
-        {CompanyactiveJobs?.slice(0, 3).map((item) => (
+        {CompanyactiveJobs?.slice(0,3).map((item) => (
           <Card
             key={item._id}
             sx={{

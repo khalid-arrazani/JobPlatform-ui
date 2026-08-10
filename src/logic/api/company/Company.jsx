@@ -38,6 +38,7 @@ export const UpdateMyCompany = async (
 
 // Get Company by Id
 export const GetCompanyById = async (Id) => {
+  console.log(Id , 444);
   const response = await API.get(
    `/company/${Id}`,
      { withCredentials: true }
