@@ -30,7 +30,6 @@ export default function ProfileProvider({ children }) {
   const fetchUser = async () => {
     try {
       let data;
-      
       const user = await getMeUser();
 
       dis({
