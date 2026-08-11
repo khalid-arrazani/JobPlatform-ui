@@ -40,7 +40,7 @@ export default function BasicInformationSection() {
 
       
       if (photo) {
-        formData.append("image", photo, "profile.png");
+        formData.append("profileImage", photo, "profile.png");
       }
 
       const data = await CompleteProfileR(formData);
