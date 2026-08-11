@@ -76,8 +76,7 @@ export default function RecruiterProfilePage() {
               width: "50%",
             }}
           >
-            <CompanyInformationCard />
-            
+
             <HiringFocusCard />
           </div>
         </div>
