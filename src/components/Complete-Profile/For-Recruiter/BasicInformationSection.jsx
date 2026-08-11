@@ -4,7 +4,6 @@ import {
   Chip,
   Button,
   TextField,
-  Divider,
 } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";

@@ -187,7 +187,7 @@ export default function Navbar() {
 
 
 
-            {authState.user?.role == "recruiter" ? (
+            {authState.user?.user?.role == "recruiter" ? (
                <IconButton
                 onClick={() => navigate("/Dashboard/My_Company")}
                 sx={{
@@ -257,7 +257,7 @@ export default function Navbar() {
           <IconButton>
             <NotificationsNoneOutlinedIcon />
           </IconButton>
-          {authState.user?.role == "recruiter" ? (
+          {authState.user?.user?.role == "recruiter" ? (
           <IconButton
             onClick={() => {
               setOpenModal(true);

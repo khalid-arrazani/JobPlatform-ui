@@ -2,7 +2,6 @@ import "./ProfileRecruiter.css";
 
 import Header from "./header.jsx";
 import RecruiterStatsCard from "./RecruiterStatsCard.jsx";
-import CompanyInformationCard from "./CompanyInformationCard.jsx";
 import AboutMeCard from "./AboutMeCard.jsx";
 import HiringFocusCard from "./HiringFocusCard.jsx";
 import QuickStatsCard from "./QuickStatsCard.jsx";
@@ -53,7 +52,7 @@ export default function RecruiterProfilePage({data}) {
               width: "50%",
             }}
           >
-            <CompanyInformationCard data={data}  />
+     
             
             <HiringFocusCard data={data}  />
           </div>
