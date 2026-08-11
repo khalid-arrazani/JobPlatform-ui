@@ -54,7 +54,7 @@ export default function AuthProvider({ children }) {
 
   const [sign, setSign] = useState("Sign In");
 
-  const checkRole = state.user?.role;
+  const checkRole = state.user?.user?.role;
 
   return (
     <AuthContext.Provider
