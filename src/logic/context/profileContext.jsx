@@ -25,7 +25,7 @@ export default function ProfileProvider({ children }) {
 
   const { dispatch: dis } = useAuth();
 
-  console.log(state);
+
   
   const fetchUser = async () => {
     try {
@@ -37,11 +37,12 @@ export default function ProfileProvider({ children }) {
         payload: user,
       });
 
-      if (user.role == "jobSeeker") {
+      if (user.user.role == "jobSeeker") {
         data = await getMeJS();
-      } else if (user.role == "recruiter") {
+      } else if (user.user.role == "recruiter") {
         data = await getMeR();
       }
+
       dispatch({
         type: "PROFILE",
         payload: data,

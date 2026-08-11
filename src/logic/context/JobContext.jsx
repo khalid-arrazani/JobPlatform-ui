@@ -65,7 +65,6 @@ export default function JobProvider({ children }) {
 
   useEffect(() => {
     if (location.pathname !== "/Dashboard/My_Jobs") return;
-
     fetchCompany();
   }, [felterData, location.pathname]);
 
