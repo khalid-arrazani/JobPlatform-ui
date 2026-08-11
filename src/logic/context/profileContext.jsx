@@ -42,7 +42,7 @@ export default function ProfileProvider({ children }) {
       } else if (user.role == "recruiter") {
         data = await getMeR();
       }
-
+      
       dispatch({
         type: "PROFILE",
         payload: data,
