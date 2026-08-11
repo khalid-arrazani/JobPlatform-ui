@@ -48,7 +48,6 @@ export default function ProfileProvider({ children }) {
         payload: data,
       });
 
-      dispatch({});
     } catch (error) {
       console.log(error.response?.data);
     } finally {
