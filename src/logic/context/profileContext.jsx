@@ -42,7 +42,6 @@ export default function ProfileProvider({ children }) {
       } else if (user.role == "recruiter") {
         data = await getMeR();
       }
-
       dispatch({
         type: "PROFILE",
         payload: data,
@@ -58,10 +57,8 @@ export default function ProfileProvider({ children }) {
     }
   };
 
-  useEffect(()=>{
-    fetchUser()
-  },[])
-  
+ 
+
 
   const [aboutOpen, setAboutOpen] = useState(false);
   const [skillOpen, setSkillOpen] = useState(false);
