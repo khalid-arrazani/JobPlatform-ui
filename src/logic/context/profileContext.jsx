@@ -25,7 +25,7 @@ export default function ProfileProvider({ children }) {
 
   const { dispatch: dis } = useAuth();
 
-  
+  console.log(state);
   
   const fetchUser = async () => {
     try {
