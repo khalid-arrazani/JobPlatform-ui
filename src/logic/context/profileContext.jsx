@@ -1,4 +1,4 @@
-import { createContext, useReducer, useContext, useState } from "react";
+import { createContext, useReducer, useContext, useState, useEffect } from "react";
 
 import { profileReducer } from "./reducer/ProfileReducer";
 import { getMeUser } from "../api/user/user";
@@ -58,6 +58,10 @@ export default function ProfileProvider({ children }) {
       });
     }
   };
+
+  useEffect(()=>{
+    fetchUser()
+  },[])
 
   const [aboutOpen, setAboutOpen] = useState(false);
   const [skillOpen, setSkillOpen] = useState(false);
