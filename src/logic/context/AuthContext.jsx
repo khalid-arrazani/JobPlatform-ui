@@ -8,6 +8,7 @@ import {
 
 import { authReducer } from "./reducer/authReducer";
 import { getMeUser } from "../api/user/user";
+import { useLocation } from "react-router-dom";
 
 export const AuthContext = createContext();
 
@@ -16,6 +17,7 @@ const initialState = {
 };
 
 export default function AuthProvider({ children }) {
+    const location = useLocation();
   const [snackBar, setSnackBar] = useState({
     open: false,
     message: "",
@@ -44,6 +46,7 @@ export default function AuthProvider({ children }) {
   };
 
   useEffect(() => {
+     if (location.pathname == "/login") return;
     fetchUser();
   }, []);
 
