@@ -21,13 +21,20 @@ import LoadingList from "./LoadingList.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 export default function JobsPage() {
-  const { dispatch : dispatch1, ...state1 } = useProfile();
+  const {fetchUser, dispatch : dispatch1, ...state1 } = useProfile();
   const { dispatch, ...state } = useJob();
 
 
 
   const { setSnackBar } = useAuth();
   const [page, setPage] = useState(1);
+
+
+
+
+
+
+
 
   const handleChange = (event, value) => {
     setPage(value);
