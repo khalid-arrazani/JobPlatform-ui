@@ -47,11 +47,7 @@ const HiringFocusModal = ({ open, setOpen }) => {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-    setSnackBar({
-      open: true,
-      message: "Hiring Focus Update Seccesfuly",
-      severity: "success",
-    });
+    
 
     try {
       const data = await updateProfileR({
@@ -61,6 +57,13 @@ const HiringFocusModal = ({ open, setOpen }) => {
         type: "PROFILE",
         payload: data,
       });
+      
+      
+      setSnackBar({
+      open: true,
+      message: "Hiring Focus Update Seccesfuly",
+      severity: "success",
+    });
       setOpen(false);
     } catch (error) {
       setSnackBar({

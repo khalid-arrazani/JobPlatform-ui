@@ -1,4 +1,4 @@
-import { Card, Typography, Box} from "@mui/material";
+import { Card, Typography, Box, CircularProgress} from "@mui/material";
 
 
 import {
@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 import {  updateProfileR } from "../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../logic/context/AuthContext";
+import { green } from "@mui/material/colors";
 
 export default function AboutMeModal({open , setOpen}) {
 
@@ -149,7 +150,7 @@ export default function AboutMeModal({open , setOpen}) {
 
                 fullWidth
                 multiline
-                rows={4}
+                rows={8}
                 slotProps={{
                   htmlInput: {
                     maxLength: 700,
@@ -172,6 +173,7 @@ export default function AboutMeModal({open , setOpen}) {
             <Button
               fullWidth
               onClick={handleSave}
+            disabled={state.isLoadingUptadeProfile}
               variant="contained"
               sx={{
                 height: "3rem",
@@ -189,10 +191,23 @@ export default function AboutMeModal({open , setOpen}) {
                 
               }}
             >
-              Continue
-              <TrendingFlatOutlinedIcon
-                sx={{ position: "relative", right: "-40%" }}
-              />
+              {state.isLoadingUptadeProfile ? (
+                                       <CircularProgress
+                                         aria-label="Loading…"
+                                         size={30}
+                                         sx={{
+                                           color: green[800],
+                                           position: "absolute",
+                                         }}
+                                       />
+                                     ) : (
+                                       <Box sx={{ display: "flex", justifyContent: "center" }}>
+                                         Save
+                                         <TrendingFlatOutlinedIcon
+                                           sx={{ position: "relative", right: "-400%" }}
+                                         />
+                                       </Box>
+                                     )}
             </Button>
           </Box>
         </Card>

@@ -6,12 +6,16 @@ import {
   TextField,
   MenuItem,
   Button,
+  CircularProgress,
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { updateProfileR } from "../../../logic/api/profile/GetMe";
+import { green } from "@mui/material/colors";
+import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+
 
 export default function ExperienceModal({ open, setOpen }) {
 
@@ -44,7 +48,7 @@ export default function ExperienceModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
-      
+
       setSnackBar({
         open: true,
         message: "experience Level Update Seccesfuly",
@@ -151,11 +155,28 @@ export default function ExperienceModal({ open, setOpen }) {
           <Button
             variant="contained"
             onClick={handleSave}
+            disabled={state.isLoadingUptadeProfile}
             sx={{
               textTransform: "none",
             }}
           >
-            Save
+            {state.isLoadingUptadeProfile ? (
+                         <CircularProgress
+                           aria-label="Loading…"
+                           size={30}
+                           sx={{
+                             color: green[800],
+                             position: "absolute",
+                           }}
+                         />
+                       ) : (
+                         <Box sx={{ display: "flex", justifyContent: "center" }}>
+                           Save
+                           <TrendingFlatOutlinedIcon
+                             sx={{ position: "relative", right: "-400%" }}
+                           />
+                         </Box>
+                       )}
           </Button>
         </Box>
       </Card>
