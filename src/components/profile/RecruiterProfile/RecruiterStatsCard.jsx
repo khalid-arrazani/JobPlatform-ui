@@ -105,13 +105,15 @@ export default function RecruiterStatsCard() {
   return (
     
     <Card
-      sx={{
-        width: "44vw",
+        sx={{
+        width: "46vw",
         borderRadius: "1rem",
         p: "1rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-        m: 1,
+        mx: 1,
+        mt: 1,
+        boxSizing:"border-box"
       }}
     >
       <ExperienceModal 

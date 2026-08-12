@@ -17,13 +17,14 @@ export default function AboutMeCard() {
   return (
     <Card
       sx={{
-        width: "44vw",
+        width: "46vw",
         borderRadius: "1rem",
         p: "1rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
         mx: 1,
         mt: 1,
+        boxSizing:"border-box"
       }}
     >
       <AboutMeModal open={open} setOpen={setOpen} />
@@ -90,10 +91,13 @@ export default function AboutMeCard() {
         {/* Description */}
         <Typography
           sx={{
-            fontSize: "0.85rem",
-            lineHeight: 1.5,
-            color: "#666",
-             whiteSpace: "pre-line"
+            fontSize: "0.8rem",
+            lineHeight: 1.3,
+            color: "#020109c9",
+            whiteSpace: "pre-line",
+            fontFamily:"monospace",
+            fontWeight:600,
+            p:1.5,border:"1px dashed #ddd",borderRadius:"10px"
           }}
         >
           {state.user?.profile?.aboutMe}
