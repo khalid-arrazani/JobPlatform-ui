@@ -91,12 +91,15 @@ export default function AboutMeCard() {
         <Typography
           sx={{
             fontSize: "0.85rem",
-            lineHeight: 1.8,
+            lineHeight: 1.5,
             color: "#666",
+             whiteSpace: "pre-line"
           }}
         >
           {state.user?.profile?.aboutMe}
         </Typography>
+
+        {!state.user?.profile?.aboutMe ?  
 
         <Box
           sx={{
@@ -171,8 +174,10 @@ export default function AboutMeCard() {
           <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#040213da"}}>
             Schare your background, experience , and what makes you unique
           </Typography>
-        </Box>
-        
+        </Box>:null
+}
+
+
       </CardContent>
     </Card>
   );
