@@ -44,11 +44,13 @@ export default function ExperienceModal({ open, setOpen }) {
         type: "PROFILE",
         payload: data,
       });
+      
       setSnackBar({
         open: true,
         message: "experience Level Update Seccesfuly",
         severity: "success",
       });
+
       setOpen(false);
     } catch (error) {
       setSnackBar({
