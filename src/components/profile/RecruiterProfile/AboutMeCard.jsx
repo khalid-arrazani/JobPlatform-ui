@@ -107,13 +107,14 @@ export default function AboutMeCard() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
+            gap:0.5
           }}
         >
           <Box
             sx={{
               height: "7.5rem",
               width: "7.5rem",
-              bgcolor: "#fae9fc",
+              bgcolor: "#fdedff75",
               borderRadius: "50%",
               display: "flex",
               flexDirection: "column",
@@ -162,13 +163,16 @@ export default function AboutMeCard() {
           </svg>
           </Box>
 
-          <Typography>
+          <Typography  sx={{fontSize:"1.3rem",fontWeight:600,fontFamily:"system-ui",color:"#040213da"}}>
             Tell others about yourself
           </Typography>
-          <Typography>
-            Schar your background, experience , and what makes you unique
+
+
+          <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#040213da"}}>
+            Schare your background, experience , and what makes you unique
           </Typography>
         </Box>
+        
       </CardContent>
     </Card>
   );
