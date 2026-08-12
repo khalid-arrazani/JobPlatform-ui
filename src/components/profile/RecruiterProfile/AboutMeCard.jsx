@@ -100,7 +100,7 @@ const {...state} = useProfile()
           {state.user?.profile?.aboutMe }
         </Typography>
 
-        <Box    sx={{border:"dashed 1px #ddd",height:"10rem"}} >
+        <Box    sx={{border:"dashed 1px #ddd " ,height:"10rem",borderRadius:"10px"}} >
 
         </Box>
 
