@@ -19,7 +19,7 @@ export default function AboutMeCard() {
       sx={{
         width: "46vw",
         borderRadius: "1rem",
-        p: "1rem",
+        p: "0.5rem",
         background: "#fff",
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
         mx: 1,
