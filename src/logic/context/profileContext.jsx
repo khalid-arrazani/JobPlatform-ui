@@ -68,8 +68,6 @@ export default function ProfileProvider({ children }) {
   const [socialOpen, setSocialOpen] = useState(false);
 
 
-
-
   return (
     <ProfileContext.Provider
       value={{
