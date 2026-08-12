@@ -6,6 +6,10 @@ export default function ImptyInfo () {
 
 
     return<>
+    <Box  sx={{border:"1px #ddd"}}>
+
+
+    </Box>
 
     
     </>

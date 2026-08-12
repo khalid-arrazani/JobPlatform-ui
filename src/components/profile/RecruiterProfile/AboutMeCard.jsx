@@ -14,7 +14,7 @@ const {...state} = useProfile()
 
 
   return (
-    
+
     <Card
       sx={{
         width: "44vw",
@@ -27,7 +27,7 @@ const {...state} = useProfile()
       }}
     >
 
-    <AboutMeModal  open={open} setOpen={setOpen}/>
+   <AboutMeModal  open={open} setOpen={setOpen}/>
 
       <CardContent sx={{ p: "0.5rem !important" }}>
         {/* Header */}
@@ -86,6 +86,9 @@ const {...state} = useProfile()
             </IconButton>
           </Typography>
         </Box>
+
+
+
         {/* Description */}
         <Typography
           sx={{
@@ -96,6 +99,17 @@ const {...state} = useProfile()
         >
           {state.user?.profile?.aboutMe || "info"}
         </Typography>
+
+        <Box    sx={{border:""}} >
+
+        </Box>
+
+
+
+
+
+
+
       </CardContent>
     </Card>
   );
