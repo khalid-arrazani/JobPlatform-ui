@@ -35,11 +35,6 @@ export default function ExperienceModal({ open, setOpen }) {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-    setSnackBar({
-      open: true,
-      message: "Education Update Seccesfuly",
-      severity: "success",
-    });
     try {
       const data = await updateProfileR({
         experienceLevel: experience,
@@ -47,6 +42,11 @@ export default function ExperienceModal({ open, setOpen }) {
       dispatch({
         type: "PROFILE",
         payload: data,
+      });
+      setSnackBar({
+        open: true,
+        message: "Education Update Seccesfuly",
+        severity: "success",
       });
       setOpen(false);
     } catch (error) {

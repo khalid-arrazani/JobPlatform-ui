@@ -1,7 +1,6 @@
 import { Card, CardContent, Typography, Box, IconButton } from "@mui/material";
 
-import { TfiPencilAlt } from "react-icons/tfi";
-import { FcVoicePresentation } from "react-icons/fc";
+
 
 import EditIcon from "@mui/icons-material/Edit";
 

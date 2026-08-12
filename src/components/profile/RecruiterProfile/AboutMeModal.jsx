@@ -1,9 +1,6 @@
-import { Card, Typography, Box, MenuItem } from "@mui/material";
+import { Card, Typography, Box} from "@mui/material";
 
-import ISO6391 from "iso-639-1";
 
-import CircularProgress from "@mui/material/CircularProgress";
-import { green } from "@mui/material/colors";
 import {
 
   Modal,
@@ -38,17 +35,15 @@ export default function AboutMeModal({open , setOpen}) {
   }, [state.user?.profile]);
 
 
+
   const handleSave = async () => {
 
     dispatch({
         type: "SET_LOADING_UPDATE_PROFILE",
         payload: true,
       });
-    setSnackBar({
-        open: true,
-        message: "Education Update Seccesfuly",
-        severity: "success",
-      });
+
+    
     try {
       const data = await updateProfileR({
         aboutMe:about
@@ -57,6 +52,14 @@ export default function AboutMeModal({open , setOpen}) {
         type: "PROFILE",
         payload: data,
       });
+
+
+      setSnackBar({
+        open: true,
+        message: "Education Update Seccesfuly",
+        severity: "success",
+      });
+      
       setOpen(false);
       
     } catch (error) {
