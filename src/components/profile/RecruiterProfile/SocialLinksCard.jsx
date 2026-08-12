@@ -35,22 +35,22 @@ export default function SocialLinksCard() {
  const getIcon = (platform) => {
   switch (platform) {
     case "LinkedIn":
-      return <LinkedInIcon />;
+      return <LinkedInIcon sx={{ color: "#0A66C2" }} />;
 
     case "GitHub":
-      return <GitHubIcon />;
+      return <GitHubIcon sx={{ color: "#181717" }} />;
 
     case "Twitter":
-      return <XIcon />;
+      return <XIcon sx={{ color: "#000000" }} />;
 
     case "Facebook":
-      return <FacebookIcon />;
+      return <FacebookIcon sx={{ color: "#1877F2" }} />;
 
     case "Instagram":
-      return <InstagramIcon />;
+      return <InstagramIcon sx={{ color: "#E4405F" }} />;
 
     default:
-      return <LanguageIcon />;
+      return <LanguageIcon sx={{ color: "#6B7280" }} />;
   }
 };
   return (
@@ -164,6 +164,7 @@ export default function SocialLinksCard() {
                 "&:hover": {
                   background: "#eef2ff",
                 },
+               textDecorationColor:"none"
               }}
             >
               {getIcon(item.platform)}
