@@ -43,7 +43,6 @@ export default function AboutMeModal({open , setOpen}) {
         payload: true,
       });
 
-    
     try {
       const data = await updateProfileR({
         aboutMe:about
@@ -53,10 +52,9 @@ export default function AboutMeModal({open , setOpen}) {
         payload: data,
       });
 
-
       setSnackBar({
         open: true,
-        message: "Education Update Seccesfuly",
+        message: "About Me Update Seccesfuly",
         severity: "success",
       });
       

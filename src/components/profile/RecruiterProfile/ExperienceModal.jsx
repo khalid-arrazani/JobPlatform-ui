@@ -39,13 +39,14 @@ export default function ExperienceModal({ open, setOpen }) {
       const data = await updateProfileR({
         experienceLevel: experience,
       });
+
       dispatch({
         type: "PROFILE",
         payload: data,
       });
       setSnackBar({
         open: true,
-        message: "Education Update Seccesfuly",
+        message: "experience Level Update Seccesfuly",
         severity: "success",
       });
       setOpen(false);
