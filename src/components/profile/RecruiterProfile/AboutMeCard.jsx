@@ -97,10 +97,10 @@ const {...state} = useProfile()
             color: "#666",
           }}
         >
-          {state.user?.profile?.aboutMe || "info"}
+          {state.user?.profile?.aboutMe }
         </Typography>
 
-        <Box    sx={{border:""}} >
+        <Box    sx={{border:"dashed 1px #ddd",height:"10rem"}} >
 
         </Box>
 
