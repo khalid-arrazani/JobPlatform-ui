@@ -141,10 +141,10 @@ export default function SocialLinksCard() {
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            gap:0.5
+            gap:0.5,width:"100%"
           }}
         >
-          
+
           <Box
             sx={{
               height: "7.5rem",
