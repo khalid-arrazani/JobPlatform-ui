@@ -17,45 +17,39 @@ import { useEffect, useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function SocialLinksCard() {
+  const { ...state } = useProfile();
 
-  const {...state} = useProfile()
-  
   const [open, setOpen] = useState(false);
   const [socialLinks, setSocialLinks] = useState([]);
 
+  useEffect(() => {
+    setSocialLinks(state.user?.profile?.socialLinks);
+  }, [state.user?.profile]);
 
+  const getIcon = (platform) => {
+    switch (platform) {
+      case "LinkedIn":
+        return <LinkedInIcon sx={{ color: "#0A66C2" }} />;
 
-  useEffect(()=>{
-    setSocialLinks(state.user?.profile?.socialLinks)
-  },[state.user?.profile])
+      case "GitHub":
+        return <GitHubIcon sx={{ color: "#181717" }} />;
 
+      case "Twitter":
+        return <XIcon sx={{ color: "#000000" }} />;
 
+      case "Facebook":
+        return <FacebookIcon sx={{ color: "#1877F2" }} />;
 
+      case "Instagram":
+        return <InstagramIcon sx={{ color: "#E4405F" }} />;
 
- const getIcon = (platform) => {
-  switch (platform) {
-    case "LinkedIn":
-      return <LinkedInIcon sx={{ color: "#0A66C2" }} />;
-
-    case "GitHub":
-      return <GitHubIcon sx={{ color: "#181717" }} />;
-
-    case "Twitter":
-      return <XIcon sx={{ color: "#000000" }} />;
-
-    case "Facebook":
-      return <FacebookIcon sx={{ color: "#1877F2" }} />;
-
-    case "Instagram":
-      return <InstagramIcon sx={{ color: "#E4405F" }} />;
-
-    default:
-      return <LanguageIcon sx={{ color: "#6B7280" }} />;
-  }
-};
+      default:
+        return <LanguageIcon sx={{ color: "#6B7280" }} />;
+    }
+  };
   return (
     <Card
-       sx={{
+      sx={{
         width: "46vw",
         borderRadius: "1rem",
         p: "1rem",
@@ -63,10 +57,15 @@ export default function SocialLinksCard() {
         boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
         mx: 1,
         mt: 1,
-        boxSizing:"border-box"
+        boxSizing: "border-box",
       }}
     >
-      <SocialLinksModal open={open} setOpen={setOpen} socialLinks={socialLinks} setSocialLinks={setSocialLinks}  />
+      <SocialLinksModal
+        open={open}
+        setOpen={setOpen}
+        socialLinks={socialLinks}
+        setSocialLinks={setSocialLinks}
+      />
       {/* Header */}
       <Box
         sx={{
@@ -131,81 +130,129 @@ export default function SocialLinksCard() {
         }}
       >
         {socialLinks?.length === 0 ? (
-
-         <Box
-          sx={{
-            border: "dashed 1px #ddd ",
-            height: "15rem",
-            borderRadius: "10px",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            justifyContent: "center",
-            gap:0.5,width:"100%"
-          }}
-        >
-
           <Box
             sx={{
-              height: "7.5rem",
-              width: "7.5rem",
-              bgcolor: "#fdedff75",
-              borderRadius: "50%",
+              border: "dashed 1px #ddd ",
+              height: "15rem",
+              borderRadius: "10px",
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
+              gap: 0.5,
+              width: "100%",
             }}
           >
-            <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          id="Common-File-Edit--Streamline-Ultimate"
-          height={"50%"}
-          width={"50%"}
-        >
-          <desc>
-            {
-              "\n    Common File Edit Streamline Icon: https://streamlinehq.com\n  "
-            }
-          </desc>
-          <path
-            fill="#e3e3e395"
-            d="M18.8932 4.82626c0.1794 0.17934 0.2802 0.42259 0.2803 0.67625V22.0432c0 0.2537 -0.1008 0.497 -0.2802 0.6764 -0.1794 0.1793 -0.4227 0.2801 -0.6763 0.2801H1.9565c-0.25368 0 -0.49697 -0.1008 -0.67635 -0.2801C1.10077 22.5402 1 22.2969 1 22.0432V1.95677c0 -0.25368 0.10077 -0.49697 0.28015 -0.67634 0.17938 -0.17938 0.42267 -0.28016 0.67635 -0.28016h12.7147c0.2537 0.00006 0.4969 0.10087 0.6763 0.28026l3.5457 3.54573Z"
-            strokeWidth={1}
-          />
-          <path
-            fill="#ffffff"
-            d="m17.8908 3.82385 -2.5433 -2.54332c-0.1794 -0.17939 -0.4226 -0.2802 -0.6763 -0.28026H1.9565c-0.25368 0 -0.49697 0.10078 -0.67635 0.28016C1.10077 1.4598 1 1.70309 1 1.95677V20.7137L17.8908 3.82385Z"
-            strokeWidth={1}
-          />
-          <path
-            fill="#ff984470"
-            stroke="#191919db"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="m22.4059 14.9842 -7.298 7.2981 -3.5869 0.7174 0.7174 -3.5869 7.298 -7.2981c0.1877 -0.1883 0.4107 -0.3377 0.6563 -0.4397 0.2455 -0.1019 0.5088 -0.1544 0.7747 -0.1544 0.2658 0 0.5291 0.0525 0.7747 0.1544 0.2455 0.102 0.4685 0.2514 0.6562 0.4397l0.0076 0.0077c0.1884 0.1877 0.3378 0.4107 0.4398 0.6562 0.1019 0.2456 0.1544 0.5088 0.1544 0.7747s-0.0525 0.5291 -0.1544 0.7747c-0.102 0.2455 -0.2514 0.4685 -0.4398 0.6562Z"
-            strokeWidth={0.3}
-          />
-          <path
-            stroke="#191919d8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M8.65198 22.9997H1.9565c-0.25368 0 -0.49697 -0.1008 -0.67635 -0.2801C1.10077 22.5402 1 22.2969 1 22.0432V1.95677c0 -0.25368 0.10077 -0.49697 0.28015 -0.67634 0.17938 -0.17938 0.42267 -0.28016 0.67635 -0.28016h12.7147c0.2537 0.00006 0.4969 0.10087 0.6763 0.28026l3.5457 3.54573c0.1794 0.17934 0.2802 0.42259 0.2803 0.67625v3.14974"
-            strokeWidth={0.3}
-          />
-          </svg>
+            <Box
+              sx={{
+                height: "7.5rem",
+                width: "7.5rem",
+                bgcolor: "#fdedff75",
+                borderRadius: "50%",
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+                id="Share-Link--Streamline-Core"
+                height={14}
+                width={14}
+              >
+                <desc>
+                  {
+                    "\n    Share Link Streamline Icon: https://streamlinehq.com\n  "
+                  }
+                </desc>
+                <g id="share-link--share-transmit">
+                  <path
+                    id="Vector"
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.76 6 4.48 -2.25"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_2"
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="m4.76 8 4.48 2.25"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_3"
+                    fill="#ffffff"
+                    d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_4"
+                    fill="#ffffff"
+                    d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_5"
+                    fill="#ffffff"
+                    d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_6"
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_7"
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector_8"
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
+                    strokeWidth={1}
+                  />
+                </g>
+              </svg>
+            </Box>
+
+            <Typography
+              sx={{
+                fontSize: "1.3rem",
+                fontWeight: 600,
+                fontFamily: "system-ui",
+                color: "#040213da",
+              }}
+            >
+              No social links added yet.
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: "0.8rem",
+                fontWeight: 600,
+                fontFamily: "monospace",
+                color: "#040213da",
+              }}
+            >
+              Schare your social links
+            </Typography>
           </Box>
-
-          <Typography  sx={{fontSize:"1.3rem",fontWeight:600,fontFamily:"system-ui",color:"#040213da"}}>
-            No social links added yet.
-          </Typography>
-
-          <Typography  sx={{fontSize:"0.8rem",fontWeight:600,fontFamily:"monospace",color:"#040213da"}}>
-            Schare your social links
-          </Typography>
-        </Box>
         ) : (
           socialLinks?.map((item, index) => (
             <Box
@@ -231,7 +278,7 @@ export default function SocialLinksCard() {
                 "&:hover": {
                   background: "#eef2ff",
                 },
-               textDecorationColor:"none"
+                textDecorationColor: "none",
               }}
             >
               {getIcon(item.platform)}
@@ -245,14 +292,10 @@ export default function SocialLinksCard() {
                 >
                   {item.platform}
                 </Typography>
-
-          
               </Box>
             </Box>
           ))
         )}
-
-      
       </Box>
     </Card>
   );
