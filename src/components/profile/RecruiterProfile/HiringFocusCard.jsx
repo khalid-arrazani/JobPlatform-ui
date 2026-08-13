@@ -8,20 +8,15 @@ import { useEffect, useState } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
 export default function HiringFocusCard() {
+  const { ...state } = useProfile();
 
-  const {...state} = useProfile()
+  const [hiringTypes, setHiringTypes] = useState([]);
+  const [roles, setRoles] = useState([]);
 
-  const [hiringTypes , setHiringTypes]=useState([])
-  const [roles , setRoles]=useState([])
-
-
-  useEffect(()=>{
-    setHiringTypes(state.user?.profile?.hiring_Focus?.hiring_Types ||[])
-    setRoles(state.user?.profile?.hiring_Focus?.roles_I_hire_for ||[])
-  },[state.user?.profile])
-
-
-
+  useEffect(() => {
+    setHiringTypes(state.user?.profile?.hiring_Focus?.hiring_Types || []);
+    setRoles(state.user?.profile?.hiring_Focus?.roles_I_hire_for || []);
+  }, [state.user?.profile]);
 
   const [open, setOpen] = useState(false);
 
@@ -29,24 +24,24 @@ export default function HiringFocusCard() {
     <>
       <HiringFocusModal
         open={open}
-  setOpen={setOpen}
-  hiringTypes={hiringTypes}
-  setHiringTypes={setHiringTypes}
-  roles={roles}
-  setRoles={setRoles}
-  />
-    
+        setOpen={setOpen}
+        hiringTypes={hiringTypes}
+        setHiringTypes={setHiringTypes}
+        roles={roles}
+        setRoles={setRoles}
+      />
+
       <Card
-          sx={{
-        width: "46vw",
-        borderRadius: "1rem",
-        p: "1rem",
-        background: "#fff",
-        boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
-        mx: 1,
-        mt: 1,
-        boxSizing:"border-box"
-      }}
+        sx={{
+          width: "46vw",
+          borderRadius: "1rem",
+          p: "1rem",
+          background: "#fff",
+          boxShadow: "0 0.4rem 1.5rem rgba(0,0,0,0.06)",
+          mx: 1,
+          mt: 1,
+          boxSizing: "border-box",
+        }}
       >
         {/* Header */}
         <Box
@@ -85,7 +80,7 @@ export default function HiringFocusCard() {
           >
             Hiring Focus
             <IconButton
-            onClick={()=>setOpen(true)}
+              onClick={() => setOpen(true)}
               sx={{
                 background: "#160a7e00",
                 color: "#6e6e6e",
@@ -103,94 +98,100 @@ export default function HiringFocusCard() {
           </Typography>
         </Box>
 
-        {/* Hiring Types */}
+        
 
-        <Typography
-          sx={{
-            fontSize: "0.9rem",
-            fontWeight: 600,
-            mb: "0.9rem",
-          }}
-        >
-          Hiring Types:
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.7rem",
-            mb: "1.5rem",
-          }}
-        >
-          {hiringTypes.map((item, index) => (
-            <Chip
-              key={index}
-              label={item}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
+        <>
+          {/* Hiring Types */}
+          <Typography
+            sx={{
+              fontSize: "0.9rem",
+              fontWeight: 600,
+              mb: "0.9rem",
+            }}
+          >
+            Hiring Types:
+          </Typography>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.7rem",
+              mb: "1.5rem",
+            }}
+          >
+            {hiringTypes.map((item, index) => (
+              <Chip
+                key={index}
+                label={item}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
 
-                p: ".5rem",
-                borderRadius: ".5rem",
+                  p: ".5rem",
+                  borderRadius: ".5rem",
 
-                border: "1px solid #ececec",
-                background: "#fcfcff",
+                  border: "1px solid #ececec",
+                  background: "#fcfcff",
 
-                transition: "0.3s",
+                  transition: "0.3s",
 
-                "&:hover": {
-                  transform: "translateY(-0.15rem)",
-                  boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-                },
-              }}
-            />
-          ))}
-        </Box>
+                  "&:hover": {
+                    transform: "translateY(-0.15rem)",
+                    boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+                  },
+                }}
+              />
+            ))}
+          </Box>
 
-        {/* Roles */}
-        <Typography
-          sx={{
-            fontSize: "0.9rem",
-            fontWeight: 600,
-            mb: "0.9rem",
-          }}
-        >
-          Roles I hire for:
-        </Typography>
+          {/* Roles */}
+          <Typography
+            sx={{
+              fontSize: "0.9rem",
+              fontWeight: 600,
+              mb: "0.9rem",
+            }}
+          >
+            Roles I hire for:
+          </Typography>
 
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            gap: "0.7rem",
-          }}
-        >
-          {roles.map((role, index) => (
-            <Chip
-              key={index}
-              label={role}
-              sx={{
-                display: "flex",
-                alignItems: "center",
-                gap: "0.5rem",
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: "0.7rem",
+            }}
+          >
+            {roles.map((role, index) => (
+              <Chip
+                key={index}
+                label={role}
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  gap: "0.5rem",
 
-                p: ".5rem",
-                borderRadius: ".5rem",
+                  p: ".5rem",
+                  borderRadius: ".5rem",
 
-                border: "1px solid #ececec",
-                background: "#fcfcff",
+                  border: "1px solid #ececec",
+                  background: "#fcfcff",
 
-                transition: "0.3s",
+                  transition: "0.3s",
 
-                "&:hover": {
-                  transform: "translateY(-0.15rem)",
-                  boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-                },
-              }}
-            />
-          ))}
-        </Box>
+                  "&:hover": {
+                    transform: "translateY(-0.15rem)",
+                    boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+                  },
+                }}
+              />
+            ))}
+          </Box>
+        </>
+
+
+
       </Card>
     </>
   );
