@@ -129,8 +129,8 @@ export default function HiringFocusCard() {
                 fill="none"
                 viewBox="0 0 14 14"
                 id="Search-Visual--Streamline-Core"
-                height={14}
-                width={14}
+                height={"50%"}
+                width={"50%"}
               >
                 <desc>
                   {
@@ -208,7 +208,7 @@ export default function HiringFocusCard() {
                 color: "#040213da",
               }}
             >
-              No social links added yet.
+              No Hiring Focus added yet.
             </Typography>
 
             <Typography
