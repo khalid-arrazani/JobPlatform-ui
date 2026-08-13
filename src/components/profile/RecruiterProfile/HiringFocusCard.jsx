@@ -98,7 +98,7 @@ export default function HiringFocusCard() {
           </Typography>
         </Box>
 
-         {hiringTypes?.length === 0 ? (
+        {hiringTypes?.length !== 0 ? (
           <Box
             sx={{
               border: "dashed 1px #ddd ",
@@ -128,73 +128,73 @@ export default function HiringFocusCard() {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 14 14"
-                id="Share-Link--Streamline-Core"
-                height={"50%"}
-          width={"50%"}
+                id="Search-Visual--Streamline-Core"
+                height={14}
+                width={14}
               >
                 <desc>
                   {
-                    "\n    Share Link Streamline Icon: https://streamlinehq.com\n  "
+                    "\n    Search Visual Streamline Icon: https://streamlinehq.com\n  "
                   }
                 </desc>
-                <g id="share-link--share-transmit">
+                <g id="search-visual">
                   <path
                     id="Vector"
-                    stroke="#403df1cd"
+                    stroke="#c70ed28c"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="m4.76 6 4.48 -2.25"
-                    strokeWidth={0.5}
+                    d="M13.5 10.5v2a1 1 0 0 1 -1 1h-2"
+                    strokeWidth={1}
                   />
                   <path
                     id="Vector_2"
-                    stroke="#403df1cd"
+                    stroke="#c70ed28c"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="m4.76 8 4.48 2.25"
-                    strokeWidth={0.5}
+                    d="M10.5 0.5h2a1 1 0 0 1 1 1v2"
+                    strokeWidth={1}
                   />
                   <path
                     id="Vector_3"
-                    fill="#403df1cd"
-                    d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
+                    stroke="#c70ed28c"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    d="M0.5 3.5v-2a1 1 0 0 1 1 -1h2"
+                    strokeWidth={1}
                   />
                   <path
                     id="Vector_4"
-                    fill="#403df1cd"
-                    d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
-                  />
-                  <path
-                    id="Vector_5"
-                    fill="#403df1cd"
-                    d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
-                  />
-                  <path
-                    id="Vector_6"
-                    stroke=""
+                    stroke="#c70ed28c"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
+                    d="M3.5 13.5h-2a1 1 0 0 1 -1 -1v-2"
+                    strokeWidth={1}
                   />
                   <path
-                    id="Vector_7"
-                    stroke=""
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
+                    id="Ellipse 1174"
+                    fill="#ffffff"
+                    d="M3.25 6.25a3 3 0 1 0 6 0 3 3 0 1 0 -6 0"
+                    strokeWidth={1}
                   />
                   <path
-                    id="Vector_8"
-                    stroke=""
+                    id="Ellipse 1175"
+                    fill="#ffffff"
+                    d="M3.25 6.25a3 3 0 1 0 6 0 3 3 0 1 0 -6 0"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Ellipse 1176"
+                    stroke="#c70ed28c"
+                    d="M3.25 6.25a3 3 0 1 0 6 0 3 3 0 1 0 -6 0"
+                    strokeWidth={1}
+                  />
+                  <path
+                    id="Vector 2507"
+                    stroke="#c70ed28c"
                     strokeLinecap="round"
                     strokeLinejoin="round"
-                    d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={0.5}
+                    d="m8.5 8.5 2 2"
+                    strokeWidth={1}
                   />
                 </g>
               </svg>
@@ -224,102 +224,95 @@ export default function HiringFocusCard() {
           </Box>
         ) : (
           <>
-          {/* Hiring Types */}
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              mb: "0.9rem",
-            }}
-          >
-            Hiring Types:
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.7rem",
-              mb: "1.5rem",
-            }}
-          >
-            {hiringTypes.map((item, index) => (
-              <Chip
-                key={index}
-                label={item}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
+            {/* Hiring Types */}
+            <Typography
+              sx={{
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                mb: "0.9rem",
+              }}
+            >
+              Hiring Types:
+            </Typography>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.7rem",
+                mb: "1.5rem",
+              }}
+            >
+              {hiringTypes.map((item, index) => (
+                <Chip
+                  key={index}
+                  label={item}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
 
-                  p: ".5rem",
-                  borderRadius: ".5rem",
+                    p: ".5rem",
+                    borderRadius: ".5rem",
 
-                  border: "1px solid #ececec",
-                  background: "#fcfcff",
+                    border: "1px solid #ececec",
+                    background: "#fcfcff",
 
-                  transition: "0.3s",
+                    transition: "0.3s",
 
-                  "&:hover": {
-                    transform: "translateY(-0.15rem)",
-                    boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-                  },
-                }}
-              />
-            ))}
-          </Box>
+                    "&:hover": {
+                      transform: "translateY(-0.15rem)",
+                      boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+                    },
+                  }}
+                />
+              ))}
+            </Box>
 
-          {/* Roles */}
-          <Typography
-            sx={{
-              fontSize: "0.9rem",
-              fontWeight: 600,
-              mb: "0.9rem",
-            }}
-          >
-            Roles I hire for:
-          </Typography>
+            {/* Roles */}
+            <Typography
+              sx={{
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                mb: "0.9rem",
+              }}
+            >
+              Roles I hire for:
+            </Typography>
 
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: "0.7rem",
-            }}
-          >
-            {roles.map((role, index) => (
-              <Chip
-                key={index}
-                label={role}
-                sx={{
-                  display: "flex",
-                  alignItems: "center",
-                  gap: "0.5rem",
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                gap: "0.7rem",
+              }}
+            >
+              {roles.map((role, index) => (
+                <Chip
+                  key={index}
+                  label={role}
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "0.5rem",
 
-                  p: ".5rem",
-                  borderRadius: ".5rem",
+                    p: ".5rem",
+                    borderRadius: ".5rem",
 
-                  border: "1px solid #ececec",
-                  background: "#fcfcff",
+                    border: "1px solid #ececec",
+                    background: "#fcfcff",
 
-                  transition: "0.3s",
+                    transition: "0.3s",
 
-                  "&:hover": {
-                    transform: "translateY(-0.15rem)",
-                    boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
-                  },
-                }}
-              />
-            ))}
-          </Box>
-        </>
+                    "&:hover": {
+                      transform: "translateY(-0.15rem)",
+                      boxShadow: "0 0.5rem 1rem rgba(0,0,0,0.06)",
+                    },
+                  }}
+                />
+              ))}
+            </Box>
+          </>
         )}
-   
-
-        
-
-
-
-
       </Card>
     </>
   );
