@@ -219,7 +219,7 @@ export default function HiringFocusCard() {
                 color: "#040213da",
               }}
             >
-              Schare your social links
+              Schare your Hiring Focus
             </Typography>
           </Box>
         ) : (
