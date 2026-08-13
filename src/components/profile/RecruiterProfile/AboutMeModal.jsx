@@ -1,52 +1,38 @@
-import { Card, Typography, Box, CircularProgress} from "@mui/material";
+import { Card, Typography, Box, CircularProgress } from "@mui/material";
 
-
-import {
-
-  Modal,
-  Divider,
-  TextField,
-  Button,
-
-} from "@mui/material";
+import { Modal, Divider, TextField, Button } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
-import {  updateProfileR } from "../../../logic/api/profile/GetMe";
+import { updateProfileR } from "../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { green } from "@mui/material/colors";
 
-export default function AboutMeModal({open , setOpen}) {
-
+export default function AboutMeModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
 
-      const { setSnackBar } = useAuth();
+  const { setSnackBar } = useAuth();
 
   //---------------------------------
 
   const [about, setAbout] = useState("bio");
 
-
   useEffect(() => {
     const profile = state.user?.profile;
     if (!profile) return;
     setAbout(profile.aboutMe || "");
-
   }, [state.user?.profile]);
 
-
-
   const handleSave = async () => {
-
     dispatch({
-        type: "SET_LOADING_UPDATE_PROFILE",
-        payload: true,
-      });
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
 
     try {
       const data = await updateProfileR({
-        aboutMe:about
+        aboutMe: about,
       });
       dispatch({
         type: "PROFILE",
@@ -58,28 +44,25 @@ export default function AboutMeModal({open , setOpen}) {
         message: "About Me Update Seccesfuly",
         severity: "success",
       });
-      
+
       setOpen(false);
-      
     } catch (error) {
       setSnackBar({
         open: true,
         message: error.response?.data?.message,
         severity: "error",
       });
-    }finally {
-        dispatch({
-          type: "SET_LOADING_UPDATE_PROFILE",
-          payload: false,
-        });
-      }
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
   };
-
-
 
   return (
     <>
-    <Modal
+      <Modal
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -147,7 +130,6 @@ export default function AboutMeModal({open , setOpen}) {
               <TextField
                 value={about}
                 onChange={(e) => setAbout(e.target.value)}
-
                 fullWidth
                 multiline
                 rows={8}
@@ -173,7 +155,7 @@ export default function AboutMeModal({open , setOpen}) {
             <Button
               fullWidth
               onClick={handleSave}
-            disabled={state.isLoadingUptadeProfile}
+              disabled={state.isLoadingUptadeProfile}
               variant="contained"
               sx={{
                 height: "3rem",
@@ -188,26 +170,25 @@ export default function AboutMeModal({open , setOpen}) {
                 "&:hover": {
                   background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
                 },
-                
               }}
             >
               {state.isLoadingUptadeProfile ? (
-                                       <CircularProgress
-                                         aria-label="Loading…"
-                                         size={30}
-                                         sx={{
-                                           color: green[800],
-                                           position: "absolute",
-                                         }}
-                                       />
-                                     ) : (
-                                       <Box sx={{ display: "flex", justifyContent: "center" }}>
-                                         Save
-                                         <TrendingFlatOutlinedIcon
-                                           sx={{ position: "relative", right: "-400%" }}
-                                         />
-                                       </Box>
-                                     )}
+                <CircularProgress
+                  aria-label="Loading…"
+                  size={30}
+                  sx={{
+                    color: green[800],
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  Save
+                  <TrendingFlatOutlinedIcon
+                    sx={{ position: "relative", right: "-400%" }}
+                  />
+                </Box>
+              )}
             </Button>
           </Box>
         </Card>
