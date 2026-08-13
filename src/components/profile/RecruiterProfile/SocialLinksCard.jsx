@@ -160,8 +160,8 @@ export default function SocialLinksCard() {
                 fill="none"
                 viewBox="0 0 14 14"
                 id="Share-Link--Streamline-Core"
-                height={14}
-                width={14}
+                height={"50%"}
+          width={"50%"}
               >
                 <desc>
                   {
@@ -171,61 +171,61 @@ export default function SocialLinksCard() {
                 <g id="share-link--share-transmit">
                   <path
                     id="Vector"
-                    stroke="#c70ed28c"
+                    stroke="#403df1cd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="m4.76 6 4.48 -2.25"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_2"
-                    stroke="#c70ed28c"
+                    stroke="#403df1cd"
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="m4.76 8 4.48 2.25"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_3"
-                    fill="#ffffff"
+                    fill="#403df1cd"
                     d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_4"
-                    fill="#ffffff"
+                    fill="#403df1cd"
                     d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_5"
-                    fill="#ffffff"
+                    fill="#403df1cd"
                     d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_6"
-                    stroke="#c70ed28c"
+                    stroke=""
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M2.75 9.25a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_7"
-                    stroke="#c70ed28c"
+                    stroke=""
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M11.25 13.5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                   <path
                     id="Vector_8"
-                    stroke="#c70ed28c"
+                    stroke=""
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     d="M11.25 5a2.25 2.25 0 1 0 0 -4.5 2.25 2.25 0 0 0 0 4.5Z"
-                    strokeWidth={1}
+                    strokeWidth={0.5}
                   />
                 </g>
               </svg>
