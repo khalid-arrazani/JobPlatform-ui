@@ -23,21 +23,26 @@ export default function CompanyPage() {
   }, []);
 
   const fetchCompany = async () => {
+
     dispatch({
       type: "SET_LOADING",
       payload: true,
     });
+
     try {
       const data = await getmyCompany();
-
       dispatch({
         type: "SETCOMPANY",
         payload: data,
       });
-      console.log(data);
+
+
     } catch (error) {
+
       console.log(error.response?.data);
+      
     } finally {
+
       dispatch({
         type: "SET_LOADING",
         payload: false,
