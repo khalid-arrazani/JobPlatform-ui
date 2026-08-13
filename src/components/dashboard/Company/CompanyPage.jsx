@@ -40,9 +40,9 @@ export default function CompanyPage() {
     } catch (error) {
 
       console.log(error.response?.data);
-      
-    } finally {
 
+    } finally {
+ 
       dispatch({
         type: "SET_LOADING",
         payload: false,
