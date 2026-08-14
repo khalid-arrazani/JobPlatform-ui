@@ -195,7 +195,7 @@ export default function JobList() {
                     color: "#02020db4",
                   }}
                 >
-                  {job?.createdBy?.name} • {job.location}
+                  {job?.createdBy?.name} • {job?.location}
                 </Typography>
 
                 <Stack
