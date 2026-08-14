@@ -2,10 +2,7 @@ import { Box } from "@mui/material";
 
 import Lottie from "lottie-react";
 import spinner from "../../../assets/spinner.json";
-console.log("Lottie:", Lottie);
-console.log("typeof Lottie:", typeof Lottie);
-console.log("spinner:", spinner);
-console.log("typeof spinner:", typeof spinner);
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
@@ -56,6 +53,17 @@ export default function CompanyPage() {
 
   return (
     <>
+
+
+    {loading ?<Player
+        autoplay
+        loop
+        src={spinner}
+        style={{
+          width: "150px",
+          height: "150px",
+        }}
+      />: 
       <Box
         sx={{
           height: "auto",
@@ -121,17 +129,8 @@ export default function CompanyPage() {
             <CompanyInfo CompanyInfo={state.Company?.company} />
           </Box>
         </Box>
-      </Box>
+      </Box>}
 
-  
-        <Lottie
-          animationData={spinner}
-          loop
-          style={{
-            width: "150px",
-            height: "150px",
-          }}
-        />
     
     </>
   );
