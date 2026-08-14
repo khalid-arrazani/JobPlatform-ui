@@ -55,7 +55,23 @@ export default function CompanyPage() {
     <>
 
 
-    {loading ?<Player
+    {loading ?
+    
+    <Box
+    sx={{
+          height: "93%",
+          width: "100vw",
+          bgcolor: "#f2f2f5",
+          boxSizing: "border-box",
+          display:"flex",
+          alignItems:"center"
+          ,justifyContent:"center"
+
+
+         
+        }}
+    >
+    <Player
         autoplay
         loop
         src={spinner}
@@ -63,7 +79,10 @@ export default function CompanyPage() {
           width: "150px",
           height: "150px",
         }}
-      />: 
+      />
+      </Box>
+      
+      : 
       <Box
         sx={{
           height: "auto",
