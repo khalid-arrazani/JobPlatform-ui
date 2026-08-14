@@ -53,102 +53,96 @@ export default function CompanyPage() {
 
   return (
     <>
-
-
-    {loading ?
-    
-    <Box
-    sx={{
-          height: "93%",
-          width: "100vw",
-          bgcolor: "#f2f2f5",
-          boxSizing: "border-box",
-          display:"flex",
-          alignItems:"center"
-          ,justifyContent:"center"
-
-
-         
-        }}
-    >
-    <Player
-        autoplay
-        loop
-        src={spinner}
-        style={{
-          width: "150px",
-          height: "150px",
-        }}
-      />
-      </Box>
-      
-      : 
-      <Box
-        sx={{
-          height: "auto",
-          width: "100vw",
-          bgcolor: "#f2f2f5",
-          boxSizing: "border-box",
-          px: 6,
-          pt: 3,
-          overflow: "auto",
-        }}
-      >
-        {/* top side or Company Card or  Header   */}
-        <CompanyHeader
-          CompanyInfo={state.Company?.company}
-          fetchCompany={fetchCompany}
-        />
-
-        {/* Content about Company or bottom side  */}
+      {loading ? (
         <Box
           sx={{
-            width: "100%",
-            height: "fit-Content",
-            my: 2,
-            borderRadius: "15px",
+            height: "93%",
+            width: "100vw",
+            bgcolor: "#f2f2f5",
+            boxSizing: "border-box",
             display: "flex",
-            gap: 1.5,
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {/* left side  */}
-          <Box
-            sx={{
-              width: "50%",
-              borderRadius: "15px",
+          <Player
+            autoplay
+            loop
+            src={spinner}
+            style={{
+              width: "140px",
+              height: "140px",
             }}
-          >
-            {/* About Company Card  */}
-            <AboutCompany CompanyInfo={state.Company?.company} />
-            {/* Company Statistics  */}
-            <CompanyStatistics CompanyInfo={state?.Company} />
+          />
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            height: "auto",
+            width: "100vw",
+            bgcolor: "#f2f2f5",
+            boxSizing: "border-box",
+            px: 6,
+            pt: 3,
+            overflow: "auto",
+          }}
+        >
+          {/* top side or Company Card or  Header   */}
+          <CompanyHeader
+            CompanyInfo={state.Company?.company}
+            fetchCompany={fetchCompany}
+          />
 
-            {/* Open Positions Card  */}
-            <OpenPositionsCard
-              CompanyInfo={state?.Company}
-              CompanyactiveJobs={state?.Company?.activeJobs}
-            />
-          </Box>
-
-          {/* right side  */}
+          {/* Content about Company or bottom side  */}
           <Box
             sx={{
-              width: "50%",
+              width: "100%",
               height: "fit-Content",
+              my: 2,
               borderRadius: "15px",
+              display: "flex",
+              gap: 1.5,
             }}
           >
-            {/* Company Benefits Card  */}
-            <SocialContact CompanyInfo={state.Company?.company} />
+            {/* left side  */}
+            <Box
+              sx={{
+                width: "50%",
+                borderRadius: "15px",
+              }}
+            >
+              {/* About Company Card  */}
+              <AboutCompany CompanyInfo={state.Company?.company} />
+              {/* Company Statistics  */}
+              <CompanyStatistics CompanyInfo={state?.Company} />
 
-            {/* Company Benefits Card  */}
-            <CompanyBenefits CompanyInfo={state.Company?.company} />
+              {/* Open Positions Card  */}
+              <OpenPositionsCard
+                CompanyInfo={state?.Company}
+                CompanyactiveJobs={state?.Company?.activeJobs}
+              />
+            </Box>
 
-            {/* Company Info Card  */}
-            <CompanyInfo CompanyInfo={state.Company?.company} />
+            {/* right side  */}
+            <Box
+              sx={{
+                width: "50%",
+                height: "fit-Content",
+                borderRadius: "15px",
+              }}
+            >
+              {/* Company Benefits Card  */}
+              <SocialContact CompanyInfo={state.Company?.company} />
+
+              {/* Company Benefits Card  */}
+              <CompanyBenefits CompanyInfo={state.Company?.company} />
+
+              {/* Company Info Card  */}
+              <CompanyInfo CompanyInfo={state.Company?.company} />
+            </Box>
           </Box>
         </Box>
-      </Box>}
+      )}
     </>
   );
 }
