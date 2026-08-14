@@ -31,7 +31,7 @@ export default function CompanyPage() {
       payload: true,
     });
 
-    setLoading(true);
+    // setLoading(true);
 
     try {
       const data = await getmyCompany();
@@ -47,7 +47,7 @@ export default function CompanyPage() {
         payload: false,
       });
 
-      setLoading(false);
+      // setLoading(false);
     }
   };
 
