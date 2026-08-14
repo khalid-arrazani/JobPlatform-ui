@@ -98,7 +98,7 @@ export default function HiringFocusCard() {
           </Typography>
         </Box>
 
-        {hiringTypes?.length !== 0 ? (
+        {hiringTypes?.length == 0 ? (
           <Box
             sx={{
               border: "dashed 1px #ddd ",
