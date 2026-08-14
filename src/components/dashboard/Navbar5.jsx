@@ -159,7 +159,7 @@ export default function Navbar() {
             
 
 
-             {authState.user?.role == "recruiter" ? (
+             {authState.user?.user?.role == "recruiter" ? (
              <Tab
               onClick={() => navigate("/Dashboard/My_Jobs")}
               value={"My_Jobs"}

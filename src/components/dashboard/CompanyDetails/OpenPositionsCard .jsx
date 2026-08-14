@@ -128,7 +128,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 justifyContent: "space-between",
               }}
             >
-              <Box sx={{ display: "flex", gap: 2 }}>
+              <Box sx={{ display: "flex", gap: 2,boxSizing:"border-box",px:0.8 }}>
                 <Chip
                   size="small"
                   sx={{
