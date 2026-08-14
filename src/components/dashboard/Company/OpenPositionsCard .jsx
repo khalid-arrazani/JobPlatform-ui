@@ -142,7 +142,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             }}
           >
             <Box>
-              <Typography fontWeight={600}> {item.title} </Typography>
+              <Typography fontWeight={600}> {item.title.slice(0,25)}   {item.title.length >= 25 ? "..." : null } </Typography>
 
               <Box
                 sx={{
@@ -172,9 +172,11 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 display: "flex",
                 width: "60%",
                 justifyContent: "space-between",
+                
               }}
             >
-              <Box sx={{ display: "flex", gap: 2 }}>
+              <Box sx={{ display: "flex", gap: 2,boxSizing:"border-box",px:0.5 }}>
+                
                 <Chip
                   size="small"
                   sx={{
