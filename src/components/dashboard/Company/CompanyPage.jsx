@@ -130,8 +130,6 @@ export default function CompanyPage() {
           </Box>
         </Box>
       </Box>}
-
-    
     </>
   );
 }
