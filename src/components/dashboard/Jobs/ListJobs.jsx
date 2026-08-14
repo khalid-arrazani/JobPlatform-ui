@@ -160,7 +160,7 @@ export default function JobList() {
                   }}
                 >
                   <Box sx={{display:"flex",alignItems:"end",height:"fit-Content"}} >
-                    {job?.title}
+                    {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null }
                     <Chip
                     
                       icon={<AccessTimeIcon />}
