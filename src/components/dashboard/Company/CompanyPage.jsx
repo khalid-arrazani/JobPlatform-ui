@@ -19,7 +19,7 @@ import { useCompany } from "../../../logic/context/CompanyContext";
 
 export default function CompanyPage() {
   const { dispatch, ...state } = useCompany();
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     fetchCompany();
@@ -31,7 +31,7 @@ export default function CompanyPage() {
       payload: true,
     });
 
-    // setLoading(true);
+    setLoading(true);
 
     try {
       const data = await getmyCompany();
@@ -47,7 +47,7 @@ export default function CompanyPage() {
         payload: false,
       });
 
-      // setLoading(false);
+      setLoading(false);
     }
   };
 
