@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 
-import Lottie from "lottie-react";
-import loadingAnimation from "../../../assets/system-outline-4018-spinner-three-dots-hover-trapdoor.json";
+
 
 import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
@@ -50,25 +49,7 @@ export default function CompanyPage() {
 
   return (
     <>
-      {loading ? (
-        <Box
-          sx={{
-            height: "auto",
-            width: "100vw",
-            bgcolor: "#f2f2f5",
-            boxSizing: "border-box",
-            px: 6,
-            pt: 3,
-            overflow: "auto",
-          }}
-        >
-          <Lottie
-            animationData={loadingAnimation}
-            loop={true}
-            style={{ width: "100%", height: "100%" }}
-          />
-        </Box>
-      ) : (
+      
         <Box
           sx={{
             height: "auto",
@@ -135,7 +116,7 @@ export default function CompanyPage() {
             </Box>
           </Box>
         </Box>
-      )}
+    
     </>
   );
 }
