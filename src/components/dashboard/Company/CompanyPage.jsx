@@ -1,6 +1,11 @@
 import { Box } from "@mui/material";
 
-
+import Lottie from "lottie-react";
+import spinner from "../../../assets/spinner.json";
+console.log("Lottie:", Lottie);
+console.log("typeof Lottie:", typeof Lottie);
+console.log("spinner:", spinner);
+console.log("typeof spinner:", typeof spinner);
 
 import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
@@ -28,6 +33,7 @@ export default function CompanyPage() {
       type: "SET_LOADING",
       payload: true,
     });
+
     setLoading(true);
 
     try {
@@ -43,79 +49,89 @@ export default function CompanyPage() {
         type: "SET_LOADING",
         payload: false,
       });
+
       setLoading(false);
     }
   };
 
   return (
     <>
-      
+      <Box
+        sx={{
+          height: "auto",
+          width: "100vw",
+          bgcolor: "#f2f2f5",
+          boxSizing: "border-box",
+          px: 6,
+          pt: 3,
+          overflow: "auto",
+        }}
+      >
+        {/* top side or Company Card or  Header   */}
+        <CompanyHeader
+          CompanyInfo={state.Company?.company}
+          fetchCompany={fetchCompany}
+        />
+
+        {/* Content about Company or bottom side  */}
         <Box
           sx={{
-            height: "auto",
-            width: "100vw",
-            bgcolor: "#f2f2f5",
-            boxSizing: "border-box",
-            px: 6,
-            pt: 3,
-            overflow: "auto",
+            width: "100%",
+            height: "fit-Content",
+            my: 2,
+            borderRadius: "15px",
+            display: "flex",
+            gap: 1.5,
           }}
         >
-          {/* top side or Company Card or  Header   */}
-          <CompanyHeader
-            CompanyInfo={state.Company?.company}
-            fetchCompany={fetchCompany}
-          />
-
-          {/* Content about Company or bottom side  */}
+          {/* left side  */}
           <Box
             sx={{
-              width: "100%",
-              height: "fit-Content",
-              my: 2,
+              width: "50%",
               borderRadius: "15px",
-              display: "flex",
-              gap: 1.5,
             }}
           >
-            {/* left side  */}
-            <Box
-              sx={{
-                width: "50%",
-                borderRadius: "15px",
-              }}
-            >
-              {/* About Company Card  */}
-              <AboutCompany CompanyInfo={state.Company?.company} />
-              {/* Company Statistics  */}
-              <CompanyStatistics CompanyInfo={state?.Company} />
+            {/* About Company Card  */}
+            <AboutCompany CompanyInfo={state.Company?.company} />
+            {/* Company Statistics  */}
+            <CompanyStatistics CompanyInfo={state?.Company} />
 
-              {/* Open Positions Card  */}
-              <OpenPositionsCard
-                CompanyInfo={state?.Company}
-                CompanyactiveJobs={state?.Company?.activeJobs}
-              />
-            </Box>
+            {/* Open Positions Card  */}
+            <OpenPositionsCard
+              CompanyInfo={state?.Company}
+              CompanyactiveJobs={state?.Company?.activeJobs}
+            />
+          </Box>
 
-            {/* right side  */}
-            <Box
-              sx={{
-                width: "50%",
-                height: "fit-Content",
-                borderRadius: "15px",
-              }}
-            >
-              {/* Company Benefits Card  */}
-              <SocialContact CompanyInfo={state.Company?.company} />
+          {/* right side  */}
+          <Box
+            sx={{
+              width: "50%",
+              height: "fit-Content",
+              borderRadius: "15px",
+            }}
+          >
+            {/* Company Benefits Card  */}
+            <SocialContact CompanyInfo={state.Company?.company} />
 
-              {/* Company Benefits Card  */}
-              <CompanyBenefits CompanyInfo={state.Company?.company} />
+            {/* Company Benefits Card  */}
+            <CompanyBenefits CompanyInfo={state.Company?.company} />
 
-              {/* Company Info Card  */}
-              <CompanyInfo CompanyInfo={state.Company?.company} />
-            </Box>
+            {/* Company Info Card  */}
+            <CompanyInfo CompanyInfo={state.Company?.company} />
           </Box>
         </Box>
+      </Box>
+
+  
+        <Lottie
+          animationData={spinner}
+          loop
+          style={{
+            width: "150px",
+            height: "150px",
+          }}
+        />
     
     </>
   );
