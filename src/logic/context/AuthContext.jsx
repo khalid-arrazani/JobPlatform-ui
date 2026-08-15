@@ -60,7 +60,7 @@ export default function AuthProvider({ children }) {
     fetchUser();
   }, []);
 
-  console.log(state);
+ 
 
   const [sign, setSign] = useState("Sign In");
 
