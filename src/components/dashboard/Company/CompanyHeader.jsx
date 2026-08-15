@@ -137,11 +137,13 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             height: "35% ",
             flex: 1,
             bgcolor: "#ffffff",
-            pl: "13.5vw",
+            pl: "11rem",
             position: "relative",
             pt: "0.2vh",
           }}
         >
+
+
           <Button
             onClick={() => {
               setOpenCompanyInfoEdite(true);
