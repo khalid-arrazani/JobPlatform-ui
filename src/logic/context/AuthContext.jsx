@@ -27,9 +27,10 @@ export default function AuthProvider({ children }) {
   const [state, dispatch] = useReducer(authReducer, initialState);
 
   const fetchUser = async () => {
+    console.log("get me user");
     try {
       const user = await getMeUser();
-
+      
       dispatch({
         type: "GET-USER",
         payload: user,
