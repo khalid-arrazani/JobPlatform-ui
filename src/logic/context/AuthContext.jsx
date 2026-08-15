@@ -14,6 +14,7 @@ export const AuthContext = createContext();
 
 const initialState = {
   user: null,
+  loading : false
 };
 
 export default function AuthProvider({ children }) {
