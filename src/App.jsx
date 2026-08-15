@@ -1,4 +1,8 @@
+import { Card, Typography, Box, Button, Collapse } from "@mui/material";
+
+
 import "./App.css";
+
 import AuthPage1 from "./pages/AuthPage1.jsx";
 import DashboardPage from "./pages/DashboardPage.jsx";
 import ProfilePage from "./pages/ProfilePage.jsx";
@@ -16,8 +20,8 @@ function App() {
 
   return (
     <>
+      <Box sx={{position:"absolute",height:"100vh",width:"100vw",zIndex:9000,bgcolor:"#fafafa"}}> </Box>
       <SimpleSnackbar />
-
       <Routes>
         <Route path="/Dashboard/*" element={<DashboardPage />} />
 

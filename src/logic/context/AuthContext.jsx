@@ -29,6 +29,10 @@ export default function AuthProvider({ children }) {
 
   const fetchUser = async () => {
     console.log("get me user");
+     dispatch({
+        type: "LOADING",
+        payload: true,
+      });
     try {
       const user = await getMeUser();
       
@@ -42,6 +46,10 @@ export default function AuthProvider({ children }) {
     } finally {
       dispatch({
         type: "SET_LOADING",
+        payload: false,
+      });
+       dispatch({
+        type: "LOADING",
         payload: false,
       });
     }
