@@ -23,8 +23,6 @@ function App() {
   return (
     <>
       {state.loading ? (
-
-
         <Box
           sx={{
             position: "absolute",
