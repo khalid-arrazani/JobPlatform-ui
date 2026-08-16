@@ -35,6 +35,7 @@ export default function MyProfilePage() {
 
   
   useEffect(() => {
+    
     const fetchUser = async () => {
       dispatch({
         type: "SET_LOADING",
@@ -47,7 +48,7 @@ export default function MyProfilePage() {
           type: "PROFILE",
           payload: data,
         });
-        
+
       } catch (error) {
         console.log(error.response?.data);
       } finally {
@@ -57,6 +58,7 @@ export default function MyProfilePage() {
         });
       }
     };
+
     fetchUser();
   }, []);
 
