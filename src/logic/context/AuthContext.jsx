@@ -34,8 +34,7 @@ export default function AuthProvider({ children }) {
         payload: true,
       });
     try {
-      const user = await getMeUser();
-      
+      const user = await getMeUser(); 
       dispatch({
         type: "GET-USER",
         payload: user,

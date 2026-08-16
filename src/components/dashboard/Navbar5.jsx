@@ -21,7 +21,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
 import logoTitle from "../../assets/Logo/logo.png";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import { useProfile } from "../../logic/context/profileContext.jsx";
 import PostJobModal from "./PostJobModal.jsx";
