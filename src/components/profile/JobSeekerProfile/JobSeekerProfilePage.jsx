@@ -32,7 +32,6 @@ export default function MyProfilePage() {
 
 
   const { dispatch, ...state } = useProfile();
-  const { setSnackBar } = useAuth();
 
   
   useEffect(() => {

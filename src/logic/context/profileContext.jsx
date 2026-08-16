@@ -23,7 +23,7 @@ export const useProfile = () => {
 export default function ProfileProvider({ children }) {
   const [state, dispatch] = useReducer(profileReducer, initialState);
 
-  const { dispatch: dis } = useAuth();
+
 
 
   
@@ -31,12 +31,6 @@ export default function ProfileProvider({ children }) {
     try {
       let data;
       const user = await getMeUser();
-
-      dis({
-        type: "GET-USER",
-        payload: user,
-      });
-
       if (user.user.role == "jobSeeker") {
         data = await getMeJS();
       } else if (user.user.role == "recruiter") {
