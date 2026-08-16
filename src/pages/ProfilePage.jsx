@@ -16,8 +16,7 @@ export default function ProfilePage(){
       fetchUser();
     }, []);
 
-    console.log(state,"55555");
-  
+
     return<>
     <ProfileLayout>
       {state.user?.user?.role == "jobSeeker" ? <JobSeekerProfilePage/>  : state.user?.user?.role == "recruiter" ? <RecruiterProfilePage/> : null }

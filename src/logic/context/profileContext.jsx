@@ -23,24 +23,25 @@ export const useProfile = () => {
 export default function ProfileProvider({ children }) {
   const [state, dispatch] = useReducer(profileReducer, initialState);
 
-  
+  const { dispatch: dis } = useAuth();
 
- 
 
- 
   
-  const fetchUser = async (checkRole) => {
+  const fetchUser = async () => {
     try {
-      console.log(checkRole);
       let data;
-      if (checkRole == "jobSeeker") {
-        console.log(data,"5555");
+      const user = await getMeUser();
+
+      dis({
+        type: "GET-USER",
+        payload: user,
+      });
+
+      if (user.user.role == "jobSeeker") {
         data = await getMeJS();
-      } else if (checkRole == "recruiter") {
-        console.log(data,"5555");
+      } else if (user.user.role == "recruiter") {
         data = await getMeR();
       }
-       
 
       dispatch({
         type: "PROFILE",
@@ -49,7 +50,6 @@ export default function ProfileProvider({ children }) {
 
     } catch (error) {
       console.log(error.response?.data);
-      console.log(555);
     } finally {
       dispatch({
         type: "SET_LOADING",
