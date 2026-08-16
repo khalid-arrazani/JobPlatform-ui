@@ -8,9 +8,6 @@ import { useAuth } from "../logic/context/AuthContext.jsx"
 export default function ProfilePage(){
   const { checkRole } = useAuth()
 
-  
-
-
     return<>
     <ProfileLayout>
       {checkRole == "jobSeeker" ? <JobSeekerProfilePage/>  : checkRole == "recruiter" ? <RecruiterProfilePage/> : null }

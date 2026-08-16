@@ -24,7 +24,7 @@ import { getMeJS } from "../../../logic/api/profile/GetMe.jsx";
 import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 import LoadingPage from "./LoadingPage.jsx";
-import { useAuth } from "../../../logic/context/AuthContext.jsx";
+
 
 
 
@@ -40,12 +40,14 @@ export default function MyProfilePage() {
         type: "SET_LOADING",
         payload: true,
       });
+
       try {
         const data = await getMeJS();
         dispatch({
           type: "PROFILE",
           payload: data,
         });
+        
       } catch (error) {
         console.log(error.response?.data);
       } finally {
