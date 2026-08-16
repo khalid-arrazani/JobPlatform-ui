@@ -225,12 +225,14 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           alignItems: "center",
           bgcolor: "#fff",
           pr: "1rem",
+            boxSizing:"border-box"
         }}
       >
         <Box
           sx={{
             display: "flex",
             alignItems: "center",
+            boxSizing:"border-box"
           }}
         >
           <Avatar
@@ -261,6 +263,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               borderLeft: "solid 1px #d4d3d3",
               pl: "1.2rem",
               height: "fit-Content",
+              boxSizing:"border-box"
             }}
           >
             <Box>
@@ -297,7 +300,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   color: "#060505e8",
                 }}
               >
-                {jobInfo?.title}
+                {jobInfo?.title.slice(0,60)}
               </Typography>
 
               <Typography
@@ -344,9 +347,12 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               </Stack>
             </Box>
           </Box>
+
         </Box>
+
+
         {/* Right Side */}
-        <Stack direction="row" spacing={2}>
+        <Stack direction="row" spacing={2} sx={{width:"30%"}}>
           <Button
             variant="outlined"
             startIcon={

@@ -79,7 +79,9 @@ export default function ListApply() {
                     fontFamily: "ui-monospace",
                   }}
                 >
-                  {app?.job?.title}
+                  {app?.job?.title.slice(0,28)}
+
+                  {app?.job?.title.length > 28 ? "...":null}
                 </Typography>
                 <Typography
                   sx={{
