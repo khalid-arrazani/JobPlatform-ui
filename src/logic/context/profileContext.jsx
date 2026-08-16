@@ -30,6 +30,7 @@ export default function ProfileProvider({ children }) {
 
   
   const fetchUser = async () => {
+    console.log(7777);
     try {
       let data;
       if (checkRole == "jobSeeker") {
@@ -37,7 +38,7 @@ export default function ProfileProvider({ children }) {
       } else if (checkRole == "recruiter") {
         data = await getMeR();
       }
-
+       console.log(data,"5555");
       dispatch({
         type: "PROFILE",
         payload: data,
