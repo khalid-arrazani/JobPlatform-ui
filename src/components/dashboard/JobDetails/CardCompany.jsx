@@ -301,6 +301,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                 }}
               >
                 {jobInfo?.title.slice(0,60)}
+                {jobInfo?.title.length > 60 ? "...." : null}
               </Typography>
 
               <Typography
