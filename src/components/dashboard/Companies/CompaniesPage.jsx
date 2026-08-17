@@ -64,11 +64,9 @@ export default function CompaniesPage() {
             flexWrap: "wrap",
             justifyContent: "space-evenly",
             gap: 1,
-            
           }}
         >
-          {/* <CardCompanies  companies={companies}  /> */}
-          <LoadingList />
+          {loading ? <LoadingList /> : <CardCompanies companies={companies} />}
         </Box>
 
         <Box
