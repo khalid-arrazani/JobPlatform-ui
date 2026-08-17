@@ -15,17 +15,16 @@ export default function CompaniesPage() {
 
   const [companies , setCompanies ] = useState(null)
   
- const fetchCompanies =async ()=>{
+ const fetchCompanies = async ()=>{
   try {
     const data = await GetAllCompanies()
-
     setCompanies(data)
   } catch (error) {
     console.log(error.response.data);
   }
  }
 
- useEffect(()=>{fetchCompanies()},[])
+ useEffect(()=>{ fetchCompanies() },[])
 
 
 
@@ -39,7 +38,12 @@ export default function CompaniesPage() {
         </Box>
 
         <Box  sx={{height:"63%", width:"100%",bgcolor:"#feffff",boxSizing:"border-box",p:2,border:"solid 1px #dddddd87",display:"flex",flexWrap:"wrap",justifyContent:"space-evenly",gap:1}} >
+          
+          
+          
           <CardCompanies  companies={companies}  />
+
+
         </Box>
         
         <Box  sx={{height:"12%", width:"100%",bgcolor:"#feffff",display:"flex",justifyContent:"center",alignItems:"center",boxSizing:"border-box"}}>

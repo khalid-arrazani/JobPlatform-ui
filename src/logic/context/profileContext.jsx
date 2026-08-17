@@ -2,7 +2,7 @@ import { createContext, useReducer, useContext, useState, useEffect } from "reac
 
 import { profileReducer } from "./reducer/ProfileReducer";
 import { getMeUser } from "../api/user/user";
-import { useAuth } from "./AuthContext";
+
 import { getMeJS, getMeR } from "../api/profile/GetMe";
 
 export const ProfileContext = createContext();
