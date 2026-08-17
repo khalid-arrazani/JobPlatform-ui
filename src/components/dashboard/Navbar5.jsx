@@ -38,8 +38,6 @@ export default function Navbar() {
 
   const { ...authState } = useAuth();
 
-
-
   const navigate = useNavigate();
 
   const location = useLocation();

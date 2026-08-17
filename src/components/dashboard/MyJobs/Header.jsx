@@ -109,7 +109,7 @@ export default function Header() {
                 <span>Active</span>
 
                 <Chip
-                  label={state?.MyJobs?.countActive}
+                  label={state?.MyJobs?.countActive||0}
                   size="small"
                   sx={{ color: "#02310e", bgcolor: "#8efb88" }}
                 />
@@ -130,7 +130,7 @@ export default function Header() {
                 <span>Closed</span>
 
                 <Chip
-                  label={state?.MyJobs?.countClosed}
+                  label={state?.MyJobs?.countClosed||0}
                   size="small"
                   sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
                 />
@@ -147,7 +147,7 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
-                <Chip label={state?.MyJobs?.countDraft} size="small" sx={{}} />
+                <Chip label={state?.MyJobs?.countDraft||0} size="small" sx={{}} />
               </Box>
             }
             sx={{
