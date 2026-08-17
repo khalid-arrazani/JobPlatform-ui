@@ -67,6 +67,7 @@ export default function CompaniesPage() {
           }}
         >
           {loading ? <LoadingList /> : <CardCompanies companies={companies} />}
+          
         </Box>
 
         <Box
