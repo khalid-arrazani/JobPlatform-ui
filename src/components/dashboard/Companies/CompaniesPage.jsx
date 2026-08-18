@@ -43,7 +43,6 @@ export default function CompaniesPage() {
   }, []);
 
 
-
  useEffect(() => {
     fetchCompanies();
   }, [filter]);
