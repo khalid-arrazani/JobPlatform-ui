@@ -19,6 +19,7 @@ API.interceptors.response.use(
 
     const originalRequest =
       error.config;
+      
 
     const message =
       error.response?.data?.message;
@@ -96,7 +97,7 @@ API.interceptors.response.use(
       error
     );
   }
-  
+
 );
 
 export default API;
