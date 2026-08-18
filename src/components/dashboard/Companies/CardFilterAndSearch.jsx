@@ -3,6 +3,7 @@ import { Box, InputBase, Typography } from "@mui/material";
 import SearchIcon from "@mui/icons-material/Search";
 
 export default function CompanyCard({ filter, setFilter }) {
+  
   return (
     <Box
       sx={{

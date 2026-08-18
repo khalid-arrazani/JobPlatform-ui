@@ -21,6 +21,7 @@ export default function CompaniesPage() {
   });
 
   console.log(filter);
+  console.log(companies);
 
   const fetchCompanies = async () => {
     setLoading(true);
@@ -89,7 +90,7 @@ export default function CompaniesPage() {
         >
           <Stack>
             <Pagination
-              count={1}
+              count={companies?.totalPages || 1}
               onChange={(event, page) => {
                 setFilter((prev) => ({
                   ...prev,
