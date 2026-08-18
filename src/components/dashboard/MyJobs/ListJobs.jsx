@@ -29,7 +29,6 @@ export default function CardJobs() {
 
         fields.forEach((field) => {
           const value = job[field];
-
           if (
             value !== undefined &&
             value !== null &&

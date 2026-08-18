@@ -2,7 +2,7 @@ import { Box, InputBase, Typography } from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
 
-export default function CompanyCard({ filter, setFilter }) {
+export default function CompanyCard({ search, setSearch }) {
   
   return (
     <Box
@@ -63,13 +63,10 @@ export default function CompanyCard({ filter, setFilter }) {
           <SearchIcon sx={{ color: "#777" }} />
 
           <InputBase
-          value={filter.search}
+          value={search}
             onChange={(e) => {
 
-              setFilter((prev) => ({
-                ...prev,
-                search: e.target.value,
-              }));
+              setSearch(e.target.value);
 
             }}
             placeholder="Search companies..."

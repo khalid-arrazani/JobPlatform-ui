@@ -18,6 +18,7 @@ import SkeletonJobs from "./SkeletonJobs";
 
 
 export default function Footer() {
+  
   const [search, setSearch] = useState("");
   const {myJobsLoading, felterData, setFelterData, ...state } = useJob();
 

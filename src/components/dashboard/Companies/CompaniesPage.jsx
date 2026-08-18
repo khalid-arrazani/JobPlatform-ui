@@ -20,8 +20,11 @@ export default function CompaniesPage() {
     page: "",
   });
 
-  console.log(filter);
-  console.log(companies);
+
+
+  const [search, setSearch] = useState("");
+
+
 
   const fetchCompanies = async () => {
     setLoading(true);
@@ -38,6 +41,31 @@ export default function CompaniesPage() {
   useEffect(() => {
     fetchCompanies();
   }, []);
+
+
+
+
+ useEffect(() => {
+  const timeout = setTimeout(() => {
+
+    setFilter(prev => {
+      if (prev.search === search) return prev;
+
+      return {
+        ...prev,
+        search,
+        page: 1
+      };
+
+    });
+
+  }, 500);
+
+  return () => clearTimeout(timeout);
+}, [search]);
+
+
+
 
   return (
     <>
@@ -57,7 +85,7 @@ export default function CompaniesPage() {
             boxSizing: "border-box",
           }}
         >
-          <CardFilterAndSearch setFilter={setFilter} filter={filter} />
+          <CardFilterAndSearch setSearch={setSearch} search={search} />
         </Box>
 
         <Box
