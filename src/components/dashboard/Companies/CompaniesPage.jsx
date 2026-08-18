@@ -18,7 +18,7 @@ export default function CompaniesPage() {
 
 
   const [filter , setFilter] = useState({
-    Search:"",
+    search:"",
     page:""
   })
 
@@ -91,7 +91,12 @@ export default function CompaniesPage() {
           }}
         >
           <Stack>
-            <Pagination count={1} />
+            <Pagination count={1} onChange={(e)=>{
+              setFilter((prev) => ({
+                ...prev,
+                page: e.targrt.value,
+              }));
+            }} />
           </Stack>
         </Box>
       </Box>
