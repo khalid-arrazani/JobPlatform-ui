@@ -80,6 +80,8 @@ export const deleteCompanyBnner = async ( ) => {
 };
 
 
+
+
 export const GetAllCompanies = async (formData) => {
   const response = await API.get(
      `/company`,
