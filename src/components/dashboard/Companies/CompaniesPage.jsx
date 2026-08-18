@@ -11,18 +11,14 @@ import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import LoadingList from "./LoadingList";
 
-
 export default function CompaniesPage() {
   const [companies, setCompanies] = useState(null);
   const [loading, setLoading] = useState(false);
 
-
-  const [filter , setFilter] = useState({
-    search:"",
-    page:""
-  })
-
-
+  const [filter, setFilter] = useState({
+    search: "",
+    page: "",
+  });
 
   const fetchCompanies = async () => {
     setLoading(true);
@@ -58,7 +54,7 @@ export default function CompaniesPage() {
             boxSizing: "border-box",
           }}
         >
-          <CardFilterAndSearch setFilter={setFilter}  filter={filter}  />
+          <CardFilterAndSearch setFilter={setFilter} filter={filter} />
         </Box>
 
         <Box
@@ -76,7 +72,6 @@ export default function CompaniesPage() {
           }}
         >
           {loading ? <LoadingList /> : <CardCompanies companies={companies} />}
-          
         </Box>
 
         <Box
@@ -91,12 +86,17 @@ export default function CompaniesPage() {
           }}
         >
           <Stack>
-            <Pagination count={1} onChange={(e)=>{
-              setFilter((prev) => ({
-                ...prev,
-                page: e.targrt.value,
-              }));
-            }} />
+            <Pagination
+              count={1}
+
+              onChange={(event, page) => {
+                setFilter((prev) => ({
+                  ...prev,
+                  page: page,
+                }));
+              }}
+              
+            />
           </Stack>
         </Box>
       </Box>
