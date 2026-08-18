@@ -20,6 +20,8 @@ export default function CompaniesPage() {
     page: "",
   });
 
+  console.log(filter);
+
   const fetchCompanies = async () => {
     setLoading(true);
     try {
@@ -88,14 +90,13 @@ export default function CompaniesPage() {
           <Stack>
             <Pagination
               count={1}
-
               onChange={(event, page) => {
                 setFilter((prev) => ({
                   ...prev,
                   page: page,
                 }));
               }}
-              
+
             />
           </Stack>
         </Box>

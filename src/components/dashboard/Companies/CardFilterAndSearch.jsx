@@ -62,7 +62,7 @@ export default function CompanyCard({ filter, setFilter }) {
           <SearchIcon sx={{ color: "#777" }} />
 
           <InputBase
-          value={filter.Search}
+          value={filter.search}
             onChange={(e) => {
 
               setFilter((prev) => ({
