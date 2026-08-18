@@ -82,10 +82,10 @@ export const deleteCompanyBnner = async ( ) => {
 
 
 
-export const GetAllCompanies = async (formData) => {
+export const GetAllCompanies = async (filter) => {
   const response = await API.get(
      `/company`,
-   formData, { withCredentials: true }
+   {params:filter , withCredentials: true }
   );
   return response.data;
 };
