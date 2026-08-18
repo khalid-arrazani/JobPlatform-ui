@@ -62,13 +62,14 @@ export default function CompanyCard({ filter, setFilter }) {
           <SearchIcon sx={{ color: "#777" }} />
 
           <InputBase
+          value={filter.Search}
             onChange={(e) => {
 
               setFilter((prev) => ({
                 ...prev,
                 Search: e.targrt.value,
               }));
-              
+
             }}
             placeholder="Search companies..."
             fullWidth
