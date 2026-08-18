@@ -67,7 +67,7 @@ export default function CompanyCard({ filter, setFilter }) {
 
               setFilter((prev) => ({
                 ...prev,
-                search: e.targrt.value,
+                search: e.target.value,
               }));
 
             }}
