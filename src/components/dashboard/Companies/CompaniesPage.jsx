@@ -11,9 +11,18 @@ import { useEffect, useState } from "react";
 import { Box } from "@mui/material";
 import LoadingList from "./LoadingList";
 
+
 export default function CompaniesPage() {
   const [companies, setCompanies] = useState(null);
   const [loading, setLoading] = useState(false);
+
+
+  const [filter , setFilter] = useState({
+    Search:"",
+    page:""
+  })
+
+
 
   const fetchCompanies = async () => {
     setLoading(true);
@@ -49,7 +58,7 @@ export default function CompaniesPage() {
             boxSizing: "border-box",
           }}
         >
-          <CardFilterAndSearch />
+          <CardFilterAndSearch setFilter={setFilter}  filter={filter}  />
         </Box>
 
         <Box
