@@ -26,10 +26,10 @@ export default function CompaniesPage() {
 
 
 
-  const fetchCompanies = async () => {
+  const fetchCompanies = async (filter) => {
     setLoading(true);
     try {
-      const data = await GetAllCompanies();
+      const data = await GetAllCompanies(filter);
       setCompanies(data);
     } catch (error) {
       console.log(error.response.data);
@@ -43,6 +43,10 @@ export default function CompaniesPage() {
   }, []);
 
 
+
+ useEffect(() => {
+    fetchCompanies(filter);
+  }, [filter]);
 
 
  useEffect(() => {
@@ -62,6 +66,7 @@ export default function CompaniesPage() {
   }, 500);
 
   return () => clearTimeout(timeout);
+  
 }, [search]);
 
 
