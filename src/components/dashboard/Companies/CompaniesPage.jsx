@@ -20,11 +20,7 @@ export default function CompaniesPage() {
     page: "",
   });
 
-
-
   const [search, setSearch] = useState("");
-
-
 
   const fetchCompanies = async () => {
     setLoading(true);
@@ -66,7 +62,7 @@ export default function CompaniesPage() {
 
   return () => clearTimeout(timeout);
 
-}, [search]);
+ }, [search]);
 
 
 
@@ -122,7 +118,7 @@ export default function CompaniesPage() {
         >
           <Stack>
             <Pagination
-              count={companies?.totalPages || 1}
+              count={companies?.totalPages || 0}
               onChange={(event, page) => {
                 setFilter((prev) => ({
                   ...prev,
