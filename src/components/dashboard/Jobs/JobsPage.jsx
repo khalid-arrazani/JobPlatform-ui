@@ -25,6 +25,9 @@ export default function JobsPage() {
   const { dispatch, ...state } = useJob();
 
 
+  
+
+
 
   const { setSnackBar } = useAuth();
 
@@ -75,7 +78,7 @@ export default function JobsPage() {
       });
 
       fetchJob();
-      
+
   },[state1.reloadListJob])
 
 
