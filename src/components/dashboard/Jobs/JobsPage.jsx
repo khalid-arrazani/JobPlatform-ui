@@ -27,11 +27,8 @@ export default function JobsPage() {
 
 
   const { setSnackBar } = useAuth();
+  
   const [page, setPage] = useState(1);
-
-
-
-
 
 
 

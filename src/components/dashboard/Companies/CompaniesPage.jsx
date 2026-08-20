@@ -65,8 +65,6 @@ export default function CompaniesPage() {
  }, [search]);
 
 
-
-
   return (
     <>
       <Box
