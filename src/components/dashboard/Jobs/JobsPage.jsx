@@ -90,7 +90,29 @@ export default function JobsPage() {
 
   },[state1.reloadListJob])
 
+   useEffect(() => {
+  const timeout = setTimeout(() => {
 
+    setFilter(prev => {
+      if (prev.search === search) return prev;
+
+      return {
+        ...prev,
+        search,
+        page: 1
+      };
+
+    });
+
+  }, 500);
+
+  return () => clearTimeout(timeout);
+
+ }, [search]);
+
+const handleChange = (event, value) => {
+    setFelterData((prev) => ({ ...prev, page: value }));
+  };
  
 
   return (
