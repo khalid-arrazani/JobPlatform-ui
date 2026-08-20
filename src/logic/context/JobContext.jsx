@@ -30,6 +30,8 @@ export default function JobProvider({ children }) {
     page: 1,
   });
 
+
+  
  
 
   const fetchCompany = async () => {
