@@ -25,7 +25,13 @@ export default function JobsPage() {
   const { dispatch, ...state } = useJob();
 
 
-  
+
+  const [filter , setFilter ] = useState({
+    search :"", 
+    page:1
+  }) 
+
+
 
 
 
@@ -72,7 +78,7 @@ export default function JobsPage() {
 
   useEffect(()=>{
 
-    dispatch1({
+    diusestaspatch1({
         type: "RELOADLISTJOB",
         payload: false,
       });
