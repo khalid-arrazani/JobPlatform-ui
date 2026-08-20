@@ -34,10 +34,6 @@ export default function JobsPage() {
   const [search , setSearch] = useState("")
 
 
-
-
-
-
   const { setSnackBar } = useAuth();
 
   const [page, setPage] = useState(1);
@@ -110,8 +106,8 @@ export default function JobsPage() {
 
  }, [search]);
 
-const handleChange = (event, value) => {
-    setFelterData((prev) => ({ ...prev, page: value }));
+const handleChange1 = (event, value) => {
+    setFilter((prev) => ({ ...prev, page: value }));
   };
  
 
