@@ -2,7 +2,7 @@ import SearchIcon from "@mui/icons-material/Search";
 import { Box } from "@mui/material";
 import { InputBase } from "@mui/material";
 
-export default function SearchInput() {
+export default function SearchInput({search , setSearch}) {
   return (
     <>
       <Box

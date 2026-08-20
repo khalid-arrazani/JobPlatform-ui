@@ -30,7 +30,9 @@ export default function JobsPage() {
     search :"", 
     page: 0
   }) ;
-  
+
+  const [search , setSearch] = useState("")
+
 
 
 
@@ -104,7 +106,7 @@ export default function JobsPage() {
 
           <Box sx={{height:"100%",width:"51%",pt:"0.5rem"}} >
 
-             <SearchInput />
+             <SearchInput  search={search} setSearch={setSearch} />
         
              {state.isLoading ? <LoadingList /> : <JobList />}
 
