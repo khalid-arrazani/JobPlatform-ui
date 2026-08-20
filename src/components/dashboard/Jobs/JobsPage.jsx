@@ -27,11 +27,8 @@ export default function JobsPage() {
 
 
   const { setSnackBar } = useAuth();
-  
+
   const [page, setPage] = useState(1);
-
-
-
 
   const handleChange = (event, value) => {
     setPage(value);
@@ -71,11 +68,14 @@ export default function JobsPage() {
 
 
   useEffect(()=>{
+
     dispatch1({
         type: "RELOADLISTJOB",
         payload: false,
       });
+
       fetchJob();
+      
   },[state1.reloadListJob])
 
 
