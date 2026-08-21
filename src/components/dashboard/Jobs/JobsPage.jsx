@@ -44,7 +44,7 @@ export default function JobsPage() {
 
       return {
         ...prev,
-        search,
+        search : search.trim(),
         page: 1
       };
     });
@@ -111,9 +111,6 @@ export default function JobsPage() {
 
 
 
-const handleChange1 = (event, value) => {
-    setFilter((prev) => ({ ...prev, page: value }));
-  };
  
 
   return (
