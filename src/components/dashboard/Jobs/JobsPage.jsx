@@ -28,7 +28,7 @@ export default function JobsPage() {
 
   const [filter , setFilter ] = useState({
     search :"", 
-    page: 0
+    page: 1
   });
 
   console.log(filter);
