@@ -24,8 +24,12 @@ export const UpdateJob = async (jobData , JobId) => {
 export const getJobList = async (filter) => {
    console.log(filter);
   const response = await API.get(
-     `/jobs/Jobs?filter=${filter}`,
-    { withCredentials: true }
+     `/jobs/Jobs`,
+    {  params: {
+      page: filter.page,
+      search: filter.search,
+    },
+    withCredentials: true, }
   );
 
   return response.data;

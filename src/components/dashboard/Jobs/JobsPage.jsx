@@ -47,9 +47,7 @@ export default function JobsPage() {
         search,
         page: 1
       };
-
     });
-
   },500);
 
   return () => clearTimeout(timeout);
@@ -61,10 +59,10 @@ export default function JobsPage() {
 
   const { setSnackBar } = useAuth();
 
-  const [page, setPage] = useState(1);
+
 
   const handleChange = (event, value) => {
-    setPage(value);
+    setFilter(prev => ({...prev , search , page:value}) )
   };
 
   const fetchJob = async () => {
@@ -96,7 +94,7 @@ export default function JobsPage() {
 
   useEffect(() => {
     fetchJob();
-  }, [page]);
+  }, [filter]);
 
 
 

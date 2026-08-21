@@ -18,7 +18,6 @@ export default function CompaniesPage() {
 
 
 
-
   const [filter, setFilter] = useState({
     search: "",
     page: "",
