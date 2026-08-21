@@ -34,7 +34,7 @@ export default function JobsPage() {
 
   const [search , setSearch] = useState("")
 
-     useEffect(() => {
+  useEffect(() => {
   const timeout = setTimeout(() => {
 
     setFilter(prev => {
@@ -48,14 +48,14 @@ export default function JobsPage() {
 
     });
 
-  }, 500);
+  },500);
 
   return () => clearTimeout(timeout);
 
  }, [search]);
 
 
- 
+
 
   const { setSnackBar } = useAuth();
 
