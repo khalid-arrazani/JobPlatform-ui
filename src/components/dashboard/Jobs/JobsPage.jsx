@@ -74,7 +74,7 @@ export default function JobsPage() {
     });
 
     try {
-      const data = await getJobList(page);
+      const data = await getJobList(filter);
 
       dispatch({
         type: "SET-JOB-LIST",
