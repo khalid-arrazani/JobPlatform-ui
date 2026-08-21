@@ -102,7 +102,7 @@ export default function JobsPage() {
 
   useEffect(()=>{
 
-    diusestaspatch1({
+    dispatch1({
         type: "RELOADLISTJOB",
         payload: false,
       });
