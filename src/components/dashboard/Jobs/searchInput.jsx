@@ -35,6 +35,10 @@ export default function SearchInput({search , setSearch}) {
           <SearchIcon sx={{ color: "#555", fontSize: 20 }} />
 
           <InputBase
+          value={search}
+          onChange={(e)=>{
+            setSearch(e.target.value)
+          }}
             placeholder="Search jobs..."
             sx={{
               ml: 1,

@@ -15,14 +15,20 @@ export default function CompaniesPage() {
   const [companies, setCompanies] = useState(null);
   const [loading, setLoading] = useState(false);
 
+
+
+
+
   const [filter, setFilter] = useState({
     search: "",
     page: "",
   });
 
+
   const [search, setSearch] = useState("");
 
-  const fetchCompanies = async () => {
+
+  const FetchCompanies = async () => {
     setLoading(true);
     try {
       const data = await GetAllCompanies(filter);
@@ -34,13 +40,16 @@ export default function CompaniesPage() {
     }
   };
 
+
+
+
   useEffect(() => {
-    fetchCompanies();
+    FetchCompanies();
   }, []);
 
 
  useEffect(() => {
-    fetchCompanies();
+    FetchCompanies();
   }, [filter]);
 
 
