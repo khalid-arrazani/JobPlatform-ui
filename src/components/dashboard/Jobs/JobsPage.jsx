@@ -31,8 +31,31 @@ export default function JobsPage() {
     page: 0
   }) ;
 
+
   const [search , setSearch] = useState("")
 
+     useEffect(() => {
+  const timeout = setTimeout(() => {
+
+    setFilter(prev => {
+      if (prev.search === search) return prev;
+
+      return {
+        ...prev,
+        search,
+        page: 1
+      };
+
+    });
+
+  }, 500);
+
+  return () => clearTimeout(timeout);
+
+ }, [search]);
+
+
+ 
 
   const { setSnackBar } = useAuth();
 
@@ -86,25 +109,7 @@ export default function JobsPage() {
 
   },[state1.reloadListJob])
 
-   useEffect(() => {
-  const timeout = setTimeout(() => {
 
-    setFilter(prev => {
-      if (prev.search === search) return prev;
-
-      return {
-        ...prev,
-        search,
-        page: 1
-      };
-
-    });
-
-  }, 500);
-
-  return () => clearTimeout(timeout);
-
- }, [search]);
 
 const handleChange1 = (event, value) => {
     setFilter((prev) => ({ ...prev, page: value }));
