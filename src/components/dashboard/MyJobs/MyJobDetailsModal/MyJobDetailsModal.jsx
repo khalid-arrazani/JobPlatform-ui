@@ -13,9 +13,7 @@ import AbouttheCompany from "./AbouttheCompany";
 
 export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
  
-
   const { JobId } = useParams();
-
 
 
   const onClose = ()=>{
