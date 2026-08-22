@@ -9,23 +9,19 @@ import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect } from "react";
-import {
-  GetCompanyById,
-} from "../../../logic/api/company/Company";
+import { GetCompanyById } from "../../../logic/api/company/Company";
+
+import spinner from "../../../assets/spinner.json";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import { useCompany } from "../../../logic/context/CompanyContext";
 import { useParams } from "react-router-dom";
 
 export default function CompanyDetailsPage() {
-
   const { dispatch, ...state } = useCompany();
-
-    const { CompanyId } = useParams();
-   
-    console.log(state);
+  const { CompanyId } = useParams();
 
   const fetchCompany = async () => {
-
     dispatch({
       type: "SET_LOADING",
       payload: true,
@@ -40,11 +36,8 @@ export default function CompanyDetailsPage() {
       });
 
       console.log(data);
-
     } catch (error) {
-
       console.log(error.response?.data);
-      
     } finally {
       dispatch({
         type: "SET_LOADING",
@@ -53,81 +46,101 @@ export default function CompanyDetailsPage() {
     }
   };
 
- useEffect(() => {
+  useEffect(() => {
     fetchCompany();
   }, []);
 
 
- 
 
   return (
     <>
-      <Box
-        sx={{
-          height: "auto",
-          width: "100vw",
-          bgcolor: "#f2f2f5",
-          boxSizing: "border-box",
-          px: 6,
-          pt: 3,
-          overflow: "auto",
-        }}
-      >
-
-        {/* top side or Company Card or  Header   */}
-        <CompanyHeader
-          CompanyInfo={state.CompanyDetails?.company}
-        />
-
-        {/* Content about Company or bottom side  */}
+      {state.isLoading ? (
         <Box
           sx={{
-            width: "100%",
-            height: "fit-Content",
-            my: 2,
-            borderRadius: "15px",
+            height: "93%",
+            width: "100vw",
+            bgcolor: "#f2f2f5",
+            boxSizing: "border-box",
             display: "flex",
-            gap: 1.5,
+            alignItems: "center",
+            justifyContent: "center",
           }}
         >
-          {/* left side  */}
-          <Box
-            sx={{
-              width: "50%",
-              borderRadius: "15px",
+          <Player
+            autoplay
+            loop
+            src={spinner}
+            style={{
+              width: "140px",
+              height: "140px",
             }}
-          >
-            {/* About Company Card  */}
-            <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
-            {/* Company Statistics  */}
-            <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
+          />
+        </Box>
+      ) : (
+        <Box
+          sx={{
+            height: "auto",
+            width: "100vw",
+            bgcolor: "#f2f2f5",
+            boxSizing: "border-box",
+            px: 6,
+            pt: 3,
+            overflow: "auto",
+          }}
+        >
+          {/* top side or Company Card or  Header   */}
+          <CompanyHeader CompanyInfo={state.CompanyDetails?.company} />
 
-            {/* Open Positions Card  */}
-            <OpenPositionsCard
-              CompanyInfo={state?.CompanyDetails}
-              CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
-            />
-          </Box>
-
-          {/* right side  */}
+          {/* Content about Company or bottom side  */}
           <Box
             sx={{
-              width: "50%",
+              width: "100%",
               height: "fit-Content",
+              my: 2,
               borderRadius: "15px",
+              display: "flex",
+              gap: 1.5,
             }}
           >
-            {/* Company Benefits Card  */}
-            <SocialContact CompanyInfo={state.CompanyDetails?.company} />
+            {/* left side  */}
+            <Box
+              sx={{
+                width: "50%",
+                borderRadius: "15px",
+              }}
+            >
+              {/* About Company Card  */}
+              <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
+              {/* Company Statistics  */}
+              <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
 
-            {/* Company Benefits Card  */}
-            <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
+              {/* Open Positions Card  */}
+              <OpenPositionsCard
+                CompanyInfo={state?.CompanyDetails}
+                CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
+              />
+            </Box>
 
-            {/* Company Info Card  */}
-            <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
+            {/* right side  */}
+            <Box
+              sx={{
+                width: "50%",
+                height: "fit-Content",
+                borderRadius: "15px",
+              }}
+            >
+              {/* Company Benefits Card  */}
+              <SocialContact CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* Company Benefits Card  */}
+              <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* Company Info Card  */}
+              <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
+            </Box>
           </Box>
         </Box>
-      </Box>
+      )}
     </>
   );
 }
