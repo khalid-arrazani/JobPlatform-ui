@@ -3,12 +3,12 @@ import { Card, Typography, Box, Chip, Button } from "@mui/material";
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
-
+import { useNavigate } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 
 export default function OpenPositionsCard({CompanyactiveJobs }) {
- 
+   const navigate = useNavigate();
   return (
     <>
       <Card
@@ -63,6 +63,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
         {CompanyactiveJobs?.slice(0,3).map((item) => (
           <Card
             key={item._id}
+            onClick={()=>{ navigate(`/Dashboard/Jobs/Details/${item._id}`);}}
             sx={{
               boxSizing: "border-box",
               borderRadius: "16px",
