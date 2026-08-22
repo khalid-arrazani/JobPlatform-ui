@@ -6,15 +6,18 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 
 import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
+import { useState } from "react";
+import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
-export default function OpenPositionsCard({CompanyactiveJobs }) {
- 
+export default function OpenPositionsCard({ CompanyactiveJobs }) {
+  const [open, setOpen] = useState(false);
+
   return (
     <>
       <Card
         sx={{
           width: "100%",
-          height:"22.5rem",
+          height: "22.5rem",
           borderRadius: "15px",
           boxSizing: "border-box",
           p: 2.5,
@@ -62,7 +65,9 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
 
         {CompanyactiveJobs?.slice(0, 3).map((item) => (
           <Card
-          onClick={()=>{console.log(item)}}
+            onClick={() => {
+              setOpen(true)
+            }}
             key={item._id}
             sx={{
               boxSizing: "border-box",
@@ -96,8 +101,13 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
               cursor: "pointer",
             }}
           >
+            <MyJobDetailsModal open={open} setOpen={setOpen} jobInfo={item} />
+
             <Box>
-              <Typography fontWeight={600}> {item.title.slice(0,25)}   {item.title.length >= 25 ? "..." : null } </Typography>
+              <Typography fontWeight={600}>
+                {item.title.slice(0, 25)}{" "}
+                {item.title.length >= 25 ? "..." : null}{" "}
+              </Typography>
 
               <Box
                 sx={{
@@ -127,11 +137,16 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 display: "flex",
                 width: "60%",
                 justifyContent: "space-between",
-                
               }}
             >
-              <Box sx={{ display: "flex", gap: 2,boxSizing:"border-box",px:0.5 }}>
-                
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  boxSizing: "border-box",
+                  px: 0.5,
+                }}
+              >
                 <Chip
                   size="small"
                   sx={{
@@ -180,8 +195,8 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 <Chip
                   size="small"
                   label={formatDistanceToNow(new Date(item.createdAt), {
-                      addSuffix: true,
-                    })}
+                    addSuffix: true,
+                  })}
                   sx={{ fontSize: "0.7rem", borderRadius: "5px" }}
                 ></Chip>
 

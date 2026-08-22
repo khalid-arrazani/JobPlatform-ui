@@ -13,7 +13,7 @@ import AbouttheCompany from "./AbouttheCompany";
 
 export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
  
-
+ console.log(jobInfo);
   const { JobId } = useParams();
 
 
