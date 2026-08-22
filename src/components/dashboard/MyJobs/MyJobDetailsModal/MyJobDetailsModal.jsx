@@ -21,24 +21,7 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
   const [job , setJob] = useState()
   const [loading , setLoading] = useState(false)
  
-  // useEffect(() => {
-  //   fetchJobById();
-  // }, []);
-
-  // const fetchJobById = async () => {
-  //   setLoading(true)
-  //   try {
-  //     const jobById = await getJobID(JobId);
-  //     setJob(jobById);
-
-  //   } catch (error) {
-
-  //     console.log(error);
-
-  //   }finally{
-  //     setLoading(false)
-  //   }
-  // };
+ 
 
   console.log("111",jobInfo);
 

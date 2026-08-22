@@ -48,7 +48,7 @@ export default function MyJobsPage() {
 
         </Box>
 
-        {/* right side */}
+ 
 
        
       </Box>
