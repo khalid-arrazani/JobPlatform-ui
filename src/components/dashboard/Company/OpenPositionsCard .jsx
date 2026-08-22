@@ -62,6 +62,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
 
         {CompanyactiveJobs?.slice(0, 3).map((item) => (
           <Card
+          onClick={()=>{console.log(item)}}
             key={item._id}
             sx={{
               boxSizing: "border-box",
