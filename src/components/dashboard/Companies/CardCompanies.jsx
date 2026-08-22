@@ -106,7 +106,7 @@ const navigate = useNavigate();
               py: 0.3,
             }}
           >
-            View Jobs
+            View Company
           </Button>
         </Card>
       ))}
