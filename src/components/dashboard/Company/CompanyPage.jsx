@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-import Lottie from "lottie-react";
+
 import spinner from "../../../assets/spinner.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 
