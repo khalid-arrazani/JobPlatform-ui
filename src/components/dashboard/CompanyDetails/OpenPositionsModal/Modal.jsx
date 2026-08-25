@@ -15,6 +15,7 @@ export default function ModalOpenPositions ( ){
 
 
     return <>
+    
      <Modal
         open={open}
         onClose={handleClose}
