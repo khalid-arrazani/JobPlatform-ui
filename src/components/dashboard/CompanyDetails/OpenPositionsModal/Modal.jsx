@@ -34,19 +34,48 @@ export default function ModalOpenPositions ( {open , setOpen }){
             overflow: "hidden",
             boxSizing: "border-box",
             outline: "none",
-            
+            display:"flex",
+            flexDirection:"column"
           }}
         >
+
+
           <Box  sx={{
             height: "18%",
             width: "100%",
-            bgcolor: "#1b0c0c",
+       
+            overflow: "hidden",
+            boxSizing: "border-box",
+            
+          }} ></Box>
+
+
+
+          <Box  sx={{
+            height: "72%",
+            width: "100%",
+   
+            overflow: "hidden",
+            boxSizing: "border-box",borderTop:"1px solid #ddd",
+            borderBottom:"1px solid #ddd"
+           
+          }} ></Box>
+
+
+
+
+          <Box  sx={{
+            height: "10%",
+            width: "100%",
+
             overflow: "hidden",
             boxSizing: "border-box",
            
-          }} ></Box>
-          <Box></Box>
-          <Box></Box>
+          }} >
+
+
+            
+          </Box>
           
         </Box>
       </Modal>
