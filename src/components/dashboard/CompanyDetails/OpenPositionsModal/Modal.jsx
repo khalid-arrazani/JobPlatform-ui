@@ -1,6 +1,7 @@
 import { Typography, Box, IconButton, Modal } from "@mui/material";
 import { useState } from "react";
-
+import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 
 
 
@@ -69,12 +70,17 @@ export default function ModalOpenPositions ( {open , setOpen }){
             width: "100%",
 
             overflow: "hidden",
-            boxSizing: "border-box",
+            boxSizing: "border-box",display:"flex" , justifyContent:"center",alignItems:"center"
            
           }} >
 
 
-            
+            <Stack spacing={2}>
+            <Pagination
+              onChange={handleChange}
+              count={state.JobInfo?.totalPages}
+            />
+          </Stack>
           </Box>
           
         </Box>

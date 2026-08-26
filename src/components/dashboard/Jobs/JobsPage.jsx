@@ -31,7 +31,7 @@ export default function JobsPage() {
     page: 1
   });
 
-  console.log(filter);
+
 
 
   const [search , setSearch] = useState("")
