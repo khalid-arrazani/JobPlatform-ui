@@ -44,20 +44,21 @@ export default function ModalOpenPositions ( {open , setOpen }){
           <Box  sx={{
             height: "18%",
             width: "100%",
-       
             overflow: "hidden",
             boxSizing: "border-box",
-            px:"1rem",alignContent:"center"
+            px:"1rem",
+            alignContent:"center"
           }} >
 
 
          <Avatar 
-
          src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786651831/profile-images/rppnczrtt7z2zdvjehe0.png"
-         
-         
          sx={{height:"5rem",width:"5rem",borderRadius:"18px",boxSizing: "border-box",border:"1px solid #ddd",p:1}}
          />
+         <Box>
+          
+         </Box>
+
 
 
           </Box>
