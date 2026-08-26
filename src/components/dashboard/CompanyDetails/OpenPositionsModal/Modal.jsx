@@ -52,7 +52,7 @@ export default function ModalOpenPositions ( {open , setOpen }){
             px:"1rem",
             py:"1rem",
             alignItems:"center",
-            display:"flex",flexDirection:"column",pt:0.5
+            display:"flex",flexDirection:"column",pt:0.5,justifyContent:"space-between"
           }} >
 
 
