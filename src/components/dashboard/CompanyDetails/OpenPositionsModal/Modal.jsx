@@ -34,8 +34,19 @@ export default function ModalOpenPositions ( {open , setOpen }){
             overflow: "hidden",
             boxSizing: "border-box",
             outline: "none",
+            
           }}
         >
+          <Box  sx={{
+            height: "18%",
+            width: "100%",
+            bgcolor: "#1b0c0c",
+            overflow: "hidden",
+            boxSizing: "border-box",
+           
+          }} ></Box>
+          <Box></Box>
+          <Box></Box>
           
         </Box>
       </Modal>
