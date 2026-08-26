@@ -1,4 +1,4 @@
-import { Typography, Box, IconButton, Modal } from "@mui/material";
+import { Typography, Box, IconButton, Modal,Avatar } from "@mui/material";
 import { useState } from "react";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
@@ -47,8 +47,24 @@ export default function ModalOpenPositions ( {open , setOpen }){
        
             overflow: "hidden",
             boxSizing: "border-box",
-            
-          }} ></Box>
+            px:"1rem",alignContent:"center"
+          }} >
+
+
+         <Avatar   
+         sx={{height:"5rem",width:"5rem",borderRadius:"18px"}}
+         />
+
+
+          </Box>
+
+
+
+
+
+
+
+
 
 
 
@@ -73,15 +89,15 @@ export default function ModalOpenPositions ( {open , setOpen }){
             boxSizing: "border-box",display:"flex" , justifyContent:"center",alignItems:"center"
            
           }} >
-
-
             <Stack spacing={2}>
             <Pagination
-              onChange={handleChange}
-              count={state.JobInfo?.totalPages}
+              // onChange={handleChange}
+              // count={state.JobInfo?.totalPages}
             />
           </Stack>
           </Box>
+
+
           
         </Box>
       </Modal>
