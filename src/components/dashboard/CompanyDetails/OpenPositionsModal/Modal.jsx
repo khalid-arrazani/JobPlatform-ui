@@ -45,13 +45,14 @@ export default function ModalOpenPositions ( {open , setOpen }){
 
 
           <Box  sx={{
-            height: "18%",
+            height: "20%",
             width: "100%",
             overflow: "hidden",
             boxSizing: "border-box",
             px:"1rem",
+            py:"1rem",
             alignItems:"center",
-            display:"flex",flexDirection:"column",
+            display:"flex",flexDirection:"column",pt:0.5
           }} >
 
 
