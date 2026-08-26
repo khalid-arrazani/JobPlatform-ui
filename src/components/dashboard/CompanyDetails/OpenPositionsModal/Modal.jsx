@@ -4,6 +4,9 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 
+import SearchAndFilter from "./CardFilterAndSearch";
+
+
 
 
 export default function ModalOpenPositions ( {open , setOpen }){
@@ -29,7 +32,7 @@ export default function ModalOpenPositions ( {open , setOpen }){
         <Box
           sx={{
             height: "95%",
-            width: "70%",
+            width: "60%",
             bgcolor: "#ffffff",
             borderRadius: "20px",
             overflow: "hidden",
@@ -47,17 +50,45 @@ export default function ModalOpenPositions ( {open , setOpen }){
             overflow: "hidden",
             boxSizing: "border-box",
             px:"1rem",
-            alignContent:"center"
+            alignItems:"center",
+            display:"flex",flexDirection:"column",
           }} >
 
 
-         <Avatar 
+         <Box sx={{
+            boxSizing: "border-box",
+            alignContent:"center",
+            width:"100%",height:"fitContent",display:"flex",gap:1
+          }}>
+
+            <Avatar 
          src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786651831/profile-images/rppnczrtt7z2zdvjehe0.png"
-         sx={{height:"5rem",width:"5rem",borderRadius:"18px",boxSizing: "border-box",border:"1px solid #ddd",p:1}}
+         sx={{height:"3.5rem",width:"3.5rem",borderRadius:"10px",boxSizing: "border-box",border:"1px solid #ddd",p:1}}
          />
-         <Box>
-          
+
+
+         <Box sx={{
+            boxSizing: "border-box",
+            alignContent:"center",
+            
+          }}>
+            <Typography sx={{fontFamily:"system-ui",color:"#010318d0",fontWeight:600,fontSize:"1.1rem"}} >Google Open Positions</Typography>
+
+            <Typography sx={{fontFamily:"monospace",color:"#0205226f"}} >Explore all current job openings at Google. </Typography>
+
          </Box>
+        
+
+         </Box>
+
+          <SearchAndFilter/>
+
+
+         
+
+
+
+
 
 
 
@@ -81,7 +112,11 @@ export default function ModalOpenPositions ( {open , setOpen }){
             boxSizing: "border-box",borderTop:"1px solid #ddd",
             borderBottom:"1px solid #ddd"
            
-          }} ></Box>
+          }} >
+
+
+
+          </Box>
 
 
 
