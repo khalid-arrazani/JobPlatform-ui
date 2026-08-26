@@ -5,8 +5,8 @@ import { useState } from "react";
 
 
 
-export default function ModalOpenPositions ( ){
-  const  [open , setOpen ] = useState(false)
+export default function ModalOpenPositions ( {open , setOpen }){
+ 
 
  const handleClose = ()=>{
     setOpen(false)
@@ -15,7 +15,7 @@ export default function ModalOpenPositions ( ){
 
 
     return <>
-    
+
      <Modal
         open={open}
         onClose={handleClose}
@@ -28,7 +28,7 @@ export default function ModalOpenPositions ( ){
         <Box
           sx={{
             height: "95%",
-            width: "95%",
+            width: "80%",
             bgcolor: "#ffffff",
             borderRadius: "20px",
             overflow: "hidden",

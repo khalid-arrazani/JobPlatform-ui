@@ -6,9 +6,16 @@ import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
 import { useNavigate } from "react-router-dom";
 import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
+import { useState } from "react";
+import ModalOpenPositions from "./OpenPositionsModal/Modal";
+ 
 
 export default function OpenPositionsCard({CompanyactiveJobs }) {
    const navigate = useNavigate();
+
+   const [open , setOpen ] = useState(false);
+
+
   return (
     <>
       <Card
@@ -44,6 +51,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
           </Box>
 
           <Button
+            onClick={()=>{setOpen(true)}}
             size="small"
             sx={{
               color: "primary.main",
@@ -53,6 +61,9 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
           >
             View all jobs
           </Button>
+
+          <ModalOpenPositions open={open}   setOpen={setOpen} />
+
         </Box>
 
         {/* <EmptyOpenPositions/> */}
