@@ -136,16 +136,14 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   bgcolor: "#ddd",
                 }}
               >
-                <Typography>Frontend Devloper</Typography>
+                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#01010ddc" }}>Frontend Devloper</Typography>
 
-                <Stack sx={{ display: "flex" }}>
-                  {" "}
+                <Stack direction="row" spacing={2}>
                   <Typography sx={{ fontSize: "0.9rem" }}>
                     Montain View, CA
-                  </Typography>{" "}
-                  <Typography sx={{ fontSize: "0.9rem" }}>
-                    Remote
-                  </Typography>{" "}
+                  </Typography>
+
+                  <Typography sx={{ fontSize: "0.9rem" }}>Remote</Typography>
                 </Stack>
               </Box>
 
