@@ -119,7 +119,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
           >
             <Box
               sx={{
-                height: "6rem",
+                height: "5rem",
                 width: "100%",
                 boxSizing: "border-box",
                 border: "1px solid #ddd",
@@ -134,10 +134,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   width: "40%",
                   boxSizing: "border-box",
                   bgcolor: "#ddd",
-                  px:1
+                  px:1.5,placeContent:"center"
                 }}
               >
-                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#01010ddc" }}>Frontend Devloper</Typography>
+                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#010115dc" }}>Frontend Devloper</Typography>
 
                 <Stack direction="row" spacing={2}>
                   <Typography sx={{ fontSize: "0.9rem" }}>
