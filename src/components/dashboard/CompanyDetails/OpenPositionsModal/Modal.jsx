@@ -40,7 +40,7 @@ export default function ModalOpenPositions ( {open , setOpen }){
             flexDirection:"column"
           }}
         >
-
+          
           <Box  sx={{
             height: "20%",
             width: "100%",
@@ -51,7 +51,6 @@ export default function ModalOpenPositions ( {open , setOpen }){
             alignItems:"center",
             display:"flex",flexDirection:"column",pt:0.5,justifyContent:"space-between"
           }} >
-
 
          <Box sx={{
             boxSizing: "border-box",
