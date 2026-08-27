@@ -5,7 +5,7 @@ import {
   Modal,
   Avatar,
   Stack,
-  Chip
+  Chip,
 } from "@mui/material";
 
 import { LuWorkflow } from "react-icons/lu";
@@ -155,79 +155,77 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 <Stack direction="row" spacing={2}>
                   <Box
                     sx={{
-                     display:"flex",
-                     alignItems:"center",
-                     gap:0.5
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.5,
                     }}
                   >
-                    
                     <LocationOnOutlinedIcon
                       sx={{ fontSize: "0.9rem", color: "#575757" }}
                     />
 
                     <Typography
-                    sx={{
-                      fontSize: "0.9rem",
-                      fontFamily: "monospace",
-                      fontWeight: 600,
-                      color: "#010115a7",
-                      textAlign:"center"
-                    }}
-                  >
-                    Montain View, CA
-                  </Typography>
-                  
+                      sx={{
+                        fontSize: "0.9rem",
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        color: "#010115a7",
+                        textAlign: "center",
+                      }}
+                    >
+                      Montain View, CA
+                    </Typography>
                   </Box>
 
                   <Box
                     sx={{
-                     display:"flex",
-                     alignItems:"center",
-                     gap:0.5
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.5,
                     }}
                   >
-                    
-                    <LuWorkflow
-                      sx={{ fontSize: "0.9rem", color: "#575757" }}
-                    />
+                    <LuWorkflow sx={{ fontSize: "0.9rem", color: "#575757" }} />
 
                     <Typography
-                    sx={{
-                      fontSize: "0.9rem",
-                      fontFamily: "monospace",
-                      fontWeight: 600,
-                      color: "#0101159c",
-                      textAlign:"center"
-                    }}
-                  >
-                    Remote
-                  </Typography>
-        
+                      sx={{
+                        fontSize: "0.9rem",
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        color: "#0101159c",
+                        textAlign: "center",
+                      }}
+                    >
+                      Remote
+                    </Typography>
                   </Box>
                 </Stack>
               </Box>
-
-
-
 
               <Box
                 sx={{
                   height: "100%",
                   width: "30%",
                   boxSizing: "border-box",
-                  bgcolor: "#953a3a27",
+         
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"space-evenly"
                 }}
-
               >
-              <Chip size="small" sx={{}} label={"Full-Time"}/>
+                <Chip
+                  size="small"
+                  sx={{
+                    bgcolor: "#a4c5ffa8",
+                    color: "#221c73c3",
+                    fontWeight: 600,
+                    borderRadius: "5px",
+                    fontFamily:"monospace"
+                  }}
+                  label={"Full-Time"}
+                />
 
-
+                <Typography  sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#010215b2"}} >80k-110k</Typography>
               </Box>
-
-
-
-
-
 
               <Box
                 sx={{
