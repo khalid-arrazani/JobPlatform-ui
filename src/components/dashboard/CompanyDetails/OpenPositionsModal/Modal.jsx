@@ -7,6 +7,8 @@ import {
   Stack,
 } from "@mui/material";
 
+import { LuWorkflow } from "react-icons/lu";
+
 import Pagination from "@mui/material/Pagination";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
@@ -143,7 +145,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     fontSize: "1.3rem",
                     fontFamily: "monospace",
                     fontWeight: 600,
-                    color: "#00001bcb",
+                    color: "#00001bc5",
                   }}
                 >
                   Frontend Devloper
@@ -173,19 +175,34 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   >
                     Montain View, CA
                   </Typography>
-                   
+                  
                   </Box>
 
-                  <Typography
+                  <Box
+                    sx={{
+                     display:"flex",
+                     alignItems:"center",
+                     gap:0.5
+                    }}
+                  >
+                    
+                    <LuWorkflow
+                      sx={{ fontSize: "0.9rem", color: "#575757" }}
+                    />
+
+                    <Typography
                     sx={{
                       fontSize: "0.9rem",
                       fontFamily: "monospace",
                       fontWeight: 600,
                       color: "#0101159c",
+                      textAlign:"center"
                     }}
                   >
                     Remote
                   </Typography>
+        
+                  </Box>
                 </Stack>
               </Box>
 
