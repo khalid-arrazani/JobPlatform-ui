@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 
 import Pagination from "@mui/material/Pagination";
-
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
 
 export default function ModalOpenPositions({ open, setOpen }) {
@@ -137,10 +137,12 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   px:1.5,placeContent:"center"
                 }}
               >
-                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#00001fdc" }}>Frontend Devloper</Typography>
+                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#00001bcb" }}>Frontend Devloper</Typography>
 
                 <Stack direction="row" spacing={2}>
-                  <Typography sx={{ fontSize: "0.9rem" ,fontFamily:"monospace",fontWeight:600,color:"#0101159c"}}>
+                  <Typography sx={{ fontSize: "0.9rem" ,fontFamily:"monospace",fontWeight:600,color:"#0101159c"}}> <LocationOnOutlinedIcon
+                  sx={{ fontSize: "0.9rem", color: "#666" }}
+                />
                     Montain View, CA
                   </Typography>
 
