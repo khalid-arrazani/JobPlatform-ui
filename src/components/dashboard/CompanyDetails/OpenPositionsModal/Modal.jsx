@@ -47,7 +47,6 @@ export default function ModalOpenPositions ( {open , setOpen }){
             overflow: "hidden",
             boxSizing: "border-box",
             px:"1rem",
-            py:"1rem",
             alignItems:"center",
             display:"flex",flexDirection:"column",pt:0.5,justifyContent:"space-between"
           }} >
