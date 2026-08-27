@@ -16,17 +16,18 @@ export default function SearchAndFilter ({ search, setSearch }) {
             display: "flex",
             alignItems: "center",
             background: "white",
-            px: 2,
-            py: 0.5,
+            px: 1.5,
             borderRadius: "12px",
             minWidth: "250px",
             width: "50vw",
-            ml: 1,
-            mt: 1,
+            
             border: "solid 1px #ddd",
             boxSizing: "border-box",
           }}
         >
+
+
+
           {/* 🔍 Search */}
 
           <SearchIcon sx={{ color: "#777" }} />
