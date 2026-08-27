@@ -5,6 +5,7 @@ import {
   Modal,
   Avatar,
   Stack,
+  Chip
 } from "@mui/material";
 
 import { LuWorkflow } from "react-icons/lu";
@@ -214,13 +215,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "30%",
                   boxSizing: "border-box",
-                  bgcolor: "#953a3a",
+                  bgcolor: "#953a3a27",
                 }}
 
               >
+              <Chip size="small" sx={{}} label={"Full-Time"}/>
 
 
-                
               </Box>
 
 
