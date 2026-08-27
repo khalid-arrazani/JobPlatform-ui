@@ -134,6 +134,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   width: "40%",
                   boxSizing: "border-box",
                   bgcolor: "#ddd",
+                  px:1
                 }}
               >
                 <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#01010ddc" }}>Frontend Devloper</Typography>
