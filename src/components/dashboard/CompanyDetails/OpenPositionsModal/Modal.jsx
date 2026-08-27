@@ -119,7 +119,8 @@ export default function ModalOpenPositions ( {open , setOpen }){
             boxSizing: "border-box",
             border:"1px solid #ddd",
             borderRadius:"10px",
-            display:"flex"
+            display:"flex",
+            overflow:"hidden"
           }}
           >
 
