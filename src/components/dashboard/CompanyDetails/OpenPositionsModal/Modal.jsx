@@ -206,6 +206,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Stack>
               </Box>
 
+
+
+
               <Box
                 sx={{
                   height: "100%",
@@ -213,7 +216,17 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   boxSizing: "border-box",
                   bgcolor: "#953a3a",
                 }}
-              ></Box>
+
+              >
+
+
+                
+              </Box>
+
+
+
+
+
 
               <Box
                 sx={{
