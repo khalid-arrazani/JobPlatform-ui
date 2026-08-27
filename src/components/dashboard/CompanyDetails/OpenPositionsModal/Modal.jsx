@@ -133,20 +133,59 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "40%",
                   boxSizing: "border-box",
-                
-                  px:1.5,placeContent:"center"
+
+                  px: 1.5,
+                  placeContent: "center",
                 }}
               >
-                <Typography sx={{ fontSize: "1.3rem",fontFamily:"monospace",fontWeight:600,color:"#00001bcb" }}>Frontend Devloper</Typography>
+                <Typography
+                  sx={{
+                    fontSize: "1.3rem",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                    color: "#00001bcb",
+                  }}
+                >
+                  Frontend Devloper
+                </Typography>
 
                 <Stack direction="row" spacing={2}>
-                  <Typography sx={{ fontSize: "0.9rem" ,fontFamily:"monospace",fontWeight:600,color:"#0101159c"}}> <LocationOnOutlinedIcon
-                  sx={{ fontSize: "0.9rem", color: "#666" }}
-                />
+                  <Box
+                    sx={{
+                     display:"flex",
+                     alignItems:"center",
+                     gap:0.5
+                    }}
+                  >
+                    
+                    <LocationOnOutlinedIcon
+                      sx={{ fontSize: "0.9rem", color: "#575757" }}
+                    />
+
+                    <Typography
+                    sx={{
+                      fontSize: "0.9rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#0101159c",
+                      textAlign:"center"
+                    }}
+                  >
                     Montain View, CA
                   </Typography>
+                   
+                  </Box>
 
-                  <Typography sx={{ fontSize: "0.9rem" ,fontFamily:"monospace",fontWeight:600,color:"#0101159c"}}>Remote</Typography>
+                  <Typography
+                    sx={{
+                      fontSize: "0.9rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#0101159c",
+                    }}
+                  >
+                    Remote
+                  </Typography>
                 </Stack>
               </Box>
 
