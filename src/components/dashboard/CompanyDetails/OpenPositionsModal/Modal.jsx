@@ -1,7 +1,7 @@
 import {
   Typography,
   Box,
-  IconButton,
+  Button,
   Modal,
   Avatar,
   Stack,
@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 
 import { LuWorkflow } from "react-icons/lu";
+import { MdChevronRight } from "react-icons/md";
 
 import Pagination from "@mui/material/Pagination";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
@@ -206,10 +207,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "30%",
                   boxSizing: "border-box",
-         
-                  display:"flex",
-                  alignItems:"center",
-                  justifyContent:"space-evenly"
+
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
                 }}
               >
                 <Chip
@@ -219,12 +220,21 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     color: "#221c73c3",
                     fontWeight: 600,
                     borderRadius: "5px",
-                    fontFamily:"monospace"
+                    fontFamily: "monospace",
                   }}
                   label={"Full-Time"}
                 />
 
-                <Typography  sx={{fontSize:"0.9rem",fontFamily:"monospace",fontWeight:600,color:"#010215b2"}} >80k-110k</Typography>
+                <Typography
+                  sx={{
+                    fontSize: "0.9rem",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                    color: "#010215b2",
+                  }}
+                >
+                  80k-110k
+                </Typography>
               </Box>
 
               <Box
@@ -232,9 +242,37 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "30%",
                   boxSizing: "border-box",
-                  bgcolor: "#2d1e1e",
+                 
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
                 }}
-              ></Box>
+              >
+                <Typography
+                  sx={{
+                    fontSize: "0.9rem",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                    color: "#010215b2",
+                  }}
+                >
+                  2 days ago 
+                </Typography>
+
+                <Button
+                  sx={{
+                    border: "1px solid #b3b9ff",
+                    color: "#3867ff",
+                    textTransform: "none",
+                    fontFamily: "monospace",
+                    display: "flex",
+                    alignContent: "center",
+                    justifyContent: "space-between",
+                  }}
+                >
+                  View Job <MdChevronRight />
+                </Button>
+              </Box>
             </Box>
           </Box>
 
