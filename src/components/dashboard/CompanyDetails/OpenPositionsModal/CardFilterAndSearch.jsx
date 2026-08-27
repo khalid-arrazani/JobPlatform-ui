@@ -17,10 +17,9 @@ export default function SearchAndFilter ({ search, setSearch }) {
             alignItems: "center",
             background: "white",
             px: 1.5,
-            borderRadius: "12px",
+            borderRadius: "5px",
             minWidth: "250px",
             width: "50vw",
-            
             border: "solid 1px #ddd",
             boxSizing: "border-box",
           }}

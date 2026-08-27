@@ -118,9 +118,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
               px: 2,
-              py: 1,
+              py: 1
             }}
           >
+            
             <Box
               sx={{
                 height: "5rem",
@@ -130,6 +131,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 borderRadius: "10px",
                 display: "flex",
                 overflow: "hidden",
+               transition: "all .3s cubic-bezier(.4,0,.2,1)",
+
+              "&:hover": {
+                transform: "translateY(-3px)",
+                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                borderColor: "#dbeafe",
+              },
               }}
             >
               <Box
@@ -137,7 +145,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "40%",
                   boxSizing: "border-box",
-
                   px: 1.5,
                   placeContent: "center",
                 }}
@@ -262,7 +269,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 <Button
                   sx={{
                     border: "1px solid #b3b9ff",
-                    color: "#3867ff",
+                    color: "#3867ffe4",fontWeight:600,
                     textTransform: "none",
                     fontFamily: "monospace",
                     display: "flex",
@@ -274,6 +281,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Button>
               </Box>
             </Box>
+
+
+
+
+
           </Box>
 
           <Box
