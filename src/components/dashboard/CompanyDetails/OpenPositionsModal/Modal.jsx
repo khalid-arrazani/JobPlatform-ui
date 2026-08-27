@@ -169,7 +169,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       fontSize: "0.9rem",
                       fontFamily: "monospace",
                       fontWeight: 600,
-                      color: "#0101159c",
+                      color: "#010115a7",
                       textAlign:"center"
                     }}
                   >
