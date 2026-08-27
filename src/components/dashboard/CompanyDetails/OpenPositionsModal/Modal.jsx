@@ -41,6 +41,7 @@ export default function ModalOpenPositions ( {open , setOpen }){
           }}
         >
 
+
           <Box  sx={{
             height: "20%",
             width: "100%",
@@ -48,9 +49,12 @@ export default function ModalOpenPositions ( {open , setOpen }){
             boxSizing: "border-box",
             px:"1rem",
             alignItems:"center",
-            display:"flex",flexDirection:"column",pt:0.5,justifyContent:"space-between"
+            display:"flex",
+            flexDirection:"column",
+         
+            justifyContent:"space-between",
+            py:1.2
           }} >
-
 
          <Box sx={{
             boxSizing: "border-box",
@@ -82,8 +86,6 @@ export default function ModalOpenPositions ( {open , setOpen }){
           <SearchAndFilter/>
 
 
-         
-
 
           </Box>
 
@@ -93,6 +95,9 @@ export default function ModalOpenPositions ( {open , setOpen }){
 
 
 
+    
+
+
 
 
 
@@ -100,14 +105,54 @@ export default function ModalOpenPositions ( {open , setOpen }){
           <Box  sx={{
             height: "72%",
             width: "100%",
-   
             overflow: "hidden",
             boxSizing: "border-box",borderTop:"1px solid #ddd",
-            borderBottom:"1px solid #ddd"
+            borderBottom:"1px solid #ddd",
+            px:2,py:1
            
           }} >
 
+          <Box
+          sx={{
+            height: "6rem",
+            width: "100%",
+            boxSizing: "border-box",
+            border:"1px solid #ddd",
+            borderRadius:"10px",
+            display:"flex"
+          }}
+          >
 
+
+            <Box sx={{
+            height: "100%",
+            width: "40%",
+            boxSizing: "border-box",
+            bgcolor:"#ddd"
+           
+          }}>
+
+            </Box>
+
+            <Box sx={{
+            height: "100%",
+            width: "30%",
+            boxSizing: "border-box", bgcolor:"#953a3a"
+           
+          }}></Box>
+
+
+            <Box sx={{
+            height: "100%",
+            width: "30%",
+            boxSizing: "border-box", bgcolor:"#2d1e1e"
+           
+          }}></Box>
+
+
+
+
+          </Box>
 
           </Box>
 
