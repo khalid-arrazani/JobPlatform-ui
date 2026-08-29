@@ -14,11 +14,40 @@ import { MdChevronRight } from "react-icons/md";
 import Pagination from "@mui/material/Pagination";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
+import { useParams } from "react-router-dom";
+import { useEffect, useState } from "react";
 
 export default function ModalOpenPositions({ open, setOpen }) {
+
   const handleClose = () => {
     setOpen(false);
   };
+
+
+ const { CompanyId } = useParams();
+ const [loading , setLoading ] = useState(false)
+
+
+  const fetchCompany = async () => {
+    setLoading(true)
+
+    try {
+      
+      const data = await GetCompanyById(CompanyId);
+      console.log(data); 
+
+    } catch (error) {
+      console.log(error.response?.data);
+    } finally {
+    setLoading(false)
+    }
+  };
+
+  useEffect(() => {
+    fetchCompany();
+  }, []);
+
+
 
   return (
     <>
@@ -44,6 +73,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
             flexDirection: "column",
           }}
         >
+
+
+          {/* header section */}
           <Box
             sx={{
               height: "20%",
@@ -103,12 +135,18 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 >
                   Explore all current job openings at Google.{" "}
                 </Typography>
+
               </Box>
             </Box>
 
             <SearchAndFilter />
           </Box>
 
+
+
+
+
+           {/* jobs list section  */}
           <Box
             sx={{
               height: "72%",
@@ -121,7 +159,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               py: 1
             }}
           >
-            
+            {/* list jobs */}
             <Box
               sx={{
                 height: "5rem",
@@ -283,11 +321,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
             </Box>
 
 
-
-
-
           </Box>
 
+
+          {/* pagination section */}
           <Box
             sx={{
               height: "10%",

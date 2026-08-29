@@ -1,4 +1,4 @@
-import { Box, InputBase, Typography } from "@mui/material";
+import { Box, InputBase} from "@mui/material";
 
 import SearchIcon from "@mui/icons-material/Search";
  
