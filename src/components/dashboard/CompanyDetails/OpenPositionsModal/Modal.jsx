@@ -54,6 +54,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
   useEffect(() => {
     fetchCompany();
   }, []);
+  
+  useEffect(() => {
+    fetchCompany();
+  }, [felterData]);
 
   const handleClose = () => {
     setOpen(false);
