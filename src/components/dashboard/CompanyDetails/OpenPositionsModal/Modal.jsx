@@ -17,7 +17,7 @@ import SearchAndFilter from "./CardFilterAndSearch";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
-import { BoxIcon } from "lucide-react";
+import { millify } from "millify";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
@@ -279,13 +279,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
                   <Typography
                     sx={{
-                      fontSize: "0.9rem",
+                      fontSize: "0.8rem",
                       fontFamily: "monospace",
                       fontWeight: 600,
                       color: "#010215b2",
                     }}
                   >
-                    80k-110k
+                     {millify(item.maxSalary)}-{millify(item.minSalary)} {item.salaryCurrency}
                   </Typography>
                 </Box>
 
