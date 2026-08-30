@@ -93,3 +93,15 @@ export const getSavedJobs  = async (page) => {
   );
   return response.data;
 };
+
+
+
+export const GetCompaniesJobs = async (felterData) => {
+
+  const response = await API.get(
+     `/jobs/company-jobs`,
+    {params:felterData, withCredentials: true }
+  );
+
+  return response.data;
+};
