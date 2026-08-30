@@ -18,9 +18,13 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
 import { millify } from "millify";
+import { useNavigate } from "react-router-dom";
+import { formatDistanceToNow } from "date-fns";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
+
+    const navigate = useNavigate();
 
   const [list, setList] = useState([]);
   const { CompanyId } = useParams();
@@ -279,7 +283,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
                   <Typography
                     sx={{
-                      fontSize: "0.8rem",
+                      fontSize: "0.75rem",
                       fontFamily: "monospace",
                       fontWeight: 600,
                       color: "#010215b2",
@@ -308,7 +312,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       color: "#010215b2",
                     }}
                   >
-                    2 days ago
+                   {formatDistanceToNow(new Date(item.createdAt), {
+                                           addSuffix: true,
+                                         })}
                   </Typography>
 
                   <Button
