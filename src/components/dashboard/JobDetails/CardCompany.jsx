@@ -225,7 +225,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           alignItems: "center",
           bgcolor: "#fff",
           pr: "1rem",
-            boxSizing:"border-box"
+          boxSizing:"border-box"
         }}
       >
         <Box
@@ -269,6 +269,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             <Box sx={{
               boxSizing:"border-box"
             }}>
+
               <Stack direction="row" spacing={1.5}>
                 <Chip
                   label="Verified Company"
@@ -295,15 +296,18 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   }}
                 />
               </Stack>
+
+
+
               <Typography
               title={jobInfo?.title}
                 sx={{
-                  fontSize: "1.6rem",
+                  fontSize: "1.4rem",
                   fontWeight: 700,
                   color: "#060505e8",
                 }}
               >
-                {jobInfo?.title.slice(0,60)}
+                {jobInfo?.title.slice(0,45)}
                 {jobInfo?.title.length > 30 ? "..." : null}
               </Typography>
 
