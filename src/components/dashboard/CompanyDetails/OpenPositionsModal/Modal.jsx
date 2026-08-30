@@ -20,6 +20,7 @@ import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
 import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
 import { formatRelative } from "date-fns";
+import LoadingList from "./LoadingList";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
@@ -196,7 +197,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
             }}
           >
             {/* list jobs */}
-            {list?.jobs?.map((item) => (
+
+           {loading ? <LoadingList/> : 
+
+            list?.jobs?.map((item) => (
               <Box
                 key={item?._id}
                 sx={{
@@ -370,6 +374,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Box>
               </Box>
             ))}
+
+
           </Box>
 
           {/* pagination section */}
