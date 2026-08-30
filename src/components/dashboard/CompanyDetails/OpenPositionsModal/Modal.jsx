@@ -210,8 +210,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   transition: "all .3s cubic-bezier(.4,0,.2,1)",
 
                   "&:hover": {
-                    transform: "translateY(-3px)",
-                    boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 8px 30px rgba(8, 11, 18, 0.12)",
                     borderColor: "#dbeafe",
                   },
                   mb: 1,
@@ -388,7 +388,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
             <Stack spacing={2}>
               <Pagination
               onChange={handleChange}
-              // count={state.JobInfo?.totalPages}
+              count={list?.totalPages}
               />
             </Stack>
           </Box>
