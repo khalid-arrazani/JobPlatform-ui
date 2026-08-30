@@ -37,7 +37,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     CompanyId: CompanyId,
   });
 
-    useEffect(() => {
+  useEffect(() => {
   const timeout = setTimeout(() => {
 
     setFelterData(prev => {
@@ -85,6 +85,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
     navigate(`/Dashboard/Jobs/Details/${jobId}`);
+  };
+
+  const handleChange = (event, value) => {
+    setFelterData(prev => ({...prev , page:value}) )
   };
 
   return (
@@ -382,7 +386,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
           >
             <Stack spacing={2}>
               <Pagination
-              // onChange={handleChange}
+              onChange={handleChange}
               // count={state.JobInfo?.totalPages}
               />
             </Stack>
