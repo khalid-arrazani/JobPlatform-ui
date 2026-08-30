@@ -59,6 +59,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
     setOpen(false);
   };
 
+  const openJob = async (e) => {
+    const jobId = e.currentTarget.dataset.id;
+    navigate(`Details/${jobId}`);
+  };
+
   return (
     <>
       <Modal
@@ -319,6 +324,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   </Typography>
 
                   <Button
+                   data-id={item._id}
+                  onClick={openJob}
                     sx={{
                       border: "1px solid #b3b9ff",
                       color: "#3867ffe4",
