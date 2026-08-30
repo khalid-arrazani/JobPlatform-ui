@@ -163,7 +163,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
             {/* list jobs */}
             {list?.jobs?.map((item) => (
               <Box
-                key={item._id}
+                key={item?._id}
                 sx={{
                   height: "5rem",
                   width: "100%",
@@ -199,8 +199,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     }}
                     title={item.title }
                   >
-                   {item.title.slice(0,20)}
-                   {item.title.length > 20 ? "...": null}
+                   {item?.title?.slice(0,20)}
+                   {item?.title?.length > 20 ? "...": null}
                   </Typography>
 
                   <Stack direction="row" spacing={2}>
@@ -224,7 +224,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                           textAlign: "center",
                         }}
                       >
-                        Montain View, CA
+                       {item?.location}
                       </Typography>
                     </Box>
 
@@ -248,7 +248,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                           textAlign: "center",
                         }}
                       >
-                        Remote
+                        {item?.workMode}
                       </Typography>
                     </Box>
                   </Stack>
@@ -274,7 +274,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       borderRadius: "5px",
                       fontFamily: "monospace",
                     }}
-                    label={"Full-Time"}
+                    label={item?.jobType}
                   />
 
                   <Typography
