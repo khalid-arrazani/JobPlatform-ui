@@ -197,8 +197,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       fontWeight: 600,
                       color: "#00001bc5",
                     }}
+                    title={item.title }
                   >
-                   {item.title}
+                   {item.title.slice(0,20)}
+                   {item.title.length > 20 ? "...": null}
                   </Typography>
 
                   <Stack direction="row" spacing={2}>
