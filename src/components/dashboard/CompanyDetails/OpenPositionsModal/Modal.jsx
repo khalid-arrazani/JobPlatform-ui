@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
 import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
-import { formatDistanceToNow } from "date-fns";
+import { formatRelative } from "date-fns";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
@@ -345,9 +345,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       color: "#010215b2",
                     }}
                   >
-                    {formatDistanceToNow(new Date(item.createdAt), {
-                      addSuffix: true,
-                    })}
+                    {formatRelative(
+  new Date(item.createdAt),
+  new Date()
+)}
                   </Typography>
 
                   <Button
