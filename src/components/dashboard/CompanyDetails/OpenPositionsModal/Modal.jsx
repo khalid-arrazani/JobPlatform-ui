@@ -150,12 +150,14 @@ export default function ModalOpenPositions({ open, setOpen }) {
             sx={{
               height: "72%",
               width: "100%",
-              overflow: "hidden",
+        
               boxSizing: "border-box",
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
               px: 2,
-              py: 1,
+              py: 1, overflow: "scroll",
+              
+              
             }}
           >
             {/* list jobs */}
@@ -169,14 +171,14 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   border: "1px solid #ddd",
                   borderRadius: "10px",
                   display: "flex",
-                  overflow: "hidden",
+                 
                   transition: "all .3s cubic-bezier(.4,0,.2,1)",
 
                   "&:hover": {
                     transform: "translateY(-3px)",
                     boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
                     borderColor: "#dbeafe",
-                  },
+                  },mb:1
                 }}
               >
                 <Box
