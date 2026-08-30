@@ -21,8 +21,10 @@ import { BoxIcon } from "lucide-react";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
-  const [list, setList] = useState();
+  const [list, setList] = useState([]);
   const { CompanyId } = useParams();
+
+
 
   const [felterData, setFelterData] = useState({
     page: 1,
@@ -159,7 +161,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
           >
 
 
-            
+
             {list?.map((item) => (
               <Typography
                 key={item._id}
