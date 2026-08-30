@@ -16,6 +16,7 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
 
 export default function ModalOpenPositions({ open, setOpen }) {
 
@@ -24,7 +25,19 @@ export default function ModalOpenPositions({ open, setOpen }) {
   };
 
 
+
  const { CompanyId } = useParams();
+
+  const [felterData , setFelterData] = useState({
+    page:1,
+    search:"",
+    sort:"Newest First",
+    CompanyId:CompanyId
+  })
+
+
+
+
  const [loading , setLoading ] = useState(false)
 
 
@@ -32,8 +45,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
     setLoading(true)
 
     try {
-      
-      const data = await GetCompanyById(CompanyId);
+      const data = await GetCompaniesJobs(felterData);
+
       console.log(data); 
 
     } catch (error) {
@@ -42,6 +55,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     setLoading(false)
     }
   };
+
 
   useEffect(() => {
     fetchCompany();
