@@ -20,42 +20,35 @@ import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
 import { BoxIcon } from "lucide-react";
 
 export default function ModalOpenPositions({ open, setOpen }) {
+  const [loading, setLoading] = useState(false);
+  const [list, setList] = useState();
+  const { CompanyId } = useParams();
 
- const [loading , setLoading ] = useState(false)
- const [list , setList ] = useState()
- const { CompanyId } = useParams();
-
-  const [felterData , setFelterData] = useState({
-    page:1,
-    search:"",
-    sort:"Newest First",
-    CompanyId:CompanyId
+  const [felterData, setFelterData] = useState({
+    page: 1,
+    search: "",
+    sort: "Newest First",
+    CompanyId: CompanyId,
   });
 
-
-
   const fetchCompany = async () => {
-    setLoading(true)
+    setLoading(true);
 
     try {
-
       const data = await GetCompaniesJobs(felterData);
-      setList(data)
-      
-      console.log(data); 
+      setList(data);
 
+      console.log(data);
     } catch (error) {
       console.log(error.response?.data);
     } finally {
-    setLoading(false)
+      setLoading(false);
     }
   };
-
 
   useEffect(() => {
     fetchCompany();
   }, []);
-
 
   const handleClose = () => {
     setOpen(false);
@@ -85,8 +78,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
             flexDirection: "column",
           }}
         >
-
-
           {/* header section */}
           <Box
             sx={{
@@ -147,18 +138,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 >
                   Explore all current job openings at Google.{" "}
                 </Typography>
-
               </Box>
             </Box>
 
             <SearchAndFilter />
           </Box>
 
-
-
-
-
-           {/* jobs list section  */}
+          {/* jobs list section  */}
           <Box
             sx={{
               height: "72%",
@@ -168,13 +154,25 @@ export default function ModalOpenPositions({ open, setOpen }) {
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
               px: 2,
-              py: 1
+              py: 1,
             }}
           >
 
-            {list?.map((job)=>({
-              
-            }))}
+
+            
+            {list?.map((item) => (
+              <Typography
+                key={item._id}
+                sx={{
+                  fontSize: "1.3rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#00001bc5",
+                }}
+              >
+                {item.title}
+              </Typography>
+            ))}
 
 
 
@@ -188,13 +186,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 borderRadius: "10px",
                 display: "flex",
                 overflow: "hidden",
-               transition: "all .3s cubic-bezier(.4,0,.2,1)",
+                transition: "all .3s cubic-bezier(.4,0,.2,1)",
 
-              "&:hover": {
-                transform: "translateY(-3px)",
-                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
-                borderColor: "#dbeafe",
-              },
+                "&:hover": {
+                  transform: "translateY(-3px)",
+                  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                  borderColor: "#dbeafe",
+                },
               }}
             >
               <Box
@@ -306,7 +304,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   height: "100%",
                   width: "30%",
                   boxSizing: "border-box",
-                 
+
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-evenly",
@@ -320,13 +318,14 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     color: "#010215b2",
                   }}
                 >
-                  2 days ago 
+                  2 days ago
                 </Typography>
 
                 <Button
                   sx={{
                     border: "1px solid #b3b9ff",
-                    color: "#3867ffe4",fontWeight:600,
+                    color: "#3867ffe4",
+                    fontWeight: 600,
                     textTransform: "none",
                     fontFamily: "monospace",
                     display: "flex",
@@ -338,10 +337,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Button>
               </Box>
             </Box>
-
-
           </Box>
-
 
           {/* pagination section */}
           <Box
