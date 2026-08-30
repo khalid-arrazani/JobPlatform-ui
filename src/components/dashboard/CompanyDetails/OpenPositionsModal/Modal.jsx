@@ -25,8 +25,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
   const [list, setList] = useState([]);
   const { CompanyId } = useParams();
 
-
-
   const [felterData, setFelterData] = useState({
     page: 1,
     search: "",
@@ -160,177 +158,172 @@ export default function ModalOpenPositions({ open, setOpen }) {
               py: 1,
             }}
           >
-
-
-    {/* list jobs */}
+            {/* list jobs */}
             {list?.jobs?.map((item) => (
-          
-            <Box
-            key={item._id}
-              sx={{
-                height: "5rem",
-                width: "100%",
-                boxSizing: "border-box",
-                border: "1px solid #ddd",
-                borderRadius: "10px",
-                display: "flex",
-                overflow: "hidden",
-                transition: "all .3s cubic-bezier(.4,0,.2,1)",
-
-                "&:hover": {
-                  transform: "translateY(-3px)",
-                  boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
-                  borderColor: "#dbeafe",
-                },
-              }}
-            >
               <Box
+                key={item._id}
                 sx={{
-                  height: "100%",
-                  width: "40%",
+                  height: "5rem",
+                  width: "100%",
                   boxSizing: "border-box",
-                  px: 1.5,
-                  placeContent: "center",
+                  border: "1px solid #ddd",
+                  borderRadius: "10px",
+                  display: "flex",
+                  overflow: "hidden",
+                  transition: "all .3s cubic-bezier(.4,0,.2,1)",
+
+                  "&:hover": {
+                    transform: "translateY(-3px)",
+                    boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
+                    borderColor: "#dbeafe",
+                  },
                 }}
               >
-                <Typography
+                <Box
                   sx={{
-                    fontSize: "1.3rem",
-                    fontFamily: "monospace",
-                    fontWeight: 600,
-                    color: "#00001bc5",
+                    height: "100%",
+                    width: "40%",
+                    boxSizing: "border-box",
+                    px: 1.5,
+                    placeContent: "center",
                   }}
                 >
-                  Frontend Devloper
-                </Typography>
-
-                <Stack direction="row" spacing={2}>
-                  <Box
+                  <Typography
                     sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 0.5,
+                      fontSize: "1.3rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#00001bc5",
                     }}
                   >
-                    <LocationOnOutlinedIcon
-                      sx={{ fontSize: "0.9rem", color: "#575757" }}
-                    />
+                    Frontend Devloper
+                  </Typography>
 
-                    <Typography
+                  <Stack direction="row" spacing={2}>
+                    <Box
                       sx={{
-                        fontSize: "0.9rem",
-                        fontFamily: "monospace",
-                        fontWeight: 600,
-                        color: "#010115a7",
-                        textAlign: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 0.5,
                       }}
                     >
-                      Montain View, CA
-                    </Typography>
-                  </Box>
+                      <LocationOnOutlinedIcon
+                        sx={{ fontSize: "0.9rem", color: "#575757" }}
+                      />
 
-                  <Box
-                    sx={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 0.5,
-                    }}
-                  >
-                    <LuWorkflow sx={{ fontSize: "0.9rem", color: "#575757" }} />
+                      <Typography
+                        sx={{
+                          fontSize: "0.9rem",
+                          fontFamily: "monospace",
+                          fontWeight: 600,
+                          color: "#010115a7",
+                          textAlign: "center",
+                        }}
+                      >
+                        Montain View, CA
+                      </Typography>
+                    </Box>
 
-                    <Typography
+                    <Box
                       sx={{
-                        fontSize: "0.9rem",
-                        fontFamily: "monospace",
-                        fontWeight: 600,
-                        color: "#0101159c",
-                        textAlign: "center",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 0.5,
                       }}
                     >
-                      Remote
-                    </Typography>
-                  </Box>
-                </Stack>
-              </Box>
+                      <LuWorkflow
+                        sx={{ fontSize: "0.9rem", color: "#575757" }}
+                      />
 
-              <Box
-                sx={{
-                  height: "100%",
-                  width: "30%",
-                  boxSizing: "border-box",
+                      <Typography
+                        sx={{
+                          fontSize: "0.9rem",
+                          fontFamily: "monospace",
+                          fontWeight: 600,
+                          color: "#0101159c",
+                          textAlign: "center",
+                        }}
+                      >
+                        Remote
+                      </Typography>
+                    </Box>
+                  </Stack>
+                </Box>
 
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <Chip
-                  size="small"
+                <Box
                   sx={{
-                    bgcolor: "#a4c5ffa8",
-                    color: "#221c73c3",
-                    fontWeight: 600,
-                    borderRadius: "5px",
-                    fontFamily: "monospace",
-                  }}
-                  label={"Full-Time"}
-                />
+                    height: "100%",
+                    width: "30%",
+                    boxSizing: "border-box",
 
-                <Typography
-                  sx={{
-                    fontSize: "0.9rem",
-                    fontFamily: "monospace",
-                    fontWeight: 600,
-                    color: "#010215b2",
-                  }}
-                >
-                  80k-110k
-                </Typography>
-              </Box>
-
-              <Box
-                sx={{
-                  height: "100%",
-                  width: "30%",
-                  boxSizing: "border-box",
-
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontSize: "0.9rem",
-                    fontFamily: "monospace",
-                    fontWeight: 600,
-                    color: "#010215b2",
-                  }}
-                >
-                  2 days ago
-                </Typography>
-
-                <Button
-                  sx={{
-                    border: "1px solid #b3b9ff",
-                    color: "#3867ffe4",
-                    fontWeight: 600,
-                    textTransform: "none",
-                    fontFamily: "monospace",
                     display: "flex",
-                    alignContent: "center",
-                    justifyContent: "space-between",
+                    alignItems: "center",
+                    justifyContent: "space-evenly",
                   }}
                 >
-                  View Job <MdChevronRight />
-                </Button>
+                  <Chip
+                    size="small"
+                    sx={{
+                      bgcolor: "#a4c5ffa8",
+                      color: "#221c73c3",
+                      fontWeight: 600,
+                      borderRadius: "5px",
+                      fontFamily: "monospace",
+                    }}
+                    label={"Full-Time"}
+                  />
+
+                  <Typography
+                    sx={{
+                      fontSize: "0.9rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#010215b2",
+                    }}
+                  >
+                    80k-110k
+                  </Typography>
+                </Box>
+
+                <Box
+                  sx={{
+                    height: "100%",
+                    width: "30%",
+                    boxSizing: "border-box",
+
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-evenly",
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontSize: "0.9rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#010215b2",
+                    }}
+                  >
+                    2 days ago
+                  </Typography>
+
+                  <Button
+                    sx={{
+                      border: "1px solid #b3b9ff",
+                      color: "#3867ffe4",
+                      fontWeight: 600,
+                      textTransform: "none",
+                      fontFamily: "monospace",
+                      display: "flex",
+                      alignContent: "center",
+                      justifyContent: "space-between",
+                    }}
+                  >
+                    View Job <MdChevronRight />
+                  </Button>
+                </Box>
               </Box>
-            </Box>
             ))}
-
-
-
-            
           </Box>
 
           {/* pagination section */}
