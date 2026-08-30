@@ -17,15 +17,12 @@ import SearchAndFilter from "./CardFilterAndSearch";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { GetCompaniesJobs } from "../../../../logic/api/job/Job";
+import { BoxIcon } from "lucide-react";
 
 export default function ModalOpenPositions({ open, setOpen }) {
 
-  const handleClose = () => {
-    setOpen(false);
-  };
-
-
-
+ const [loading , setLoading ] = useState(false)
+ const [list , setList ] = useState()
  const { CompanyId } = useParams();
 
   const [felterData , setFelterData] = useState({
@@ -33,20 +30,18 @@ export default function ModalOpenPositions({ open, setOpen }) {
     search:"",
     sort:"Newest First",
     CompanyId:CompanyId
-  })
+  });
 
-
-
-
- const [loading , setLoading ] = useState(false)
 
 
   const fetchCompany = async () => {
     setLoading(true)
 
     try {
-      const data = await GetCompaniesJobs(felterData);
 
+      const data = await GetCompaniesJobs(felterData);
+      setList(data)
+      
       console.log(data); 
 
     } catch (error) {
@@ -62,6 +57,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
   }, []);
 
 
+  const handleClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
@@ -173,6 +171,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
               py: 1
             }}
           >
+
+            {list?.map((job)=>({
+              
+            }))}
+
+
+
             {/* list jobs */}
             <Box
               sx={{
