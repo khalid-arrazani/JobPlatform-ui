@@ -61,7 +61,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
-    navigate(`Details/${jobId}`);
+    navigate(`/Dashboard/Jobs/Details/${jobId}`);
   };
 
   return (
