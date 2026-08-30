@@ -24,7 +24,7 @@ import { formatDistanceToNow } from "date-fns";
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const [list, setList] = useState([]);
   const { CompanyId } = useParams();
@@ -154,14 +154,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
             sx={{
               height: "72%",
               width: "100%",
-        
+
               boxSizing: "border-box",
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
               px: 2,
               py: 1,
               overflow: "scroll",
-      
             }}
           >
             {/* list jobs */}
@@ -175,14 +174,15 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   border: "1px solid #ddd",
                   borderRadius: "10px",
                   display: "flex",
-                 
+
                   transition: "all .3s cubic-bezier(.4,0,.2,1)",
 
                   "&:hover": {
                     transform: "translateY(-3px)",
                     boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
                     borderColor: "#dbeafe",
-                  },mb:1
+                  },
+                  mb: 1,
                 }}
               >
                 <Box
@@ -201,10 +201,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       fontWeight: 600,
                       color: "#00001bc5",
                     }}
-                    title={item.title }
+                    title={item.title}
                   >
-                   {item?.title?.slice(0,20)}
-                   {item?.title?.length > 20 ? "...": null}
+                    {item?.title?.slice(0, 20)}
+                    {item?.title?.length > 20 ? "..." : null}
                   </Typography>
 
                   <Stack direction="row" spacing={2}>
@@ -228,7 +228,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                           textAlign: "center",
                         }}
                       >
-                       {item?.location}
+                        {item?.location}
                       </Typography>
                     </Box>
 
@@ -289,7 +289,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       color: "#010215b2",
                     }}
                   >
-                     {millify(item.maxSalary)}-{millify(item.minSalary)} {item.salaryCurrency}
+                    {millify(item.maxSalary)}-{millify(item.minSalary)}{" "}
+                    {item.salaryCurrency}
                   </Typography>
                 </Box>
 
@@ -312,9 +313,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       color: "#010215b2",
                     }}
                   >
-                   {formatDistanceToNow(new Date(item.createdAt), {
-                                           addSuffix: true,
-                                         })}
+                    {formatDistanceToNow(new Date(item.createdAt), {
+                      addSuffix: true,
+                    })}
                   </Typography>
 
                   <Button
