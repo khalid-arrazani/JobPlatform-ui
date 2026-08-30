@@ -155,9 +155,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
               px: 2,
-              py: 1, overflow: "scroll",
-              
-              
+              py: 1,
+              overflow: "scroll",
+      
             }}
           >
             {/* list jobs */}
