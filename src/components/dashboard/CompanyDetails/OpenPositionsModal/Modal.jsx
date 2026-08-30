@@ -198,7 +198,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       color: "#00001bc5",
                     }}
                   >
-                    Frontend Devloper
+                   {item.title}
                   </Typography>
 
                   <Stack direction="row" spacing={2}>
