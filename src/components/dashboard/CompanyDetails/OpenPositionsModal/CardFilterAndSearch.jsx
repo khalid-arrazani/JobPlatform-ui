@@ -4,12 +4,11 @@ import SearchIcon from "@mui/icons-material/Search";
  
 
 export default function SearchAndFilter ({ search, setSearch }) {
+
   
   return (
   
-    
 
-   
         
         <Box
           sx={{
@@ -34,9 +33,7 @@ export default function SearchAndFilter ({ search, setSearch }) {
           <InputBase
           value={search}
             onChange={(e) => {
-
               setSearch(e.target.value);
-
             }}
             placeholder="Search companies..."
             fullWidth

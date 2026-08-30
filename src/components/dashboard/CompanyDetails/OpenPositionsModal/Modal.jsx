@@ -27,6 +27,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
   const navigate = useNavigate();
 
   const [list, setList] = useState([]);
+  const [search, setSearch] = useState("");
   const { CompanyId } = useParams();
 
   const [felterData, setFelterData] = useState({
@@ -35,6 +36,24 @@ export default function ModalOpenPositions({ open, setOpen }) {
     sort: "Newest First",
     CompanyId: CompanyId,
   });
+
+    useEffect(() => {
+  const timeout = setTimeout(() => {
+
+    setFelterData(prev => {
+      if (prev.search === search) return prev;
+
+      return {
+        ...prev,
+        search : search.trim(),
+        page: 1
+      };
+    });
+  },500);
+
+  return () => clearTimeout(timeout);
+
+ }, [search]);
 
   const fetchCompany = async () => {
     setLoading(true);
@@ -155,7 +174,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               </Box>
             </Box>
 
-            <SearchAndFilter />
+            <SearchAndFilter  search={search} setSearch={setSearch} />
           </Box>
 
           {/* jobs list section  */}
