@@ -21,6 +21,7 @@ import { BoxIcon } from "lucide-react";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
+
   const [list, setList] = useState([]);
   const { CompanyId } = useParams();
 
@@ -161,25 +162,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
           >
 
 
-
-            {list?.map((item) => (
-              <Typography
-                key={item._id}
-                sx={{
-                  fontSize: "1.3rem",
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  color: "#00001bc5",
-                }}
-              >
-                {item.title}
-              </Typography>
-            ))}
-
-
-
-            {/* list jobs */}
+    {/* list jobs */}
+            {list?.jobs?.map((item) => (
+          
             <Box
+            key={item._id}
               sx={{
                 height: "5rem",
                 width: "100%",
@@ -339,6 +326,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Button>
               </Box>
             </Box>
+            ))}
+
+
+
+            
           </Box>
 
           {/* pagination section */}
