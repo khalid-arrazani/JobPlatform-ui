@@ -27,8 +27,6 @@ const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 export default function CompanyHeader({ CompanyInfo }) {
-
-
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
@@ -90,30 +88,50 @@ export default function CompanyHeader({ CompanyInfo }) {
                 width: "15rem",
                 boxSizing: "border-box",
                 display: "flex",
-                gap:1.5,alignItems:"center"
+                gap: 1.5,
+                alignItems: "center",
               }}
             >
               <Avatar
-                sx={{ height: "5rem", width: "5rem",border:"solid 1px #ddd",cursor:"pointer",transition:"0.1s",transformOrigin:"center",":hover":{height: "5.1rem", width: "5.1rem"} }}
+                sx={{
+                  height: "5rem",
+                  width: "5rem",
+                  border: "solid 1px #ddd",
+                  cursor: "pointer",
+                  transition: "0.1s",
+                  transformOrigin: "center",
+                  ":hover": { height: "5.1rem", width: "5.1rem" },
+                }}
                 src={CompanyInfo?.owner?.ProfileImage?.url}
-
               />
 
-              <Box sx={{ height: "100%", width: "15rem",display:"flex",flexDirection:"column",justifyContent:"center" }}>
+              <Box
+                sx={{
+                  height: "100%",
+                  width: "15rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  justifyContent: "center",
+                }}
+              >
                 <Chip
                   size="small"
-                  sx={{ borderRadius:"5px",color:"#df76ff",bgcolor:"#e5e5e569",width:"fit-Content"}}
+                  sx={{
+                    borderRadius: "5px",
+                    color: "#df76ff",
+                    bgcolor: "#e5e5e569",
+                    width: "fit-Content",
+                  }}
                   label={
-                    <Box  sx={{ display: "flex",alignItems:"center",gap:1}}>
+                    <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
                       <HiOutlineShieldCheck />
 
                       <Typography
                         sx={{
                           fontWeight: 600,
-                          fontFamily:"cursive",
+                          fontFamily: "cursive",
                           fontSize: "0.7rem",
                           color: "#020214c2",
-                         
                         }}
                       >
                         Company Owner
