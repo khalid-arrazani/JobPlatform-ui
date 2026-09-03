@@ -1,11 +1,11 @@
-import { Box, Card, Typography, Chip,Avatar} from "@mui/material";
+import { Box, Card, Typography, Chip, Avatar } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
 
-
+import { HiOutlineShieldCheck } from "react-icons/hi";
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
@@ -25,23 +25,14 @@ const banners = {
 
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
-  
 
-
-
- export default function CompanyHeader({ CompanyInfo}) {
-
-
-
+export default function CompanyHeader({ CompanyInfo }) {
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
-
-
-  
 
   return (
     <>
@@ -65,10 +56,7 @@ const Default =
             backgroundPosition: "center",
             position: "relative",
           }}
-        >
-          
-        </Box>
-
+        ></Box>
 
         <Box
           sx={{
@@ -80,22 +68,76 @@ const Default =
             pt: "0.2vh",
           }}
         >
-          
-          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box"}} >
-             
-              <Box sx={{height:"5rem",width:"15rem", bgcolor:"#ddd",boxSizing:"border-box",display:"flex"}}>
+          <Card
+            sx={{
+              height: "100%",
+              width: "18rem",
+              position: "absolute",
+              right: "0",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              boxSizing: "border-box",
+            }}
+          >
+            <Box
+              sx={{
+                height: "5rem",
+                width: "15rem",
+                boxSizing: "border-box",
+                display: "flex",
+                gap:1.5,alignItems:"center"
+              }}
+            >
+              <Avatar
+                sx={{ height: "5rem", width: "5rem",border:"solid 1px #ddd" }}
+                src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786474228/profile-images/hwuep25bfkurxpm8mbnw.png"
+              />
 
-                 <Avatar  sx={{height:"5rem",width:"5rem"}}
-                 src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786474228/profile-images/hwuep25bfkurxpm8mbnw.png"/>
-                 
-                 <Box sx={{height:"100%",width:"15rem" }}>
-                  <Typography sx={{fontWeight:600,fontFamily:"monospace",fontSize:"1rem",color:"#020214e2"}}>Sundar Pichai</Typography>
-                  <Typography sx={{fontWeight:600,fontFamily:"monospace",fontSize:"0.8rem",color:"#252526f2"}}>Founder & CEO</Typography>
+              <Box sx={{ height: "100%", width: "15rem",display:"flex",flexDirection:"column",justifyContent:"center" }}>
+                <Chip
+                  size="small"
+                  sx={{ borderRadius:"5px",color:"#df76ff",bgcolor:"#e5e5e569"}}
+                  label={
+                    <Box  sx={{ display: "flex",alignItems:"center",gap:1}}>
+                      <HiOutlineShieldCheck />
 
-                 </Box>
-
+                      <Typography
+                        sx={{
+                          fontWeight: 600,
+                          fontFamily:"cursive",
+                          fontSize: "0.7rem",
+                          color: "#020214c2",
+                         
+                        }}
+                      >
+                        Company Owner
+                      </Typography>
+                    </Box>
+                  }
+                />
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    fontSize: "1rem",
+                    color: "#020214e2",
+                  }}
+                >
+                  Sundar Pichai
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    fontSize: "0.8rem",
+                    color: "#252526f2",
+                  }}
+                >
+                  Founder & CEO
+                </Typography>
               </Box>
-
+            </Box>
           </Card>
 
           {/* logo */}
@@ -134,7 +176,6 @@ const Default =
               srcset=""
             />
           </Card>
-         
 
           {/* Company Name */}
           <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -212,9 +253,6 @@ const Default =
               }}
             />
           </Box>
-
-
-
         </Box>
       </Box>
     </>
