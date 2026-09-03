@@ -81,11 +81,17 @@ const Default =
           }}
         >
           
-          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",display:"flex",alignItems:"center",justifyContent:"center"}} >
+          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",display:"flex",alignItems:"center",justifyContent:"center",boxSizing:"border-box"}} >
              
-              <Box sx={{height:"5rem",width:"15rem", bgcolor:"#ddd"}}>
-                 <Avatar   
-                 src=""/>
+              <Box sx={{height:"5rem",width:"15rem", bgcolor:"#ddd",boxSizing:"border-box",display:"flex"}}>
+
+                 <Avatar  sx={{height:"5rem",width:"5rem"}}
+                 src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786474228/profile-images/hwuep25bfkurxpm8mbnw.png"/>
+                 
+                 <Box sx={{height:"100%",width:"15rem", bgcolor:"#412f2f3f"}}>
+                  
+                 </Box>
+
               </Box>
 
           </Card>
