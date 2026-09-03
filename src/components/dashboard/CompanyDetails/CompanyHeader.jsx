@@ -105,7 +105,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                   transformOrigin: "center",
                   ":hover": { height: "5.1rem", width: "5.1rem" },
                 }}
-                onClick={ ()=> navigate(`/Dashboard/Profile/Details/${CompanyInfo?.owner?._id}/${apply?.applicant?.role}`)}
+                onClick={ ()=> navigate(`/Dashboard/Profile/Details/${CompanyInfo?.owner?._id}/recruiter`)}
                 src={CompanyInfo?.owner?.ProfileImage?.url}
               />
 
