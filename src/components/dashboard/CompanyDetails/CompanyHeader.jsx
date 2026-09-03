@@ -81,6 +81,14 @@ const Default =
           }}
         >
           
+          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",alignItems:"center"}} >
+             
+              <Card sx={{height:"5rem",width:"15rem",position:"absolute",right:"0",bgcolor:"#ddd"}}>
+
+              </Card>
+
+
+          </Card>
 
           {/* logo */}
           <Card
@@ -196,7 +204,7 @@ const Default =
               }}
             />
           </Box>
-          
+
 
 
         </Box>
