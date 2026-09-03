@@ -76,6 +76,9 @@ export default function CompanyPage() {
           />
         </Box>
       ) : (
+
+
+
         <Box
           sx={{
             height: "auto",
@@ -142,6 +145,8 @@ export default function CompanyPage() {
             </Box>
           </Box>
         </Box>
+
+        
       )}
     </>
   );
