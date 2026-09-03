@@ -94,8 +94,9 @@ export default function CompanyHeader({ CompanyInfo }) {
               }}
             >
               <Avatar
-                sx={{ height: "5rem", width: "5rem",border:"solid 1px #ddd" }}
+                sx={{ height: "5rem", width: "5rem",border:"solid 1px #ddd", }}
                 src={CompanyInfo?.owner?.ProfileImage?.url}
+
               />
 
               <Box sx={{ height: "100%", width: "15rem",display:"flex",flexDirection:"column",justifyContent:"center" }}>
