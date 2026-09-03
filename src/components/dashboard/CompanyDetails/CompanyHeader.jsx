@@ -97,7 +97,7 @@ export default function CompanyHeader({ CompanyInfo }) {
               <Box sx={{ height: "100%", width: "15rem",display:"flex",flexDirection:"column",justifyContent:"center" }}>
                 <Chip
                   size="small"
-                  sx={{ borderRadius:"5px",color:"#df76ff",bgcolor:"#e5e5e569"}}
+                  sx={{ borderRadius:"5px",color:"#df76ff",bgcolor:"#e5e5e569",width:"fit-Content"}}
                   label={
                     <Box  sx={{ display: "flex",alignItems:"center",gap:1}}>
                       <HiOutlineShieldCheck />
