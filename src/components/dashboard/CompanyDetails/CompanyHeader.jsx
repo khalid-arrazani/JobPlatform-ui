@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Chip} from "@mui/material";
+import { Box, Card, Typography, Chip,Avatar} from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
@@ -84,7 +84,8 @@ const Default =
           <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",display:"flex",alignItems:"center",justifyContent:"center"}} >
              
               <Box sx={{height:"5rem",width:"15rem", bgcolor:"#ddd"}}>
-
+                 <Avatar   
+                 src=""/>
               </Box>
 
           </Card>
