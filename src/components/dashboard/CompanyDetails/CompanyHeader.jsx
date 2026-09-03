@@ -96,7 +96,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                 sx={{
                   height: "5rem",
                   width: "5rem",
-                  border: "solid 1px #ddd",
+                  border: "solid 1px #ebebeb",
                   cursor: "pointer",
                   transition: "0.1s",
                   transformOrigin: "center",
