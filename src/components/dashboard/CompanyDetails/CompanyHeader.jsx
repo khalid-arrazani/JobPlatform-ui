@@ -4,6 +4,7 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import LanguageOutlinedIcon from "@mui/icons-material/LanguageOutlined";
+import { useNavigate } from "react-router-dom";
 
 import { HiOutlineShieldCheck } from "react-icons/hi";
 const banners = {
@@ -35,6 +36,8 @@ export default function CompanyHeader({ CompanyInfo }) {
   }
 
   console.log(CompanyInfo);
+
+    const navigate = useNavigate();
 
   return (
     <>
@@ -102,6 +105,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                   transformOrigin: "center",
                   ":hover": { height: "5.1rem", width: "5.1rem" },
                 }}
+                onClick={ ()=> navigate(`/Dashboard/Profile/Details/${CompanyInfo?.owner?._id}/${apply?.applicant?.role}`)}
                 src={CompanyInfo?.owner?.ProfileImage?.url}
               />
 

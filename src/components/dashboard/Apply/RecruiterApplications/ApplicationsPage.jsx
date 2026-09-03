@@ -2,7 +2,7 @@ import { Box} from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
-import { useEffect, useState } from "react";
+import { useEffect} from "react";
 
 import Header from "./header";
 import ListGrid from "./ListGrid";
