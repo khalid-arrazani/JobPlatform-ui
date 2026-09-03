@@ -297,6 +297,7 @@ export default function SocialLinksCard() {
           ))
         )}
       </Box>
+      
     </Card>
   );
 }

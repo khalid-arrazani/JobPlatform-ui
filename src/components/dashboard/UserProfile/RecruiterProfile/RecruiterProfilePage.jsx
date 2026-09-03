@@ -15,7 +15,6 @@ import SocialLinksCard from "./SocialLinksCard.jsx";
 
 export default function RecruiterProfilePage({data}) {
 
-    
 
   return (
     <>
@@ -43,7 +42,7 @@ export default function RecruiterProfilePage({data}) {
             <SocialLinksCard data={data} />
 
 
-            <QuickStatsCard data={data} />
+            
 
           </div>
 
@@ -55,6 +54,9 @@ export default function RecruiterProfilePage({data}) {
      
             
             <HiringFocusCard data={data}  />
+            <QuickStatsCard data={data} />
+
+
           </div>
         </div>
       </div>
