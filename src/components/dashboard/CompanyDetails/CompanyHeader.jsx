@@ -27,12 +27,16 @@ const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 export default function CompanyHeader({ CompanyInfo }) {
+
+
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
+
+  console.log(CompanyInfo);
 
   return (
     <>
@@ -91,7 +95,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             >
               <Avatar
                 sx={{ height: "5rem", width: "5rem",border:"solid 1px #ddd" }}
-                src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786474228/profile-images/hwuep25bfkurxpm8mbnw.png"
+                src={CompanyInfo?.owner?.ProfileImage?.url}
               />
 
               <Box sx={{ height: "100%", width: "15rem",display:"flex",flexDirection:"column",justifyContent:"center" }}>
@@ -124,7 +128,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                     color: "#020214e2",
                   }}
                 >
-                  Sundar Pichai
+                  {CompanyInfo?.owner?.fullName}
                 </Typography>
                 <Typography
                   sx={{
