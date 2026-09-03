@@ -89,7 +89,7 @@ const Default =
                  src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786474228/profile-images/hwuep25bfkurxpm8mbnw.png"/>
                  
                  <Box sx={{height:"100%",width:"15rem", bgcolor:"#412f2f3f"}}>
-                  
+                  <Typography sx={{fontWeight:600,fontFamily:""}}>Sundar Pichai</Typography>
 
                  </Box>
 
