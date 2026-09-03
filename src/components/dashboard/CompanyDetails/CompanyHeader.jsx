@@ -81,12 +81,11 @@ const Default =
           }}
         >
           
-          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",alignItems:"center "}} >
+          <Card sx={{height:"100%",width:"18rem",position:"absolute",right:"0",display:"flex",alignItems:"center",justifyContent:"center"}} >
              
-              <Card sx={{height:"5rem",width:"15rem",position:"absolute",right:"0",bgcolor:"#ddd"}}>
+              <Box sx={{height:"5rem",width:"15rem", bgcolor:"#ddd"}}>
 
-              </Card>
-
+              </Box>
 
           </Card>
 
