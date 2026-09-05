@@ -6,9 +6,9 @@ import RecruiterASPage from "../components/account-settings/recruiter/RecruiterA
 
 export default function AccountSettingsPage() {
 const {...state} = useAuth()
+
   return (
     <AccountSettingsLayout>
-   
        {state.user?.user?.role == "jobSeeker" ? <JobSeekerASPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterASPage/> : null }
     </AccountSettingsLayout>
   );
