@@ -8,7 +8,7 @@ export default function AccountSettingsPage() {
 
   return (
     <AccountSettingsLayout>
-      <JobSeekerASPage/>
+      <RecruiterASPage/>
     </AccountSettingsLayout>
   );
 }
