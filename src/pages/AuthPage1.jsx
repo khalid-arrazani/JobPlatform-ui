@@ -11,6 +11,8 @@ import {
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 
+import SignInMobile from "../components/auth/forMobile/SignInForm";
+
 export default function AuthPage1() {
 
 const isMobile = useMediaQuery("(max-width:600px)");
@@ -26,8 +28,10 @@ const isTablet = useMediaQuery(
       <AuthLayout>
 
         
+        {isMobile && <SignInMobile />}
 
-        <Container
+
+        {/* <Container
         sx={{
           height: "100vh",
           width: "100%",
@@ -54,7 +58,7 @@ const isTablet = useMediaQuery(
         <WelcomePage />
         <SignIn />
         </Card> 
-        </Container>
+        </Container> */}
 
 
 
