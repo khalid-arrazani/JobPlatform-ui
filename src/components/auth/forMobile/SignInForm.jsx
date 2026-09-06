@@ -4,6 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
 import { Button, Box, CardContent, TextField, Typography } from "@mui/material";
+import { CornerRightUp } from "lucide-react";
 
 export default function SignInMobile() {
   return (
@@ -17,10 +18,9 @@ export default function SignInMobile() {
             backgroundPosition: "top",
             display:"flex",
             flexDirection:"column-reverse",
-            
         }}
       >
-        <Box sx={{height:"80%" , width:'100%',bgcolor:"#fff"}}></Box>
+        <Box sx={{height:"80%" , width:'100%',bgcolor:"#fff",borderTopLeftRadius:"100% 20% ",}}  style={{CornerRightUp:""}}  ></Box>
       </Box>
     </>
   );
