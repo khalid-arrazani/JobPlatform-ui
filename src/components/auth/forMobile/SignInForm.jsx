@@ -49,8 +49,23 @@ export default function SignInMobile() {
           backgroundPosition: "top",
           display: "flex",
           flexDirection: "column-reverse",
+          backdropFilter:"Blur(10px)"
         }}
       >
+
+       <Box
+        sx={{
+          height: "100vh",
+          width: "100vw",
+     
+          backgroundSize: "cover",
+          backgroundPosition: "top",
+          display: "flex",
+          flexDirection: "column-reverse",
+          backdropFilter:"Blur(4px)",bgcolor:"#62057a24"
+        }}
+      >
+
         <Box
           sx={{
             height: "10rem",
@@ -70,13 +85,18 @@ export default function SignInMobile() {
             height: "75%",
             width: "100%",
             bgcolor: "#fffffffc",
-            borderTopLeftRadius: "100% 20% ",
+            borderTopLeftRadius: "80% 40% ",
+
+            borderTopRightRadius: "250% 40% ",
             borderTop: "solid #b62ced",
           }}
           style={{ CornerRightUp: "" }}
         >
+
+
+
           <Box
-            sx={{ width: "100%", height: "6.9rem" }}
+            sx={{ width: "100%", height: "5rem" }}
           ></Box>
 
 
@@ -95,15 +115,18 @@ export default function SignInMobile() {
           Email Address
         </Typography>
 
-            <TextField label="Enter your email" fullWidth  sx={{bgcolor:"#f0f0f0a9",borderRadius:"10px","& .MuiOutlinedInput-notchedOutline":{border:"none"}}} ></TextField>
+        <TextField label="Enter your email" fullWidth  sx={{bgcolor:"#f0f0f0a9",borderRadius:"10px","& .MuiOutlinedInput-notchedOutline":{border:"none"}}} ></TextField>
+
+
+
             
-            <Typography
+        <Typography
           sx={{
             fontWeight: 600,
             mb: 2,
             fontSize: "1rem",
             fontFamily:"system-ui",
-            color:"#040217d6",mt:4
+            color:"#040217d6",mt:3
           }}
         >
           Password
@@ -135,12 +158,28 @@ export default function SignInMobile() {
           />
         </FormControl>
 
+        <Box sx={{
+  
+            display:"flex",justifyContent:"center"
+          
+          }}>
+
+          <Button variant="contained" fullWidth  sx={{bgcolor:"#6d04a1",mt:5,placeSelf:"center",height:"3.5rem", fontSize:"1.4rem",textTransform:"none",fontWeight:400,borderRadius:"10px"}}  >Login</Button>
+        </Box>
+
+
+
+        
+
            
           </Box>
 
 
 
         </Box>
+
+</Box>
+
       </Box>
     </>
   );
