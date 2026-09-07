@@ -20,7 +20,7 @@ export default function SignInMobile() {
             flexDirection:"column-reverse",
         }}
       >
-        <Box sx={{height:"80%" , width:'100%',bgcolor:"#fff",borderTopLeftRadius:"100% 20% ",}}  style={{CornerRightUp:""}}  ></Box>
+        <Box sx={{height:"75%" , width:'100%',bgcolor:"#fff",borderTopLeftRadius:"100% 20% ",}}  style={{CornerRightUp:""}}  ></Box>
       </Box>
     </>
   );
