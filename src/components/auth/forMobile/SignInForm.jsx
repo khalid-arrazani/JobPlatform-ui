@@ -30,7 +30,7 @@ export default function SignInMobile() {
         <Box sx={{height:"75%" , width:'100%',bgcolor:"#fff",borderTopLeftRadius:"100% 20% ",borderTop:"solid #b62ced"}}  style={{CornerRightUp:""}}  >
           
         <Box sx={{width:"100%",bgcolor:"#bbbbbb08",height:"8rem"}}></Box>
-        <Box sx={{width:"100%",bgcolor:"#bbb",height:"10rem"}}></Box>
+        
          
         </Box>
       </Box>
