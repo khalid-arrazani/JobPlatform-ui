@@ -31,7 +31,7 @@ const isTablet = useMediaQuery(
         {isMobile && <SignInMobile />}
 
 
-        {/* <Container
+        {!isMobile &&  <Container
         sx={{
           height: "100vh",
           width: "100%",
@@ -58,7 +58,7 @@ const isTablet = useMediaQuery(
         <WelcomePage />
         <SignIn />
         </Card> 
-        </Container> */}
+        </Container> }
 
 
 
