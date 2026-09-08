@@ -87,7 +87,7 @@ export default function SignInMobile() {
             }}
             style={{ CornerRightUp: "" }}
           >
-            <Box sx={{ width: "100%", height: "5rem" }}></Box>
+            <Box sx={{ width: "100%", height: "3.5rem" }}></Box>
 
             <Box
               sx={{
@@ -119,6 +119,7 @@ export default function SignInMobile() {
                 sx={{
                   bgcolor: "#f0f0f0a9",
                   borderRadius: "10px",
+         
                   "& .MuiOutlinedInput-notchedOutline": { border: "none" },
                  
                 }}
