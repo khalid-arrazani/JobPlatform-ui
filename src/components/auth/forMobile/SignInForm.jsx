@@ -92,10 +92,13 @@ export default function SignInMobile() {
             <Box
               sx={{
                 width: "100%",
-                height: "30rem",
+                height: "85%",
                 boxSizing: "border-box",
                 px: 2,
                 py: 1,
+                display:"flex",
+                flexDirection:"column",justifyContent:"space-evenly"
+
               }}
             >
               <Typography
@@ -208,32 +211,34 @@ export default function SignInMobile() {
               <Box
                 sx={{
                   display: "flex",
-                  justifyContent: "center",
                   mb: "1.5rem",
+                  flexDirection:"column",
+            
                 }}
               >
+                <Typography sx={{textAlign:"center",fontFamily:"system-ui",fontWeight:600,mt:2,color:"#04010fea"}}>
+                  Don't have an account?
+                </Typography>
+
                 <Button
                   variant="contained"
                   fullWidth
                   sx={{
                     bgcolor: "#db93ff00",
                     color:"#6d04a1",
-                    mt: 5,
+                    mt: 1,
                     placeSelf: "center",
                     height: "3.5rem",
                     fontSize: "1.4rem",
                     textTransform: "none",
-                    fontWeight: 400,
+                    fontWeight: 500,
                     borderRadius: "10px",
                   }}
                 >
                   Sign Up
+
                 </Button>
               </Box>
-
-
-
-
 
             </Box>
           </Box>
