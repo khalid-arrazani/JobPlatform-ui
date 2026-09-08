@@ -62,7 +62,7 @@ export default function SignInMobile() {
           backgroundPosition: "top",
           display: "flex",
           flexDirection: "column-reverse",
-          backdropFilter:"Blur(4px)",bgcolor:"#62057a24"
+          backdropFilter:"Blur(4px)",bgcolor:"#22032a65"
         }}
       >
 
