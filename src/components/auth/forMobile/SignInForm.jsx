@@ -2,31 +2,30 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import * as React from 'react';
+import * as React from "react";
 import logo from "./../../../assets/Logo/logo.png";
 
-import { Button, Box, CardContent, TextField, Typography } from "@mui/material";
-import { CornerRightUp } from "lucide-react";
+import { Button, Box, TextField, Typography, Divider } from "@mui/material";
 
-import IconButton from '@mui/material/IconButton';
-import Input from '@mui/material/Input';
-import FilledInput from '@mui/material/FilledInput';
-import OutlinedInput from '@mui/material/OutlinedInput';
-import InputLabel from '@mui/material/InputLabel';
-import InputAdornment from '@mui/material/InputAdornment';
-import FormHelperText from '@mui/material/FormHelperText';
-import FormControl from '@mui/material/FormControl';
+import IconButton from "@mui/material/IconButton";
+import Input from "@mui/material/Input";
+import FilledInput from "@mui/material/FilledInput";
+import OutlinedInput from "@mui/material/OutlinedInput";
+import InputLabel from "@mui/material/InputLabel";
+import InputAdornment from "@mui/material/InputAdornment";
+import FormHelperText from "@mui/material/FormHelperText";
+import FormControl from "@mui/material/FormControl";
 
-import MenuItem from '@mui/material/MenuItem';
-import Visibility from '@mui/icons-material/Visibility';
-import VisibilityOff from '@mui/icons-material/VisibilityOff';
-import InfoOutlined from '@mui/icons-material/InfoOutlined';
+import MenuItem from "@mui/material/MenuItem";
+import Visibility from "@mui/icons-material/Visibility";
+import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import InfoOutlined from "@mui/icons-material/InfoOutlined";
 
 export default function SignInMobile() {
-   const outlinedPasswordId = React.useId();
-   const [showPassword, setShowPassword] = React.useState(false);
+  const outlinedPasswordId = React.useId();
+  const [showPassword, setShowPassword] = React.useState(false);
 
-    const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleClickShowPassword = () => setShowPassword((show) => !show);
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -35,7 +34,6 @@ export default function SignInMobile() {
   const handleMouseUpPassword = (event) => {
     event.preventDefault();
   };
-
 
   return (
     <>
@@ -49,137 +47,197 @@ export default function SignInMobile() {
           backgroundPosition: "top",
           display: "flex",
           flexDirection: "column-reverse",
-          backdropFilter:"Blur(10px)"
+          backdropFilter: "Blur(10px)",
         }}
       >
-
-       <Box
-        sx={{
-          height: "100vh",
-          width: "100vw",
-     
-          backgroundSize: "cover",
-          backgroundPosition: "top",
-          display: "flex",
-          flexDirection: "column-reverse",
-          backdropFilter:"Blur(4px)",bgcolor:"#22032a65"
-        }}
-      >
-
         <Box
           sx={{
-            height: "10rem",
-            width: "10rem",
-            position: "absolute",
-            top: 30,
-            placeSelf: "center",
+            height: "100vh",
+            width: "100vw",
+
+            backgroundSize: "cover",
+            backgroundPosition: "top",
+            display: "flex",
+            flexDirection: "column-reverse",
+            backdropFilter: "Blur(4px)",
+            bgcolor: "#22032a65",
           }}
         >
-          <img src={logo} width={"100%"} />
-        </Box>
-
-
-        
-        <Box
-          sx={{
-            height: "75%",
-            width: "100%",
-            bgcolor: "#fffffffc",
-            borderTopLeftRadius: "80% 40% ",
-
-            borderTopRightRadius: "250% 40% ",
-            borderTop: "solid #b62ced",
-          }}
-          style={{ CornerRightUp: "" }}
-        >
-
-
-
           <Box
-            sx={{ width: "100%", height: "5rem" }}
-          ></Box>
-
-
-          <Box sx={{ width: "100%",  height: "30rem",boxSizing:"border-box",px:2,py:1
-           }}>
-
-            <Typography
-          sx={{
-            fontWeight: 600,
-            mb: 2,
-            fontSize: "1rem",
-            fontFamily:"system-ui",
-            color:"#040217eb"
-          }}
-        >
-          Email Address
-        </Typography>
-
-        <TextField label="Enter your email" fullWidth  sx={{bgcolor:"#f0f0f0a9",borderRadius:"10px","& .MuiOutlinedInput-notchedOutline":{border:"none"}}} ></TextField>
-
-
-
-            
-        <Typography
-          sx={{
-            fontWeight: 600,
-            mb: 2,
-            fontSize: "1rem",
-            fontFamily:"system-ui",
-            color:"#040217d6",mt:3
-          }}
-        >
-          Password
-        </Typography>
-
-        <FormControl fullWidth sx={{bgcolor:"#f0f0f0a9",borderRadius:"10px","& .MuiOutlinedInput-notchedOutline":{border:"none"}}} variant="outlined">
-          <InputLabel htmlFor={`${outlinedPasswordId}-input`}>Enter your password</InputLabel>
-          <OutlinedInput
-            id={`${outlinedPasswordId}-input`}
-            type={showPassword ? 'text' : 'password'}
-            fullWidth  
-           
-            endAdornment={
-              <InputAdornment position="end">
-                <IconButton
-                  aria-label={
-                    showPassword ? 'hide the password' : 'display the password'
-                  }
-                  onClick={handleClickShowPassword}
-                  onMouseDown={handleMouseDownPassword}
-                  onMouseUp={handleMouseUpPassword}
-                  edge="end"
-                >
-                  {showPassword ? <VisibilityOff /> : <Visibility />}
-                </IconButton>
-              </InputAdornment>
-            }
-            label="Password"
-          />
-        </FormControl>
-
-        <Box sx={{
-  
-            display:"flex",justifyContent:"center"
-          
-          }}>
-
-          <Button variant="contained" fullWidth  sx={{bgcolor:"#6d04a1",mt:5,placeSelf:"center",height:"3.5rem", fontSize:"1.4rem",textTransform:"none",fontWeight:400,borderRadius:"10px"}}  >Login</Button>
-        </Box>
-
-
-
-        
-
-           
+            sx={{
+              height: "10rem",
+              width: "10rem",
+              position: "absolute",
+              top: 30,
+              placeSelf: "center",
+            }}
+          >
+            <img src={logo} width={"100%"} />
           </Box>
 
+          <Box
+            sx={{
+              height: "75%",
+              width: "100%",
+              bgcolor: "#fffffffc",
+              borderTopLeftRadius: "80% 40% ",
+
+              borderTopRightRadius: "250% 40% ",
+              borderTop: "solid #b62ced",
+            }}
+            style={{ CornerRightUp: "" }}
+          >
+            <Box sx={{ width: "100%", height: "5rem" }}></Box>
+
+            <Box
+              sx={{
+                width: "100%",
+                height: "30rem",
+                boxSizing: "border-box",
+                px: 2,
+                py: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  mb: 2,
+                  fontSize: "1rem",
+                  fontFamily: "system-ui",
+                  color: "#040217eb",
+                }}
+              >
+                Email Address
+              </Typography>
+
+              <TextField
+                label="Enter your email"
+                fullWidth
+                sx={{
+                  bgcolor: "#f0f0f0a9",
+                  borderRadius: "10px",
+                  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                }}
+              ></TextField>
+
+              <Typography
+                sx={{
+                  fontWeight: 600,
+                  mb: 2,
+                  fontSize: "1rem",
+                  fontFamily: "system-ui",
+                  color: "#040217d6",
+                  mt: 3,
+                }}
+              >
+                Password
+              </Typography>
+
+              <FormControl
+                fullWidth
+                sx={{
+                  bgcolor: "#f0f0f0a9",
+                  borderRadius: "10px",
+                  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                }}
+                variant="outlined"
+              >
+                <InputLabel htmlFor={`${outlinedPasswordId}-input`}>
+                  Enter your password
+                </InputLabel>
+                <OutlinedInput
+                  id={`${outlinedPasswordId}-input`}
+                  type={showPassword ? "text" : "password"}
+                  fullWidth
+                  endAdornment={
+                    <InputAdornment position="end">
+                      <IconButton
+                        aria-label={
+                          showPassword
+                            ? "hide the password"
+                            : "display the password"
+                        }
+                        onClick={handleClickShowPassword}
+                        onMouseDown={handleMouseDownPassword}
+                        onMouseUp={handleMouseUpPassword}
+                        edge="end"
+                      >
+                        {showPassword ? <VisibilityOff /> : <Visibility />}
+                      </IconButton>
+                    </InputAdornment>
+                  }
+                  label="Password"
+                />
+              </FormControl>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  mb: "1.5rem",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    bgcolor: "#6d04a1",
+                    mt: 5,
+                    placeSelf: "center",
+                    height: "3.5rem",
+                    fontSize: "1.4rem",
+                    textTransform: "none",
+                    fontWeight: 400,
+                    borderRadius: "10px",
+                  }}
+                >
+                  Login
+                </Button>
+              </Box>
+
+              <Divider
+                sx={{
+                  fontFamily: "cursive",
+                  fontSize: "1.3rem",
+                  color: "#0f011a",
+                }}
+              >
+                NexHire
+              </Divider>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "center",
+                  mb: "1.5rem",
+                }}
+              >
+                <Button
+                  variant="contained"
+                  fullWidth
+                  sx={{
+                    bgcolor: "#db93ff00",
+                    color:"#6d04a1",
+                    mt: 5,
+                    placeSelf: "center",
+                    height: "3.5rem",
+                    fontSize: "1.4rem",
+                    textTransform: "none",
+                    fontWeight: 400,
+                    borderRadius: "10px",
+                  }}
+                >
+                  Sign Up
+                </Button>
+              </Box>
 
 
+
+
+
+            </Box>
+          </Box>
         </Box>
-
-</Box>
-
       </Box>
     </>
   );
