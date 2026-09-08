@@ -105,9 +105,9 @@ export default function SignInMobile() {
                 sx={{
                   fontWeight: 600,
                   mb: 2,
-                  fontSize: "1rem",
+                  fontSize: "1.2rem",
                   fontFamily: "system-ui",
-                  color: "#040217eb",
+                  color: "#040217ec",
                 }}
               >
                 Email Address
@@ -120,6 +120,7 @@ export default function SignInMobile() {
                   bgcolor: "#f0f0f0a9",
                   borderRadius: "10px",
                   "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                 
                 }}
               ></TextField>
 
@@ -127,9 +128,9 @@ export default function SignInMobile() {
                 sx={{
                   fontWeight: 600,
                   mb: 2,
-                  fontSize: "1rem",
+                  fontSize: "1.2rem",
                   fontFamily: "system-ui",
-                  color: "#040217d6",
+                  color: "#040217ec",
                   mt: 3,
                 }}
               >
@@ -145,7 +146,7 @@ export default function SignInMobile() {
                 }}
                 variant="outlined"
               >
-                <InputLabel htmlFor={`${outlinedPasswordId}-input`}>
+                <InputLabel sx={{fontFamily:"system-ui"}} htmlFor={`${outlinedPasswordId}-input`}>
                   Enter your password
                 </InputLabel>
                 <OutlinedInput
