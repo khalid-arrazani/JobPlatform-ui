@@ -1,9 +1,10 @@
 
 import WelcomePage from "./WelcomePanel";
 import SignIn from "./SignInForm";
-import SingUpPage from "./SignUpForm";
+
 
 import { Card, Container } from "@mui/material";
+import SingUp from "./SignUpForm";
 
 
 
@@ -38,7 +39,7 @@ export default function SignPc() {
               alignItems: "center",
             }}
           >
-            <SingUpPage />
+            <SingUp/>
             <WelcomePage />
             <SignIn/>
           </Card>

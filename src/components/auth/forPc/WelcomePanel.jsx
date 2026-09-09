@@ -1,4 +1,4 @@
-import logo from "../../assets/Logo/logo.png";
+import logo from "../../../assets/Logo/logo.png";
 
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";

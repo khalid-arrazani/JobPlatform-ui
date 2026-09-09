@@ -13,6 +13,7 @@ import { LoginUser } from "../../logic/api/auth/auth";
 
 import { AuthContext } from "../../logic/context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import SignPc from "./forPc/Sign";
 
 export default function AuthPage() {
 
@@ -72,34 +73,7 @@ export default function AuthPage() {
       {isMobile && <SignInMobile handleLogin={handleLogin}  password={password}  setPassword={setPassword} email={email}  setEmail={setEmail} />}
 
       {!isMobile && (
-        <Container
-          sx={{
-            height: "100vh",
-            width: "100%",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <Card
-            sx={{
-              height: "85vh",
-
-              width: "80%",
-              backgroundImage:
-                "url('https://cdn.pixabay.com/photo/2025/09/19/05/48/mountain-range-9842371_1280.jpg')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-              borderRadius: "25px",
-              display: "flex",
-              alignItems: "center",
-            }}
-          >
-            <SingUpPage />
-            <WelcomePage />
-            <SignIn handleLogin={handleLogin}  password={password}  setPassword={setPassword} email={email}  setEmail={setEmail} />
-          </Card>
-        </Container>
+       <SignPc/>
       )}
     </>
   );

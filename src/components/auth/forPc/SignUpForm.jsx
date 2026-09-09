@@ -16,7 +16,7 @@ import { useContext } from "react";
 
 import { AuthContext } from "../../../logic/context/AuthContext";
 
-export default function SingUpPage() {
+export default function SingUp() {
   const {
     emailR,
     setEmailR,
