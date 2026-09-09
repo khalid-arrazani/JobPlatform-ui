@@ -13,10 +13,16 @@ import {
   Typography,
 } from "@mui/material";
 
+import { useContext } from "react";
+
+import { AuthContext } from "../../../logic/context/AuthContext";
+
+export default function SignIn() {
 
 
-export default function SignIn({ handleLogin ,password, setPassword, email  ,setEmail }) {
- 
+  const { email, setEmail, password, setPassword, handleLogin } =
+    useContext(AuthContext);
+    
 
   return (
     <>

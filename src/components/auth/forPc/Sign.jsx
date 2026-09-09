@@ -6,57 +6,10 @@ import SingUpPage from "./SignUpForm";
 import { Card, Container } from "@mui/material";
 
 
-import { useState, useContext } from "react";
 
-import { LoginUser } from "../../../logic/api/auth/auth";
-
-import { AuthContext } from "../../../logic/context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 
 export default function SignPc() {
-
-const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  const { dispatch, setSnackBar } = useContext(AuthContext);
-
-
-
-
-  const handleLogin = async () => {
-    try {
-      const data = await LoginUser({
-        email,
-        password,
-      });
-
-      setSnackBar({
-        open: true,
-        message: data.message,
-        severity: "success",
-      });
-
-      dispatch({
-        type: "LOGIN",
-        payload: data,
-      });
-
-      if (data.user.isComplete == false) {
-        navigate("/CompleteProfile");
-      } else {
-        navigate("/Dashboard/Jobs");
-      }
-    } catch (error) {
-      console.log(error.response.data);
-
-      setSnackBar({
-        open: true,
-        message: error.response.data.message,
-        severity: "error",
-      });
-    }
-  };
 
 
 
@@ -87,8 +40,10 @@ const [email, setEmail] = useState("");
           >
             <SingUpPage />
             <WelcomePage />
-            <SignIn handleLogin={handleLogin}  password={password}  setPassword={setPassword} email={email}  setEmail={setEmail} />
+            <SignIn/>
           </Card>
-        </Container>
+    </Container>
+
+
     </>
 }

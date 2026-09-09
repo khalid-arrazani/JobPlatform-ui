@@ -11,80 +11,36 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { useState } from "react";
 
 import { useContext } from "react";
-
-import { RegisterUser } from "../../../logic/api/auth/auth";
 
 import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SingUpPage() {
-  
-  const [role, setrole] = useState("jobSeeker");
-  const [email, setEmail] = useState("");
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
+  const {
+    emailR,
+    setEmailR,
 
-  const [touched, setTouched] = useState({
-    email: false,
-    username: false,
-    password: false,
-  });
+    passwordR,
+    setPasswordR,
 
-  const { dispatch , setSnackBar , setSign } = useContext(AuthContext);
+    username,
+    setUsername,
 
-  const handleRegister = async () => {
-    try {
-      console.log("Register done");
-      const data = await RegisterUser({
-        email,
-        password,
-        role,
-        username
-      });
-      dispatch({
-        type: "REGISTER",
-        payload: data,
-      });
-       setSnackBar({
-        open: true,
-        message: data.message,
-        severity: "success",
-      });
-      setSign("Sign In")
-    } catch (error) {
-      console.log(error?.response?.data);
-        setSnackBar({
-        open: true,
-        message: error?.response?.data?.message,
-        severity: "error",
-      });
-    }
-  };
+    touched,
+    setTouched,
+
+    handleRegister,
+
+    cardRecruiter,
+    cardJobSeeker,
 
 
-  function cardRecruiter() {
-    setrole("recruiter");
-  }
+    isFormValid,
 
-  function cardJobSeeker() {
-    setrole("jobSeeker");
-  }
-
-  const isEmailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-
-  const isUsernameValid = username.trim().length >= 3;
-
-  const isPasswordValid = password.length >= 6;
-
-  const isFormValid = isEmailValid && isUsernameValid && isPasswordValid;
-
-  const errors = {
-    email: !isEmailValid ? "Invalid email" : "",
-    username: username.length < 3 ? "Username too short" : "",
-    password: password.length < 6 ? "Password too short" : "",
-  };
+    errors,
+    role,
+  } = useContext(AuthContext);
 
   return (
     <>
@@ -132,6 +88,7 @@ export default function SingUpPage() {
 
           <TextField
             label="Username"
+            value={username}
             onChange={(e) => setUsername(e.target.value)}
             error={touched.username && !!errors.username}
             helperText={touched.username ? errors.username : ""}
@@ -154,7 +111,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
-              mb:0
+              mb: 0,
             }}
           />
 
@@ -163,7 +120,10 @@ export default function SingUpPage() {
             variant="standard"
             error={touched.email && !!errors.email}
             helperText={touched.email ? errors.email : ""}
-            onChange={(e) => setEmail(e.target.value)}
+            onChange={(e) => setEmailR(e.target.value)}
+            value={
+              emailR
+            }
             onBlur={() =>
               setTouched({
                 ...touched,
@@ -181,7 +141,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
-              m:0
+              m: 0,
             }}
           />
 
@@ -196,7 +156,8 @@ export default function SingUpPage() {
                 password: true,
               })
             }
-            onChange={(e) => setPassword(e.target.value)}
+            onChange={(e) => setPasswordR(e.target.value)}
+            value={passwordR}
             variant="standard"
             sx={{
               input: {
@@ -209,7 +170,7 @@ export default function SingUpPage() {
                 borderRadius: "15px",
               },
               width: "90%",
-              mt:0
+              mt: 0,
             }}
           />
           <Box
