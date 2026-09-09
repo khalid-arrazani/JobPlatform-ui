@@ -15,13 +15,16 @@ import InputAdornment from "@mui/material/InputAdornment";
 
 import FormControl from "@mui/material/FormControl";
 
-
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
+import { useContext } from "react";
+
+import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SignInMobile() {
-
+  const { email, setEmail, password, setPassword, handleLogin } =
+    useContext(AuthContext);
 
   const outlinedPasswordId = React.useId();
   const [showPassword, setShowPassword] = React.useState(false);
@@ -35,8 +38,6 @@ export default function SignInMobile() {
   const handleMouseUpPassword = (event) => {
     event.preventDefault();
   };
-
-
 
   return (
     <>
@@ -99,9 +100,9 @@ export default function SignInMobile() {
                 boxSizing: "border-box",
                 px: 2,
                 py: 1,
-                display:"flex",
-                flexDirection:"column",justifyContent:"space-evenly"
-
+                display: "flex",
+                flexDirection: "column",
+                justifyContent: "space-evenly",
               }}
             >
               <Typography
@@ -119,12 +120,13 @@ export default function SignInMobile() {
               <TextField
                 label="Enter your email"
                 fullWidth
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
                 sx={{
                   bgcolor: "#f0f0f0a9",
                   borderRadius: "10px",
-         
+
                   "& .MuiOutlinedInput-notchedOutline": { border: "none" },
-                 
                 }}
               ></TextField>
 
@@ -150,12 +152,17 @@ export default function SignInMobile() {
                 }}
                 variant="outlined"
               >
-                <InputLabel sx={{fontFamily:"system-ui"}} htmlFor={`${outlinedPasswordId}-input`}>
+                <InputLabel
+                  sx={{ fontFamily: "system-ui" }}
+                  htmlFor={`${outlinedPasswordId}-input`}
+                >
                   Enter your password
                 </InputLabel>
                 <OutlinedInput
                   id={`${outlinedPasswordId}-input`}
                   type={showPassword ? "text" : "password"}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   fullWidth
                   endAdornment={
                     <InputAdornment position="end">
@@ -174,7 +181,7 @@ export default function SignInMobile() {
                       </IconButton>
                     </InputAdornment>
                   }
-                  label="Password"
+                  label="Enter your password"
                 />
               </FormControl>
 
@@ -187,6 +194,7 @@ export default function SignInMobile() {
               >
                 <Button
                   variant="contained"
+                  onClick={handleLogin}
                   fullWidth
                   sx={{
                     bgcolor: "#6d04a1",
@@ -217,11 +225,18 @@ export default function SignInMobile() {
                 sx={{
                   display: "flex",
                   mb: "1.5rem",
-                  flexDirection:"column",
-            
+                  flexDirection: "column",
                 }}
               >
-                <Typography sx={{textAlign:"center",fontFamily:"system-ui",fontWeight:600,mt:2,color:"#04010fea"}}>
+                <Typography
+                  sx={{
+                    textAlign: "center",
+                    fontFamily: "system-ui",
+                    fontWeight: 600,
+                    mt: 2,
+                    color: "#04010fea",
+                  }}
+                >
                   Don't have an account?
                 </Typography>
 
@@ -230,7 +245,7 @@ export default function SignInMobile() {
                   fullWidth
                   sx={{
                     bgcolor: "#db93ff00",
-                    color:"#6d04a1",
+                    color: "#6d04a1",
                     mt: 1,
                     placeSelf: "center",
                     height: "3.5rem",
@@ -241,10 +256,8 @@ export default function SignInMobile() {
                   }}
                 >
                   Sign Up
-
                 </Button>
               </Box>
-
             </Box>
           </Box>
         </Box>
