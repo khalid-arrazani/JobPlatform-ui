@@ -219,10 +219,10 @@ export default function SignInMobile() {
                     loop
                     src={loadingAnimation}
                     style={{
-                      width: "8rem",
+                      width: "6rem",
                       position:"absolute",
-                      top:-35,
-                      left:"33%",
+                      top:-20,
+                      left:"35%",
                       
                     }}
                     
