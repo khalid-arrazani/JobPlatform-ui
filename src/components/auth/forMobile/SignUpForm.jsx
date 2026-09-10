@@ -65,13 +65,52 @@ export default function SignUp () {
                 justifyContent: "space-evenly",
               }}
             >
+                        <Typography
+                sx={{
+                  fontWeight: 600,
+                  mb: 1,
+                  fontSize: "1rem",
+                  fontFamily: "system-ui",
+                  color: "#040217ec",
+                  mt: 3,
+                }}
+              >
+                Username
+              </Typography>
+
+              <FormControl
+                fullWidth
+                sx={{
+                  bgcolor: "#f0f0f0a9",
+                  borderRadius: "10px",
+                  "& .MuiOutlinedInput-notchedOutline": { border: "none" },
+                }}
+                variant="outlined"
+              >
+                <InputLabel
+                  sx={{ fontFamily: "system-ui" }}
+                  htmlFor={`${outlinedPasswordId}-input`}
+                >
+                 Choose a username
+                </InputLabel>
+                <OutlinedInput
+                  
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  fullWidth
+
+                 
+                 
+                  label="Enter your password"
+                />
+              </FormControl>
               <Typography
                 sx={{
                   fontWeight: 600,
-                  mb: 2,
-                  fontSize: "1.2rem",
+                  mb: 1,
+                  fontSize: "1rem",
                   fontFamily: "system-ui",
-                  color: "#040217ec",
+                  color: "#040217ec",mt: 3,
                 }}
               >
                 Email Address
@@ -94,8 +133,8 @@ export default function SignUp () {
               <Typography
                 sx={{
                   fontWeight: 600,
-                  mb: 2,
-                  fontSize: "1.2rem",
+                  mb: 1,
+                  fontSize: "1rem",
                   fontFamily: "system-ui",
                   color: "#040217ec",
                   mt: 3,
@@ -146,7 +185,9 @@ export default function SignUp () {
                  
                   label="Enter your password"
                 />
-              </FormControl>
+              </FormControl>   
+              
+     
 
               <Box
                 sx={{
@@ -187,7 +228,7 @@ export default function SignUp () {
                       
                     }}
                     
-                  /> : "Login"}
+                  /> : "Sing Up"}
                 </Button>
               </Box>
 
@@ -211,13 +252,13 @@ export default function SignUp () {
                 <Typography
                   sx={{
                     textAlign: "center",
-                    fontFamily: "system-ui",
-                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    fontWeight: 500,
                     mt: 2,
-                    color: "#04010fea",
+                    color: "#04010f98",
                   }}
                 >
-                  Don't have an account?
+                  Already have an account?
                 </Typography>
 
                 <Button
@@ -235,7 +276,7 @@ export default function SignUp () {
                     borderRadius: "10px",
                   }}
                 >
-                  Sign Up
+                  Sign In
                 </Button>
               </Box>
             </Box>

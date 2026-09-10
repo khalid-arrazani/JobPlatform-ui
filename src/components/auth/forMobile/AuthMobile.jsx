@@ -2,11 +2,12 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
-import * as React from "react";
+ 
 import logo from "./../../../assets/Logo/logo.png";
 import loadingAnimation from "../../../assets/loginloadingAnimation.json";
 
-
+import {   Box, } from "@mui/material";
+ 
 import SignIn from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
@@ -58,7 +59,7 @@ export default function AuthMobile() {
 
           <Box
             sx={{
-              height: "75%",
+              height: "85%",
               width: "100%",
               bgcolor: "#fffffffc",
               borderTopLeftRadius: "80% 40% ",
