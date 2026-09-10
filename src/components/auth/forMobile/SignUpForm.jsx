@@ -24,7 +24,7 @@ import { useContext } from "react";
 
 import { AuthContext } from "../../../logic/context/AuthContext";
 
-export default function SignUpForm () {
+export default function SignUp () {
 
   const { email, setEmail, password, setPassword, handleLogin ,...state
 } =
@@ -47,7 +47,7 @@ export default function SignUpForm () {
 
   console.log(state.loading);
 
-  
+
   return (
     <>
 
