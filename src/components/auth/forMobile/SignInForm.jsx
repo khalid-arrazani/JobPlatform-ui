@@ -4,10 +4,12 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import * as React from "react";
 import logo from "./../../../assets/Logo/logo.png";
+import loadingAnimation from "./../../../assets/loginloadingAnimation.json";
 
 import { Button, Box, TextField, Typography, Divider } from "@mui/material";
 
 import IconButton from "@mui/material/IconButton";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import OutlinedInput from "@mui/material/OutlinedInput";
 import InputLabel from "@mui/material/InputLabel";
@@ -196,6 +198,7 @@ export default function SignInMobile() {
                   variant="contained"
                   onClick={handleLogin}
                   fullWidth
+                  disabled
                   sx={{
                     bgcolor: "#6d04a1",
                     mt: 5,
@@ -205,9 +208,25 @@ export default function SignInMobile() {
                     textTransform: "none",
                     fontWeight: 400,
                     borderRadius: "10px",
+                    display: "flex",
+                    alignContent: "center",
+                    position:"relative"
                   }}
                 >
-                  Login
+                
+                  <Player
+                    autoplay
+                    loop
+                    src={loadingAnimation}
+                    style={{
+                      width: "8rem",
+                      position:"absolute",
+                      top:-35,
+                      left:"33%",
+                      
+                    }}
+                    
+                  />
                 </Button>
               </Box>
 
