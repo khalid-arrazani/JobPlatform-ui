@@ -24,6 +24,11 @@ export const authReducer = (
         ...state,
         loading: action.payload,
       };
+      case "LOADINGLOGIN":
+      return {
+        ...state,
+        loadingLogin: action.payload,
+      };
 
     case "LOGOUT":
       return {

@@ -17,6 +17,7 @@ export const AuthContext = createContext();
 const initialState = {
   user: null,
   loading: false,
+  loadingLogin: false,
 };
 
 import { useNavigate } from "react-router-dom";
@@ -78,6 +79,10 @@ export default function AuthProvider({ children }) {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
+    dispatch({
+      type: "LOADINGLOGIN",
+      payload: true,
+    });
     try {
       const data = await LoginUser({
         email,
@@ -91,7 +96,7 @@ export default function AuthProvider({ children }) {
       });
 
       dispatch({
-        type: "LOGIN",
+        type: "LOADINGLOGIN",
         payload: data,
       });
 
@@ -108,6 +113,11 @@ export default function AuthProvider({ children }) {
         message: error.response.data.message,
         severity: "error",
       });
+    }finally{
+       dispatch({
+      type: "LOADING",
+      payload: false,
+    });
     }
   };
 

@@ -25,7 +25,9 @@ import { useContext } from "react";
 import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SignInMobile() {
-  const { email, setEmail, password, setPassword, handleLogin } =
+
+  const { email, setEmail, password, setPassword, handleLogin ,...state
+} =
     useContext(AuthContext);
 
   const outlinedPasswordId = React.useId();
@@ -40,6 +42,8 @@ export default function SignInMobile() {
   const handleMouseUpPassword = (event) => {
     event.preventDefault();
   };
+
+  console.log(state.loading);
 
   return (
     <>
@@ -198,7 +202,7 @@ export default function SignInMobile() {
                   variant="contained"
                   onClick={handleLogin}
                   fullWidth
-                  disabled
+                  disabled={state.loadingLogin}
                   sx={{
                     bgcolor: "#6d04a1",
                     mt: 5,
@@ -213,7 +217,7 @@ export default function SignInMobile() {
                     position:"relative"
                   }}
                 >
-                
+                 {state.loadingLogin ? 
                   <Player
                     autoplay
                     loop
@@ -226,7 +230,7 @@ export default function SignInMobile() {
                       
                     }}
                     
-                  />
+                  /> : "Login"}
                 </Button>
               </Box>
 
