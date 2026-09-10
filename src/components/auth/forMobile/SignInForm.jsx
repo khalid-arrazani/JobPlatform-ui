@@ -4,7 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import * as React from "react";
 import logo from "./../../../assets/Logo/logo.png";
-import loadingAnimation from "./../../../assets/loginloadingAnimation.json";
+import loadingAnimation from "../../../assets/loginloadingAnimation.json";
 
 import { Button, Box, TextField, Typography, Divider } from "@mui/material";
 
@@ -24,7 +24,7 @@ import { useContext } from "react";
 
 import { AuthContext } from "../../../logic/context/AuthContext";
 
-export default function SignInMobile() {
+export default function SignIn () {
 
   const { email, setEmail, password, setPassword, handleLogin ,...state
 } =
@@ -47,64 +47,15 @@ export default function SignInMobile() {
 
   return (
     <>
-      <Box
-        sx={{
-          height: "100vh",
-          width: "100vw",
-          backgroundImage:
-            "url('https://cdn.pixabay.com/photo/2020/03/23/18/24/italy-4961709_1280.jpg')",
-          backgroundSize: "cover",
-          backgroundPosition: "top",
-          display: "flex",
-          flexDirection: "column-reverse",
-          backdropFilter: "Blur(10px)",
-        }}
-      >
-        <Box
-          sx={{
-            height: "100vh",
-            width: "100vw",
 
-            backgroundSize: "cover",
-            backgroundPosition: "top",
-            display: "flex",
-            flexDirection: "column-reverse",
-            backdropFilter: "Blur(4px)",
-            bgcolor: "#22032a65",
-          }}
-        >
-          <Box
-            sx={{
-              height: "10rem",
-              width: "10rem",
-              position: "absolute",
-              top: 30,
-              placeSelf: "center",
-            }}
-          >
-            <img src={logo} width={"100%"} />
-          </Box>
 
-          <Box
-            sx={{
-              height: "75%",
-              width: "100%",
-              bgcolor: "#fffffffc",
-              borderTopLeftRadius: "80% 40% ",
-
-              borderTopRightRadius: "250% 40% ",
-              borderTop: "solid #b62ced",
-            }}
-            style={{ CornerRightUp: "" }}
-          >
-            <Box sx={{ width: "100%", height: "3.5rem" }}></Box>
 
             <Box
               sx={{
                 width: "100%",
                 height: "85%",
                 boxSizing: "border-box",
-                px: 2,
+                px: 3,
                 py: 1,
                 display: "flex",
                 flexDirection: "column",
@@ -126,6 +77,7 @@ export default function SignInMobile() {
               <TextField
                 label="Enter your email"
                 fullWidth
+                
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 sx={{
@@ -170,6 +122,7 @@ export default function SignInMobile() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   fullWidth
+
                   endAdornment={
                     <InputAdornment position="end">
                       <IconButton
@@ -187,6 +140,7 @@ export default function SignInMobile() {
                       </IconButton>
                     </InputAdornment>
                   }
+                 
                   label="Enter your password"
                 />
               </FormControl>
@@ -282,9 +236,10 @@ export default function SignInMobile() {
                 </Button>
               </Box>
             </Box>
-          </Box>
-        </Box>
-      </Box>
+
+
+
+
     </>
   );
 }

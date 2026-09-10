@@ -12,6 +12,8 @@ import {useContext, useEffect } from "react";
 import { Button, Card, Typography, Box } from "@mui/material";
 import { AuthContext } from "../../../logic/context/AuthContext";
 
+
+
 export default function WelcomePage() {
   const {sign , setSign} = useContext(AuthContext);
 

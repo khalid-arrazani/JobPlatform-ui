@@ -1,16 +1,17 @@
-
-import WelcomePage from "./WelcomePanel";
+ 
 import SignIn from "./SignInForm";
-
+import SingUp from "./SignUpForm";
+import WelcomePage from "./WelcomePanel"
 
 import { Card, Container } from "@mui/material";
-import SingUp from "./SignUpForm";
 
 
 
 
 
-export default function SignPc() {
+
+
+export default function AuthPc() {
 
 
 
