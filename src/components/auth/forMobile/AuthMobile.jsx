@@ -50,7 +50,7 @@ export default function AuthMobile() {
               height: "8rem",
               width: "8rem",
               position: "absolute",
-              top: 30,
+              top: 0,
               placeSelf: "center",
             }}
           >
@@ -59,7 +59,7 @@ export default function AuthMobile() {
 
           <Box
             sx={{
-              height: "90%",
+              height: "95%",
               width: "100%",
               bgcolor: "#fffffffc",
               borderTopLeftRadius: "80% 40% ",
