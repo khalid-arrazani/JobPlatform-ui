@@ -59,17 +59,18 @@ export default function AuthMobile() {
 
           <Box
             sx={{
-              height: "85%",
+              height: "90%",
               width: "100%",
               bgcolor: "#fffffffc",
               borderTopLeftRadius: "80% 40% ",
 
               borderTopRightRadius: "250% 40% ",
               borderTop: "solid #b62ced",
+              boxSizing:"border-box"
             }}
             style={{ CornerRightUp: "" }}
           >
-            <Box sx={{ width: "100%", height: "3.5rem" }}></Box>
+            <Box sx={{ width: "100%", height: "2rem" }}></Box>
 
 
 
