@@ -16,16 +16,11 @@ import { AuthContext } from "../../../logic/context/AuthContext";
 import gsap from "gsap";
 
 export default function AuthMobile() {
-  const { sign, setSign } = useContext(AuthContext);
+  const { sign } = useContext(AuthContext);
 
   console.log(sign);
 
-  //   useGSAP(() => {
-  //     gsap.set(".cardSignUp", {
-  //       x: "80%",
-  //       opacity: 0,
-  //     });
-  //   });
+  
 
 
 
@@ -47,6 +42,8 @@ export default function AuthMobile() {
           height: "75%",
           duration: 0.5,
         });
+
+
       }},[sign])
 
   return (
