@@ -12,7 +12,8 @@ import {
   TextField,
   Typography,
   Divider,
-  Card,FormHelperText
+  Card,
+  FormHelperText,
 } from "@mui/material";
 
 import IconButton from "@mui/material/IconButton";
@@ -26,8 +27,6 @@ import FormControl from "@mui/material/FormControl";
 
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
-
-
 
 import { useContext } from "react";
 
@@ -52,14 +51,11 @@ export default function SignUp() {
     cardRecruiter,
     cardJobSeeker,
 
- 
     errors,
     role,
- 
+
     ...state
   } = useContext(AuthContext);
-
-
 
   const outlinedPasswordId = React.useId();
   const [showPassword, setShowPassword] = React.useState(false);
@@ -74,7 +70,7 @@ export default function SignUp() {
     event.preventDefault();
   };
 
-console.log(emailR,username);
+  console.log(emailR, username);
 
   return (
     <>
@@ -201,22 +197,20 @@ console.log(emailR,username);
             variant="outlined"
           >
             <InputLabel sx={{ fontFamily: "system-ui" }}>
-               { errors.username && touched.username ?  errors.username : " Choose a username"  }
+              {errors.username && touched.username
+                ? errors.username
+                : " Choose a username"}
             </InputLabel>
-
-
-   
-
 
             <OutlinedInput
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-               onBlur={() =>
-              setTouched({
-                ...touched,
-                username: true,
-              })
-            }
+              onBlur={() =>
+                setTouched({
+                  ...touched,
+                  username: true,
+                })
+              }
               fullWidth
               label="Enter your User name"
             />
@@ -244,7 +238,7 @@ console.log(emailR,username);
             borderRadius: "10px",
           }}
         >
-          <svg 
+          <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -310,17 +304,16 @@ console.log(emailR,username);
           </svg>
 
           <TextField
-
-            label= {errors.email && touched.email ?  errors.email : "Enter your email" }
+            label={
+              errors.email && touched.email ? errors.email : "Enter your email"
+            }
             error={errors.email && touched.email}
-
             onBlur={() =>
               setTouched({
                 ...touched,
                 email: true,
               })
             }
-            
             fullWidth
             value={emailR}
             onChange={(e) => setEmailR(e.target.value)}
@@ -428,20 +421,50 @@ console.log(emailR,username);
               sx={{ fontFamily: "system-ui" }}
               htmlFor={`${outlinedPasswordId}-input`}
             >
-              Enter your password
+              {errors.password && touched.password ? (
+                errors.password
+              ) : !errors.password && touched.password ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Check--Streamline-Ultimate"
+                  height="24"
+                  width="24"
+                >
+                  <path
+                    fill="#78eb7b"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    fill="#c9f7ca"
+                    d="M7.95731 17.1666 20.7591 4.3649l-0.8086 -0.8085c-0.4238 -0.42359 -1.1106 -0.42359 -1.5344 0L7.95731 14.0224 5.5803 11.6443c-0.42359 -0.424 -1.1109 -0.424 -1.5344 0l-0.8086 0.8086 4.72001 4.7137Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    stroke="#191919"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                </svg>
+              ) : (
+                "Enter your password"
+              )}
             </InputLabel>
             <OutlinedInput
               id={`${outlinedPasswordId}-input`}
               type={showPassword ? "text" : "password"}
               value={passwordR}
               onChange={(e) => setPasswordR(e.target.value)}
-               
-            onBlur={() =>
-              setTouched({
-                ...touched,
-                password: true,
-              })
-            }
+              onBlur={() =>
+                setTouched({
+                  ...touched,
+                  password: true,
+                })
+              }
               fullWidth
               endAdornment={
                 <InputAdornment position="end">
@@ -513,16 +536,16 @@ console.log(emailR,username);
                 ":hover": { scale: 1.05 },
                 cursor: "pointer",
 
-
                 scale: role == "jobSeeker" ? 1.06 : 1,
 
-                border:role == "jobSeeker" ? "1px solid #f85ff0" : "1px solid #ddd",
+                border:
+                  role == "jobSeeker" ? "1px solid #f85ff0" : "1px solid #ddd",
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
-                fill={role == "jobSeeker" ? " #640071" : "#414141" }
+                fill={role == "jobSeeker" ? " #640071" : "#414141"}
                 id="User-Light--Streamline-Phosphor"
                 height="35"
                 width="35"
@@ -542,7 +565,7 @@ console.log(emailR,username);
 
                     fontSize: "1rem",
                     fontFamily: "monospace",
-                    color: role == "jobSeeker" ? " #640071" : "#040217ec" ,
+                    color: role == "jobSeeker" ? " #640071" : "#040217ec",
                     boxSizing: "border-box",
                   }}
                 >
@@ -569,7 +592,7 @@ console.log(emailR,username);
                 width: "48%",
                 height: "85%",
                 borderRadius: "10px",
-     
+
                 display: "flex",
                 alignItems: "center",
                 px: 1,
@@ -577,15 +600,17 @@ console.log(emailR,username);
                 gap: 1,
                 transition: "0.2s",
                 ":hover": { scale: 1.05 },
-                cursor: "pointer", scale: role == "recruiter" ? 1.06 : 1,
+                cursor: "pointer",
+                scale: role == "recruiter" ? 1.06 : 1,
 
-                border:role == "recruiter" ? "1px solid #f85ff0" : "1px solid #ddd",
+                border:
+                  role == "recruiter" ? "1px solid #f85ff0" : "1px solid #ddd",
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
-                 fill={role == "recruiter" ? " #640071" : "#414141" }
+                fill={role == "recruiter" ? " #640071" : "#414141"}
                 id="Building-Light--Streamline-Phosphor"
                 height="35"
                 width="35"
@@ -602,7 +627,7 @@ console.log(emailR,username);
 
                     fontSize: "1rem",
                     fontFamily: "monospace",
-                      color: role == "recruiter" ? " #640071" : "#040217ec" ,
+                    color: role == "recruiter" ? " #640071" : "#040217ec",
                     boxSizing: "border-box",
                   }}
                 >
