@@ -197,6 +197,9 @@ export default function AuthProvider({ children }) {
     password: password.length < 6 ? "Password too short" : "",
   };
 
+  console.log(errors ,touched );
+ 
+
   return (
     <AuthContext.Provider
       value={{

@@ -42,6 +42,8 @@ export default function SingUp() {
     role,
   } = useContext(AuthContext);
 
+
+  console.log(emailR);
   return (
     <>
       <Container
@@ -120,7 +122,10 @@ export default function SingUp() {
             variant="standard"
             error={touched.email && !!errors.email}
             helperText={touched.email ? errors.email : ""}
+
             onChange={(e) => setEmailR(e.target.value)}
+
+
             value={
               emailR
             }
@@ -150,12 +155,14 @@ export default function SingUp() {
             type="password"
             error={touched.password && !!errors.password}
             helperText={touched.password ? errors.password : ""}
+
             onBlur={() =>
               setTouched({
                 ...touched,
                 password: true,
               })
             }
+
             onChange={(e) => setPasswordR(e.target.value)}
             value={passwordR}
             variant="standard"
