@@ -151,7 +151,7 @@ export default function AuthMobile() {
 
 
 
-   {  sign === "Sign In" ? <SignIn />  : <SignIn /> }
+   {  sign === "Sign In" ? <SignIn />  :  <SignIn /> }
 
             
 
