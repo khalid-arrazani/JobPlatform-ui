@@ -37,7 +37,6 @@ export default function AuthMobile() {
        
       } else {
 
-
         gsap.to(".base", {
           height: "75%",
           duration: 0.5,
@@ -47,7 +46,7 @@ export default function AuthMobile() {
       }},[sign])
 
 
-      
+
 
   return (
     <>
