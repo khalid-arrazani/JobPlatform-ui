@@ -51,7 +51,10 @@ export default function AuthMobile() {
           borderBottomLeftRadius: "20%",
           borderTopLeftRadius: "20%",
         });
+
       } else {
+
+        
         gsap.to(".buttonsign", {
           duration: 0.5,
           opacity: 0,
