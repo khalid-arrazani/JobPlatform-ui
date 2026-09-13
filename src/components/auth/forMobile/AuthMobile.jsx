@@ -35,41 +35,17 @@ export default function AuthMobile() {
 
 
         gsap.to(".base", {
+          height: "95%",
           duration: 0.5,
-          opacity: 0,
-          
         });
 
        
       } else {
 
 
-        gsap.to(".buttonsign", {
+        gsap.to(".base", {
+          height: "75%",
           duration: 0.5,
-          opacity: 0,
-          repeat: 1,
-          y: "10",
-          yoyo: true,
-        });
-        gsap.to(".boxTronsform", {
-          x: "0%",
-          duration: 0.5,
-          borderTopRightRadius: "20%",
-          borderBottomRightRadius: "20%",
-          borderBottomLeftRadius: "0%",
-          borderTopLeftRadius: "0%",
-        });
-
-        gsap.to(".cardSignUp", {
-          x: "70%",
-          duration: 0.5,
-          opacity: 0,
-        });
-
-        gsap.to(".cardSignIn", {
-          x: "0%",
-          duration: 0.5,
-          opacity: 1,
         });
       }},[sign])
 
