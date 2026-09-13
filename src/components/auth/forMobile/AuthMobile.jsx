@@ -2,12 +2,11 @@ import "@fontsource/roboto/300.css";
 import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
- 
+
 import logo from "./../../../assets/Logo/logo.png";
 
+import { Box } from "@mui/material";
 
-import {   Box, } from "@mui/material";
- 
 import SignIn from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
@@ -17,82 +16,76 @@ import { AuthContext } from "../../../logic/context/AuthContext";
 import gsap from "gsap";
 
 export default function AuthMobile() {
+  const { sign, setSign } = useContext(AuthContext);
 
- 
- const {sign , setSign} = useContext(AuthContext);
+  console.log(sign);
 
- console.log(sign);
+  //   useGSAP(() => {
+  //     gsap.set(".cardSignUp", {
+  //       x: "80%",
+  //       opacity: 0,
+  //     });
+  //   });
 
+  // useEffect(()=>{
+  //     if (sign === "Sign Up") {
+  //       gsap.to(".buttonsign", {
+  //         duration: 0.5,
+  //         opacity: 0,
+  //         y: "10",
+  //         repeat: 1,
 
-//   useGSAP(() => {
-//     gsap.set(".cardSignUp", {
-//       x: "80%",
-//       opacity: 0,
-//     });
-//   });
+  //         yoyo: true,
+  //       });
 
+  //       gsap.to(".boxTronsform", {
+  //         x: "100%",
+  //         duration: 0.5,
+  //         borderTopRightRadius: "0%",
+  //         borderBottomRightRadius: "0%",
+  //         borderBottomLeftRadius: "20%",
+  //         borderTopLeftRadius: "20%",
+  //       });
+  //       gsap.to(".cardSignUp", {
+  //         opacity: 1,
+  //         x: "0%",
+  //         duration: 0.5,
+  //       });
+  //       gsap.to(".cardSignIn", {
+  //         x: "-100%",
+  //         duration: 0.5,
+  //         opacity: 0,
+  //       });
 
+  //     } else {
+  //       gsap.to(".buttonsign", {
+  //         duration: 0.5,
+  //         opacity: 0,
+  //         repeat: 1,
+  //         y: "10",
+  //         yoyo: true,
+  //       });
+  //       gsap.to(".boxTronsform", {
+  //         x: "0%",
+  //         duration: 0.5,
+  //         borderTopRightRadius: "20%",
+  //         borderBottomRightRadius: "20%",
+  //         borderBottomLeftRadius: "0%",
+  //         borderTopLeftRadius: "0%",
+  //       });
 
-// useEffect(()=>{
-//     if (sign === "Sign Up") {
-//       gsap.to(".buttonsign", {
-//         duration: 0.5,
-//         opacity: 0,
-//         y: "10",
-//         repeat: 1,
+  //       gsap.to(".cardSignUp", {
+  //         x: "70%",
+  //         duration: 0.5,
+  //         opacity: 0,
+  //       });
 
-//         yoyo: true,
-//       });
-
-//       gsap.to(".boxTronsform", {
-//         x: "100%",
-//         duration: 0.5,
-//         borderTopRightRadius: "0%",
-//         borderBottomRightRadius: "0%",
-//         borderBottomLeftRadius: "20%",
-//         borderTopLeftRadius: "20%",
-//       });
-//       gsap.to(".cardSignUp", {
-//         opacity: 1,
-//         x: "0%",
-//         duration: 0.5,
-//       });
-//       gsap.to(".cardSignIn", {
-//         x: "-100%",
-//         duration: 0.5,
-//         opacity: 0,
-//       });
-
-//     } else {
-//       gsap.to(".buttonsign", {
-//         duration: 0.5,
-//         opacity: 0,
-//         repeat: 1,
-//         y: "10",
-//         yoyo: true,
-//       });
-//       gsap.to(".boxTronsform", {
-//         x: "0%",
-//         duration: 0.5,
-//         borderTopRightRadius: "20%",
-//         borderBottomRightRadius: "20%",
-//         borderBottomLeftRadius: "0%",
-//         borderTopLeftRadius: "0%",
-//       });
-
-//       gsap.to(".cardSignUp", {
-//         x: "70%",
-//         duration: 0.5,
-//         opacity: 0,
-//       });
-
-//       gsap.to(".cardSignIn", {
-//         x: "0%",
-//         duration: 0.5,
-//         opacity: 1,
-//       });
-//     }},[sign])
-
+  //       gsap.to(".cardSignIn", {
+  //         x: "0%",
+  //         duration: 0.5,
+  //         opacity: 1,
+  //       });
+  //     }},[sign])
 
   return (
     <>
@@ -143,21 +136,13 @@ export default function AuthMobile() {
 
               borderTopRightRadius: "250% 40% ",
               borderTop: "solid #b62ced",
-              boxSizing:"border-box"
+              boxSizing: "border-box",
             }}
             style={{ CornerRightUp: "" }}
           >
             <Box sx={{ width: "100%", height: "4rem" }}></Box>
 
-
-
-   {  sign === "Sign In" ? <SignIn />  :  <SignIn /> }
-
-            
-
-
-
-
+            {sign === "Sign In" ? <SignIn /> : <SignUpForm />}
           </Box>
         </Box>
       </Box>
