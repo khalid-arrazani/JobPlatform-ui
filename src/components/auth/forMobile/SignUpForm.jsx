@@ -12,8 +12,7 @@ import {
   TextField,
   Typography,
   Divider,
-  Card,
-  FormHelperText,
+
 } from "@mui/material";
 
 import IconButton from "@mui/material/IconButton";
@@ -199,7 +198,34 @@ export default function SignUp() {
             <InputLabel sx={{ fontFamily: "system-ui" }}>
               {errors.username && touched.username
                 ? errors.username
-                : " Choose a username"}
+                : !errors.username && touched.username ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Check--Streamline-Ultimate"
+                  height="24"
+                  width="24"
+                >
+                  <path
+                    fill="#78eb7b"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    fill="#c9f7ca"
+                    d="M7.95731 17.1666 20.7591 4.3649l-0.8086 -0.8085c-0.4238 -0.42359 -1.1106 -0.42359 -1.5344 0L7.95731 14.0224 5.5803 11.6443c-0.42359 -0.424 -1.1109 -0.424 -1.5344 0l-0.8086 0.8086 4.72001 4.7137Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    stroke="#191919"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                </svg>
+              )  :" Choose a username"}
             </InputLabel>
 
             <OutlinedInput
@@ -305,7 +331,34 @@ export default function SignUp() {
 
           <TextField
             label={
-              errors.email && touched.email ? errors.email : "Enter your email"
+              errors.email && touched.email ? errors.email :  !errors.email && touched.email ? (
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Check--Streamline-Ultimate"
+                  height="24"
+                  width="24"
+                >
+                  <path
+                    fill="#78eb7b"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    fill="#c9f7ca"
+                    d="M7.95731 17.1666 20.7591 4.3649l-0.8086 -0.8085c-0.4238 -0.42359 -1.1106 -0.42359 -1.5344 0L7.95731 14.0224 5.5803 11.6443c-0.42359 -0.424 -1.1109 -0.424 -1.5344 0l-0.8086 0.8086 4.72001 4.7137Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    stroke="#191919"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M1.98657 13.7043c-0.4235 0.4235 -0.4235 1.1101 0 1.5336l5.20337 5.2042c0.42414 0.4225 1.11017 0.4225 1.53441 0L22.013 7.1525c0.4235 -0.42341 0.4235 -1.10999 0 -1.53349l-2.0591 -2.05994c-0.4235 -0.42414 -1.1108 -0.42414 -1.5344 0L7.9571 14.0224l-2.37701 -2.3781c-0.42378 -0.4235 -1.11073 -0.4235 -1.53441 0l-2.05911 2.06Z"
+                    stroke-width="1"
+                  ></path>
+                </svg>
+              ) : "Enter your email"
             }
             error={errors.email && touched.email}
             onBlur={() =>
@@ -323,7 +376,7 @@ export default function SignUp() {
 
               "& .MuiOutlinedInput-notchedOutline": { border: "none" },
             }}
-          ></TextField>
+          />
         </Box>
 
         <Typography

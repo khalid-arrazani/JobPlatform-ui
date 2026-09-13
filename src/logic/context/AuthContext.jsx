@@ -205,7 +205,7 @@ export default function AuthProvider({ children }) {
   return (
     <AuthContext.Provider
       value={{
-        ...state,
+        ...state, 
         checkRole,
         dispatch,
         snackBar,

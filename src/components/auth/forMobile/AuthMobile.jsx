@@ -59,7 +59,7 @@ export default function AuthMobile() {
 
           <Box
             sx={{
-              height: "95%",
+              height: "75%",
               width: "100%",
               bgcolor: "#fffffffc",
               borderTopLeftRadius: "80% 40% ",
@@ -70,13 +70,13 @@ export default function AuthMobile() {
             }}
             style={{ CornerRightUp: "" }}
           >
-            <Box sx={{ width: "100%", height: "2rem" }}></Box>
+            <Box sx={{ width: "100%", height: "4rem" }}></Box>
 
 
 
 
 
-            <SignUpForm/>
+            <SignIn/>
 
 
 
