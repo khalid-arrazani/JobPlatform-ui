@@ -44,6 +44,7 @@ export default function SingUp() {
 
 
   console.log(emailR);
+
   return (
     <>
       <Container
@@ -120,7 +121,9 @@ export default function SingUp() {
           <TextField
             label="Email"
             variant="standard"
+
             error={touched.email && !!errors.email}
+
             helperText={touched.email ? errors.email : ""}
 
             onChange={(e) => setEmailR(e.target.value)}

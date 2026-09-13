@@ -27,9 +27,7 @@ import FormControl from "@mui/material/FormControl";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
-import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
-import EmailOutlinedIcon from "@mui/icons-material/EmailOutlined";
-import LockPersonOutlinedIcon from "@mui/icons-material/LockPersonOutlined";
+
 
 import { useContext } from "react";
 
@@ -65,7 +63,7 @@ export default function SignUp() {
     ...state
   } = useContext(AuthContext);
 
-  console.log(errors);
+
 
   const outlinedPasswordId = React.useId();
   const [showPassword, setShowPassword] = React.useState(false);
@@ -80,7 +78,7 @@ export default function SignUp() {
     event.preventDefault();
   };
 
-  console.log(state.loading);
+console.log(emailR);
 
   return (
     <>
@@ -317,7 +315,7 @@ export default function SignUp() {
 
           <TextField
 
-            label= {errors.email && touched.email ?  errors.email : " Enter your email" }
+            label= {errors.email && touched.email ?  errors.email : "Enter your email" }
             error={errors.email && touched.email}
 
             onBlur={() =>
