@@ -134,9 +134,6 @@ export default function AuthProvider({ children }) {
   const [role, setrole] = useState("jobSeeker");
 
 
-
-
-
   const [touched, setTouched] = useState({
     email: false,
     username: false,
