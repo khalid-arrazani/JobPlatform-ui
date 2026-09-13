@@ -27,65 +27,59 @@ export default function AuthMobile() {
   //     });
   //   });
 
-  // useEffect(()=>{
-  //     if (sign === "Sign Up") {
-  //       gsap.to(".buttonsign", {
-  //         duration: 0.5,
-  //         opacity: 0,
-  //         y: "10",
-  //         repeat: 1,
 
-  //         yoyo: true,
-  //       });
 
-  //       gsap.to(".boxTronsform", {
-  //         x: "100%",
-  //         duration: 0.5,
-  //         borderTopRightRadius: "0%",
-  //         borderBottomRightRadius: "0%",
-  //         borderBottomLeftRadius: "20%",
-  //         borderTopLeftRadius: "20%",
-  //       });
-  //       gsap.to(".cardSignUp", {
-  //         opacity: 1,
-  //         x: "0%",
-  //         duration: 0.5,
-  //       });
-  //       gsap.to(".cardSignIn", {
-  //         x: "-100%",
-  //         duration: 0.5,
-  //         opacity: 0,
-  //       });
 
-  //     } else {
-  //       gsap.to(".buttonsign", {
-  //         duration: 0.5,
-  //         opacity: 0,
-  //         repeat: 1,
-  //         y: "10",
-  //         yoyo: true,
-  //       });
-  //       gsap.to(".boxTronsform", {
-  //         x: "0%",
-  //         duration: 0.5,
-  //         borderTopRightRadius: "20%",
-  //         borderBottomRightRadius: "20%",
-  //         borderBottomLeftRadius: "0%",
-  //         borderTopLeftRadius: "0%",
-  //       });
+  useEffect(()=>{
+      if (sign === "Sign Up") {
 
-  //       gsap.to(".cardSignUp", {
-  //         x: "70%",
-  //         duration: 0.5,
-  //         opacity: 0,
-  //       });
 
-  //       gsap.to(".cardSignIn", {
-  //         x: "0%",
-  //         duration: 0.5,
-  //         opacity: 1,
-  //       });
-  //     }},[sign])
+        gsap.to(".base", {
+          duration: 0.5,
+          opacity: 0,
+          y: "10",
+          repeat: 1,
+
+          yoyo: true,
+        });
+
+        gsap.to(".boxTronsform", {
+          x: "100%",
+          duration: 0.5,
+          borderTopRightRadius: "0%",
+          borderBottomRightRadius: "0%",
+          borderBottomLeftRadius: "20%",
+          borderTopLeftRadius: "20%",
+        });
+      } else {
+        gsap.to(".buttonsign", {
+          duration: 0.5,
+          opacity: 0,
+          repeat: 1,
+          y: "10",
+          yoyo: true,
+        });
+        gsap.to(".boxTronsform", {
+          x: "0%",
+          duration: 0.5,
+          borderTopRightRadius: "20%",
+          borderBottomRightRadius: "20%",
+          borderBottomLeftRadius: "0%",
+          borderTopLeftRadius: "0%",
+        });
+
+        gsap.to(".cardSignUp", {
+          x: "70%",
+          duration: 0.5,
+          opacity: 0,
+        });
+
+        gsap.to(".cardSignIn", {
+          x: "0%",
+          duration: 0.5,
+          opacity: 1,
+        });
+      }},[sign])
 
   return (
     <>
@@ -128,6 +122,7 @@ export default function AuthMobile() {
           </Box>
 
           <Box
+           className="base"
             sx={{
               height: "75%",
               width: "100%",
@@ -138,11 +133,21 @@ export default function AuthMobile() {
               borderTop: "solid #b62ced",
               boxSizing: "border-box",
             }}
-            style={{ CornerRightUp: "" }}
+            
           >
             <Box sx={{ width: "100%", height: "4rem" }}></Box>
 
+
+
+
+
+
+
             {sign === "Sign In" ? <SignIn /> : <SignUpForm />}
+
+
+
+
           </Box>
         </Box>
       </Box>
