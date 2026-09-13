@@ -25,9 +25,8 @@ import { useContext } from "react";
 import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SignIn() {
-  const { email, setEmail, password, setPassword, handleLogin, ...state } =
-    useContext(AuthContext);
-
+  const {sign , setSign, email, setEmail, password, setPassword, handleLogin, ...state } =
+    useContext(AuthContext); 
   const outlinedPasswordId = React.useId();
   const [showPassword, setShowPassword] = React.useState(false);
 
@@ -257,6 +256,7 @@ export default function SignIn() {
           <Button
             variant="contained"
             fullWidth
+            onClick={()=>{sign == "Sign Up"?setSign("Sign In"):setSign("Sign Up")}}
             sx={{
               bgcolor: "#db93ff00",
               color: "#6d04a1",

@@ -33,6 +33,7 @@ import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SignUp() {
   const {
+    sign , setSign,
     emailR,
     setEmailR,
 
@@ -766,6 +767,7 @@ export default function SignUp() {
           <Button
             variant="contained"
             fullWidth
+            onClick={()=>{sign == "Sign Up"?setSign("Sign In"):setSign("Sign Up")}}
             sx={{
               bgcolor: "#db93ff00",
               color: "#6d04a1",

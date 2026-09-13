@@ -11,10 +11,87 @@ import {   Box, } from "@mui/material";
 import SignIn from "./SignInForm";
 import SignUpForm from "./SignUpForm";
 
+import { useContext, useEffect } from "react";
+import { useGSAP } from "@gsap/react";
+import { AuthContext } from "../../../logic/context/AuthContext";
+import gsap from "gsap";
+
 export default function AuthMobile() {
 
  
+ const {sign , setSign} = useContext(AuthContext);
 
+ console.log(sign);
+
+
+//   useGSAP(() => {
+//     gsap.set(".cardSignUp", {
+//       x: "80%",
+//       opacity: 0,
+//     });
+//   });
+
+
+
+// useEffect(()=>{
+//     if (sign === "Sign Up") {
+//       gsap.to(".buttonsign", {
+//         duration: 0.5,
+//         opacity: 0,
+//         y: "10",
+//         repeat: 1,
+
+//         yoyo: true,
+//       });
+
+//       gsap.to(".boxTronsform", {
+//         x: "100%",
+//         duration: 0.5,
+//         borderTopRightRadius: "0%",
+//         borderBottomRightRadius: "0%",
+//         borderBottomLeftRadius: "20%",
+//         borderTopLeftRadius: "20%",
+//       });
+//       gsap.to(".cardSignUp", {
+//         opacity: 1,
+//         x: "0%",
+//         duration: 0.5,
+//       });
+//       gsap.to(".cardSignIn", {
+//         x: "-100%",
+//         duration: 0.5,
+//         opacity: 0,
+//       });
+
+//     } else {
+//       gsap.to(".buttonsign", {
+//         duration: 0.5,
+//         opacity: 0,
+//         repeat: 1,
+//         y: "10",
+//         yoyo: true,
+//       });
+//       gsap.to(".boxTronsform", {
+//         x: "0%",
+//         duration: 0.5,
+//         borderTopRightRadius: "20%",
+//         borderBottomRightRadius: "20%",
+//         borderBottomLeftRadius: "0%",
+//         borderTopLeftRadius: "0%",
+//       });
+
+//       gsap.to(".cardSignUp", {
+//         x: "70%",
+//         duration: 0.5,
+//         opacity: 0,
+//       });
+
+//       gsap.to(".cardSignIn", {
+//         x: "0%",
+//         duration: 0.5,
+//         opacity: 1,
+//       });
+//     }},[sign])
 
 
   return (
@@ -74,9 +151,9 @@ export default function AuthMobile() {
 
 
 
+   {  sign === "Sign In" ? <SignIn />  : <SignIn /> }
 
-
-            <SignIn/>
+            
 
 
 
