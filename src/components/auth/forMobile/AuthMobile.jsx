@@ -109,8 +109,8 @@ export default function AuthMobile() {
 
 
 
-
             {sign === "Sign In" ? <SignIn /> : <SignUpForm />}
+
 
 
 
