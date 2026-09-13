@@ -4,7 +4,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
  
 import logo from "./../../../assets/Logo/logo.png";
-import loadingAnimation from "../../../assets/loginloadingAnimation.json";
+
 
 import {   Box, } from "@mui/material";
  

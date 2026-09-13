@@ -96,7 +96,7 @@ export default function AuthProvider({ children }) {
       });
 
       dispatch({
-        type: "LOADINGLOGIN",
+        type: "LOGIN",
         payload: data,
       });
 
@@ -115,7 +115,7 @@ export default function AuthProvider({ children }) {
       });
     }finally{
        dispatch({
-      type: "LOADING",
+      type: "LOADINGLOGIN",
       payload: false,
     });
     }
@@ -139,6 +139,10 @@ export default function AuthProvider({ children }) {
   });
 
   const handleRegister = async () => {
+    dispatch({
+      type: "LOADINGLOGIN",
+      payload: true,
+    });
     try {
       const data = await RegisterUser({
         email: emailR,
@@ -163,6 +167,11 @@ export default function AuthProvider({ children }) {
         message: error?.response?.data?.message,
         severity: "error",
       });
+    }finally{
+      dispatch({
+      type: "LOADINGLOGIN",
+      payload: false,
+    });
     }
   };
 

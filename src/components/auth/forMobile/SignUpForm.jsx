@@ -12,7 +12,7 @@ import {
   TextField,
   Typography,
   Divider,
-  Card,
+  Card,FormHelperText
 } from "@mui/material";
 
 import IconButton from "@mui/material/IconButton";
@@ -36,8 +36,34 @@ import { useContext } from "react";
 import { AuthContext } from "../../../logic/context/AuthContext";
 
 export default function SignUp() {
-  const { email, setEmail, password, setPassword, handleLogin, ...state } =
-    useContext(AuthContext);
+  const {
+    emailR,
+    setEmailR,
+
+    passwordR,
+    setPasswordR,
+
+    username,
+    setUsername,
+
+    touched,
+    setTouched,
+
+    handleRegister,
+
+    cardRecruiter,
+    cardJobSeeker,
+
+    isEmailValid,
+    isUsernameValid,
+    isPasswordValid,
+    isFormValid,
+
+    errors,
+    role,
+    setrole,
+    ...state
+  } = useContext(AuthContext);
 
   const outlinedPasswordId = React.useId();
   const [showPassword, setShowPassword] = React.useState(false);
@@ -71,7 +97,7 @@ export default function SignUp() {
         <Typography
           sx={{
             fontWeight: 600,
-            mb: 1,
+            mb: 0,
             fontSize: "1rem",
             fontFamily: "system-ui",
             color: "#040217ec",
@@ -169,6 +195,7 @@ export default function SignUp() {
           </svg>
 
           <FormControl
+            error={errors.username && touched.username}
             fullWidth
             sx={{
               bgcolor: "#f0f0f0a9",
@@ -177,17 +204,25 @@ export default function SignUp() {
             }}
             variant="outlined"
           >
-            <InputLabel
-              sx={{ fontFamily: "system-ui" }}
-              htmlFor={`${outlinedPasswordId}-input`}
-            >
-              Choose a username
+            <InputLabel sx={{ fontFamily: "system-ui" }}>
+               { errors.username && touched.username ?  errors.username : " Choose a username"  }
             </InputLabel>
+
+
+   
+
+
             <OutlinedInput
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+               onBlur={() =>
+              setTouched({
+                ...touched,
+                username: true,
+              })
+            }
               fullWidth
-              label="Enter your password"
+              label="Enter your User name"
             />
           </FormControl>
         </Box>
@@ -195,7 +230,7 @@ export default function SignUp() {
         <Typography
           sx={{
             fontWeight: 600,
-            mb: 1,
+            mb: 0,
             fontSize: "1rem",
             fontFamily: "system-ui",
             color: "#040217ec",
@@ -213,7 +248,7 @@ export default function SignUp() {
             borderRadius: "10px",
           }}
         >
-          <svg
+          <svg 
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
@@ -280,9 +315,17 @@ export default function SignUp() {
 
           <TextField
             label="Enter your email"
+            error={errors.email && touched.email}
+            onBlur={() =>
+              setTouched({
+                ...touched,
+                email: true,
+              })
+            }
+            
             fullWidth
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={emailR}
+            onChange={(e) => setEmailR(e.target.value)}
             sx={{
               bgcolor: "#f0f0f0a9",
               borderRadius: "10px",
@@ -295,7 +338,7 @@ export default function SignUp() {
         <Typography
           sx={{
             fontWeight: 600,
-            mb: 1,
+            mb: 0,
             fontSize: "1rem",
             fontFamily: "system-ui",
             color: "#040217ec",
@@ -380,6 +423,7 @@ export default function SignUp() {
               borderRadius: "10px",
               "& .MuiOutlinedInput-notchedOutline": { border: "none" },
             }}
+            error={errors.password && touched.password}
             variant="outlined"
           >
             <InputLabel
@@ -391,8 +435,15 @@ export default function SignUp() {
             <OutlinedInput
               id={`${outlinedPasswordId}-input`}
               type={showPassword ? "text" : "password"}
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={passwordR}
+              onChange={(e) => setPasswordR(e.target.value)}
+               
+            onBlur={() =>
+              setTouched({
+                ...touched,
+                password: true,
+              })
+            }
               fullWidth
               endAdornment={
                 <InputAdornment position="end">
@@ -447,27 +498,33 @@ export default function SignUp() {
               mt: 1,
             }}
           >
-
-
-
             <Box
+              onClick={cardJobSeeker}
               sx={{
                 bgcolor: "#ecebeb ",
                 width: "48%",
                 height: "85%",
                 borderRadius: "10px",
-                border: "1px solid #ddd",
+
                 display: "flex",
                 alignItems: "center",
                 px: 1,
-                boxSizing: "border-box",gap:1,transition:"0.2s",
-                ":hover":{scale:1.05}
+                boxSizing: "border-box",
+                gap: 1,
+                transition: "0.2s",
+                ":hover": { scale: 1.05 },
+                cursor: "pointer",
+
+
+                scale: role == "jobSeeker" ? 1.06 : 1,
+
+                border:role == "jobSeeker" ? "1px solid #f85ff0" : "1px solid #ddd",
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
-                fill="#5a0f43"
+                fill={role == "jobSeeker" ? " #640071" : "#414141" }
                 id="User-Light--Streamline-Phosphor"
                 height="35"
                 width="35"
@@ -482,53 +539,55 @@ export default function SignUp() {
               </svg>
               <Box>
                 <Typography
-            sx={{
-              fontWeight: 600,
+                  sx={{
+                    fontWeight: 600,
 
-              fontSize: "1rem",
-              fontFamily: "monospace",
-              color: "#040217ec",
-              boxSizing: "border-box",
-            }}
-          >
-            Joob seeker
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: 400,
-              fontSize: "0.7rem",
-              fontFamily: "monospace",
-              color: "#040217ba",
-              boxSizing: "border-box",
-
-            }}
-          >
-            Find your next job
-          </Typography>
+                    fontSize: "1rem",
+                    fontFamily: "monospace",
+                    color: role == "jobSeeker" ? " #640071" : "#040217ec" ,
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Joob seeker
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 400,
+                    fontSize: "0.7rem",
+                    fontFamily: "monospace",
+                    color: "#040217ba",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Find your next job
+                </Typography>
               </Box>
-
             </Box>
 
-
-
             <Box
+              onClick={cardRecruiter}
               sx={{
                 bgcolor: "#ecebeb ",
                 width: "48%",
                 height: "85%",
                 borderRadius: "10px",
-                border: "1px solid #ddd",
+     
                 display: "flex",
                 alignItems: "center",
                 px: 1,
-                boxSizing: "border-box",gap:1,transition:"0.2s",
-                ":hover":{scale:1.05}
+                boxSizing: "border-box",
+                gap: 1,
+                transition: "0.2s",
+                ":hover": { scale: 1.05 },
+                cursor: "pointer", scale: role == "recruiter" ? 1.06 : 1,
+
+                border:role == "recruiter" ? "1px solid #f85ff0" : "1px solid #ddd",
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 16 16"
-                fill="#5a0f43"
+                 fill={role == "recruiter" ? " #640071" : "#414141" }
                 id="Building-Light--Streamline-Phosphor"
                 height="35"
                 width="35"
@@ -540,36 +599,30 @@ export default function SignUp() {
               </svg>
               <Box>
                 <Typography
-            sx={{
-              fontWeight: 600,
+                  sx={{
+                    fontWeight: 600,
 
-              fontSize: "1rem",
-              fontFamily: "monospace",
-              color: "#040217ec",
-              boxSizing: "border-box",
-            }}
-          >
-            Recruiter
-          </Typography>
-          <Typography
-            sx={{
-              fontWeight: 400,
-              fontSize: "0.7rem",
-              fontFamily: "monospace",
-              color: "#040217ba",
-              boxSizing: "border-box",
-
-            }}
-          >
-            Hire great talent
-          </Typography>
+                    fontSize: "1rem",
+                    fontFamily: "monospace",
+                      color: role == "recruiter" ? " #640071" : "#040217ec" ,
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Recruiter
+                </Typography>
+                <Typography
+                  sx={{
+                    fontWeight: 400,
+                    fontSize: "0.7rem",
+                    fontFamily: "monospace",
+                    color: "#040217ba",
+                    boxSizing: "border-box",
+                  }}
+                >
+                  Hire great talent
+                </Typography>
               </Box>
-
-
             </Box>
-
-
-
           </Box>
         </Box>
 
@@ -582,7 +635,7 @@ export default function SignUp() {
         >
           <Button
             variant="contained"
-            onClick={handleLogin}
+            onClick={handleRegister}
             fullWidth
             disabled={state.loadingLogin}
             sx={{
