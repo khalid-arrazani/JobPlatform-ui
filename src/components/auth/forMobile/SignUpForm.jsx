@@ -317,9 +317,9 @@ export default function SignUp() {
 
           <TextField
 
-            label= { errors.email && touched.email ?  errors.email : " Enter your email" }
+            label= {errors.email && touched.email ?  errors.email : " Enter your email" }
             error={errors.email && touched.email}
-            
+
             onBlur={() =>
               setTouched({
                 ...touched,
