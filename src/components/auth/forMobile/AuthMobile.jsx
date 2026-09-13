@@ -37,24 +37,13 @@ export default function AuthMobile() {
         gsap.to(".base", {
           duration: 0.5,
           opacity: 0,
-          y: "10",
-          repeat: 1,
-
-          yoyo: true,
+          
         });
 
-        gsap.to(".boxTronsform", {
-          x: "100%",
-          duration: 0.5,
-          borderTopRightRadius: "0%",
-          borderBottomRightRadius: "0%",
-          borderBottomLeftRadius: "20%",
-          borderTopLeftRadius: "20%",
-        });
-
+       
       } else {
 
-        
+
         gsap.to(".buttonsign", {
           duration: 0.5,
           opacity: 0,
