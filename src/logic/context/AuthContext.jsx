@@ -70,12 +70,17 @@ export default function AuthProvider({ children }) {
 
 
 
+//-------------------------------------bouth------------------------------------------//
+  //-********************************************************************************************-//
+
+ const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [username, setUsername] = useState("");
 
   //-------------------------------------Sgin In section------------------------------------------//
   //-********************************************************************************************-//
 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+
   const navigate = useNavigate();
 
   const handleLogin = async () => {
@@ -128,9 +133,9 @@ export default function AuthProvider({ children }) {
 
   const [role, setrole] = useState("jobSeeker");
 
-  const [emailR, setEmailR] = useState("");
-  const [username, setUsername] = useState("");
-  const [passwordR, setPasswordR] = useState("");
+
+
+
 
   const [touched, setTouched] = useState({
     email: false,
@@ -197,7 +202,7 @@ export default function AuthProvider({ children }) {
     password: password.length < 6 ? "Password too short" : "",
   };
 
-  console.log(errors ,touched );
+
  
 
   return (
@@ -225,11 +230,11 @@ export default function AuthProvider({ children }) {
         //-------------sign Up-----------------//
 
 
-        emailR,
-        setEmailR,
+        emailR:email,
+        setEmailR:setEmail,
 
-        passwordR,
-        setPasswordR,
+        passwordR:password,
+        setPasswordR:setPassword,
 
         username,
         setUsername,

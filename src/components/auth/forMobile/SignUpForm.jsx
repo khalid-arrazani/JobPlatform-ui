@@ -52,14 +52,10 @@ export default function SignUp() {
     cardRecruiter,
     cardJobSeeker,
 
-    isEmailValid,
-    isUsernameValid,
-    isPasswordValid,
-    isFormValid,
-
+ 
     errors,
     role,
-    setrole,
+ 
     ...state
   } = useContext(AuthContext);
 
@@ -78,7 +74,7 @@ export default function SignUp() {
     event.preventDefault();
   };
 
-console.log(emailR);
+console.log(emailR,username);
 
   return (
     <>
