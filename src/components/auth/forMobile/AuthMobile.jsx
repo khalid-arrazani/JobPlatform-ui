@@ -18,11 +18,6 @@ import gsap from "gsap";
 export default function AuthMobile() {
   const { sign } = useContext(AuthContext);
 
-  console.log(sign);
-
-  
-
-
 
 
   useEffect(()=>{
