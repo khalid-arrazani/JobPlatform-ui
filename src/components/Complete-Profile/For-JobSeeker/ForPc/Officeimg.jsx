@@ -1,4 +1,4 @@
-import logocompleteprofile from "../../../assets/Office work-pana.svg";
+import logocompleteprofile from "../../../../assets/Office work-pana.svg";
 export default function OfficePart() {
   return (
     <>
