@@ -70,7 +70,7 @@ export default function SignUp() {
     event.preventDefault();
   };
 
-  console.log(emailR, username);
+
 
   return (
     <>

@@ -18,44 +18,48 @@ import gsap from "gsap";
 export default function AuthMobile() {
   const { sign } = useContext(AuthContext);
 
+  useGSAP(() => {
+    gsap.set(".SignUp", {
+      opacity: 0,
+    });
+  });
+
   useEffect(() => {
     if (sign === "Sign Up") {
+      let tl = gsap.timeline();
 
-       gsap.to(".SingIn", {
-        display: "none",
-        duration: 0.5,
-      });
 
-      gsap.to(".SignUp", {
+      tl.to(".SingIn", {
+        opacity: 0,
+        duration: 0.2,
         display: "block",
-        duration: 0.5,
-      });
+      })
+        .to(".base", {
+          height: "95%",
+          duration: 0.5,
+        })
 
-     
-      gsap.to(".base", {
-        height: "95%",
-        duration: 0.5,
-      });
+        .to(".SignUp", {
+          opacity: 1,
+          duration: 0.5,
+        });
 
 
     } else {
-
-     gsap.to(".SignUp", {
-        display: "none",
+      gsap.to(".SignUp", {
+        opacity: 0,
         duration: 0.5,
-      }); 
+      });
 
       gsap.to(".SingIn", {
         display: "block",
         duration: 0.5,
       });
-      
-      
+
       gsap.to(".base", {
         height: "75%",
         duration: 0.5,
       });
-
     }
   }, [sign]);
 
@@ -114,22 +118,14 @@ export default function AuthMobile() {
           >
             <Box sx={{ width: "100%", height: "4rem" }}></Box>
 
-
-
-
-            <Box  className="SingIn" sx={{ height: "100%" ,width:"100%"}}>
+            <Box className="SingIn" sx={{ height: "100%", width: "100%" }}>
               <SignIn className="SingIn" />
             </Box>
 
-
-
-
-            <Box className="SignUp" sx={{ height: "100%" ,width:"100%"}}>
-              <SignUpForm  />
+            <Box className="SignUp" sx={{ height: "100%", width: "100%" }}>
+              <SignUpForm />
             </Box>
-
-
-
+            
           </Box>
         </Box>
       </Box>
