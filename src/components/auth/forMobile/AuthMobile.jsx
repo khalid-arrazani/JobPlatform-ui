@@ -109,7 +109,7 @@ export default function AuthMobile() {
 
 
 
-            { sign === "Sign In" ? <SignIn /> : <SignUpForm /> }
+            { sign === "Sign In" ? <SignIn className="SingIn" /> : <SignUpForm  className="SignUp"  /> }
 
 
 
