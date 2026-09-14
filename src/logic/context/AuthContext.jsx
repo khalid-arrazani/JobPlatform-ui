@@ -147,8 +147,8 @@ export default function AuthProvider({ children }) {
     });
     try {
       const data = await RegisterUser({
-        email: emailR,
-        password: passwordR,
+        email: email,
+        password: password,
         role,
         username,
       });
@@ -156,12 +156,15 @@ export default function AuthProvider({ children }) {
         type: "REGISTER",
         payload: data,
       });
+
       setSnackBar({
         open: true,
         message: data.message,
         severity: "success",
       });
+      setPassword("")
       setSign("Sign In");
+
     } catch (error) {
       console.log(error?.response?.data);
       setSnackBar({

@@ -15,7 +15,9 @@ import { useGSAP } from "@gsap/react";
 import { AuthContext } from "../../../logic/context/AuthContext";
 import gsap from "gsap";
 
+
 export default function AuthMobile() {
+  
   const { sign } = useContext(AuthContext);
 
   useGSAP(() => {
