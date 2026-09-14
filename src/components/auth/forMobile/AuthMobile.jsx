@@ -26,18 +26,24 @@ export default function AuthMobile() {
 
   useEffect(() => {
     if (sign === "Sign Up") {
-      let tl = gsap.timeline();
 
+      let tl = gsap.timeline();
 
       tl.to(".SingIn", {
         opacity: 0,
         duration: 0.2,
-        display: "block",
+        display: "none",
       })
         .to(".base", {
           height: "95%",
           duration: 0.5,
-        })
+        }) 
+        .to(".Logo", {
+          top:0,
+          height: "8rem",
+          width: "8rem",
+          duration: 0.5,
+        },'-=10%' ) 
 
         .to(".SignUp", {
           opacity: 1,
@@ -46,20 +52,29 @@ export default function AuthMobile() {
 
 
     } else {
-      gsap.to(".SignUp", {
+
+     let tl = gsap.timeline();
+      tl.to(".SignUp", {
         opacity: 0,
-        duration: 0.5,
-      });
+        duration: 0.2,
+      })
 
-      gsap.to(".SingIn", {
-        display: "block",
-        duration: 0.5,
-      });
-
-      gsap.to(".base", {
+       .to(".base", {
         height: "75%",
+        duration: 0.5, 
+      }).to(".Logo", {
+          top:50,
+          height: "9.5rem",
+          width: "9.5rem",
+          duration: 0.5,
+        },'-=90%') 
+
+       .to(".SingIn", {
+        display: "block",
+         opacity: 1,
         duration: 0.5,
-      });
+      })
+      
     }
   }, [sign]);
 
@@ -92,11 +107,12 @@ export default function AuthMobile() {
           }}
         >
           <Box
+          className="Logo"
             sx={{
-              height: "8rem",
-              width: "8rem",
+              height: "9.5rem",
+              width: "9.5rem",
               position: "absolute",
-              top: 0,
+              top: 50,
               placeSelf: "center",
             }}
           >
@@ -125,7 +141,7 @@ export default function AuthMobile() {
             <Box className="SignUp" sx={{ height: "100%", width: "100%" }}>
               <SignUpForm />
             </Box>
-            
+
           </Box>
         </Box>
       </Box>
