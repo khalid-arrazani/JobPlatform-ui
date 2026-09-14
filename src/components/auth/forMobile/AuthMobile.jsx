@@ -22,8 +22,11 @@ export default function AuthMobile() {
 
   useEffect(()=>{
       if (sign === "Sign Up") {
-
-
+        
+        gsap.to(".SingIn", {
+         display:"none",
+          duration: 0.5,
+        });
         gsap.to(".base", {
           height: "95%",
           duration: 0.5,
@@ -104,7 +107,9 @@ export default function AuthMobile() {
 
 
 
-            { sign === "Sign In" ? <SignIn className="SingIn" /> : <SignUpForm  className="SignUp"  /> }
+            <SignIn className="SingIn" /> 
+
+            <SignUpForm  className="SignUp" /> 
 
 
 
