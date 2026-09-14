@@ -21,26 +21,41 @@ export default function AuthMobile() {
   useEffect(() => {
     if (sign === "Sign Up") {
 
-      gsap.to(".SingIn", {
+       gsap.to(".SingIn", {
         display: "none",
         duration: 0.5,
       });
+
+      gsap.to(".SignUp", {
+        display: "block",
+        duration: 0.5,
+      });
+
+     
       gsap.to(".base", {
         height: "95%",
         duration: 0.5,
       });
 
+
     } else {
 
-      gsap.to(".SignUp", {
+     gsap.to(".SignUp", {
         display: "none",
         duration: 0.5,
+      }); 
+
+      gsap.to(".SingIn", {
+        display: "block",
+        duration: 0.5,
       });
+      
+      
       gsap.to(".base", {
         height: "75%",
         duration: 0.5,
       });
-      
+
     }
   }, [sign]);
 
