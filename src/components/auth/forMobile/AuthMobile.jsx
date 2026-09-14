@@ -18,33 +18,31 @@ import gsap from "gsap";
 export default function AuthMobile() {
   const { sign } = useContext(AuthContext);
 
+  useEffect(() => {
+    if (sign === "Sign Up") {
 
+      gsap.to(".SingIn", {
+        display: "none",
+        duration: 0.5,
+      });
+      gsap.to(".base", {
+        height: "95%",
+        duration: 0.5,
+      });
 
-  useEffect(()=>{
-      if (sign === "Sign Up") {
-        
-        gsap.to(".SingIn", {
-         display:"none",
-          duration: 0.5,
-        });
-        gsap.to(".base", {
-          height: "95%",
-          duration: 0.5,
-        });
+    } else {
 
-       
-      } else {
-
-        gsap.to(".base", {
-          height: "75%",
-          duration: 0.5,
-        });
-
-
-      }},[sign])
-
-
-
+      gsap.to(".SignUp", {
+        display: "none",
+        duration: 0.5,
+      });
+      gsap.to(".base", {
+        height: "75%",
+        duration: 0.5,
+      });
+      
+    }
+  }, [sign]);
 
   return (
     <>
@@ -87,7 +85,7 @@ export default function AuthMobile() {
           </Box>
 
           <Box
-           className="base"
+            className="base"
             sx={{
               height: "75%",
               width: "100%",
@@ -98,20 +96,22 @@ export default function AuthMobile() {
               borderTop: "solid #b62ced",
               boxSizing: "border-box",
             }}
-            
           >
             <Box sx={{ width: "100%", height: "4rem" }}></Box>
 
 
 
 
+            <Box  className="SingIn" sx={{ height: "100%" ,width:"100%"}}>
+              <SignIn className="SingIn" />
+            </Box>
 
 
-            <SignIn className="SingIn" /> 
-
-            <SignUpForm  className="SignUp" /> 
 
 
+            <Box className="SignUp" sx={{ height: "100%" ,width:"100%"}}>
+              <SignUpForm  />
+            </Box>
 
 
 
