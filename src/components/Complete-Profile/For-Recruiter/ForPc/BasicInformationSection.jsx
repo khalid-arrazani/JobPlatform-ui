@@ -12,10 +12,11 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-import { CompleteProfileR } from "../../../logic/api/CompleteProfile/CompleteProfile";
-import { AuthContext } from "../../../logic/context/AuthContext";
+
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../../../../logic/context/AuthContext";
+import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/CompleteProfile";
 
 export default function BasicInformationSection() {
 

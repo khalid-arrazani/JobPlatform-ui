@@ -9,12 +9,12 @@ import { useAuth } from "../logic/context/AuthContext.jsx";
 export default function CompleteProfilePage() {
 
   const {...state} = useAuth()
-  console.log(state , 5555);
+
 
 
   return (
     <CompleteProfileLayout>
-       {state.user?.user?.role == "jobSeeker" ? <JobSeekerCPPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
+       {state.user?.user?.role == "jobSeeker" ? <RecruiterCPPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
     </CompleteProfileLayout>
 
   );
