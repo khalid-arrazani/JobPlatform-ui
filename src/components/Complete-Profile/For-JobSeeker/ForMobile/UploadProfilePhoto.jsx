@@ -83,10 +83,11 @@ const handleSave = () => {
         <Box>
           <Typography
             sx={{
-              fontSize: "0.9rem",
+              fontSize: "01rem",
               fontWeight: 600,
               color: "#111827",
               mb: "0.3rem",
+              fontFamily:"monospace"
             }}
           >
             Upload profile photo
@@ -94,9 +95,10 @@ const handleSave = () => {
 
           <Typography
             sx={{
-              fontSize: "0.75rem",
+              fontSize: "0.8rem",
               color: "#6b7280",
               mb: "0.5rem",
+              fontFamily:"system-ui"
             }}
           >
             JPG or PNG • Max 2MB
@@ -111,13 +113,14 @@ const handleSave = () => {
               textTransform: "none",
               borderColor: "#d6d3f0",
               color: "#5b21b6",
-              fontWeight: 600,
-              fontSize: "0.72rem",
+              fontWeight: 700,
+              fontSize: "0.8rem",
 
               "&:hover": {
                 borderColor: "#5b21b6",
                 background: "#f8f5ff",
               },
+              fontFamily:"monospace"
             }}
           >
             Choose File

@@ -70,18 +70,20 @@ export default function BasicInformationSection() {
           color: "#5b21b6",
           fontWeight: 600,
           borderRadius: "0.2rem",
-          fontSize: "0.75rem",
+          fontSize: "1rem",
           p: 2,
+          fontFamily:"monospace"
         }}
       />
 
       {/* Title */}
       <Typography
         sx={{
-          fontSize: "1.4rem",
-          fontWeight: 700,
+          fontSize: "1.5rem",
+          fontWeight:600,
           color: "#111827",
           mb: "0.3rem",
+          fontFamily:"system-ui"
         }}
       >
         Basic Information
@@ -90,9 +92,10 @@ export default function BasicInformationSection() {
       {/* Description */}
       <Typography
         sx={{
-          fontSize: "0.82rem",
+          fontSize: "0.87rem",
           color: "#6b7280",
           mb: "1rem",
+          fontFamily:"monospace",fontWeight:600
         }}
       >
         Start by telling us a bit about yourself.
