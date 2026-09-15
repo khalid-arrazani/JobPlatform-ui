@@ -21,6 +21,9 @@ import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/Complete
 
 export default function BasicInformationSection() {
 
+
+  
+
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
