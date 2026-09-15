@@ -2,7 +2,7 @@ import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import BasicInformationSection from "./BasicInformationSection";
 
-export default function JobSeekerCPMobile() {
+export default function RecruiterCPMobile() {
   return (
     <>
       <Box

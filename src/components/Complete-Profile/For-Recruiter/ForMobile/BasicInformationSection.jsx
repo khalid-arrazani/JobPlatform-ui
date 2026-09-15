@@ -1,58 +1,64 @@
-import { Box, Typography, Chip, Button, TextField } from "@mui/material";
-
+import {
+  Box,
+  Typography,
+  Chip,
+  Button,
+  TextField,
+} from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 
+import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
+import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+
 
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { CompleteProfileJS } from "../../../../logic/api/CompleteProfile/CompleteProfile";
 import { AuthContext } from "../../../../logic/context/AuthContext";
+import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/CompleteProfile";
+
 
 export default function BasicInformationSection() {
+
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
   const [photo, setPhoto] = useState("");
 
 
-  const navigate = useNavigate();
-  
-  const {setSnackBar}= useContext(AuthContext)
 
+  const navigate = useNavigate();
+
+  const { setSnackBar } = useContext(AuthContext);
 
   const handleCreateProfile = async () => {
     try {
-     const formData = new FormData();
+      const formData = new FormData();
+      formData.append("fullName", fullName);
+      formData.append("headline", headline);
+      formData.append("location", location);
 
-  formData.append("fullName", fullName);
-  formData.append("headline", headline);
-  formData.append("location", location);
+      
+      if (photo) {
+        formData.append("profileImage", photo, "profile.png");
+      }
 
-    if (photo) {
-      formData.append(
-        "image",
-        photo,
-        "profile.png"
-      );
-    };
-
-    const data =
-      await CompleteProfileJS(formData);
+      const data = await CompleteProfileR(formData);
       console.log(data);
       setSnackBar({
         open: true,
         message: data?.message,
         severity: "success",
       });
-      navigate('/profile')
+
+      navigate("/profile");
     } catch (error) {
-      console.log(error.response.data);
-      
+
+      console.log(error?.response?.data);
       setSnackBar({
         open: true,
-        message: error.response.data?.message,
+        message: error?.response?.data?.message,
         severity: "error",
       });
     }
@@ -62,7 +68,7 @@ export default function BasicInformationSection() {
     <>
       {/* Badge */}
       <Chip
-        label="Job Seeker"
+        label="Recruiter"
         size="small"
         sx={{
           mb: "0.5rem",
@@ -98,16 +104,15 @@ export default function BasicInformationSection() {
           fontFamily:"monospace",fontWeight:600
         }}
       >
-        Start by telling us a bit about yourself.
+        Start by telling us a bit about yourself and your Company
       </Typography>
-
       {/* Upload */}
       <UploadProfilePhoto setPhoto={setPhoto} />
 
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-          sx={{
+           sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
@@ -125,6 +130,17 @@ export default function BasicInformationSection() {
           required
           size="small"
           placeholder="Enter your full name"
+          InputProps={{
+            startAdornment: (
+              <PersonOutlineOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -136,7 +152,7 @@ export default function BasicInformationSection() {
       {/* Bio */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-          sx={{
+         sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
@@ -149,13 +165,11 @@ export default function BasicInformationSection() {
         <TextField
           fullWidth
           onChange={(e) => {
-          setHeadline(e.target.value);
+            setHeadline(e.target.value);
           }}
           required
           multiline
-          rows={3}
           placeholder="Tell us about yourself..."
-
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -167,7 +181,7 @@ export default function BasicInformationSection() {
       {/* Location */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-          sx={{
+           sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
@@ -179,14 +193,23 @@ export default function BasicInformationSection() {
 
         <TextField
           fullWidth
+          size="small"
           onChange={(e) => {
             setLocation(e.target.value);
           }}
-          size="small"
           required
           placeholder="Enter your location"
-          
-          
+          InputProps={{
+            startAdornment: (
+              <LocationOnOutlinedIcon
+                sx={{
+                  mr: "0.5rem",
+                  color: "#9ca3af",
+                  fontSize: "1rem",
+                }}
+              />
+            ),
+          }}
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -195,11 +218,14 @@ export default function BasicInformationSection() {
         />
       </Box>
 
+
+
+
       {/* Button */}
       <Button
         fullWidth
-        onClick={handleCreateProfile}
         variant="contained"
+        onClick={handleCreateProfile}
         sx={{
           height: "3rem",
           borderRadius: "0.5rem",

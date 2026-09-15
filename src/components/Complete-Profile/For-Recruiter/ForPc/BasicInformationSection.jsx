@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../../logic/context/AuthContext";
 import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/CompleteProfile";
 
+
 export default function BasicInformationSection() {
 
   const [fullName, setFullName] = useState("");

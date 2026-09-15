@@ -82,7 +82,7 @@ const handleSave = () => {
         {/* Upload Text */}
         <Box>
           <Typography
-            sx={{
+             sx={{
               fontSize: "01rem",
               fontWeight: 600,
               color: "#111827",
