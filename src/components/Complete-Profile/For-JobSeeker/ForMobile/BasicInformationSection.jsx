@@ -108,10 +108,10 @@ export default function BasicInformationSection() {
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
-            fontSize: "0.82rem",
+            fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",
+            color: "#111827",fontFamily:"system-ui"
           }}
         >
           Full Name*
@@ -137,10 +137,10 @@ export default function BasicInformationSection() {
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
-            fontSize: "0.82rem",
+            fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",
+            color: "#111827",fontFamily:"system-ui"
           }}
         >
           Headline*
@@ -168,10 +168,10 @@ export default function BasicInformationSection() {
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
-            fontSize: "0.82rem",
+            fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",
+            color: "#111827",fontFamily:"system-ui"
           }}
         >
           Location*
@@ -206,7 +206,7 @@ export default function BasicInformationSection() {
 
           textTransform: "none",
           fontWeight: 500,
-          fontSize: "0.9rem",
+          fontSize: "1rem",
 
           background: "#6d28d9",
 
@@ -214,6 +214,7 @@ export default function BasicInformationSection() {
             background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
           },
           mb: "2rem",
+         fontFamily:"monospace",px:4
         }}
       >
         Continue
