@@ -17,7 +17,7 @@ export default function BasicInformationSection() {
   return (
     <>
 
-    
+
       {/* Badge */}
       <Chip
         label="Job Seeker"
@@ -287,7 +287,7 @@ export default function BasicInformationSection() {
           "&:hover": {
             background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
           },
-          mb: "2rem",
+          
           fontFamily: "monospace",
           px: 4,
         }}

@@ -38,18 +38,18 @@ export default function JobSeekerCPMobile() {
 
 
 
-<Box sx={{width:"100%" ,zIndex:-1,boxSizing:"border-box"}}>
+ 
 
-  <img src={recruiter_illustration} width={"100%"} alt="" srcset="" />
-</Box>
+
+
 
           <Box
             sx={{
               width: "100%",
               height: "4.5rem",
-              // borderBottom: "solid 1px #ddd ",
+              borderBottom: "solid 1px #ddd ",
               display:"flex",
-              alignItems:"center",justifyContent:"start",gap:0.8,position:"absolute",top:0
+              alignItems:"center",justifyContent:"center",gap:0.8
             }}
           >
             <img
@@ -73,7 +73,7 @@ export default function JobSeekerCPMobile() {
           </Box>
 
 
-          <Box sx={{height:"auto",width:"100%", boxSizing:"border-box",px:2,py:2,display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
+          <Box sx={{height:"90%",width:"100%", boxSizing:"border-box",px:2,py:2,display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
           <BasicInformationSection/>
           </Box>
            
