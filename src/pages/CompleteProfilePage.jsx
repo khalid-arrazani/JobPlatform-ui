@@ -14,7 +14,7 @@ export default function CompleteProfilePage() {
 
   return (
     <CompleteProfileLayout>
-       {state.user?.user?.role == "jobSeeker" ? <RecruiterCPPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
+       {state.user?.user?.role == "jobSeeker" ? <JobSeekerCPPage/>  : state.user?.user?.role == "recruiter" ? <RecruiterCPPage/> : null }
     </CompleteProfileLayout>
 
   );

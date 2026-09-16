@@ -5,62 +5,19 @@ import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 
 
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { CompleteProfileJS } from "../../../../logic/api/CompleteProfile/CompleteProfile";
-import { AuthContext } from "../../../../logic/context/AuthContext";
+
+import { useCP } from "../../../../logic/context/CPContext";
 
 export default function BasicInformationSection() {
 
   
-  const [fullName, setFullName] = useState("");
-  const [headline, setHeadline] = useState("");
-  const [location, setLocation] = useState("");
-  const [photo, setPhoto] = useState("");
-
-
-  const navigate = useNavigate();
-  
-  const {setSnackBar}= useContext(AuthContext)
-
-
-
-
-  const handleCreateProfile = async () => {
-    try {
-     const formData = new FormData();
-
-  formData.append("fullName", fullName);
-  formData.append("headline", headline);
-  formData.append("location", location);
-
-    if (photo) {
-      formData.append(
-        "image",
-        photo,
-        "profile.png"
-      );
-    };
-
-    const data =
-      await CompleteProfileJS(formData);
-      console.log(data);
-      setSnackBar({
-        open: true,
-        message: data?.message,
-        severity: "success",
-      });
-      navigate('/profile')
-    } catch (error) {
-      console.log(error.response.data);
-      
-      setSnackBar({
-        open: true,
-        message: error.response.data?.message,
-        severity: "error",
-      });
-    }
-  };
+  const {
+      setFullName,
+      setHeadline,
+      setLocation,
+      setPhoto,
+      handleCreateProfileJS,
+    } = useCP();
 
 
 
@@ -201,7 +158,7 @@ export default function BasicInformationSection() {
       {/* Button */}
       <Button
         fullWidth
-        onClick={handleCreateProfile}
+        onClick={handleCreateProfileJS}
         variant="contained"
         sx={{
           height: "3rem",
