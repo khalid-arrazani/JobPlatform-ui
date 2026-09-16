@@ -4,8 +4,11 @@ import {
   useContext,
 
 } from "react";
+import { CompleteProfileR } from "../api/CompleteProfile/CompleteProfile";
+import { AuthContext } from "./AuthContext";
 
-
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -15,6 +18,52 @@ export const CPContext = createContext();
 
 
 export default function CPProvider({ children }) {
+
+   const [fullName, setFullName] = useState("");
+    const [headline, setHeadline] = useState("");
+    const [location, setLocation] = useState("");
+    const [photo, setPhoto] = useState("");
+  
+    const navigate = useNavigate();
+  
+    const { setSnackBar } = useContext(AuthContext);
+
+
+
+    
+  
+    const handleCreateProfile = async () => {
+      try {
+        const formData = new FormData();
+        formData.append("fullName", fullName);
+        formData.append("headline", headline);
+        formData.append("location", location);
+  
+        if (photo) {
+          formData.append("profileImage", photo, "profile.png");
+        }
+  
+        const data = await CompleteProfileR(formData);
+        console.log(data);
+        setSnackBar({
+          open: true,
+          message: data?.message,
+          severity: "success",
+        });
+  
+        navigate("/profile");
+      } catch (error) {
+        console.log(error?.response?.data);
+        setSnackBar({
+          open: true,
+          message: error?.response?.data?.message,
+          severity: "error",
+        });
+      }
+    };
+
+
+
  
 
   return (
