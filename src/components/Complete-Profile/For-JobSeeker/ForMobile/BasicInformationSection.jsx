@@ -5,19 +5,20 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 
 import { useCP } from "../../../../logic/context/CPContext";
 
+import loadingAnimation from "../../../../assets/loginloadingAnimation.json";
+import { Player } from "@lottiefiles/react-lottie-player";
+
 export default function BasicInformationSection() {
   const {
     setFullName,
     setHeadline,
     setLocation,
     setPhoto,
-    handleCreateProfileJS,
+    handleCreateProfileJS,loading,
   } = useCP();
 
   return (
     <>
-
-
       {/* Badge */}
       <Chip
         label="Job Seeker"
@@ -273,6 +274,7 @@ export default function BasicInformationSection() {
       <Button
         fullWidth
         onClick={handleCreateProfileJS}
+        disabled={loading}
         variant="contained"
         sx={{
           height: "3rem",
@@ -287,15 +289,33 @@ export default function BasicInformationSection() {
           "&:hover": {
             background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
           },
-          
+
           fontFamily: "monospace",
           px: 4,
+          position:"relative"
         }}
       >
+        {loading? 
+        <Player
+          autoplay
+          loop
+          src={loadingAnimation}
+          style={{
+            width: "5.5rem",
+            position: "absolute",
+            top: -20,
+            left: "37%",
+          }}
+        /> :
+      
+       <>
+
+
         Continue
         <TrendingFlatOutlinedIcon
           sx={{ position: "relative", right: "-40%" }}
-        />
+        /> </>}
+
       </Button>
     </>
   );

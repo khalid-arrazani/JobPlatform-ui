@@ -3,7 +3,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import * as React from "react";
-import logo from "./../../../assets/Logo/logo.png";
+ 
 import loadingAnimation from "../../../assets/loginloadingAnimation.json";
 
 import { Button, Box, TextField, Typography, Divider } from "@mui/material";

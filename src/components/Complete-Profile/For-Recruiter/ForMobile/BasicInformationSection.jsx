@@ -1,10 +1,13 @@
 import { Box, Typography, Chip, Button, TextField } from "@mui/material";
+import { Player } from "@lottiefiles/react-lottie-player";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
+
+import loadingAnimation from "../../../../assets/loadingAnimation.json";
 
 import { useCP } from "../../../../logic/context/CPContext";
 
@@ -15,6 +18,7 @@ export default function BasicInformationSection() {
     setLocation,
     setPhoto,
     handleCreateProfileR,
+    loading,
   } = useCP();
 
   return (
@@ -63,7 +67,7 @@ export default function BasicInformationSection() {
       {/* Upload */}
       <UploadProfilePhoto setPhoto={setPhoto} />
 
-        {/* Full Name */}
+      {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
           sx={{
@@ -272,6 +276,7 @@ export default function BasicInformationSection() {
       {/* Button */}
       <Button
         fullWidth
+        disabled={loading}
         variant="contained"
         onClick={handleCreateProfileR}
         sx={{
@@ -287,15 +292,31 @@ export default function BasicInformationSection() {
           "&:hover": {
             background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
           },
-  
+
           fontFamily: "monospace",
           px: 4,
         }}
       >
+         {loading? 
+        <Player
+          autoplay
+          loop
+          src={loadingAnimation}
+          style={{
+            width: "5.5rem",
+            position: "absolute",
+            top: -20,
+            left: "37%",
+          }}
+        /> :
+      
+       <>
+
+
         Continue
         <TrendingFlatOutlinedIcon
           sx={{ position: "relative", right: "-40%" }}
-        />
+        /> </>}
       </Button>
     </>
   );

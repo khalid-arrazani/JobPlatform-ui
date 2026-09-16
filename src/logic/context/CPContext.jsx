@@ -30,10 +30,14 @@ export default function CPProvider({ children }) {
 
 
 
+    const [loading , setLoading] = useState(false)
+
+
+
 
   
     const handleCreateProfileR = async () => {
-
+setLoading(true)
       try {
         const formData = new FormData();
         formData.append("fullName", fullName);
@@ -60,11 +64,12 @@ export default function CPProvider({ children }) {
           message: error?.response?.data?.message,
           severity: "error",
         });
-      }
+      }finally{setLoading(false)}
     };
 
 
      const handleCreateProfileJS = async () => {
+      setLoading(true)
         try {
          const formData = new FormData();
     
@@ -97,7 +102,7 @@ export default function CPProvider({ children }) {
             message: error.response.data?.message,
             severity: "error",
           });
-        }
+        }finally{setLoading(false)}
       };
 
 
@@ -111,7 +116,7 @@ export default function CPProvider({ children }) {
        photo, setPhoto,
 
        handleCreateProfileR,
-       handleCreateProfileJS
+       handleCreateProfileJS,loading
       }}
     >
       {children}
