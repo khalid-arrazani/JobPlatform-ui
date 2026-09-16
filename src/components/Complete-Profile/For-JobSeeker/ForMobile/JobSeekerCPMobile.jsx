@@ -16,6 +16,7 @@ export default function JobSeekerCPMobile() {
           alignItems: "center",
         }}
       >
+        
         <Box
           sx={{
             height: "95%",
@@ -24,9 +25,20 @@ export default function JobSeekerCPMobile() {
             borderRadius: "20px",
             border: "solid 1px #837f834b",
             overflow: "auto",
-       
+            zIndex:3,
+            position:"relative"
           }}
         >
+
+
+
+<Box sx={{width:"100%",height:"10rem",bgcolor:"#b247fe",position:"absolute",zIndex:-1}}>
+
+  <img src="" alt="" srcset="" />
+</Box>
+
+
+
 
           <Box
             sx={{
