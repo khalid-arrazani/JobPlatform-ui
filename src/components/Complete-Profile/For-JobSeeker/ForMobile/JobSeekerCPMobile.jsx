@@ -2,6 +2,9 @@ import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import BasicInformationSection from "./BasicInformationSection";
 
+
+import recruiter_illustration from "../../../../assets/recruiter_illustration.png";
+
 export default function JobSeekerCPMobile() {
   return (
     <>
@@ -14,8 +17,10 @@ export default function JobSeekerCPMobile() {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
+          boxSizing:"border-box"
         }}
       >
+
         
         <Box
           sx={{
@@ -27,26 +32,24 @@ export default function JobSeekerCPMobile() {
             overflow: "auto",
             zIndex:3,
             position:"relative"
+            ,boxSizing:"border-box"
           }}
         >
 
 
 
-<Box sx={{width:"100%",height:"10rem",bgcolor:"#b247fe",position:"absolute",zIndex:-1}}>
+<Box sx={{width:"100%" ,zIndex:-1,boxSizing:"border-box"}}>
 
-  <img src="" alt="" srcset="" />
+  <img src={recruiter_illustration} width={"100%"} alt="" srcset="" />
 </Box>
-
-
-
 
           <Box
             sx={{
               width: "100%",
               height: "4.5rem",
-              borderBottom: "solid 1px #ddd ",
+              // borderBottom: "solid 1px #ddd ",
               display:"flex",
-              alignItems:"center",justifyContent:"center",gap:0.8
+              alignItems:"center",justifyContent:"start",gap:0.8,position:"absolute",top:0
             }}
           >
             <img
@@ -70,7 +73,7 @@ export default function JobSeekerCPMobile() {
           </Box>
 
 
-          <Box sx={{height:"90%",width:"100%", boxSizing:"border-box",px:2,py:2,display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
+          <Box sx={{height:"auto",width:"100%", boxSizing:"border-box",px:2,py:2,display:"flex",flexDirection:"column",justifyContent:"space-evenly"}}>
           <BasicInformationSection/>
           </Box>
            
