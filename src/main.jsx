@@ -9,6 +9,7 @@ import ProfileProvider from "./logic/context/profileContext.jsx";
 import JobProvider from "./logic/context/JobContext.jsx";
 import CompanyProvider from "./logic/context/CompanyContext.jsx";
 import ApplyProvider from "./logic/context/ApplyContext.jsx";
+import CPProvider from "./logic/context/CPContext.jsx";
 
 import "./index.css";
 
@@ -28,7 +29,9 @@ createRoot(document.getElementById("root")).render(
           <JobProvider>
             <CompanyProvider>
               <ProfileProvider>
-                <App />
+                <CPProvider> 
+                   <App /> 
+                </CPProvider>
               </ProfileProvider>
             </CompanyProvider>
           </JobProvider>

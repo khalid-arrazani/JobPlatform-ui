@@ -51,9 +51,33 @@ export default function RecruiterCPPage() {
 
   return (
     <>
-      {isMobile && <RecruiterCPMobile />}
+      {isMobile && (
+        <RecruiterCPMobile
+          fullName={fullName}
+          setFullName={setFullName}
+          headline={headline}
+          setHeadline={setHeadline}
+          location={location}
+          setLocation={setLocation}
+          photo={photo}
+          setPhoto={setPhoto}
+          handleCreateProfile={handleCreateProfile}
+        />
+      )}
 
-      {!isMobile && <RecruiterCPPc />}
+      {!isMobile && (
+        <RecruiterCPPc
+          fullName={fullName}
+          setFullName={setFullName}
+          headline={headline}
+          setHeadline={setHeadline}
+          location={location}
+          setLocation={setLocation}
+          photo={photo}
+          setPhoto={setPhoto}
+          handleCreateProfile={handleCreateProfile}
+        />
+      )}
     </>
   );
 }
