@@ -126,7 +126,7 @@ export default function BasicInformationSection() {
           required
           multiline
           placeholder="Tell us about yourself..."
-          rows={3            }
+          rows={3 }
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
