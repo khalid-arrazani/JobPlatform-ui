@@ -84,6 +84,7 @@ setLoading(true)
             "profile.png"
           );
         };
+        
     
         const data =
           await CompleteProfileJS(formData);
