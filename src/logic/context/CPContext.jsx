@@ -79,7 +79,7 @@ setLoading(true)
     
         if (photo) {
           formData.append(
-            "image",
+            "profileImage",
             photo,
             "profile.png"
           );
