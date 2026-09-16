@@ -96,6 +96,8 @@ setLoading(true)
           navigate('/profile')
         } catch (error) {
           console.log(error.response.data);
+          console.log(error.response);
+          console.log(11111);
           
           setSnackBar({
             open: true,
