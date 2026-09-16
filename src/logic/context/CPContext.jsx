@@ -30,9 +30,10 @@ export default function CPProvider({ children }) {
 
 
 
-    
+
   
     const handleCreateProfile = async () => {
+
       try {
         const formData = new FormData();
         formData.append("fullName", fullName);
@@ -64,13 +65,15 @@ export default function CPProvider({ children }) {
 
 
 
- 
 
   return (
     <CPContext.Provider
       value={{
-       
-      
+       fullName, setFullName,
+       headline, setHeadline,
+       location, setLocation,
+       photo, setPhoto,
+       handleCreateProfile
       }}
     >
       {children}

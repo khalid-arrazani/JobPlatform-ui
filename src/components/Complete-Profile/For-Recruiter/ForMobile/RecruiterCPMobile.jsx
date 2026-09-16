@@ -4,15 +4,7 @@ import BasicInformationSection from "./BasicInformationSection";
 
 
 
-export default function RecruiterCPMobile({fullName,
-          setFullName,
-          headline,
-          setHeadline,
-          location,
-          setLocation,
-          photo,
-          setPhoto,
-          handleCreateProfile}) {
+export default function RecruiterCPMobile() {
   return (
     <>
       <Box
