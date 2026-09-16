@@ -4,7 +4,16 @@ import BasicInformationSection from "./BasicInformationSection";
 
 
 
+
 export default function RecruiterCPMobile() {
+
+
+
+
+
+
+
+
   return (
     <>
       <Box

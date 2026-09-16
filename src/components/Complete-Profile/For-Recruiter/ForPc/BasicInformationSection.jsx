@@ -12,60 +12,22 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../logic/context/AuthContext";
-import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/CompleteProfile";
+import { useCP } from "../../../../logic/context/CPContext";
 
 
 export default function BasicInformationSection() {
 
 
   
+   const {
+      setFullName,
+      setHeadline,
+      setLocation,
+      setPhoto,
+      handleCreateProfileR,
+    } = useCP();
 
-  const [fullName, setFullName] = useState("");
-  const [headline, setHeadline] = useState("");
-  const [location, setLocation] = useState("");
-  const [photo, setPhoto] = useState("");
-
-
-
-  const navigate = useNavigate();
-
-  const { setSnackBar } = useContext(AuthContext);
-
-  const handleCreateProfile = async () => {
-    try {
-      const formData = new FormData();
-      formData.append("fullName", fullName);
-      formData.append("headline", headline);
-      formData.append("location", location);
-
-      
-      if (photo) {
-        formData.append("profileImage", photo, "profile.png");
-      }
-
-      const data = await CompleteProfileR(formData);
-      console.log(data);
-      setSnackBar({
-        open: true,
-        message: data?.message,
-        severity: "success",
-      });
-
-      navigate("/profile");
-    } catch (error) {
-
-      console.log(error?.response?.data);
-      setSnackBar({
-        open: true,
-        message: error?.response?.data?.message,
-        severity: "error",
-      });
-    }
-  };
+ 
 
   return (
     <>
@@ -225,7 +187,7 @@ export default function BasicInformationSection() {
       <Button
         fullWidth
         variant="contained"
-        onClick={handleCreateProfile}
+        onClick={handleCreateProfileR}
         sx={{
           height: "3rem",
           borderRadius: "0.5rem",

@@ -4,7 +4,7 @@ import {
   useContext,
 
 } from "react";
-import { CompleteProfileR } from "../api/CompleteProfile/CompleteProfile";
+import { CompleteProfileJS, CompleteProfileR } from "../api/CompleteProfile/CompleteProfile";
 import { AuthContext } from "./AuthContext";
 
 import { useState } from "react";
@@ -32,7 +32,7 @@ export default function CPProvider({ children }) {
 
 
   
-    const handleCreateProfile = async () => {
+    const handleCreateProfileR = async () => {
 
       try {
         const formData = new FormData();
@@ -64,6 +64,42 @@ export default function CPProvider({ children }) {
     };
 
 
+     const handleCreateProfileJS = async () => {
+        try {
+         const formData = new FormData();
+    
+      formData.append("fullName", fullName);
+      formData.append("headline", headline);
+      formData.append("location", location);
+    
+        if (photo) {
+          formData.append(
+            "image",
+            photo,
+            "profile.png"
+          );
+        };
+    
+        const data =
+          await CompleteProfileJS(formData);
+          console.log(data);
+          setSnackBar({
+            open: true,
+            message: data?.message,
+            severity: "success",
+          });
+          navigate('/profile')
+        } catch (error) {
+          console.log(error.response.data);
+          
+          setSnackBar({
+            open: true,
+            message: error.response.data?.message,
+            severity: "error",
+          });
+        }
+      };
+
 
 
   return (
@@ -73,7 +109,9 @@ export default function CPProvider({ children }) {
        headline, setHeadline,
        location, setLocation,
        photo, setPhoto,
-       handleCreateProfile
+
+       handleCreateProfileR,
+       handleCreateProfileJS
       }}
     >
       {children}

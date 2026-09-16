@@ -1,10 +1,4 @@
-import {
-  Box,
-  Typography,
-  Chip,
-  Button,
-  TextField,
-} from "@mui/material";
+import { Box, Typography, Chip, Button, TextField } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import UploadProfilePhoto from "./UploadProfilePhoto";
@@ -12,64 +6,16 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 
-
-import { useContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../../../logic/context/AuthContext";
-import { CompleteProfileR } from "../../../../logic/api/CompleteProfile/CompleteProfile";
-
+import { useCP } from "../../../../logic/context/CPContext";
 
 export default function BasicInformationSection() {
-
-
-  
-
-  const [fullName, setFullName] = useState("");
-  const [headline, setHeadline] = useState("");
-  const [location, setLocation] = useState("");
-  const [photo, setPhoto] = useState("");
-
-
-
-  const navigate = useNavigate();
-
-  const { setSnackBar } = useContext(AuthContext);
-
-  const handleCreateProfile = async () => {
-    try {
-      const formData = new FormData();
-      formData.append("fullName", fullName);
-      formData.append("headline", headline);
-      formData.append("location", location);
-
-      
-      if (photo) {
-        formData.append("profileImage", photo, "profile.png");
-      }
-
-      const data = await CompleteProfileR(formData);
-      console.log(data);
-      setSnackBar({
-        open: true,
-        message: data?.message,
-        severity: "success",
-      });
-
-      navigate("/profile");
-    } catch (error) {
-
-      console.log(error?.response?.data);
-      setSnackBar({
-        open: true,
-        message: error?.response?.data?.message,
-        severity: "error",
-      });
-    }
-  };
-
-
-
-
+  const {
+    setFullName,
+    setHeadline,
+    setLocation,
+    setPhoto,
+    handleCreateProfileR,
+  } = useCP();
 
   return (
     <>
@@ -85,7 +31,7 @@ export default function BasicInformationSection() {
           borderRadius: "0.2rem",
           fontSize: "1rem",
           p: 2,
-          fontFamily:"monospace"
+          fontFamily: "monospace",
         }}
       />
 
@@ -93,10 +39,10 @@ export default function BasicInformationSection() {
       <Typography
         sx={{
           fontSize: "1.5rem",
-          fontWeight:600,
+          fontWeight: 600,
           color: "#111827",
           mb: "0.3rem",
-          fontFamily:"system-ui"
+          fontFamily: "system-ui",
         }}
       >
         Basic Information
@@ -108,7 +54,8 @@ export default function BasicInformationSection() {
           fontSize: "0.87rem",
           color: "#6b7280",
           mb: "1rem",
-          fontFamily:"monospace",fontWeight:600
+          fontFamily: "monospace",
+          fontWeight: 600,
         }}
       >
         Start by telling us a bit about yourself and your Company
@@ -119,11 +66,12 @@ export default function BasicInformationSection() {
       {/* Full Name */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-           sx={{
+          sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",fontFamily:"system-ui"
+            color: "#111827",
+            fontFamily: "system-ui",
           }}
         >
           Full Name*
@@ -159,11 +107,12 @@ export default function BasicInformationSection() {
       {/* Bio */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-         sx={{
+          sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",fontFamily:"system-ui"
+            color: "#111827",
+            fontFamily: "system-ui",
           }}
         >
           Headline*
@@ -177,6 +126,7 @@ export default function BasicInformationSection() {
           required
           multiline
           placeholder="Tell us about yourself..."
+          rows={3            }
           sx={{
             "& .MuiOutlinedInput-root": {
               borderRadius: "0.3rem",
@@ -188,11 +138,12 @@ export default function BasicInformationSection() {
       {/* Location */}
       <Box sx={{ mb: "1rem" }}>
         <Typography
-           sx={{
+          sx={{
             fontSize: "0.88rem",
             fontWeight: 600,
             mb: "0.5rem",
-            color: "#111827",fontFamily:"system-ui"
+            color: "#111827",
+            fontFamily: "system-ui",
           }}
         >
           Location*
@@ -225,14 +176,11 @@ export default function BasicInformationSection() {
         />
       </Box>
 
-
-
-
       {/* Button */}
       <Button
         fullWidth
         variant="contained"
-        onClick={handleCreateProfile}
+        onClick={handleCreateProfileR}
         sx={{
           height: "3rem",
           borderRadius: "0.5rem",
@@ -247,7 +195,8 @@ export default function BasicInformationSection() {
             background: "linear-gradient(135deg,#4c1d95 0%,#5b21b6 100%)",
           },
           mb: "2rem",
-         fontFamily:"monospace",px:4
+          fontFamily: "monospace",
+          px: 4,
         }}
       >
         Continue

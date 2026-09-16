@@ -11,6 +11,8 @@ import { CompleteProfileJS } from "../../../../logic/api/CompleteProfile/Complet
 import { AuthContext } from "../../../../logic/context/AuthContext";
 
 export default function BasicInformationSection() {
+
+  
   const [fullName, setFullName] = useState("");
   const [headline, setHeadline] = useState("");
   const [location, setLocation] = useState("");
@@ -20,6 +22,8 @@ export default function BasicInformationSection() {
   const navigate = useNavigate();
   
   const {setSnackBar}= useContext(AuthContext)
+
+
 
 
   const handleCreateProfile = async () => {
@@ -57,6 +61,8 @@ export default function BasicInformationSection() {
       });
     }
   };
+
+
 
   return (
     <>
