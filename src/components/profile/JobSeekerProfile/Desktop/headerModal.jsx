@@ -11,15 +11,15 @@ import {
 
 import { useState, useEffect } from "react";
 
-import {  updateProfileJS } from "../../../logic/api/profile/GetMe.jsx";
-
-import { useProfile } from "../../../logic/context/profileContext.jsx";
 
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
-import { useAuth } from "../../../logic/context/AuthContext.jsx";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../logic/api/profile/GetMe";
+
 
 export default function headerModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();

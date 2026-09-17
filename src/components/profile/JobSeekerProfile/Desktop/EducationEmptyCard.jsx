@@ -7,9 +7,10 @@ import {
   Paper,
   Divider,
 } from "@mui/material";
-import { useProfile } from "../../../logic/context/profileContext";
+
 
 import EducationModal  from "./EducationModal"
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function EmptyEducationCard() {
   

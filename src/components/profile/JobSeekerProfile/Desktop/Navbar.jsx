@@ -9,7 +9,7 @@ import * as React from "react";
 
 import Drawer from "@mui/material/Drawer";
 
-import logo from "../../../assets/title.png";
+import logo from "../../../../assets/title.png";
 
 export default function Navbar() {
   const [open, setOpen] = React.useState(false);

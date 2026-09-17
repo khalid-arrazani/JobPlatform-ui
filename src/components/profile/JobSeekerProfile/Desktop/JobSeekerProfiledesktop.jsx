@@ -20,10 +20,11 @@ import EmptySocialLinksCard from "./SocialLinksEmptyCard.jsx";
 
 import { useEffect } from "react";
 
-import { getMeJS } from "../../../logic/api/profile/GetMe.jsx";
-import { useProfile } from "../../../logic/context/profileContext.jsx";
+
 
 import LoadingPage from "./LoadingPage.jsx";
+import { useProfile } from "../../../../logic/context/profileContext.jsx";
+import { getMeJS } from "../../../../logic/api/profile/GetMe.jsx";
 
 
 

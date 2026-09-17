@@ -4,13 +4,15 @@ import { Modal, Divider, TextField, Button, IconButton } from "@mui/material";
 import { useState, useEffect } from "react";
 
 import DeleteIcon from "@mui/icons-material/Delete";
-import { updateProfileJS } from "../../../logic/api/profile/GetMe";
-import { useProfile } from "../../../logic/context/profileContext";
+
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../logic/api/profile/GetMe";
+
 
 export default function EducationModal() {
   const { educationOpen , setEducationOpen,dispatch, ...state } = useProfile();

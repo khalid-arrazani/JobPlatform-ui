@@ -5,7 +5,7 @@ import JobDetailsPage from "../components/dashboard/JobDetails/JobDetailspage.js
 import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
 import CompanyPage from "../components/dashboard/Company/CompanyPage.jsx";
 import CreateCompanyPage from "../components/dashboard/CreateCompany/CreateCompanyPage.jsx";
-import LoadingPage from "../components/profile/JobSeekerProfile/LoadingPage.jsx";
+import LoadingPage from "../components/profile/JobSeekerProfile/Desktop/LoadingPage.jsx";
 
 import { useState } from "react";
 import { Routes, Route } from "react-router-dom";

@@ -16,7 +16,8 @@ import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 
 

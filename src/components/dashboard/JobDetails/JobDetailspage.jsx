@@ -10,7 +10,7 @@ import AbouttheCompany from "./AbouttheCompany";
 import { useEffect, useState } from "react";
 import { getJobID } from "../../../logic/api/job/Job";
 
-import LoadingPage from "../../profile/JobSeekerProfile/LoadingPage";
+import LoadingPage from "../../profile/JobSeekerProfile/Desktop/LoadingPage";
 
 export default function JobDetailsPage() {
   const navigate = useNavigate();

@@ -8,8 +8,9 @@ import { useState } from "react";
 
 import UploadProfilePhoto from "./UploadProfilePhoto.jsx";
 import HeaderModal from "./headerModal.jsx";
+import { useProfile } from "../../../../logic/context/profileContext.jsx";
 
-import { useProfile } from "../../../logic/context/profileContext.jsx";
+
 
 export default function Header() {
   const [open, setOpen] = useState(false);

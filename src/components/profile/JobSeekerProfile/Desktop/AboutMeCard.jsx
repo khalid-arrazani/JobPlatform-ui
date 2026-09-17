@@ -16,7 +16,8 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutlineOutlined';
 
 
 import AboutMeModal from "./AboutMeModal.jsx";
-import { useProfile  } from "../../../logic/context/profileContext.jsx";
+import { useProfile } from "../../../../logic/context/profileContext.jsx";
+
 
 export default function AboutMeCard() {
   const {setAboutOpen, ...state  } = useProfile();

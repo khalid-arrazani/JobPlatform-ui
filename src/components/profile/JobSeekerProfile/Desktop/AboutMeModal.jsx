@@ -15,9 +15,10 @@ import {
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-import { updateProfileJS } from "../../../logic/api/profile/GetMe";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../logic/api/profile/GetMe";
+
 
 export default function AboutMeModal() {
   const {aboutOpen , setAboutOpen, dispatch, ...state } = useProfile();

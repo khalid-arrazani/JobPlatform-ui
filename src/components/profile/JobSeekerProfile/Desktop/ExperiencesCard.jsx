@@ -7,7 +7,8 @@ import WorkOutlineIcon from '@mui/icons-material/WorkOutlineOutlined';
 
 import ExperiencesModal from "./experiencesModal";
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 export default function ExperienceCard() {
 

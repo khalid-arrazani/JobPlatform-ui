@@ -11,15 +11,17 @@ import {
 import DeleteIcon from "@mui/icons-material/Delete";
 
 
-import { updateProfileJS } from "../../../logic/api/profile/GetMe.jsx";
+
 
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext.jsx";
-import { useAuth } from "../../../logic/context/AuthContext.jsx";
+
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../logic/api/profile/GetMe";
 
 export default function ExperiencesModal( ) {
   

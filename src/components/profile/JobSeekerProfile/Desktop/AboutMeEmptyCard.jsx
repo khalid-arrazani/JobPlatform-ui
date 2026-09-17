@@ -8,8 +8,9 @@ import {
   Divider,
 } from "@mui/material";
 
-import { useProfile } from "../../../logic/context/profileContext.jsx";
+
 import AboutMeModal from "./AboutMeModal.jsx";
+import { useProfile } from '../../../../logic/context/profileContext.jsx';
 
 
 export default function EmptyAboutCard() {
