@@ -1,4 +1,4 @@
-import { Box,Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 export default function JobSeekerProfileMobile() {
   return (
@@ -80,7 +80,9 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Home</Typography>
+            <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
+              Home
+            </Typography>
           </Box>
 
           <Box
@@ -164,11 +166,13 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Companies</Typography>
+            <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
+              Companies
+            </Typography>
           </Box>
 
-          <Box 
-          sx={{
+          <Box
+            sx={{
               bgcolor: "#faeefd",
 
               display: "flex",
@@ -176,7 +180,8 @@ export default function JobSeekerProfileMobile() {
               alignItems: "center",
               flexDirection: "column",
               gap: 0.5,
-            }}>
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -197,10 +202,13 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Save</Typography>
+            <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
+              Save
+            </Typography>
           </Box>
 
-          <Box sx={{
+          <Box
+            sx={{
               bgcolor: "#faeefd",
 
               display: "flex",
@@ -208,7 +216,8 @@ export default function JobSeekerProfileMobile() {
               alignItems: "center",
               flexDirection: "column",
               gap: 0.5,
-            }}>
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -247,7 +256,9 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Apply</Typography>
+            <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
+              Apply
+            </Typography>
           </Box>
         </Box>
       </Box>
