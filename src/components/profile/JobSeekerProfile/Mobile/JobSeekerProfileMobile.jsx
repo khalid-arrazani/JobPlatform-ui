@@ -80,7 +80,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography>Home</Typography>
+            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Home</Typography>
           </Box>
 
           <Box
@@ -164,7 +164,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography sx={{}}>Companies</Typography>
+            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Companies</Typography>
           </Box>
 
           <Box 
@@ -197,7 +197,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography>Save</Typography>
+            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Save</Typography>
           </Box>
 
           <Box sx={{
@@ -247,7 +247,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography>Apply</Typography>
+            <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>Apply</Typography>
           </Box>
         </Box>
       </Box>
