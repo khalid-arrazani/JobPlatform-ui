@@ -282,7 +282,7 @@ export default function Navbar() {
                 width: 55,
                 height: 55,
               }}
-              sx={{ border: "1px solid #32103993" }}
+             
             />
             <KeyboardArrowDownIcon />
           </IconButton>
