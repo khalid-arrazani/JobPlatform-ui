@@ -58,8 +58,8 @@ export default function JobSeekerProfileMobile() {
               fill="none"
               viewBox="0 0 48 48"
               id="Home-1--Streamline-Plump"
-              height="39"
-              width="39"
+              height="35"
+              width="35"
             >
               <g id="home-1--home-house-roof-shelter">
                 <path
@@ -99,8 +99,8 @@ export default function JobSeekerProfileMobile() {
               fill="none"
               viewBox="0 0 48 48"
               id="Building-Office--Streamline-Plump"
-              height="39"
-              width="39"
+              height="35"
+              width="35"
             >
               <desc>
                 Building Office Streamline Icon: https://streamlinehq.com
@@ -182,8 +182,8 @@ export default function JobSeekerProfileMobile() {
               fill="none"
               viewBox="0 0 48 48"
               id="Bookmark--Streamline-Plump"
-              height="39"
-              width="39"
+              height="35"
+              width="35"
             >
               <desc>Bookmark Streamline Icon: https://streamlinehq.com</desc>
               <g id="bookmark--bookmarks-tags-favorite">
@@ -214,8 +214,8 @@ export default function JobSeekerProfileMobile() {
               fill="none"
               viewBox="0 0 14 14"
               id="Bag-Suitcase-4--Streamline-Flex"
-              height="39"
-              width="39"
+              height="35"
+              width="35"
             >
               <desc>
                 Bag Suitcase 4 Streamline Icon: https://streamlinehq.com
