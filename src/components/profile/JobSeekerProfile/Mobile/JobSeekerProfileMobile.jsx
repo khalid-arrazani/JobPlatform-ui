@@ -164,7 +164,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography>Companies</Typography>
+            <Typography sx={{}}>Companies</Typography>
           </Box>
 
           <Box 
