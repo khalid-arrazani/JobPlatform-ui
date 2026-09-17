@@ -14,7 +14,7 @@ export default function ProfileLayout({children, part, setPart}) {
         padding: 0,
       }}
     >
-    <Box
+    {/* <Box
             sx={{
               width: "100%",
               height: "3rem",
@@ -27,7 +27,7 @@ export default function ProfileLayout({children, part, setPart}) {
             }}
           >
             <Navbar part={part} setPart={setPart} />
-          </Box>
+          </Box> */}
 
        {children}
       
