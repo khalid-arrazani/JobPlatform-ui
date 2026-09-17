@@ -102,7 +102,11 @@ export default function JobSeekerProfileMobile() {
             flex: 1,
             width: "100%",
           }}
-        />
+        >
+
+
+          
+        </Box>
 
         {/* Bottom Navbar */}
         <Box
@@ -345,6 +349,10 @@ export default function JobSeekerProfileMobile() {
             </Typography>
           </Box>
         </Box>
+
+
+
+
       </Box>
     </>
   );
