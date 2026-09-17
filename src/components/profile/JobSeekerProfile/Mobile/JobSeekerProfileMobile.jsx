@@ -43,14 +43,16 @@ export default function JobSeekerProfileMobile() {
           }}
         >
           <Box
-          sx={{
-            bgcolor: "#faeefd",
-            borderBottom: "1px #ddd solid",
-            display: "flex",
-            justifyContent: "space-evenly",
-            alignItems: "center",
-            flexDirection:"column"
-          }}>
+            sx={{
+              bgcolor: "#faeefd",
+
+              display: "flex",
+
+              alignItems: "center",
+              flexDirection: "column",
+              gap: 0.5,
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -78,14 +80,20 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
-            <Typography>
-              Home
-            </Typography>
+            <Typography>Home</Typography>
           </Box>
 
+          <Box
+            sx={{
+              bgcolor: "#faeefd",
 
+              display: "flex",
 
-          <Box>
+              alignItems: "center",
+              flexDirection: "column",
+              gap: 0.5,
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -156,9 +164,19 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
+            <Typography>Companies</Typography>
           </Box>
 
-          <Box>
+          <Box 
+          sx={{
+              bgcolor: "#faeefd",
+
+              display: "flex",
+
+              alignItems: "center",
+              flexDirection: "column",
+              gap: 0.5,
+            }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -179,9 +197,18 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
+            <Typography>Save</Typography>
           </Box>
 
-          <Box>
+          <Box sx={{
+              bgcolor: "#faeefd",
+
+              display: "flex",
+
+              alignItems: "center",
+              flexDirection: "column",
+              gap: 0.5,
+            }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -220,6 +247,7 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
+            <Typography>Apply</Typography>
           </Box>
         </Box>
       </Box>
