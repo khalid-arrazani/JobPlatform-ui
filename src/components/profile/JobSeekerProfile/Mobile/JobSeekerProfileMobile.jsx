@@ -94,6 +94,7 @@ export default function JobSeekerProfileMobile() {
               alignItems: "center",
               flexDirection: "column",
               gap: 0.5,
+              
             }}
           >
             <svg
