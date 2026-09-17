@@ -8,7 +8,7 @@ import {
   Divider,
 } from "@mui/material";
 import TopSkillsModal from "./TopSkillsModal";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function EmptySkillsCard() {
     const {setSkillOpen} = useProfile()

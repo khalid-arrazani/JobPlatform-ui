@@ -9,7 +9,7 @@ import {
 } from "@mui/material";
 
 import SocialLinksModal from "./SocialLinksModal"
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function EmptySocialLinksCard() {
   const { setSocialOpen} = useProfile()

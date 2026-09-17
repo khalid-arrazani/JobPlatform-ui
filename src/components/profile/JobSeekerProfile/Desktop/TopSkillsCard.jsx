@@ -6,7 +6,7 @@ import AutoAwesomeOutlinedIcon from "@mui/icons-material/AutoAwesomeOutlined";
 
 import TopSkillsModal from "./TopSkillsModal";
 
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function TopSkillsCard() {
 

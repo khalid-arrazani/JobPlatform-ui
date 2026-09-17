@@ -6,7 +6,7 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
-import UploadProfilePhoto from "./UploadProfilePhoto";
+import UploadProfilePhoto from "./UploadProfilePhoto.jsx";
 import HeaderModal from "./headerModal.jsx";
 
 import { useProfile } from "../../../logic/context/profileContext.jsx";

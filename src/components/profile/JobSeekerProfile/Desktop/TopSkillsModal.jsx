@@ -10,13 +10,13 @@ import {
 } from "@mui/material";
 
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-import {  updateProfileJS } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../../logic/context/profileContext";
+import {  updateProfileJS } from "../../../../logic/api/profile/GetMe";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
 
 export default function TopSkillsModal() {
 

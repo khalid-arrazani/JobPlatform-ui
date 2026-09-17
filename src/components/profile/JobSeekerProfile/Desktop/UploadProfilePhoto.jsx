@@ -6,10 +6,10 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
-import { ProfileContext } from "../../../logic/context/profileContext.jsx";
+import { ProfileContext } from "../../../../logic/context/profileContext.jsx";
 
-import { useAuth } from "../../../logic/context/AuthContext.jsx";
-import {updateProfilePhotoJS} from "../../../logic/api/profile/GetMe.jsx";
+import { useAuth } from "../../../../logic/context/AuthContext.jsx";
+import {updateProfilePhotoJS} from "../../../../logic/api/profile/GetMe.jsx";
 
 import CircularProgress from "@mui/material/CircularProgress";
 import { green } from "@mui/material/colors";
