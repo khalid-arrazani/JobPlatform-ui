@@ -26,6 +26,7 @@ export default function JobSeekerProfileMobile() {
             justifyContent: "space-between",
             px: 2,
             boxSizing: "border-box",
+            borderRadius:"10px"
           }}
         >
           <IconButton size="small">
