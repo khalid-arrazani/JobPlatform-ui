@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box,Typography } from "@mui/material";
 
 export default function JobSeekerProfileMobile() {
   return (
@@ -42,7 +42,15 @@ export default function JobSeekerProfileMobile() {
             alignItems: "center",
           }}
         >
-          <Box>
+          <Box
+          sx={{
+            bgcolor: "#faeefd",
+            borderBottom: "1px #ddd solid",
+            display: "flex",
+            justifyContent: "space-evenly",
+            alignItems: "center",
+            flexDirection:"column"
+          }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
@@ -70,6 +78,9 @@ export default function JobSeekerProfileMobile() {
                 ></path>
               </g>
             </svg>
+            <Typography>
+              Home
+            </Typography>
           </Box>
 
 
