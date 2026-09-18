@@ -153,11 +153,14 @@ export default function JobSeekerProfileMobile() {
 
           {/* Info */}
           <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",bgcolor:"#dddddd00" }}>
-           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#040510e9"}} >Khalid Arrazani</Typography>
+           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#040407e9"}} >Khalid Arrazani</Typography>
 
+           
            <Typography sx={{fontFamily:"system-ui",fontWeight:450,fontSize:"1rem",color:"#040510c7"}} >Full Stack Web Developer | React • MUI • Node.js • MongoDB • GSAP</Typography>
+           <Typography sx={{fontFamily:"monospace",fontWeight:500,fontSize:"0.9rem",color:"#0405109a",mt:0.5}} >Oulad Berhil , souss-Massa , Morocco</Typography>
+           
           </Box>
-          
+
           
           </Box>
 
