@@ -106,6 +106,7 @@ export default function JobSeekerProfileMobile() {
           sx={{
             flex: 1,
             width: "100%",
+            overflow:"auto"
           }}
         >
           {/* header */}
@@ -345,7 +346,10 @@ export default function JobSeekerProfileMobile() {
                   Add Experience
                 </Button>
               </Box>
-            </Paper><Paper
+            </Paper>
+
+
+            <Paper
               elevation={0}
               sx={{
                 borderRadius: "1rem",
@@ -487,7 +491,10 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
               
-            </Paper><Paper
+            </Paper>
+
+
+            <Paper
               elevation={0}
               sx={{
                 borderRadius: "1rem",
@@ -629,9 +636,6 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
             </Paper>
-
-
-
 
 
 
