@@ -101,6 +101,7 @@ export default function JobSeekerProfileMobile() {
           sx={{
             flex: 1,
             width: "100%",
+            bgcolor:"#ddd"
           }}
         >
 
@@ -121,6 +122,8 @@ export default function JobSeekerProfileMobile() {
             borderRadius: "30px",
             mb: 0.9,
             placeSelf: "center",
+            position:"absolute",
+            bottom:0
           }}
         >
           <Box
