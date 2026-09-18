@@ -104,7 +104,7 @@ export default function JobSeekerProfileMobile() {
           }}
         >
           {/* header */}
-          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box" }}>
+          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",mb:2 }}>
             <Box
               sx={{
                 bgcolor: "#9f55f3",
@@ -149,11 +149,13 @@ export default function JobSeekerProfileMobile() {
 
           {/* lower */}
 
-          <Box sx={{width:"100%", boxSizing: "border-box"}} >  
+          <Box sx={{width:"100%", boxSizing: "border-box",px:2}} >  
 
           {/* Info */}
-          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",bgcolor:"#ddd" }}>
-           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#010315da"}} >Khalid arrazani</Typography>
+          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",bgcolor:"#dddddd00" }}>
+           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#040510e9"}} >Khalid Arrazani</Typography>
+
+           <Typography sx={{fontFamily:"system-ui",fontWeight:450,fontSize:"1rem",color:"#040510c7"}} >Full Stack Web Developer | React • MUI • Node.js • MongoDB • GSAP</Typography>
           </Box>
           
           </Box>
