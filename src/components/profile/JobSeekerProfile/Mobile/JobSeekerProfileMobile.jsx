@@ -101,9 +101,13 @@ export default function JobSeekerProfileMobile() {
           sx={{
             flex: 1,
             width: "100%",
-            bgcolor:"#ddd"
+            
           }}
         >
+          <Box sx={{bgcolor:"#ddd",width:"100%",height:"13rem" }}>
+            
+
+          </Box>
 
 
           
