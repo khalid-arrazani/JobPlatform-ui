@@ -20,18 +20,18 @@ export default function JobSeekerProfileMobile() {
             height: "4.5rem",
             width: "100%",
             bgcolor: "#c571ec30",
-            
+
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
             px: 2,
             boxSizing: "border-box",
-            borderRadius:"18px"
+            borderRadius: "18px",
           }}
         >
           <IconButton size="small">
             <Avatar
-            src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
+              src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
               sx={{
                 width: 45,
                 height: 45,
@@ -45,7 +45,7 @@ export default function JobSeekerProfileMobile() {
             sx={{
               display: "flex",
               alignItems: "center",
-              mr:2
+              mr: 2,
             }}
           >
             <img
@@ -101,16 +101,57 @@ export default function JobSeekerProfileMobile() {
           sx={{
             flex: 1,
             width: "100%",
-            
           }}
         >
-          <Box sx={{bgcolor:"#ddd",width:"100%",height:"13rem" }}>
-            
+          {/* header */}
+          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box" }}>
+            <Box
+              sx={{
+                bgcolor: "#9f55f3",
+                width: "100%",
+                height: "60%",
+                backgroundImage:
+                  "url(https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+            ></Box>
+            <Box
+              sx={{
+                bgcolor: "#fff",
+                width: "100%",
+                height: "40%",
+                position: "relative",
+              }}
+            >
+              <Box
+                sx={{
+                  bgcolor: "#ddd",
+                  height: "6rem",
+                  width: "6rem",
+                  borderRadius: "50%",
+                  position: "absolute",
+                  top: "-2.5rem",
+                  ml: "0.5rem",
+                  border: "solid #fff",
+                }}
+              >
 
+                <Avatar
+                  src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
+                  sx={{ height: "100%", width: "100%" }}
+                />
+
+              </Box>
+
+            </Box>
           </Box>
 
+          {/* Info */}
+          <Box>
+            
+          </Box>
 
-          
         </Box>
 
         {/* Bottom Navbar */}
@@ -126,8 +167,8 @@ export default function JobSeekerProfileMobile() {
             borderRadius: "30px",
             mb: 0.9,
             placeSelf: "center",
-            position:"absolute",
-            bottom:0
+            position: "absolute",
+            bottom: 0,
           }}
         >
           <Box
@@ -356,10 +397,6 @@ export default function JobSeekerProfileMobile() {
             </Typography>
           </Box>
         </Box>
-
-
-
-
       </Box>
     </>
   );
