@@ -158,7 +158,6 @@ export default function JobSeekerProfileMobile() {
           </Box>
 
           {/* lower */}
-
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
             {/* Info */}
             <Box
