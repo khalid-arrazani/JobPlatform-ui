@@ -158,6 +158,7 @@ export default function JobSeekerProfileMobile() {
            <Typography sx={{fontFamily:"system-ui",fontWeight:450,fontSize:"1rem",color:"#040510c7"}} >Full Stack Web Developer | React • MUI • Node.js • MongoDB • GSAP</Typography>
           </Box>
           
+          
           </Box>
 
         </Box>
