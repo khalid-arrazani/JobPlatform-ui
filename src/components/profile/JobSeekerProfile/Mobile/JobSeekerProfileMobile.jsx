@@ -147,9 +147,15 @@ export default function JobSeekerProfileMobile() {
             </Box>
           </Box>
 
+          {/* lower */}
+
+          <Box sx={{width:"100%", boxSizing: "border-box"}} >  
+
           {/* Info */}
-          <Box>
-            
+          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",bgcolor:"#ddd" }}>
+           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#010315da"}} >Khalid arrazani</Typography>
+          </Box>
+          
           </Box>
 
         </Box>
