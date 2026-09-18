@@ -2,6 +2,11 @@ import { Box, Typography, Avatar, IconButton } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
+import WorkOutlineIcon from "@mui/icons-material/WorkOutlineOutlined";
+import AddIcon from "@mui/icons-material/Add";
+
+import { Button, Paper, Divider } from "@mui/material";
+
 export default function JobSeekerProfileMobile() {
   return (
     <>
@@ -104,7 +109,14 @@ export default function JobSeekerProfileMobile() {
           }}
         >
           {/* header */}
-          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",mb:2 }}>
+          <Box
+            sx={{
+              width: "100%",
+              height: "10rem",
+              boxSizing: "border-box",
+              mb: 2,
+            }}
+          >
             <Box
               sx={{
                 bgcolor: "#9f55f3",
@@ -136,34 +148,494 @@ export default function JobSeekerProfileMobile() {
                   border: "solid #fff",
                 }}
               >
-
                 <Avatar
                   src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
                   sx={{ height: "100%", width: "100%" }}
                 />
-
               </Box>
-
             </Box>
           </Box>
 
           {/* lower */}
 
-          <Box sx={{width:"100%", boxSizing: "border-box",px:2}} >  
+          <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
+            {/* Info */}
+            <Box
+              sx={{
+                width: "100%",
+                height: "10rem",
+                boxSizing: "border-box",
+                bgcolor: "#dddddd00",
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  fontWeight: 500,
+                  fontSize: "1.5rem",
+                  color: "#040407e9",
+                }}
+              >
+                Khalid Arrazani
+              </Typography>
 
-          {/* Info */}
-          <Box sx={{ width: "100%", height: "10rem", boxSizing: "border-box",bgcolor:"#dddddd00" }}>
-           <Typography sx={{fontFamily:"system-ui",fontWeight:500,fontSize:"1.5rem",color:"#040407e9"}} >Khalid Arrazani</Typography>
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  fontWeight: 450,
+                  fontSize: "1rem",
+                  color: "#040510c7",
+                }}
+              >
+                Full Stack Web Developer | React • MUI • Node.js • MongoDB •
+                GSAP
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 500,
+                  fontSize: "0.9rem",
+                  color: "#0405109a",
+                  mt: 0.5,
+                }}
+              >
+                Oulad Berhil , souss-Massa , Morocco
+              </Typography>
+            </Box>
 
-           
-           <Typography sx={{fontFamily:"system-ui",fontWeight:450,fontSize:"1rem",color:"#040510c7"}} >Full Stack Web Developer | React • MUI • Node.js • MongoDB • GSAP</Typography>
-           <Typography sx={{fontFamily:"monospace",fontWeight:500,fontSize:"0.9rem",color:"#0405109a",mt:0.5}} >Oulad Berhil , souss-Massa , Morocco</Typography>
-           
+
+            <Paper
+              elevation={0}
+              sx={{
+                borderRadius: "1rem",
+                p: "1rem",
+
+                width: "100%",
+
+                boxSizing: "border-box",
+                border: "1px dashed #ddd",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  pb:1
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      borderRadius: "50%",
+                      bgcolor: "#eef4ff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                    >
+                      <g id="motion-photos-on">
+                        <path
+                          id="Union"
+                          fill="#000000c8"
+                          d="M12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.3775 0.27949 -2.69283 0.78516 -3.88965l1.84179 0.7793C4.22359 9.84449 4 10.8948 4 12c0 4.4183 3.58172 8 8 8 4.4183 0 8 -3.5817 8 -8 0 -4.41828 -3.5817 -8 -8 -8 -1.1052 0 -2.15551 0.22359 -3.11035 0.62695l-0.7793 -1.84179C9.30717 2.27949 10.6225 2 12 2M5.5 4C6.32843 4 7 4.67157 7 5.5S6.32843 7 5.5 7 4 6.32843 4 5.5 4.67157 4 5.5 4"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+
+                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                </Box>
+
+                <Button
+                  // onClick={()=>{setExperienceOpen(true)}}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="24"
+                    width="24"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Vector"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 0.5v13"
+                        stroke-width="0.8"
+                      ></path>
+                      <path
+                        id="Vector_2"
+                        stroke="#000000f8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M0.5 6.95996h13"
+                        stroke-width="0.8"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              <Divider />
+
+              <Box
+                sx={{
+                  pt: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                
+
+                <Typography
+                  variant="h5"
+                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                >
+                  No experience added yet
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    maxWidth: 500,fontFamily:"monospace",
+                    
+                    color: "#00000077",
+                    fontSize:"0.8rem"
+                  }}
+                >
+                  Add your work experience to highlight your professional
+                  journey.
+                </Typography>
+
+                <Button
+                  startIcon={<AddIcon />}
+                  // onClick={()=>{setExperienceOpen(true)}}
+
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 400,
+                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                  }}
+                >
+                  Add Experience
+                </Button>
+              </Box>
+            </Paper><Paper
+              elevation={0}
+              sx={{
+                borderRadius: "1rem",
+                p: "1rem",
+
+                width: "100%",
+
+                boxSizing: "border-box",
+                border: "1px dashed #ddd",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  pb:1
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      borderRadius: "50%",
+                      bgcolor: "#eef4ff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                    >
+                      <g id="motion-photos-on">
+                        <path
+                          id="Union"
+                          fill="#000000c8"
+                          d="M12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.3775 0.27949 -2.69283 0.78516 -3.88965l1.84179 0.7793C4.22359 9.84449 4 10.8948 4 12c0 4.4183 3.58172 8 8 8 4.4183 0 8 -3.5817 8 -8 0 -4.41828 -3.5817 -8 -8 -8 -1.1052 0 -2.15551 0.22359 -3.11035 0.62695l-0.7793 -1.84179C9.30717 2.27949 10.6225 2 12 2M5.5 4C6.32843 4 7 4.67157 7 5.5S6.32843 7 5.5 7 4 6.32843 4 5.5 4.67157 4 5.5 4"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+
+                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                </Box>
+
+                <Button
+                  // onClick={()=>{setExperienceOpen(true)}}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="24"
+                    width="24"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Vector"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 0.5v13"
+                        stroke-width="0.8"
+                      ></path>
+                      <path
+                        id="Vector_2"
+                        stroke="#000000f8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M0.5 6.95996h13"
+                        stroke-width="0.8"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              <Divider />
+
+              <Box
+                sx={{
+                  pt: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                
+
+                <Typography
+                  variant="h5"
+                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                >
+                  No experience added yet
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    maxWidth: 500,fontFamily:"monospace",
+                    
+                    color: "#00000077",
+                    fontSize:"0.8rem"
+                  }}
+                >
+                  Add your work experience to highlight your professional
+                  journey.
+                </Typography>
+
+                <Button
+                  startIcon={<AddIcon />}
+                  // onClick={()=>{setExperienceOpen(true)}}
+
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 400,
+                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                  }}
+                >
+                  Add Experience
+                </Button>
+              </Box>
+              
+            </Paper><Paper
+              elevation={0}
+              sx={{
+                borderRadius: "1rem",
+                p: "1rem",
+
+                width: "100%",
+
+                boxSizing: "border-box",
+                border: "1px dashed #ddd",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  pb:1
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      borderRadius: "50%",
+                      bgcolor: "#eef4ff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="24"
+                      width="24"
+                    >
+                      <g id="motion-photos-on">
+                        <path
+                          id="Union"
+                          fill="#000000c8"
+                          d="M12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.3775 0.27949 -2.69283 0.78516 -3.88965l1.84179 0.7793C4.22359 9.84449 4 10.8948 4 12c0 4.4183 3.58172 8 8 8 4.4183 0 8 -3.5817 8 -8 0 -4.41828 -3.5817 -8 -8 -8 -1.1052 0 -2.15551 0.22359 -3.11035 0.62695l-0.7793 -1.84179C9.30717 2.27949 10.6225 2 12 2M5.5 4C6.32843 4 7 4.67157 7 5.5S6.32843 7 5.5 7 4 6.32843 4 5.5 4.67157 4 5.5 4"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+
+                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                </Box>
+
+                <Button
+                  // onClick={()=>{setExperienceOpen(true)}}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="24"
+                    width="24"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Vector"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 0.5v13"
+                        stroke-width="0.8"
+                      ></path>
+                      <path
+                        id="Vector_2"
+                        stroke="#000000f8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M0.5 6.95996h13"
+                        stroke-width="0.8"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              <Divider />
+
+              <Box
+                sx={{
+                  pt: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                
+
+                <Typography
+                  variant="h5"
+                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                >
+                  No experience added yet
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    maxWidth: 500,fontFamily:"monospace",
+                    
+                    color: "#00000077",
+                    fontSize:"0.8rem"
+                  }}
+                >
+                  Add your work experience to highlight your professional
+                  journey.
+                </Typography>
+
+                <Button
+                  startIcon={<AddIcon />}
+                  // onClick={()=>{setExperienceOpen(true)}}
+
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 400,
+                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                  }}
+                >
+                  Add Experience
+                </Button>
+              </Box>
+            </Paper>
+
+
+
+
+
+
           </Box>
-
-          
-          </Box>
-
         </Box>
 
         {/* Bottom Navbar */}
