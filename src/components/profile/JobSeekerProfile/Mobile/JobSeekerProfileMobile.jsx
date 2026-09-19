@@ -210,9 +210,9 @@ export default function JobSeekerProfileMobile() {
 
                 boxSizing: "border-box",
                 mb: 3,
-                borderBottom: "1px #ddd solid",
-                borderTop: "1px #ddd solid",
-                py: 1,
+                borderBottom: "1px #b72bfd3d solid",
+                borderTop: "1px #b72bfd3d solid",
+                py:2,
               }}
             >
               {/* Availability */}
@@ -575,7 +575,7 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                   bgcolor: "#d4c4da48",
                   px: 1,
-                  mb: 1,
+                  
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
