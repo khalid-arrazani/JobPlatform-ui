@@ -203,6 +203,36 @@ export default function JobSeekerProfileMobile() {
               </Typography>
             </Box>
 
+            <Box
+              sx={{
+                borderRadius: "1rem",
+                p: "1rem",
+
+                width: "100%",
+
+                boxSizing: "border-box",
+                border: "1px dashed #ddd",
+                mb: 3,
+              }}
+            >
+
+              <Typography
+                variant="h6"
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.2rem",
+                }}
+              >
+                Availability
+                
+              </Typography>
+
+
+
+
+            </Box>
+
             {/* About me */}
             <Paper
               elevation={0}
@@ -215,7 +245,6 @@ export default function JobSeekerProfileMobile() {
                 boxSizing: "border-box",
                 border: "1px dashed #ddd",
                 mb: 3,
-          
               }}
             >
               <Box
