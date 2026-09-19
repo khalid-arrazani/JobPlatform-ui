@@ -277,6 +277,27 @@ export default function JobSeekerProfileMobile() {
               >
                 full-time
               </Typography>
+
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.1rem",
+                  fontWeight:600
+                }}
+              >
+                Languages
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily:"monospace",
+                  color: "#3e157b9f",
+                  fontSize: "0.88rem",
+                  pb: 1,
+                }}
+              >
+                Arabic - english - spanich - germany
+              </Typography>
             </Box>
 
             {/* About me */}
