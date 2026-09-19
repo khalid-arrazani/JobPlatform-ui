@@ -106,7 +106,7 @@ export default function JobSeekerProfileMobile() {
           sx={{
             flex: 1,
             width: "100%",
-            overflow:"auto"
+            overflow: "auto",
           }}
         >
           {/* header */}
@@ -203,6 +203,7 @@ export default function JobSeekerProfileMobile() {
               </Typography>
             </Box>
 
+            
 
             <Paper
               elevation={0}
@@ -214,6 +215,7 @@ export default function JobSeekerProfileMobile() {
 
                 boxSizing: "border-box",
                 border: "1px dashed #ddd",
+                mb: 3,
               }}
             >
               <Box
@@ -221,7 +223,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  pb:1
+                  pb: 1,
                 }}
               >
                 <Box
@@ -258,7 +260,12 @@ export default function JobSeekerProfileMobile() {
                     </svg>
                   </Box>
 
-                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                  >
+                    Experience
+                  </Typography>
                 </Box>
 
                 <Button
@@ -310,11 +317,9 @@ export default function JobSeekerProfileMobile() {
                   textAlign: "center",
                 }}
               >
-                
-
                 <Typography
                   variant="h5"
-                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
                 >
                   No experience added yet
                 </Typography>
@@ -322,10 +327,11 @@ export default function JobSeekerProfileMobile() {
                 <Typography
                   color="text.secondary"
                   sx={{
-                    maxWidth: 500,fontFamily:"monospace",
-                    
+                    maxWidth: 500,
+                    fontFamily: "monospace",
+
                     color: "#00000077",
-                    fontSize:"0.8rem"
+                    fontSize: "0.8rem",
                   }}
                 >
                   Add your work experience to highlight your professional
@@ -339,13 +345,17 @@ export default function JobSeekerProfileMobile() {
                   sx={{
                     textTransform: "none",
                     fontWeight: 400,
-                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                    fontFamily: "system-ui",
+                    border: "1px solid #ddd",
+                    mt: 2,
+                    borderRadius: "15px",
                   }}
                 >
                   Add Experience
                 </Button>
               </Box>
             </Paper>
+
 
 
             <Paper
@@ -358,6 +368,7 @@ export default function JobSeekerProfileMobile() {
 
                 boxSizing: "border-box",
                 border: "1px dashed #ddd",
+                mb: 3,
               }}
             >
               <Box
@@ -365,7 +376,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  pb:1
+                  pb: 1,
                 }}
               >
                 <Box
@@ -378,7 +389,7 @@ export default function JobSeekerProfileMobile() {
                   <Box
                     sx={{
                       borderRadius: "50%",
-                      bgcolor: "#eef4ff",
+
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -387,22 +398,82 @@ export default function JobSeekerProfileMobile() {
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
-                      viewBox="0 0 24 24"
+                      viewBox="0 0 48 48"
+                      id="Global-Learning--Streamline-Plump"
                       height="24"
                       width="24"
                     >
-                      <g id="motion-photos-on">
+                      <desc>
+                        Global Learning Streamline Icon:
+                        https://streamlinehq.com
+                      </desc>
+                      <g id="global-learning--global-learning-education">
                         <path
-                          id="Union"
-                          fill="#000000c8"
-                          d="M12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.3775 0.27949 -2.69283 0.78516 -3.88965l1.84179 0.7793C4.22359 9.84449 4 10.8948 4 12c0 4.4183 3.58172 8 8 8 4.4183 0 8 -3.5817 8 -8 0 -4.41828 -3.5817 -8 -8 -8 -1.1052 0 -2.15551 0.22359 -3.11035 0.62695l-0.7793 -1.84179C9.30717 2.27949 10.6225 2 12 2M5.5 4C6.32843 4 7 4.67157 7 5.5S6.32843 7 5.5 7 4 6.32843 4 5.5 4.67157 4 5.5 4"
-                          stroke-width="1"
+                          id="Vector 144"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3.42969 28.5H13.7511"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Vector 145"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M3.42969 15.334H40.5725"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Vector 2536"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m18 32.502 0 12.0625"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Ellipse 19"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M30.5725 22c0 -11.0457 -3.8375 -20 -8.5714 -20s-8.5714 8.9543 -8.5714 20c0 2.2754 0.1628 4.4621 0.4628 6.5001"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Ellipse 18"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M41.7765 25c0.1472 -0.9786 0.2235 -1.9804 0.2235 -3 0 -11.0457 -8.9543 -20 -20 -20S2 10.9543 2 22c0 7.8085 4.47484 14.5718 11 17.8654"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Rectangle 1097"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M19.0055 33.9581c-1.3433 -0.6057 -1.3433 -2.3055 0 -2.9112 1.143 -0.5154 2.6524 -1.1677 4.5949 -1.9569 3.1146 -1.2653 5.3631 -2.0782 6.7454 -2.5505 1.0762 -0.3678 2.2331 -0.3678 3.3092 0 1.3824 0.4723 3.6308 1.2852 6.7454 2.5505 1.9426 0.7892 3.452 1.4415 4.5949 1.9569 1.3433 0.6057 1.3433 2.3055 0 2.9112 -1.1429 0.5155 -2.6523 1.1677 -4.5949 1.9569 -3.1146 1.2653 -5.363 2.0782 -6.7454 2.5506 -1.0761 0.3677 -2.233 0.3677 -3.3092 0 -1.3823 -0.4724 -3.6308 -1.2853 -6.7454 -2.5506 -1.9425 -0.7892 -3.4519 -1.4414 -4.5949 -1.9569Z"
+                          stroke-width="3"
+                        ></path>
+                        <path
+                          id="Subtract"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M23.5 35.874v3.0866c0 1.5888 0.0648 2.7105 0.1425 3.4845 0.1025 1.0215 0.6811 1.8929 1.6177 2.3133 1.2676 0.569 3.462 1.2439 6.7398 1.2439 3.2778 0 5.4722 -0.6749 6.7398 -1.2439 0.9366 -0.4204 1.5152 -1.2918 1.6177 -2.3133 0.0777 -0.774 0.1425 -1.8957 0.1425 -3.4845l0 -3.0862"
+                          stroke-width="3"
                         ></path>
                       </g>
                     </svg>
                   </Box>
 
-                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                  >
+                    Education
+                  </Typography>
                 </Box>
 
                 <Button
@@ -454,26 +525,24 @@ export default function JobSeekerProfileMobile() {
                   textAlign: "center",
                 }}
               >
-                
-
                 <Typography
                   variant="h5"
-                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
                 >
-                  No experience added yet
+                  No education added yet
                 </Typography>
 
                 <Typography
                   color="text.secondary"
                   sx={{
-                    maxWidth: 500,fontFamily:"monospace",
-                    
+                    maxWidth: 500,
+                    fontFamily: "monospace",
+
                     color: "#00000077",
-                    fontSize:"0.8rem"
+                    fontSize: "0.8rem",
                   }}
                 >
-                  Add your work experience to highlight your professional
-                  journey.
+                  Add your education to showcase your academic background.
                 </Typography>
 
                 <Button
@@ -483,14 +552,19 @@ export default function JobSeekerProfileMobile() {
                   sx={{
                     textTransform: "none",
                     fontWeight: 400,
-                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                    fontFamily: "system-ui",
+                    border: "1px solid #ddd",
+                    mt: 2,
+                    borderRadius: "15px",
                   }}
                 >
-                  Add Experience
+                  Add Education
                 </Button>
               </Box>
-              
             </Paper>
+
+
+
 
 
             <Paper
@@ -510,7 +584,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  pb:1
+                  pb: 1,
                 }}
               >
                 <Box
@@ -547,7 +621,12 @@ export default function JobSeekerProfileMobile() {
                     </svg>
                   </Box>
 
-                  <Typography variant="h6" sx={{fontFamily:"system-ui",color:"#0b0317d8"}} >Experience</Typography>
+                  <Typography
+                    variant="h6"
+                    sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                  >
+                    Experience
+                  </Typography>
                 </Box>
 
                 <Button
@@ -599,11 +678,9 @@ export default function JobSeekerProfileMobile() {
                   textAlign: "center",
                 }}
               >
-                
-
                 <Typography
                   variant="h5"
-                  sx={{ color: "#000000af",fontFamily:"monospace",mb:0.6 }}
+                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
                 >
                   No experience added yet
                 </Typography>
@@ -611,10 +688,11 @@ export default function JobSeekerProfileMobile() {
                 <Typography
                   color="text.secondary"
                   sx={{
-                    maxWidth: 500,fontFamily:"monospace",
-                    
+                    maxWidth: 500,
+                    fontFamily: "monospace",
+
                     color: "#00000077",
-                    fontSize:"0.8rem"
+                    fontSize: "0.8rem",
                   }}
                 >
                   Add your work experience to highlight your professional
@@ -628,16 +706,16 @@ export default function JobSeekerProfileMobile() {
                   sx={{
                     textTransform: "none",
                     fontWeight: 400,
-                    fontFamily:"system-ui",border:"1px solid #ddd",mt:2,borderRadius:"15px"
+                    fontFamily: "system-ui",
+                    border: "1px solid #ddd",
+                    mt: 2,
+                    borderRadius: "15px",
                   }}
                 >
                   Add Experience
                 </Button>
               </Box>
             </Paper>
-
-
-
           </Box>
         </Box>
 
