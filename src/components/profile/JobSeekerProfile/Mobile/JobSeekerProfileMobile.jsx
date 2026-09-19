@@ -228,7 +228,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
-                  py: 0.5,
+                  py: 0.9,
                 }}
               >
                 <Box
@@ -299,7 +299,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
-                  py: 0.5,
+                  py: 0.9,
                 }}
               >
                 <Box
@@ -493,7 +493,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
-                  py: 0.5,
+                  py:0.9,
                 }}
               >
                 <Box
@@ -579,7 +579,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
-                  py: 0.5,
+                  py: 0.9,
                 }}
               >
                 <Box
