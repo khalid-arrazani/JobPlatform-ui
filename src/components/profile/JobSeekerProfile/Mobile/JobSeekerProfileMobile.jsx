@@ -215,191 +215,278 @@ export default function JobSeekerProfileMobile() {
                 py: 1,
               }}
             >
-              <Typography
+              {/* Availability */}
+              <Box
                 sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
+                  width: "100%",
+                  border: "1px solid #ddd",
+                  borderRadius: "15px",
+                  boxSizing: "border-box",
+                  bgcolor: "#d4c4da48",
+                  px: 1,
+                  mb: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  py: 0.5,
                 }}
               >
-                Availability
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                immediately
-              </Typography>
+                <Box
+                  sx={{
+                    bgcolor: "#9340f123",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    height: "3rem",
+                    width: "3rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Clock-Two--Streamline-Unicons-Thinline"
+                    height="35"
+                    width="35"
+                  >
+                    <desc>
+                      Clock Two Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path
+                      d="M9.565133333333332 6.711599999999999 8.333333333333332 7.422533333333334V4.666666666666666c0 -0.18407999999999997 -0.14926666666666666 -0.3333333333333333 -0.3333333333333333 -0.3333333333333333s-0.3333333333333333 0.14925333333333332 -0.3333333333333333 0.3333333333333333v3.333333333333333c0.0003333333333333333 0.1839333333333333 0.14939999999999998 0.33299999999999996 0.3333333333333333 0.3333333333333333 0.05853333333333333 0 0.11606666666666667 -0.015533333333333333 0.16666666666666666 -0.04493333333333333l1.7318 -1c0.15926666666666667 -0.092 0.21373333333333333 -0.2957333333333333 0.12173333333333333 -0.4550666666666666 -0.09206666666666666 -0.15933333333333333 -0.29579999999999995 -0.21378666666666668 -0.4550666666666666 -0.12173333333333333ZM8 1.3333333333333333C4.318113333333333 1.3333333333333333 1.3333333333333333 4.318113333333333 1.3333333333333333 8c0 3.6818666666666666 2.9847799999999998 6.666666666666666 6.666666666666666 6.666666666666666 3.680066666666667 -0.004333333333333333 6.662333333333333 -2.9865999999999997 6.666666666666666 -6.666666666666666 0 -3.6818866666666663 -2.9848 -6.666666666666666 -6.666666666666666 -6.666666666666666Zm0 12.666666666666666c-3.31372 0 -6 -2.6862666666666666 -6 -6 0 -3.31372 2.68628 -6 6 -6 3.3122 0.00362 5.9963999999999995 2.6877866666666663 6 6 0 3.3137333333333334 -2.6862666666666666 6 -6 6Z"
+                      fill="#1c0674ee"
+                      stroke-width="0.6667"
+                    ></path>
+                  </svg>
+                </Box>
 
-              <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Experience Level
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                junior
-              </Typography>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      color: "#0b0317d8",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      pb: 0.5,
+                    }}
+                  >
+                    Availability
+                  </Typography>
 
-              <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Preferred Job Type
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                full-time
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Languages
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                Arabic - english - spanich - germany
-              </Typography>
-            </Box>
-
-            <Box
-              sx={{
-                width: "100%",
-
-                boxSizing: "border-box",
-                mb: 3,
-                borderBottom: "1px #ddd solid",
-                borderTop: "1px #ddd solid",
-                py: 1,
-              }}
-            >
-              <Box> 
-                <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Availability
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                immediately
-              </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#3e157b9f",
+                      fontSize: "0.88rem",
+                    }}
+                  >
+                    immediately
+                  </Typography>
+                </Box>
               </Box>
-              <Box> <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Experience Level
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                junior
-              </Typography></Box>
 
+              {/* Experience Level */}
+              <Box
+                sx={{
+                  width: "100%",
+                  border: "1px solid #ddd",
+                  borderRadius: "15px",
+                  boxSizing: "border-box",
+                  bgcolor: "#d4c4da48",
+                  px: 1,
+                  mb: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  py: 0.5,
+                }}
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#9340f123",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    height: "3rem",
+                    width: "3rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Clock-Two--Streamline-Unicons-Thinline"
+                    height="35"
+                    width="35"
+                  >
+                    <desc>
+                      Clock Two Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path
+                      d="M9.565133333333332 6.711599999999999 8.333333333333332 7.422533333333334V4.666666666666666c0 -0.18407999999999997 -0.14926666666666666 -0.3333333333333333 -0.3333333333333333 -0.3333333333333333s-0.3333333333333333 0.14925333333333332 -0.3333333333333333 0.3333333333333333v3.333333333333333c0.0003333333333333333 0.1839333333333333 0.14939999999999998 0.33299999999999996 0.3333333333333333 0.3333333333333333 0.05853333333333333 0 0.11606666666666667 -0.015533333333333333 0.16666666666666666 -0.04493333333333333l1.7318 -1c0.15926666666666667 -0.092 0.21373333333333333 -0.2957333333333333 0.12173333333333333 -0.4550666666666666 -0.09206666666666666 -0.15933333333333333 -0.29579999999999995 -0.21378666666666668 -0.4550666666666666 -0.12173333333333333ZM8 1.3333333333333333C4.318113333333333 1.3333333333333333 1.3333333333333333 4.318113333333333 1.3333333333333333 8c0 3.6818666666666666 2.9847799999999998 6.666666666666666 6.666666666666666 6.666666666666666 3.680066666666667 -0.004333333333333333 6.662333333333333 -2.9865999999999997 6.666666666666666 -6.666666666666666 0 -3.6818866666666663 -2.9848 -6.666666666666666 -6.666666666666666 -6.666666666666666Zm0 12.666666666666666c-3.31372 0 -6 -2.6862666666666666 -6 -6 0 -3.31372 2.68628 -6 6 -6 3.3122 0.00362 5.9963999999999995 2.6877866666666663 6 6 0 3.3137333333333334 -2.6862666666666666 6 -6 6Z"
+                      fill="#1c0674ee"
+                      stroke-width="0.6667"
+                    ></path>
+                  </svg>
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      color: "#0b0317d8",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      pb: 0.5,
+                    }}
+                  >
+                    Experience Level
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#3e157b9f",
+                      fontSize: "0.88rem",
+                    }}
+                  >
+                    junior
+                  </Typography>
+                </Box>
+              </Box>
 
-              <Box><Typography
+              {/* Preferred Job Type */}
+              <Box
                 sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
+                  width: "100%",
+                  border: "1px solid #ddd",
+                  borderRadius: "15px",
+                  boxSizing: "border-box",
+                  bgcolor: "#d4c4da48",
+                  px: 1,
+                  mb: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  py: 0.5,
                 }}
               >
-                Preferred Job Type
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                full-time
-              </Typography></Box>
-              <Box><Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  color: "#0b0317d8",
-                  fontSize: "1.1rem",
-                  fontWeight: 600,
-                }}
-              >
-                Languages
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  color: "#3e157b9f",
-                  fontSize: "0.88rem",
-                  pb: 1,
-                }}
-              >
-                Arabic - english - spanich - germany
-              </Typography></Box>
+                <Box
+                  sx={{
+                    bgcolor: "#9340f123",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    height: "3rem",
+                    width: "3rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Clock-Two--Streamline-Unicons-Thinline"
+                    height="35"
+                    width="35"
+                  >
+                    <path
+                      d="M9.565133333333332 6.711599999999999 8.333333333333332 7.422533333333334V4.666666666666666c0 -0.18407999999999997 -0.14926666666666666 -0.3333333333333333 -0.3333333333333333 -0.3333333333333333s-0.3333333333333333 0.14925333333333332 -0.3333333333333333 0.3333333333333333v3.333333333333333c0.0003333333333333333 0.1839333333333333 0.14939999999999998 0.33299999999999996 0.3333333333333333 0.3333333333333333 0.05853333333333333 0 0.11606666666666667 -0.015533333333333333 0.16666666666666666 -0.04493333333333333l1.7318 -1c0.15926666666666667 -0.092 0.21373333333333333 -0.2957333333333333 0.12173333333333333 -0.4550666666666666 -0.09206666666666666 -0.15933333333333333 -0.29579999999999995 -0.21378666666666668 -0.4550666666666666 -0.12173333333333333ZM8 1.3333333333333333C4.318113333333333 1.3333333333333333 1.3333333333333333 4.318113333333333 1.3333333333333333 8c0 3.6818666666666666 2.9847799999999998 6.666666666666666 6.666666666666666 6.666666666666666 3.680066666666667 -0.004333333333333333 6.662333333333333 -2.9865999999999997 6.666666666666666 -6.666666666666666 0 -3.6818866666666663 -2.9848 -6.666666666666666 -6.666666666666666 -6.666666666666666Zm0 12.666666666666666c-3.31372 0 -6 -2.6862666666666666 -6 -6 0 -3.31372 2.68628 -6 6 -6 3.3122 0.00362 5.9963999999999995 2.6877866666666663 6 6 0 3.3137333333333334 -2.6862666666666666 6 -6 6Z"
+                      fill="#1c0674ee"
+                      stroke-width="0.6667"
+                    ></path>
+                  </svg>
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      color: "#0b0317d8",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      pb: 0.5,
+                    }}
+                  >
+                    Preferred Job Type
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#3e157b9f",
+                      fontSize: "0.88rem",
+                    }}
+                  >
+                    full-time
+                  </Typography>
+                </Box>
+              </Box>
 
-
+              {/* Languages */}
+              <Box
+                sx={{
+                  width: "100%",
+                  border: "1px solid #ddd",
+                  borderRadius: "15px",
+                  boxSizing: "border-box",
+                  bgcolor: "#d4c4da48",
+                  px: 1,
+                  mb: 1,
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 1,
+                  py: 0.5,
+                }}
+              >
+                <Box
+                  sx={{
+                    bgcolor: "#9340f123",
+                    display: "flex",
+                    alignItems: "center",
+                    borderRadius: "10px",
+                    height: "3rem",
+                    width: "3rem",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg
+                    viewBox="0 0 16 16"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Clock-Two--Streamline-Unicons-Thinline"
+                    height="35"
+                    width="35"
+                  >
+                    <path
+                      d="M9.565133333333332 6.711599999999999 8.333333333333332 7.422533333333334V4.666666666666666c0 -0.18407999999999997 -0.14926666666666666 -0.3333333333333333 -0.3333333333333333 -0.3333333333333333s-0.3333333333333333 0.14925333333333332 -0.3333333333333333 0.3333333333333333v3.333333333333333c0.0003333333333333333 0.1839333333333333 0.14939999999999998 0.33299999999999996 0.3333333333333333 0.3333333333333333 0.05853333333333333 0 0.11606666666666667 -0.015533333333333333 0.16666666666666666 -0.04493333333333333l1.7318 -1c0.15926666666666667 -0.092 0.21373333333333333 -0.2957333333333333 0.12173333333333333 -0.4550666666666666 -0.09206666666666666 -0.15933333333333333 -0.29579999999999995 -0.21378666666666668 -0.4550666666666666 -0.12173333333333333ZM8 1.3333333333333333C4.318113333333333 1.3333333333333333 1.3333333333333333 4.318113333333333 1.3333333333333333 8c0 3.6818666666666666 2.9847799999999998 6.666666666666666 6.666666666666666 6.666666666666666 3.680066666666667 -0.004333333333333333 6.662333333333333 -2.9865999999999997 6.666666666666666 -6.666666666666666 0 -3.6818866666666663 -2.9848 -6.666666666666666 -6.666666666666666 -6.666666666666666Zm0 12.666666666666666c-3.31372 0 -6 -2.6862666666666666 -6 -6 0 -3.31372 2.68628 -6 6 -6 3.3122 0.00362 5.9963999999999995 2.6877866666666663 6 6 0 3.3137333333333334 -2.6862666666666666 6 -6 6Z"
+                      fill="#1c0674ee"
+                      stroke-width="0.6667"
+                    ></path>
+                  </svg>
+                </Box>
+                <Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      color: "#0b0317d8",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      pb: 0.5,
+                    }}
+                  >
+                    Languages
+                  </Typography>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#3e157b9f",
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    Arabic - english - spanich - germany
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
-
-
 
             {/* About me */}
             <Paper
