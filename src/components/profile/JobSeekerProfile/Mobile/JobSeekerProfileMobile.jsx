@@ -163,7 +163,7 @@ export default function JobSeekerProfileMobile() {
             <Box
               sx={{
                 width: "100%",
-                height: "10rem",
+                height: "8rem",
                 boxSizing: "border-box",
                 bgcolor: "#dddddd00",
               }}
@@ -206,31 +206,73 @@ export default function JobSeekerProfileMobile() {
             <Box
               sx={{
                 borderRadius: "1rem",
-                p: "1rem",
 
                 width: "100%",
 
                 boxSizing: "border-box",
-                border: "1px dashed #ddd",
+
                 mb: 3,
               }}
             >
-
               <Typography
-                variant="h6"
                 sx={{
                   fontFamily: "system-ui",
                   color: "#0b0317d8",
-                  fontSize: "1.2rem",
+                  fontSize: "1.3rem",
                 }}
               >
                 Availability
-                
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#3e157b9f",
+                  fontSize: "1rem",
+                  pb: 2,
+                }}
+              >
+                immediately
               </Typography>
 
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                Experience Level
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#3e157b9f",
+                  fontSize: "1rem",
+                  pb: 2,
+                }}
+              >
+                junior
+              </Typography>
 
-
-
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.3rem",
+                }}
+              >
+                Preferred Job Type
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#3e157b9f",
+                  fontSize: "1rem",
+                  pb: 2,
+                }}
+              >
+                full-time
+              </Typography>
             </Box>
 
             {/* About me */}
