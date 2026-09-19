@@ -300,6 +300,107 @@ export default function JobSeekerProfileMobile() {
               </Typography>
             </Box>
 
+            <Box
+              sx={{
+                width: "100%",
+
+                boxSizing: "border-box",
+                mb: 3,
+                borderBottom: "1px #ddd solid",
+                borderTop: "1px #ddd solid",
+                py: 1,
+              }}
+            >
+              <Box> 
+                <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.1rem",
+                  fontWeight: 600,
+                }}
+              >
+                Availability
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#3e157b9f",
+                  fontSize: "0.88rem",
+                  pb: 1,
+                }}
+              >
+                immediately
+              </Typography>
+              </Box>
+              <Box> <Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.1rem",
+                  fontWeight: 600,
+                }}
+              >
+                Experience Level
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#3e157b9f",
+                  fontSize: "0.88rem",
+                  pb: 1,
+                }}
+              >
+                junior
+              </Typography></Box>
+
+
+              <Box><Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.1rem",
+                  fontWeight: 600,
+                }}
+              >
+                Preferred Job Type
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#3e157b9f",
+                  fontSize: "0.88rem",
+                  pb: 1,
+                }}
+              >
+                full-time
+              </Typography></Box>
+              <Box><Typography
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1.1rem",
+                  fontWeight: 600,
+                }}
+              >
+                Languages
+              </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#3e157b9f",
+                  fontSize: "0.88rem",
+                  pb: 1,
+                }}
+              >
+                Arabic - english - spanich - germany
+              </Typography></Box>
+
+
+            </Box>
+
+
+
             {/* About me */}
             <Paper
               elevation={0}
