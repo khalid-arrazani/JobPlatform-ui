@@ -206,13 +206,13 @@ export default function JobSeekerProfileMobile() {
             {/* more info */}
             <Box
               sx={{
-                borderRadius: "1rem",
-
                 width: "100%",
 
                 boxSizing: "border-box",
-
                 mb: 3,
+                borderBottom: "1px #ddd solid",
+                borderTop: "1px #ddd solid",
+                py: 1,
               }}
             >
               <Typography
@@ -220,14 +220,14 @@ export default function JobSeekerProfileMobile() {
                   fontFamily: "system-ui",
                   color: "#0b0317d8",
                   fontSize: "1.1rem",
-                  fontWeight:600
+                  fontWeight: 600,
                 }}
               >
                 Availability
               </Typography>
               <Typography
                 sx={{
-                  fontFamily:"monospace",
+                  fontFamily: "monospace",
                   color: "#3e157b9f",
                   fontSize: "0.88rem",
                   pb: 1,
@@ -241,14 +241,14 @@ export default function JobSeekerProfileMobile() {
                   fontFamily: "system-ui",
                   color: "#0b0317d8",
                   fontSize: "1.1rem",
-                  fontWeight:600
+                  fontWeight: 600,
                 }}
               >
                 Experience Level
               </Typography>
               <Typography
                 sx={{
-                  fontFamily:"monospace",
+                  fontFamily: "monospace",
                   color: "#3e157b9f",
                   fontSize: "0.88rem",
                   pb: 1,
@@ -262,14 +262,14 @@ export default function JobSeekerProfileMobile() {
                   fontFamily: "system-ui",
                   color: "#0b0317d8",
                   fontSize: "1.1rem",
-                  fontWeight:600
+                  fontWeight: 600,
                 }}
               >
                 Preferred Job Type
               </Typography>
               <Typography
                 sx={{
-                  fontFamily:"monospace",
+                  fontFamily: "monospace",
                   color: "#3e157b9f",
                   fontSize: "0.88rem",
                   pb: 1,
@@ -283,14 +283,14 @@ export default function JobSeekerProfileMobile() {
                   fontFamily: "system-ui",
                   color: "#0b0317d8",
                   fontSize: "1.1rem",
-                  fontWeight:600
+                  fontWeight: 600,
                 }}
               >
                 Languages
               </Typography>
               <Typography
                 sx={{
-                  fontFamily:"monospace",
+                  fontFamily: "monospace",
                   color: "#3e157b9f",
                   fontSize: "0.88rem",
                   pb: 1,
