@@ -215,6 +215,7 @@ export default function JobSeekerProfileMobile() {
                 boxSizing: "border-box",
                 border: "1px dashed #ddd",
                 mb: 3,
+          
               }}
             >
               <Box
