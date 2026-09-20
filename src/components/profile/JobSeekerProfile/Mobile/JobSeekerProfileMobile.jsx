@@ -212,7 +212,7 @@ export default function JobSeekerProfileMobile() {
                 mb: 3,
                 borderBottom: "1px #b72bfd3d solid",
                 borderTop: "1px #b72bfd3d solid",
-                py:2,
+                py: 2,
               }}
             >
               {/* Availability */}
@@ -493,7 +493,7 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
-                  py:0.9,
+                  py: 0.9,
                 }}
               >
                 <Box
@@ -575,7 +575,7 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                   bgcolor: "#d4c4da48",
                   px: 1,
-                  
+
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
@@ -662,7 +662,6 @@ export default function JobSeekerProfileMobile() {
                 </Box>
               </Box>
             </Box>
-            
 
             {/* About me */}
             <Paper
@@ -706,34 +705,35 @@ export default function JobSeekerProfileMobile() {
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
                       viewBox="0 0 24 24"
-                      id="Info-Circle--Streamline-Solar"
+                      id="Messages-People-Person-Bubble-Circle-1--Streamline-Ultimate"
                       height="24"
                       width="24"
                     >
                       <desc>
-                        Info Circle Streamline Icon: https://streamlinehq.com
+                        Messages People Person Bubble Circle 1 Streamline Icon:
+                        https://streamlinehq.com
                       </desc>
-                      <g id="Line Duotone/Essentional UI/Info Circle">
-                        <path
-                          id="Vector"
-                          stroke="#0a0a0a"
-                          d="M12 22c5.5228 0 10 -4.4772 10 -10 0 -5.52285 -4.4772 -10 -10 -10C6.47715 2 2 6.47715 2 12c0 5.5228 4.47715 10 10 10Z"
-                          stroke-width="1.5"
-                        ></path>
-                        <path
-                          id="Vector_2"
-                          stroke="#000000"
-                          stroke-linecap="round"
-                          d="M12 17v-6"
-                          stroke-width="1.5"
-                        ></path>
-                        <path
-                          id="Vector_3"
-                          fill="#000000"
-                          d="M12 7c0.5523 0 1 0.44772 1 1s-0.4477 1 -1 1 -1 -0.44772 -1 -1 0.4477 -1 1 -1Z"
-                          stroke-width="1.5"
-                        ></path>
-                      </g>
+                      <path
+                        stroke="#000000af"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M18 0.74994c-1.0086 -0.004896 -1.9971 0.28223 -2.8461 0.82673 -0.849 0.54449 -1.5222 1.32308 -1.9385 2.24178 -0.4163 0.91871 -0.5577 1.93826 -0.4073 2.93559 0.1504 0.99733 0.5862 1.92982 1.2549 2.6849l-0.657 3.77996 3.423 -2.111c0.7204 0.1661 1.4677 0.1779 2.1929 0.0349 0.7253 -0.143 1.4122 -0.4376 2.0156 -0.8647 0.6034 -0.427 1.1098 -0.97674 1.4859 -1.61316 0.3761 -0.63641 0.6135 -1.34512 0.6965 -2.07968 0.083 -0.73457 0.0099 -1.47838 -0.2146 -2.1827 -0.2246 -0.70432 -0.5954 -1.35323 -1.0883 -1.90419 -0.4928 -0.55097 -1.0966 -0.99155 -1.7716 -1.29287C19.4703 0.904185 18.7392 0.748939 18 0.74994Z"
+                        stroke-width="1.5"
+                      ></path>
+                      <path
+                        stroke="#000000af"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.375 13.125c0 0.8951 0.35558 1.7535 0.98851 2.3865 0.63294 0.6329 1.49138 0.9885 2.38649 0.9885 0.89511 0 1.75355 -0.3556 2.38649 -0.9885 0.63293 -0.633 0.98851 -1.4914 0.98851 -2.3865 0 -0.8951 -0.35558 -1.7535 -0.98851 -2.3865C8.50355 10.1056 7.64511 9.75 6.75 9.75c-0.89511 0 -1.75355 0.3556 -2.38649 0.9885 -0.63293 0.633 -0.98851 1.4914 -0.98851 2.3865Z"
+                        stroke-width="1.5"
+                      ></path>
+                      <path
+                        stroke="#000000af"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M12.75 23.25c-0.1954 -1.4528 -0.9112 -2.7854 -2.0146 -3.7503 -1.10345 -0.965 -2.51953 -1.4969 -3.9854 -1.4969 -1.46587 0 -2.88195 0.5319 -3.98538 1.4969C1.66118 20.4646 0.945351 21.7972 0.75 23.25"
+                        stroke-width="1.5"
+                      ></path>
                     </svg>
                   </Box>
 
@@ -1530,9 +1530,6 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
             </Paper>
-
-
-
           </Box>
         </Box>
 
