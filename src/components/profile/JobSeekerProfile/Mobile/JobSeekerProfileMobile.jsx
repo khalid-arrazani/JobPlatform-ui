@@ -11,6 +11,12 @@ import { useState } from "react";
 
 export default function JobSeekerProfileMobile() {
   const [open , setOpen] = useState(false)
+  const onClose = ()=>{
+
+    setOpen(false)
+  
+  }
+  console.log(open);
   return (
     <>
       <Box
@@ -45,13 +51,15 @@ export default function JobSeekerProfileMobile() {
                 height: 45,
               }}
             />
-            
+
             <KeyboardArrowRightIcon />
 
-            <Drawer onClose={() => setOpen(false)} open={open} anchor="left" >
-              <MainList toggleDrawer={setOpen} />
-            </Drawer>
+           
+
           </IconButton>
+           <Drawer onClose={onClose} open={open} anchor="left" >
+              <MainList/>
+            </Drawer>
 
           {/* Logo */}
           <Box
