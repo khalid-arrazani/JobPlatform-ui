@@ -1,4 +1,4 @@
-import { Box, Typography, Avatar, IconButton } from "@mui/material";
+import { Box, Typography, Avatar, IconButton,Drawer } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -6,8 +6,11 @@ import WorkOutlineIcon from "@mui/icons-material/WorkOutlineOutlined";
 import AddIcon from "@mui/icons-material/Add";
 
 import { Button, Paper, Divider } from "@mui/material";
+import MainList from "./mainList";
+import { useState } from "react";
 
 export default function JobSeekerProfileMobile() {
+  const [open , setOpen] = useState(false)
   return (
     <>
       <Box
@@ -34,7 +37,7 @@ export default function JobSeekerProfileMobile() {
             borderRadius: "18px",
           }}
         >
-          <IconButton size="small">
+          <IconButton onClick={()=>{setOpen(true)}}  size="small">
             <Avatar
               src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
               sx={{
@@ -42,7 +45,12 @@ export default function JobSeekerProfileMobile() {
                 height: 45,
               }}
             />
+            
             <KeyboardArrowRightIcon />
+
+            <Drawer onClose={() => setOpen(false)} open={open} anchor="left" >
+              <MainList toggleDrawer={setOpen} />
+            </Drawer>
           </IconButton>
 
           {/* Logo */}
