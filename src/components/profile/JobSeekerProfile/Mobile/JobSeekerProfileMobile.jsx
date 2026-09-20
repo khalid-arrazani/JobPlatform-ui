@@ -266,7 +266,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "system-ui",
                       color: "#0b0317d8",
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                       fontWeight: 600,
                       pb: 0.5,
                     }}
@@ -278,7 +278,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "monospace",
                       color: "#3e157b9f",
-                      fontSize: "0.88rem",
+                      fontSize: "0.8rem",
                     }}
                   >
                     immediately
@@ -461,7 +461,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "system-ui",
                       color: "#0b0317d8",
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                       fontWeight: 600,
                       pb: 0.5,
                     }}
@@ -472,7 +472,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "monospace",
                       color: "#3e157b9f",
-                      fontSize: "0.88rem",
+                      fontSize: "0.8rem",
                     }}
                   >
                     junior
@@ -547,7 +547,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "system-ui",
                       color: "#0b0317d8",
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                       fontWeight: 600,
                       pb: 0.5,
                     }}
@@ -558,7 +558,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "monospace",
                       color: "#3e157b9f",
-                      fontSize: "0.88rem",
+                      fontSize: "0.8rem",
                     }}
                   >
                     full-time
@@ -643,7 +643,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       fontFamily: "system-ui",
                       color: "#0b0317d8",
-                      fontSize: "1.1rem",
+                      fontSize: "1rem",
                       fontWeight: 600,
                       pb: 0.5,
                     }}
@@ -662,6 +662,7 @@ export default function JobSeekerProfileMobile() {
                 </Box>
               </Box>
             </Box>
+            
 
             {/* About me */}
             <Paper
@@ -1372,7 +1373,7 @@ export default function JobSeekerProfileMobile() {
 
                 boxSizing: "border-box",
                 border: "1px dashed #ddd",
-                mb: 3,
+                mb: 13,
               }}
             >
               <Box
@@ -1529,6 +1530,9 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
             </Paper>
+
+
+
           </Box>
         </Box>
 
