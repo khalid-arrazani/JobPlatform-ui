@@ -16,7 +16,7 @@ export default function JobSeekerProfileMobile() {
     setOpen(false)
   
   }
-  console.log(open);
+  
   return (
     <>
       <Box
