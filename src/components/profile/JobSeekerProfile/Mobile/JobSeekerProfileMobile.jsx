@@ -231,6 +231,7 @@ export default function JobSeekerProfileMobile() {
                   <Box  sx={{width:"100%",height:"5rem",borderBottom:"solid #ddd", display:"flex",alignItems:"center"}}>
                    <Typography  sx={{fontFamily:'monospace',fontSize:"1.3rem"}} >Edit Profile Info</Typography>
                   </Box>
+
                 </Box>
               </Modal>
             </Box>
