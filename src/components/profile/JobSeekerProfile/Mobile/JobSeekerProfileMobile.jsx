@@ -172,6 +172,7 @@ export default function JobSeekerProfileMobile() {
                 />
               </Box>
 
+             {/* open edit info modal */}
               <Button
           
                 sx={{
@@ -206,6 +207,9 @@ export default function JobSeekerProfileMobile() {
                   </g>
                 </svg>
               </Button>
+
+
+
             </Box>
           </Box>
 
