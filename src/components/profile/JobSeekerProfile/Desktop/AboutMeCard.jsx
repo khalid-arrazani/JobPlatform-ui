@@ -22,8 +22,6 @@ import { useProfile } from "../../../../logic/context/profileContext.jsx";
 export default function AboutMeCard() {
   const {setAboutOpen, ...state  } = useProfile();
 
-
-
   const sx = {
     borderRadius: "0.5rem",
     fontWeight: 500,
