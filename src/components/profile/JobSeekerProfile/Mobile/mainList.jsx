@@ -11,7 +11,6 @@ import {
   Divider,
 } from "@mui/material";
 
-
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
@@ -19,26 +18,21 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { Logout } from "../../../../logic/api/auth/auth";
 import { useProfile } from "../../../../logic/context/profileContext";
 
-
 export default function MainList() {
   const navigate = useNavigate();
   const { ...state } = useProfile();
 
+  const handleLogout = async () => {
+    try {
+      const data = await Logout();
+      console.log(data);
 
-
-  const handleLogout = async()=>{
-  try{
-    const data = await Logout()
-    console.log(data);
-    
-    navigate("/login") 
-
-  }catch(error){
-    console.log(error);
-  }
-  }
+      navigate("/login");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
-
     <>
       <Box
         sx={{
@@ -67,12 +61,16 @@ export default function MainList() {
             }}
           />
 
-          <Typography variant="h6" sx={{ mt: 1, fontWeight: "bold",fontFamily: "monospace"}}>
-           {state.user?.profile?.fullName}
+          <Typography
+            variant="h6"
+            sx={{ mt: 1, fontWeight: "bold", fontFamily: "monospace" }}
+          >
+            {state.user?.profile?.fullName} Khalid Arrazani
           </Typography>
 
           <Typography variant="body2" sx={{ opacity: 0.7 }}>
-            {state.user?.profile?.headline}
+            {state.user?.profile?.headline}Full Stack Web Developer | React •
+            MUI • Node.js • MongoDB • GSAP
           </Typography>
         </Box>
 
@@ -80,31 +78,37 @@ export default function MainList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton
-            onClick={() => navigate("/")}
+              onClick={() => navigate("/")}
               sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
             >
               <ListItemIcon sx={{ color: "white" }}>
-                <HomeIcon  />
+                <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary="Home" />
+
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.4rem" }}>
+                Home
+              </Typography>
             </ListItemButton>
           </ListItem>
 
           <ListItem disablePadding>
             <ListItemButton
-             onClick={() => navigate("/profile")}
+              onClick={() => navigate("/profile")}
               sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
             >
               <ListItemIcon sx={{ color: "white" }}>
                 <PersonIcon />
               </ListItemIcon>
-              <ListItemText primary="My Profile" />
+
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.4rem" }}>
+                My Profile
+              </Typography>
             </ListItemButton>
           </ListItem>
 
           <ListItem disablePadding>
             <ListItemButton
-            onClick={() => navigate("/AccountSettings")}
+              onClick={() => navigate("/AccountSettings")}
               sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
             >
               <ListItemIcon sx={{ color: "white" }}>
@@ -121,7 +125,7 @@ export default function MainList() {
         <List>
           <ListItem disablePadding>
             <ListItemButton
-            onClick={handleLogout}
+              onClick={handleLogout}
               sx={{ "&:hover": { background: "rgba(255,0,0,0.1)" } }}
             >
               <ListItemIcon sx={{ color: "#f87171" }}>
