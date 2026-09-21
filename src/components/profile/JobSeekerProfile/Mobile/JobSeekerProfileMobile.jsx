@@ -196,8 +196,8 @@ export default function JobSeekerProfileMobile() {
                   display: "flex",
                   gap: 1,
                 }}
-                onClick={()=>{
-                  setOpenModal(true)
+                onClick={() => {
+                  setOpenModal(true);
                 }}
               >
                 Edit Info
@@ -222,16 +222,41 @@ export default function JobSeekerProfileMobile() {
                 </svg>
               </Button>
 
-
               {/* modal edit info */}
 
-              <Modal open={openModal} onClose={onClose} sx={{placeContent:"center"}} >
-                <Box sx={{height:"100%",width:"100vw",bgcolor:"#f4edf5"}}>
+              <Modal
+                open={openModal}
+                onClose={onClose}
+                sx={{ placeContent: "center" }}
+              >
+                <Box
+                  sx={{ height: "100%", width: "100vw", bgcolor: "#f4edf5",px:1,boxSizing:"border-box" }}
+                >
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: "5rem",
+                      borderBottom: "solid #ddd",
+                      display: "flex",
+                      alignItems: "center",
+                      gap:2
+                    }}
+                  >
 
-                  <Box  sx={{width:"100%",height:"5rem",borderBottom:"solid #ddd", display:"flex",alignItems:"center"}}>
-                   <Typography  sx={{fontFamily:'monospace',fontSize:"1.3rem"}} >Edit Profile Info</Typography>
+
+                    
+
+                    <Typography
+                      sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}
+                    >
+                      Edit Profile Info
+                    </Typography>
+
+                  
+
+
+
                   </Box>
-
                 </Box>
               </Modal>
             </Box>
