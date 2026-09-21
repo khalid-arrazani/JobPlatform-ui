@@ -2,7 +2,7 @@ import { Box, Typography, Avatar, IconButton,Drawer } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-import WorkOutlineIcon from "@mui/icons-material/WorkOutlineOutlined";
+
 import AddIcon from "@mui/icons-material/Add";
 
 import { Button, Paper, Divider } from "@mui/material";
