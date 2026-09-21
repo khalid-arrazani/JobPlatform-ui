@@ -52,7 +52,7 @@ export default function MainList() {
           }}
         >
           <Avatar
-            src={state.user?.profile?.ProfileImage?.url}
+            src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
             sx={{
               width: 80,
               height: 80,
@@ -85,7 +85,7 @@ export default function MainList() {
                 <HomeIcon />
               </ListItemIcon>
 
-              <Typography sx={{ fontFamily: "monospace", fontSize: "1.4rem" }}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
                 Home
               </Typography>
             </ListItemButton>
@@ -100,7 +100,7 @@ export default function MainList() {
                 <PersonIcon />
               </ListItemIcon>
 
-              <Typography sx={{ fontFamily: "monospace", fontSize: "1.4rem" }}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
                 My Profile
               </Typography>
             </ListItemButton>
@@ -114,7 +114,10 @@ export default function MainList() {
               <ListItemIcon sx={{ color: "white" }}>
                 <SettingsIcon />
               </ListItemIcon>
-              <ListItemText primary="Account Settings" />
+
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
+                Account Settings
+              </Typography>
             </ListItemButton>
           </ListItem>
         </List>
