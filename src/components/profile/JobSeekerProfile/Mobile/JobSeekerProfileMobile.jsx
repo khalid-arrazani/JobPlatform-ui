@@ -222,16 +222,16 @@ export default function JobSeekerProfileMobile() {
                 </svg>
               </Button>
 
+
+              {/* modal edit info */}
+
               <Modal open={openModal} onClose={onClose} sx={{placeContent:"center"}} >
                 <Box sx={{height:"100%",width:"100vw",bgcolor:"#f4edf5"}}>
 
-                  <Box  sx={{width:"100%",height:"5rem",borderBottom:"solid #ddd"}}>
-                   
+                  <Box  sx={{width:"100%",height:"5rem",borderBottom:"solid #ddd", display:"flex",alignItems:"center"}}>
+                   <Typography  sx={{fontFamily:'monospace',fontSize:"1.3rem"}} >Edit Profile Info</Typography>
 
                   </Box>
-
-
-
                 </Box>
               </Modal>
             </Box>
