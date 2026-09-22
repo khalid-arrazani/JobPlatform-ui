@@ -101,7 +101,7 @@ export default function EditInfoModal({ setOpen, open }) {
             </Button>
           </Box>
 
-          <Box sx={{ flex: 1, pt: 4 }}>
+          <Box sx={{ flex: 1, pt: 4 ,flexDirection:"column" }}>
             {/* full name */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
@@ -729,8 +729,12 @@ export default function EditInfoModal({ setOpen, open }) {
                 />
               </Box>
             </Box>
+
+            <Box sx={{bgcolor:"#ddd",height:"5rem",width:"50%" ,marginTop:"auto"}} ></Box>
           </Box>
+
           
+
         </Box>
       </Modal>
     </>
