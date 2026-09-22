@@ -32,7 +32,7 @@ export default function EditInfoModal({ setOpen, open }) {
             }}
           >
             <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
-              Edit Profile Info
+              Edit Profile
             </Typography>
 
             <Button
@@ -60,6 +60,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
           <Box sx={{ flex: 1 ,pt:4}}>
 
+            {/* full name */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -203,6 +204,7 @@ export default function EditInfoModal({ setOpen, open }) {
               </Box>
             </Box>
 
+             {/* headLine */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -349,6 +351,7 @@ export default function EditInfoModal({ setOpen, open }) {
               </Box>
             </Box>
 
+             {/* location */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -466,6 +469,7 @@ export default function EditInfoModal({ setOpen, open }) {
                 />
               </Box>
             </Box>
+            
           </Box>
         </Box>
       </Modal>
