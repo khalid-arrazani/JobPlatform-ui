@@ -58,8 +58,7 @@ export default function EditInfoModal({ setOpen, open }) {
             </Button>
           </Box>
 
-          <Box sx={{ flex: 1 ,pt:4}}>
-
+          <Box sx={{ flex: 1, pt: 4 }}>
             {/* full name */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
@@ -204,7 +203,7 @@ export default function EditInfoModal({ setOpen, open }) {
               </Box>
             </Box>
 
-             {/* headLine */}
+             {/* Headline */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -220,7 +219,6 @@ export default function EditInfoModal({ setOpen, open }) {
 
               <Box
                 sx={{
-                  display: "flex",
                   border: "solid #ddd 1px",
                   alignItems: "center",
                   borderRadius: "10px",
@@ -229,15 +227,26 @@ export default function EditInfoModal({ setOpen, open }) {
                 <Box
                   sx={{
                     height: "3.4rem",
-                    width: "3.4rem",
 
                     display: "flex",
                     alignItems: "center",
-                    justifyContent: "center",
-                    borderRight: "solid #ddd 1px",
+
+                    borderBottom: "solid #ddd 1px",
+                    gap: 1,
                   }}
                 >
-                  <svg
+                  <Box
+                    sx={{
+                      height: "3.4rem",
+                      width: "3.4rem",
+
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRight: "solid #ddd 1px",
+                    }}
+                  >
+                    <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
@@ -319,14 +328,54 @@ export default function EditInfoModal({ setOpen, open }) {
                       stroke-width="0.5"
                     ></path>
                   </svg>
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontSize: "1.1rem",
+                      fontWeight: 500,
+
+                      color: "#070e1ee5",
+                      fontFamily: "monospace",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    Create your headline
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      id="Arrow-Rectangle-Down-2--Streamline-Ultimate"
+                      height="24"
+                      width="24"
+                    >
+                      <path
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.75 0.75h18.5s2 0 2 2v18.5s0 2 -2 2H2.75s-2 0 -2 -2V2.75s0 -2 2 -2Z"
+                        stroke-width="0"
+                      ></path>
+                      <path
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.649 6.937 12 11.1l5.351 -4.162c0.1191 -0.09868 0.2626 -0.16334 0.4154 -0.18714 0.1528 -0.0238 0.3092 -0.00585 0.4527 0.05193 0.1434 0.05779 0.2686 0.15328 0.3622 0.27636 0.0937 0.12308 0.1523 0.26918 0.1697 0.42285v4.417c-0.0032 0.2197 -0.0568 0.4357 -0.1567 0.6315 -0.0999 0.1957 -0.2433 0.3659 -0.4193 0.4975l-5.618 4.369c-0.1602 0.1207 -0.3554 0.186 -0.556 0.186 -0.2006 0 -0.3958 -0.0653 -0.556 -0.186l-5.619 -4.37c-0.17599 -0.1316 -0.31944 -0.3018 -0.4193 -0.4975 -0.09986 -0.1958 -0.15347 -0.4118 -0.1567 -0.6315V7.5c0.01769 -0.1534 0.07646 -0.29919 0.1701 -0.42197 0.09364 -0.12279 0.21868 -0.21803 0.36193 -0.27568 0.14325 -0.05765 0.29941 -0.07557 0.452 -0.05187 0.15259 0.02369 0.29595 0.08813 0.41497 0.18652Z"
+                        clip-rule="evenodd"
+                        stroke-width="1.2"
+                      ></path>
+                    </svg>
+                  </Typography>
                 </Box>
 
                 <TextField
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
+                  fullWidth
                   multiline
                   rows={2}
-                  fullWidth
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0.3rem",
@@ -349,9 +398,9 @@ export default function EditInfoModal({ setOpen, open }) {
                   }}
                 />
               </Box>
-            </Box>
+            </Box> 
 
-             {/* location */}
+            {/* location */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -469,7 +518,179 @@ export default function EditInfoModal({ setOpen, open }) {
                 />
               </Box>
             </Box>
+
+           
             
+            
+            
+            
+            {/* about me */}
+            <Box sx={{ mb: "1rem" }}>
+              <Typography
+                sx={{
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
+                }}
+              >
+                About me
+              </Typography>
+
+              <Box
+                sx={{
+                  border: "solid #ddd 1px",
+                  alignItems: "center",
+                  borderRadius: "10px",
+                }}
+              >
+                <Box
+                  sx={{
+                    height: "3.4rem",
+
+                    display: "flex",
+                    alignItems: "center",
+
+                    borderBottom: "solid #ddd 1px",
+                    gap: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: "3.4rem",
+                      width: "3.4rem",
+
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRight: "solid #ddd 1px",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                      id="Information-Circle--Streamline-Flex"
+                      height="28"
+                      width="28"
+                    >
+                     
+                      <g id="information-circle--information-frame-info-more-help-point-circle">
+                        <path
+                          id="Vector"
+                          fill="#d7e0ff"
+                          d="M2.11452 11.3428c2.2445 2.6357 7.52645 2.6357 9.77098 0 2.0673 -2.4277 1.9104 -7.17948 -0.5779 -9.2579 -2.22871 -1.861655 -6.3865 -1.861655 -8.61525 0C0.204096 4.16332 0.0471919 8.9151 2.11452 11.3428Z"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector_2"
+                          stroke="#4147d5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M2.11452 11.3428c2.2445 2.6357 7.52645 2.6357 9.77098 0 2.0673 -2.4277 1.9104 -7.17948 -0.5779 -9.2579 -2.22871 -1.861655 -6.3865 -1.861655 -8.61525 0C0.204096 4.16332 0.0471919 8.9151 2.11452 11.3428Z"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector 1187"
+                          stroke="#4147d5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5.74599 6h0.49646c0.55229 0 1 0.44772 1 1v2.73504"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector 1188"
+                          stroke="#4147d5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5.76066 9.73505h2.97826"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector 1189"
+                          stroke="#4147d5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M7.25713 3.71982v0.32278"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontSize: "1.1rem",
+                      fontWeight: 500,
+
+                      color: "#070e1ee5",
+                      fontFamily: "monospace",
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 1,
+                    }}
+                  >
+                    tell us about you
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      id="Arrow-Rectangle-Down-2--Streamline-Ultimate"
+                      height="24"
+                      width="24"
+                    >
+                      <path
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M2.75 0.75h18.5s2 0 2 2v18.5s0 2 -2 2H2.75s-2 0 -2 -2V2.75s0 -2 2 -2Z"
+                        stroke-width="0"
+                      ></path>
+                      <path
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M6.649 6.937 12 11.1l5.351 -4.162c0.1191 -0.09868 0.2626 -0.16334 0.4154 -0.18714 0.1528 -0.0238 0.3092 -0.00585 0.4527 0.05193 0.1434 0.05779 0.2686 0.15328 0.3622 0.27636 0.0937 0.12308 0.1523 0.26918 0.1697 0.42285v4.417c-0.0032 0.2197 -0.0568 0.4357 -0.1567 0.6315 -0.0999 0.1957 -0.2433 0.3659 -0.4193 0.4975l-5.618 4.369c-0.1602 0.1207 -0.3554 0.186 -0.556 0.186 -0.2006 0 -0.3958 -0.0653 -0.556 -0.186l-5.619 -4.37c-0.17599 -0.1316 -0.31944 -0.3018 -0.4193 -0.4975 -0.09986 -0.1958 -0.15347 -0.4118 -0.1567 -0.6315V7.5c0.01769 -0.1534 0.07646 -0.29919 0.1701 -0.42197 0.09364 -0.12279 0.21868 -0.21803 0.36193 -0.27568 0.14325 -0.05765 0.29941 -0.07557 0.452 -0.05187 0.15259 0.02369 0.29595 0.08813 0.41497 0.18652Z"
+                        clip-rule="evenodd"
+                        stroke-width="1.2"
+                      ></path>
+                    </svg>
+                  </Typography>
+                </Box>
+
+                <TextField
+                  value={about}
+                  onChange={(e) => setAbout(e.target.value)}
+                  fullWidth
+                  multiline
+                  rows={3}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0.3rem",
+                      fontFamily: "monospace",
+                      fontSize: "1.4rem",
+                    },
+                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                      {
+                        border: "none",
+                      },
+                    "& .MuiInputBase-input": {
+                      py: 0,
+                    },
+                    border: "none",
+                  }}
+                  slotProps={{
+                    htmlInput: {
+                      maxLength: 700,
+                    },
+                  }}
+                />
+              </Box>
+            </Box>
+
+
+
           </Box>
         </Box>
       </Modal>
