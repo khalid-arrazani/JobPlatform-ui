@@ -1,8 +1,8 @@
-import { Box, Typography, Modal,Button,TextField } from "@mui/material";
+import { Box, Typography, Modal, Button, TextField } from "@mui/material";
 import { useState } from "react";
 
 export default function EditInfoModal({ setOpen, open }) {
-    const [about , setAbout ] = useState("")
+  const [about, setAbout] = useState("");
   const onClose = () => {
     setOpen(false);
   };
@@ -16,8 +16,8 @@ export default function EditInfoModal({ setOpen, open }) {
             bgcolor: "#f4edf5",
             px: 1,
             boxSizing: "border-box",
-            display:"flex",
-            flexDirection:"column"
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           <Box
@@ -35,10 +35,12 @@ export default function EditInfoModal({ setOpen, open }) {
               Edit Profile Info
             </Typography>
 
-
-            <Button onClick={()=>{
-                setOpen(false)
-            }} sx={{ borderRadius: "20px" }}>
+            <Button
+              onClick={() => {
+                setOpen(false);
+              }}
+              sx={{ borderRadius: "20px" }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
@@ -56,17 +58,15 @@ export default function EditInfoModal({ setOpen, open }) {
             </Button>
           </Box>
 
-
-          <Box sx={{flex:1,bgcolor:"#ddd"}} >
-
-           <Box sx={{ mb: "1rem" }}>
+          <Box sx={{ flex: 1 }}>
+            <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
                   fontSize: "1rem",
                   fontWeight: 600,
                   mb: "0.5rem",
                   color: "#070e1ee5",
-                  fontFamily:"monospace"
+                  fontFamily: "monospace",
                 }}
               >
                 Full name
@@ -82,8 +82,6 @@ export default function EditInfoModal({ setOpen, open }) {
                   },
                 }}
               />
-
-            
             </Box>
 
             <Box sx={{ mb: "1rem" }}>
@@ -93,7 +91,7 @@ export default function EditInfoModal({ setOpen, open }) {
                   fontWeight: 600,
                   mb: "0.5rem",
                   color: "#070e1ee5",
-                  fontFamily:"monospace"
+                  fontFamily: "monospace",
                 }}
               >
                 Headline
@@ -111,54 +109,66 @@ export default function EditInfoModal({ setOpen, open }) {
               />
             </Box>
 
-
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
-                  fontSize: "0.82rem",
+                  fontSize: "1rem",
                   fontWeight: 600,
                   mb: "0.5rem",
-                  color: "#111827",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
                 }}
               >
-                About Me*
+                Location
               </Typography>
 
-              <TextField
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
-                size="small"
-                fullWidth
-                multiline
-                rows={3}
-                slotProps={{
-                  htmlInput: {
-                    maxLength: 700,
-                  },
-                }}
-              />
-
-              <Typography
+              <Box
                 sx={{
-                  mt: 0.5,
-                  fontSize: "0.75rem",
-                  color: "#6b7280",
-                  textAlign: "right",
+                  display: "flex",
+                  border: "solid #ddd 1px",
+                  alignItems: "center",
                 }}
               >
-                {about.length}/700
-              </Typography>
+                <Box
+                  sx={{ height: "3.4rem", width: "3.4rem", bgcolor: "#ddd" }}
+                >
+                  
+                </Box>
+
+                <TextField
+                  value={about}
+                  onChange={(e) => setAbout(e.target.value)}
+                  fullWidth
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0.3rem",
+                      fontFamily: "monospace",
+                      fontSize:"1.4rem",
+                    },
+                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                      {
+                        border: "none",
+                      },
+                    "& .MuiInputBase-input":
+                      {
+                        py:0
+                      },
+                    border: "none",
+                    
+                  }}
+
+
+
+                  slotProps={{
+                    htmlInput: {
+                      maxLength: 700,
+                    },
+                  }}
+                />
+              </Box>
             </Box>
-            
-            </Box>
-
-
-
-
-
-
+          </Box>
         </Box>
-        
       </Modal>
     </>
   );
