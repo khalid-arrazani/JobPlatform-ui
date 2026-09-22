@@ -58,6 +58,7 @@ export default function EditInfoModal({ setOpen, open }) {
                 <path d="m6 6 12 12" stroke-width="2"></path>
               </svg>
             </Button>
+            
           </Box>
 
 
