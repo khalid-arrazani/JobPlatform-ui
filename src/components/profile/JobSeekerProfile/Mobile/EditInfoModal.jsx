@@ -5,6 +5,7 @@ import {
   Button,
   TextField,
   IconButton,
+  Botton
 } from "@mui/material";
 import { useState } from "react";
 
@@ -101,7 +102,7 @@ export default function EditInfoModal({ setOpen, open }) {
             </Button>
           </Box>
 
-          <Box sx={{ flex: 1, pt: 4 ,flexDirection:"column" }}>
+          <Box sx={{ flex: 1, pt: 4 ,flexDirection:"column",position:"relative",overflow:"auto" }}>
             {/* full name */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
@@ -728,11 +729,16 @@ export default function EditInfoModal({ setOpen, open }) {
                   }}
                 />
               </Box>
-            </Box>
+            </Box> 
+           
 
-            <Box sx={{bgcolor:"#ddd",height:"5rem",width:"50%" ,marginTop:"auto"}} ></Box>
+
           </Box>
 
+            <Box sx={{bgcolor:"#ddd",height:"6rem",width:"100%"  }} >
+                
+       
+            </Box>
           
 
         </Box>
