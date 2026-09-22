@@ -169,7 +169,7 @@ export default function BasicInformationSection() {
               height="35"
               width="35"
             >
-              <desc>Newspapers Streamline Icon: https://streamlinehq.com</desc>
+
               <path
                 stroke="#3b0447"
                 d="M18.91 20c0.276 -1.823 0.59 -4.637 0.59 -8 0 -6 -1 -10.25 -1 -10.25l-0.05 -0.25H1.5v0.25S2.5 6 2.5 12s-1 10.25 -1 10.25v0.25h19.95l0.05 -0.25s1 -4.25 1 -10.25c0 -3.07 -0.262 -5.681 -0.517 -7.5H19m-2.685 12h-11m-0.332 -12a54.458 54.458 0 0 1 0.496 9h11a54.453 54.453 0 0 0 -0.496 -9h-11Z"

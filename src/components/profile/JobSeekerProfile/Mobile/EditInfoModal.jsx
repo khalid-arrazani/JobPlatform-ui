@@ -20,6 +20,8 @@ export default function EditInfoModal({ setOpen, open }) {
             flexDirection: "column",
           }}
         >
+
+            {/* header */}
           <Box
             sx={{
               width: "100%",
