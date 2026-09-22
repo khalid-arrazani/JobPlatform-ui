@@ -5,8 +5,9 @@ import {
   Button,
   TextField,
   IconButton,
-  Botton
+ 
 } from "@mui/material";
+
 import { useState } from "react";
 
 export default function EditInfoModal({ setOpen, open }) {
@@ -737,7 +738,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
             <Box sx={{bgcolor:"#ddd",height:"6rem",width:"100%"  }} >
                 
-       
+             <Button>   Save Changes  </Button>
             </Box>
           
 
