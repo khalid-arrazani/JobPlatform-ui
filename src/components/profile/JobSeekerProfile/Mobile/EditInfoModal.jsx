@@ -16,6 +16,8 @@ export default function EditInfoModal({ setOpen, open }) {
             bgcolor: "#f4edf5",
             px: 1,
             boxSizing: "border-box",
+            display:"flex",
+            flexDirection:"column"
           }}
         >
           <Box
@@ -54,6 +56,9 @@ export default function EditInfoModal({ setOpen, open }) {
             </Button>
           </Box>
 
+
+          <Box sx={{flex:1,bgcolor:"#ddd"}} >
+
            <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -80,6 +85,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
             
             </Box>
+
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -104,6 +110,8 @@ export default function EditInfoModal({ setOpen, open }) {
                 }}
               />
             </Box>
+
+
             <Box sx={{ mb: "1rem" }}>
               <Typography
                 sx={{
@@ -141,6 +149,12 @@ export default function EditInfoModal({ setOpen, open }) {
                 {about.length}/700
               </Typography>
             </Box>
+            
+            </Box>
+
+
+
+
 
 
         </Box>
