@@ -14,7 +14,7 @@ export default function EditInfoModal({ setOpen, open }) {
             height: "100%",
             width: "100vw",
             bgcolor: "#f4edf5",
-            px: 1,
+            px: 2,
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
@@ -57,6 +57,8 @@ export default function EditInfoModal({ setOpen, open }) {
               </svg>
             </Button>
           </Box>
+
+
 
           <Box sx={{ flex: 1, pt: 4 }}>
             {/* full name */}
@@ -179,11 +181,12 @@ export default function EditInfoModal({ setOpen, open }) {
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
                   fullWidth
+                  placeholder="Enter your Full name"
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0.3rem",
                       fontFamily: "monospace",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     },
                     "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                       {
@@ -374,20 +377,21 @@ export default function EditInfoModal({ setOpen, open }) {
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
                   fullWidth
+                  placeholder="Enter your headline"
                   multiline
                   rows={2}
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0.3rem",
                       fontFamily: "monospace",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     },
                     "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                       {
                         border: "none",
                       },
-                    "& .MuiInputBase-input": {
-                      py: 0,
+                    "& .MuiInputBase-root": {
+                      py: 0.5,
                     },
                     border: "none",
                   }}
@@ -495,11 +499,12 @@ export default function EditInfoModal({ setOpen, open }) {
                   value={about}
                   onChange={(e) => setAbout(e.target.value)}
                   fullWidth
+                  placeholder="Enter your location"
                   sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0.3rem",
                       fontFamily: "monospace",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     },
                     "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                       {
@@ -520,10 +525,7 @@ export default function EditInfoModal({ setOpen, open }) {
             </Box>
 
            
-            
-            
-            
-            
+        
             {/* about me */}
             <Box sx={{ mb: "1rem" }}>
               <Typography
@@ -664,19 +666,21 @@ export default function EditInfoModal({ setOpen, open }) {
                   onChange={(e) => setAbout(e.target.value)}
                   fullWidth
                   multiline
+                  placeholder="Tell recruiters about your background, skills, and career goals..."
+
                   rows={3}
-                  sx={{
+                sx={{
                     "& .MuiOutlinedInput-root": {
                       borderRadius: "0.3rem",
                       fontFamily: "monospace",
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     },
                     "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                       {
                         border: "none",
                       },
-                    "& .MuiInputBase-input": {
-                      py: 0,
+                    "& .MuiInputBase-root": {
+                      py: 0.5,
                     },
                     border: "none",
                   }}
@@ -692,6 +696,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
 
           </Box>
+
         </Box>
       </Modal>
     </>
