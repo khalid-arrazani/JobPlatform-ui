@@ -1,4 +1,4 @@
-import { Box, Typography, Modal, Button, TextField } from "@mui/material";
+import { Box, Typography, Modal, Button, TextField ,IconButton} from "@mui/material";
 import { useState } from "react";
 
 export default function EditInfoModal({ setOpen, open }) {
@@ -33,6 +33,11 @@ export default function EditInfoModal({ setOpen, open }) {
               justifyContent: "space-between",
             }}
           >
+            <IconButton>
+                
+            </IconButton>
+
+
             <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
               Edit Profile
             </Typography>
@@ -58,7 +63,7 @@ export default function EditInfoModal({ setOpen, open }) {
                 <path d="m6 6 12 12" stroke-width="2"></path>
               </svg>
             </Button>
-            
+
           </Box>
 
 
