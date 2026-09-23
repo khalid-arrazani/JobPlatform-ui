@@ -49,6 +49,7 @@ export default function EditInfoModal({ setOpen, open }) {
           >
             <IconButton
               sx={{ borderRadius: "8px" }}
+              
               onClick={() => {
                 setOpenModal(false);
               }}
