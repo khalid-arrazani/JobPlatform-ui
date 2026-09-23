@@ -165,8 +165,8 @@ export default function EditInfoModal({ setOpen, open }) {
                   </svg>
                 </Box>
 
-                <Box sx={{height:"82%",width:"100%",bgcolor:"#ddd"}} >
-
+                <Box sx={{height:"82%",width:"100%",bgcolor:"#ddd",boxSizing:"border-box"}} >
+         
                 </Box>
 
               </Box>
