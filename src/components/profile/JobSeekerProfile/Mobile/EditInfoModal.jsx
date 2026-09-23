@@ -130,17 +130,25 @@ export default function EditInfoModal({ setOpen, open }) {
               }}
               role="presentation"
             >
-
-
-              <Box sx={{ bgcolor: "#dddddd31", width: "100%", height: "8rem",display: "flex",
-                    justifyContent: "center",
-                    alignItems: "end", }}>
+              <Box
+                sx={{
+                 
+                  width: "100%",
+                  height: "100%",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "end",
+                  flexDirection:"column"
+                 
+                }}
+              >
                 <Box
                   sx={{
-                    height: "auto",
+                    height: "18%",
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "end",
+                    width:"100%"
                   }}
                 >
                   <svg
@@ -155,6 +163,10 @@ export default function EditInfoModal({ setOpen, open }) {
                       fill="black"
                     />
                   </svg>
+                </Box>
+
+                <Box sx={{height:"82%",width:"100%",bgcolor:"#ddd"}} >
+
                 </Box>
 
               </Box>
