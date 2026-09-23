@@ -86,18 +86,6 @@ export default function EditInfoModal({ setOpen, open }) {
               </svg>
             </IconButton>
 
-
-            <Drawer
-              onClose={onCloseDrawer}
-              open={openModal}
-              anchor="left"
-            >
-              
-            </Drawer>
-
-
-
-
             <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
               Edit Profile
             </Typography>
@@ -124,6 +112,26 @@ export default function EditInfoModal({ setOpen, open }) {
               </svg>
             </Button>
           </Box>
+
+          <Drawer
+            onClose={onCloseDrawer}
+            open={openModal}
+            sx={{
+              zIndex: 2000,
+            }}
+            anchor="left"
+          >
+            <Box
+              sx={{
+                width: 280,
+                height: "100%",
+                background:
+                  "linear-gradient(180deg, #57073d95 0%, #64129ab9 100%)",
+                color: "white",
+              }}
+              role="presentation"
+            ></Box>
+          </Drawer>
 
           <Box
             sx={{
