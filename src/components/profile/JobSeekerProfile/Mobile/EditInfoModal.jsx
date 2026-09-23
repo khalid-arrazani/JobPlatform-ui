@@ -132,14 +132,12 @@ export default function EditInfoModal({ setOpen, open }) {
             >
               <Box
                 sx={{
-                 
                   width: "100%",
                   height: "100%",
                   display: "flex",
                   justifyContent: "center",
                   alignItems: "end",
-                  flexDirection:"column"
-                 
+                  flexDirection: "column",
                 }}
               >
                 <Box
@@ -148,7 +146,7 @@ export default function EditInfoModal({ setOpen, open }) {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "end",
-                    width:"100%"
+                    width: "100%",
                   }}
                 >
                   <svg
@@ -165,10 +163,235 @@ export default function EditInfoModal({ setOpen, open }) {
                   </svg>
                 </Box>
 
-                <Box sx={{height:"82%",width:"100%",bgcolor:"#ddd",boxSizing:"border-box"}} >
-         
-                </Box>
+                <Box
+                  sx={{
+                    height: "82%",
+                    width: "100%",
+                    bgcolor: "#ddd",
+                    boxSizing: "border-box",
+                    py: 5,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 1.5,
+                    px: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      height: "4rem",
+                      width: "100%",
+                      bgcolor: "#9f73ab00",
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      px: 0.5,
+                      border: "#ddd solid 1px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: "3.5rem",
+                        width: "3.5rem",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        id="User--Streamline-Solar"
+                        height="35"
+                        width="35"
+                      >
+                        <g id="Line Duotone/Users/User">
+                          <path
+                            id="Vector"
+                            stroke="#000000"
+                            d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
+                            stroke-width="1.2 "
+                          ></path>
+                          <path
+                            id="Vector_2"
+                            stroke="#0d0d0d"
+                            d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
+                            stroke-width="1.2"
+                          ></path>
+                        </g>
+                      </svg>
+                    </Box>
+                    <Typography
+                      sx={{ fontFamily: "monospace", fontSize: "1.3rem",color:"#0f0e0e" }}
+                    >
+                     Profile
+                    </Typography>
+                  </Box>
+                   <Box
+                    sx={{
+                      height: "4rem",
+                      width: "100%",
+                      bgcolor: "#9f73ab00",
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      px: 0.5,
+                      border: "#ddd solid 1px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: "3.5rem",
+                        width: "3.5rem",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        id="User--Streamline-Solar"
+                        height="35"
+                        width="35"
+                      >
+                        <g id="Line Duotone/Users/User">
+                          <path
+                            id="Vector"
+                            stroke="#000000"
+                            d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
+                            stroke-width="1.2 "
+                          ></path>
+                          <path
+                            id="Vector_2"
+                            stroke="#0d0d0d"
+                            d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
+                            stroke-width="1.2"
+                          ></path>
+                        </g>
+                      </svg>
+                    </Box>
+                    <Typography
+                      sx={{ fontFamily: "monospace", fontSize: "1.3rem",color:"#0f0e0e" }}
+                    >
+                     Profile
+                    </Typography>
+                  </Box>
+                   <Box
+                    sx={{
+                      height: "4rem",
+                      width: "100%",
+                      bgcolor: "#9f73ab00",
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      px: 0.5,
+                      border: "#ddd solid 1px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: "3.5rem",
+                        width: "3.5rem",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        id="User--Streamline-Solar"
+                        height="35"
+                        width="35"
+                      >
+                        <g id="Line Duotone/Users/User">
+                          <path
+                            id="Vector"
+                            stroke="#000000"
+                            d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
+                            stroke-width="1.2 "
+                          ></path>
+                          <path
+                            id="Vector_2"
+                            stroke="#0d0d0d"
+                            d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
+                            stroke-width="1.2"
+                          ></path>
+                        </g>
+                      </svg>
+                    </Box>
+                    <Typography
+                      sx={{ fontFamily: "monospace", fontSize: "1.3rem",color:"#0f0e0e" }}
+                    >
+                     Profile
+                    </Typography>
+                  </Box>
+                   <Box
+                    sx={{
+                      height: "4rem",
+                      width: "100%",
+                      bgcolor: "#9f73ab00",
+                      borderRadius: "10px",
+                      display: "flex",
+                      alignItems: "center",
+                      boxSizing: "border-box",
+                      px: 0.5,
+                      border: "#ddd solid 1px",
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: "3.5rem",
+                        width: "3.5rem",
+                        borderRadius: "10px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        id="User--Streamline-Solar"
+                        height="35"
+                        width="35"
+                      >
+                        <g id="Line Duotone/Users/User">
+                          <path
+                            id="Vector"
+                            stroke="#000000"
+                            d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
+                            stroke-width="1.2 "
+                          ></path>
+                          <path
+                            id="Vector_2"
+                            stroke="#0d0d0d"
+                            d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
+                            stroke-width="1.2"
+                          ></path>
+                        </g>
+                      </svg>
+                    </Box>
+                    <Typography
+                      sx={{ fontFamily: "monospace", fontSize: "1.3rem",color:"#0f0e0e" }}
+                    >
+                     Profile
+                    </Typography>
+                  </Box>
+                  
 
+                  
+                </Box>
               </Box>
             </Box>
           </Drawer>
