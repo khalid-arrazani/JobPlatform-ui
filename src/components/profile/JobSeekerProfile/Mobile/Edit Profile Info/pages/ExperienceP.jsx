@@ -118,18 +118,19 @@ export default function ExperienceP() {
             sx={{
               width: "100%",
               height: "8rem",
-              border: "1px solid #c1b9c882",
+              border: "1px solid #c1b9c858",
               boxSizing: "border-box",
               borderRadius: "10px",
-              px:1
+              px: 1,
+              py: 1,
             }}
           >
             <Box
               sx={{
-                height: "4rem",
+                height: "auto",
                 width: "100%",
                 display: "flex",
-                alignItems: "center",
+
                 gap: 2,
                 mb: 4,
               }}
@@ -158,22 +159,22 @@ export default function ExperienceP() {
                   <defs></defs>
                   <path
                     d="M14 5h-2.5V3a1.00115 1.00115 0 0 0 -1 -1H5.5a1.00115 1.00115 0 0 0 -1 1v2H2a1.00115 1.00115 0 0 0 -1 1v8a1.00115 1.00115 0 0 0 1 1h12a1.00115 1.00115 0 0 0 1 -1V6a1.00115 1.00115 0 0 0 -1 -1ZM2 14V6h2.5v1H3.5v1h1v1H3.5v1h1v1H3.5v1h1v2Zm8.5 0H5.5V3h5Zm3.5 0h-2.5v-2h1v-1h-1v-1h1v-1h-1v-1h1v-1h-1v-1h2.5Z"
-                    fill="#000000"
+                    fill="#41008b"
                     stroke-width="0.2"
                   ></path>
                   <path
                     d="M7 4h2v1h-2Z"
-                    fill="#000000"
+                    fill="#41008b"
                     stroke-width="0.2"
                   ></path>
                   <path
                     d="M7 6h2v1h-2Z"
-                    fill="#000000"
+                    fill="#41008b"
                     stroke-width="0.2"
                   ></path>
                   <path
                     d="M7 8h2v1h-2Z"
-                    fill="#000000"
+                    fill="#41008b"
                     stroke-width="0.2"
                   ></path>
                   <path
@@ -187,7 +188,7 @@ export default function ExperienceP() {
 
               <Box
                 sx={{
-                  height: "4rem",
+                  height: "auto",
                   width: "auto",
 
                   display: "flex",
@@ -199,12 +200,12 @@ export default function ExperienceP() {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     fontWeight: 600,
-                    color: "#060410c6",
+                    color: "#120843c6",
                   }}
                 >
-                  Experience
+                  NexHire
                 </Typography>
                 <Typography
                   sx={{
@@ -214,8 +215,50 @@ export default function ExperienceP() {
                     color: "#06041088",
                   }}
                 >
-                  Add and manage your work experience
+                  Full Stack Developer
                 </Typography>
+
+                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Box sx={{ height: "1.3rem", width: "1.3rem" }}>
+                    <svg
+                      version="1.1"
+                      id="Calendar--Streamline-Carbon"
+                      xmlns="http://www.w3.org/2000/svg"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      x="0"
+                      y="0"
+                      viewBox="0 0 16 16"
+                      xml:space="preserve"
+                      enable-background="new 0 0 32 32"
+                      height="20"
+                      width="20"
+                    >
+                      
+                      <path
+                        d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
+                        fill="#000000c5"
+                        stroke-width="0.2"
+                      ></path>
+                      <path
+                        id="_Transparent_Rectangle_"
+                        d="M0 0h16v16H0Z"
+                        fill="none"
+                        stroke-width="0.2"
+                      ></path>
+                    </svg>
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "1.1rem",
+                      fontWeight: 600,
+                      color: "#120843c6",
+                    }}
+                  >
+                   2021 - 2023
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           </Box>
