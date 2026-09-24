@@ -117,11 +117,11 @@ export default function ExperienceP() {
           <Box
             sx={{
               width: "100%",
-              height: "8rem",
+          
               border: "1px solid #c1b9c858",
               boxSizing: "border-box",
               borderRadius: "10px",
-              px: 1,
+              px: 1.5,
               py: 1,
             }}
           >
@@ -130,11 +130,11 @@ export default function ExperienceP() {
                 height: "auto",
                 width: "100%",
                 display: "flex",
-
                 gap: 2,
-                mb: 4,
+                
               }}
             >
+              
               <Box
                 sx={{
                   height: "3rem",
@@ -190,9 +190,7 @@ export default function ExperienceP() {
                 sx={{
                   height: "auto",
                   width: "auto",
-
                   display: "flex",
-
                   justifyContent: "center",
                   flexDirection: "column",
                 }}
@@ -203,6 +201,7 @@ export default function ExperienceP() {
                     fontSize: "1.1rem",
                     fontWeight: 600,
                     color: "#120843c6",
+                    mb:0.5
                   }}
                 >
                   NexHire
@@ -212,7 +211,7 @@ export default function ExperienceP() {
                     fontFamily: "monospace",
                     fontSize: "0.8rem",
                     fontWeight: 600,
-                    color: "#06041088",
+                    color: "#06041088",mb:0.5
                   }}
                 >
                   Full Stack Developer
@@ -260,6 +259,7 @@ export default function ExperienceP() {
                   </Typography>
                 </Box>
               </Box>
+
             </Box>
           </Box>
         </Box>
