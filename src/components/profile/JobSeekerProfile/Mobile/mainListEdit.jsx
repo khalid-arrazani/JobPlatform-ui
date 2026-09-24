@@ -411,16 +411,16 @@ export default function MainListEdit({ open, setOpen }) {
             <Box
               sx={{
                 width: "100%",
-                height: "5rem",
-                bgcolor: "#4f4141",
+                height: "4.2rem",
+                bgcolor: "#25022ec5",
                 borderRadius: "8px",
                 display: "flex",
-                p: 0.5,
+                p: 0.8,
                 alignItems: "center",
                 gap: 1,
               }}
             >
-              <Avatar sx={{ height: "3.5rem", width: "3.5rem" }} />
+              <Avatar src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw" sx={{ height: "3.5rem", width: "3.5rem" }} />
               <Typography sx={{ fontFamily: "monospace", fontSize: "1rem" }}>
                 Back to Profile
               </Typography>
@@ -438,7 +438,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <g id="Line Duotone/Arrows/Alt Arrow Right">
                   <path
                     id="Vector"
-                    stroke="#000000"
+                    stroke="#fffcfc"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="m9 5 6 7 -6 7"
