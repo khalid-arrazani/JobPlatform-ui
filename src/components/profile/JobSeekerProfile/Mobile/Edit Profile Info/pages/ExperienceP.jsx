@@ -1,4 +1,4 @@
-import { Box, Typography, Button, TextField } from "@mui/material";
+import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
 import { useState } from "react";
 
 export default function ExperienceP() {
@@ -117,7 +117,7 @@ export default function ExperienceP() {
           <Box
             sx={{
               width: "100%",
-          
+
               border: "1px solid #c1b9c858",
               boxSizing: "border-box",
               borderRadius: "10px",
@@ -131,10 +131,9 @@ export default function ExperienceP() {
                 width: "100%",
                 display: "flex",
                 gap: 2,
-                
+                position: "relative",
               }}
             >
-              
               <Box
                 sx={{
                   height: "3rem",
@@ -201,7 +200,7 @@ export default function ExperienceP() {
                     fontSize: "1.1rem",
                     fontWeight: 600,
                     color: "#120843c6",
-                    mb:0.5
+                    mb: 0.5,
                   }}
                 >
                   NexHire
@@ -211,7 +210,8 @@ export default function ExperienceP() {
                     fontFamily: "monospace",
                     fontSize: "0.8rem",
                     fontWeight: 600,
-                    color: "#06041088",mb:0.5
+                    color: "#06041088",
+                    mb: 0.5,
                   }}
                 >
                   Full Stack Developer
@@ -232,7 +232,6 @@ export default function ExperienceP() {
                       height="20"
                       width="20"
                     >
-                      
                       <path
                         d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
                         fill="#000000c5"
@@ -255,11 +254,81 @@ export default function ExperienceP() {
                       color: "#120843c6",
                     }}
                   >
-                   2021 - 2023
+                    2021 - 2023
                   </Typography>
                 </Box>
               </Box>
+              <Box
+                sx={{
+                  height: "2rem",
+                  width: "5rem",
+                
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                }}
+              >
+                <IconButton>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Pen--Streamline-Solar-Ar"
+                    height="24"
+                    width="24"
+                  >
+                   
+                    <path
+                      d="m14.3601 4.07866 0.9268 -0.92688c1.5357 -1.53571 4.0256 -1.53571 5.5613 0 1.5357 1.5357 1.5357 4.02557 0 5.56128l-0.9269 0.92687m-5.5612 -5.56127s0.1158 1.96962 1.8537 3.70752c1.7379 1.73789 3.7075 1.85375 3.7075 1.85375m-5.5612 -5.56127L5.83882 12.5999c-0.57716 0.5772 -0.86574 0.8657 -1.11392 1.1839 -0.29277 0.3754 -0.54376 0.7815 -0.74856 1.2112 -0.17361 0.3643 -0.30266 0.7515 -0.56078 1.5258l-1.09375 3.2813M19.9213 9.63993l-8.5212 8.52127c-0.5772 0.5771 -0.8657 0.8657 -1.1839 1.1139 -0.37538 0.2928 -0.78151 0.5438 -1.21122 0.7486 -0.36428 0.1736 -0.75146 0.3026 -1.5258 0.5607l-3.28126 1.0938m0 0 -0.80208 0.2674c-0.38106 0.127 -0.80118 0.0278 -1.08521 -0.2562 -0.28403 -0.2841 -0.3832 -0.7042 -0.25618 -1.0852l0.26736 -0.8021m1.87611 1.8761 -1.87611 -1.8761"
+                      stroke="#7b1ad5"
+                      stroke-width="1.5"
+                    ></path>
+                  </svg>
+                </IconButton>
 
+                <IconButton>
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    id="Trash-Bin-Minimalistic--Streamline-Solar-Ar"
+                    height="24"
+                    width="24"
+                  >
+                  
+                    <path
+                      d="M9.17065 4c0.41184 -1.16519 1.52305 -2 2.82925 -2 1.3063 0 2.4175 0.83481 2.8293 2"
+                      stroke="#7b1ad5"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                    ></path>
+                    <path
+                      d="M20.5 6H3.49988"
+                      stroke="#7b1ad5"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                    ></path>
+                    <path
+                      d="m18.8333 8.5 -0.4599 6.8991c-0.177 2.6549 -0.2655 3.9824 -1.1305 4.7916C16.3778 21 15.0474 21 12.3866 21h-0.7733c-2.66082 0 -3.99123 0 -4.85623 -0.8093 -0.86501 -0.8092 -0.95351 -2.1367 -1.1305 -4.7916L5.16663 8.5"
+                      stroke="#7b1ad5"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                    ></path>
+                    <path
+                      d="m9.5 11 0.5 5"
+                      stroke="#7b1ad5"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                    ></path>
+                    <path
+                      d="m14.5 11 -0.5 5"
+                      stroke="#7b1ad5"
+                      stroke-linecap="round"
+                      stroke-width="1.5"
+                    ></path>
+                  </svg>
+                </IconButton>
+              </Box>
             </Box>
           </Box>
         </Box>
