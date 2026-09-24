@@ -4,7 +4,7 @@ import {
   Avatar,
   IconButton,
   Drawer,
-  Modal,
+
 } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
@@ -14,7 +14,10 @@ import AddIcon from "@mui/icons-material/Add";
 import { Button, Paper, Divider } from "@mui/material";
 import MainList from "./mainList";
 import { useState } from "react";
-import EditInfoModal from "./EditInfoModal";
+
+import EditInfoModal from "./Edit Profile Info/EditInfoModal";
+
+
 
 export default function JobSeekerProfileMobile() {
   const [open, setOpen] = useState(false);
@@ -67,6 +70,8 @@ export default function JobSeekerProfileMobile() {
 
             <KeyboardArrowRightIcon />
           </IconButton>
+
+
           <Drawer onClose={onClose} open={open} anchor="left">
             <MainList />
           </Drawer>

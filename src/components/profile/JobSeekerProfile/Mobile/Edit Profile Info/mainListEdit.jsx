@@ -19,7 +19,7 @@ export default function MainListEdit({ open, setOpen }) {
           sx={{
             width: 280,
             height: "100%",
-            background: "linear-gradient(180deg, #fff 0%, #d7a1fab9 100%)",
+            background: "linear-gradient(180deg, #fff 0%, #f9f0ffb5 100%)",
             color: "white",
             display: "flex",
             flexDirection: "column",
@@ -103,8 +103,8 @@ export default function MainListEdit({ open, setOpen }) {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="User--Streamline-Solar"
-                    height="35"
-                    width="35"
+                    height="28"
+                    width="28"
                   >
                     <g id="Line Duotone/Users/User">
                       <path
@@ -125,7 +125,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     color: "#0f0e0e",
                   }}
                 >
@@ -161,8 +161,8 @@ export default function MainListEdit({ open, setOpen }) {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="Case--Streamline-Solar"
-                    height="35"
-                    width="35"
+                    height="28"
+                    width="28"
                   >
                     <g id="Line Duotone/School/Case">
                       <path
@@ -196,7 +196,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     color: "#0f0e0e",
                   }}
                 >
@@ -232,8 +232,8 @@ export default function MainListEdit({ open, setOpen }) {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="Square-Academic-Cap--Streamline-Solar"
-                    height="35"
-                    width="35"
+                    height="28"
+                    width="28"
                   >
                     <g id="Line Duotone/School/Square Academic Cap">
                       <path
@@ -262,7 +262,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     color: "#0f0e0e",
                   }}
                 >
@@ -298,8 +298,8 @@ export default function MainListEdit({ open, setOpen }) {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="Atom--Streamline-Solar"
-                    height="35"
-                    width="35"
+                    height="28"
+                    width="28"
                   >
                     <desc>Atom Streamline Icon: https://streamlinehq.com</desc>
                     <g id="Line Duotone/Astronomy/Atom">
@@ -321,7 +321,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     color: "#0f0e0e",
                   }}
                 >
@@ -357,8 +357,8 @@ export default function MainListEdit({ open, setOpen }) {
                     fill="none"
                     viewBox="0 0 24 24"
                     id="Link-Minimalistic-3--Streamline-Solar"
-                    height="35"
-                    width="35"
+                    height="28"
+                    width="28"
                   >
                     <g id="Line Duotone/Text Formatting/Link Minimalistic 3">
                       <path
@@ -388,7 +388,7 @@ export default function MainListEdit({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "1.3rem",
+                    fontSize: "1.1rem",
                     color: "#0f0e0e",
                   }}
                 >
@@ -412,16 +412,20 @@ export default function MainListEdit({ open, setOpen }) {
               sx={{
                 width: "100%",
                 height: "4.2rem",
-                bgcolor: "#25022ec5",
+                bgcolor: "#edededfd",
                 borderRadius: "8px",
                 display: "flex",
                 p: 0.8,
                 alignItems: "center",
                 gap: 1,
+                cursor:"pointer",
+                transition:"0.1s",
+                 
+                ":active":{scale:"1.01",bgcolor: "#be9ec6c5",}
               }}
             >
               <Avatar src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw" sx={{ height: "3.5rem", width: "3.5rem" }} />
-              <Typography sx={{ fontFamily: "monospace", fontSize: "1rem" }}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1rem" ,"::selection":{color:"#050215f1"},color:"#050215f1"}}>
                 Back to Profile
               </Typography>
               <svg
@@ -432,13 +436,11 @@ export default function MainListEdit({ open, setOpen }) {
                 height="24"
                 width="24"
               >
-                <desc>
-                  Alt Arrow Right Streamline Icon: https://streamlinehq.com
-                </desc>
+              
                 <g id="Line Duotone/Arrows/Alt Arrow Right">
                   <path
                     id="Vector"
-                    stroke="#fffcfc"
+                    stroke="#070404"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="m9 5 6 7 -6 7"
