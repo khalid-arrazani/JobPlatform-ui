@@ -3,17 +3,18 @@ import {
   Typography,
   Modal,
   Button,
-  TextField,
+
   IconButton,
-  Drawer,
+
 } from "@mui/material";
 
 import { useState } from "react";
 import MainListEdit from "./mainListEdit";
 import ProfileP from "./pages/ProfileP";
+import ExperienceP from "./pages/ExperienceP";
 
 export default function EditInfoModal({ setOpen, open }) {
-  const [about, setAbout] = useState("");
+
   const onClose = () => {
     setOpen(false);
   };
@@ -113,7 +114,9 @@ export default function EditInfoModal({ setOpen, open }) {
           </Box>
 
 
-          <ProfileP/>
+
+
+          <ExperienceP/>
 
           
 
