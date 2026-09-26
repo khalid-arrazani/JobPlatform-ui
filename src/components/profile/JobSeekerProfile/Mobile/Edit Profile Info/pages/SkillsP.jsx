@@ -7,7 +7,7 @@ import {
   Chip,
 } from "@mui/material";
 import { useState } from "react";
-const Skills = [{id:1,skill:"React"},{id:2,skill:"Gsap"},{id:3,skill:"Js"},{id:4,skill:"Node Js"},{id:5,skill:"React"},]
+const Skills = [{id:1,skill:"React"},{id:2,skill:"Gsap"},{id:3,skill:"Js"},{id:4,skill:"Node Js"},{id:5,skill:"Express Js"},]
 
 export default function SkillsP() {
   const [about, setAbout] = useState("");
@@ -186,7 +186,6 @@ export default function SkillsP() {
           <Box
             sx={{
               width: "100%",
-
               border: "1px solid #c1b9c858",
               boxSizing: "border-box",
               borderRadius: "10px",
@@ -194,10 +193,15 @@ export default function SkillsP() {
               py: 1,
               mb: 1.5,
               height: "10rem",
+         
+           
+              gap:1
             }}
           >
-            <Chip
-              // key={skill}
+
+            {Skills?.map((S)=>(
+              <Chip
+              key={S.id}
               label={
                 <Box
                   sx={{
@@ -205,10 +209,11 @@ export default function SkillsP() {
                     alignItems: "center",
                     height: "100%",
                     boxSizing: "border-box",
-                    gap: 2,
+                    gap: 0.5,
+                    m:0.5
                   }}
                 >
-                  React
+                  {S.skill}
                   <IconButton>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -232,7 +237,7 @@ export default function SkillsP() {
                         ></path>
                       </g>
                     </svg>
-                  </IconButton>{" "}
+                  </IconButton>
                 </Box>
               }
               sx={{
@@ -252,6 +257,12 @@ export default function SkillsP() {
                 fontFamily: "monospace",
               }}
             />
+
+            ))}
+
+
+
+            
 
 
 
