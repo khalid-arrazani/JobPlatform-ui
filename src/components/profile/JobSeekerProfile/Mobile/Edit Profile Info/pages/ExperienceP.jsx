@@ -20,6 +20,7 @@ export default function ExperienceP() {
         }}
       >
         <Box sx={{ width: "100%", boxSizing: "border-box" }}>
+          {/* header experience */}
           <Box
             sx={{
               height: "4rem",
@@ -114,6 +115,7 @@ export default function ExperienceP() {
             </Box>
           </Box>
 
+          {/* --------- */}
           <Box
             sx={{
               width: "100%",
@@ -340,7 +342,7 @@ export default function ExperienceP() {
               boxSizing: "border-box",
               borderRadius: "10px",
               px: 1.5,
-              py: 1,
+              py: 1,mb:1.5
             }}
           >
             <Box
@@ -549,9 +551,10 @@ export default function ExperienceP() {
               </Box>
             </Box>
           </Box>
+          {/* ---------- */}
 
-
-          <Box sx={{}} >
+          {/* Add experience */}
+          <Box sx={{height:"5rem",width:"100%",bgcolor:"#ddd"}} >
 
           </Box>
 
