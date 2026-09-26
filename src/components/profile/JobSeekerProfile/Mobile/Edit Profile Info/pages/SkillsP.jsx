@@ -1,4 +1,11 @@
-import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  TextField,
+  IconButton,
+  Chip,
+} from "@mui/material";
 import { useState } from "react";
 
 export default function SkillsP() {
@@ -43,12 +50,36 @@ export default function SkillsP() {
                 borderRadius: "10px",
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Science-Molecule--Streamline-Ultimate" height="40" width="40">
-  
-  <path stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" d="M9.759 12.009c0 0.5968 0.23706 1.1691 0.659 1.591 0.422 0.422 0.9943 0.659 1.591 0.659s1.169 -0.237 1.591 -0.659c0.4219 -0.4219 0.659 -0.9942 0.659 -1.591 0 -0.5967 -0.2371 -1.169 -0.659 -1.591 -0.422 -0.42191 -0.9943 -0.65897 -1.591 -0.65897s-1.169 0.23706 -1.591 0.65897c-0.42194 0.422 -0.659 0.9943 -0.659 1.591Z" stroke-width="1.5"></path>
-  <path stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" d="M1.40269 22.6163c0.98456 0.9846 3.04628 0.8113 5.7316 -0.4816 2.68532 -1.2929 5.77431 -3.5996 8.58731 -6.4127 2.813 -2.813 5.1198 -5.90197 6.4127 -8.58728 1.2929 -2.68532 1.4662 -4.74704 0.4816 -5.73161 -0.9846 -0.984561 -3.0463 -0.811324 -5.7316 0.48161C14.199 3.17765 11.11 5.48436 8.29698 8.29741 5.48393 11.1105 3.17722 14.1994 1.88429 16.8847 0.591359 19.57 0.418121 21.6318 1.40269 22.6163Z" stroke-width="1.5"></path>
-  <path stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" d="M8.29698 15.7221c1.39289 1.3928 2.86812 2.6761 4.34152 3.7764 1.4735 1.1003 2.9162 1.9961 4.2458 2.6363 1.3297 0.6402 2.5202 1.0122 3.5036 1.0949 0.9834 0.0826 1.7405 -0.1258 2.228 -0.6133 0.4875 -0.4875 0.6959 -1.2446 0.6133 -2.228 -0.0826 -0.9835 -0.4547 -2.174 -1.0949 -3.5036 -0.6402 -1.3297 -1.536 -2.7724 -2.6363 -4.2458 -1.1003 -1.4734 -2.3835 -2.94868 -3.7764 -4.34156 -1.3929 -1.39288 -2.8681 -2.67611 -4.3416 -3.7764 -1.47337 -1.1003 -2.91609 -1.99612 -4.24573 -2.63632C5.80463 1.24452 4.61411 0.872484 3.63068 0.789849 2.64724 0.707214 1.89016 0.9156 1.40265 1.40311 0.915142 1.89062 0.706756 2.6477 0.789391 3.63114c0.082635 0.98343 0.454669 2.17395 1.094869 3.50359 0.6402 1.32964 1.53602 2.77235 2.63632 4.24577 1.1003 1.4734 2.38352 2.9487 3.7764 4.3416Z" stroke-width="1.5"></path>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                id="Science-Molecule--Streamline-Ultimate"
+                height="40"
+                width="40"
+              >
+                <path
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.759 12.009c0 0.5968 0.23706 1.1691 0.659 1.591 0.422 0.422 0.9943 0.659 1.591 0.659s1.169 -0.237 1.591 -0.659c0.4219 -0.4219 0.659 -0.9942 0.659 -1.591 0 -0.5967 -0.2371 -1.169 -0.659 -1.591 -0.422 -0.42191 -0.9943 -0.65897 -1.591 -0.65897s-1.169 0.23706 -1.591 0.65897c-0.42194 0.422 -0.659 0.9943 -0.659 1.591Z"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M1.40269 22.6163c0.98456 0.9846 3.04628 0.8113 5.7316 -0.4816 2.68532 -1.2929 5.77431 -3.5996 8.58731 -6.4127 2.813 -2.813 5.1198 -5.90197 6.4127 -8.58728 1.2929 -2.68532 1.4662 -4.74704 0.4816 -5.73161 -0.9846 -0.984561 -3.0463 -0.811324 -5.7316 0.48161C14.199 3.17765 11.11 5.48436 8.29698 8.29741 5.48393 11.1105 3.17722 14.1994 1.88429 16.8847 0.591359 19.57 0.418121 21.6318 1.40269 22.6163Z"
+                  stroke-width="1.5"
+                ></path>
+                <path
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.29698 15.7221c1.39289 1.3928 2.86812 2.6761 4.34152 3.7764 1.4735 1.1003 2.9162 1.9961 4.2458 2.6363 1.3297 0.6402 2.5202 1.0122 3.5036 1.0949 0.9834 0.0826 1.7405 -0.1258 2.228 -0.6133 0.4875 -0.4875 0.6959 -1.2446 0.6133 -2.228 -0.0826 -0.9835 -0.4547 -2.174 -1.0949 -3.5036 -0.6402 -1.3297 -1.536 -2.7724 -2.6363 -4.2458 -1.1003 -1.4734 -2.3835 -2.94868 -3.7764 -4.34156 -1.3929 -1.39288 -2.8681 -2.67611 -4.3416 -3.7764 -1.47337 -1.1003 -2.91609 -1.99612 -4.24573 -2.63632C5.80463 1.24452 4.61411 0.872484 3.63068 0.789849 2.64724 0.707214 1.89016 0.9156 1.40265 1.40311 0.915142 1.89062 0.706756 2.6477 0.789391 3.63114c0.082635 0.98343 0.454669 2.17395 1.094869 3.50359 0.6402 1.32964 1.53602 2.77235 2.63632 4.24577 1.1003 1.4734 2.38352 2.9487 3.7764 4.3416Z"
+                  stroke-width="1.5"
+                ></path>
+              </svg>
             </Box>
             <Box
               sx={{
@@ -98,43 +129,7 @@ export default function SkillsP() {
           >
             <TextField
               fullWidth
-              placeholder="Degree"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            />
-            <TextField
-              fullWidth
-              placeholder="School"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            />
-            <TextField
-              fullWidth
-              placeholder="Period"
+              placeholder="Put your Skills"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -181,227 +176,11 @@ export default function SkillsP() {
                   stroke-width="3"
                 ></path>
               </svg>
-              Add Education
+              Add Skills
             </Button>
           </Box>
 
           {/* --------- */}
-          <Box
-            sx={{
-              width: "100%",
-
-              border: "1px solid #c1b9c858",
-              boxSizing: "border-box",
-              borderRadius: "10px",
-              px: 1.5,
-              py: 1,
-              mb: 1.5,
-            }}
-          >
-            <Box
-              sx={{
-                height: "auto",
-                width: "100%",
-                display: "flex",
-                gap: 2,
-                position: "relative",
-              }}
-            >
-              <Box
-                sx={{
-                  height: "3rem",
-                  width: "3rem",
-                  bgcolor: "#ecddfd",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                <svg
-                  id="Data-Center--Streamline-Carbon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  height="32"
-                  width="32"
-                >
-                  <desc>
-                    Data Center Streamline Icon: https://streamlinehq.com
-                  </desc>
-                  <defs></defs>
-                  <path
-                    d="M14 5h-2.5V3a1.00115 1.00115 0 0 0 -1 -1H5.5a1.00115 1.00115 0 0 0 -1 1v2H2a1.00115 1.00115 0 0 0 -1 1v8a1.00115 1.00115 0 0 0 1 1h12a1.00115 1.00115 0 0 0 1 -1V6a1.00115 1.00115 0 0 0 -1 -1ZM2 14V6h2.5v1H3.5v1h1v1H3.5v1h1v1H3.5v1h1v2Zm8.5 0H5.5V3h5Zm3.5 0h-2.5v-2h1v-1h-1v-1h1v-1h-1v-1h1v-1h-1v-1h2.5Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 4h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 6h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 8h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    id="_Transparent_Rectangle_"
-                    d="M0 0h16v16H0Z"
-                    fill="none"
-                    stroke-width="0.2"
-                  ></path>
-                </svg>
-              </Box>
-
-              <Box
-                sx={{
-                  height: "auto",
-                  width: "auto",
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    fontSize: "1.1rem",
-                    fontWeight: 600,
-                    color: "#120843c6",
-                    mb: 0.5,
-                  }}
-                >
-                  NexHire
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    color: "#06041088",
-                    mb: 0.5,
-                  }}
-                >
-                  Full Stack Developer
-                </Typography>
-
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <Box sx={{ height: "1.3rem", width: "1.3rem" }}>
-                    <svg
-                      version="1.1"
-                      id="Calendar--Streamline-Carbon"
-                      xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      x="0"
-                      y="0"
-                      viewBox="0 0 16 16"
-                      xml:space="preserve"
-                      enable-background="new 0 0 32 32"
-                      height="20"
-                      width="20"
-                    >
-                      <path
-                        d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
-                        fill="#000000c5"
-                        stroke-width="0.2"
-                      ></path>
-                      <path
-                        id="_Transparent_Rectangle_"
-                        d="M0 0h16v16H0Z"
-                        fill="none"
-                        stroke-width="0.2"
-                      ></path>
-                    </svg>
-                  </Box>
-
-                  <Typography
-                    sx={{
-                      fontFamily: "monospace",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      color: "#120843c6",
-                    }}
-                  >
-                    2021 - 2023
-                  </Typography>
-                </Box>
-              </Box>
-              <Box
-                sx={{
-                  height: "2rem",
-                  width: "5rem",
-
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                }}
-              >
-                <IconButton>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="Pen--Streamline-Solar-Ar"
-                    height="24"
-                    width="24"
-                  >
-                    <path
-                      d="m14.3601 4.07866 0.9268 -0.92688c1.5357 -1.53571 4.0256 -1.53571 5.5613 0 1.5357 1.5357 1.5357 4.02557 0 5.56128l-0.9269 0.92687m-5.5612 -5.56127s0.1158 1.96962 1.8537 3.70752c1.7379 1.73789 3.7075 1.85375 3.7075 1.85375m-5.5612 -5.56127L5.83882 12.5999c-0.57716 0.5772 -0.86574 0.8657 -1.11392 1.1839 -0.29277 0.3754 -0.54376 0.7815 -0.74856 1.2112 -0.17361 0.3643 -0.30266 0.7515 -0.56078 1.5258l-1.09375 3.2813M19.9213 9.63993l-8.5212 8.52127c-0.5772 0.5771 -0.8657 0.8657 -1.1839 1.1139 -0.37538 0.2928 -0.78151 0.5438 -1.21122 0.7486 -0.36428 0.1736 -0.75146 0.3026 -1.5258 0.5607l-3.28126 1.0938m0 0 -0.80208 0.2674c-0.38106 0.127 -0.80118 0.0278 -1.08521 -0.2562 -0.28403 -0.2841 -0.3832 -0.7042 -0.25618 -1.0852l0.26736 -0.8021m1.87611 1.8761 -1.87611 -1.8761"
-                      stroke="#7b1ad5"
-                      stroke-width="1.5"
-                    ></path>
-                  </svg>
-                </IconButton>
-
-                <IconButton>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="Trash-Bin-Minimalistic--Streamline-Solar-Ar"
-                    height="24"
-                    width="24"
-                  >
-                    <path
-                      d="M9.17065 4c0.41184 -1.16519 1.52305 -2 2.82925 -2 1.3063 0 2.4175 0.83481 2.8293 2"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="M20.5 6H3.49988"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m18.8333 8.5 -0.4599 6.8991c-0.177 2.6549 -0.2655 3.9824 -1.1305 4.7916C16.3778 21 15.0474 21 12.3866 21h-0.7733c-2.66082 0 -3.99123 0 -4.85623 -0.8093 -0.86501 -0.8092 -0.95351 -2.1367 -1.1305 -4.7916L5.16663 8.5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m9.5 11 0.5 5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m14.5 11 -0.5 5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                  </svg>
-                </IconButton>
-              </Box>
-            </Box>
-          </Box>
 
           <Box
             sx={{
@@ -413,211 +192,65 @@ export default function SkillsP() {
               px: 1.5,
               py: 1,
               mb: 1.5,
+              height: "10rem",
             }}
           >
-            <Box
-              sx={{
-                height: "auto",
-                width: "100%",
-                display: "flex",
-                gap: 2,
-                position: "relative",
-              }}
-            >
-              <Box
-                sx={{
-                  height: "3rem",
-                  width: "3rem",
-                  bgcolor: "#ecddfd",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                <svg
-                  id="Data-Center--Streamline-Carbon"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 16 16"
-                  height="32"
-                  width="32"
-                >
-                  <desc>
-                    Data Center Streamline Icon: https://streamlinehq.com
-                  </desc>
-                  <defs></defs>
-                  <path
-                    d="M14 5h-2.5V3a1.00115 1.00115 0 0 0 -1 -1H5.5a1.00115 1.00115 0 0 0 -1 1v2H2a1.00115 1.00115 0 0 0 -1 1v8a1.00115 1.00115 0 0 0 1 1h12a1.00115 1.00115 0 0 0 1 -1V6a1.00115 1.00115 0 0 0 -1 -1ZM2 14V6h2.5v1H3.5v1h1v1H3.5v1h1v1H3.5v1h1v2Zm8.5 0H5.5V3h5Zm3.5 0h-2.5v-2h1v-1h-1v-1h1v-1h-1v-1h1v-1h-1v-1h2.5Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 4h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 6h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    d="M7 8h2v1h-2Z"
-                    fill="#41008b"
-                    stroke-width="0.2"
-                  ></path>
-                  <path
-                    id="_Transparent_Rectangle_"
-                    d="M0 0h16v16H0Z"
-                    fill="none"
-                    stroke-width="0.2"
-                  ></path>
-                </svg>
-              </Box>
-
-              <Box
-                sx={{
-                  height: "auto",
-                  width: "auto",
-                  display: "flex",
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
+            <Chip
+              // key={skill}
+              label={
+                <Box
                   sx={{
-                    fontFamily: "monospace",
-                    fontSize: "1.1rem",
-                    fontWeight: 600,
-                    color: "#120843c6",
-                    mb: 0.5,
+                    display: "flex",
+                    alignItems: "center",
+                    height: "100%",
+                    boxSizing: "border-box",
+                    gap: 2,
                   }}
                 >
-                  NexHire
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    fontSize: "0.8rem",
-                    fontWeight: 600,
-                    color: "#06041088",
-                    mb: 0.5,
-                  }}
-                >
-                  Full Stack Developer
-                </Typography>
-
-                <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                  <Box sx={{ height: "1.3rem", width: "1.3rem" }}>
+                  React
+                  <IconButton>
                     <svg
-                      version="1.1"
-                      id="Calendar--Streamline-Carbon"
                       xmlns="http://www.w3.org/2000/svg"
-                      xmlns:xlink="http://www.w3.org/1999/xlink"
-                      x="0"
-                      y="0"
-                      viewBox="0 0 16 16"
-                      xml:space="preserve"
-                      enable-background="new 0 0 32 32"
-                      height="20"
-                      width="20"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                      id="Delete-1--Streamline-Core"
+                      height="14"
+                      width="14"
                     >
-                      <path
-                        d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
-                        fill="#000000c5"
-                        stroke-width="0.2"
-                      ></path>
-                      <path
-                        id="_Transparent_Rectangle_"
-                        d="M0 0h16v16H0Z"
-                        fill="none"
-                        stroke-width="0.2"
-                      ></path>
+                      <desc>
+                        Delete 1 Streamline Icon: https://streamlinehq.com
+                      </desc>
+                      <g id="delete-1--remove-add-button-buttons-delete-cross-x-mathematics-multiply-math">
+                        <path
+                          id="Union"
+                          fill="#4338ca"
+                          fill-rule="evenodd"
+                          d="M1.70711 0.292893c-0.39053 -0.3905241 -1.023693 -0.3905241 -1.414217 0 -0.3905241 0.390524 -0.3905241 1.023687 0 1.414217L5.58579 7 0.292893 12.2929c-0.3905241 0.3905 -0.3905241 1.0237 0 1.4142 0.390524 0.3905 1.023687 0.3905 1.414217 0L7 8.41421l5.2929 5.29289c0.3905 0.3905 1.0237 0.3905 1.4142 0 0.3905 -0.3905 0.3905 -1.0237 0 -1.4142L8.41421 7l5.29289 -5.29289c0.3905 -0.39053 0.3905 -1.023693 0 -1.414217 -0.3905 -0.3905241 -1.0237 -0.3905241 -1.4142 0L7 5.58579 1.70711 0.292893Z"
+                          clip-rule="evenodd"
+                          stroke-width="1"
+                        ></path>
+                      </g>
                     </svg>
-                  </Box>
-
-                  <Typography
-                    sx={{
-                      fontFamily: "monospace",
-                      fontSize: "1.1rem",
-                      fontWeight: 600,
-                      color: "#120843c6",
-                    }}
-                  >
-                    2021 - 2023
-                  </Typography>
+                  </IconButton>{" "}
                 </Box>
-              </Box>
-              <Box
-                sx={{
-                  height: "2rem",
-                  width: "5rem",
+              }
+              sx={{
+                borderRadius: "0.3rem",
+                fontWeight: 600,
+                fontSize: "1.2rem",
+                height: "2.3rem",
 
-                  position: "absolute",
-                  top: 0,
-                  right: 0,
-                }}
-              >
-                <IconButton>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="Pen--Streamline-Solar-Ar"
-                    height="24"
-                    width="24"
-                  >
-                    <path
-                      d="m14.3601 4.07866 0.9268 -0.92688c1.5357 -1.53571 4.0256 -1.53571 5.5613 0 1.5357 1.5357 1.5357 4.02557 0 5.56128l-0.9269 0.92687m-5.5612 -5.56127s0.1158 1.96962 1.8537 3.70752c1.7379 1.73789 3.7075 1.85375 3.7075 1.85375m-5.5612 -5.56127L5.83882 12.5999c-0.57716 0.5772 -0.86574 0.8657 -1.11392 1.1839 -0.29277 0.3754 -0.54376 0.7815 -0.74856 1.2112 -0.17361 0.3643 -0.30266 0.7515 -0.56078 1.5258l-1.09375 3.2813M19.9213 9.63993l-8.5212 8.52127c-0.5772 0.5771 -0.8657 0.8657 -1.1839 1.1139 -0.37538 0.2928 -0.78151 0.5438 -1.21122 0.7486 -0.36428 0.1736 -0.75146 0.3026 -1.5258 0.5607l-3.28126 1.0938m0 0 -0.80208 0.2674c-0.38106 0.127 -0.80118 0.0278 -1.08521 -0.2562 -0.28403 -0.2841 -0.3832 -0.7042 -0.25618 -1.0852l0.26736 -0.8021m1.87611 1.8761 -1.87611 -1.8761"
-                      stroke="#7b1ad5"
-                      stroke-width="1.5"
-                    ></path>
-                  </svg>
-                </IconButton>
+                background:
+                  "linear-gradient(135deg, #3d03494f 0%, #abbefc 100%)",
 
-                <IconButton>
-                  <svg
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                    id="Trash-Bin-Minimalistic--Streamline-Solar-Ar"
-                    height="24"
-                    width="24"
-                  >
-                    <path
-                      d="M9.17065 4c0.41184 -1.16519 1.52305 -2 2.82925 -2 1.3063 0 2.4175 0.83481 2.8293 2"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="M20.5 6H3.49988"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m18.8333 8.5 -0.4599 6.8991c-0.177 2.6549 -0.2655 3.9824 -1.1305 4.7916C16.3778 21 15.0474 21 12.3866 21h-0.7733c-2.66082 0 -3.99123 0 -4.85623 -0.8093 -0.86501 -0.8092 -0.95351 -2.1367 -1.1305 -4.7916L5.16663 8.5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m9.5 11 0.5 5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                    <path
-                      d="m14.5 11 -0.5 5"
-                      stroke="#7b1ad5"
-                      stroke-linecap="round"
-                      stroke-width="1.5"
-                    ></path>
-                  </svg>
-                </IconButton>
-              </Box>
-            </Box>
+                color: "#4338ca",
+                transition: "0.3s",
+                "&:hover": {
+                  transform: "translateY(-0.12rem)",
+                },
+                fontFamily: "monospace",
+              }}
+            />
           </Box>
           {/* ---------- */}
         </Box>
