@@ -17,17 +17,15 @@ const Skills = [
 ];
 
 export default function SkillsP() {
-
-  const [about, setAbout] = useState("");
+ 
   const [inputAdd, setInputAdd] = useState("");
 
-
   const [editSkills, setEditSkills] = useState([
-    "React" ,
-     "Gsap" ,
-   "Js" ,
-    "Node Js" ,
-     "Express Js" ,
+    "React",
+    "Gsap",
+    "Js",
+    "Node Js",
+    "Express Js",
   ]);
 
   const { setSnackBar } = useAuth();
@@ -169,6 +167,8 @@ export default function SkillsP() {
             <TextField
               fullWidth
               placeholder="Put your Skills"
+              value={inputAdd}
+            onChange={(e) => setInputAdd(e.target.value)}
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -187,6 +187,7 @@ export default function SkillsP() {
 
             <Button
               fullWidth
+               onClick={handleAdd}
               sx={{
                 display: "flex",
                 gap: 2,
@@ -237,8 +238,9 @@ export default function SkillsP() {
               <Chip
                 key={index}
                 label={item}
-                
-                onDelete={()=>{handleDelete(index)}}
+                onDelete={() => {
+                  handleDelete(index);
+                }}
                 sx={{
                   borderRadius: "0.3rem",
                   fontWeight: 600,
