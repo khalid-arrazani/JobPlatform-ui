@@ -173,7 +173,6 @@ useEffect(() => {
             <Chip
               key={index}
               label={item}
-              
               onDelete={() => handleDelete(index)}
             />
           ))}

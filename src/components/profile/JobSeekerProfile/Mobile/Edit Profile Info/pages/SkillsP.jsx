@@ -7,10 +7,48 @@ import {
   Chip,
 } from "@mui/material";
 import { useState } from "react";
-const Skills = [{id:1,skill:"React"},{id:2,skill:"Gsap"},{id:3,skill:"Js"},{id:4,skill:"Node Js"},{id:5,skill:"Express Js"},]
+import { useAuth } from "../../../../../../logic/context/AuthContext";
+const Skills = [
+  { id: 1, skill: "React" },
+  { id: 2, skill: "Gsap" },
+  { id: 3, skill: "Js" },
+  { id: 4, skill: "Node Js" },
+  { id: 5, skill: "Express Js" },
+];
 
 export default function SkillsP() {
+
   const [about, setAbout] = useState("");
+  const [inputAdd, setInputAdd] = useState("");
+
+
+  const [editSkills, setEditSkills] = useState([
+    "React" ,
+     "Gsap" ,
+   "Js" ,
+    "Node Js" ,
+     "Express Js" ,
+  ]);
+
+  const { setSnackBar } = useAuth();
+
+  const handleAdd = () => {
+    if (inputAdd) {
+      setEditSkills((S) => [...S, inputAdd]);
+
+      setInputAdd("");
+    } else {
+      setSnackBar({
+        open: true,
+        message: " Skill should be bigger than 3 characters",
+        severity: "error",
+      });
+    }
+  };
+
+  const handleDelete = (index) => {
+    setEditSkills((prev) => prev.filter((_, i) => i !== index));
+  };
 
   return (
     <>
@@ -192,81 +230,34 @@ export default function SkillsP() {
               px: 1.5,
               py: 1,
               mb: 1.5,
-              height: "10rem",
-         
-           
-              gap:1
+              height: "auto",
             }}
           >
-
-            {Skills?.map((S)=>(
+            {editSkills?.map((item, index) => (
               <Chip
-              key={S.id}
-              label={
-                <Box
-                  sx={{
-                    display: "flex",
-                    alignItems: "center",
-                    height: "100%",
-                    boxSizing: "border-box",
-                    gap: 0.5,
-                    m:0.5
-                  }}
-                >
-                  {S.skill}
-                  <IconButton>
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 14 14"
-                      id="Delete-1--Streamline-Core"
-                      height="14"
-                      width="14"
-                    >
-                      <desc>
-                        Delete 1 Streamline Icon: https://streamlinehq.com
-                      </desc>
-                      <g id="delete-1--remove-add-button-buttons-delete-cross-x-mathematics-multiply-math">
-                        <path
-                          id="Union"
-                          fill="#4338ca"
-                          fill-rule="evenodd"
-                          d="M1.70711 0.292893c-0.39053 -0.3905241 -1.023693 -0.3905241 -1.414217 0 -0.3905241 0.390524 -0.3905241 1.023687 0 1.414217L5.58579 7 0.292893 12.2929c-0.3905241 0.3905 -0.3905241 1.0237 0 1.4142 0.390524 0.3905 1.023687 0.3905 1.414217 0L7 8.41421l5.2929 5.29289c0.3905 0.3905 1.0237 0.3905 1.4142 0 0.3905 -0.3905 0.3905 -1.0237 0 -1.4142L8.41421 7l5.29289 -5.29289c0.3905 -0.39053 0.3905 -1.023693 0 -1.414217 -0.3905 -0.3905241 -1.0237 -0.3905241 -1.4142 0L7 5.58579 1.70711 0.292893Z"
-                          clip-rule="evenodd"
-                          stroke-width="1"
-                        ></path>
-                      </g>
-                    </svg>
-                  </IconButton>
-                </Box>
-              }
-              sx={{
-                borderRadius: "0.3rem",
-                fontWeight: 600,
-                fontSize: "1.2rem",
-                height: "2.3rem",
+                key={index}
+                label={item}
+                
+                onDelete={()=>{handleDelete(index)}}
+                sx={{
+                  borderRadius: "0.3rem",
+                  fontWeight: 600,
+                  fontSize: "1.2rem",
+                  height: "2.3rem",
 
-                background:
-                  "linear-gradient(135deg, #3d03494f 0%, #abbefc 100%)",
+                  background:
+                    "linear-gradient(135deg, #3d03494f 0%, #abbefc 100%)",
 
-                color: "#4338ca",
-                transition: "0.3s",
-                "&:hover": {
-                  transform: "translateY(-0.12rem)",
-                },
-                fontFamily: "monospace",
-              }}
-            />
-
+                  color: "#4338ca",
+                  transition: "0.3s",
+                  "&:hover": {
+                    transform: "translateY(-0.12rem)",
+                  },
+                  fontFamily: "monospace",
+                  m: 0.5,
+                }}
+              />
             ))}
-
-
-
-            
-
-
-
-
           </Box>
           {/* ---------- */}
         </Box>
