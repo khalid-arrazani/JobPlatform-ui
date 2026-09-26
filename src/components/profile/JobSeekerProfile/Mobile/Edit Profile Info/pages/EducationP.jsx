@@ -1,7 +1,7 @@
 import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
 import { useState } from "react";
 
-export default function ExperienceP() {
+export default function EducationP() {
   const [about, setAbout] = useState("");
 
   return (
