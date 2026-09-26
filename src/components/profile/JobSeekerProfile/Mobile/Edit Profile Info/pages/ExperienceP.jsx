@@ -125,9 +125,51 @@ export default function ExperienceP() {
               flexDirection:"column",gap:2
             }}
           >
-            <TextField fullWidth placeholder="Role" />
-            <TextField fullWidth placeholder="Company"/>
-            <TextField fullWidth placeholder="Period"/>
+            <TextField fullWidth placeholder="Role"   sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                     border:"1px dashed #b3b1b1"
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                  
+                }} />
+            <TextField fullWidth placeholder="Company" sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                     border:"1px dashed #b3b1b1"
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                  
+                }} />
+            <TextField fullWidth placeholder="Period"   sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                     border:"1px dashed #b3b1b1"
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                  
+                }}  />
            
 
 
