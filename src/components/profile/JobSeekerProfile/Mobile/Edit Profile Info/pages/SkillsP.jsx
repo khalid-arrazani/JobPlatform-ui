@@ -7,6 +7,7 @@ import {
   Chip,
 } from "@mui/material";
 import { useState } from "react";
+const Skills = [{id:1,skill:"React"},{id:2,skill:"Gsap"},{id:3,skill:"Js"},{id:4,skill:"Node Js"},{id:5,skill:"React"},]
 
 export default function SkillsP() {
   const [about, setAbout] = useState("");
@@ -251,6 +252,10 @@ export default function SkillsP() {
                 fontFamily: "monospace",
               }}
             />
+
+
+
+
           </Box>
           {/* ---------- */}
         </Box>
