@@ -552,7 +552,14 @@ export default function ExperienceP() {
           {/* ---------- */}
 
           {/* Add experience */}
-          <Box sx={{ height: "5rem", width: "100%",display:"flex",alignItems:"center" }}>
+          <Box
+            sx={{
+              height: "5rem",
+              width: "100%",
+              display: "flex",
+              alignItems: "center",
+            }}
+          >
             <Button
               fullWidth
               sx={{
@@ -564,12 +571,25 @@ export default function ExperienceP() {
                 fontFamily: "monospace",
                 textTransform: "none",
                 fontSize: "1.2rem",
-                fontWeight: 600
-          
-                ,border:"1px dashed #909090dd"
+                fontWeight: 600,
+
+                border: "1px dashed #909090dd",
               }}
             >
-             
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                fill="#6622db"
+                id="Plus--Streamline-Phosphor"
+                height="18"
+                width="18"
+              >
+                <desc>Plus Streamline Icon: https://streamlinehq.com</desc>
+                <path
+                  d="M15.84 8c0 0.3608125 -0.29251875 0.65331875 -0.65333125 0.65333125H8.65333125v6.5333375c0 0.50293125 -0.54444375 0.81726875 -0.98 0.5658 -0.2021375 -0.11670625 -0.3266625 -0.3323875 -0.3266625 -0.5658V8.65333125H0.81333125c-0.50293125 0 -0.81726875 -0.54444375 -0.5658 -0.98 0.1167125 -0.20215 0.33238125 -0.326675 0.5658 -0.3266625h6.5333375V0.81333125c0 -0.50293125 0.54444375 -0.81726875 0.98 -0.5658 0.2021375 0.11670625 0.3266625 0.3323875 0.3266625 0.5658v6.5333375h6.5333375c0.3608125 0.0000125 0.65333125 0.29251875 0.65333125 0.65333125Z"
+                  stroke-width="3"
+                ></path>
+              </svg>
               Add Experience
             </Button>
           </Box>
