@@ -13,6 +13,7 @@ import MainListEdit from "./mainListEdit";
 import ProfileP from "./pages/ProfileP";
 import ExperienceP from "./pages/ExperienceP";
 import EducationP from "./pages/EducationP";
+import SkillsP from "./pages/SkillsP";
 
 export default function EditInfoModal({ setOpen, open }) {
 
@@ -117,7 +118,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
 
 
-          <EducationP/>
+          <SkillsP/>
 
           
 
