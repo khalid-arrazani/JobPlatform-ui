@@ -20,7 +20,7 @@ export default function EducationP() {
         }}
       >
         <Box sx={{ width: "100%", boxSizing: "border-box" }}>
-          {/* header experience */}
+          {/* header education */}
           <Box
             sx={{
               height: "4rem",
@@ -46,37 +46,68 @@ export default function EducationP() {
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
-                viewBox="0 0 24 24"
-                id="Case-Round--Streamline-Solar"
+                viewBox="0 0 48 48"
+                id="Global-Learning--Streamline-Plump"
                 height="40"
                 width="40"
               >
-                <g id="Line Duotone/School/Case Round">
+                
+                <g id="global-learning--global-learning-education">
                   <path
-                    id="Vector"
-                    stroke="#41008b"
-                    d="M3 12c0 3.7712 0 7.6569 1.31802 8.8284C5.63604 22 7.75736 22 12 22c4.2426 0 6.364 0 7.682 -1.1716C21 19.6569 21 15.7712 21 12"
-                    stroke-width="1.2"
-                  ></path>
-                  <path
-                    id="Vector_2"
+                    id="Vector 144"
                     stroke="#41008b"
                     stroke-linecap="round"
-                    d="M9.1709 4c0.41183 -1.16519 1.5231 -2 2.8293 -2s2.4175 0.83481 2.8293 2"
-                    stroke-width="1.2"
+                    stroke-linejoin="round"
+                    d="M3.42969 28.5H13.7511"
+                    stroke-width="2"
                   ></path>
                   <path
-                    id="Vector_3"
-                    stroke="#41008b"
-                    d="m14.6603 14.2019 6.1976 -1.8593c0.4109 -0.1232 0.6164 -0.1849 0.7685 -0.3071 0.1328 -0.1067 0.2362 -0.2457 0.3002 -0.4036 0.0734 -0.1808 0.0734 -0.3953 0.0734 -0.8242 0 -1.68743 0 -2.53112 -0.3297 -3.17502 -0.2869 -0.56026 -0.7427 -1.01609 -1.303 -1.30297C19.7234 6 18.8797 6 17.1923 6H6.80765c-1.68738 0 -2.53107 0 -3.17497 0.32971 -0.56026 0.28688 -1.01609 0.74271 -1.30297 1.30297C2 8.27658 2 9.12027 2 10.8077c0 0.4289 0 0.6434 0.07336 0.8242 0.06407 0.1579 0.16743 0.2969 0.30027 0.4036 0.15211 0.1222 0.35755 0.1839 0.76843 0.3071l6.19762 1.8593"
-                    stroke-width="1.2"
-                  ></path>
-                  <path
-                    id="Vector_4"
+                    id="Vector 145"
                     stroke="#41008b"
                     stroke-linecap="round"
-                    d="M14 12.5h-4c-0.27614 0 -0.5 0.2239 -0.5 0.5v2.1615c0 0.2044 0.12448 0.3883 0.3143 0.4642l0.7001 0.2801c0.9537 0.3814 2.0175 0.3814 2.9712 0l0.7001 -0.2801c0.1898 -0.0759 0.3143 -0.2598 0.3143 -0.4642V13c0 -0.2761 -0.2239 -0.5 -0.5 -0.5Z"
-                    stroke-width="1.2"
+                    stroke-linejoin="round"
+                    d="M3.42969 15.334H40.5725"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    id="Vector 2536"
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="m18 32.502 0 12.0625"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    id="Ellipse 19"
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M30.5725 22c0 -11.0457 -3.8375 -20 -8.5714 -20s-8.5714 8.9543 -8.5714 20c0 2.2754 0.1628 4.4621 0.4628 6.5001"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    id="Ellipse 18"
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M41.7765 25c0.1472 -0.9786 0.2235 -1.9804 0.2235 -3 0 -11.0457 -8.9543 -20 -20 -20S2 10.9543 2 22c0 7.8085 4.47484 14.5718 11 17.8654"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    id="Rectangle 1097"
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M19.0055 33.9581c-1.3433 -0.6057 -1.3433 -2.3055 0 -2.9112 1.143 -0.5154 2.6524 -1.1677 4.5949 -1.9569 3.1146 -1.2653 5.3631 -2.0782 6.7454 -2.5505 1.0762 -0.3678 2.2331 -0.3678 3.3092 0 1.3824 0.4723 3.6308 1.2852 6.7454 2.5505 1.9426 0.7892 3.452 1.4415 4.5949 1.9569 1.3433 0.6057 1.3433 2.3055 0 2.9112 -1.1429 0.5155 -2.6523 1.1677 -4.5949 1.9569 -3.1146 1.2653 -5.363 2.0782 -6.7454 2.5506 -1.0761 0.3677 -2.233 0.3677 -3.3092 0 -1.3823 -0.4724 -3.6308 -1.2853 -6.7454 -2.5506 -1.9425 -0.7892 -3.4519 -1.4414 -4.5949 -1.9569Z"
+                    stroke-width="2"
+                  ></path>
+                  <path
+                    id="Subtract"
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M23.5 35.874v3.0866c0 1.5888 0.0648 2.7105 0.1425 3.4845 0.1025 1.0215 0.6811 1.8929 1.6177 2.3133 1.2676 0.569 3.462 1.2439 6.7398 1.2439 3.2778 0 5.4722 -0.6749 6.7398 -1.2439 0.9366 -0.4204 1.5152 -1.2918 1.6177 -2.3133 0.0777 -0.774 0.1425 -1.8957 0.1425 -3.4845l0 -3.0862"
+                    stroke-width="2"
                   ></path>
                 </g>
               </svg>
@@ -100,7 +131,7 @@ export default function EducationP() {
                   color: "#060410c6",
                 }}
               >
-                Experience
+                Education
               </Typography>
               <Typography
                 sx={{
@@ -110,12 +141,12 @@ export default function EducationP() {
                   color: "#06041088",
                 }}
               >
-                Add and manage your work experience
+                Add and manage your Education
               </Typography>
             </Box>
           </Box>
 
-          {/* Add experience */}
+          {/* Add education */}
           <Box
             sx={{
               height: "auto",
@@ -129,7 +160,7 @@ export default function EducationP() {
           >
             <TextField
               fullWidth
-              placeholder="Role"
+              placeholder="Degree"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -147,7 +178,7 @@ export default function EducationP() {
             />
             <TextField
               fullWidth
-              placeholder="Company"
+              placeholder="School"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -212,7 +243,7 @@ export default function EducationP() {
                   stroke-width="3"
                 ></path>
               </svg>
-              Add Experience
+              Add Education
             </Button>
           </Box>
 
