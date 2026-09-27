@@ -10,16 +10,20 @@ import {
 
 import { useState } from "react";
 import MainListEdit from "./mainListEdit";
+
 import ProfileP from "./pages/ProfileP";
 import ExperienceP from "./pages/ExperienceP";
 import EducationP from "./pages/EducationP";
 import SkillsP from "./pages/SkillsP";
+import SocialLinksP from "./pages/SocialLinksP";
 
 export default function EditInfoModal({ setOpen, open }) {
 
   const onClose = () => {
     setOpen(false);
   };
+
+  const [section , setSection] = useState("Profile")
 
   const [openModal, setOpenModal] = useState(false);
 
@@ -118,7 +122,7 @@ export default function EditInfoModal({ setOpen, open }) {
 
 
 
-          <SkillsP/>
+          <SocialLinksP/>
 
           
 

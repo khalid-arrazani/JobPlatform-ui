@@ -71,8 +71,6 @@ export default function SocialLinksModal() {
   };
 
 
-
-
   const handleDelete = (index) => {
     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
   };
