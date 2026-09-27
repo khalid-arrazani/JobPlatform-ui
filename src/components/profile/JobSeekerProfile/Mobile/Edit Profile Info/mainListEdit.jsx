@@ -94,6 +94,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   scale: section == "Profile" ? 1.02:1
                   
                 }}
+                onClick={()=>{setSection("Profile")}}
               >
                 <Box
                   sx={{
@@ -156,6 +157,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   scale: section == "Experience" ? 1.02:1
                   
                 }}
+                onClick={()=>{setSection("Experience")}}
               >
                 <Box
                   sx={{
@@ -208,7 +210,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: "#0f0e0e",
+                    color: section == "Experience" ? "#3f0450f1":"#0f0e0e" ,
                   }}
                 >
                   Experience
@@ -277,7 +279,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: "#0f0e0e",
+                    color:section == "Education" ? "#3f0450f1":"#0f0e0e",
                   }}
                 >
                   Education
@@ -339,7 +341,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: "#0f0e0e",
+                    color: section == "Skills" ? "#3f0450f1":"#0f0e0e",
                   }}
                 >
                   Skills
