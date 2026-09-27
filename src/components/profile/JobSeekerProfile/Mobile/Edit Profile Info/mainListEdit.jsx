@@ -409,7 +409,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: "#0f0e0e",
+                    color:  section == "Social Links" ? "#3f0450f1":"#0f0e0e" 
                   }}
                 >
                   Social Links
