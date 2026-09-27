@@ -322,13 +322,13 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Astronomy/Atom">
                       <path
                         id="Vector"
-                        stroke="#000000"
+                        stroke={ section == "Skills" ? "#3f0450f1":"#0f0e0e" }
                         d="M14.5 12c0 1.3807 -1.1193 2.5 -2.5 2.5S9.5 13.3807 9.5 12s1.1193 -2.5 2.5 -2.5 2.5 1.1193 2.5 2.5Z"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke="#000000"
+                        stroke={ section == "Skills" ? "#3f0450f1":"#0f0e0e" }
                         d="M20.9423 3.05768c2.4694 2.46933 0.4676 8.47472 -4.4711 13.41342 -4.9386 4.9386 -10.944 6.9404 -13.41333 4.4711 -2.469323 -2.4694 -0.46754 -8.4747 4.47112 -13.4134C12.4676 2.59014 18.473 0.588344 20.9423 3.05768Zm-17.88462 0.00014C0.588349 5.52715 2.59013 11.5325 7.52879 16.4712c4.93861 4.9387 10.94401 6.9405 13.41331 4.4711 2.4694 -2.4693 0.4676 -8.4747 -4.4711 -13.41336C11.5324 2.59028 5.527 0.588485 3.05768 3.05782Z"
                         stroke-width="1.2"
                       ></path>
@@ -383,21 +383,21 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Text Formatting/Link Minimalistic 3">
                       <path
                         id="Vector"
-                        stroke="#000000"
+                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
                         stroke-linecap="round"
                         d="m14.1625 18.4876 -0.7208 0.7208c-2.3887 2.3887 -6.26151 2.3887 -8.65019 0 -2.38868 -2.3886 -2.38868 -6.2615 0 -8.6501l0.72085 -0.7209"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke="#000000"
+                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
                         stroke-linecap="round"
                         d="m9.8374 5.51236 0.7209 -0.72085c2.3886 -2.38868 6.2615 -2.38868 8.6501 0 2.3887 2.38868 2.3887 6.26149 0 8.65019l-0.7208 0.7208"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_3"
-                        stroke="#000000"
+                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
                         stroke-linecap="round"
                         d="m9.8374 14.1625 4.3251 -4.3251"
                         stroke-width="1.2"
