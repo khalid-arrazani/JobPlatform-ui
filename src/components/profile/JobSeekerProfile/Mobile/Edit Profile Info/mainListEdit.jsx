@@ -79,14 +79,15 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                 sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor: "#9f73ab00",
+                  bgcolor: "#e698fc67",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
                   border: "#06050531 solid 1px",
-                  cursor:"pointer"
+                  cursor:"pointer",
+                  
                 }}
               >
                 <Box
@@ -110,13 +111,13 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Users/User">
                       <path
                         id="Vector"
-                        stroke="#000000"
+                        stroke="#54046ad5"
                         d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
                         stroke-width="1.2 "
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke="#0d0d0d"
+                        stroke="#54046ad5"
                         d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
                         stroke-width="1.2"
                       ></path>
