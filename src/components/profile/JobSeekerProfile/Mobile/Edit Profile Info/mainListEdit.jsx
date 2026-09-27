@@ -1,6 +1,6 @@
 import { Box, Typography, Drawer, Avatar } from "@mui/material";
 
-export default function MainListEdit({ open, setOpen }) {
+export default function MainListEdit({ open, setOpen, section , setSection  }) {
   const onClose = () => {
     setOpen(false);
   };
@@ -86,6 +86,7 @@ export default function MainListEdit({ open, setOpen }) {
                   boxSizing: "border-box",
                   px: 0.5,
                   border: "#06050531 solid 1px",
+                  cursor:"pointer"
                 }}
               >
                 <Box
@@ -395,6 +396,7 @@ export default function MainListEdit({ open, setOpen }) {
                   Social Links
                 </Typography>
               </Box>
+
             </Box>
           </Box>
           <Box

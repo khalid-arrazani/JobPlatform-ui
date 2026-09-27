@@ -25,7 +25,9 @@ export default function EditInfoModal({ setOpen, open }) {
 
   const [section , setSection] = useState("Profile")
 
+
   const [openModal, setOpenModal] = useState(false);
+
 
   return (
     <>
@@ -91,7 +93,11 @@ export default function EditInfoModal({ setOpen, open }) {
                 </defs>
               </svg>
             </IconButton>
-            <MainListEdit open={openModal} setOpen={setOpenModal} />
+
+            <MainListEdit open={openModal} setOpen={setOpenModal} section={section} setSection={setSection}
+
+             />
+
             <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
               Edit Profile
             </Typography>
