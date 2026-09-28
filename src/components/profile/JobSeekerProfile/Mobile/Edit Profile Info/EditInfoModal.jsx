@@ -131,16 +131,8 @@ export default function EditInfoModal({ setOpen, open }) {
           {section == "Education"&& <EducationP/>}
           {section == "Skills"&& <SkillsP/>}
           {section == "Social Links"&& <SocialLinksP/>} 
-
-
-
-
-          
-
-          
-
-          
-
+ 
+         
       
         </Box>
       </Modal>
