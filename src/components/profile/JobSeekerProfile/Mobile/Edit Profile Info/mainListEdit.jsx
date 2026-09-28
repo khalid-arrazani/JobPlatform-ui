@@ -91,7 +91,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   px: 0.5,
                   border: section == "Profile" ? "#51215f0b solid 1px":"#06050531 solid 1px",
                   cursor:"pointer",
-                  scale: section == "Profile" ? 1.02:1
+                  scale: section == "Profile" ? 1.02:1,transition:"0.2s"
                   
                 }}
                 onClick={()=>{setSection("Profile")}}
@@ -154,7 +154,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   px: 0.5,
                   border: section == "Experience" ? "#51215f0b solid 1px":"#06050531 solid 1px",
                   cursor:"pointer",
-                  scale: section == "Experience" ? 1.02:1
+                  scale: section == "Experience" ? 1.02:1,transition:"0.2s"
                   
                 }}
                 onClick={()=>{setSection("Experience")}}
@@ -218,6 +218,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
+              onClick={()=>{setSection("Education")}}
                sx={{
                   height: "4rem",
                   width: "100%",
@@ -229,7 +230,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   px: 0.5,
                   border: section == "Education" ? "#51215f0b solid 1px":"#06050531 solid 1px",
                   cursor:"pointer",
-                  scale: section == "Education" ? 1.02:1
+                  scale: section == "Education" ? 1.02:1,transition:"0.2s"
                   
                 }}
               >
@@ -287,6 +288,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
+              onClick={()=>{setSection("Skills")}}
                sx={{
                   height: "4rem",
                   width: "100%",
@@ -298,7 +300,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   px: 0.5,
                   border: section == "Skills" ? "#51215f0b solid 1px":"#06050531 solid 1px",
                   cursor:"pointer",
-                  scale: section == "Skills" ? 1.02:1
+                  scale: section == "Skills" ? 1.02:1,transition:"0.2s"
                   
                 }}
               >
@@ -349,6 +351,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
+              onClick={()=>{setSection("Social Links")}}
                sx={{
                   height: "4rem",
                   width: "100%",
@@ -360,7 +363,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   px: 0.5,
                   border: section == "Social Links" ? "#51215f0b solid 1px":"#06050531 solid 1px",
                   cursor:"pointer",
-                  scale: section == "Social Links" ? 1.02:1
+                  scale: section == "Social Links" ? 1.02:1,transition:"0.2s"
                   
                 }}
               >

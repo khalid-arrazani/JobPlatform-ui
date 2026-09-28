@@ -126,9 +126,16 @@ export default function EditInfoModal({ setOpen, open }) {
           </Box>
 
 
+          {section == "Profile"&& <ProfileP/>}
+          {section == "Experience"&& <ExperienceP/>}
+          {section == "Education"&& <EducationP/>}
+          {section == "Skills"&& <SkillsP/>}
+          {section == "Social Links"&& <SocialLinksP/>} 
 
 
-          <SocialLinksP/>
+
+
+          
 
           
 
