@@ -72,7 +72,7 @@ export default function ProfileP() {
       <Box
         sx={{
           flex: 1,
-          pt: 4,
+          pt: 4, px: 2,
           flexDirection: "column",
           position: "relative",
           overflow: "auto",

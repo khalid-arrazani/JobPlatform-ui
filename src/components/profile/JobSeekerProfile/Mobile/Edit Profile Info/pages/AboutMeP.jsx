@@ -102,13 +102,12 @@ export default function AboutMeP() {
       <Box
         sx={{
           flex: 1,
-
           flexDirection: "column",
           position: "relative",
           overflow: "auto",
           display: "flex",
           justifyContent: "space-between",
-          py: 2,
+          py: 2, px: 2,
           boxSizing: "border-box",
         }}
       >
@@ -116,7 +115,7 @@ export default function AboutMeP() {
           sx={{
             width: "100%",
             boxSizing: "border-box",
-            px: 2,
+           
             display: "flex",
             flexDirection: "column",
             flex: 1,
