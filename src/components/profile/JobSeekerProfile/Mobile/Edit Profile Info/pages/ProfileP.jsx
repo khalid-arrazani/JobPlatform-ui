@@ -1,5 +1,7 @@
 import { Box, Typography, Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
+
+
 import { useProfile } from "../../../../../../logic/context/profileContext";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
@@ -16,6 +18,9 @@ export default function ProfileP() {
 
   const [headline, setHeadline] = useState("");
 
+  const [about, setAbout] = useState("");
+
+
   useEffect(() => {
     if (state.user?.profile) {
       setFullName(state.user.profile.fullName || "");
@@ -23,6 +28,7 @@ export default function ProfileP() {
       setLocation(state.user.profile.location || "");
 
       setHeadline(state.user.profile.headline || "");
+      setAbout(state.user.profile.headline || "");
     }
   }, [state.user]);
 
@@ -192,8 +198,8 @@ export default function ProfileP() {
               </Box>
 
               <TextField
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
                 fullWidth
                 placeholder="Enter your Full name"
                 sx={{
@@ -388,8 +394,8 @@ export default function ProfileP() {
               </Box>
 
               <TextField
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
+                value={headline}
+                onChange={(e) => setHeadline(e.target.value)}
                 fullWidth
                 placeholder="Enter your headline"
                 multiline
@@ -510,8 +516,8 @@ export default function ProfileP() {
               </Box>
 
               <TextField
-                value={about}
-                onChange={(e) => setAbout(e.target.value)}
+                value={location}
+                onChange={(e) => setLocation(e.target.value)}
                 fullWidth
                 placeholder="Enter your location"
                 sx={{
