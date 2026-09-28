@@ -1,14 +1,6 @@
-import {
-  Box,
-  Typography,
-  Button,
-} from "@mui/material";
-
+import { Box, Typography, Button, TextField } from "@mui/material";
 
 export default function AboutMeP() {
- 
- 
-
   return (
     <>
       <Box
@@ -50,46 +42,63 @@ export default function AboutMeP() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="none"
                 viewBox="0 0 24 24"
-                id="Science-Molecule--Streamline-Ultimate"
+                id="Business-Card-1--Streamline-Ultimate"
                 height="40"
                 width="40"
               >
+                
                 <path
+                  d="M3 4.75h18s2 0 2 2v10.5s0 2 -2 2H3s-2 0 -2 -2V6.75s0 -2 2 -2"
+                  fill="none"
                   stroke="#41008b"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M9.759 12.009c0 0.5968 0.23706 1.1691 0.659 1.591 0.422 0.422 0.9943 0.659 1.591 0.659s1.169 -0.237 1.591 -0.659c0.4219 -0.4219 0.659 -0.9942 0.659 -1.591 0 -0.5967 -0.2371 -1.169 -0.659 -1.591 -0.422 -0.42191 -0.9943 -0.65897 -1.591 -0.65897s-1.169 0.23706 -1.591 0.65897c-0.42194 0.422 -0.659 0.9943 -0.659 1.591Z"
-                  stroke-width="1.5"
+                  stroke-width="1"
                 ></path>
                 <path
+                  d="M4.564 7.75h5v5h-5Z"
+                  fill="none"
                   stroke="#41008b"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M1.40269 22.6163c0.98456 0.9846 3.04628 0.8113 5.7316 -0.4816 2.68532 -1.2929 5.77431 -3.5996 8.58731 -6.4127 2.813 -2.813 5.1198 -5.90197 6.4127 -8.58728 1.2929 -2.68532 1.4662 -4.74704 0.4816 -5.73161 -0.9846 -0.984561 -3.0463 -0.811324 -5.7316 0.48161C14.199 3.17765 11.11 5.48436 8.29698 8.29741 5.48393 11.1105 3.17722 14.1994 1.88429 16.8847 0.591359 19.57 0.418121 21.6318 1.40269 22.6163Z"
-                  stroke-width="1.5"
+                  stroke-width="1"
                 ></path>
                 <path
+                  d="m4.564 15.75 4.436 0"
+                  fill="none"
                   stroke="#41008b"
                   stroke-linecap="round"
                   stroke-linejoin="round"
-                  d="M8.29698 15.7221c1.39289 1.3928 2.86812 2.6761 4.34152 3.7764 1.4735 1.1003 2.9162 1.9961 4.2458 2.6363 1.3297 0.6402 2.5202 1.0122 3.5036 1.0949 0.9834 0.0826 1.7405 -0.1258 2.228 -0.6133 0.4875 -0.4875 0.6959 -1.2446 0.6133 -2.228 -0.0826 -0.9835 -0.4547 -2.174 -1.0949 -3.5036 -0.6402 -1.3297 -1.536 -2.7724 -2.6363 -4.2458 -1.1003 -1.4734 -2.3835 -2.94868 -3.7764 -4.34156 -1.3929 -1.39288 -2.8681 -2.67611 -4.3416 -3.7764 -1.47337 -1.1003 -2.91609 -1.99612 -4.24573 -2.63632C5.80463 1.24452 4.61411 0.872484 3.63068 0.789849 2.64724 0.707214 1.89016 0.9156 1.40265 1.40311 0.915142 1.89062 0.706756 2.6477 0.789391 3.63114c0.082635 0.98343 0.454669 2.17395 1.094869 3.50359 0.6402 1.32964 1.53602 2.77235 2.63632 4.24577 1.1003 1.4734 2.38352 2.9487 3.7764 4.3416Z"
-                  stroke-width="1.5"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="m15 8.25 4.238 0"
+                  fill="none"
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="m15 15.75 4.238 0"
+                  fill="none"
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
+                ></path>
+                <path
+                  d="m13.291 12 5.947 0"
+                  fill="none"
+                  stroke="#41008b"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1"
                 ></path>
               </svg>
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" id="Business-Card-1--Streamline-Ultimate" height="40" width="40">
-  <desc>
-    Business Card 1 Streamline Icon: https://streamlinehq.com
-  </desc>
-  <path d="M3 4.75h18s2 0 2 2v10.5s0 2 -2 2H3s-2 0 -2 -2V6.75s0 -2 2 -2" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-  <path d="M4.564 7.75h5v5h-5Z" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-  <path d="m4.564 15.75 4.436 0" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-  <path d="m15 8.25 4.238 0" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-  <path d="m15 15.75 4.238 0" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-  <path d="m13.291 12 5.947 0" fill="none" stroke="#41008b" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"></path>
-</svg>
             </Box>
+
             <Box
               sx={{
                 height: "4rem",
@@ -109,7 +118,7 @@ export default function AboutMeP() {
                   color: "#060410c6",
                 }}
               >
-                Skills
+                About Me
               </Typography>
               <Typography
                 sx={{
@@ -119,12 +128,183 @@ export default function AboutMeP() {
                   color: "#06041088",
                 }}
               >
-                Add and manage your Skills
+                Add and manage your personal information.
               </Typography>
             </Box>
+
+
+
+
           </Box>
 
+          {/* about me */}
+                    <Box sx={{ mb: "1rem" }}>
+                      <Typography
+                        sx={{
+                          fontSize: "1.1rem",
+                          fontWeight: 500,
+                          mb: "0.5rem",
+                          color: "#070e1ee5",
+                          fontFamily: "monospace",
+                        }}
+                      >
+                        About me
+                      </Typography>
           
+                      <Box
+                        sx={{
+                          border: "solid #ddd 1px",
+                          alignItems: "center",
+                          borderRadius: "10px",
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            height: "3.4rem",
+          
+                            display: "flex",
+                            alignItems: "center",
+          
+                            borderBottom: "solid #ddd 1px",
+                            gap: 1,
+                          }}
+                        >
+                          <Box
+                            sx={{
+                              height: "3.4rem",
+                              width: "3.4rem",
+          
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              borderRight: "solid #ddd 1px",
+                            }}
+                          >
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 14 14"
+                              id="Information-Circle--Streamline-Flex"
+                              height="28"
+                              width="28"
+                            >
+                              <g id="information-circle--information-frame-info-more-help-point-circle">
+                                <path
+                                  id="Vector"
+                                  fill="#d7e0ff"
+                                  d="M2.11452 11.3428c2.2445 2.6357 7.52645 2.6357 9.77098 0 2.0673 -2.4277 1.9104 -7.17948 -0.5779 -9.2579 -2.22871 -1.861655 -6.3865 -1.861655 -8.61525 0C0.204096 4.16332 0.0471919 8.9151 2.11452 11.3428Z"
+                                  stroke-width="1"
+                                ></path>
+                                <path
+                                  id="Vector_2"
+                                  stroke="#4147d5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M2.11452 11.3428c2.2445 2.6357 7.52645 2.6357 9.77098 0 2.0673 -2.4277 1.9104 -7.17948 -0.5779 -9.2579 -2.22871 -1.861655 -6.3865 -1.861655 -8.61525 0C0.204096 4.16332 0.0471919 8.9151 2.11452 11.3428Z"
+                                  stroke-width="1"
+                                ></path>
+                                <path
+                                  id="Vector 1187"
+                                  stroke="#4147d5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M5.74599 6h0.49646c0.55229 0 1 0.44772 1 1v2.73504"
+                                  stroke-width="1"
+                                ></path>
+                                <path
+                                  id="Vector 1188"
+                                  stroke="#4147d5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M5.76066 9.73505h2.97826"
+                                  stroke-width="1"
+                                ></path>
+                                <path
+                                  id="Vector 1189"
+                                  stroke="#4147d5"
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M7.25713 3.71982v0.32278"
+                                  stroke-width="1"
+                                ></path>
+                              </g>
+                            </svg>
+                          </Box>
+          
+                          <Typography
+                            sx={{
+                              fontSize: "1.1rem",
+                              fontWeight: 500,
+          
+                              color: "#070e1ee5",
+                              fontFamily: "monospace",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 1,
+                            }}
+                          >
+                            tell us about you
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              fill="none"
+                              viewBox="0 0 24 24"
+                              id="Arrow-Rectangle-Down-2--Streamline-Ultimate"
+                              height="24"
+                              width="24"
+                            >
+                              <path
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M2.75 0.75h18.5s2 0 2 2v18.5s0 2 -2 2H2.75s-2 0 -2 -2V2.75s0 -2 2 -2Z"
+                                stroke-width="0"
+                              ></path>
+                              <path
+                                stroke="#000000"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                d="M6.649 6.937 12 11.1l5.351 -4.162c0.1191 -0.09868 0.2626 -0.16334 0.4154 -0.18714 0.1528 -0.0238 0.3092 -0.00585 0.4527 0.05193 0.1434 0.05779 0.2686 0.15328 0.3622 0.27636 0.0937 0.12308 0.1523 0.26918 0.1697 0.42285v4.417c-0.0032 0.2197 -0.0568 0.4357 -0.1567 0.6315 -0.0999 0.1957 -0.2433 0.3659 -0.4193 0.4975l-5.618 4.369c-0.1602 0.1207 -0.3554 0.186 -0.556 0.186 -0.2006 0 -0.3958 -0.0653 -0.556 -0.186l-5.619 -4.37c-0.17599 -0.1316 -0.31944 -0.3018 -0.4193 -0.4975 -0.09986 -0.1958 -0.15347 -0.4118 -0.1567 -0.6315V7.5c0.01769 -0.1534 0.07646 -0.29919 0.1701 -0.42197 0.09364 -0.12279 0.21868 -0.21803 0.36193 -0.27568 0.14325 -0.05765 0.29941 -0.07557 0.452 -0.05187 0.15259 0.02369 0.29595 0.08813 0.41497 0.18652Z"
+                                clip-rule="evenodd"
+                                stroke-width="1.2"
+                              ></path>
+                            </svg>
+                          </Typography>
+                        </Box>
+          
+                        <TextField
+                        //   value={about}
+                        //   onChange={(e) => setAbout(e.target.value)}
+                          fullWidth
+                          multiline
+                          placeholder="Tell recruiters about your background, skills, and career goals..."
+                          rows={3}
+                          sx={{
+                            "& .MuiOutlinedInput-root": {
+                              borderRadius: "0.3rem",
+                              fontFamily: "monospace",
+                              fontSize: "1.2rem",
+                            },
+                            "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                              {
+                                border: "none",
+                              },
+                            "& .MuiInputBase-root": {
+                              py: 0.5,
+                            },
+                            border: "none",
+                          }}
+                          slotProps={{
+                            htmlInput: {
+                              maxLength: 700,
+                            },
+                          }}
+                        />
+                      </Box>
+                    </Box>
+
+
+
+
         </Box>
 
         <Button
