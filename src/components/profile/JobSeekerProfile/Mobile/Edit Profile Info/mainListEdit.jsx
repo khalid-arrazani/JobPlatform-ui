@@ -1,11 +1,9 @@
 import { Box, Typography, Drawer, Avatar } from "@mui/material";
 
-export default function MainListEdit({ open, setOpen, section , setSection  }) {
+export default function MainListEdit({ open, setOpen, section, setSection }) {
   const onClose = () => {
     setOpen(false);
   };
-
-
 
   return (
     <>
@@ -77,24 +75,29 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                 px: 1,
               }}
             >
-
-
+              {/* PROFILE */}
               <Box
                 sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor:  section == "Profile" ? "#e698fc67":"#9f73ab00"  ,
+                  bgcolor: section == "Profile" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
-                  border: section == "Profile" ? "#51215f0b solid 1px":"#06050531 solid 1px",
-                  cursor:"pointer",
-                  scale: section == "Profile" ? 1.02:1,transition:"0.2s"
-                  
+                  border:
+                    section == "Profile"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "Profile" ? 1.02 : 1,
+                  transition: "0.2s",
                 }}
-                onClick={()=>{setSection("Profile")  ; setOpen(false)}}
+                onClick={() => {
+                  setSection("Profile");
+                  setOpen(false);
+                }}
               >
                 <Box
                   sx={{
@@ -117,13 +120,13 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Users/User">
                       <path
                         id="Vector"
-                        stroke={ section == "Profile" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={section == "Profile" ? "#3f0450f1" : "#0f0e0e"}
                         d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
                         stroke-width="1.2 "
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke={ section == "Profile" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={section == "Profile" ? "#3f0450f1" : "#0f0e0e"}
                         d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
                         stroke-width="1.2"
                       ></path>
@@ -134,30 +137,141 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: section == "Profile" ? "#3f0450f1":"#0f0e0e" ,
+                    color: section == "Profile" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Profile
                 </Typography>
               </Box>
 
+              {/* ABOUT ME */}
               <Box
-                 
                 sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor:  section == "Experience" ? "#e698fc67":"#9f73ab00"  ,
+                  bgcolor: section == "About me" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
-                  border: section == "Experience" ? "#51215f0b solid 1px":"#06050531 solid 1px",
-                  cursor:"pointer",
-                  scale: section == "Experience" ? 1.02:1,transition:"0.2s"
-                  
+                  border:
+                    section == "About me"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "About me" ? 1.02 : 1,
+                  transition: "0.2s",
                 }}
-                onClick={()=>{setSection("Experience") ; setOpen(false)}}
+                onClick={() => {
+                  setSection("About me");
+                  setOpen(false);
+                }}
+              >
+                <Box
+                  sx={{
+                    height: "3.5rem",
+                    width: "3.5rem",
+                    borderRadius: "10px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    id="Business-Card-1--Streamline-Ultimate"
+                    height="30"
+                    width="30"
+                  >
+                    <desc>
+                      Business Card 1 Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path
+                      d="M3 4.75h18s2 0 2 2v10.5s0 2 -2 2H3s-2 0 -2 -2V6.75s0 -2 2 -2"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      d="M4.564 7.75h5v5h-5Z"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      d="m4.564 15.75 4.436 0"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      d="m15 8.25 4.238 0"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      d="m15 15.75 4.238 0"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      d="m13.291 12 5.947 0"
+                      fill="none"
+                      stroke={section == "About me" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
+                </Box>
+                <Typography
+                  sx={{
+                    fontFamily: "monospace",
+                    fontSize: "1.1rem",
+                    color: section == "About me" ? "#3f0450f1" : "#0f0e0e",
+                  }}
+                >
+                  About me
+                </Typography>
+              </Box>
+
+              {/* EXPERIENCE */}
+              <Box
+                sx={{
+                  height: "4rem",
+                  width: "100%",
+                  bgcolor: section == "Experience" ? "#e698fc67" : "#9f73ab00",
+                  borderRadius: "10px",
+                  display: "flex",
+                  alignItems: "center",
+                  boxSizing: "border-box",
+                  px: 0.5,
+                  border:
+                    section == "Experience"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "Experience" ? 1.02 : 1,
+                  transition: "0.2s",
+                }}
+                onClick={() => {
+                  setSection("Experience");
+                  setOpen(false);
+                }}
               >
                 <Box
                   sx={{
@@ -180,25 +294,33 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/School/Case">
                       <path
                         id="Vector"
-                        stroke={ section == "Experience" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Experience" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         d="M3 12c0 3.7712 0 7.6569 1.31802 8.8284C5.63604 22 7.75736 22 12 22c4.2426 0 6.364 0 7.682 -1.1716C21 19.6569 21 15.7712 21 12"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke={ section == "Experience" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Experience" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         d="M6.5 5c0.82344 -0.02087 1.65925 -0.54509 1.93944 -1.31968 0.00862 -0.02383 0.01746 -0.05033 0.03513 -0.10335L8.50023 3.5c0.04218 -0.12656 0.06328 -0.18986 0.08585 -0.246 0.28819 -0.71688 0.96353 -1.20363 1.73472 -1.25034C10.3812 2 10.4479 2 10.5814 2h2.8377c0.1334 0 0.2001 0 0.2605 0.00366 0.7712 0.04671 1.4466 0.53346 1.7348 1.25034 0.0225 0.05614 0.0436 0.11943 0.0858 0.246l0.0257 0.07697c0.0176 0.05271 0.0265 0.07959 0.0351 0.10335C15.8412 4.45491 16.6766 4.97913 17.5 5"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_3"
-                        stroke={ section == "Experience" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Experience" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         d="m14.6603 14.2019 6.0073 -1.8022c0.5955 -0.1786 0.8933 -0.268 1.0822 -0.4821 0.0368 -0.0417 0.0701 -0.0864 0.0994 -0.1336C22 11.5415 22 11.2307 22 10.6089c0 -2.45013 0 -3.6752 -0.673 -4.50231 -0.1293 -0.15896 -0.2746 -0.30426 -0.4336 -0.43361C20.0663 5 18.8412 5 16.3911 5H7.60893c-2.45016 0 -3.67523 0 -4.50234 0.67298 -0.15896 0.12935 -0.30426 0.27465 -0.43361 0.43361C2 6.9337 2 8.15877 2 10.6089c0 0.6218 0 0.9326 0.15078 1.1751 0.02937 0.0472 0.06263 0.0919 0.09943 0.1336 0.18894 0.2141 0.48669 0.3035 1.08219 0.4821l6.00728 1.8022"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_4"
-                        stroke={ section == "Experience" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Experience" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="M14 12.5h-4c-0.27614 0 -0.5 0.2239 -0.5 0.5v2.1615c0 0.2044 0.12448 0.3883 0.3143 0.4642l0.7001 0.2801c0.9537 0.3814 2.0175 0.3814 2.9712 0l0.7001 -0.2801c0.1898 -0.0759 0.3143 -0.2598 0.3143 -0.4642V13c0 -0.2761 -0.2239 -0.5 -0.5 -0.5Z"
                         stroke-width="1.2"
@@ -210,28 +332,35 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: section == "Experience" ? "#3f0450f1":"#0f0e0e" ,
+                    color: section == "Experience" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Experience
                 </Typography>
               </Box>
 
+              {/* EDUCATION */}
               <Box
-              onClick={()=>{setSection("Education") ; setOpen(false)}}
-               sx={{
+                onClick={() => {
+                  setSection("Education");
+                  setOpen(false);
+                }}
+                sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor:  section == "Education" ? "#e698fc67":"#9f73ab00"  ,
+                  bgcolor: section == "Education" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
-                  border: section == "Education" ? "#51215f0b solid 1px":"#06050531 solid 1px",
-                  cursor:"pointer",
-                  scale: section == "Education" ? 1.02:1,transition:"0.2s"
-                  
+                  border:
+                    section == "Education"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "Education" ? 1.02 : 1,
+                  transition: "0.2s",
                 }}
               >
                 <Box
@@ -255,21 +384,27 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/School/Square Academic Cap">
                       <path
                         id="Vector"
-                        stroke={ section == "Education" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Education" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="M2 8.5V14"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke={ section == "Education" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Education" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="M19 11.5v5.1254c0 1.008 -0.5035 1.9518 -1.3853 2.4402C16.1463 19.8787 13.796 21 12 21c-1.796 0 -4.1463 -1.1213 -5.61467 -1.9344C5.5035 18.5772 5 17.6334 5 16.6254V11.5"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_3"
-                        stroke={ section == "Education" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Education" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         d="M9.78272 3.49965c1.42098 -0.6662 3.01348 -0.6662 4.43448 0l6.6912 3.13699c1.4555 0.68235 1.4555 3.04441 0 3.72676l-6.6911 3.137c-1.421 0.6661 -3.0135 0.6661 -4.43449 0l-6.69121 -3.137c-1.45547 -0.68239 -1.45546 -3.04445 0 -3.72681l6.69112 -3.13694Z"
                         stroke-width="1.2"
                       ></path>
@@ -280,28 +415,35 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color:section == "Education" ? "#3f0450f1":"#0f0e0e",
+                    color: section == "Education" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Education
                 </Typography>
               </Box>
 
+              {/* SKILL */}
               <Box
-              onClick={()=>{setSection("Skills") ; setOpen(false)}}
-               sx={{
+                onClick={() => {
+                  setSection("Skills");
+                  setOpen(false);
+                }}
+                sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor:  section == "Skills" ? "#e698fc67":"#9f73ab00"  ,
+                  bgcolor: section == "Skills" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
-                  border: section == "Skills" ? "#51215f0b solid 1px":"#06050531 solid 1px",
-                  cursor:"pointer",
-                  scale: section == "Skills" ? 1.02:1,transition:"0.2s"
-                  
+                  border:
+                    section == "Skills"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "Skills" ? 1.02 : 1,
+                  transition: "0.2s",
                 }}
               >
                 <Box
@@ -326,13 +468,13 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Astronomy/Atom">
                       <path
                         id="Vector"
-                        stroke={ section == "Skills" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={section == "Skills" ? "#3f0450f1" : "#0f0e0e"}
                         d="M14.5 12c0 1.3807 -1.1193 2.5 -2.5 2.5S9.5 13.3807 9.5 12s1.1193 -2.5 2.5 -2.5 2.5 1.1193 2.5 2.5Z"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke={ section == "Skills" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={section == "Skills" ? "#3f0450f1" : "#0f0e0e"}
                         d="M20.9423 3.05768c2.4694 2.46933 0.4676 8.47472 -4.4711 13.41342 -4.9386 4.9386 -10.944 6.9404 -13.41333 4.4711 -2.469323 -2.4694 -0.46754 -8.4747 4.47112 -13.4134C12.4676 2.59014 18.473 0.588344 20.9423 3.05768Zm-17.88462 0.00014C0.588349 5.52715 2.59013 11.5325 7.52879 16.4712c4.93861 4.9387 10.94401 6.9405 13.41331 4.4711 2.4694 -2.4693 0.4676 -8.4747 -4.4711 -13.41336C11.5324 2.59028 5.527 0.588485 3.05768 3.05782Z"
                         stroke-width="1.2"
                       ></path>
@@ -343,28 +485,36 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: section == "Skills" ? "#3f0450f1":"#0f0e0e",
+                    color: section == "Skills" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Skills
                 </Typography>
               </Box>
 
+              {/* SOCIAL LINKS */}
               <Box
-              onClick={()=>{setSection("Social Links") ; setOpen(false)}}
-               sx={{
+                onClick={() => {
+                  setSection("Social Links");
+                  setOpen(false);
+                }}
+                sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor:  section == "Social Links" ? "#e698fc67":"#9f73ab00"  ,
+                  bgcolor:
+                    section == "Social Links" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
-                  border: section == "Social Links" ? "#51215f0b solid 1px":"#06050531 solid 1px",
-                  cursor:"pointer",
-                  scale: section == "Social Links" ? 1.02:1,transition:"0.2s"
-                  
+                  border:
+                    section == "Social Links"
+                      ? "#51215f0b solid 1px"
+                      : "#06050531 solid 1px",
+                  cursor: "pointer",
+                  scale: section == "Social Links" ? 1.02 : 1,
+                  transition: "0.2s",
                 }}
               >
                 <Box
@@ -388,21 +538,27 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                     <g id="Line Duotone/Text Formatting/Link Minimalistic 3">
                       <path
                         id="Vector"
-                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="m14.1625 18.4876 -0.7208 0.7208c-2.3887 2.3887 -6.26151 2.3887 -8.65019 0 -2.38868 -2.3886 -2.38868 -6.2615 0 -8.6501l0.72085 -0.7209"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_2"
-                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="m9.8374 5.51236 0.7209 -0.72085c2.3886 -2.38868 6.2615 -2.38868 8.6501 0 2.3887 2.38868 2.3887 6.26149 0 8.65019l-0.7208 0.7208"
                         stroke-width="1.2"
                       ></path>
                       <path
                         id="Vector_3"
-                        stroke={ section == "Social Links" ? "#3f0450f1":"#0f0e0e" }
+                        stroke={
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
+                        }
                         stroke-linecap="round"
                         d="m9.8374 14.1625 4.3251 -4.3251"
                         stroke-width="1.2"
@@ -414,14 +570,12 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color:  section == "Social Links" ? "#3f0450f1":"#0f0e0e" 
+                    color: section == "Social Links" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Social Links
                 </Typography>
               </Box>
-
-
             </Box>
           </Box>
           <Box
@@ -445,14 +599,24 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                 p: 0.8,
                 alignItems: "center",
                 gap: 1,
-                cursor:"pointer",
-                transition:"0.1s",
-                 
-                ":active":{scale:"1.01",bgcolor: "#be9ec6c5",}
+                cursor: "pointer",
+                transition: "0.1s",
+
+                ":active": { scale: "1.01", bgcolor: "#be9ec6c5" },
               }}
             >
-              <Avatar src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw" sx={{ height: "3.5rem", width: "3.5rem" }} />
-              <Typography sx={{ fontFamily: "monospace", fontSize: "1rem" ,"::selection":{color:"#050215f1"},color:"#050215f1"}}>
+              <Avatar
+                src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
+                sx={{ height: "3.5rem", width: "3.5rem" }}
+              />
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "1rem",
+                  "::selection": { color: "#050215f1" },
+                  color: "#050215f1",
+                }}
+              >
                 Back to Profile
               </Typography>
               <svg
@@ -463,7 +627,6 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                 height="24"
                 width="24"
               >
-              
                 <g id="Line Duotone/Arrows/Alt Arrow Right">
                   <path
                     id="Vector"
