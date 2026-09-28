@@ -1,11 +1,65 @@
 import { Box, Typography, Button, TextField } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useProfile } from "../../../../../../logic/context/profileContext";
+import { useAuth } from "../../../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+
+
 
 export default function ProfileP() {
-  const [about, setAbout] = useState("");
+  const { dispatch, ...state } = useProfile();
+  const { setSnackBar } = useAuth();
 
+  const [fullName, setFullName] = useState("");
 
-  
+  const [location, setLocation] = useState("");
+
+  const [headline, setHeadline] = useState("");
+
+  useEffect(() => {
+    if (state.user?.profile) {
+      setFullName(state.user.profile.fullName || "");
+
+      setLocation(state.user.profile.location || "");
+
+      setHeadline(state.user.profile.headline || "");
+    }
+  }, [state.user]);
+
+  const HandleUpdate = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    try {
+      const data = await updateProfileJS({
+        fullName,
+        location,
+        headline,
+      });
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setSnackBar({
+        open: true,
+        message: "Header Update Seccesfuly",
+        severity: "success",
+      });
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+  };
 
   return (
     <>
@@ -698,7 +752,6 @@ export default function ProfileP() {
           Save Changes
         </Button>
       </Box>
-      
     </>
   );
 }
