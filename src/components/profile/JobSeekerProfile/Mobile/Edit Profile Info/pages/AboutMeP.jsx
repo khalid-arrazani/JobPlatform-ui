@@ -109,17 +109,22 @@ export default function AboutMeP() {
           display: "flex",
           justifyContent: "space-between",
           pb: 4,
-          boxSizing: "border-box",
+          boxSizing: "border-box", 
         }}
       >
+        <Box>
+
         <Box
           sx={{
             width: "100%",
             boxSizing: "border-box",
-            overflow: "auto",
+            
             pb: 85,
           }}
         >
+
+
+
           {/* header About ME */}
           <Box
             sx={{
@@ -620,6 +625,9 @@ export default function AboutMeP() {
               <MenuItem value="senior">senior</MenuItem>
             </TextField>
           </Box>
+
+
+
         </Box>
 
         <Button
@@ -669,6 +677,12 @@ export default function AboutMeP() {
           </svg>
           Save Changes
         </Button>
+
+
+      </Box>
+
+
+
       </Box>
     </>
   );
