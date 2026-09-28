@@ -38,7 +38,6 @@ export default function EditInfoModal({ setOpen, open }) {
             height: "100%",
             width: "100vw",
             bgcolor: "#ffffff",
-            px: 2,
             boxSizing: "border-box",
             display: "flex",
             flexDirection: "column",
