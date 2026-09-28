@@ -1,9 +1,16 @@
-import { createContext, useReducer, useContext, useState, useEffect } from "react";
+import {
+  createContext,
+  useReducer,
+  useContext,
+  useState,
+  useEffect,
+} from "react";
 
 import { profileReducer } from "./reducer/ProfileReducer";
 import { getMeUser } from "../api/user/user";
 
-import { getMeJS, getMeR } from "../api/profile/GetMe";
+import { getMeJS, getMeR, updateProfileJS } from "../api/profile/GetMe";
+import { useAuth } from "./AuthContext";
 
 export const ProfileContext = createContext();
 
@@ -21,9 +28,10 @@ export const useProfile = () => {
 };
 
 export default function ProfileProvider({ children }) {
+  const { setSnackBar } = useAuth();
+
   const [state, dispatch] = useReducer(profileReducer, initialState);
 
-  
   const fetchUser = async () => {
     try {
       let data;
@@ -38,7 +46,6 @@ export default function ProfileProvider({ children }) {
         type: "PROFILE",
         payload: data,
       });
-
     } catch (error) {
       console.log(error.response?.data);
     } finally {
@@ -54,6 +61,7 @@ export default function ProfileProvider({ children }) {
   const [educationOpen, setEducationOpen] = useState(false);
   const [experienceOpen, setExperienceOpen] = useState(false);
   const [socialOpen, setSocialOpen] = useState(false);
+
 
 
   return (
