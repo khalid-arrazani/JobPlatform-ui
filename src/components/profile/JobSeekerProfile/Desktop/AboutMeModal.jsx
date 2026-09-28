@@ -40,6 +40,8 @@ export default function AboutMeModal() {
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
 
+  
+
   useEffect(() => {
     const profile = state.user?.profile;
 
