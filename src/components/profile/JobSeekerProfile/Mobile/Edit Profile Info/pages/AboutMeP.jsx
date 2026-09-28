@@ -102,7 +102,7 @@ export default function AboutMeP() {
       <Box
         sx={{
           flex: 1,
-          
+
           flexDirection: "column",
           position: "relative",
           overflow: "auto",
@@ -116,22 +116,20 @@ export default function AboutMeP() {
           sx={{
             width: "100%",
             boxSizing: "border-box",
-            px: 2,display:"flex",
-            flexDirection:"column",
-            flex:1,
-            justifyContent:"space-between"
+            px: 2,
+            display: "flex",
+            flexDirection: "column",
+            flex: 1,
+            justifyContent: "space-between",
           }}
         >
-
           <Box
             sx={{
               width: "100%",
               boxSizing: "border-box",
-              pb:2
-               
+              pb: 2,
             }}
           >
-
             {/* header About ME */}
             <Box
               sx={{
@@ -543,12 +541,11 @@ export default function AboutMeP() {
               Availability
             </Typography>
 
-            <Box sx={{ border: "1px solid #ddd",mb:3,borderRadius:"8px" }}>
+            <Box sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}>
               <TextField
                 select
                 fullWidth
                 size="small"
-                
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
@@ -577,52 +574,89 @@ export default function AboutMeP() {
             <Box>
               <Typography
                 sx={{
-                  mb: 1,
-                  fontWeight: 600,
-                  fontSize: "0.9rem",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
                 }}
               >
                 Preferred Job Type
               </Typography>
 
-              <TextField
-                select
-                fullWidth
-                size="small"
-                sx={{ mb: 2 }}
-                value={preferredJobType}
-                onChange={(e) => setPreferredJobType(e.target.value)}
+              <Box
+                sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}
               >
-                <MenuItem value="full-time">full-time</MenuItem>
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0.3rem",
+                      fontFamily: "monospace",
+                      fontSize: "1.2rem",
+                    },
+                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                      {
+                        border: "none",
+                      },
+                    "& .MuiInputBase-root": {
+                      py: 0.2,
+                    },
+                    border: "none",
+                  }}
+                  value={preferredJobType}
+                  onChange={(e) => setPreferredJobType(e.target.value)}
+                >
+                  <MenuItem value="full-time">full-time</MenuItem>
 
-                <MenuItem value="part-time">part-time</MenuItem>
+                  <MenuItem value="part-time">part-time</MenuItem>
 
-                <MenuItem value="remote">remote</MenuItem>
+                  <MenuItem value="remote">remote</MenuItem>
 
-                <MenuItem value="internship">internship</MenuItem>
+                  <MenuItem value="internship">internship</MenuItem>
 
-                <MenuItem value="freelance">freelance</MenuItem>
+                  <MenuItem value="freelance">freelance</MenuItem>
 
-                <MenuItem value="contract">contract</MenuItem>
-              </TextField>
+                  <MenuItem value="contract">contract</MenuItem>
+                </TextField>
+              </Box>
             </Box>
 
             {/* Experience Level */}
             <Box>
               <Typography
                 sx={{
-                  mb: 1,
-                  fontWeight: 600,
-                  fontSize: "0.9rem",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
                 }}
               >
                 Experience Level
               </Typography>
-
+              <Box
+                sx={{ border: "1px solid #ddd", mb: 0, borderRadius: "8px" }}
+              >
               <TextField
                 select
                 fullWidth
                 size="small"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.2rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "none",
+                    },
+                  "& .MuiInputBase-root": {},
+                  border: "none",
+                }}
                 value={experienceLevel}
                 onChange={(e) => setExperienceLevel(e.target.value)}
               >
@@ -631,12 +665,13 @@ export default function AboutMeP() {
                 <MenuItem value="mid">mid</MenuItem>
 
                 <MenuItem value="senior">senior</MenuItem>
-              </TextField>
+              </TextField></Box>
             </Box>
           </Box>
 
           <Button
             fullWidth
+            onClick={handleSave}
             sx={{
               display: "flex",
               gap: 2,
