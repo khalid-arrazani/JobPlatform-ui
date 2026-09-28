@@ -49,9 +49,6 @@ export default function ProfileProvider({ children }) {
     }
   };
 
- 
-
-
   const [aboutOpen, setAboutOpen] = useState(false);
   const [skillOpen, setSkillOpen] = useState(false);
   const [educationOpen, setEducationOpen] = useState(false);
