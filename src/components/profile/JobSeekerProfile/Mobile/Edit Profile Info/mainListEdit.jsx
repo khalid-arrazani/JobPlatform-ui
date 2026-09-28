@@ -94,7 +94,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   scale: section == "Profile" ? 1.02:1,transition:"0.2s"
                   
                 }}
-                onClick={()=>{setSection("Profile")}}
+                onClick={()=>{setSection("Profile")  ; setOpen(false)}}
               >
                 <Box
                   sx={{
@@ -157,7 +157,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
                   scale: section == "Experience" ? 1.02:1,transition:"0.2s"
                   
                 }}
-                onClick={()=>{setSection("Experience")}}
+                onClick={()=>{setSection("Experience") ; setOpen(false)}}
               >
                 <Box
                   sx={{
@@ -218,7 +218,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
-              onClick={()=>{setSection("Education")}}
+              onClick={()=>{setSection("Education") ; setOpen(false)}}
                sx={{
                   height: "4rem",
                   width: "100%",
@@ -288,7 +288,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
-              onClick={()=>{setSection("Skills")}}
+              onClick={()=>{setSection("Skills") ; setOpen(false)}}
                sx={{
                   height: "4rem",
                   width: "100%",
@@ -351,7 +351,7 @@ export default function MainListEdit({ open, setOpen, section , setSection  }) {
               </Box>
 
               <Box
-              onClick={()=>{setSection("Social Links")}}
+              onClick={()=>{setSection("Social Links") ; setOpen(false)}}
                sx={{
                   height: "4rem",
                   width: "100%",
