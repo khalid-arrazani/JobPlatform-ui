@@ -518,6 +518,7 @@ export default function AboutMeP() {
               >
                 {languagesList.map((item, index) => (
                   <Chip
+                  sx={{borderRadius:"8px",fontSize:"1rem",fontFamily:"monospace"}}
                     key={index}
                     label={item}
                     onDelete={() => handleDelete(item)}
