@@ -126,7 +126,7 @@ export default function AboutMeP() {
             sx={{
               width: "100%",
               boxSizing: "border-box",
-              pb: 2,
+              pb: 4,
             }}
           >
             {/* header About ME */}
