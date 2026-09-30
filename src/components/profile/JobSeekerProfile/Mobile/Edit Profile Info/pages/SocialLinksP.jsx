@@ -12,45 +12,97 @@ import {
 
 const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
+import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../../../../logic/context/profileContext";
 
 export default function SocialLinksP() {
-  const { setSnackBar } = useAuth();
-
-  const [socialLinks, setSocialLinks] = useState([]);
-
-  const [platform, setPlatform] = useState("");
-  const [url, setUrl] = useState("");
-
-  const handleAdd = () => {
-    if (!platform.trim() || !url.trim()) return;
-    const isExist = socialLinks.some((item) => item.platform === platform);
-
-    if (isExist) {
-      setSnackBar({
-        open: true,
-        message: "Platform already exist",
-        severity: "error",
-      });
-    } else {
-      const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
-      const newLink = {
-        platform,
-        url: formattedUrl,
-      };
-
-      setSocialLinks((prev) => [...prev, newLink]);
-
-      setPlatform("");
-      setUrl("");
-    }
-  };
-
-  const handleDelete = (index) => {
-    setSocialLinks((prev) => prev.filter((_, i) => i !== index));
-  };
-
+ const {socialOpen , setSocialOpen, dispatch, ...state } = useProfile();
+   const { setSnackBar } = useAuth();
+ 
+   const [socialLinks, setSocialLinks] = useState([]);
+ 
+   const [platform, setPlatform] = useState("");
+   const [url, setUrl] = useState("");
+ 
+ 
+ 
+ 
+ 
+   useEffect(() => {
+     setSocialLinks(
+       state.user?.profile?.socialLinks?.map(({ _id, ...rest }) => rest) || [],
+     );
+   }, [state.user?.profile]);
+ 
+ 
+ 
+   const handleAdd = () => {
+     if (!platform.trim() || !url.trim()) return;
+     const isExist = socialLinks.some((item) => item.platform === platform);
+ 
+     if (isExist) {
+ 
+       setSnackBar({
+         open: true,
+         message: "Platform already exist",
+         severity: "error",
+       });
+     } else {
+       const formattedUrl = url.startsWith("http") ? url : `https://${url}`;
+       const newLink = {
+         platform,
+         url: formattedUrl,
+       };
+ 
+       setSocialLinks((prev) => [...prev, newLink]);
+ 
+       setPlatform("");
+       setUrl("");
+     }
+   };
+ 
+ 
+   const handleDelete = (index) => {
+     setSocialLinks((prev) => prev.filter((_, i) => i !== index));
+   };
+ 
+ 
+ 
+   const handleSave = async () => {
+     dispatch({
+       type: "SET_LOADING_UPDATE_PROFILE",
+       payload: true,
+     });
+     try {
+       const data = await updateProfileJS({
+         socialLinks: socialLinks,
+       });
+ 
+       dispatch({
+         type: "PROFILE",
+         payload: data,
+       });
+       setSnackBar({
+         open: true,
+         message: "Social Links Update Seccesfuly",
+         severity: "success",
+       });
+       setSocialOpen(false);
+     } catch (error) {
+       setSnackBar({
+         open: true,
+         message: error.response?.data?.message,
+         severity: "error",
+       });
+     } finally {
+       dispatch({
+         type: "SET_LOADING_UPDATE_PROFILE",
+         payload: false,
+       });
+     }
+   };
   return (
     <Box
       sx={{
@@ -339,6 +391,7 @@ export default function SocialLinksP() {
 
       <Button
         fullWidth
+        onClick={handleSave}
         sx={{
           display: "flex",
           gap: 2,

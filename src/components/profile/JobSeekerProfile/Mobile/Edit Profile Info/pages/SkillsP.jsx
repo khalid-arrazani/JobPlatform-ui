@@ -6,36 +6,33 @@ import {
   IconButton,
   Chip,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
-const Skills = [
-  { id: 1, skill: "React" },
-  { id: 2, skill: "Gsap" },
-  { id: 3, skill: "Js" },
-  { id: 4, skill: "Node Js" },
-  { id: 5, skill: "Express Js" },
-];
+import { useProfile } from "../../../../../../logic/context/profileContext";
+import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+ 
 
 export default function SkillsP() {
- 
+ const { setSkillOpen ,dispatch, ...state } = useProfile();
+
+
+    const { setSnackBar } = useAuth();
+  
+
   const [inputAdd, setInputAdd] = useState("");
+  const [editSkills, setEditSkills] = useState([]);
 
-  const [editSkills, setEditSkills] = useState([
-    "React",
-    "Gsap",
-    "Js",
-    "Node Js",
-    "Express Js",
-  ]);
 
-  const { setSnackBar } = useAuth();
+useEffect(() => {
+  setEditSkills(
+    state.user?.profile?.skills || []
+  );
+}, [state.user?.profile]);
 
   const handleAdd = () => {
-    if (inputAdd) {
-      setEditSkills((S) => [...S, inputAdd]);
-
-      setInputAdd("");
-    } else {
+    if(inputAdd){
+    setEditSkills((S) => [...S, inputAdd]);
+    setInputAdd("");}else{
       setSnackBar({
         open: true,
         message: " Skill should be bigger than 3 characters",
@@ -46,6 +43,45 @@ export default function SkillsP() {
 
   const handleDelete = (index) => {
     setEditSkills((prev) => prev.filter((_, i) => i !== index));
+  };
+
+
+  const handleSave = async() => {
+     dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: true,
+        });
+      try {
+        const data = await updateProfileJS({
+          skills:editSkills
+        });
+  
+        dispatch({
+          type: "PROFILE", 
+          payload: data,
+        });
+        setSnackBar({
+        open: true,
+        message: "Top Skills Update Seccesfuly",
+        severity: "success",
+      });
+  
+        setSkillOpen(false);
+      } catch (error) {
+
+        setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+
+      }finally {
+        dispatch({
+          type: "SET_LOADING_UPDATE_PROFILE",
+          payload: false,
+        });
+      }
+
   };
 
   return (
@@ -266,6 +302,7 @@ export default function SkillsP() {
 
         <Button
           fullWidth
+          onClick={handleSave}
           sx={{
             display: "flex",
             gap: 2,
