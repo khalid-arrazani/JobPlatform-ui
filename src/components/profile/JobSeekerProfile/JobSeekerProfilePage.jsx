@@ -6,7 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import { getMeJS } from "../../../logic/api/profile/GetMe";
 export default function MyProfileJS() {
 
-  const { dispatch, ...state } = useProfile();
+  const { dispatch } = useProfile();
   
     useEffect(() => {
       
