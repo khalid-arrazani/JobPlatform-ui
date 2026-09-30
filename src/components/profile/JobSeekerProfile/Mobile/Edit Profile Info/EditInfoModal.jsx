@@ -105,6 +105,7 @@ export default function EditInfoModal({ setOpen, open }) {
             <Button
               onClick={() => {
                 setOpen(false);
+                setSection("Profile")
               }}
               sx={{ borderRadius: "20px" }}
             >

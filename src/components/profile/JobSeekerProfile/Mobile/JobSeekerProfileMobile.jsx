@@ -13,11 +13,10 @@ import AddIcon from "@mui/icons-material/Add";
 
 import { Button, Paper, Divider } from "@mui/material";
 import MainList from "./mainList";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 
 import EditInfoModal from "./Edit Profile Info/EditInfoModal";
-import { useProfile } from "../../../../logic/context/profileContext";
-import { getMeJS } from "../../../../logic/api/profile/GetMe";
+
 
 
 
