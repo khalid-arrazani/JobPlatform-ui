@@ -44,6 +44,11 @@ export default function AboutMeP() {
     setExperienceLevel(profile.aboutMe?.experienceLevel || "");
   }, [state.user?.profile]);
 
+  console.log(state.user)
+
+
+
+
   const handleAdd = () => {
     if (!language) return;
 

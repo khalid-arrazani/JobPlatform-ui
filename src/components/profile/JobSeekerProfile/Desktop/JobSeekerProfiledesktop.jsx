@@ -32,36 +32,12 @@ import { getMeJS } from "../../../../logic/api/profile/GetMe.jsx";
 export default function JobSeekerProfileDesktop() {
 
 
-  const { dispatch, ...state } = useProfile();
+  const {...state } = useProfile();
 
   
-  useEffect(() => {
-    
-    const fetchUser = async () => {
-      dispatch({
-        type: "SET_LOADING",
-        payload: true,
-      });
+ 
 
-      try {
-        const data = await getMeJS();
-        dispatch({
-          type: "PROFILE",
-          payload: data,
-        });
 
-      } catch (error) {
-        console.log(error.response?.data);
-      } finally {
-        dispatch({
-          type: "SET_LOADING",
-          payload: false,
-        });
-      }
-    };
-
-    fetchUser();
-  }, []);
 
 
   return (
