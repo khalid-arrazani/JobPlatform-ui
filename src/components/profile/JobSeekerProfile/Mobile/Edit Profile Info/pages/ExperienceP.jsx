@@ -92,7 +92,7 @@ export default function ExperienceP() {
           boxSizing: "border-box",
         }}
       >
-        <Box sx={{ width: "100%", boxSizing: "border-box" }}>
+        <Box sx={{ width: "100%", boxSizing: "border-box", pb:2}}>
           {/* header experience */}
           <Box
             sx={{
@@ -462,7 +462,7 @@ export default function ExperienceP() {
                 >
                   
 
-                  <IconButton onClick={()=>{handleDelete()}}  >
+                  <IconButton onClick={()=>{handleDelete(index)}}  >
                     
                     <svg
                       viewBox="0 0 24 24"
