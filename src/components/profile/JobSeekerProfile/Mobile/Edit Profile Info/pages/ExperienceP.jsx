@@ -7,6 +7,8 @@ import { useAuth } from "../../../../../../logic/context/AuthContext";
 export default function ExperienceP() {
   const { experienceOpen, setExperienceOpen, dispatch, ...state } =
     useProfile();
+
+
   const { setSnackBar } = useAuth();
 
   const [title, setTitle] = useState("");
@@ -727,6 +729,7 @@ export default function ExperienceP() {
 
         <Button
           fullWidth
+          onClick={handleSave}
           sx={{
             display: "flex",
             gap: 2,
