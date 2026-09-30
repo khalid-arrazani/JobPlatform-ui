@@ -1,15 +1,87 @@
 import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../../../../logic/context/profileContext";
+import { useAuth } from "../../../../../../logic/context/AuthContext";
 
 export default function ExperienceP() {
-  const [about, setAbout] = useState("");
+  const { experienceOpen, setExperienceOpen, dispatch, ...state } =
+    useProfile();
+  const { setSnackBar } = useAuth();
+
+  const [title, setTitle] = useState("");
+  const [experiences, setExperiences] = useState([]);
+  const [company, setCompany] = useState("");
+  const [period, setPeriod] = useState("");
+
+  useEffect(() => {
+    setExperiences(
+      state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
+
+  const handleAddExperience = () => {
+    if (!title || !company || !period) return;
+
+    const newExperience = {
+      title,
+      company,
+      period,
+    };
+
+    setExperiences((prev) => [...prev, newExperience]);
+
+    setTitle("");
+    setCompany("");
+    setPeriod("");
+  };
+
+  const handleDelete = (index) => {
+    setExperiences((prev) => prev.filter((_, i) => i !== index));
+  };
+
+  const handleSave = async () => {
+    dispatch({
+      type: "SET_LOADING_UPDATE_PROFILE",
+      payload: true,
+    });
+    try {
+      const data = await updateProfileJS({
+        experience: experiences,
+      });
+
+      dispatch({
+        type: "PROFILE",
+        payload: data,
+      });
+      setSnackBar({
+        open: true,
+        message: "Experiences Update Seccesfuly",
+        severity: "success",
+      });
+
+      setExperienceOpen(false);
+    } catch (error) {
+      setSnackBar({
+        open: true,
+        message: error.response?.data?.message,
+        severity: "error",
+      });
+    } finally {
+      dispatch({
+        type: "SET_LOADING_UPDATE_PROFILE",
+        payload: false,
+      });
+    }
+  };
 
   return (
     <>
       <Box
         sx={{
           flex: 1,
-          pt: 4, px: 2,
+          pt: 4,
+          px: 2,
           flexDirection: "column",
           position: "relative",
           overflow: "auto",
