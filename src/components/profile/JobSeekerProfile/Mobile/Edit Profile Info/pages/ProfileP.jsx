@@ -398,7 +398,7 @@ export default function ProfileP() {
                 fullWidth
                 placeholder="Enter your headline"
                 multiline
-                rows={2}
+                rows={4}
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
