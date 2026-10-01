@@ -21,6 +21,10 @@ export default function ExperienceP() {
     );
   }, [state.user?.profile]);
 
+  const matching =
+    experiences == state.user?.profile?.experience
+
+
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
 
