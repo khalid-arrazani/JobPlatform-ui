@@ -32,7 +32,6 @@ export default function ExperienceP() {
     (item, index) => item === matchexperiences[index]
   );
 
-  console.log(matching , experiences , matchexperiences );
 
 
   const handleAddExperience = () => {
