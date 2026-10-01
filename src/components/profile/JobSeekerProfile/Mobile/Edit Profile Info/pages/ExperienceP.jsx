@@ -26,7 +26,11 @@ export default function ExperienceP() {
     );
   }, [state.user?.profile]);
 
-  const matching = experiences == matchexperiences
+  const matching =
+  experiences.length === matchexperiences.length &&
+  experiences.every(
+    (item, index) => item === matchexperiences[index]
+  );
 
   console.log(matching , experiences , matchexperiences );
 
