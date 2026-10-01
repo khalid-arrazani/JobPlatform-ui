@@ -98,12 +98,15 @@ export default function SocialLinksP() {
     }
   };
 
-  console.log(socialLinks , matchsocialLinks ,state.user?.profile?.socialLinks);
+  
 
   const matching =
-    socialLinks.length === matchsocialLinks.length &&
-    socialLinks.every((item, index) => item === matchsocialLinks[index]);
+    socialLinks.length == matchsocialLinks.length &&
+    socialLinks.every((item, index) => item == matchsocialLinks[index]);
 
+
+    
+console.log(socialLinks , matchsocialLinks ,state.user?.profile?.socialLinks,matching);
 
 
 
