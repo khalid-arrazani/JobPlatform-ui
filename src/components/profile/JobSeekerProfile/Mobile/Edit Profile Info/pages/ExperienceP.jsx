@@ -12,6 +12,8 @@ export default function ExperienceP() {
 
   const [title, setTitle] = useState("");
   const [experiences, setExperiences] = useState([]);
+  const [matchexperiences, setMatchExperiences] = useState([]);
+
   const [company, setCompany] = useState("");
   const [period, setPeriod] = useState("");
 
@@ -19,10 +21,12 @@ export default function ExperienceP() {
     setExperiences(
       state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
     );
+    setMatchExperiences(
+      state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
+    );
   }, [state.user?.profile]);
 
-  const matching =
-    experiences == state.user?.profile?.experience.map(({ _id, ...rest }) => rest)
+  const matching = experiences == matchexperiences
 
 
   const handleAddExperience = () => {
