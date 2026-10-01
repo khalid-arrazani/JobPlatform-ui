@@ -1,12 +1,9 @@
 import { Box, Typography, Button, TextField } from "@mui/material";
 import { useEffect, useState } from "react";
 
-
 import { useProfile } from "../../../../../../logic/context/profileContext";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
-
-
 
 export default function ProfileP() {
   const { dispatch, ...state } = useProfile();
@@ -18,8 +15,12 @@ export default function ProfileP() {
 
   const [headline, setHeadline] = useState("");
 
+  const matching =
+    fullName == state.user.profile.fullName &&
+    location == state.user.profile.location &&
+    headline == state.user.profile.headline;
 
-
+  console.log(matching);
 
   useEffect(() => {
     if (state.user?.profile) {
@@ -71,7 +72,8 @@ export default function ProfileP() {
       <Box
         sx={{
           flex: 1,
-          pt: 4, px: 2,
+          pt: 4,
+          px: 2,
           flexDirection: "column",
           position: "relative",
           overflow: "auto",
@@ -542,18 +544,17 @@ export default function ProfileP() {
               />
             </Box>
           </Box>
-
-          
         </Box>
 
         <Button
-        onClick={HandleUpdate}
+          onClick={HandleUpdate}
+          disabled={matching}
           fullWidth
           sx={{
             display: "flex",
             gap: 2,
-            bgcolor: "#6622db",
-            color: "#ffffffe9",
+            bgcolor: matching ? "#ddd" : "#6622db",
+            color: matching ? "#333" : "#fff",
             borderRadius: "8px",
             fontFamily: "monospace",
             textTransform: "none",
