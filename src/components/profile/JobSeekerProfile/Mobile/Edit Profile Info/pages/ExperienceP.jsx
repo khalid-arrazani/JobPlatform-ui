@@ -28,6 +28,8 @@ export default function ExperienceP() {
 
   const matching = experiences == matchexperiences
 
+  console.log(matching , experiences , matchexperiences );
+
 
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
