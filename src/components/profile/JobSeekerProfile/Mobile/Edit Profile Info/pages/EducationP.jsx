@@ -45,7 +45,13 @@ export default function EducationP() {
 
   const matching =
     educations.length === matcheducations.length &&
-    educations.every((item, index) => item === matcheducations[index]);
+    educations.every((item, index) => 
+      item.degree === matcheducations[index].degree &&
+      item.school === matcheducations[index].school &&
+      item.period === matcheducations[index].period 
+  
+  
+  );
 
   const handleDelete = (index) => {
     setEducations((prev) => prev.filter((_, i) => i !== index));

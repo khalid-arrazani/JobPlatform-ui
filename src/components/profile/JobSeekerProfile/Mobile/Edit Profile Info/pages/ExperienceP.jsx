@@ -29,9 +29,19 @@ export default function ExperienceP() {
     );
   }, [state.user?.profile]);
 
+
+
   const matching =
     experiences.length === matchexperiences.length &&
-    experiences.every((item, index) => item === matchexperiences[index]);
+    experiences.every((item, index) =>
+      
+      item.title === matchexperiences[index].title &&
+      item.company === matchexperiences[index].company &&
+      item.period === matchexperiences[index].period 
+  
+  );
+
+
 
     console.log(experiences , matchexperiences , matching)
 
