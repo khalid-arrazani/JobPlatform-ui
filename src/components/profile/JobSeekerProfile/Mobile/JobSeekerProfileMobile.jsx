@@ -16,6 +16,7 @@ import MainList from "./mainList";
 import {  useState } from "react";
 
 import EditInfoModal from "./Edit Profile Info/EditInfoModal";
+import UploadProfilePhoto from "./UploadProfilePhoto";
 
 
 
@@ -173,7 +174,8 @@ export default function JobSeekerProfileMobile() {
                 alignItems: "center",
               }}
             >
-              <Box
+              <UploadProfilePhoto/>
+              {/* <Box
                 sx={{
                   bgcolor: "#ddd",
                   height: "6rem",
@@ -189,7 +191,7 @@ export default function JobSeekerProfileMobile() {
                   src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
                   sx={{ height: "100%", width: "100%" }}
                 />
-              </Box>
+              </Box> */}
 
               {/* open edit info modal */}
               <Button
