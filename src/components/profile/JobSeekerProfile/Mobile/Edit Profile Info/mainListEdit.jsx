@@ -1,6 +1,6 @@
 import { Box, Typography, Drawer, Avatar } from "@mui/material";
 
-export default function MainListEdit({ open, setOpen, section, setSection }) {
+export default function MainListEdit({ open, setOpen, section, setSection,setOpenEditModal }) {
   const onClose = () => {
     setOpen(false);
   };
