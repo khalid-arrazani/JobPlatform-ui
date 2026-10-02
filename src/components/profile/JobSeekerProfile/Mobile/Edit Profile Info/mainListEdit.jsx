@@ -590,6 +590,8 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
             }}
           >
             <Box
+            onClick={()=>{setOpenEditModal(false);setSection("Profile")
+            }}
               sx={{
                 width: "100%",
                 height: "4.2rem",
