@@ -33,6 +33,8 @@ export default function ExperienceP() {
     experiences.length === matchexperiences.length &&
     experiences.every((item, index) => item === matchexperiences[index]);
 
+    console.log(experiences)
+
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
 
