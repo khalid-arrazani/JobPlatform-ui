@@ -5,7 +5,7 @@ import { useProfile } from "../../../../../../logic/context/profileContext";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
 import { Player } from "@lottiefiles/react-lottie-player";
-import spinner from "../../../../../../assets/spainner2.json"
+import spinner from "../../../../../../assets/spainner2.json";
 export default function ProfileP() {
   const { dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
@@ -561,8 +561,8 @@ export default function ProfileP() {
             textTransform: "none",
             fontSize: "1.2rem",
             fontWeight: 600,
-            alignItems:"center",
-            height:"3rem"
+            alignItems: "center",
+            height: "3rem",
           }}
         >
           {/* <svg
@@ -598,15 +598,15 @@ export default function ProfileP() {
           </svg>
           Save Changes */}
           <Player
-                    autoplay
-                    loop
-                    src={spinner}
-                    style={{
-                      width: "3rem",
-                      height: "3rem",
-                      padding:0,
-                    }}
-                  />
+            autoplay
+            loop
+            src={spinner}
+            style={{
+              width: "3rem",
+              height: "3rem",
+              padding: 0,
+            }}
+          />
         </Button>
       </Box>
     </>
