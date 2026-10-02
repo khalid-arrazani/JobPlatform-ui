@@ -549,12 +549,12 @@ export default function ProfileP() {
 
         <Button
           onClick={HandleUpdate}
-          disabled={matching && isLoadingUptadeProfile}
+          disabled={matching || isLoadingUptadeProfile}
           fullWidth
           sx={{
             display: "flex",
             gap: 2,
-            bgcolor: matching ? "#ddd" : "#6622db",
+            bgcolor: matching || isLoadingUptadeProfile ? "#ddd" : "#6622db",
             color: matching ? "#333" : "#fff",
             borderRadius: "8px",
             fontFamily: "monospace",
@@ -565,7 +565,7 @@ export default function ProfileP() {
             height: "3rem",
           }}
         >
-          {isLoadingUptadeProfile ? 
+          {isLoadingUptadeProfile ? (
             <Player
               autoplay
               loop
@@ -576,7 +576,8 @@ export default function ProfileP() {
                 padding: 0,
               }}
             />
-           : <>
+          ) : (
+            <>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -610,8 +611,9 @@ export default function ProfileP() {
                   </g>
                 </g>
               </svg>
-             Save Changes  </> 
-          }
+              Save Changes{" "}
+            </>
+          )}
         </Button>
       </Box>
     </>
