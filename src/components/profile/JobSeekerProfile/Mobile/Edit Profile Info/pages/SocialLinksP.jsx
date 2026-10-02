@@ -100,9 +100,7 @@ export default function SocialLinksP() {
 
   
 
- 
-
-    const matching =socialLinks.length == matchsocialLinks.length &&  socialLinks.every((item, index) =>
+  const matching =socialLinks.length == matchsocialLinks.length &&  socialLinks.every((item, index) =>
   item.platform === matchsocialLinks[index].platform &&
   item.url === matchsocialLinks[index].url
 );
