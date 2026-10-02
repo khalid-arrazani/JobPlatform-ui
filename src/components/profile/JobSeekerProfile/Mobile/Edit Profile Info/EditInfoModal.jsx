@@ -94,7 +94,7 @@ export default function EditInfoModal({ setOpen, open }) {
               </svg>
             </IconButton>
 
-            <MainListEdit open={openModal} setOpen={setOpenModal} section={section} setSection={setSection}
+            <MainListEdit setOpenEditModal={setOpen} open={openModal} setOpen={setOpenModal} section={section} setSection={setSection}
 
              />
 
