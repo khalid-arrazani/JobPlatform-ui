@@ -564,7 +564,7 @@ export default function EducationP() {
             fontFamily: "monospace",
             textTransform: "none",
             fontSize: "1.2rem",
-            fontWeight: 600,
+            fontWeight: 600,height: "3rem",
           }}
         >
           {isLoadingUptadeProfile ? (
