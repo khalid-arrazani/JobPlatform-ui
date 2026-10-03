@@ -65,12 +65,11 @@ export default function MainList() {
             variant="h6"
             sx={{ mt: 1, fontWeight: "bold", fontFamily: "monospace" }}
           >
-            {state.user?.profile?.fullName} Khalid Arrazani
+            {state.user?.profile?.fullName}
           </Typography>
 
           <Typography variant="body2" sx={{ opacity: 0.7 }}>
-            {state.user?.profile?.headline}Full Stack Web Developer | React •
-            MUI • Node.js • MongoDB • GSAP
+            {state.user?.profile?.headline}
           </Typography>
         </Box>
 
