@@ -13,15 +13,19 @@ import AddIcon from "@mui/icons-material/Add";
 
 import { Button, Paper, Divider } from "@mui/material";
 import MainList from "./mainList";
-import {  useState } from "react";
+import {  useContext, useState } from "react";
 
 import EditInfoModal from "./Edit Profile Info/EditInfoModal";
 import UploadProfilePhoto from "./UploadProfilePhoto";
+import { ProfileContext } from "../../../../logic/context/profileContext";
 
 
 
 
 export default function JobSeekerProfileMobile() {
+
+    const { ...state } = useContext(ProfileContext);
+  
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
@@ -251,9 +255,10 @@ export default function JobSeekerProfileMobile() {
             <Box
               sx={{
                 width: "100%",
-                height: "8rem",
+                height: "auto",
                 boxSizing: "border-box",
                 bgcolor: "#dddddd00",
+                pb:1
               }}
             >
               <Typography
@@ -264,7 +269,8 @@ export default function JobSeekerProfileMobile() {
                   color: "#040407e9",
                 }}
               >
-                Khalid Arrazani
+                 
+                {state.user?.profile?.fullName}
               </Typography>
 
               <Typography
@@ -274,9 +280,8 @@ export default function JobSeekerProfileMobile() {
                   fontSize: "1rem",
                   color: "#040510c7",
                 }}
-              >
-                Full Stack Web Developer | React • MUI • Node.js • MongoDB •
-                GSAP
+              >     
+                {state.user?.profile?.headline}
               </Typography>
               <Typography
                 sx={{
@@ -287,7 +292,8 @@ export default function JobSeekerProfileMobile() {
                   mt: 0.5,
                 }}
               >
-                Oulad Berhil , souss-Massa , Morocco
+                {state.user?.profile?.location}
+              
               </Typography>
             </Box>
 
