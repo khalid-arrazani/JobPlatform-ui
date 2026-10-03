@@ -1023,44 +1023,19 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
-                  textAlign: "center",
+                
                 }}
               >
                 <Typography
-                  variant="h5"
-                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
+               
+                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 ,fontSize:"1.1rem"}}
                 >
-                  Tell us about yourself
+                 I'm a motivated and adaptable devloper who enjoys learning new technologies and building useful products. I'm looking for opportunities to grow and contribute to a team.
                 </Typography>
 
-                <Typography
-                  color="text.secondary"
-                  sx={{
-                    maxWidth: 500,
-                    fontFamily: "monospace",
+                
 
-                    color: "#00000077",
-                    fontSize: "0.8rem",
-                  }}
-                >
-                  Share a short introduction about your background, interests,
-                  goals and what makes you unique.
-                </Typography>
-
-                <Button
-                  startIcon={<AddIcon />}
-                  sx={{
-                    textTransform: "none",
-                    fontWeight: 400,
-                    fontFamily: "system-ui",
-                    border: "1px solid #ddd",
-                    mt: 2,
-                    borderRadius: "15px",
-                  }}
-                >
-                  Add About
-                </Button>
+                
               </Box>
             </Paper>
 
