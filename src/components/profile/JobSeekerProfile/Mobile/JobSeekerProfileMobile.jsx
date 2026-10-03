@@ -918,8 +918,6 @@ export default function JobSeekerProfileMobile() {
 
                 <Button
                   startIcon={<AddIcon />}
-                  // onClick={()=>{setExperienceOpen(true)}}
-
                   sx={{
                     textTransform: "none",
                     fontWeight: 400,
