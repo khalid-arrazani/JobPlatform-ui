@@ -375,7 +375,9 @@ export default function JobSeekerProfileMobile() {
                       fontSize: "0.8rem",
                     }}
                   >
-                    immediately
+                  
+                {state.user?.profile.aboutMe?.availability}
+
                   </Typography>
                 </Box>
               </Box>
@@ -569,7 +571,8 @@ export default function JobSeekerProfileMobile() {
                       fontSize: "0.8rem",
                     }}
                   >
-                    junior
+                {state.user?.profile.aboutMe?.experienceLevel}
+                   
                   </Typography>
                 </Box>
               </Box>
@@ -655,7 +658,7 @@ export default function JobSeekerProfileMobile() {
                       fontSize: "0.8rem",
                     }}
                   >
-                    full-time
+                    {state.user?.profile.aboutMe?.preferredJobType}
                   </Typography>
                 </Box>
               </Box>
@@ -669,7 +672,6 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                   bgcolor: "#d4c4da48",
                   px: 1,
-
                   display: "flex",
                   alignItems: "center",
                   gap: 1,
@@ -685,6 +687,7 @@ export default function JobSeekerProfileMobile() {
                     height: "3rem",
                     width: "3rem",
                     justifyContent: "center",
+                    boxSizing:"border-box"
                   }}
                 >
                   <svg
@@ -732,6 +735,7 @@ export default function JobSeekerProfileMobile() {
                     </g>
                   </svg>
                 </Box>
+                
                 <Box>
                   <Typography
                     sx={{
@@ -751,7 +755,8 @@ export default function JobSeekerProfileMobile() {
                       fontSize: "0.8rem",
                     }}
                   >
-                    Arabic - english - spanich - germany
+                    {state.user?.profile.aboutMe?.languages?.join(" - ")}
+                    Arabic - english - spanich - germany  
                   </Typography>
                 </Box>
               </Box>
