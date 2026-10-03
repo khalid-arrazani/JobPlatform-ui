@@ -70,7 +70,6 @@ export default function UploadProfilePhoto() {
   return (
     <>
       {/* Upload */}
-
       <Box
         sx={{
           bgcolor: "#fffcfc",
