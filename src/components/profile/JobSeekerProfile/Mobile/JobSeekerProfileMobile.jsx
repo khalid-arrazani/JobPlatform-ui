@@ -735,7 +735,7 @@ export default function JobSeekerProfileMobile() {
                     </g>
                   </svg>
                 </Box>
-                
+
                 <Box>
                   <Typography
                     sx={{
@@ -753,10 +753,13 @@ export default function JobSeekerProfileMobile() {
                       fontFamily: "monospace",
                       color: "#3e157b9f",
                       fontSize: "0.8rem",
+                      boxSizing:"border-box",
+                     textWrap:"wrap",flexWrap:"wrap",
+                     width:"17rem"
                     }}
                   >
                     {state.user?.profile.aboutMe?.languages?.join(" - ")}
-                    Arabic - english - spanich - germany  
+                  
                   </Typography>
                 </Box>
               </Box>
