@@ -759,7 +759,6 @@ export default function JobSeekerProfileMobile() {
                     }}
                   >
                     {state.user?.profile.aboutMe?.languages?.join(" - ")}
-                  
                   </Typography>
                 </Box>
               </Box>
