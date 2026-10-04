@@ -1344,55 +1344,7 @@ export default function JobSeekerProfileMobile() {
 
               <Divider />
 
-              <Box
-                sx={{
-                  pt: "1rem",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "flex-start",
-                  gap: 0.3,
-                  boxSizing: "border-box",
-                  pb: 2,
-                }}
-              >
-                <Typography
-                  sx={{
-                    color: "#0000009f",
-                    fontFamily: "monospace",
-                    fontSize: "1.3rem",
-                    fontWeight: 550,
-                  }}
-                >
-                  Frontend Developer
-                </Typography>
-
-                <Typography
-                  color="text.secondary"
-                  sx={{
-                    maxWidth: 600,
-                    fontFamily: "monospace",
-                    color: "#a10997b6",
-                    fontSize: "1.1rem",
-                    mb: 0.5,
-                  }}
-                >
-                  NexHire
-                </Typography>
-
-                <Chip
-                  label="2021 - 2023"
-                  sx={{
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    textAlign: "center",
-                    fontFamily: "monospace",
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    color: "#1e1e1ec4",
-                  }}
-                />
-              </Box>
+             
             </Paper>
 
             {/* Education */}
