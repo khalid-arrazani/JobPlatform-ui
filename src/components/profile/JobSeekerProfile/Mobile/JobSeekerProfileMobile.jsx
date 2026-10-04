@@ -2281,12 +2281,13 @@ export default function JobSeekerProfileMobile() {
                   alignItems: "center",
                   textAlign: "center",
                   gap: 2,
+                  boxSizing:"border-box"
                 }}
               >
                 <Box
                   sx={{
                     width: "100%",
-                    height: "4.2rem",
+                    height: "auto",
                     bgcolor: "#edf6fe",
                     borderRadius: "10px",
                     boxSizing: "border-box",
@@ -2300,7 +2301,6 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       height: "3.5rem",
                       width: "3.5rem",
-
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -2311,10 +2311,10 @@ export default function JobSeekerProfileMobile() {
                     {Icons.Facebook}
                   </Box>
 
-                  <Box  sx={{height:"auto"}} >
+                  <Box  sx={{height:"auto",width:"80%",display:"flex",flexDirection:"column",alignItems:"flex-start",boxSizing:"border-box" ,flexWrap:"wrap"}} >
 
                     <Typography  sx={{fontSize:"1.2rem",fontWeight:600,fontFamily:"monospace",color:"#02000fe1"}} >Facebook</Typography>
-                    <Typography  sx={{fontSize:"1.2rem",fontWeight:600,fontFamily:"monospace",color:"#02000fe1"}} >Facebook</Typography>
+                    <Typography  sx={{fontSize:"0.9rem",fontWeight:600,fontFamily:"monospace",color:"#3b3b3cc9" }} >https://www.facebook.com/profile.php?id=100009061156676</Typography>
 
                   </Box>
 
