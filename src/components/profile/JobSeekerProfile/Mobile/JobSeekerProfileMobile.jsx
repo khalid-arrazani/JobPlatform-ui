@@ -1317,9 +1317,10 @@ export default function JobSeekerProfileMobile() {
                   sx={{
                     maxWidth: 600,
                     fontFamily: "monospace",
-                    color: "#a10997b6",
+                    color: "#8b0081b6",
                     fontSize: "1.1rem",
                     mb: 0.5,
+                    fontWeight:600
                   }}
                 >
                   NexHire
