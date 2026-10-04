@@ -2218,7 +2218,7 @@ export default function JobSeekerProfileMobile() {
                 <>
                   <Chip
                   label={s}
-                  sx={{fontSize:"1.2rem",fontFamily:"monospace",py:1}}
+                  sx={{fontSize:"1.3rem",fontFamily:"monospace",py:2.2,borderRadius:"8px"}}
 
                   
                   />
