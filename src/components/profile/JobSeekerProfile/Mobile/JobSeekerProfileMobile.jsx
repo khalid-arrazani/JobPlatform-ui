@@ -2212,19 +2212,22 @@ export default function JobSeekerProfileMobile() {
 
               <Divider sx={{mb:1.5}} />
 
+              <Box sx={{width:"100%",display:"flex",gap:1.5,boxSizing:"border-box", flexWrap:"wrap",height:"auto"}} >
+
 
               {/* Skllis map */}
               {state.user?.profile?.skills?.map((s) => (
                 <>
                   <Chip
                   label={s}
-                  sx={{fontSize:"1.3rem",fontFamily:"monospace",py:2.2,borderRadius:"8px"}}
-
-                  
+                  sx={{fontSize:"1.3rem",fontFamily:"monospace",py:2.2,borderRadius:"8px",border:"0.5px dashed #5401633b",
+                    
+                  }}
                   />
 
                 </>
               ))}
+              </Box>
 
              
   
