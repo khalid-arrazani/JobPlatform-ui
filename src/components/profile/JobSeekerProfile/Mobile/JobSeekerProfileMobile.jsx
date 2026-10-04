@@ -1288,7 +1288,14 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
              
-                  {state.user?.profile.aboutMe?.about}
+                  {state.user?.profile?.experience?.map((ex)=>{
+                   <Typography
+                    variant="h6"
+                    sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                  >
+                    Experience
+                  </Typography>
+                  })}
              
 
 
