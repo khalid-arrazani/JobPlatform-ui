@@ -1197,7 +1197,7 @@ export default function JobSeekerProfileMobile() {
               </Box>
             </Paper>
 
-            {/* Experience */}
+            {/* Experience full */}
             <Paper
               elevation={0}
               sx={{
@@ -1287,6 +1287,10 @@ export default function JobSeekerProfileMobile() {
                   </svg>
                 </Button>
               </Box>
+             
+                  {state.user?.profile.aboutMe?.about}
+             
+
 
               <Divider />
 
