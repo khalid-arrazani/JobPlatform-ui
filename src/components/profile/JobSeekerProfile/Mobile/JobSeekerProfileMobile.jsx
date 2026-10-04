@@ -2291,10 +2291,11 @@ export default function JobSeekerProfileMobile() {
                     bgcolor: "#edf6fe",
                     borderRadius: "10px",
                     boxSizing: "border-box",
-                    px: 1,
+                    px: 1.5,
                     display: "flex",
                     alignItems: "center",
-                    gap: 1,
+                    gap: 1.5,
+                    py:1
                   }}
                 >
                   <Box
@@ -2304,7 +2305,7 @@ export default function JobSeekerProfileMobile() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      overflow: "hidden",
+                      
                       boxSizing: "border-box",
                     }}
                   >
