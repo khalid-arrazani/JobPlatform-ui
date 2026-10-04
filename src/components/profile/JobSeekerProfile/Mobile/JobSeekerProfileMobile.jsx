@@ -1556,6 +1556,7 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
             </Paper>
+            
             {/* Education Full */}
             <Paper
               elevation={0}
@@ -1713,52 +1714,76 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
 
-              <Divider />
+            
 
               <Box
                 sx={{
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems: "center",
+                   
                   textAlign: "center",
                 }}
               >
-                <Typography
-                  variant="h5"
-                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
-                >
-                  No education added yet
-                </Typography>
+               {state.user?.profile?.experience?.map((ex) => (
+                <>
+                  <Divider />
 
-                <Typography
-                  color="text.secondary"
-                  sx={{
-                    maxWidth: 500,
-                    fontFamily: "monospace",
+                  <Box
+                    sx={{
+                      pt: "1rem",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      gap: 0.3,
+                      boxSizing: "border-box",
+                      pb: 2,
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        color: "#0000009f",
+                        fontFamily: "monospace",
+                        fontSize: "1.3rem",
+                        fontWeight: 550,
+                      }}
+                    >
+                    
+                      {ex?.title}
+                    </Typography>
 
-                    color: "#00000077",
-                    fontSize: "0.8rem",
-                  }}
-                >
-                  Add your education to showcase your academic background.
-                </Typography>
+                    <Typography
+                      color="text.secondary"
+                      sx={{
+                        maxWidth: 600,
+                        fontFamily: "monospace",
+                        color: "#8b0081b6",
+                        fontSize: "1.1rem",
+                        mb: 0.5,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {ex?.company}
+                    
+                    </Typography>
 
-                <Button
-                  startIcon={<AddIcon />}
-                  // onClick={()=>{setExperienceOpen(true)}}
-
-                  sx={{
-                    textTransform: "none",
-                    fontWeight: 400,
-                    fontFamily: "system-ui",
-                    border: "1px solid #ddd",
-                    mt: 2,
-                    borderRadius: "15px",
-                  }}
-                >
-                  Add Education
-                </Button>
+                    <Chip 
+                      label={ex?.period}
+                      sx={{
+                        borderRadius: "8px",
+                        display: "flex",
+                        alignItems: "center",
+                        textAlign: "center",
+                        fontFamily: "monospace",
+                        fontSize: "1rem",
+                        fontWeight: 600,
+                        color: "#020313ae",
+                        bgcolor: "#dddddd5a",
+                      }}
+                    />
+                  </Box>
+                </>
+              ))}
               </Box>
             </Paper>
 
