@@ -1741,7 +1741,7 @@ export default function JobSeekerProfileMobile() {
                       }}
                     >
                     
-                      {ex?.title}
+                      {ex?.degree}
                     </Typography>
 
                     <Typography
@@ -1755,7 +1755,7 @@ export default function JobSeekerProfileMobile() {
                         fontWeight: 600,
                       }}
                     >
-                      {ex?.company}
+                      {ex?.school}
                     
                     </Typography>
 
