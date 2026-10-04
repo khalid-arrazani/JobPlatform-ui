@@ -1717,7 +1717,7 @@ export default function JobSeekerProfileMobile() {
             
 
              
-               {state.user?.profile?.experience?.map((ex) => (
+               {state.user?.profile?.education?.map((ex) => (
                 <>
                   <Divider />
 
@@ -1778,7 +1778,7 @@ export default function JobSeekerProfileMobile() {
               ))}
              
             </Paper>
-            
+
 
             {/* Social Links */}
             <Paper
