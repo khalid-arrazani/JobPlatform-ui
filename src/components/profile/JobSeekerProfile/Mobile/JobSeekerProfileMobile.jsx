@@ -19,6 +19,7 @@ import EditInfoModal from "./Edit Profile Info/EditInfoModal";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import { ProfileContext } from "../../../../logic/context/profileContext";
 
+
 const Icons = {
   LinkDine: (
     <svg
@@ -39,26 +40,27 @@ const Icons = {
   ),
   Facebook: (
     <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      id="Facebook--Streamline-Svg-Logos"
-      height="50"
-      width="50"
-    >
-      <desc>Facebook Streamline Icon: https://streamlinehq.com</desc>
-      <path
-        fill="#1877f2"
-        d="M23.75 12C23.75 5.51065 18.48935 0.25 12 0.25S0.25 5.51065 0.25 12c0 5.864775 4.2968 10.725775 9.91405 11.60725V15.396475H7.180675V12h2.983375V9.411325c0 -2.94485 1.7542 -4.571475 4.43815 -4.571475 1.28555 0 2.630225 0.229475 2.630225 0.229475v2.891625h-1.48165c-1.45965 0 -1.914825 0.905725 -1.914825 1.83495V12h3.258775l-0.52095 3.396475H13.83595V23.60725C19.4532 22.725775 23.75 17.864775 23.75 12Z"
-        stroke-width="0.25"
-      ></path>
-      <path
-        fill="#ffffff"
-        d="M16.573775 15.396475 17.094725 12H13.83595v-2.2041c0 -0.929225 0.455175 -1.83495 1.914825 -1.83495h1.48165V5.069325s-1.344675 -0.229475 -2.630225 -0.229475c-2.68395 0 -4.43815 1.626625 -4.43815 4.571475V12H7.180675v3.396475h2.983375V23.60725C10.762275 23.701125 11.375425 23.75 12 23.75c0.624575 0 1.237725 -0.048875 1.83595 -0.14275V15.396475h2.737825Z"
-        stroke-width="0.25"
-      ></path>
-    </svg>
-  ),
+    id="Layer_1"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlnsXlink="http://www.w3.org/1999/xlink"
+    x="0px"
+    y="0px"
+    viewBox="0 0 408.788 408.788"
+    style={{
+      enableBackground: "new 0 0 408.788 408.788",
+    }}
+    xmlSpace="preserve"
+    
+  >
+    <path
+      style={{
+        fill: "#475993",
+      }}
+      d="M353.701,0H55.087C24.665,0,0.002,24.662,0.002,55.085v298.616c0,30.423,24.662,55.085,55.085,55.085 h147.275l0.251-146.078h-37.951c-4.932,0-8.935-3.988-8.954-8.92l-0.182-47.087c-0.019-4.959,3.996-8.989,8.955-8.989h37.882 v-45.498c0-52.8,32.247-81.55,79.348-81.55h38.65c4.945,0,8.955,4.009,8.955,8.955v39.704c0,4.944-4.007,8.952-8.95,8.955 l-23.719,0.011c-25.615,0-30.575,12.172-30.575,30.035v39.389h56.285c5.363,0,9.524,4.683,8.892,10.009l-5.581,47.087 c-0.534,4.506-4.355,7.901-8.892,7.901h-50.453l-0.251,146.078h87.631c30.422,0,55.084-24.662,55.084-55.084V55.085 C408.786,24.662,384.124,0,353.701,0z"
+    />
+  </svg>
+),
+   
   Github: (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -77,66 +79,95 @@ const Icons = {
     </svg>
   ),
   instagram: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 14 14"
-      id="Instagram--Streamline-Core"
-      height="14"
-      width="14"
-    >
-      <desc>Instagram Streamline Icon: https://streamlinehq.com</desc>
-      <g id="instagram">
-        <path
-          id="Subtract"
-          fill="#d7e0ff"
-          fill-rule="evenodd"
-          d="M3.43129 0.858459C2.01025 0.858459 0.858276 2.01044 0.858276 3.43147v6.86133c0 1.4211 1.151974 2.5731 2.573014 2.5731h6.86141c1.421 0 2.573 -1.152 2.573 -2.5731V3.43147c0 -1.42103 -1.152 -2.573011 -2.573 -2.573011H3.43129ZM6.86208 9.41165c1.40809 0 2.54958 -1.14148 2.54958 -2.54957 0 -1.4081 -1.14149 -2.54958 -2.54958 -2.54958 -1.40809 0 -2.54957 1.14148 -2.54957 2.54958 0 1.40809 1.14148 2.54957 2.54957 2.54957Z"
-          clip-rule="evenodd"
-          stroke-width="1"
-        ></path>
-        <path
-          id="Ellipse 11"
-          fill="#ffffff"
-          d="M4.312 6.862a2.55 2.55 0 1 0 5.1 0 2.55 2.55 0 1 0 -5.1 0"
-          stroke-width="1"
-        ></path>
-        <path
-          id="Ellipse 12"
-          stroke="#4147d5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M4.312 6.862a2.55 2.55 0 1 0 5.1 0 2.55 2.55 0 1 0 -5.1 0"
-          stroke-width="1"
-        ></path>
-        <path
-          id="Rectangle 3"
-          stroke="#4147d5"
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M0.858276 3.43147c0 -1.42103 1.151974 -2.573011 2.573014 -2.573011h6.86141c1.421 0 2.573 1.151981 2.573 2.573011v6.86133c0 1.4211 -1.152 2.5731 -2.573 2.5731H3.43129c-1.42104 0 -2.573014 -1.152 -2.573014 -2.5731V3.43147Z"
-          stroke-width="1"
-        ></path>
-        <g id="Group 4546">
-          <path
-            id="Vector"
-            stroke="#4147d5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M10.3332 3.64417c-0.1381 0 -0.25 -0.11193 -0.25 -0.25 0 -0.13808 0.1119 -0.25 0.25 -0.25"
-            stroke-width="1"
-          ></path>
-          <path
-            id="Vector_2"
-            stroke="#4147d5"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            d="M10.3332 3.64417c0.1381 0 0.25 -0.11193 0.25 -0.25 0 -0.13808 -0.1119 -0.25 -0.25 -0.25"
-            stroke-width="1"
-          ></path>
-        </g>
-      </g>
-    </svg>
+
+  <svg
+    width="70"
+    height="70"
+    viewBox="0 0 32 32"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+     
+  >
+    <rect
+      x={2}
+      y={2}
+      width={28}
+      height={28}
+      rx={6}
+      fill="url(#paint0_radial_87_7153)"
+    />
+    <rect
+      x={2}
+      y={2}
+      width={28}
+      height={28}
+      rx={6}
+      fill="url(#paint1_radial_87_7153)"
+    />
+    <rect
+      x={2}
+      y={2}
+      width={28}
+      height={28}
+      rx={6}
+      fill="url(#paint2_radial_87_7153)"
+    />
+    <path
+      d="M23 10.5C23 11.3284 22.3284 12 21.5 12C20.6716 12 20 11.3284 20 10.5C20 9.67157 20.6716 9 21.5 9C22.3284 9 23 9.67157 23 10.5Z"
+      fill="white"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M16 21C18.7614 21 21 18.7614 21 16C21 13.2386 18.7614 11 16 11C13.2386 11 11 13.2386 11 16C11 18.7614 13.2386 21 16 21ZM16 19C17.6569 19 19 17.6569 19 16C19 14.3431 17.6569 13 16 13C14.3431 13 13 14.3431 13 16C13 17.6569 14.3431 19 16 19Z"
+      fill="white"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M6 15.6C6 12.2397 6 10.5595 6.65396 9.27606C7.2292 8.14708 8.14708 7.2292 9.27606 6.65396C10.5595 6 12.2397 6 15.6 6H16.4C19.7603 6 21.4405 6 22.7239 6.65396C23.8529 7.2292 24.7708 8.14708 25.346 9.27606C26 10.5595 26 12.2397 26 15.6V16.4C26 19.7603 26 21.4405 25.346 22.7239C24.7708 23.8529 23.8529 24.7708 22.7239 25.346C21.4405 26 19.7603 26 16.4 26H15.6C12.2397 26 10.5595 26 9.27606 25.346C8.14708 24.7708 7.2292 23.8529 6.65396 22.7239C6 21.4405 6 19.7603 6 16.4V15.6ZM15.6 8H16.4C18.1132 8 19.2777 8.00156 20.1779 8.0751C21.0548 8.14674 21.5032 8.27659 21.816 8.43597C22.5686 8.81947 23.1805 9.43139 23.564 10.184C23.7234 10.4968 23.8533 10.9452 23.9249 11.8221C23.9984 12.7223 24 13.8868 24 15.6V16.4C24 18.1132 23.9984 19.2777 23.9249 20.1779C23.8533 21.0548 23.7234 21.5032 23.564 21.816C23.1805 22.5686 22.5686 23.1805 21.816 23.564C21.5032 23.7234 21.0548 23.8533 20.1779 23.9249C19.2777 23.9984 18.1132 24 16.4 24H15.6C13.8868 24 12.7223 23.9984 11.8221 23.9249C10.9452 23.8533 10.4968 23.7234 10.184 23.564C9.43139 23.1805 8.81947 22.5686 8.43597 21.816C8.27659 21.5032 8.14674 21.0548 8.0751 20.1779C8.00156 19.2777 8 18.1132 8 16.4V15.6C8 13.8868 8.00156 12.7223 8.0751 11.8221C8.14674 10.9452 8.27659 10.4968 8.43597 10.184C8.81947 9.43139 9.43139 8.81947 10.184 8.43597C10.4968 8.27659 10.9452 8.14674 11.8221 8.0751C12.7223 8.00156 13.8868 8 15.6 8Z"
+      fill="white"
+    />
+    <defs>
+      <radialGradient
+        id="paint0_radial_87_7153"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(12 23) rotate(-55.3758) scale(25.5196)"
+      >
+        <stop stopColor="#B13589" />
+        <stop offset={0.79309} stopColor="#C62F94" />
+        <stop offset={1} stopColor="#8A3AC8" />
+      </radialGradient>
+      <radialGradient
+        id="paint1_radial_87_7153"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(11 31) rotate(-65.1363) scale(22.5942)"
+      >
+        <stop stopColor="#E0E8B7" />
+        <stop offset={0.444662} stopColor="#FB8A2E" />
+        <stop offset={0.71474} stopColor="#E2425C" />
+        <stop offset={1} stopColor="#E2425C" stopOpacity={0} />
+      </radialGradient>
+      <radialGradient
+        id="paint2_radial_87_7153"
+        cx={0}
+        cy={0}
+        r={1}
+        gradientUnits="userSpaceOnUse"
+        gradientTransform="translate(0.500002 3) rotate(-8.1301) scale(38.8909 8.31836)"
+      >
+        <stop offset={0.156701} stopColor="#406ADC" />
+        <stop offset={0.467799} stopColor="#6A45BE" />
+        <stop offset={1} stopColor="#6A45BE" stopOpacity={0} />
+      </radialGradient>
+    </defs>
+  </svg>
   ),
   X: (
     <svg
@@ -2224,7 +2255,7 @@ export default function JobSeekerProfileMobile() {
                     sx={{
                       height: "3.5rem",
                       width: "3.5rem",
-                      bgcolor: "#326eef",
+                      
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -2258,13 +2289,13 @@ export default function JobSeekerProfileMobile() {
                       sx={{
                         height: "3.5rem",
                         width: "3.5rem",
-                        bgcolor: "#326eef00",
+                        bgcolor: "#08090900",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                       }}
                     >
-                      {Icons.Link}
+                      {Icons.instagram}
                     </Box>
                   </Box>
                 </Box>
