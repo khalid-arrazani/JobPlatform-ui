@@ -1,4 +1,11 @@
-import { Box, Typography, Avatar, IconButton, Drawer,Chip } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Avatar,
+  IconButton,
+  Drawer,
+  Chip,
+} from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
@@ -1023,19 +1030,18 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                
                 }}
               >
                 <Typography
-               
-                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 ,fontSize:"1.1rem"}}
+                  sx={{
+                    color: "#000000af",
+                    fontFamily: "monospace",
+                    mb: 0.6,
+                    fontSize: "1.1rem",
+                  }}
                 >
-                                    {state.user?.profile.aboutMe?.about}
+                  {state.user?.profile.aboutMe?.about}
                 </Typography>
-
-                
-
-                
               </Box>
             </Paper>
 
@@ -1191,7 +1197,6 @@ export default function JobSeekerProfileMobile() {
               </Box>
             </Paper>
 
-
             {/* Experience */}
             <Paper
               elevation={0}
@@ -1290,19 +1295,22 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems:"flex-start",gap:0.3,boxSizing:"border-box",pb:2
-                 
+                  alignItems: "flex-start",
+                  gap: 0.3,
+                  boxSizing: "border-box",
+                  pb: 2,
                 }}
               >
                 <Typography
-               
-               
-                  sx={{ color: "#0000009f", fontFamily: "monospace",fontSize:"1.3rem",fontWeight:550}}
+                  sx={{
+                    color: "#0000009f",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                    fontWeight: 550,
+                  }}
                 >
                   Frontend Developer
                 </Typography>
-
-               
 
                 <Typography
                   color="text.secondary"
@@ -1311,38 +1319,51 @@ export default function JobSeekerProfileMobile() {
                     fontFamily: "monospace",
                     color: "#a10997b6",
                     fontSize: "1.1rem",
-                    mb:0.5
+                    mb: 0.5,
                   }}
                 >
                   NexHire
                 </Typography>
 
-                  <Chip
-                label="2021 - 2023"
-
-                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",fontSize:"0.9rem"}}
+                <Chip
+                  label="2021 - 2023"
+                  sx={{
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    textAlign: "center",
+                    fontFamily: "monospace",
+                    fontSize: "1rem",
+                    fontWeight: 600,
+                    color: "#020313ae",
+                    bgcolor: "#dddddd5a",
+                  }}
                 />
               </Box>
 
               <Divider />
+
               <Box
                 sx={{
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems:"flex-start",gap:0.3,boxSizing:"border-box",pb:2
-                 
+                  alignItems: "flex-start",
+                  gap: 0.3,
+                  boxSizing: "border-box",
+                  pb: 2,
                 }}
               >
                 <Typography
-               
-               
-                  sx={{ color: "#0000009f", fontFamily: "monospace",fontSize:"1.3rem",fontWeight:550}}
+                  sx={{
+                    color: "#0000009f",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                    fontWeight: 550,
+                  }}
                 >
                   Frontend Developer
                 </Typography>
-
-               
 
                 <Typography
                   color="text.secondary"
@@ -1351,20 +1372,26 @@ export default function JobSeekerProfileMobile() {
                     fontFamily: "monospace",
                     color: "#a10997b6",
                     fontSize: "1.1rem",
-                    mb:0.5
+                    mb: 0.5,
                   }}
                 >
                   NexHire
                 </Typography>
 
-                  <Chip
-                label="2021 - 2023"
-
-                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",fontSize:"0.9rem"}}
+                <Chip
+                  label="2021 - 2023"
+                  sx={{
+                    borderRadius: "8px",
+                    display: "flex",
+                    alignItems: "center",
+                    textAlign: "center",
+                    fontFamily: "monospace",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    color: "#1e1e1ec4",
+                  }}
                 />
               </Box>
-
-
             </Paper>
 
             {/* Education */}
