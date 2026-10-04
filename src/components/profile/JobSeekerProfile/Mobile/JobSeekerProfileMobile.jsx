@@ -1302,11 +1302,7 @@ export default function JobSeekerProfileMobile() {
                   Frontend Developer
                 </Typography>
 
-                <Chip
-                label="2021 - 2023"
-
-                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",}}
-                />
+               
 
                 <Typography
                   color="text.secondary"
@@ -1321,7 +1317,11 @@ export default function JobSeekerProfileMobile() {
                   NexHire
                 </Typography>
 
-                 
+                  <Chip
+                label="2021 - 2023"
+
+                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",fontSize:"0.9rem"}}
+                />
               </Box>
             </Paper>
 
