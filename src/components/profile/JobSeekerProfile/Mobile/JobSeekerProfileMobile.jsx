@@ -26,8 +26,8 @@ const Icons = {
       fill="none"
       viewBox="0 0 24 24"
       id="Linkedin-Icon--Streamline-Svg-Logos"
-      height="24"
-      width="24"
+      height="50"
+      width="50"
     >
       <desc>Linkedin Icon Streamline Icon: https://streamlinehq.com</desc>
       <path
@@ -43,8 +43,8 @@ const Icons = {
       fill="none"
       viewBox="0 0 24 24"
       id="Facebook--Streamline-Svg-Logos"
-      height="24"
-      width="24"
+      height="50"
+      width="50"
     >
       <desc>Facebook Streamline Icon: https://streamlinehq.com</desc>
       <path
@@ -66,8 +66,8 @@ const Icons = {
       class="bi bi-github"
       viewBox="0 0 16 16"
       id="Github--Streamline-Bootstrap"
-      height="16"
-      width="16"
+      height="50"
+      width="50"
     >
       <desc>Github Streamline Icon: https://streamlinehq.com</desc>
       <path
@@ -144,8 +144,8 @@ const Icons = {
       fill="none"
       viewBox="0 0 24 24"
       id="X-Twitter-Logo--Streamline-Logos"
-      height="24"
-      width="24"
+      height="50"
+      width="50"
     >
       <desc>X Twitter Logo Streamline Icon: https://streamlinehq.com</desc>
       <path
@@ -163,8 +163,8 @@ const Icons = {
       fill="none"
       viewBox="0 0 24 24"
       id="Captive-Portal--Streamline-Rounded-Material"
-      height="24"
-      width="24"
+      height="50"
+      width="50"
     >
       <desc>Captive Portal Streamline Icon: https://streamlinehq.com</desc>
       <path
@@ -2086,6 +2086,12 @@ export default function JobSeekerProfileMobile() {
               </Box>
             </Paper>
 
+
+
+
+
+
+
             {/* Social Links Full */}
             <Paper
               elevation={0}
@@ -2214,8 +2220,23 @@ export default function JobSeekerProfileMobile() {
                     height: "4.2rem",
                     bgcolor: "#edf6fe",
                     borderRadius: "10px",
+                    boxSizing:'border-box',
+                    px:1,
+                    display:'flex',
+                    alignItems:'center',
+
                   }}
-                ></Box>
+                >
+                  <Box sx={{height:"3.5rem",width:"3.5rem",bgcolor:"#ddd",display:"flex",alignItems:"center",justifyContent:"center"}}>
+                    {Icons.LinkDine}
+
+                  </Box>
+
+
+                </Box>
+
+
+
                 <Box
                   sx={{
                     width: "100%",
@@ -2226,6 +2247,18 @@ export default function JobSeekerProfileMobile() {
                 ></Box>
               </Box>
             </Paper>
+
+
+
+
+
+
+
+
+
+
+
+
 
             {/* Skills */}
             <Paper
