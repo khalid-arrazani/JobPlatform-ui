@@ -1290,7 +1290,7 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems:"flex-start"
+                  alignItems:"flex-start",gap:0.5
                  
                 }}
               >
