@@ -2281,7 +2281,7 @@ export default function JobSeekerProfileMobile() {
                   alignItems: "center",
                   textAlign: "center",
                   gap: 2,
-                  boxSizing:"border-box"
+                  boxSizing: "border-box",
                 }}
               >
                 <Box
@@ -2294,7 +2294,7 @@ export default function JobSeekerProfileMobile() {
                     px: 1,
                     display: "flex",
                     alignItems: "center",
-                    gap:1
+                    gap: 1,
                   }}
                 >
                   <Box
@@ -2304,20 +2304,48 @@ export default function JobSeekerProfileMobile() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      overflow:"hidden",
-                      boxSizing:"border-box"
+                      overflow: "hidden",
+                      boxSizing: "border-box",
                     }}
                   >
                     {Icons.Facebook}
                   </Box>
 
-                  <Box  sx={{height:"auto",width:"80%",display:"flex",flexDirection:"column",alignItems:"flex-start",boxSizing:"border-box" ,flexWrap:"wrap"}} >
-
-                    <Typography  sx={{fontSize:"1.2rem",fontWeight:600,fontFamily:"monospace",color:"#02000fe1"}} >Facebook</Typography>
-                    <Typography  sx={{fontSize:"0.9rem",fontWeight:600,fontFamily:"monospace",color:"#3b3b3cc9" }} >https://www.facebook.com/profile.php?id=100009061156676</Typography>
-
+                  <Box
+                    sx={{
+                      height: "auto",
+                      width: "80%",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "flex-start",
+                      boxSizing: "border-box",
+                      flexWrap: "wrap",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: "1.2rem",
+                        fontWeight: 600,
+                        fontFamily: "monospace",
+                        color: "#02000fe1",
+                      }}
+                    >
+                      Facebook
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontSize: "0.9rem",
+                        fontWeight: 600,
+                        fontFamily: "monospace",
+                        color: "#3b3b3cc9",
+                        width: "100%",
+                        boxSizing: "border-box",
+                        textWrap:"wrap",textAlign:"start",overflow:'hidden',overflowWrap:"anywhere"
+                      }}
+                    >
+                      https://www.facebook.com/profile.php?id=10000906
+                    </Typography>
                   </Box>
-
                 </Box>
 
                 <Box
