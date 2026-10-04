@@ -1290,14 +1290,14 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
-                  alignItems:"flex-start",gap:0.5
+                  alignItems:"flex-start",gap:0.3,boxSizing:"border-box",pb:2
                  
                 }}
               >
                 <Typography
                
                
-                  sx={{ color: "#0000009f", fontFamily: "monospace", mb: 0.6,fontSize:"1.3rem",fontWeight:550}}
+                  sx={{ color: "#0000009f", fontFamily: "monospace",fontSize:"1.3rem",fontWeight:550}}
                 >
                   Frontend Developer
                 </Typography>
@@ -1307,11 +1307,11 @@ export default function JobSeekerProfileMobile() {
                 <Typography
                   color="text.secondary"
                   sx={{
-                    maxWidth: 500,
+                    maxWidth: 600,
                     fontFamily: "monospace",
-
-                    color: "#00000077",
-                    fontSize: "1rem",
+                    color: "#a10997b6",
+                    fontSize: "1.1rem",
+                    mb:0.5
                   }}
                 >
                   NexHire
@@ -1323,6 +1323,48 @@ export default function JobSeekerProfileMobile() {
                 sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",fontSize:"0.9rem"}}
                 />
               </Box>
+
+              <Divider />
+              <Box
+                sx={{
+                  pt: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems:"flex-start",gap:0.3,boxSizing:"border-box",pb:2
+                 
+                }}
+              >
+                <Typography
+               
+               
+                  sx={{ color: "#0000009f", fontFamily: "monospace",fontSize:"1.3rem",fontWeight:550}}
+                >
+                  Frontend Developer
+                </Typography>
+
+               
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    maxWidth: 600,
+                    fontFamily: "monospace",
+                    color: "#a10997b6",
+                    fontSize: "1.1rem",
+                    mb:0.5
+                  }}
+                >
+                  NexHire
+                </Typography>
+
+                  <Chip
+                label="2021 - 2023"
+
+                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",fontSize:"0.9rem"}}
+                />
+              </Box>
+
+
             </Paper>
 
             {/* Education */}
