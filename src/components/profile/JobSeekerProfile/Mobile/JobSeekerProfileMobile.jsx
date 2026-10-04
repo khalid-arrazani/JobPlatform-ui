@@ -1716,15 +1716,7 @@ export default function JobSeekerProfileMobile() {
 
             
 
-              <Box
-                sx={{
-                  pt: "1rem",
-                  display: "flex",
-                  flexDirection: "column",
-                   
-                  textAlign: "center",
-                }}
-              >
+             
                {state.user?.profile?.experience?.map((ex) => (
                 <>
                   <Divider />
@@ -1784,8 +1776,9 @@ export default function JobSeekerProfileMobile() {
                   </Box>
                 </>
               ))}
-              </Box>
+             
             </Paper>
+            
 
             {/* Social Links */}
             <Paper
