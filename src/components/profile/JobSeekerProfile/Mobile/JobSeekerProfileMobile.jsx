@@ -1290,16 +1290,23 @@ export default function JobSeekerProfileMobile() {
                   pt: "1rem",
                   display: "flex",
                   flexDirection: "column",
+                  alignItems:"flex-start"
                  
                 }}
               >
                 <Typography
-                  variant="h6"
+               
+               
                   sx={{ color: "#0000009f", fontFamily: "monospace", mb: 0.6,fontSize:"1.3rem",fontWeight:550}}
                 >
                   Frontend Developer
                 </Typography>
-                <Chip/>
+
+                <Chip
+                label="2021 - 2023"
+
+                sx={{borderRadius:"8px",display:"flex",alignItems:"center",textAlign:"center",fontFamily:"monospace",}}
+                />
 
                 <Typography
                   color="text.secondary"
@@ -1308,7 +1315,7 @@ export default function JobSeekerProfileMobile() {
                     fontFamily: "monospace",
 
                     color: "#00000077",
-                    fontSize: "0.8rem",
+                    fontSize: "1rem",
                   }}
                 >
                   NexHire
