@@ -1929,6 +1929,188 @@ export default function JobSeekerProfileMobile() {
               </Box>
             </Paper>
 
+            {/* Social Links Full */}
+            <Paper
+              elevation={0}
+              sx={{
+                borderRadius: "1rem",
+                p: "1rem",
+
+                width: "100%",
+
+                boxSizing: "border-box",
+                border: "1px dashed #ddd",
+                mb: 3,
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  pb: 1,
+                }}
+              >
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 1,
+                  }}
+                >
+                  <Box
+                    sx={{
+                      borderRadius: "50%",
+                      bgcolor: "#eef4ff",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 14 14"
+                      id="Link-Chain--Streamline-Flex"
+                      height="24"
+                      width="24"
+                    >
+                      <g id="link-chain--create-hyperlink-link-make-unlink-connection-chain">
+                        <path
+                          id="Vector"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M8.858 5.143 5.143 8.857"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector 2470"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M8.235 11.343c-2.353 2.073 -4.535 3.094 -6.603 1.025 -2.051 -2.05 -1.065 -4.212 0.972 -6.542"
+                          stroke-width="1"
+                        ></path>
+                        <path
+                          id="Vector 2471"
+                          stroke="#000000c8"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="M5.766 2.657C8.118 0.584 10.3 -0.437 12.369 1.632c2.05 2.05 1.064 4.212 -0.973 6.542"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+
+                  <Typography
+                    variant="h6"
+                    sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                  >
+                    Social Links
+                  </Typography>
+                </Box>
+
+                <Button
+                  // onClick={()=>{setExperienceOpen(true)}}
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="24"
+                    width="24"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Vector"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M7 0.5v13"
+                        stroke-width="0.8"
+                      ></path>
+                      <path
+                        id="Vector_2"
+                        stroke="#000000f8"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M0.5 6.95996h13"
+                        stroke-width="0.8"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              <Divider />
+
+              <Box
+                sx={{
+                  pt: "1rem",
+                  display: "flex",
+                  flexDirection: "column",
+                  alignItems: "center",
+                  textAlign: "center",
+                }}
+              >
+                <Typography
+                  variant="h5"
+                  sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
+                >
+                  No social links added yet
+                </Typography>
+
+                <Typography
+                  color="text.secondary"
+                  sx={{
+                    maxWidth: 500,
+                    fontFamily: "monospace",
+
+                    color: "#00000077",
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  Add your LinkedIn, GitHub, portfolio, Twitter, or other
+                  professional links to help employers learn more about you.
+                </Typography>
+
+                <Button
+                  startIcon={<AddIcon />}
+                  // onClick={()=>{setExperienceOpen(true)}}
+
+                  sx={{
+                    textTransform: "none",
+                    fontWeight: 400,
+                    fontFamily: "system-ui",
+                    border: "1px solid #ddd",
+                    mt: 2,
+                    borderRadius: "15px",
+                  }}
+                >
+                  Add Link
+                </Button>
+              </Box>
+            </Paper>
+
+
+
+
+
+
+
+
+
+
+
+
             {/* Skills */}
             <Paper
               elevation={0}
