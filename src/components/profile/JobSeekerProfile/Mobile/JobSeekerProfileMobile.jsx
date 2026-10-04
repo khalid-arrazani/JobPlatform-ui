@@ -157,7 +157,8 @@ const Icons = {
       ></path>
     </svg>
   ),
-  
+  Link:
+
 };
 
 export default function JobSeekerProfileMobile() {
