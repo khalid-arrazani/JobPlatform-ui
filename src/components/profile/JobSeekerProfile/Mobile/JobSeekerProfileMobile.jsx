@@ -1756,7 +1756,6 @@ export default function JobSeekerProfileMobile() {
                   </Box>
                 </>
               ))}
-
             </Paper>
 
             {/* Social Links */}
@@ -2099,8 +2098,6 @@ export default function JobSeekerProfileMobile() {
               </Box>
             </Paper>
 
-
-
             {/* Skills Full */}
             <Paper
               elevation={0}
@@ -2210,29 +2207,39 @@ export default function JobSeekerProfileMobile() {
                 </Button>
               </Box>
 
-              <Divider sx={{mb:1.5}} />
+              <Divider sx={{ mb: 1.5 }} />
 
-              <Box sx={{width:"100%",display:"flex",gap:1.5,boxSizing:"border-box", flexWrap:"wrap",height:"auto"}} >
-
-
-              {/* Skllis map */}
-              {state.user?.profile?.skills?.map((s) => (
-                <>
-                  <Chip
-                  label={s}
-                  sx={{fontSize:"1.3rem",fontFamily:"monospace",py:2.2,borderRadius:"8px",border:"0.5px dashed #5401633b",":hover":{translate:""}
-
-                  }}
-                  />
-
-                </>
-              ))}
+              <Box
+                sx={{
+                  width: "100%",
+                  display: "flex",
+                  gap: 1.5,
+                  boxSizing: "border-box",
+                  flexWrap: "wrap",
+                  height: "auto",
+                }}
+              >
+                {/* Skllis map */}
+                {state.user?.profile?.skills?.map((s) => (
+                  <>
+                    <Chip
+                      label={s}
+                      sx={{
+                        fontSize: "1.3rem",
+                        fontFamily: "monospace",
+                        py: 2.2,
+                        borderRadius: "8px",
+                        border: "0.5px dashed #5401633b",
+                        "&:hover": {
+                          transform: "translateY(-4px)",
+                        },
+                        transition: "transform 0.3s ease",
+                      }}
+                    />
+                  </>
+                ))}
               </Box>
-
-             
-  
             </Paper>
-            
           </Box>
         </Box>
 
