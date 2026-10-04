@@ -1311,7 +1311,8 @@ export default function JobSeekerProfileMobile() {
                         fontWeight: 550,
                       }}
                     >
-                      Frontend Developer
+                    
+                      {ex?.title}
                     </Typography>
 
                     <Typography
@@ -1325,11 +1326,12 @@ export default function JobSeekerProfileMobile() {
                         fontWeight: 600,
                       }}
                     >
-                      NexHire
+                      {ex?.company}
+                    
                     </Typography>
 
-                    <Chip
-                      label="2021 - 2023"
+                    <Chip 
+                      label={ex?.period}
                       sx={{
                         borderRadius: "8px",
                         display: "flex",
@@ -1346,7 +1348,7 @@ export default function JobSeekerProfileMobile() {
                 </>
               ))}
 
-              <Divider />
+              
             </Paper>
 
             {/* Education */}
