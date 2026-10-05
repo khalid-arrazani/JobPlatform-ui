@@ -2357,7 +2357,6 @@ export default function JobSeekerProfileMobile() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-
                       boxSizing: "border-box",
                 
                     }}
