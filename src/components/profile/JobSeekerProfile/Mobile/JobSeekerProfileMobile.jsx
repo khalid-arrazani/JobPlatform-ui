@@ -2284,127 +2284,122 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                 }}
               >
-
-
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "auto",
-                    bgcolor: "#edf6fe98",
-                    borderRadius: "10px",
-                    boxSizing: "border-box",
-                    px: 1.5,
-                    display: "flex",
-                    alignItems: "center",
-                    gap: 1.4,
-                    py: 1,
-                    border:"solid 1px #cacaca86"
-                  }}
-                >
+                {state.user?.profile?.socialLinks?.map((link) => {
 
 
 
-                  <Box
-                    sx={{
-                      height: "3rem",
-                      width: "3rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxSizing: "border-box",
-                    }}
-                  >
-                    {Icons.Facebook}
-                  </Box>
-
-                  <Box
-                    sx={{
-                      height: "auto",
-                      width: "60%",
-                      display: "flex",
-                      flexDirection: "column",
-                      alignItems: "flex-start",
-                      boxSizing: "border-box",
-                      flexWrap: "wrap",
-                    }}
-                  >
-                    <Typography
+                  return (
+                    <Box
                       sx={{
-                        fontSize: "1.2rem",
-                        fontWeight: 600,
-                        fontFamily: "monospace",
-                        color: "#02000fba",
-                      }}
-                    >
-                      Facebook
-                    </Typography>
-                    <Typography
-                      sx={{
-                        fontSize: "0.79rem",
-                        fontWeight: 600,
-                        fontFamily: "monospace",
-                        color: "#3b3b3cc9",
                         width: "100%",
+                        height: "auto",
+                        bgcolor: "#edf6fe98",
+                        borderRadius: "10px",
                         boxSizing: "border-box",
-                        textWrap: "wrap",
-                        textAlign: "start",
-                        overflow: "hidden",
-                        overflowWrap: "anywhere",
+                        px: 1.5,
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 1.4,
+                        py: 1,
+                        border: "solid 1px #cacaca86",
                       }}
                     >
-                      https://www.facebook.com/profile.php?id=10000906
-                    </Typography>
-                  </Box>
+                      <Box
+                        sx={{
+                          height: "3rem",
+                          width: "3rem",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          boxSizing: "border-box",
+                        }}
+                      >
+                        {Icons.Facebook}
+                      </Box>
 
-                  <IconButton
-                    sx={{
-                      height: "3rem",
-                      width: "3rem",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      boxSizing: "border-box",
-                
-                    }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      id="Square-Top-Down--Streamline-Solar"
-                      height="30"
-                      width="30"
-                    >
-                      <desc>
-                        Square Top Down Streamline Icon:
-                        https://streamlinehq.com
-                      </desc>
-                      <g id="Line Duotone/Arrows Action/Square Top Down">
-                        <path
-                          id="Vector"
-                          stroke="#737373"
-                          stroke-linecap="round"
-                          d="M22 12c0 4.714 0 7.0711 -1.4645 8.5355C19.0711 22 16.714 22 12 22c-4.71405 0 -7.07107 0 -8.53553 -1.4645C2 19.0711 2 16.714 2 12c0 -4.71405 0 -7.07107 1.46447 -8.53553C4.92893 2 7.28595 2 12 2"
-                          stroke-width="1.5"
-                        ></path>
-                        <path
-                          id="Vector_2"
-                          stroke="#000000"
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          d="m13 11 9 -9m0 0h-5.3438M22 2v5.34375"
-                          stroke-width="1.5"
-                        ></path>
-                      </g>
-                    </svg>
-                  </IconButton>
-                  
-                </Box>
+                      <Box
+                        sx={{
+                          height: "auto",
+                          width: "60%",
+                          display: "flex",
+                          flexDirection: "column",
+                          alignItems: "flex-start",
+                          boxSizing: "border-box",
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontSize: "1.2rem",
+                            fontWeight: 600,
+                            fontFamily: "monospace",
+                            color: "#02000fba",
+                          }}
+                        >
+                          Facebook
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontSize: "0.79rem",
+                            fontWeight: 600,
+                            fontFamily: "monospace",
+                            color: "#3b3b3cc9",
+                            width: "100%",
+                            boxSizing: "border-box",
+                            textWrap: "wrap",
+                            textAlign: "start",
+                            overflow: "hidden",
+                            overflowWrap: "anywhere",
+                          }}
+                        >
+                          https://www.facebook.com/profile.php?id=10000906
+                        </Typography>
+                      </Box>
 
-               
-
-
-
+                      <IconButton
+                        sx={{
+                          height: "3rem",
+                          width: "3rem",
+                          display: "flex",
+                          alignItems: "center",
+                          justifyContent: "center",
+                          boxSizing: "border-box",
+                        }}
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          id="Square-Top-Down--Streamline-Solar"
+                          height="30"
+                          width="30"
+                        >
+                          <desc>
+                            Square Top Down Streamline Icon:
+                            https://streamlinehq.com
+                          </desc>
+                          <g id="Line Duotone/Arrows Action/Square Top Down">
+                            <path
+                              id="Vector"
+                              stroke="#737373"
+                              stroke-linecap="round"
+                              d="M22 12c0 4.714 0 7.0711 -1.4645 8.5355C19.0711 22 16.714 22 12 22c-4.71405 0 -7.07107 0 -8.53553 -1.4645C2 19.0711 2 16.714 2 12c0 -4.71405 0 -7.07107 1.46447 -8.53553C4.92893 2 7.28595 2 12 2"
+                              stroke-width="1.5"
+                            ></path>
+                            <path
+                              id="Vector_2"
+                              stroke="#000000"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              d="m13 11 9 -9m0 0h-5.3438M22 2v5.34375"
+                              stroke-width="1.5"
+                            ></path>
+                          </g>
+                        </svg>
+                      </IconButton>
+                    </Box>
+                  );
+                })}
               </Box>
             </Paper>
 
