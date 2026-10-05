@@ -2300,8 +2300,8 @@ export default function JobSeekerProfileMobile() {
                 >
                   <Box
                     sx={{
-                      height: "3.5rem",
-                      width: "3.5rem",
+                      height: "3rem",
+                      width: "3rem",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -2335,7 +2335,7 @@ export default function JobSeekerProfileMobile() {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: "0.9rem",
+                        fontSize: "0.8rem",
                         fontWeight: 600,
                         fontFamily: "monospace",
                         color: "#3b3b3cc9",
@@ -2371,8 +2371,8 @@ export default function JobSeekerProfileMobile() {
                   >
                     <Box
                       sx={{
-                        height: "3.5rem",
-                        width: "3.5rem",
+                        height: "3rem",
+                        width: "3rem",
                         bgcolor: "#08090900",
                         display: "flex",
                         alignItems: "center",
