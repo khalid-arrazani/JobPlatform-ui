@@ -2284,8 +2284,6 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                 }}
               >
-
-
                 <Box
                   sx={{
                     width: "100%",
