@@ -2285,8 +2285,7 @@ export default function JobSeekerProfileMobile() {
                 }}
               >
                 {state.user?.profile?.socialLinks?.map((link) => {
-
-
+                  const icone = link.platform == "Instagram" ? ico
 
                   return (
                     <Box
