@@ -2366,8 +2366,8 @@ export default function JobSeekerProfileMobile() {
                       fill="none"
                       viewBox="0 0 24 24"
                       id="Square-Top-Down--Streamline-Solar"
-                      height="24"
-                      width="24"
+                      height="30"
+                      width="30"
                     >
                       <desc>
                         Square Top Down Streamline Icon:
