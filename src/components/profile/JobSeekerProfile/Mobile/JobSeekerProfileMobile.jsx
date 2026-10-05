@@ -2355,7 +2355,8 @@ export default function JobSeekerProfileMobile() {
                             overflowWrap: "anywhere",
                           }}
                         >
-                          https://www.facebook.com/profile.php?id=10000906
+                           { link.url.slice(0,20)}
+                           {link.url.length > 20 ? "..." : null }
                         </Typography>
                       </Box>
 
