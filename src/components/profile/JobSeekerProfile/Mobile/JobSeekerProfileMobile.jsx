@@ -2285,11 +2285,18 @@ export default function JobSeekerProfileMobile() {
                 }}
               >
                 {state.user?.profile?.socialLinks?.map((link) => {
-                  const icone = link.platform == "Instagram" ? Icons.instagram : 
-                  link.platform == "GitHub" ? Icons.Github: 
-                  link.platform == "Twitter" ? Icons.X : 
-                  link.platform == "Facebook" ? Icons.Facebook:
-                  link.platform == "LinkedIn" ? Icons.LinkDine : Icons.Link 
+                  const icone =
+                    link.platform == "Instagram"
+                      ? Icons.instagram
+                      : link.platform == "GitHub"
+                        ? Icons.Github
+                        : link.platform == "Twitter"
+                          ? Icons.X
+                          : link.platform == "Facebook"
+                            ? Icons.Facebook
+                            : link.platform == "LinkedIn"
+                              ? Icons.LinkDine
+                              : Icons.Link;
 
                   return (
                     <Box
@@ -2339,7 +2346,7 @@ export default function JobSeekerProfileMobile() {
                             color: "#02000fba",
                           }}
                         >
-                          { link.platform}
+                          {link.platform}
                         </Typography>
                         <Typography
                           sx={{
@@ -2355,12 +2362,15 @@ export default function JobSeekerProfileMobile() {
                             overflowWrap: "anywhere",
                           }}
                         >
-                           { link.url.slice(0,20)}
-                           {link.url.length > 20 ? "..." : null }
+                          {link.url.slice(0, 20)}
+                          {link.url.length > 20 ? "..." : null}
                         </Typography>
                       </Box>
 
                       <IconButton
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         sx={{
                           height: "3rem",
                           width: "3rem",
