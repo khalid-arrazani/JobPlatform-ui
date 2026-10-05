@@ -2312,6 +2312,7 @@ export default function JobSeekerProfileMobile() {
                         gap: 1.4,
                         py: 1,
                         border: "solid 1px #cacaca86",
+                        justifyContent:"space-between"
                       }}
                     >
                       <Box
