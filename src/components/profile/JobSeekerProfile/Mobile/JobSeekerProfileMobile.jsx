@@ -2284,6 +2284,8 @@ export default function JobSeekerProfileMobile() {
                   boxSizing: "border-box",
                 }}
               >
+
+
                 <Box
                   sx={{
                     width: "100%",
@@ -2296,6 +2298,7 @@ export default function JobSeekerProfileMobile() {
                     alignItems: "center",
                     gap: 1.4,
                     py: 1,
+                    border:"solid 1px #cacaca86"
                   }}
                 >
                   <Box
