@@ -2301,6 +2301,9 @@ export default function JobSeekerProfileMobile() {
                     border:"solid 1px #cacaca86"
                   }}
                 >
+
+
+
                   <Box
                     sx={{
                       height: "3rem",
@@ -2398,40 +2401,7 @@ export default function JobSeekerProfileMobile() {
                   
                 </Box>
 
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: "4.2rem",
-                    bgcolor: "#edf6fe",
-                    borderRadius: "10px",
-                  }}
-                >
-                  <Box
-                    sx={{
-                      width: "100%",
-                      height: "4.2rem",
-                      bgcolor: "#edf6fe",
-                      borderRadius: "10px",
-                      boxSizing: "border-box",
-                      px: 1,
-                      display: "flex",
-                      alignItems: "center",
-                    }}
-                  >
-                    <Box
-                      sx={{
-                        height: "3rem",
-                        width: "3rem",
-                        bgcolor: "#08090900",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
-                    >
-                      {Icons.instagram}
-                    </Box>
-                  </Box>
-                </Box>
+               
 
 
 
