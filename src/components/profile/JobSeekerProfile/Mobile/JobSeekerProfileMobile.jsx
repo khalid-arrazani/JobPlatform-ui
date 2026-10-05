@@ -2330,14 +2330,14 @@ export default function JobSeekerProfileMobile() {
                         fontSize: "1.2rem",
                         fontWeight: 600,
                         fontFamily: "monospace",
-                        color: "#02000fe1",
+                        color: "#02000fba",
                       }}
                     >
                       Facebook
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: "0.7rem",
+                        fontSize: "0.79rem",
                         fontWeight: 600,
                         fontFamily: "monospace",
                         color: "#3b3b3cc9",
