@@ -2350,7 +2350,7 @@ export default function JobSeekerProfileMobile() {
                     </Typography>
                   </Box>
 
-                  <Box
+                  <IconButton
                     sx={{
                       height: "3rem",
                       width: "3rem",
@@ -2391,7 +2391,7 @@ export default function JobSeekerProfileMobile() {
                         ></path>
                       </g>
                     </svg>
-                  </Box>
+                  </IconButton>
                   
                 </Box>
 
