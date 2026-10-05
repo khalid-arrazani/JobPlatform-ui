@@ -2294,7 +2294,7 @@ export default function JobSeekerProfileMobile() {
                     px: 1.5,
                     display: "flex",
                     alignItems: "center",
-                    gap: 2,
+                    gap: 1.4,
                     py: 1,
                   }}
                 >
@@ -2314,7 +2314,7 @@ export default function JobSeekerProfileMobile() {
                   <Box
                     sx={{
                       height: "auto",
-                      width: "80%",
+                      width: "60%",
                       display: "flex",
                       flexDirection: "column",
                       alignItems: "flex-start",
@@ -2334,7 +2334,7 @@ export default function JobSeekerProfileMobile() {
                     </Typography>
                     <Typography
                       sx={{
-                        fontSize: "0.8rem",
+                        fontSize: "0.7rem",
                         fontWeight: 600,
                         fontFamily: "monospace",
                         color: "#3b3b3cc9",
@@ -2350,8 +2350,49 @@ export default function JobSeekerProfileMobile() {
                     </Typography>
                   </Box>
 
-                  
+                  <Box
+                    sx={{
+                      height: "3rem",
+                      width: "3rem",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
 
+                      boxSizing: "border-box",
+                    }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      id="Square-Top-Down--Streamline-Solar"
+                      height="24"
+                      width="24"
+                    >
+                      <desc>
+                        Square Top Down Streamline Icon:
+                        https://streamlinehq.com
+                      </desc>
+                      <g id="Line Duotone/Arrows Action/Square Top Down">
+                        <path
+                          id="Vector"
+                          stroke="#737373"
+                          stroke-linecap="round"
+                          d="M22 12c0 4.714 0 7.0711 -1.4645 8.5355C19.0711 22 16.714 22 12 22c-4.71405 0 -7.07107 0 -8.53553 -1.4645C2 19.0711 2 16.714 2 12c0 -4.71405 0 -7.07107 1.46447 -8.53553C4.92893 2 7.28595 2 12 2"
+                          stroke-width="1.5"
+                        ></path>
+                        <path
+                          id="Vector_2"
+                          stroke="#000000"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          d="m13 11 9 -9m0 0h-5.3438M22 2v5.34375"
+                          stroke-width="1.5"
+                        ></path>
+                      </g>
+                    </svg>
+                  </Box>
+                  
                 </Box>
 
                 <Box
