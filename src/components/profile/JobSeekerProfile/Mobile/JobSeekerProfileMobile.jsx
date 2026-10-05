@@ -2294,7 +2294,7 @@ export default function JobSeekerProfileMobile() {
                     px: 1.5,
                     display: "flex",
                     alignItems: "center",
-                    gap: 1.5,
+                    gap: 2,
                     py:1
                   }}
                 >
