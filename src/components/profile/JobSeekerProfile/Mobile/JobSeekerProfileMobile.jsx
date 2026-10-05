@@ -2288,7 +2288,7 @@ export default function JobSeekerProfileMobile() {
                   sx={{
                     width: "100%",
                     height: "auto",
-                    bgcolor: "#edf6fe",
+                    bgcolor: "#edf6fe98",
                     borderRadius: "10px",
                     boxSizing: "border-box",
                     px: 1.5,
