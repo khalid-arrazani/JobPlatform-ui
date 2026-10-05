@@ -2285,7 +2285,11 @@ export default function JobSeekerProfileMobile() {
                 }}
               >
                 {state.user?.profile?.socialLinks?.map((link) => {
-                  const icone = link.platform == "Instagram" ? ico
+                  const icone = link.platform == "Instagram" ? Icons.instagram : 
+                  link.platform == "GitHub" ? Icons.Github: 
+                  link.platform == "Twitter" ? Icons.X : 
+                  link.platform == "Facebook" ? Icons.Facebook:
+                  link.platform == "LinkedIn" ? Icons.LinkDine : Icons.Link 
 
                   return (
                     <Box
@@ -2313,7 +2317,7 @@ export default function JobSeekerProfileMobile() {
                           boxSizing: "border-box",
                         }}
                       >
-                        {Icons.Facebook}
+                        {icone}
                       </Box>
 
                       <Box
@@ -2335,7 +2339,7 @@ export default function JobSeekerProfileMobile() {
                             color: "#02000fba",
                           }}
                         >
-                          Facebook
+                          { link.platform}
                         </Typography>
                         <Typography
                           sx={{
