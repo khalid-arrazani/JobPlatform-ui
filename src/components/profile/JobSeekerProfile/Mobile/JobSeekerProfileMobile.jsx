@@ -2368,6 +2368,7 @@ export default function JobSeekerProfileMobile() {
                       </Box>
 
                       <IconButton
+                      component="a"
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
