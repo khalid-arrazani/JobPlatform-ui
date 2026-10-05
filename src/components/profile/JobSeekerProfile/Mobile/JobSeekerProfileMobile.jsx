@@ -2359,6 +2359,7 @@ export default function JobSeekerProfileMobile() {
                       justifyContent: "center",
 
                       boxSizing: "border-box",
+                
                     }}
                   >
                     <svg
