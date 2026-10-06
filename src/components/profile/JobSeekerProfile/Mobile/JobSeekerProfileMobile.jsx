@@ -22,6 +22,7 @@ import Info from "./InfoProfile/Info";
 import More_Info from "./InfoProfile/More Info";
 
 import About_Me from "./InfoProfile/About Me";
+import Experience from "./InfoProfile/Experience";
 
 const Icons = {
   LinkDine: (
@@ -481,6 +482,7 @@ export default function JobSeekerProfileMobile() {
 
             {/* About me */}
             <About_Me state={state} />
+            <Experience state={state} />
 
 
             {/* Experience */}
