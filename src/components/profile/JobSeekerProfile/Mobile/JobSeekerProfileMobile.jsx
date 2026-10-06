@@ -18,6 +18,7 @@ import { useContext, useState } from "react";
 import EditInfoModal from "./Edit Profile Info/EditInfoModal";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import { ProfileContext } from "../../../../logic/context/profileContext";
+import Info from "./InfoProfile/Info";
 
 const Icons = {
   LinkDine: (
@@ -469,6 +470,7 @@ export default function JobSeekerProfileMobile() {
 
           {/* lower */}
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
+
             {/* Info */}
             <Box
               sx={{
@@ -512,6 +514,7 @@ export default function JobSeekerProfileMobile() {
                 {state.user?.profile?.location}
               </Typography>
             </Box>
+            <Info state={state} />
 
             {/* more info */}
             <Box
@@ -977,6 +980,8 @@ export default function JobSeekerProfileMobile() {
                 </Box>
               </Box>
             </Box>
+
+            
 
             {/* About me */}
             <Paper
