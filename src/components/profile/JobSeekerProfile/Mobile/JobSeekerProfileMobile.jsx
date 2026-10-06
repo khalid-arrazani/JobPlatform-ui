@@ -2730,6 +2730,8 @@ export default function JobSeekerProfileMobile() {
                 ))}
               </Box>
             </Paper>
+
+            
           </Box>
         </Box>
 
