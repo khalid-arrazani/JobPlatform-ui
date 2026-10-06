@@ -181,23 +181,7 @@ export default function JobSeekerProfileMobile() {
               }}
             >
               <UploadProfilePhoto />
-              {/* <Box
-                sx={{
-                  bgcolor: "#ddd",
-                  height: "6rem",
-                  width: "6rem",
-                  borderRadius: "50%",
-                  position: "absolute",
-                  top: "-2.5rem",
-                  ml: "0.5rem",
-                  border: "solid #fff",
-                }}
-              >
-                <Avatar
-                  src="https://imgs.search.brave.com/sgSqeqpujrTJDQYBggmQDyLTjvjcKb7a4MsC7A2-fuU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pbWcu/bWFnbmlmaWMuY29t/L3ByZW1pdW0tcGhv/dG8vdXNlci1wcm9m/aWxlLXBuZy1wcm9m/ZXNzaW9uYWwtYnVz/aW5lc3NtYW4tc3Rp/Y2tlci10cmFuc3Bh/cmVudC1iYWNrZ3Jv/dW5kXzUzODc2LTEw/NDg5MjkuanBnP3Nl/bXQ9YWlzX2h5YnJp/ZCZ3PTc0MCZxPTgw"
-                  sx={{ height: "100%", width: "100%" }}
-                />
-              </Box> */}
+              
 
               {/* open edit info modal */}
               <Button
@@ -247,25 +231,25 @@ export default function JobSeekerProfileMobile() {
           {/* lower */}
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
             {/* Info */}
-            <Info state={state} />
+            <Info state={state} setSection={setSection} setOpenModal={setOpenModal} />
 
             {/* more info */}
-            <More_Info state={state} />
+            <More_Info state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
             {/* About me */}
-            <About_Me state={state} />
+            <About_Me state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
             {/* Experience */}
-            <Experience state={state} />
+            <Experience state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
             {/* Education */}
-            <Education state={state} />
+            <Education state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
             {/* Social Links */}
-            <Social_Links state={state} />
+            <Social_Links state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
             {/* Skills */}
-            <Skills state={state} />
+            <Skills state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
           </Box>
 
