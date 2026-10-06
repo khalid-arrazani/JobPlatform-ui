@@ -15,7 +15,7 @@ import AddIcon from "@mui/icons-material/Add";
 export default function Experience({ state }) {
   return (
     <>
-     {state.user?.profile?.experience.length < 1 ?
+     {state.user?.profile?.experience.length >= 1 ?
      (<Paper
         elevation={0}
         sx={{
