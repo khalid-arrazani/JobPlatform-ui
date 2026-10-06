@@ -12,7 +12,7 @@ import {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function Experience({ state }) {
+export default function Experience({ state , setSection ,setOpenModal}) {
   return (
     <>
       {state.user?.profile?.experience.length >= 1 ? (

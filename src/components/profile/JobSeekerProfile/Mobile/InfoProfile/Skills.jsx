@@ -12,7 +12,7 @@ import {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function Skills({ state }) {
+export default function Skills({ state, setSection ,setOpenModal }) {
   return (
     <>
       {state.user?.profile?.skills.length >= 1 ? (

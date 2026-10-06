@@ -9,7 +9,7 @@ import {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function More_Info({ state }) {
+export default function More_Info({ state, setSection ,setOpenModal }) {
   return (
     <>
       <Box

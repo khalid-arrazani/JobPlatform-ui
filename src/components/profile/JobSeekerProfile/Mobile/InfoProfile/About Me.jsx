@@ -13,8 +13,9 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function About_Me({ state , setSection ,setOpenModal }) {
-  const onClicke = ()=>{
-    
+  const onClick = ()=>{
+    setSection("About me");
+    setOpenModal(true)
   }
   return (
     <>
@@ -101,7 +102,7 @@ export default function About_Me({ state , setSection ,setOpenModal }) {
           </Box>
 
           <Button
-            // onClick={()=>{setExperienceOpen(true)}}
+            onClick={onClick}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -230,7 +231,7 @@ export default function About_Me({ state , setSection ,setOpenModal }) {
           </Box>
 
           <Button
-            // onClick={()=>{setExperienceOpen(true)}}
+            onClick={onClick}
             sx={{
               textTransform: "none",
               fontWeight: 600,
@@ -300,6 +301,7 @@ export default function About_Me({ state , setSection ,setOpenModal }) {
           </Typography>
 
           <Button
+          onClick={onClick}
             startIcon={<AddIcon />}
             sx={{
               textTransform: "none",

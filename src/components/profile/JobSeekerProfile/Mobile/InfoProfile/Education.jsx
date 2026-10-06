@@ -12,7 +12,7 @@ import {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function Education({ state }) {
+export default function Education({ state , setSection ,setOpenModal}) {
   return (
     <>
       {state.user?.profile?.education.length >= 1 ? (

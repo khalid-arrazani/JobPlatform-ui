@@ -244,7 +244,7 @@ const Icons = {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function Social_Links({ state }) {
+export default function Social_Links({ state , setSection ,setOpenModal}) {
   return (
     <>
       {state.user?.profile?.socialLinks.length >= 1 ? (
