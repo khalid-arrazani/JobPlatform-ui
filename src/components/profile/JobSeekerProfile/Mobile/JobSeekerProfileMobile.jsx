@@ -480,7 +480,7 @@ export default function JobSeekerProfileMobile() {
             <More_Info state={state} />
 
             {/* About me */}
-            <About_Me />
+            <About_Me/>
 
             {/* About me full */}
             <Paper
