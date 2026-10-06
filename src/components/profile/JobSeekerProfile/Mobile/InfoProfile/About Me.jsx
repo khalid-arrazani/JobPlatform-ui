@@ -15,7 +15,8 @@ import AddIcon from "@mui/icons-material/Add";
 export default function About_Me({ state }) {
   return (
     <>
-     {state.user?.profile?.aboutMe?.about ?<Paper
+     {state.user?.profile?.aboutMe?.about ?
+     <Paper
         elevation={0}
         sx={{
           borderRadius: "1rem",
@@ -142,7 +143,9 @@ export default function About_Me({ state }) {
             {state.user?.profile?.aboutMe?.about}
           </Typography>
         </Box>
-      </Paper> :
+      </Paper> 
+      
+      :
       <Paper
         elevation={0}
         sx={{
