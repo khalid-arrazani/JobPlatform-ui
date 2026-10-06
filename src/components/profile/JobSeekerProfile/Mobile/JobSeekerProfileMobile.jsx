@@ -32,6 +32,7 @@ export default function JobSeekerProfileMobile() {
 
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
+  const [section , setSection] = useState("Profile")
 
   const onClose = () => {
     setOpen(false);
@@ -239,7 +240,7 @@ export default function JobSeekerProfileMobile() {
               </Button>
 
               {/* modal edit info */}
-              <EditInfoModal setOpen={setOpenModal} open={openModal} />
+              <EditInfoModal setOpen={setOpenModal} open={openModal} section={section} setSection={setSection} />
             </Box>
           </Box>
 
@@ -514,7 +515,7 @@ export default function JobSeekerProfileMobile() {
           </Box>
         </Box>
 
-        
+
       </Box>
     </>
   );

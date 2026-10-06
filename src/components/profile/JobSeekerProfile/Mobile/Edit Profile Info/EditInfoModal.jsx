@@ -18,13 +18,13 @@ import SkillsP from "./pages/SkillsP";
 import SocialLinksP from "./pages/SocialLinksP";
 import AboutMeP from "./pages/AboutMeP";
 
-export default function EditInfoModal({ setOpen, open }) {
+export default function EditInfoModal({ setOpen, open,section , setSection }) {
 
   const onClose = () => {
     setOpen(false);
   };
 
-  const [section , setSection] = useState("Profile")
+
 
 
   const [openModal, setOpenModal] = useState(false);
