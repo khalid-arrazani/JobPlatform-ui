@@ -19,6 +19,7 @@ import EditInfoModal from "./Edit Profile Info/EditInfoModal";
 import UploadProfilePhoto from "./UploadProfilePhoto";
 import { ProfileContext } from "../../../../logic/context/profileContext";
 import Info from "./InfoProfile/Info";
+import More_Info from "./InfoProfile/More Info";
 
 const Icons = {
   LinkDine: (
@@ -938,6 +939,7 @@ export default function JobSeekerProfileMobile() {
                 </Box>
               </Box>
             </Box>
+            <More_Info state={state}/>
 
             
 
