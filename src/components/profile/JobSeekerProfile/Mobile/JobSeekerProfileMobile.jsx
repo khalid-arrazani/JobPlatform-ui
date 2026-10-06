@@ -472,49 +472,7 @@ export default function JobSeekerProfileMobile() {
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
 
             {/* Info */}
-            <Box
-              sx={{
-                width: "100%",
-                height: "auto",
-                boxSizing: "border-box",
-                bgcolor: "#dddddd00",
-                pb: 1,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  fontWeight: 500,
-                  fontSize: "1.5rem",
-                  color: "#040407e9",
-                }}
-              >
-                {state.user?.profile?.fullName}
-              </Typography>
-
-              <Typography
-                sx={{
-                  fontFamily: "system-ui",
-                  fontWeight: 450,
-                  fontSize: "1rem",
-                  color: "#040510c7",
-                }}
-              >
-                {state.user?.profile?.headline}
-              </Typography>
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  fontWeight: 500,
-                  fontSize: "0.9rem",
-                  color: "#0405109a",
-                  mt: 0.5,
-                }}
-              >
-                {state.user?.profile?.location}
-              </Typography>
-            </Box>
-            <Info state={state} />
+            <Info state={state}/>
 
             {/* more info */}
             <Box
