@@ -20,7 +20,7 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import { ProfileContext } from "../../../../logic/context/profileContext";
 import Info from "./InfoProfile/Info";
 import More_Info from "./InfoProfile/More Info";
- 
+
 import About_Me from "./InfoProfile/About Me";
 
 const Icons = {
@@ -473,18 +473,14 @@ export default function JobSeekerProfileMobile() {
 
           {/* lower */}
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
-
             {/* Info */}
-            <Info state={state}/>
-            
+            <Info state={state} />
 
             {/* more info */}
-            <More_Info state={state}/>
-
-            
+            <More_Info state={state} />
 
             {/* About me */}
-            <About_Me/>
+            <About_Me />
 
             {/* About me full */}
             <Paper
@@ -1652,7 +1648,7 @@ export default function JobSeekerProfileMobile() {
                         gap: 1.4,
                         py: 1,
                         border: "solid 1px #cacaca86",
-                        justifyContent:"space-between"
+                        justifyContent: "space-between",
                       }}
                     >
                       <Box
@@ -1709,7 +1705,7 @@ export default function JobSeekerProfileMobile() {
                       </Box>
 
                       <IconButton
-                      component="a"
+                        component="a"
                         href={link.url}
                         target="_blank"
                         rel="noopener noreferrer"
@@ -2070,8 +2066,6 @@ export default function JobSeekerProfileMobile() {
                 ))}
               </Box>
             </Paper>
-
-            
           </Box>
         </Box>
 
