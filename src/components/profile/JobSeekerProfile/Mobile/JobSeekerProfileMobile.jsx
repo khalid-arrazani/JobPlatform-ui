@@ -231,7 +231,7 @@ export default function JobSeekerProfileMobile() {
           {/* lower */}
           <Box sx={{ width: "100%", boxSizing: "border-box", px: 2 }}>
             {/* Info */}
-            <Info state={state} setSection={setSection} setOpenModal={setOpenModal} />
+            <Info state={state} />
 
             {/* more info */}
             <More_Info state={state} setSection={setSection} setOpenModal={setOpenModal}/>

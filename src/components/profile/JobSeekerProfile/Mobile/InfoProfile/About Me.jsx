@@ -12,7 +12,10 @@ import {
 
 import AddIcon from "@mui/icons-material/Add";
 
-export default function About_Me({ state }) {
+export default function About_Me({ state , setSection ,setOpenModal }) {
+  const onClicke = ()=>{
+    
+  }
   return (
     <>
      {state.user?.profile?.aboutMe?.about ?
