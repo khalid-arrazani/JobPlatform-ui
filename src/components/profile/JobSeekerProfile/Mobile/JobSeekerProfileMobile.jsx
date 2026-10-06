@@ -266,8 +266,8 @@ export default function JobSeekerProfileMobile() {
             {/* Skills */}
             <Skills state={state} />
 
-            
           </Box>
+
         </Box>
 
         {/* Bottom Navbar */}
@@ -513,6 +513,8 @@ export default function JobSeekerProfileMobile() {
             </Typography>
           </Box>
         </Box>
+
+        
       </Box>
     </>
   );
