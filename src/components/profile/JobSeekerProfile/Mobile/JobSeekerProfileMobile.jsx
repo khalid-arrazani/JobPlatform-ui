@@ -24,7 +24,7 @@ import More_Info from "./InfoProfile/More Info";
 import About_Me from "./InfoProfile/About Me";
 import Experience from "./InfoProfile/Experience";
 import Education from "./InfoProfile/Education";
-import Social_Links from "./InfoProfile/Skills";
+import Social_Links from "./InfoProfile/Social Links";
 
 export default function JobSeekerProfileMobile() {
   const { ...state } = useContext(ProfileContext);
