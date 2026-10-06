@@ -492,6 +492,7 @@ export default function JobSeekerProfileMobile() {
             <Education state={state} />
             
 
+
             {/* Social Links */}
             <Paper
               elevation={0}
