@@ -482,7 +482,6 @@ export default function JobSeekerProfileMobile() {
             {/* About me */}
             <About_Me state={state} />
 
-          
 
             {/* Experience */}
             <Paper
