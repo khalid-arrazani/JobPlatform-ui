@@ -20,7 +20,7 @@ import UploadProfilePhoto from "./UploadProfilePhoto";
 import { ProfileContext } from "../../../../logic/context/profileContext";
 import Info from "./InfoProfile/Info";
 import More_Info from "./InfoProfile/More Info";
-import Empty_About_Me from "./InfoProfile/About Me";
+ 
 import About_Me from "./InfoProfile/About Me";
 
 const Icons = {
