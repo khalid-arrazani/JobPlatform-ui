@@ -583,6 +583,7 @@ export default function AboutMeP() {
                 <MenuItem value="1_week">1_week</MenuItem>
 
                 <MenuItem value="1_month">1_month</MenuItem>
+                <MenuItem value="none">none</MenuItem>
               </TextField>
             </Box>
 
@@ -636,6 +637,7 @@ export default function AboutMeP() {
                   <MenuItem value="freelance">freelance</MenuItem>
 
                   <MenuItem value="contract">contract</MenuItem>
+                  <MenuItem value="none">none</MenuItem>
                 </TextField>
               </Box>
             </Box>
@@ -681,6 +683,7 @@ export default function AboutMeP() {
                   <MenuItem value="mid">mid</MenuItem>
 
                   <MenuItem value="senior">senior</MenuItem>
+                  <MenuItem value="none">none</MenuItem>
                 </TextField>
               </Box>
             </Box>
