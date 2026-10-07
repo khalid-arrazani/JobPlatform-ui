@@ -13,6 +13,10 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function Skills({ state, setSection ,setOpenModal }) {
+  const onClick = ()=>{
+    setSection("Skills");
+    setOpenModal(true)
+  }
   return (
     <>
       {state.user?.profile?.skills.length >= 1 ? (
@@ -97,7 +101,7 @@ export default function Skills({ state, setSection ,setOpenModal }) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -237,7 +241,7 @@ export default function Skills({ state, setSection ,setOpenModal }) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+             onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -307,7 +311,7 @@ export default function Skills({ state, setSection ,setOpenModal }) {
 
             <Button
               startIcon={<AddIcon />}
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
 
               sx={{
                 textTransform: "none",

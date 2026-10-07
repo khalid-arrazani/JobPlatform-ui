@@ -13,6 +13,10 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function Education({ state , setSection ,setOpenModal}) {
+  const onClick = ()=>{
+    setSection("Education");
+    setOpenModal(true)
+  }
   return (
     <>
       {state.user?.profile?.education.length >= 1 ? (
@@ -134,7 +138,7 @@ export default function Education({ state , setSection ,setOpenModal}) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -336,7 +340,7 @@ export default function Education({ state , setSection ,setOpenModal}) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+             onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -406,7 +410,7 @@ export default function Education({ state , setSection ,setOpenModal}) {
 
             <Button
               startIcon={<AddIcon />}
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
 
               sx={{
                 textTransform: "none",

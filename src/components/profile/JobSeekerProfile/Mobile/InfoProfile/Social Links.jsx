@@ -245,6 +245,10 @@ const Icons = {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function Social_Links({ state , setSection ,setOpenModal}) {
+  const onClick = ()=>{
+    setSection("Social Links");
+    setOpenModal(true)
+  }
   return (
     <>
       {state.user?.profile?.socialLinks.length >= 1 ? (
@@ -331,7 +335,7 @@ export default function Social_Links({ state , setSection ,setOpenModal}) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+             onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -587,7 +591,7 @@ export default function Social_Links({ state , setSection ,setOpenModal}) {
             </Box>
 
             <Button
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
               sx={{
                 textTransform: "none",
                 fontWeight: 600,
@@ -658,7 +662,7 @@ export default function Social_Links({ state , setSection ,setOpenModal}) {
 
             <Button
               startIcon={<AddIcon />}
-              // onClick={()=>{setExperienceOpen(true)}}
+              onClick={onClick}
 
               sx={{
                 textTransform: "none",

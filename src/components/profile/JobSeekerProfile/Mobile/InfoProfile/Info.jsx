@@ -10,6 +10,10 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function Info({ state, setSection ,setOpenModal }) {
+  const onClick = ()=>{
+    setSection("About me");
+    setOpenModal(true)
+  }
   return (
     <>
       <Box
