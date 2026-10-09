@@ -474,7 +474,6 @@ export default function More_Info({ state, setSection ,setOpenModal }) {
             >
               {state.user?.profile.aboutMe?.languages?.join(" - ")}
               {state.user?.profile.aboutMe?.languages?.length >= 1 ? null : "Unknown" }
-
             </Typography>
           </Box>
         </Box>

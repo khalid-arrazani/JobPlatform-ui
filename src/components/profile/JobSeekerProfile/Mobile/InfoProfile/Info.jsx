@@ -10,10 +10,7 @@ import {
 import AddIcon from "@mui/icons-material/Add";
 
 export default function Info({ state, setSection ,setOpenModal }) {
-  const onClick = ()=>{
-    setSection("About me");
-    setOpenModal(true)
-  }
+ 
   return (
     <>
       <Box
@@ -57,6 +54,19 @@ export default function Info({ state, setSection ,setOpenModal }) {
         >
           {state.user?.profile?.location}
         </Typography>
+
+        <Typography
+          sx={{
+            fontFamily:"",
+            fontWeight: 500,
+            fontSize: "0.9rem",
+            color: "#0405109a",
+            mt: 0.5,
+          }}
+        >
+          {state.user?.profile?.userId?.email || "------------------"}
+        </Typography>
+
       </Box>
     </>
   );
