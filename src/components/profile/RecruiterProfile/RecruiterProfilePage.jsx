@@ -7,6 +7,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import RecruiterProfileDesktop from "./Desktop/RecruiterProfiledesktop";
 import { useProfile } from "../../../logic/context/profileContext";
 import { getMeR } from "../../../logic/api/profile/GetMe";
+import JobSeekerProfileMobile from "./Mobile/JobSeekerProfileMobile";
 export default function MyProfileR() {
 
   const { dispatch } = useProfile();
@@ -39,12 +40,16 @@ export default function MyProfileR() {
       fetchUser();
     }, []);
 
+
+
+
+
     const isMobile = useMediaQuery("(max-width:600px)");
    const isTablet = useMediaQuery("(min-width:601px) and (max-width:1024px)");
 
   return (
     <>
-     {/* {isMobile &&  <JobSeekerProfileMobile/>} */}
+     {isMobile &&  <JobSeekerProfileMobile/>}
          
          {!isMobile &&  <RecruiterProfileDesktop/>}
     

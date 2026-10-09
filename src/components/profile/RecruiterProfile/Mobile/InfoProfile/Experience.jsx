@@ -19,7 +19,7 @@ export default function Experience({ state , setSection ,setOpenModal}) {
   }
   return (
     <>
-      {state.user?.profile?.experience.length >= 1 ? (
+      {state.user?.profile?.experience?.length >= 1 ? (
         <Paper
           elevation={0}
           sx={{

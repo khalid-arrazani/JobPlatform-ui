@@ -19,7 +19,7 @@ export default function Education({ state , setSection ,setOpenModal}) {
   }
   return (
     <>
-      {state.user?.profile?.education.length >= 1 ? (
+      {state.user?.profile?.education?.length >= 1 ? (
         <Paper
           elevation={0}
           sx={{

@@ -19,7 +19,7 @@ export default function Skills({ state, setSection ,setOpenModal }) {
   }
   return (
     <>
-      {state.user?.profile?.skills.length >= 1 ? (
+      {state.user?.profile?.skills?.length >= 1 ? (
         <Paper
           elevation={0}
           sx={{
