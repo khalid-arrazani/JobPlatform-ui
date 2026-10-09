@@ -75,7 +75,6 @@ export default function EducationP() {
         message: "Education Update Seccesfuly",
         severity: "success",
       });
-
       setEducationOpen(false);
     } catch (error) {
       setSnackBar({

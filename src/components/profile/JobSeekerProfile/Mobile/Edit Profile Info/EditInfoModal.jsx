@@ -23,10 +23,6 @@ export default function EditInfoModal({ setOpen, open,section , setSection }) {
   const onClose = () => {
     setOpen(false);
   };
-
-
-
-
   const [openModal, setOpenModal] = useState(false);
 
 

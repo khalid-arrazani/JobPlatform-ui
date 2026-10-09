@@ -110,12 +110,7 @@ export default function SocialLinksP() {
         item.url === matchsocialLinks[index].url,
     );
 
-  console.log(
-    socialLinks,
-    matchsocialLinks,
-    state.user?.profile?.socialLinks,
-    matching,
-  );
+ 
 
   return (
     <Box

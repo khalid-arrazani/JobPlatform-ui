@@ -20,7 +20,7 @@ import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
 export default function AboutMeP() {
-  const { isLoadingUptadeProfile, setAboutOpen, dispatch, ...state } =
+  const { isLoadingUptadeProfile, dispatch, ...state } =
     useProfile();
   const { setSnackBar } = useAuth();
 
@@ -77,11 +77,7 @@ export default function AboutMeP() {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-    setSnackBar({
-      open: true,
-      message: "Education Update Seccesfuly",
-      severity: "success",
-    });
+    
     try {
       const data = await updateProfileJS({
         aboutMe,
@@ -90,7 +86,11 @@ export default function AboutMeP() {
         type: "PROFILE",
         payload: data,
       });
-      setAboutOpen(false);
+      setSnackBar({
+      open: true,
+      message: "Education Update Seccesfuly",
+      severity: "success",
+    });
     } catch (error) {
       setSnackBar({
         open: true,

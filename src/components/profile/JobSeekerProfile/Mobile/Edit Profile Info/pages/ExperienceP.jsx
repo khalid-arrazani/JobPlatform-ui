@@ -85,7 +85,6 @@ export default function ExperienceP() {
         severity: "success",
       });
 
-      setExperienceOpen(false);
     } catch (error) {
       setSnackBar({
         open: true,
