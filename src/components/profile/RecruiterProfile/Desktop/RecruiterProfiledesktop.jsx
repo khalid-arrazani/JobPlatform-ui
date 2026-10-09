@@ -25,16 +25,20 @@ export default function RecruiterProfileDesktop() {
     useEffect(() => {
   
       const fetchUser = async () => {
+
         dispatch({
           type: "SET_LOADING",
           payload: true,
         });
+
         try {
           const data = await getMeR();
+
           dispatch({
             type: "PROFILE",
             payload: data,
           });
+          
         } catch (error) {
           console.log(error.response?.data);
         } finally {

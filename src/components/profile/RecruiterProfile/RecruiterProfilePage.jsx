@@ -1,10 +1,12 @@
 import { useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+
 
 
 import useMediaQuery from "@mui/material/useMediaQuery";
-import { getMeR } from "../../../logic/api/profile/GetMe";
+
 import RecruiterProfileDesktop from "./Desktop/RecruiterProfiledesktop";
+import { useProfile } from "../../../logic/context/profileContext";
+import { getMeR } from "../../../logic/api/profile/GetMe";
 export default function MyProfileR() {
 
   const { dispatch } = useProfile();
