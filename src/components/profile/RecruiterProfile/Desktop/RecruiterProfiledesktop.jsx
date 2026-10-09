@@ -38,7 +38,7 @@ export default function RecruiterProfileDesktop() {
             type: "PROFILE",
             payload: data,
           });
-          
+
         } catch (error) {
           console.log(error.response?.data);
         } finally {
@@ -54,7 +54,7 @@ export default function RecruiterProfileDesktop() {
 
   return (
     <>
-    {state.isLoading ? <LoadingPage/> : 
+  
       <div className="par1">
         <div style={{ height: "25vh" }}>
           <Header />
@@ -84,7 +84,7 @@ export default function RecruiterProfileDesktop() {
             <QuickStatsCard />
           </div>
         </div>
-      </div>}
+      </div>
     </>
   );
 }
