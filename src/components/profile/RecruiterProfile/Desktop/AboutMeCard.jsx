@@ -8,7 +8,7 @@ import { useState } from "react";
 
 import PersonOutlineOutlinedIcon from "@mui/icons-material/PersonOutlineOutlined";
 import AboutMeModal from "./AboutMeModal";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 export default function AboutMeCard() {
   const { ...state } = useProfile();
   const [open, setOpen] = useState(false);

@@ -6,13 +6,13 @@ import RecruiterStatsCard from "./RecruiterStatsCard.jsx";
 import AboutMeCard from "./AboutMeCard.jsx";
 import HiringFocusCard from "./HiringFocusCard.jsx";
 import QuickStatsCard from "./QuickStatsCard.jsx";
-import SocialLinksCard from "./SocialLinksCard.jsx";
+import SocialLinksCard from "../SocialLinksCard.jsx";
 
 
 import { useEffect } from "react";
 
-import { getMeR } from "../../../logic/api/profile/GetMe.jsx";
-import { useProfile } from "../../../logic/context/profileContext.jsx";
+import { getMeR } from "../../../../logic/api/profile/GetMe.jsx";
+import { useProfile } from "../../../../logic/context/profileContext.jsx";
 import LoadingPage from "./LoadingPage.jsx";
 
 

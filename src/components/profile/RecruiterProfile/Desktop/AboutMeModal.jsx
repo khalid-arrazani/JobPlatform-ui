@@ -4,9 +4,9 @@ import { Modal, Divider, TextField, Button } from "@mui/material";
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import { useState, useEffect } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-import { updateProfileR } from "../../../logic/api/profile/GetMe";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { updateProfileR } from "../../../../logic/api/profile/GetMe";
+import { useAuth } from "../../../../logic/context/AuthContext";
 import { green } from "@mui/material/colors";
 
 export default function AboutMeModal({ open, setOpen }) {

@@ -59,8 +59,8 @@ export default function Info({ state, setSection ,setOpenModal }) {
           sx={{
             fontFamily:"ui-rounded",
             fontWeight: 600,
-            fontSize: "1.2rem",
-            color: "#0405109a",
+            fontSize: "1.1rem",
+            color: "#04051075",
             mt: 0.5,
           }}
         >

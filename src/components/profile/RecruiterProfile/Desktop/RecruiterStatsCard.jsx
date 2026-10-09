@@ -11,9 +11,9 @@ import EditIcon from "@mui/icons-material/Edit";
 
 import ExperienceModal from "./ExperienceModal";
 import { useEffect, useState } from "react";
-import { updateProfileR } from "../../../logic/api/profile/GetMe";
-import { useAuth } from "../../../logic/context/AuthContext";
-import { useProfile } from "../../../logic/context/profileContext";
+import { updateProfileR } from "../../../../logic/api/profile/GetMe";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function RecruiterStatsCard() {
 

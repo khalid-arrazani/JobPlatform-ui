@@ -5,7 +5,7 @@ import WorkIcon from "@mui/icons-material/Work";
 import EditIcon from "@mui/icons-material/Edit";
 import HiringFocusModal from "./HiringFocusModal ";
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
 
 export default function HiringFocusCard() {
   const { ...state } = useProfile();

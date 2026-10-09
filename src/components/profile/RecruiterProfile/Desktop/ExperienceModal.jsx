@@ -10,9 +10,9 @@ import {
 } from "@mui/material";
 
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
-import { useAuth } from "../../../logic/context/AuthContext";
-import { updateProfileR } from "../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileR } from "../../../../logic/api/profile/GetMe";
 import { green } from "@mui/material/colors";
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 
