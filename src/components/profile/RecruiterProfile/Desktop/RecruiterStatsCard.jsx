@@ -16,6 +16,7 @@ import { useAuth } from "../../../../logic/context/AuthContext";
 import { updateProfileR } from "../../../../logic/api/profile/GetMe";
 
 
+
 export default function RecruiterStatsCard() {
 
   const [open, setOpen] = useState(false);

@@ -6,9 +6,10 @@ import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
 import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
-import { useProfile } from "../../../logic/context/profileContext";
-import { useAuth } from "../../../logic/context/AuthContext";
-import { updateProfilePhotoR } from "../../../logic/api/profile/GetMe";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { updateProfilePhotoR } from "../../../../logic/api/profile/GetMe";
+
 
 export default function UploadProfilePhoto() {
   const { setSnackBar } = useAuth();

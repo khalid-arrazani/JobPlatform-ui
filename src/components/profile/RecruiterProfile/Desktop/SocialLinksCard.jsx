@@ -14,7 +14,8 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 
 import SocialLinksModal from "./SocialLinksModal";
 import { useEffect, useState } from "react";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 export default function SocialLinksCard() {
   const { ...state } = useProfile();

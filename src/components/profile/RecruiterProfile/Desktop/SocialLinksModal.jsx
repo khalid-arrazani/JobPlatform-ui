@@ -10,8 +10,7 @@ import {
   Divider,
 } from "@mui/material";
 
-import {  updateProfileR } from "../../../../logic/api/profile/GetMe";
-import { useProfile } from "../../../../logic/context/profileContext";
+
 
 import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
 import CircularProgress from "@mui/material/CircularProgress";
@@ -21,6 +20,9 @@ const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileR } from "../../../../logic/api/profile/GetMe";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 export default function SocialLinksModal({ open, setOpen }) {
   const { dispatch, ...state } = useProfile();
