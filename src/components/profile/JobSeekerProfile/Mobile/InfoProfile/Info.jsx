@@ -57,14 +57,14 @@ export default function Info({ state, setSection ,setOpenModal }) {
 
         <Typography
           sx={{
-            fontFamily:"",
-            fontWeight: 500,
-            fontSize: "0.9rem",
+            fontFamily:"ui-rounded",
+            fontWeight: 600,
+            fontSize: "1.1rem",
             color: "#0405109a",
             mt: 0.5,
           }}
         >
-          {state.user?.profile?.userId?.email || "------------------"}
+          {state.user?.profile?.userId?.email ||null}
         </Typography>
 
       </Box>
