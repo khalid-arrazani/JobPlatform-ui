@@ -35,9 +35,6 @@ export default function JobSeekerProfileDesktop() {
   const {...state } = useProfile();
 
   
- 
-
-
 
 
   return (

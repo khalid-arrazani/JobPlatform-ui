@@ -1,4 +1,4 @@
-import MainList from "./mainList";
+import MainList from "../Desktop/mainList";
 
 import { AppBar, Toolbar, Box, IconButton } from "@mui/material";
 import NotificationsIcon from "@mui/icons-material/Notifications";

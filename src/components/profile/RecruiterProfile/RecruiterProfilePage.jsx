@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
-import JobSeekerProfileDesktop from "./Desktop/JobSeekerProfiledesktop";
+
 import JobSeekerProfileMobile from "./Mobile/JobSeekerProfileMobile";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { getMeR } from "../../../logic/api/profile/GetMe";
+import RecruiterProfileDesktop from "./Desktop/RecruiterProfiledesktop";
 export default function MyProfileR() {
 
   const { dispatch } = useProfile();
@@ -43,7 +44,7 @@ export default function MyProfileR() {
     <>
      {/* {isMobile &&  <JobSeekerProfileMobile/>} */}
          
-         {!isMobile &&  <JobSeekerProfileDesktop/>}
+         {!isMobile &&  <RecruiterProfileDesktop/>}
     
     </>
   );

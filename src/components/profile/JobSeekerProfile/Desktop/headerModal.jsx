@@ -30,6 +30,7 @@ export default function headerModal({ open, setOpen }) {
   const [location, setLocation] = useState("");
 
   const [headline, setHeadline] = useState("");
+  
 
   useEffect(() => {
     if (state.user?.profile) {
