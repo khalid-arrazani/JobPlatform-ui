@@ -14,6 +14,8 @@ import { useEffect, useState } from "react";
 
 import { green } from "@mui/material/colors";
 import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { updateProfileR } from "../../../../logic/api/profile/GetMe";
 
 
 const HiringFocusModal = ({ open, setOpen }) => {
