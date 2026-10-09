@@ -7,6 +7,7 @@ import HiringFocusModal from "./HiringFocusModal ";
 import { useEffect, useState } from "react";
 import { useProfile } from "../../../../logic/context/profileContext";
 
+
 export default function HiringFocusCard() {
   const { ...state } = useProfile();
 

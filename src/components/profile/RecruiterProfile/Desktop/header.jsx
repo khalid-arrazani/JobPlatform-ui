@@ -16,9 +16,9 @@ import LocationOnIcon from "@mui/icons-material/LocationOn";
 import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
-import UploadProfilePhoto from "../UploadProfilePhoto";
-import { useProfile } from "../../../../logic/context/profileContext";
+
 import HeaderModal from "../headerModal";
+import { useProfile } from "../../../../logic/context/profileContext";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
