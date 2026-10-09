@@ -60,7 +60,7 @@ export default function Info({ state, setSection ,setOpenModal }) {
             fontFamily:"ui-rounded",
             fontWeight: 600,
             fontSize: "1.1rem",
-            color: "#0405109a",
+            color: "#04051075",
             mt: 0.5,
           }}
         >
