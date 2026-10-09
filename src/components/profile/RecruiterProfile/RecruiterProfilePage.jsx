@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useProfile } from "../../../logic/context/profileContext";
 
-import JobSeekerProfileMobile from "./Mobile/JobSeekerProfileMobile";
+
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { getMeR } from "../../../logic/api/profile/GetMe";
 import RecruiterProfileDesktop from "./Desktop/RecruiterProfiledesktop";

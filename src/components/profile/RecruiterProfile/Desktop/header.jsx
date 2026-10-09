@@ -3,12 +3,9 @@ import {
   Typography,
   Button,
   Container,
-  Modal,
-  Card,
-  TextField,
-  Divider,
+ 
 } from "@mui/material";
-import TrendingFlatOutlinedIcon from "@mui/icons-material/TrendingFlatOutlined";
+
 
 import EditIcon from "@mui/icons-material/Edit";
 
@@ -17,8 +14,9 @@ import EmailIcon from "@mui/icons-material/Email";
 import { useState } from "react";
 
 
-import HeaderModal from "../headerModal";
+import HeaderModal from "./headerModal";
 import { useProfile } from "../../../../logic/context/profileContext";
+import UploadProfilePhoto from "./UploadProfilePhoto";
 export default function Header() {
   const [open, setOpen] = useState(false);
 
