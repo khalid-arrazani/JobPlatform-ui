@@ -4,14 +4,13 @@ import {
   Avatar,
   IconButton,
   Drawer,
-  Chip,
 } from "@mui/material";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 
-import AddIcon from "@mui/icons-material/Add";
 
-import { Button, Paper, Divider } from "@mui/material";
+
+import { Button} from "@mui/material";
 import MainList from "./mainList";
 import { useContext, useState } from "react";
 
@@ -26,7 +25,7 @@ import Experience from "./InfoProfile/Experience";
 import Education from "./InfoProfile/Education";
 import Social_Links from "./InfoProfile/Social Links";
 import Skills from "./InfoProfile/Skills";
-import Hiring_Focus from "./Hiring Focus";
+import Hiring_Focus from "./InfoProfile/Hiring Focus";
 
 export default function JobSeekerProfileMobile() {
   const { ...state } = useContext(ProfileContext);
