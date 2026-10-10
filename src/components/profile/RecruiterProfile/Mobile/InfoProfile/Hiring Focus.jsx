@@ -137,7 +137,7 @@ export default function Hiring_Focus({ state }) {
           </Button>
         </Box>
 
-        <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#ddd" }}></Box>
+        <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#dddddd00" }}></Box>
       </Paper>
     </>
   );
