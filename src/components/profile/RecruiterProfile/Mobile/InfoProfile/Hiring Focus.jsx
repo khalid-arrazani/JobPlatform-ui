@@ -28,7 +28,8 @@ export default function Hiring_Focus ({state}){
             mb: 3,
           }}
         >
-            
+            <Box sx={{width:"100%", height:" 6rem"}} ></Box>
+
         </Paper>
     
     </>
