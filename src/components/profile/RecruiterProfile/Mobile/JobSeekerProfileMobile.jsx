@@ -26,6 +26,7 @@ import Experience from "./InfoProfile/Experience";
 import Education from "./InfoProfile/Education";
 import Social_Links from "./InfoProfile/Social Links";
 import Skills from "./InfoProfile/Skills";
+import Hiring_Focus from "./Hiring Focus";
 
 export default function JobSeekerProfileMobile() {
   const { ...state } = useContext(ProfileContext);
@@ -235,6 +236,11 @@ export default function JobSeekerProfileMobile() {
 
             {/* more info */}
             <More_Info state={state} setSection={setSection} setOpenModal={setOpenModal}/>
+
+
+            {/* Hiring_Focus */}
+            <Hiring_Focus/>
+
 
             {/* About me */}
             <About_Me state={state} setSection={setSection} setOpenModal={setOpenModal}/>
