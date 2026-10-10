@@ -19,7 +19,7 @@ export default function About_Me({ state , setSection ,setOpenModal }) {
   }
   return (
     <>
-     {state.user?.profile?.aboutMe?.about ?
+     {state.user?.profile?.aboutMe ?
      (<Paper
         elevation={0}
         sx={{
@@ -144,7 +144,7 @@ export default function About_Me({ state , setSection ,setOpenModal }) {
               fontSize: "1.1rem",
             }}
           >
-            {state.user?.profile?.aboutMe?.about}
+            {state.user?.profile?.aboutMe}
           </Typography>
         </Box>
       </Paper> )
