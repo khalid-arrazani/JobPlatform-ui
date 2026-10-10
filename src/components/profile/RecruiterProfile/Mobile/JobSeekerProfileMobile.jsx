@@ -22,8 +22,7 @@ import Info from "./InfoProfile/Info";
 import More_Info from "./InfoProfile/More Info";
 
 import About_Me from "./InfoProfile/About Me";
-import Experience from "./InfoProfile/Experience";
-import Education from "./InfoProfile/Education";
+
 import Social_Links from "./InfoProfile/Social Links";
 import Skills from "./InfoProfile/Skills";
 
@@ -239,11 +238,7 @@ export default function JobSeekerProfileMobile() {
             {/* About me */}
             <About_Me state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
-            {/* Experience */}
-            <Experience state={state} setSection={setSection} setOpenModal={setOpenModal}/>
-
-            {/* Education */}
-            <Education state={state} setSection={setSection} setOpenModal={setOpenModal}/>
+            
 
             {/* Social Links */}
             <Social_Links state={state} setSection={setSection} setOpenModal={setOpenModal}/>
