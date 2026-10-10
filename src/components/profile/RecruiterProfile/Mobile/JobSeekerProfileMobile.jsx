@@ -237,10 +237,8 @@ export default function JobSeekerProfileMobile() {
             {/* more info */}
             <More_Info state={state} setSection={setSection} setOpenModal={setOpenModal}/>
 
-
             {/* Hiring_Focus */}
-            <Hiring_Focus/>
-
+            <Hiring_Focus  state={state} setSection={setSection} setOpenModal={setOpenModal} />
 
             {/* About me */}
             <About_Me state={state} setSection={setSection} setOpenModal={setOpenModal}/>
