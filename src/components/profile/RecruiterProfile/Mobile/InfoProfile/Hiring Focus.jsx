@@ -32,7 +32,7 @@ export default function Hiring_Focus({ state }) {
             justifyContent: "space-between",
             alignItems: "center",
             pb: 1,
-            borderBottom:"#ddd solid 1px"
+            borderBottom:" solid #ddd 1px"
           }}
         >
           <Box
