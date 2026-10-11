@@ -51,7 +51,7 @@ export default function Hiring_Focus({ state }) {
                 justifyContent: "center",
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Target--Streamline-Solar" height="24" width="24">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Target--Streamline-Solar" height="25" width="25">
   <desc>
     Target Streamline Icon: https://streamlinehq.com
   </desc>
