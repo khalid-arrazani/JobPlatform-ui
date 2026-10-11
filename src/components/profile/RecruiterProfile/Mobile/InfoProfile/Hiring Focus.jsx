@@ -51,56 +51,19 @@ export default function Hiring_Focus({ state }) {
                 justifyContent: "center",
               }}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="-0.5 -0.5 16 16"
-                id="User-Head-Focus--Streamline-Sharp"
-                height="30"
-                width="30"
-              >
-                <desc>
-                  User Head Focus Streamline Icon: https://streamlinehq.com
-                </desc>
-                <g id="user-head-focus--actions-head-focus-geometric-human-person-single-up-user-target">
-                  <path
-                    id="Vector 1149"
-                    stroke="#000000"
-                    d="M7.5 0.625v3.125"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    id="Vector 1150"
-                    stroke="#000000"
-                    d="M7.5 6.25v3.125"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    id="Vector 1151"
-                    stroke="#000000"
-                    d="M8.75 5h3.125"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    id="Vector 1152"
-                    stroke="#000000"
-                    d="M6.25 5H3.125"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    id="Ellipse 414"
-                    stroke="#000000"
-                    d="M5.625 10.139625c-1.4508375 0.21825 -2.82001875 0.6858124999999999 -4.0625 1.35775v2.2525625h11.875v-2.2525625c-1.2425 -0.6719375 -2.6116875 -1.1395 -4.0625 -1.35775"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    id="Ellipse 419"
-                    stroke="#000000"
-                    d="M4.375 5a3.125 3.125 0 1 0 6.25 0A3.125 3.125 0 1 0 4.375 5"
-                    stroke-width="0.8"
-                  ></path>
-                </g>
-              </svg>
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Target--Streamline-Solar" height="24" width="24">
+  <desc>
+    Target Streamline Icon: https://streamlinehq.com
+  </desc>
+  <g id="Line Duotone/Essentional UI/Target">
+    <path id="Vector" stroke="#737373" stroke-linecap="round" d="M2 12h3" stroke-width="1.5"></path>
+    <path id="Vector_2" stroke="#737373" stroke-linecap="round" d="M19 12h3" stroke-width="1.5"></path>
+    <path id="Vector_3" stroke="#737373" stroke-linecap="round" d="M12 22v-3" stroke-width="1.5"></path>
+    <path id="Vector_4" stroke="#737373" stroke-linecap="round" d="M12 5V2" stroke-width="1.5"></path>
+    <path id="Vector_5" stroke="#000000" d="M22 12c0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10C2 6.47715 6.47715 2 12 2c5.5228 0 10 4.47715 10 10Z" stroke-width="1.5"></path>
+    <path id="Vector_6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M12 12h-2m2 0h2m-2 0v2m0 -2v-2" stroke-width="1.5"></path>
+  </g>
+</svg>
             </Box>
 
             <Typography
