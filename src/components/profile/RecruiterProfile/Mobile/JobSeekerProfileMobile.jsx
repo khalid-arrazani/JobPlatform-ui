@@ -27,6 +27,7 @@ import Social_Links from "./InfoProfile/Social Links";
 import Skills from "./InfoProfile/Skills";
 import Hiring_Focus from "./InfoProfile/Hiring Focus";
 
+
 export default function JobSeekerProfileMobile() {
   const { ...state } = useContext(ProfileContext);
 

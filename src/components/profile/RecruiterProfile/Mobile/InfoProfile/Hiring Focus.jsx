@@ -10,10 +10,10 @@ import {
   Divider,
 } from "@mui/material";
 
-export default function Hiring_Focus({ state }) {
-  return (
-    <>
-      <Paper
+
+export default function Hiring_Focus (){
+    return<>
+        <Paper
         elevation={0}
         sx={{
           borderRadius: "1rem",
@@ -103,5 +103,4 @@ export default function Hiring_Focus({ state }) {
         <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#dddddd00" }}></Box>
       </Paper>
     </>
-  );
 }
