@@ -10,10 +10,10 @@ import {
   Divider,
 } from "@mui/material";
 
-
-export default function Hiring_Focus (){
-    return<>
-        <Paper
+export default function Hiring_Focus() {
+  return (
+    <>
+      <Paper
         elevation={0}
         sx={{
           borderRadius: "1rem",
@@ -32,7 +32,7 @@ export default function Hiring_Focus (){
             justifyContent: "space-between",
             alignItems: "center",
             pb: 1,
-            borderBottom:" solid #ddd 1px"
+            borderBottom: " solid #ddd 1px",
           }}
         >
           <Box
@@ -51,19 +51,59 @@ export default function Hiring_Focus (){
                 justifyContent: "center",
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Target--Streamline-Solar" height="25" width="25">
-  <desc>
-    Target Streamline Icon: https://streamlinehq.com
-  </desc>
-  <g id="Line Duotone/Essentional UI/Target">
-    <path id="Vector" stroke="#737373" stroke-linecap="round" d="M2 12h3" stroke-width="1.5"></path>
-    <path id="Vector_2" stroke="#737373" stroke-linecap="round" d="M19 12h3" stroke-width="1.5"></path>
-    <path id="Vector_3" stroke="#737373" stroke-linecap="round" d="M12 22v-3" stroke-width="1.5"></path>
-    <path id="Vector_4" stroke="#737373" stroke-linecap="round" d="M12 5V2" stroke-width="1.5"></path>
-    <path id="Vector_5" stroke="#000000" d="M22 12c0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10C2 6.47715 6.47715 2 12 2c5.5228 0 10 4.47715 10 10Z" stroke-width="1.5"></path>
-    <path id="Vector_6" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" d="M12 12h-2m2 0h2m-2 0v2m0 -2v-2" stroke-width="1.5"></path>
-  </g>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                id="Search-Circle--Streamline-Ultimate"
+                height="30"
+                width="30"
+              >
+                <desc>
+                  Search Circle Streamline Icon: https://streamlinehq.com
+                </desc>
+                <path
+                  fill="#66e1ff"
+                  d="M12.0002 22.5416c5.822 0 10.5416 -4.7196 10.5416 -10.5416 0 -5.82202 -4.7196 -10.54169 -10.5416 -10.54169C6.17817 1.45831 1.4585 6.17798 1.4585 12c0 5.822 4.71967 10.5416 10.5417 10.5416Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  fill="#c2f3ff"
+                  d="M4.5457 19.4543C2.56868 17.4774 1.45801 14.7959 1.45801 12c0 -2.79589 1.11067 -5.47729 3.08769 -7.4543C6.52271 2.56868 9.20411 1.45801 12 1.45801c2.7959 0 5.4774 1.11067 7.4543 3.08769L4.5457 19.4543Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  stroke="#191919"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12.0002 22.5416c5.822 0 10.5416 -4.7196 10.5416 -10.5416 0 -5.82202 -4.7196 -10.54169 -10.5416 -10.54169C6.17817 1.45831 1.4585 6.17798 1.4585 12c0 5.822 4.71967 10.5416 10.5417 10.5416Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  fill="#e4f1f5"
+                  d="M11.2089 15.9178c2.6007 0 4.7089 -2.1082 4.7089 -4.7089 0 -2.60065 -2.1082 -4.7089 -4.7089 -4.7089C8.60825 6.5 6.5 8.60825 6.5 11.2089c0 2.6007 2.10825 4.7089 4.7089 4.7089Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  fill="#ffffff"
+                  d="M7.87973 14.5392c-0.88311 -0.8831 -1.37924 -2.0809 -1.37924 -3.3298 0 -1.24891 0.49613 -2.44667 1.37924 -3.32979 0.88312 -0.88312 2.08088 -1.37924 3.32977 -1.37924 1.2489 0 2.4467 0.49612 3.3298 1.37924L7.87973 14.5392Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  stroke="#191919"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M11.2089 15.9178c2.6007 0 4.7089 -2.1082 4.7089 -4.7089 0 -2.60065 -2.1082 -4.7089 -4.7089 -4.7089C8.60825 6.5 6.5 8.60825 6.5 11.2089c0 2.6007 2.10825 4.7089 4.7089 4.7089Z"
+                  stroke-width="1"
+                ></path>
+                <path
+                  stroke="#191919"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M14.5381 14.5382 17.4998 17.5"
+                  stroke-width="1"
+                ></path>
+              </svg>
             </Box>
 
             <Typography
@@ -100,7 +140,10 @@ export default function Hiring_Focus (){
           </Button>
         </Box>
 
-        <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#dddddd00" }}></Box>
+        <Box
+          sx={{ width: "100%", height: " 3rem", bgcolor: "#dddddd00" }}
+        ></Box>
       </Paper>
     </>
+  );
 }
