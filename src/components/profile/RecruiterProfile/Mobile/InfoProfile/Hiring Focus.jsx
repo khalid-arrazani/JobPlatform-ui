@@ -138,7 +138,9 @@ export default function Hiring_Focus() {
           </Button>
         </Box>
 
-        <Box sx={{ width: "100%", height: " auto", bgcolor: "#100b0b00" }}>
+        <Box sx={{ width: "100%", height: " auto", bgcolor: "#100b0b00",display:'flex',flexDirection:"column",gap:2 }}>
+
+          {/* Job categories */}
           <Box
             sx={{
               width: "100%",
@@ -201,22 +203,22 @@ export default function Hiring_Focus() {
             <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
               <Typography
                  
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
+                sx={{ fontFamily: "monospace", color: "#0b0317c1",fontSize:"1rem",fontWeight:600 }}
               >
                 Job Categories
               </Typography>
 
               <Box
                  
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600,display :"flex " ,gap:0.5,flexWrap:"wrap"}}
               >
                 <Chip
                 label="IT & Software"
-                sx={{fontSize:"0.89rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
                 />
                 <Chip
                 label="Engineering"
-                sx={{fontSize:"0.89rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
                 />
                 
               </Box>
@@ -224,6 +226,95 @@ export default function Hiring_Focus() {
 
 
           </Box>
+
+          {/* Job categories */}
+          <Box
+            sx={{
+              width: "100%",
+              height: " auto",
+              bgcolor: "#85242400",
+              display: "flex",
+              gap: 2,
+              
+            }}
+          >
+
+            <Box
+              sx={{
+                height: "2.5rem",
+                width: "2.5rem",
+                bgcolor: "#ab6fc731",
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 48 48"
+                id="Bag-Suitcase-4--Streamline-Plump"
+                height="25"
+                width="25"
+              >
+                <g id="bag-suitcase-4--product-business-briefcase">
+                  <path
+                    id="Rectangle 97"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.586 14.236c0.21 -2.133 1.67 -3.848 3.785 -4.196C10.353 9.548 15.57 9 24 9c8.43 0 13.647 0.548 16.63 1.04 2.114 0.348 3.575 2.063 3.784 4.196C44.69 17.033 45 21.426 45 27c0 5.574 -0.31 9.967 -0.586 12.764 -0.21 2.133 -1.67 3.848 -3.785 4.196C37.647 44.452 32.43 45 24 45c-8.43 0 -13.646 -0.548 -16.63 -1.04 -2.114 -0.348 -3.575 -2.063 -3.784 -4.196C3.31 36.967 3 32.574 3 27c0 -5.573 0.31 -9.967 0.586 -12.764Z"
+                    stroke-width="3"
+                  ></path>
+                  <path
+                    id="Intersect"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M44.986 24.972C39.6 26.67 28.47 30 24 30c-4.47 0 -15.6 -3.33 -20.986 -5.028"
+                    stroke-width="3"
+                  ></path>
+                  <path
+                    id="Subtract"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M16.738 9.2c0.457 -1.408 1.238 -3.052 1.824 -4.204 0.478 -0.938 1.34 -1.615 2.384 -1.755A22.939 22.939 0 0 1 24 3.045c1.245 0 2.278 0.091 3.053 0.196 1.044 0.14 1.906 0.817 2.384 1.755 0.586 1.152 1.367 2.796 1.824 4.203"
+                    stroke-width="3"
+                  ></path>
+                </g>
+              </svg>
+            </Box>
+
+            <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
+              <Typography
+                 
+                sx={{ fontFamily: "monospace", color: "#0b0317c1",fontSize:"1rem",fontWeight:600 }}
+              >
+                Roles
+              </Typography>
+
+              <Box
+                 
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600,display :"flex " ,gap:0.5,flexWrap:"wrap"}}
+              >
+                <Chip
+                label="Frontend Developer"
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                />
+                <Chip
+                label="Backend Developer"
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                />
+                
+              </Box>
+            </Box>
+
+
+          </Box>
+
+
         </Box>
       </Paper>
     </>
