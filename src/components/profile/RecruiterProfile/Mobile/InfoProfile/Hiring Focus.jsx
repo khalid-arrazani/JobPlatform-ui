@@ -212,7 +212,7 @@ export default function Hiring_Focus() {
               >
                 <Chip
                 label="IT & Software"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"rgb(58, 4, 90)"}}
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#3a045a",bgcolor:"#3a045a"}}
                 />
                 
               </Box>
