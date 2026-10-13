@@ -138,14 +138,15 @@ export default function Hiring_Focus() {
           </Button>
         </Box>
 
-        <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#100b0b00" }}>
+        <Box sx={{ width: "100%", height: " auto", bgcolor: "#100b0b00" }}>
           <Box
             sx={{
               width: "100%",
-              height: " 3rem",
+              height: " auto",
               bgcolor: "#85242400",
               display: "flex",
               gap: 2,
+              
             }}
           >
 
@@ -197,7 +198,7 @@ export default function Hiring_Focus() {
               </svg>
             </Box>
 
-            <Box >
+            <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
               <Typography
                  
                 sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
@@ -209,6 +210,10 @@ export default function Hiring_Focus() {
                  
                 sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
               >
+                <Chip
+                label="IT & Software"
+                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"rgb(58, 4, 90)"}}
+                />
                 
               </Box>
             </Box>
