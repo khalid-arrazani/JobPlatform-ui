@@ -694,6 +694,7 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
           </Box>
+          
         </Box>
       </Paper>
     </>
