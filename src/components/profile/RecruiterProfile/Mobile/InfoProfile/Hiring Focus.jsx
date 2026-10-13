@@ -156,9 +156,7 @@ export default function Hiring_Focus() {
                 height="25"
                 width="25"
               >
-                <desc>
-                  Bag Suitcase 4 Streamline Icon: https://streamlinehq.com
-                </desc>
+                
                 <g id="bag-suitcase-4--product-business-briefcase">
                   <path
                     id="Rectangle 97"
