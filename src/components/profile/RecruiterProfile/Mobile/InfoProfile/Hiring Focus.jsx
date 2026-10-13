@@ -147,14 +147,14 @@ export default function Hiring_Focus() {
               display: "flex",
             }}
           >
-            <Box sx={{ height: "2.5rem", width: "2.5rem", bgcolor: "#ab6fc731",borderRadius:"5px",display:"flex",alignItems:"center",justifyContent:"center" }}>
+            <Box sx={{ height: "2.5rem", width: "2.5rem", bgcolor: "#ab6fc731",borderRadius:"8px",display:"flex",alignItems:"center",justifyContent:"center" }}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 48 48"
                 id="Bag-Suitcase-4--Streamline-Plump"
-                height="30"
-                width="30"
+                height="25"
+                width="25"
               >
                 <desc>
                   Bag Suitcase 4 Streamline Icon: https://streamlinehq.com
