@@ -197,7 +197,14 @@ export default function Hiring_Focus() {
               </svg>
             </Box>
 
-            <Box>
+            <Box >
+              <Typography
+                 
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
+              >
+                Job Categories
+              </Typography>
+
               <Typography
                  
                 sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
