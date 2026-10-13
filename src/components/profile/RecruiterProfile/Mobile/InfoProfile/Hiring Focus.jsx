@@ -145,9 +145,10 @@ export default function Hiring_Focus() {
               height: " 3rem",
               bgcolor: "#85242400",
               display: "flex",
-              gap: 1,
+              gap: 2,
             }}
           >
+
             <Box
               sx={{
                 height: "2.5rem",
@@ -198,12 +199,14 @@ export default function Hiring_Focus() {
 
             <Box>
               <Typography
-                variant="h6"
+                 
                 sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
               >
-                Hiring Focus
+                Job Categories
               </Typography>
             </Box>
+
+
           </Box>
         </Box>
       </Paper>
