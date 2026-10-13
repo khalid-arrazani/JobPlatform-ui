@@ -138,8 +138,16 @@ export default function Hiring_Focus() {
           </Button>
         </Box>
 
-        <Box sx={{ width: "100%", height: " auto", bgcolor: "#100b0b00",display:'flex',flexDirection:"column",gap:2 }}>
-
+        <Box
+          sx={{
+            width: "100%",
+            height: " auto",
+            bgcolor: "#100b0b00",
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+          }}
+        >
           {/* Job categories */}
           <Box
             sx={{
@@ -148,10 +156,8 @@ export default function Hiring_Focus() {
               bgcolor: "#85242400",
               display: "flex",
               gap: 2,
-              
             }}
           >
-
             <Box
               sx={{
                 height: "2.5rem",
@@ -200,31 +206,61 @@ export default function Hiring_Focus() {
               </svg>
             </Box>
 
-            <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
+            <Box
+              sx={{
+                height: "auto",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.8,
+              }}
+            >
               <Typography
-                 
-                sx={{ fontFamily: "monospace", color: "#0b0317c1",fontSize:"1rem",fontWeight:600 }}
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0b0317c1",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                }}
               >
                 Job Categories
               </Typography>
 
               <Box
-                 
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600,display :"flex " ,gap:0.5,flexWrap:"wrap"}}
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  display: "flex ",
+                  gap: 0.5,
+                  flexWrap: "wrap",
+                }}
               >
                 <Chip
-                label="IT & Software"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="IT & Software"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
                 <Chip
-                label="Engineering"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="Engineering"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
-                
               </Box>
             </Box>
-
-
           </Box>
 
           {/* Role */}
@@ -235,10 +271,8 @@ export default function Hiring_Focus() {
               bgcolor: "#85242400",
               display: "flex",
               gap: 2,
-              
             }}
           >
-
             <Box
               sx={{
                 height: "2.5rem",
@@ -250,50 +284,128 @@ export default function Hiring_Focus() {
                 justifyContent: "center",
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" id="User-Profile-Focus--Streamline-Core" height="25" width="25">
-  <desc>
-    User Profile Focus Streamline Icon: https://streamlinehq.com
-  </desc>
-  <g id="user-profile-focus--close-geometric-human-person-profile-focus-user">
-    <path id="Vector" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5v2c0 0.2652 -0.1054 0.5196 -0.2929 0.7071s-0.4419 0.2929 -0.7071 0.2929h-2" stroke-width="1"></path>
-    <path id="Vector_2" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M10.5 0.5h2c0.2652 0 0.5196 0.105357 0.7071 0.292893 0.1875 0.187537 0.2929 0.441887 0.2929 0.707107v2" stroke-width="1"></path>
-    <path id="Vector_3" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M0.5 3.5v-2c0 -0.26522 0.105357 -0.51957 0.292893 -0.707107C0.98043 0.605357 1.23478 0.5 1.5 0.5h2" stroke-width="1"></path>
-    <path id="Vector_4" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M3.5 13.5h-2c-0.26522 0 -0.51957 -0.1054 -0.707107 -0.2929C0.605357 13.0196 0.5 12.7652 0.5 12.5v-2" stroke-width="1"></path>
-    <path id="Vector_5" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M6.99975 6.49998c1.10456 0 1.99999 -0.89543 1.99999 -1.99999S8.10431 2.5 6.99975 2.5c-1.10457 0 -1.99999 0.89543 -1.99999 1.99999s0.89542 1.99999 1.99999 1.99999Z" stroke-width="1"></path>
-    <path id="Vector_6" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M10.8034 11.0001c-0.2584 -0.8057 -0.7659 -1.50842 -1.44938 -2.00701 -0.68349 -0.4986 -1.50767 -0.76726 -2.3537 -0.76726 -0.84603 0 -1.6702 0.26866 -2.3537 0.76726 -0.6835 0.49859 -1.191 1.20131 -1.44935 2.00701h7.60613Z" stroke-width="1"></path>
-  </g>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 14 14"
+                id="User-Profile-Focus--Streamline-Core"
+                height="25"
+                width="25"
+              >
+                <desc>
+                  User Profile Focus Streamline Icon: https://streamlinehq.com
+                </desc>
+                <g id="user-profile-focus--close-geometric-human-person-profile-focus-user">
+                  <path
+                    id="Vector"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M13.5 10.5v2c0 0.2652 -0.1054 0.5196 -0.2929 0.7071s-0.4419 0.2929 -0.7071 0.2929h-2"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    id="Vector_2"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.5 0.5h2c0.2652 0 0.5196 0.105357 0.7071 0.292893 0.1875 0.187537 0.2929 0.441887 0.2929 0.707107v2"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    id="Vector_3"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M0.5 3.5v-2c0 -0.26522 0.105357 -0.51957 0.292893 -0.707107C0.98043 0.605357 1.23478 0.5 1.5 0.5h2"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    id="Vector_4"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.5 13.5h-2c-0.26522 0 -0.51957 -0.1054 -0.707107 -0.2929C0.605357 13.0196 0.5 12.7652 0.5 12.5v-2"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    id="Vector_5"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.99975 6.49998c1.10456 0 1.99999 -0.89543 1.99999 -1.99999S8.10431 2.5 6.99975 2.5c-1.10457 0 -1.99999 0.89543 -1.99999 1.99999s0.89542 1.99999 1.99999 1.99999Z"
+                    stroke-width="1"
+                  ></path>
+                  <path
+                    id="Vector_6"
+                    stroke="#3a0454ad"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M10.8034 11.0001c-0.2584 -0.8057 -0.7659 -1.50842 -1.44938 -2.00701 -0.68349 -0.4986 -1.50767 -0.76726 -2.3537 -0.76726 -0.84603 0 -1.6702 0.26866 -2.3537 0.76726 -0.6835 0.49859 -1.191 1.20131 -1.44935 2.00701h7.60613Z"
+                    stroke-width="1"
+                  ></path>
+                </g>
+              </svg>
             </Box>
 
-            <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
+            <Box
+              sx={{
+                height: "auto",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.8,
+              }}
+            >
               <Typography
-                 
-                sx={{ fontFamily: "monospace", color: "#0b0317c1",fontSize:"1rem",fontWeight:600 }}
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0b0317c1",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                }}
               >
                 Roles
               </Typography>
 
               <Box
-                 
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600,display :"flex " ,gap:0.5,flexWrap:"wrap"}}
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  display: "flex ",
+                  gap: 0.5,
+                  flexWrap: "wrap",
+                }}
               >
                 <Chip
-                label="Frontend Developer"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="Frontend Developer"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
                 <Chip
-                label="Backend Developer"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="Backend Developer"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
-                
               </Box>
             </Box>
-
-
           </Box>
 
-
-          {/* Role */}
+          {/* Experience Levels */}
           <Box
             sx={{
               width: "100%",
@@ -301,10 +413,8 @@ export default function Hiring_Focus() {
               bgcolor: "#85242400",
               display: "flex",
               gap: 2,
-              
             }}
           >
-
             <Box
               sx={{
                 height: "2.5rem",
@@ -316,49 +426,80 @@ export default function Hiring_Focus() {
                 justifyContent: "center",
               }}
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14" id="User-Profile-Focus--Streamline-Core" height="25" width="25">
-  <desc>
-    User Profile Focus Streamline Icon: https://streamlinehq.com
-  </desc>
-  <g id="user-profile-focus--close-geometric-human-person-profile-focus-user">
-    <path id="Vector" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M13.5 10.5v2c0 0.2652 -0.1054 0.5196 -0.2929 0.7071s-0.4419 0.2929 -0.7071 0.2929h-2" stroke-width="1"></path>
-    <path id="Vector_2" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M10.5 0.5h2c0.2652 0 0.5196 0.105357 0.7071 0.292893 0.1875 0.187537 0.2929 0.441887 0.2929 0.707107v2" stroke-width="1"></path>
-    <path id="Vector_3" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M0.5 3.5v-2c0 -0.26522 0.105357 -0.51957 0.292893 -0.707107C0.98043 0.605357 1.23478 0.5 1.5 0.5h2" stroke-width="1"></path>
-    <path id="Vector_4" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M3.5 13.5h-2c-0.26522 0 -0.51957 -0.1054 -0.707107 -0.2929C0.605357 13.0196 0.5 12.7652 0.5 12.5v-2" stroke-width="1"></path>
-    <path id="Vector_5" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M6.99975 6.49998c1.10456 0 1.99999 -0.89543 1.99999 -1.99999S8.10431 2.5 6.99975 2.5c-1.10457 0 -1.99999 0.89543 -1.99999 1.99999s0.89542 1.99999 1.99999 1.99999Z" stroke-width="1"></path>
-    <path id="Vector_6" stroke="#3a0454ad" stroke-linecap="round" stroke-linejoin="round" d="M10.8034 11.0001c-0.2584 -0.8057 -0.7659 -1.50842 -1.44938 -2.00701 -0.68349 -0.4986 -1.50767 -0.76726 -2.3537 -0.76726 -0.84603 0 -1.6702 0.26866 -2.3537 0.76726 -0.6835 0.49859 -1.191 1.20131 -1.44935 2.00701h7.60613Z" stroke-width="1"></path>
-  </g>
-</svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                height="26"
+                width="26"
+              >
+                <g id="motion-photos-on">
+                  <path
+                    id="Union"
+                    fill="#3a0454ad"
+                    d="M12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.3775 0.27949 -2.69283 0.78516 -3.88965l1.84179 0.7793C4.22359 9.84449 4 10.8948 4 12c0 4.4183 3.58172 8 8 8 4.4183 0 8 -3.5817 8 -8 0 -4.41828 -3.5817 -8 -8 -8 -1.1052 0 -2.15551 0.22359 -3.11035 0.62695l-0.7793 -1.84179C9.30717 2.27949 10.6225 2 12 2M5.5 4C6.32843 4 7 4.67157 7 5.5S6.32843 7 5.5 7 4 6.32843 4 5.5 4.67157 4 5.5 4"
+                    stroke-width="1"
+                  ></path>
+                </g>
+              </svg>
             </Box>
 
-            <Box sx={{height:"auto",width:"100%",display:"flex",flexDirection:"column",gap:0.8} } >
+            <Box
+              sx={{
+                height: "auto",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.8,
+              }}
+            >
               <Typography
-                 
-                sx={{ fontFamily: "monospace", color: "#0b0317c1",fontSize:"1rem",fontWeight:600 }}
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0b0317c1",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                }}
               >
                 Experience Levels
               </Typography>
 
               <Box
-                 
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600,display :"flex " ,gap:0.5,flexWrap:"wrap"}}
+                sx={{
+                  fontFamily: "system-ui",
+                  color: "#0b0317d8",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  display: "flex ",
+                  gap: 0.5,
+                  flexWrap: "wrap",
+                }}
               >
                 <Chip
-                label="Junior"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="Junior"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
                 <Chip
-                label="Mid-Level"
-                sx={{fontSize:"0.8rem",fontFamily:"monospace",borderRadius:"8px",fontWeight:500,color:"#51027e",bgcolor:"#d8a1f77b"}}
+                  label="Mid-Level"
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    borderRadius: "8px",
+                    fontWeight: 500,
+                    color: "#51027e",
+                    bgcolor: "#d8a1f77b",
+                  }}
                 />
-                
               </Box>
             </Box>
-
-
           </Box>
-
-
         </Box>
       </Paper>
     </>
