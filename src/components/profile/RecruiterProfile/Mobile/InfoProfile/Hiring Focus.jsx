@@ -200,7 +200,7 @@ export default function Hiring_Focus() {
             <Box>
               <Typography
                  
-                sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8",fontSize:"1rem",fontWeight:600 }}
               >
                 Job Categories
               </Typography>
