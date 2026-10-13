@@ -139,6 +139,7 @@ export default function Hiring_Focus() {
         </Box>
 
         <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#100b0b00" }}>
+          
           <Box
             sx={{
               width: "100%",
