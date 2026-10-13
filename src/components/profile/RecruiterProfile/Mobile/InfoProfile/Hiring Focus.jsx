@@ -21,7 +21,10 @@ export default function Hiring_Focus() {
           width: "100%",
           boxSizing: "border-box",
           border: "1px dashed #ddd",
-          mb: 3,display:"flex",flexDirection:"column",gap:1
+          mb: 3,
+          display: "flex",
+          flexDirection: "column",
+          gap: 1,
         }}
       >
         <Box
@@ -127,7 +130,6 @@ export default function Hiring_Focus() {
               height="24"
               width="24"
             >
-              
               <path
                 d="m15.5115375 4.0630625 -3.575 -3.575c-0.43736875 -0.43741875 -1.1465375 -0.43741875 -1.58390625 0L0.48838125 10.35310625c-0.21046875 0.20974375 -0.32853125 0.49481875 -0.32798125 0.79195625v3.575c0 0.618525 0.5014125 1.1199375 1.1199375 1.1199375h3.575c0.2971375 0.00055 0.5822125 -0.1175125 0.79195625 -0.32798125L15.5115375 5.64696875c0.43741875 -0.43736875 0.43741875 -1.1465375 0 -1.58390625ZM4.96813125 14.83285625c-0.02986875 0.03004375 -0.07043125 0.04701875 -0.11279375 0.04719375h-3.575c-0.0883625 0.00000625 -0.1599875 -0.071625 -0.1599875 -0.1599875v-3.575c0.000175 -0.0423625 0.01715 -0.082925 0.04719375 -0.11279375L8.31994375 3.87906875l3.8005875 3.8013875ZM14.832375 4.9686125l-2.03268125 2.03268125 -3.8005875 -3.80058125 2.03268125 -2.0334875c0.0625 -0.0625625 0.16389375 -0.0625625 0.2263875 0l3.5742 3.575c0.0625625 0.06249375 0.0625625 0.1638875 0 0.2263875Z"
                 stroke-width="0.0625"
@@ -137,17 +139,26 @@ export default function Hiring_Focus() {
         </Box>
 
         <Box sx={{ width: "100%", height: " 3rem", bgcolor: "#100b0b00" }}>
-
           <Box
             sx={{
               width: "100%",
               height: " 3rem",
               bgcolor: "#85242400",
               display: "flex",
-              gap:1
+              gap: 1,
             }}
           >
-            <Box sx={{ height: "2.5rem", width: "2.5rem", bgcolor: "#ab6fc731",borderRadius:"8px",display:"flex",alignItems:"center",justifyContent:"center" }}>
+            <Box
+              sx={{
+                height: "2.5rem",
+                width: "2.5rem",
+                bgcolor: "#ab6fc731",
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -156,7 +167,6 @@ export default function Hiring_Focus() {
                 height="25"
                 width="25"
               >
-                
                 <g id="bag-suitcase-4--product-business-briefcase">
                   <path
                     id="Rectangle 97"
@@ -187,19 +197,15 @@ export default function Hiring_Focus() {
             </Box>
 
             <Box>
-               <Typography
-              variant="h6"
-              sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
-            >
-              Hiring Focus
-            </Typography>
-
-
+              <Typography
+                variant="h6"
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+              >
+                Hiring Focus
+              </Typography>
             </Box>
           </Box>
         </Box>
-
-
       </Paper>
     </>
   );
