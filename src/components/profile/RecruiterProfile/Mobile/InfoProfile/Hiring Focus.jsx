@@ -137,6 +137,7 @@ export default function Hiring_Focus() {
             </svg>
           </Button>
         </Box>
+        
 
         <Box
           sx={{
@@ -694,7 +695,7 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
           </Box>
-          
+
         </Box>
       </Paper>
     </>
