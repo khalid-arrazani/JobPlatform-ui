@@ -881,39 +881,17 @@ export default function Hiring_Focus() {
                   flexWrap: "wrap",
                 }}
               >
-                <Chip
-                  label="React"
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontFamily: "monospace",
-                    borderRadius: "8px",
-                    fontWeight: 500,
-                    color: "#51027e",
-                    bgcolor: "#d8a1f77b",
-                  }}
-                />
-                <Chip
-                  label="JavaScript"
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontFamily: "monospace",
-                    borderRadius: "8px",
-                    fontWeight: 500,
-                    color: "#51027e",
-                    bgcolor: "#d8a1f77b",
-                  }}
-                />
-                <Chip
-                  label="Node.js"
-                  sx={{
-                    fontSize: "0.8rem",
-                    fontFamily: "monospace",
-                    borderRadius: "8px",
-                    fontWeight: 500,
-                    color: "#51027e",
-                    bgcolor: "#d8a1f77b",
-                  }}
-                />
+                <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0b0317c1",
+                  fontSize: "0.88rem",
+                  fontWeight: 600,
+                }}
+              >
+                I recruit junior and mid-level developers for remote and full-time positions.
+              </Typography>
+                
               </Box>
 
 
