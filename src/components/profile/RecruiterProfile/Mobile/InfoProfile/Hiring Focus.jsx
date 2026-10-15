@@ -869,6 +869,7 @@ export default function Hiring_Focus() {
                 About my hiring focus
               </Typography>
 
+
               <Box
                 sx={{
                   fontFamily: "system-ui",
@@ -914,6 +915,9 @@ export default function Hiring_Focus() {
                   }}
                 />
               </Box>
+
+
+
             </Box>
           </Box>
         </Box>
