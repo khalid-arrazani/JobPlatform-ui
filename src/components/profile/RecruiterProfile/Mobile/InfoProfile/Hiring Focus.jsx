@@ -816,9 +816,11 @@ export default function Hiring_Focus() {
             sx={{
               width: "100%",
               height: " auto",
-              bgcolor: "#85242400",
+              bgcolor: "#6f6e6e1a",
               display: "flex",
               gap: 2,
+              boxSizing:"border-box",p:1,
+              borderRadius:"10px"
             }}
           >
             <Box
@@ -861,7 +863,7 @@ export default function Hiring_Focus() {
               <Typography
                 sx={{
                   fontFamily: "monospace",
-                  color: "#0b0317c1",
+                  color: "#0f0d12dd",
                   fontSize: "1rem",
                   fontWeight: 600,
                 }}
@@ -873,7 +875,7 @@ export default function Hiring_Focus() {
               <Box
                 sx={{
                   fontFamily: "system-ui",
-                  color: "#0b0317d8",
+             
                   fontSize: "1rem",
                   fontWeight: 600,
                   display: "flex ",
@@ -884,7 +886,7 @@ export default function Hiring_Focus() {
                 <Typography
                 sx={{
                   fontFamily: "monospace",
-                  color: "#0b0317c1",
+                  color: "#0b031792",
                   fontSize: "0.88rem",
                   fontWeight: 600,
                 }}
