@@ -182,6 +182,8 @@ export default function Hiring_Focus() {
   const { isLoadingUptadeProfile, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
+   {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
+
   // this is the languages List
   const lang = ISO6391.getAllNames();
   //---------------------------------
@@ -302,7 +304,7 @@ export default function Hiring_Focus() {
           >
             
 
-            {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
+           
 
 
 
