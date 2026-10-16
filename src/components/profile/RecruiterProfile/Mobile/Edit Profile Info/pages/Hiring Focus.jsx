@@ -184,8 +184,6 @@ export default function Hiring_Focus() {
 
    {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
 
-
-
   const [JobCategories, setJobCategories] = useState("");
   const [Roles, setRoles] = useState("");
   const [ExperienceLevels, setExperienceLevels] = useState("");
