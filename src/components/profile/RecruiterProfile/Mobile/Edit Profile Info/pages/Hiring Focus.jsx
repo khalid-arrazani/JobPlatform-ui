@@ -419,8 +419,8 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
 
-             {/* About my hiring focus */}
-            <Box sx={{ mb: "1rem" }}>
+            {/* About my hiring focus */}
+            <Box sx={{ mt: "1rem" }}>
               <Typography
                 sx={{
                   fontSize: "1.1rem",
@@ -430,7 +430,7 @@ export default function Hiring_Focus() {
                   fontFamily: "monospace",
                 }}
               >
-                About me
+                About my hiring focus
               </Typography>
 
               <Box
@@ -525,7 +525,7 @@ export default function Hiring_Focus() {
                       gap: 1,
                     }}
                   >
-                    tell us about you
+                   about your hiring focus
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -558,7 +558,7 @@ export default function Hiring_Focus() {
                   onChange={(e) => setAbout(e.target.value)}
                   fullWidth
                   multiline
-                  placeholder="Tell recruiters about your background, skills, and career goals..."
+                  placeholder="Tell us about your hiring focus..."
                   rows={3}
                   sx={{
                     "& .MuiOutlinedInput-root": {
