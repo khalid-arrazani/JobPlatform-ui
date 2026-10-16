@@ -186,8 +186,8 @@ export default function Hiring_Focus() {
 
 
 
+const [JobCategories, setJobCategories] = useState("");
 
-   
 
 
 
