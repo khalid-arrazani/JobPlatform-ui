@@ -81,7 +81,7 @@ export default function More_Info({ state, setSection ,setOpenModal }) {
                 pb: 0.5,
               }}
             >
-              Availability
+              Professional Title
             </Typography>
 
             <Typography
