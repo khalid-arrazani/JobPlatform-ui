@@ -186,7 +186,13 @@ export default function Hiring_Focus() {
 
 
 
-const [JobCategories, setJobCategories] = useState("");
+  const [JobCategories, setJobCategories] = useState("");
+  const [Roles, setRoles] = useState("");
+  const [ExperienceLevels, setExperienceLevels] = useState("");
+  const [EmploymentTypes, setEmploymentTypes] = useState("");
+  const [WorkArrangements, setWorkArrangements] = useState("");
+  const [PreferredSkills, setPreferredSkills] = useState("");
+  const [PreferredSkills, setPreferredSkills] = useState("");
 
 
 
