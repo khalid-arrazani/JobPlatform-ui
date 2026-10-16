@@ -91,7 +91,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              {state.user?.profile.aboutMe?.availability}
+              HR Manager · Recruiter · CEO
             </Typography>
           </Box>
         </Box>
@@ -126,144 +126,24 @@ export default function More_Info({ state, setSection, setOpenModal }) {
             <svg
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
-              viewBox="-0.94 -0.94 30 30"
-              id="Covid19-Virus-Patient-2--Streamline-Covid"
-              height="30"
-              width="30"
+              viewBox="0 0 14 14"
+              id="Arrow-Cursor-2--Streamline-Core"
+              height="22"
+              width="22"
             >
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M20.21125 24.228894999999998a4.017645 4.017645 0 1 0 0 -8.03529 4.017645 4.017645 0 0 0 0 8.03529Z"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M19.54222833333333 13.18125h1.3380433333333333"
-                stroke-width="1.2  "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M20.21125 13.18125v3.0123550000000003"
-                stroke-width="1.2 "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m24.70927833333333 14.766515 0.9467066666666667 0.9467066666666667"
-                stroke-width="1 .2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m25.182631666666666 15.239868333333332 -2.1312616666666666 2.1312616666666666"
-                stroke-width="1.2 "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M27.24125 19.54222833333333v1.3380433333333333"
-                stroke-width="1 "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M27.24125 20.21125h-3.0123550000000003"
-                stroke-width="1 "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m25.655984999999998 24.70927833333333 -0.9467066666666667 0.9467066666666667"
-                stroke-width="1.2 "
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m25.182631666666666 25.182631666666666 -2.1312616666666666 -2.1312616666666666"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M20.88027166666667 27.24125h-1.3380433333333333"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M20.21125 27.24125v-3.0123550000000003"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m15.713221666666666 25.655984999999998 -0.9467066666666667 -0.9467066666666667"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m15.239868333333332 25.182631666666666 2.1312616666666666 -2.1312616666666666"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.18125 20.88027166666667v-1.3380433333333333"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M13.18125 20.21125h3.0123550000000003"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m14.766515 15.713221666666666 0.9467066666666667 -0.9467066666666667"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="m15.239868333333332 15.239868333333332 2.1312616666666666 2.1312616666666666"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M7.029999999999999 7.9087499999999995a3.5149999999999997 3.5149999999999997 0 1 0 0 -7.029999999999999 3.5149999999999997 3.5149999999999997 0 0 0 0 7.029999999999999Z"
-                stroke-width="1.2"
-              ></path>
-              <path
-                stroke="#1c0674ee"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                d="M12.366941666666666 12.757106666666667A6.152421666666667 6.152421666666667 0 0 0 0.8787499999999999 15.817499999999999v2.63625H3.5149999999999997l0.8787499999999999 8.7875h5.2725l0.37844833333333333 -3.786826666666667"
-                stroke-width="1.2"
-              ></path>
+              <desc>
+                Arrow Cursor 2 Streamline Icon: https://streamlinehq.com
+              </desc>
+              <g id="arrow-cursor-2--mouse-select-cursor">
+                <path
+                  id="Vector"
+                  stroke="#1c0674ee"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M13.0055 5.42823c0.1561 -0.06508 0.2569 -0.09398 0.3497 -0.18665 0.0927 -0.09268 0.1448 -0.21836 0.1448 -0.34942s-0.0521 -0.25675 -0.1448 -0.34942c-0.0928 -0.09267 -0.1241 -0.14819 -0.3497 -0.21437C12.7798 4.26219 1.80942 0.553527 1.80942 0.553527c-0.17507 -0.059892 -0.36344 -0.069509 -0.5437 -0.027758C1.08546 0.567521 0.920531 0.658965 0.789686 0.78971c-0.130844 0.130745 -0.222358 0.29555 -0.264142 0.47567 -0.041783 0.18013 -0.032159 0.36835 0.027779 0.54329 0 0 3.796377 11.04723 3.842757 11.19743 0.04638 0.1502 0.10621 0.2567 0.19895 0.3494 0.09274 0.0927 0.21852 0.1447 0.34968 0.1447s0.25694 -0.052 0.34968 -0.1447c0.09274 -0.0927 0.11394 -0.1452 0.18346 -0.3494 0.06953 -0.2042 1.93949 -5.59378 1.93949 -5.59378s5.43206 -1.91901 5.58816 -1.98409Z"
+                  stroke-width="1"
+                ></path>
+              </g>
             </svg>
           </Box>
           <Box>
@@ -276,7 +156,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 pb: 0.5,
               }}
             >
-              Experience Level
+              Location
             </Typography>
             <Typography
               sx={{
@@ -285,7 +165,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              {state.user?.profile.aboutMe?.experienceLevel}
+              Mountain View, California, USA
             </Typography>
           </Box>
         </Box>
