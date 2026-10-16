@@ -184,6 +184,16 @@ export default function Hiring_Focus() {
 
    {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
 
+
+
+
+   
+
+
+
+
+
+
   // this is the languages List
   const lang = ISO6391.getAllNames();
   //---------------------------------
@@ -195,6 +205,11 @@ export default function Hiring_Focus() {
   const [availability, setAvailability] = useState("");
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
+
+
+
+
+
 
   useEffect(() => {
     const profile = state.user?.profile;
