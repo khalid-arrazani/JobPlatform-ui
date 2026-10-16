@@ -256,7 +256,7 @@ export default function Hiring_Focus() {
 
              
 
-            {/* --languages-- */}
+            {/* Job Categories */}
             <Box>
               <Typography
                 sx={{
@@ -267,7 +267,7 @@ export default function Hiring_Focus() {
                   fontFamily: "monospace",
                 }}
               >
-                languages
+                Job Categories
               </Typography>
               <Box
                 sx={{
@@ -300,7 +300,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                      placeholder="Language"
+                      placeholder="Job Categories"
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: "0.3rem",
@@ -378,51 +378,7 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
 
-            {/* -----------------------availability and preferredJobType----------------------- */}
-
-            <Typography
-              sx={{
-                fontSize: "1.1rem",
-                fontWeight: 500,
-                mb: "0.5rem",
-                color: "#070e1ee5",
-                fontFamily: "monospace",
-              }}
-            >
-              Availability
-            </Typography>
-
-            <Box sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}>
-              <TextField
-                select
-                fullWidth
-                size="small"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "0.3rem",
-                    fontFamily: "monospace",
-                    fontSize: "1.2rem",
-                  },
-                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                    {
-                      border: "none",
-                    },
-                  "& .MuiInputBase-root": {},
-                  border: "none",
-                }}
-                value={availability}
-                onChange={(e) => setAvailability(e.target.value)}
-              >
-                <MenuItem value="immediately">immediately</MenuItem>
-
-                <MenuItem value="1_week">1_week</MenuItem>
-
-                <MenuItem value="1_month">1_month</MenuItem>
-                <MenuItem value="none">none</MenuItem>
-              </TextField>
-            </Box>
-
-            {/* Preferred Job Type */}
+            {/* Roles */}
             <Box>
               <Typography
                 sx={{
@@ -433,51 +389,118 @@ export default function Hiring_Focus() {
                   fontFamily: "monospace",
                 }}
               >
-                Preferred Job Type
+                Roles
               </Typography>
-
               <Box
-                sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
               >
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "0.3rem",
-                      fontFamily: "monospace",
-                      fontSize: "1.2rem",
-                    },
-                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                      {
-                        border: "none",
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
                       },
-                    "& .MuiInputBase-root": {
-                      py: 0.2,
                     },
-                    border: "none",
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
                   }}
-                  value={preferredJobType}
-                  onChange={(e) => setPreferredJobType(e.target.value)}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Roles"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
                 >
-                  <MenuItem value="full-time">full-time</MenuItem>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
 
-                  <MenuItem value="part-time">part-time</MenuItem>
-
-                  <MenuItem value="remote">remote</MenuItem>
-
-                  <MenuItem value="internship">internship</MenuItem>
-
-                  <MenuItem value="freelance">freelance</MenuItem>
-
-                  <MenuItem value="contract">contract</MenuItem>
-                  <MenuItem value="none">none</MenuItem>
-                </TextField>
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
               </Box>
             </Box>
 
-            {/* Experience Level */}
+            {/*  Experience Levels */}
             <Box>
               <Typography
                 sx={{
@@ -488,40 +511,486 @@ export default function Hiring_Focus() {
                   fontFamily: "monospace",
                 }}
               >
-                Experience Level
+                 Experience Levels
               </Typography>
               <Box
-                sx={{ border: "1px solid #ddd", mb: 0, borderRadius: "8px" }}
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
               >
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "0.3rem",
-                      fontFamily: "monospace",
-                      fontSize: "1.2rem",
-                    },
-                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                      {
-                        border: "none",
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
                       },
-                    "& .MuiInputBase-root": {},
-                    border: "none",
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
                   }}
-                  value={experienceLevel}
-                  onChange={(e) => setExperienceLevel(e.target.value)}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Experience Levels"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
                 >
-                  <MenuItem value="junior">junior</MenuItem>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
 
-                  <MenuItem value="mid">mid</MenuItem>
-
-                  <MenuItem value="senior">senior</MenuItem>
-                  <MenuItem value="none">none</MenuItem>
-                </TextField>
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
               </Box>
             </Box>
+
+            {/* Employment Types */}
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
+                }}
+              >
+                Employment Types
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
+              >
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
+                      },
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
+                  }}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Employment Types"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
+              </Box>
+            </Box>
+
+            {/* Work Arrangements */}
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
+                }}
+              >
+                Work Arrangements
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
+              >
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
+                      },
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
+                  }}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Work Arrangements"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
+              </Box>
+            </Box>
+
+            {/* Preferred Skills */}
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
+                }}
+              >
+                Preferred Skills
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
+              >
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
+                      },
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
+                  }}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Preferred Skills"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
+              </Box>
+            </Box>
+
+           
+
+
 
             {/* About my hiring focus */}
             <Box sx={{ mt: "1rem" }}>
@@ -687,6 +1156,10 @@ export default function Hiring_Focus() {
                 />
               </Box>
             </Box>
+
+
+
+
           </Box>
 
           <Button
