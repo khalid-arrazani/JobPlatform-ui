@@ -7,6 +7,165 @@ import {
   MenuItem,
 } from "@mui/material";
 
+  const hiringFocusOptions = {
+  jobCategories: [
+    "IT & Software",
+    "Engineering",
+    "Design & Creative",
+    "Marketing",
+    "Sales",
+    "Business & Management",
+    "Finance & Accounting",
+    "Human Resources",
+    "Healthcare",
+    "Education",
+    "Customer Service",
+    "Administration",
+    "Construction",
+    "Manufacturing",
+    "Logistics & Supply Chain",
+    "Hospitality & Tourism",
+    "Agriculture",
+    "Legal",
+    "Science & Research",
+    "Media & Communication",
+    "Retail",
+    "Other",
+  ],
+
+  roles: [
+    "Frontend Developer",
+    "Backend Developer",
+    "Full Stack Developer",
+    "Mobile Developer",
+    "Software Engineer",
+    "DevOps Engineer",
+    "Data Analyst",
+    "Data Scientist",
+    "AI Engineer",
+    "Cybersecurity Engineer",
+    "UI/UX Designer",
+    "Graphic Designer",
+    "Product Manager",
+    "Project Manager",
+    "Business Analyst",
+    "Marketing Specialist",
+    "Digital Marketing Manager",
+    "Sales Representative",
+    "Account Manager",
+    "HR Manager",
+    "Recruiter",
+    "Accountant",
+    "Financial Analyst",
+    "Customer Support Specialist",
+    "Administrative Assistant",
+    "Warehouse Worker",
+    "Forklift Operator",
+    "Production Operator",
+    "Electrician",
+    "Mechanical Engineer",
+    "Civil Engineer",
+    "Nurse",
+    "Teacher",
+    "Chef",
+    "Waiter",
+    "Delivery Driver",
+    "Other",
+  ],
+
+  experienceLevels: [
+    "Internship",
+    "Entry Level",
+    "Junior",
+    "Mid-Level",
+    "Senior",
+    "Lead",
+    "Manager",
+    "Director",
+    "Executive",
+  ],
+
+  employmentTypes: [
+    "Full-time",
+    "Part-time",
+    "Contract",
+    "Temporary",
+    "Freelance",
+    "Internship",
+    "Apprenticeship",
+    "Seasonal",
+    "Volunteer",
+  ],
+
+  workArrangements: [
+    "On-site",
+    "Hybrid",
+    "Remote",
+  ],
+
+  preferredSkills: [
+    // Frontend
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "Angular",
+    "Vue.js",
+    "Next.js",
+
+    // Backend
+    "Node.js",
+    "Express.js",
+    "Python",
+    "Java",
+    "PHP",
+    "C#",
+    "REST APIs",
+    "GraphQL",
+
+    // Databases
+    "MongoDB",
+    "PostgreSQL",
+    "MySQL",
+    "Redis",
+
+    // DevOps & Cloud
+    "Git",
+    "Docker",
+    "Kubernetes",
+    "AWS",
+    "Microsoft Azure",
+
+    // Design
+    "Figma",
+    "UI Design",
+    "UX Research",
+    "Adobe Photoshop",
+
+    // Business & Communication
+    "Communication",
+    "Teamwork",
+    "Leadership",
+    "Problem Solving",
+    "Project Management",
+    "Negotiation",
+    "Time Management",
+
+    // Data & AI
+    "SQL",
+    "Data Analysis",
+    "Machine Learning",
+    "Artificial Intelligence",
+
+    // Languages
+    "English",
+    "French",
+    "German",
+    "Arabic",
+  ],
+};
+
 import ISO6391 from "iso-639-1";
 
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -143,7 +302,10 @@ export default function Hiring_Focus() {
           >
             
 
-            
+            {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
+
+
+
 
             {/* header About ME */}
             <Box
