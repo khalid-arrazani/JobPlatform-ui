@@ -17,6 +17,7 @@ import EducationP from "./pages/EducationP";
 import SkillsP from "./pages/SkillsP";
 import SocialLinksP from "./pages/SocialLinksP";
 import AboutMeP from "./pages/AboutMeP";
+import Hiring_Focus from "./pages/Hiring Focus";
 
 export default function EditInfoModal({ setOpen, open,section , setSection }) {
 
@@ -125,7 +126,7 @@ export default function EditInfoModal({ setOpen, open,section , setSection }) {
 
           {section == "Profile"&& <ProfileP/>}
           {section == "About me"&& <AboutMeP/>}
-          {section == "Hiring Focus"&& <AboutMeP/>}
+          {section == "Hiring Focus"&& <Hiring_Focus/>}
           {section == "Experience"&& <ExperienceP/>}
           {section == "Education"&& <EducationP/>}
           {section == "Skills"&& <SkillsP/>}
