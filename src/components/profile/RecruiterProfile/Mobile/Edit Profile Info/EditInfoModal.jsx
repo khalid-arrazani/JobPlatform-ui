@@ -125,6 +125,7 @@ export default function EditInfoModal({ setOpen, open,section , setSection }) {
 
           {section == "Profile"&& <ProfileP/>}
           {section == "About me"&& <AboutMeP/>}
+          {section == "Hiring Focus"&& <AboutMeP/>}
           {section == "Experience"&& <ExperienceP/>}
           {section == "Education"&& <EducationP/>}
           {section == "Skills"&& <SkillsP/>}
