@@ -142,116 +142,13 @@ export default function Hiring_Focus() {
             }}
           >
 
+
             {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
 
 
 
 
-            {/* header About ME */}
-            <Box
-              sx={{
-                height: "4rem",
-                width: "100%",
-
-                display: "flex",
-                alignItems: "center",
-                gap: 2,
-                mb: 4,
-              }}
-            >
-              <Box
-                sx={{
-                  height: "3.5rem",
-                  width: "3.5rem",
-                  bgcolor: "#ecddfd",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  borderRadius: "10px",
-                }}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  id="Cursor-Target-1--Streamline-Ultimate"
-                  height="40"
-                  width="40"
-                >
-                  <desc>
-                    Cursor Target 1 Streamline Icon: https://streamlinehq.com
-                  </desc>
-                  <path
-                    stroke="#41008b"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12.002 17.2471v6"
-                    stroke-width="1.5"
-                  ></path>
-                  <path
-                    stroke="#41008b"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M12.002 0.74707v6"
-                    stroke-width="1.5"
-                  ></path>
-                  <path
-                    stroke="#41008b"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M6.75201 11.9971H0.752014"
-                    stroke-width="1.5"
-                  ></path>
-                  <path
-                    stroke="#41008b"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M23.252 11.9971h-6"
-                    stroke-width="1.5"
-                  ></path>
-                  <path
-                    stroke="#41008b"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M3.75201 11.998c0 1.0835 0.2134 2.1562 0.628 3.1572 0.4146 1.0009 1.02229 1.9104 1.78837 2.6765 0.76609 0.7661 1.67556 1.3738 2.6765 1.7884 1.00093 0.4146 2.07372 0.6279 3.15712 0.6279 1.0834 0 2.1562 -0.2133 3.1572 -0.6279 1.0009 -0.4146 1.9104 -1.0223 2.6764 -1.7884 0.7661 -0.7661 1.3738 -1.6756 1.7884 -2.6765 0.4146 -1.001 0.628 -2.0737 0.628 -3.1572 0 -1.0834 -0.2134 -2.15616 -0.628 -3.15709 -0.4146 -1.00094 -1.0223 -1.91041 -1.7884 -2.67649 -0.766 -0.76609 -1.6755 -1.37378 -2.6764 -1.78838 -1.001 -0.4146 -2.0738 -0.62799 -3.1572 -0.62799 -1.0834 0 -2.15619 0.21339 -3.15712 0.62799 -1.00094 0.4146 -1.91041 1.02229 -2.6765 1.78838 -0.76608 0.76608 -1.37377 1.67555 -1.78837 2.67649 -0.4146 1.00093 -0.628 2.07369 -0.628 3.15709Z"
-                    stroke-width="1.5"
-                  ></path>
-                </svg>
-              </Box>
-
-              <Box
-                sx={{
-                  height: "4rem",
-                  width: "auto",
-
-                  display: "flex",
-
-                  justifyContent: "center",
-                  flexDirection: "column",
-                }}
-              >
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    fontSize: "1.3rem",
-                    fontWeight: 600,
-                    color: "#060410c6",
-                  }}
-                >
-                  Hiring Focus
-                </Typography>
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    fontSize: "0.9rem",
-                    fontWeight: 600,
-                    color: "#06041088",
-                  }}
-                >
-                  Add and manage your Hiring Focus.
-                </Typography>
-              </Box>
-            </Box>
+            
 
             {/* about me */}
             <Box sx={{ mb: "1rem" }}>
@@ -684,6 +581,8 @@ export default function Hiring_Focus() {
                 </TextField>
               </Box>
             </Box>
+
+            
           </Box>
 
           <Button
