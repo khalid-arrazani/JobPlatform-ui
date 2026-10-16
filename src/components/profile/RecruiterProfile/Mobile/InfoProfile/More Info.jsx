@@ -242,7 +242,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 pb: 0.5,
               }}
             >
-              Preferred Job Type
+              Member Since
             </Typography>
             <Typography
               sx={{
@@ -251,7 +251,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              {state.user?.profile.aboutMe?.preferredJobType}
+              Joined March 2026
             </Typography>
           </Box>
         </Box>
@@ -352,10 +352,10 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 width: "17rem",
               }}
             >
-              {state.user?.profile.aboutMe?.languages?.join(" - ")}
+              {/* {state.user?.profile.aboutMe?.languages?.join(" - ")}
               {state.user?.profile.aboutMe?.languages?.length >= 1
                 ? null
-                : "Unknown"}
+                : "Unknown"} */}English · French · Arabic
             </Typography>
           </Box>
         </Box>
