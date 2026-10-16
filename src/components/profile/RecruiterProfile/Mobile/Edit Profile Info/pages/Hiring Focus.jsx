@@ -439,7 +439,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.jobCategories}
                   value={language}
                   slotProps={{
                     popper: {
@@ -561,7 +561,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.roles}
                   value={language}
                   slotProps={{
                     popper: {
@@ -683,7 +683,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.experienceLevels}
                   value={language}
                   slotProps={{
                     popper: {
@@ -805,7 +805,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.employmentTypes}
                   value={language}
                   slotProps={{
                     popper: {
@@ -927,7 +927,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.workArrangements}
                   value={language}
                   slotProps={{
                     popper: {
@@ -1049,7 +1049,7 @@ export default function Hiring_Focus() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={hiringFocusOptions.preferredSkills}
                   value={language}
                   slotProps={{
                     popper: {
