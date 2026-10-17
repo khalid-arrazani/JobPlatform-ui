@@ -7,7 +7,7 @@ import {
   MenuItem,
 } from "@mui/material";
 
-  const hiringFocusOptions = {
+const hiringFocusOptions = {
   jobCategories: [
     "IT & Software",
     "Engineering",
@@ -97,11 +97,7 @@ import {
     "Volunteer",
   ],
 
-  workArrangements: [
-    "On-site",
-    "Hybrid",
-    "Remote",
-  ],
+  workArrangements: ["On-site", "Hybrid", "Remote"],
 
   preferredSkills: [
     // Frontend
@@ -171,7 +167,7 @@ import ISO6391 from "iso-639-1";
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 
-import { Chip,  Autocomplete } from "@mui/material";
+import { Chip, Autocomplete } from "@mui/material";
 
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
 import { useEffect, useState } from "react";
@@ -182,40 +178,30 @@ export default function Hiring_Focus() {
   const { isLoadingUptadeProfile, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
-   {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
+  {
+    /* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */
+  }
 
   const [JobCategories, setJobCategories] = useState("");
   const [JobCategoriesList, setJobCategoriesList] = useState([]);
 
-
   const [Roles, setRoles] = useState("");
   const [RolesList, setRolesList] = useState([]);
-
 
   const [ExperienceLevels, setExperienceLevels] = useState("");
   const [ExperienceLevelsList, setExperienceLevelsList] = useState([]);
 
-  
   const [EmploymentTypes, setEmploymentTypes] = useState("");
   const [EmploymentTypesList, setEmploymentTypesList] = useState([]);
-
 
   const [WorkArrangements, setWorkArrangements] = useState("");
   const [WorkArrangementsList, setWorkArrangementsList] = useState([]);
 
-
   const [PreferredSkills, setPreferredSkills] = useState("");
   const [PreferredSkillsList, setPreferredSkillsList] = useState([]);
 
-
   const [hiringfocus, sethiringfocus] = useState("");
   const [hiringfocusList, sethiringfocusList] = useState([]);
-
-
-
-
-
-
 
   // this is the languages List
   const lang = ISO6391.getAllNames();
@@ -228,11 +214,6 @@ export default function Hiring_Focus() {
   const [availability, setAvailability] = useState("");
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
-
-
-
-
-
 
   useEffect(() => {
     const profile = state.user?.profile;
@@ -253,9 +234,6 @@ export default function Hiring_Focus() {
     preferredJobType == state.user.profile.aboutMe.preferredJobType &&
     experienceLevel == state.user.profile.aboutMe.experienceLevel;
 
-  
-
-
   const handleAdd = () => {
     if (!language) return;
 
@@ -264,9 +242,6 @@ export default function Hiring_Focus() {
     );
     setLanguage("");
   };
-
-
-
 
   const handleSave = async () => {
     const aboutMe = {
@@ -346,13 +321,6 @@ export default function Hiring_Focus() {
               pb: 4,
             }}
           >
-            
-
-           
-
-
-
-
             {/* header About ME */}
             <Box
               sx={{
@@ -459,8 +427,6 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
 
-             
-
             {/* Job Categories */}
             <Box>
               <Typography
@@ -529,7 +495,14 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                  onClick={() => {
+                    if (!JobCategories) return;
+
+                    setJobCategoriesList((prev) =>
+                      prev.includes(JobCategories) ? prev : [...prev, JobCategories],
+                    );
+                    setJobCategories("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
@@ -716,7 +689,7 @@ export default function Hiring_Focus() {
                   fontFamily: "monospace",
                 }}
               >
-                 Experience Levels
+                Experience Levels
               </Typography>
               <Box
                 sx={{
@@ -1193,10 +1166,6 @@ export default function Hiring_Focus() {
               </Box>
             </Box>
 
-           
-
-
-
             {/* About my hiring focus */}
             <Box sx={{ mt: "1rem" }}>
               <Typography
@@ -1303,7 +1272,7 @@ export default function Hiring_Focus() {
                       gap: 1,
                     }}
                   >
-                   about your hiring focus
+                    about your hiring focus
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="none"
@@ -1361,10 +1330,6 @@ export default function Hiring_Focus() {
                 />
               </Box>
             </Box>
-
-
-
-
           </Box>
 
           <Button
