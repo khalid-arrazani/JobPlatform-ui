@@ -772,10 +772,11 @@ export default function Hiring_Focus() {
                     if (!ExperienceLevels) return;
 
                     setExperienceLevelsList((prev) =>
-                      prev.includes(JobCategories)
+                      prev.includes(ExperienceLevels)
                         ? prev
-                        : [...prev, JobCategories],
+                        : [...prev, ExperienceLevels],
                     );
+
                     setExperienceLevels("");
                   }}
                   sx={{
