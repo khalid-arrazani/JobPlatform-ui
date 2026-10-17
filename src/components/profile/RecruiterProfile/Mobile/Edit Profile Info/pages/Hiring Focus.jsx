@@ -248,7 +248,7 @@ export default function Hiring_Focus() {
       languages: languagesList,
       availability,
       preferredJobType,
-   
+      experienceLevel,
     };
 
     dispatch({
@@ -776,7 +776,6 @@ export default function Hiring_Focus() {
                         ? prev
                         : [...prev, ExperienceLevels],
                     );
-
                     setExperienceLevels("");
                   }}
                   sx={{
