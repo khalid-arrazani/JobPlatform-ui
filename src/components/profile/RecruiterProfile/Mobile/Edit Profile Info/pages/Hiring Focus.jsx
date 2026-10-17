@@ -816,7 +816,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {ExperienceLevelsList.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
@@ -825,7 +825,12 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+                    onDelete={
+                      () => {
+                      setRolesList((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
                   />
                 ))}
               </Box>
