@@ -224,7 +224,7 @@ export default function Hiring_Focus() {
     setLanguagesList(profile.aboutMe?.languages || []);
     setAvailability(profile.aboutMe?.availability || "");
     setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-    setExperienceLevel(profile.aboutMe?.experienceLevel || "");
+   
   }, [state.user?.profile]);
 
   const matching =
