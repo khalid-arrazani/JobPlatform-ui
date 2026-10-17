@@ -171,7 +171,7 @@ import ISO6391 from "iso-639-1";
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 
-import { Chip, Modal, Divider, Autocomplete } from "@mui/material";
+import { Chip,  Autocomplete } from "@mui/material";
 
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
 import { useEffect, useState } from "react";
@@ -185,12 +185,31 @@ export default function Hiring_Focus() {
    {/* Job Categories - Roles - Experience Levels - Employment Types - Work Arrangements - Preferred Skills - About my hiring focus  */}
 
   const [JobCategories, setJobCategories] = useState("");
+  const [JobCategoriesList, setJobCategoriesList] = useState([]);
+
+
   const [Roles, setRoles] = useState("");
+  const [RolesList, setRolesList] = useState([]);
+
+
   const [ExperienceLevels, setExperienceLevels] = useState("");
+  const [ExperienceLevelsList, setExperienceLevelsList] = useState([]);
+
+  
   const [EmploymentTypes, setEmploymentTypes] = useState("");
+  const [EmploymentTypesList, setEmploymentTypesList] = useState([]);
+
+
   const [WorkArrangements, setWorkArrangements] = useState("");
+  const [WorkArrangementsList, setWorkArrangementsList] = useState([]);
+
+
   const [PreferredSkills, setPreferredSkills] = useState("");
+  const [PreferredSkillsList, setPreferredSkillsList] = useState([]);
+
+
   const [hiringfocus, sethiringfocus] = useState("");
+  const [hiringfocusList, sethiringfocusList] = useState([]);
 
 
 
@@ -234,6 +253,9 @@ export default function Hiring_Focus() {
     preferredJobType == state.user.profile.aboutMe.preferredJobType &&
     experienceLevel == state.user.profile.aboutMe.experienceLevel;
 
+  
+
+
   const handleAdd = () => {
     if (!language) return;
 
@@ -242,6 +264,9 @@ export default function Hiring_Focus() {
     );
     setLanguage("");
   };
+
+
+
 
   const handleSave = async () => {
     const aboutMe = {
