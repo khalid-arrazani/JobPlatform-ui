@@ -213,7 +213,7 @@ export default function Hiring_Focus() {
   // -----------------------availability and preferredJobType----------------------------
   const [availability, setAvailability] = useState("");
   const [preferredJobType, setPreferredJobType] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState("");
+ 
 
   useEffect(() => {
     const profile = state.user?.profile;
@@ -231,8 +231,7 @@ export default function Hiring_Focus() {
     about == state.user.profile.aboutMe.about &&
     languagesList == state.user.profile.aboutMe.languages &&
     availability == state.user.profile.aboutMe.availability &&
-    preferredJobType == state.user.profile.aboutMe.preferredJobType &&
-    experienceLevel == state.user.profile.aboutMe.experienceLevel;
+    preferredJobType == state.user.profile.aboutMe.preferredJobType  
 
   const handleAdd = () => {
     if (!language) return;
@@ -543,6 +542,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
+
                 {JobCategoriesList.map((item, index) => (
                   <Chip
                     sx={{
@@ -554,7 +554,7 @@ export default function Hiring_Focus() {
                     label={item}
                     onDelete={
                       () => {
-                      setJobCategories((prev) =>
+                      setJobCategoriesList((prev) =>
                         prev.filter((l) => l !== item),
                       );
                     }}
@@ -725,7 +725,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.experienceLevels}
-                  value={language}
+                  value={ExperienceLevels}
                   slotProps={{
                     popper: {
                       sx: {
@@ -740,7 +740,7 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setExperienceLevels(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -767,8 +767,17 @@ export default function Hiring_Focus() {
                 />
 
                 <Button
-                  variant="contained"
-                  onClick={handleAdd}
+                  variant="contained" 
+                  onClick={() => {
+                    if (!ExperienceLevels) return;
+
+                    setExperienceLevelsList((prev) =>
+                      prev.includes(JobCategories)
+                        ? prev
+                        : [...prev, JobCategories],
+                    );
+                    setExperienceLevels("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
