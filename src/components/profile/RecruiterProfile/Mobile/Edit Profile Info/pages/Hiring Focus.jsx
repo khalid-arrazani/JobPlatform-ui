@@ -552,7 +552,12 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+                    onDelete={
+                      () => {
+                      setJobCategories((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
                   />
                 ))}
               </Box>
