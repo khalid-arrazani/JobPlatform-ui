@@ -827,7 +827,7 @@ export default function Hiring_Focus() {
                     label={item}
                     onDelete={
                       () => {
-                      setRolesList((prev) =>
+                      setExperienceLevelsList((prev) =>
                         prev.filter((l) => l !== item),
                       );
                     }}
