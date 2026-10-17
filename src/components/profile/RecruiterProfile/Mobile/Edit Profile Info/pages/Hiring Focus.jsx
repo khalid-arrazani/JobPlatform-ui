@@ -248,7 +248,7 @@ export default function Hiring_Focus() {
       languages: languagesList,
       availability,
       preferredJobType,
-      experienceLevel,
+   
     };
 
     dispatch({
