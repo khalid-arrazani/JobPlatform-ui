@@ -905,14 +905,14 @@ export default function Hiring_Focus() {
                 <Button
                   variant="contained"
                    onClick={() => {
-                    if (!ExperienceLevels) return;
+                    if (!EmploymentTypes) return;
 
-                    setExperienceLevelsList((prev) =>
-                      prev.includes(ExperienceLevels)
+                    setEmploymentTypesList((prev) =>
+                      prev.includes(EmploymentTypes)
                         ? prev
-                        : [...prev, ExperienceLevels],
+                        : [...prev, EmploymentTypes],
                     );
-                    setExperienceLevels("");
+                    setEmploymentTypes("");
                   }}
                   sx={{
                     textTransform: "none",
@@ -952,7 +952,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {EmploymentTypesList.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
@@ -961,7 +961,12 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+                    onDelete={
+                      () => {
+                      setEmploymentTypesList((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
                   />
                 ))}
               </Box>
