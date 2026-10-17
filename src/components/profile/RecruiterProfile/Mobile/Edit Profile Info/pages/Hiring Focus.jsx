@@ -581,7 +581,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.roles}
-                  value={language}
+                  value={Roles}
                   slotProps={{
                     popper: {
                       sx: {
@@ -596,7 +596,7 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setRoles(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -624,7 +624,14 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                 onClick={() => {
+                    if (!Roles) return;
+
+                    setRolesList((prev) =>
+                      prev.includes(Roles) ? prev : [...prev, Roles],
+                    );
+                    setRoles("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
