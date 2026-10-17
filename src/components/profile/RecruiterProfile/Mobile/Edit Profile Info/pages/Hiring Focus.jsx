@@ -499,7 +499,9 @@ export default function Hiring_Focus() {
                     if (!JobCategories) return;
 
                     setJobCategoriesList((prev) =>
-                      prev.includes(JobCategories) ? prev : [...prev, JobCategories],
+                      prev.includes(JobCategories)
+                        ? prev
+                        : [...prev, JobCategories],
                     );
                     setJobCategories("");
                   }}
@@ -624,7 +626,7 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                 onClick={() => {
+                  onClick={() => {
                     if (!Roles) return;
 
                     setRolesList((prev) =>
@@ -670,7 +672,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {RolesList.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
@@ -679,7 +681,13 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+
+                    onDelete={(item) => {
+                      setRolesList((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
+                    
                   />
                 ))}
               </Box>
