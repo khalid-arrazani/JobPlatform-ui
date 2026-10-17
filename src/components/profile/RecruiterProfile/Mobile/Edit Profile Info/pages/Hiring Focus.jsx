@@ -1135,7 +1135,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.preferredSkills}
-                  value={language}
+                  value={PreferredSkills}
                   slotProps={{
                     popper: {
                       sx: {
@@ -1150,7 +1150,7 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setPreferredSkills(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -1178,7 +1178,16 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                  onClick={() => {
+                    if (!PreferredSkills) return;
+
+                    setPreferredSkillsList((prev) =>
+                      prev.includes(WorkArrangements)
+                        ? prev
+                        : [...prev, WorkArrangements],
+                    );
+                    PreferredSkills("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
@@ -1217,7 +1226,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {PreferredSkillsList.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
@@ -1226,7 +1235,13 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+               
+                    onDelete={
+                      () => {
+                      setPreferredSkillsList((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
                   />
                 ))}
               </Box>
