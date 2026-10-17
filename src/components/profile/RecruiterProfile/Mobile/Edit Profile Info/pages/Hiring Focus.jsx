@@ -997,7 +997,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.workArrangements}
-                  value={language}
+                  value={WorkArrangements}
                   slotProps={{
                     popper: {
                       sx: {
@@ -1012,7 +1012,9 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setWorkArrangements(value)}
+
+                  
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -1040,7 +1042,16 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                  onClick={() => {
+                    if (!WorkArrangements) return;
+
+                    setWorkArrangementsList((prev) =>
+                      prev.includes(WorkArrangements)
+                        ? prev
+                        : [...prev, WorkArrangements],
+                    );
+                    setWorkArrangements("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
