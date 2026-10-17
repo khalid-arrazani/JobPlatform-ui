@@ -486,7 +486,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.jobCategories}
-                  value={language}
+                  value={JobCategories}
                   slotProps={{
                     popper: {
                       sx: {
@@ -501,7 +501,7 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setJobCategories(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
