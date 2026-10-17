@@ -861,7 +861,7 @@ export default function Hiring_Focus() {
                 <Autocomplete
                   disablePortal
                   options={hiringFocusOptions.employmentTypes}
-                  value={language}
+                  value={EmploymentTypes}
                   slotProps={{
                     popper: {
                       sx: {
@@ -876,7 +876,7 @@ export default function Hiring_Focus() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setEmploymentTypes(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -904,7 +904,16 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                   onClick={() => {
+                    if (!ExperienceLevels) return;
+
+                    setExperienceLevelsList((prev) =>
+                      prev.includes(ExperienceLevels)
+                        ? prev
+                        : [...prev, ExperienceLevels],
+                    );
+                    setExperienceLevels("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
