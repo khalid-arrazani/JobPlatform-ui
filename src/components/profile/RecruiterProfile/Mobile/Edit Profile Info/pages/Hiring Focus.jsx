@@ -541,7 +541,7 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {JobCategoriesList.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
