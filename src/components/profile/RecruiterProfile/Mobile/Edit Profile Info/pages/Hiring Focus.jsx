@@ -684,7 +684,7 @@ export default function Hiring_Focus() {
                     label={item}
 
                     onDelete={
-                      (item) => {
+                      () => {
                       setRolesList((prev) =>
                         prev.filter((l) => l !== item),
                       );
