@@ -542,7 +542,14 @@ export default function AboutMeP() {
 
                 <Button
                   variant="contained"
-                  onClick={handleAdd}
+                  onClick={() => {
+                    if (!Professional_Title) return;
+
+                    setProfessional_Title_List((prev) =>
+                      prev.includes(language) ? prev : [...prev, language],
+                    );
+                    setProfessional_Title("");
+                  }}
                   sx={{
                     textTransform: "none",
                     height: "40px",
@@ -581,7 +588,7 @@ export default function AboutMeP() {
                   my: 2,
                 }}
               >
-                {languagesList.map((item, index) => (
+                {Professional_Title_List.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
