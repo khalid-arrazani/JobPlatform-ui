@@ -1160,7 +1160,7 @@ export default function Hiring_Focus() {
                         ? prev
                         : [...prev, PreferredSkills],
                     );
-                    PreferredSkills("")
+                    setPreferredSkills("")
                   }}
                   sx={{
                     textTransform: "none",
