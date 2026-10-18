@@ -200,8 +200,8 @@ export default function Hiring_Focus() {
   const [PreferredSkills, setPreferredSkills] = useState("");
   const [PreferredSkillsList, setPreferredSkillsList] = useState([]);
 
-  const [hiringfocus, sethiringfocus] = useState("");
-  const [hiringfocusList, sethiringfocusList] = useState([]);
+  const [AboutHiringfocus, setAboutHiringfocus] = useState("");
+ 
 
   // this is the languages List
   const lang = ISO6391.getAllNames();
