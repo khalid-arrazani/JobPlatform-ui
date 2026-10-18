@@ -1382,8 +1382,8 @@ export default function Hiring_Focus() {
                 </Box>
 
                 <TextField
-                  value={about}
-                  onChange={(e) => setAbout(e.target.value)}
+                  value={AboutHiringfocus}
+                  onChange={(e) => setAboutHiringfocus(e.target.value)}
                   fullWidth
                   multiline
                   placeholder="Tell us about your hiring focus..."
