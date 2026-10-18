@@ -53,58 +53,52 @@ export default function Hiring_Focus() {
               }}
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                id="Search-Circle--Streamline-Ultimate"
-                height="30"
-                width="30"
-              >
-                <desc>
-                  Search Circle Streamline Icon: https://streamlinehq.com
-                </desc>
-                <path
-                  fill="#66e1ff"
-                  d="M12.0002 22.5416c5.822 0 10.5416 -4.7196 10.5416 -10.5416 0 -5.82202 -4.7196 -10.54169 -10.5416 -10.54169C6.17817 1.45831 1.4585 6.17798 1.4585 12c0 5.822 4.71967 10.5416 10.5417 10.5416Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  fill="#c2f3ff"
-                  d="M4.5457 19.4543C2.56868 17.4774 1.45801 14.7959 1.45801 12c0 -2.79589 1.11067 -5.47729 3.08769 -7.4543C6.52271 2.56868 9.20411 1.45801 12 1.45801c2.7959 0 5.4774 1.11067 7.4543 3.08769L4.5457 19.4543Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  stroke="#191919"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12.0002 22.5416c5.822 0 10.5416 -4.7196 10.5416 -10.5416 0 -5.82202 -4.7196 -10.54169 -10.5416 -10.54169C6.17817 1.45831 1.4585 6.17798 1.4585 12c0 5.822 4.71967 10.5416 10.5417 10.5416Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  fill="#e4f1f5"
-                  d="M11.2089 15.9178c2.6007 0 4.7089 -2.1082 4.7089 -4.7089 0 -2.60065 -2.1082 -4.7089 -4.7089 -4.7089C8.60825 6.5 6.5 8.60825 6.5 11.2089c0 2.6007 2.10825 4.7089 4.7089 4.7089Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  fill="#ffffff"
-                  d="M7.87973 14.5392c-0.88311 -0.8831 -1.37924 -2.0809 -1.37924 -3.3298 0 -1.24891 0.49613 -2.44667 1.37924 -3.32979 0.88312 -0.88312 2.08088 -1.37924 3.32977 -1.37924 1.2489 0 2.4467 0.49612 3.3298 1.37924L7.87973 14.5392Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  stroke="#191919"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M11.2089 15.9178c2.6007 0 4.7089 -2.1082 4.7089 -4.7089 0 -2.60065 -2.1082 -4.7089 -4.7089 -4.7089C8.60825 6.5 6.5 8.60825 6.5 11.2089c0 2.6007 2.10825 4.7089 4.7089 4.7089Z"
-                  stroke-width="1"
-                ></path>
-                <path
-                  stroke="#191919"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M14.5381 14.5382 17.4998 17.5"
-                  stroke-width="1"
-                ></path>
-              </svg>
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Cursor-Target-1--Streamline-Ultimate"
+                  height="30"
+                  width="30"
+                >
+                  <desc>
+                    Cursor Target 1 Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.002 17.2471v6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.002 0.74707v6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75201 11.9971H0.752014"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M23.252 11.9971h-6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75201 11.998c0 1.0835 0.2134 2.1562 0.628 3.1572 0.4146 1.0009 1.02229 1.9104 1.78837 2.6765 0.76609 0.7661 1.67556 1.3738 2.6765 1.7884 1.00093 0.4146 2.07372 0.6279 3.15712 0.6279 1.0834 0 2.1562 -0.2133 3.1572 -0.6279 1.0009 -0.4146 1.9104 -1.0223 2.6764 -1.7884 0.7661 -0.7661 1.3738 -1.6756 1.7884 -2.6765 0.4146 -1.001 0.628 -2.0737 0.628 -3.1572 0 -1.0834 -0.2134 -2.15616 -0.628 -3.15709 -0.4146 -1.00094 -1.0223 -1.91041 -1.7884 -2.67649 -0.766 -0.76609 -1.6755 -1.37378 -2.6764 -1.78838 -1.001 -0.4146 -2.0738 -0.62799 -3.1572 -0.62799 -1.0834 0 -2.15619 0.21339 -3.15712 0.62799 -1.00094 0.4146 -1.91041 1.02229 -2.6765 1.78838 -0.76608 0.76608 -1.37377 1.67555 -1.78837 2.67649 -0.4146 1.00093 -0.628 2.07369 -0.628 3.15709Z"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
             </Box>
 
             <Typography
