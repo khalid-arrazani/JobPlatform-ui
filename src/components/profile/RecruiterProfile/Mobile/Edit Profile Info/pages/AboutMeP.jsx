@@ -87,7 +87,7 @@ export default function AboutMeP() {
   const [experienceLevel, setExperienceLevel] = useState("");
 
   const [Professional_Title, setProfessional_Title] = useState("");
-  const [Professional_Title_List, setProfessional_Title_List] = useState("");
+  const [Professional_Title_List, setProfessional_Title_List] = useState([]);
 
   useEffect(() => {
     const profile = state.user?.profile;
@@ -588,7 +588,7 @@ export default function AboutMeP() {
                   my: 2,
                 }}
               >
-                {Professional_Title_List.map((item, index) => (
+                {Professional_Title_List?.map((item, index) => (
                   <Chip
                     sx={{
                       borderRadius: "8px",
