@@ -20,8 +20,7 @@ import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
 export default function AboutMeP() {
-  const { isLoadingUptadeProfile, dispatch, ...state } =
-    useProfile();
+  const { isLoadingUptadeProfile, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
 
   // this is the languages List
@@ -77,7 +76,7 @@ export default function AboutMeP() {
       type: "SET_LOADING_UPDATE_PROFILE",
       payload: true,
     });
-    
+
     try {
       const data = await updateProfileJS({
         aboutMe,
@@ -87,10 +86,10 @@ export default function AboutMeP() {
         payload: data,
       });
       setSnackBar({
-      open: true,
-      message: "Education Update Seccesfuly",
-      severity: "success",
-    });
+        open: true,
+        message: "Education Update Seccesfuly",
+        severity: "success",
+      });
     } catch (error) {
       setSnackBar({
         open: true,
@@ -545,46 +544,50 @@ export default function AboutMeP() {
 
             {/* -----------------------availability and preferredJobType----------------------- */}
 
-            <Typography
-              sx={{
-                fontSize: "1.1rem",
-                fontWeight: 500,
-                mb: "0.5rem",
-                color: "#070e1ee5",
-                fontFamily: "monospace",
-              }}
-            >
-              Availability
-            </Typography>
-
-            <Box sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}>
-              <TextField
-                select
-                fullWidth
-                size="small"
+            {/* Availability */}
+            <Box>
+              <Typography
                 sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "0.3rem",
-                    fontFamily: "monospace",
-                    fontSize: "1.2rem",
-                  },
-                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                    {
-                      border: "none",
-                    },
-                  "& .MuiInputBase-root": {},
-                  border: "none",
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
                 }}
-                value={availability}
-                onChange={(e) => setAvailability(e.target.value)}
               >
-                <MenuItem value="immediately">immediately</MenuItem>
+                Availability
+              </Typography>
+              <Box
+                sx={{ border: "1px solid #ddd", mb: 3, borderRadius: "8px" }}
+              >
+                <TextField
+                  select
+                  fullWidth
+                  size="small"
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0.3rem",
+                      fontFamily: "monospace",
+                      fontSize: "1.2rem",
+                    },
+                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                      {
+                        border: "none",
+                      },
+                    "& .MuiInputBase-root": {},
+                    border: "none",
+                  }}
+                  value={availability}
+                  onChange={(e) => setAvailability(e.target.value)}
+                >
+                  <MenuItem value="immediately">immediately</MenuItem>
 
-                <MenuItem value="1_week">1_week</MenuItem>
+                  <MenuItem value="1_week">1_week</MenuItem>
 
-                <MenuItem value="1_month">1_month</MenuItem>
-                <MenuItem value="none">none</MenuItem>
-              </TextField>
+                  <MenuItem value="1_month">1_month</MenuItem>
+                  <MenuItem value="none">none</MenuItem>
+                </TextField>
+              </Box>
             </Box>
 
             {/* Preferred Job Type */}
@@ -702,7 +705,8 @@ export default function AboutMeP() {
               fontFamily: "monospace",
               textTransform: "none",
               fontSize: "1.2rem",
-              fontWeight: 600,height: "3rem",
+              fontWeight: 600,
+              height: "3rem",
             }}
           >
             {isLoadingUptadeProfile ? (
