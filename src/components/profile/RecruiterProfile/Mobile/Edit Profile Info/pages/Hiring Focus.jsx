@@ -201,54 +201,33 @@ export default function Hiring_Focus() {
   const [PreferredSkillsList, setPreferredSkillsList] = useState([]);
 
   const [AboutHiringfocus, setAboutHiringfocus] = useState("");
- 
 
-  // this is the languages List
-  const lang = ISO6391.getAllNames();
-  //---------------------------------
+  // useEffect(() => {
+  //   const profile = state.user?.profile;
 
-  const [about, setAbout] = useState("");
-  const [language, setLanguage] = useState("");
-  const [languagesList, setLanguagesList] = useState([]);
-  // -----------------------availability and preferredJobType----------------------------
-  const [availability, setAvailability] = useState("");
-  const [preferredJobType, setPreferredJobType] = useState("");
- 
+  //   if (!profile) return;
 
-  useEffect(() => {
-    const profile = state.user?.profile;
+  //   setAbout(profile.aboutMe?.about || "");
+  //   setLanguagesList(profile.aboutMe?.languages || []);
+  //   setAvailability(profile.aboutMe?.availability || "");
+  //   setPreferredJobType(profile.aboutMe?.preferredJobType || "");
+  // }, [state.user?.profile]);
 
-    if (!profile) return;
-
-    setAbout(profile.aboutMe?.about || "");
-    setLanguagesList(profile.aboutMe?.languages || []);
-    setAvailability(profile.aboutMe?.availability || "");
-    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-   
-  }, [state.user?.profile]);
-
-  const matching =
-    about == state.user.profile.aboutMe.about &&
-    languagesList == state.user.profile.aboutMe.languages &&
-    availability == state.user.profile.aboutMe.availability &&
-    preferredJobType == state.user.profile.aboutMe.preferredJobType  
-
-  const handleAdd = () => {
-    if (!language) return;
-
-    setLanguagesList((prev) =>
-      prev.includes(language) ? prev : [...prev, language],
-    );
-    setLanguage("");
-  };
+  // const matching =
+  //   about == state.user.profile.aboutMe.about &&
+  //   languagesList == state.user.profile.aboutMe.languages &&
+  //   availability == state.user.profile.aboutMe.availability &&
+  //   preferredJobType == state.user.profile.aboutMe.preferredJobType
 
   const handleSave = async () => {
-    const aboutMe = {
-      about,
-      languages: languagesList,
-      availability,
-      preferredJobType,
-      
+    const hiring_Focus = {
+      JobCategoriesList,
+      RolesList,
+      ExperienceLevelsList,
+      EmploymentTypesList,
+      WorkArrangementsList,
+      PreferredSkillsList,
+      AboutHiringfocus,
     };
 
     dispatch({
@@ -258,7 +237,7 @@ export default function Hiring_Focus() {
 
     try {
       const data = await updateProfileJS({
-        aboutMe,
+        hiring_Focus
       });
       dispatch({
         type: "PROFILE",
@@ -281,10 +260,6 @@ export default function Hiring_Focus() {
         payload: false,
       });
     }
-  };
-
-  const handleDelete = (item) => {
-    setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
 
   return (
@@ -542,7 +517,6 @@ export default function Hiring_Focus() {
                   my: 2,
                 }}
               >
-
                 {JobCategoriesList.map((item, index) => (
                   <Chip
                     sx={{
@@ -552,8 +526,7 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={
-                      () => {
+                    onDelete={() => {
                       setJobCategoriesList((prev) =>
                         prev.filter((l) => l !== item),
                       );
@@ -678,7 +651,6 @@ export default function Hiring_Focus() {
                 }}
               >
                 {RolesList.map((item, index) => (
-
                   <Chip
                     sx={{
                       borderRadius: "8px",
@@ -687,15 +659,10 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-
-                    onDelete={
-                      () => {
-                      setRolesList((prev) =>
-                        prev.filter((l) => l !== item),
-                      );
+                    onDelete={() => {
+                      setRolesList((prev) => prev.filter((l) => l !== item));
                     }}
                   />
-
                 ))}
               </Box>
             </Box>
@@ -767,7 +734,7 @@ export default function Hiring_Focus() {
                 />
 
                 <Button
-                  variant="contained" 
+                  variant="contained"
                   onClick={() => {
                     if (!ExperienceLevels) return;
 
@@ -825,8 +792,7 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={
-                      () => {
+                    onDelete={() => {
                       setExperienceLevelsList((prev) =>
                         prev.filter((l) => l !== item),
                       );
@@ -904,7 +870,7 @@ export default function Hiring_Focus() {
 
                 <Button
                   variant="contained"
-                   onClick={() => {
+                  onClick={() => {
                     if (!EmploymentTypes) return;
 
                     setEmploymentTypesList((prev) =>
@@ -961,8 +927,7 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={
-                      () => {
+                    onDelete={() => {
                       setEmploymentTypesList((prev) =>
                         prev.filter((l) => l !== item),
                       );
@@ -1013,8 +978,6 @@ export default function Hiring_Focus() {
                     },
                   }}
                   onChange={(e, value) => setWorkArrangements(value)}
-
-                  
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -1099,8 +1062,7 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={
-                      () => {
+                    onDelete={() => {
                       setWorkArrangementsList((prev) =>
                         prev.filter((l) => l !== item),
                       );
@@ -1235,9 +1197,7 @@ export default function Hiring_Focus() {
                     }}
                     key={index}
                     label={item}
-               
-                    onDelete={
-                      () => {
+                    onDelete={() => {
                       setPreferredSkillsList((prev) =>
                         prev.filter((l) => l !== item),
                       );
