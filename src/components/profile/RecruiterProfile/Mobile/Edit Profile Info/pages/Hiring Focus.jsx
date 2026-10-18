@@ -1182,9 +1182,9 @@ export default function Hiring_Focus() {
                     if (!PreferredSkills) return;
 
                     setPreferredSkillsList((prev) =>
-                      prev.includes(WorkArrangements)
+                      prev.includes(PreferredSkills)
                         ? prev
-                        : [...prev, WorkArrangements],
+                        : [...prev, PreferredSkills],
                     );
                     PreferredSkills("");
                   }}
