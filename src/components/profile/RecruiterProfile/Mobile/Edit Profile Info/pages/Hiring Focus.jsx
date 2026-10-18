@@ -582,6 +582,8 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
+                  onChange={(e ) => setRoles(e.target.value)}
+
                       placeholder="Roles"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -713,6 +715,8 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
+                  onChange={(e ) => setExperienceLevels(e.target.value)}
+
                       placeholder="Experience Levels"
                       sx={{
                         "& .MuiOutlinedInput-root": {
