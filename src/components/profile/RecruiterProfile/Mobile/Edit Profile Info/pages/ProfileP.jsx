@@ -83,7 +83,91 @@ export default function ProfileP() {
           pb: 4,
         }}
       >
+        
         <Box>
+          {/* header Profile */}
+                      <Box
+                        sx={{
+                          height: "4rem",
+                          width: "100%",
+          
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 2,
+                          mb: 4,
+                        }}
+                      >
+                        <Box
+                          sx={{
+                            height: "3.5rem",
+                            width: "3.5rem",
+                            bgcolor: "#ecddfd",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            borderRadius: "10px",
+                          }}
+                        >
+                         
+                          <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    id="User--Streamline-Solar"
+                    height="35"
+                    width="35"
+                  >
+                    <g id="Line Duotone/Users/User">
+                      <path
+                        id="Vector"
+                        stroke="#3f0450f1"
+                        d="M12 10c2.2091 0 4 -1.79086 4 -4s-1.7909 -4 -4 -4C9.79086 2 8 3.79086 8 6s1.79086 4 4 4Z"
+                        stroke-width="1.5 "
+                      ></path>
+                      <path
+                        id="Vector_2"
+                        stroke="#3f0450f1"
+                        d="M20 17.5c0 2.4853 0 4.5 -8 4.5s-8 -2.0147 -8 -4.5S7.58172 13 12 13c4.4183 0 8 2.0147 8 4.5Z"
+                        stroke-width="1.5"
+                      ></path>
+                    </g>
+                  </svg>
+                        </Box>
+          
+                        <Box
+                          sx={{
+                            height: "4rem",
+                            width: "auto",
+          
+                            display: "flex",
+          
+                            justifyContent: "center",
+                            flexDirection: "column",
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              fontFamily: "monospace",
+                              fontSize: "1.3rem",
+                              fontWeight: 600,
+                              color: "#060410c6",
+                            }}
+                          >
+                            Profile
+                          </Typography>
+                          <Typography
+                            sx={{
+                              fontFamily: "monospace",
+                              fontSize: "0.9rem",
+                              fontWeight: 600,
+                              color: "#06041088",
+                            }}
+                          >
+                            Add and manage your personal information.
+                          </Typography>
+                        </Box>
+                      </Box>
+
           {/* full name */}
           <Box sx={{ mb: "1rem" }}>
             <Typography
