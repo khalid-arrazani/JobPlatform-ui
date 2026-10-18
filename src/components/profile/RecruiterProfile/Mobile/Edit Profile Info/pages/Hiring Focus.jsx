@@ -446,6 +446,8 @@ export default function Hiring_Focus() {
                   renderInput={(params) => (
                     <TextField
                       placeholder="Job Categories"
+                  onChange={(e ) => setJobCategories(e.target.value)}
+
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: "0.3rem",
