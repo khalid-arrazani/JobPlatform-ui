@@ -19,6 +19,57 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
+ const professionalTitleOptions = [
+  // Recruitment & HR
+  "Recruiter",
+  "Technical Recruiter",
+  "Senior Recruiter",
+  "Talent Acquisition Specialist",
+  "Talent Acquisition Manager",
+  "HR Specialist",
+  "HR Manager",
+  "Head of Recruitment",
+  "Recruitment Consultant",
+  "Hiring Manager",
+
+  // Management & Business
+  "Business Manager",
+  "Project Manager",
+  "Product Manager",
+  "Operations Manager",
+  "Business Analyst",
+  "CEO",
+  "Founder",
+  "Co-Founder",
+  "Managing Director",
+
+  // IT & Software
+  "Software Engineer",
+  "Frontend Developer",
+  "Backend Developer",
+  "Full Stack Developer",
+  "DevOps Engineer",
+  "Data Analyst",
+  "Data Scientist",
+  "IT Manager",
+
+  // Engineering
+  "Mechanical Engineer",
+  "Electrical Engineer",
+  "Civil Engineer",
+  "Engineering Manager",
+
+  // Other
+  "Marketing Manager",
+  "Sales Manager",
+  "Account Manager",
+  "Finance Manager",
+  "Customer Success Manager",
+  "Consultant",
+  "Director",
+  "Other",
+];
+
 export default function AboutMeP() {
   const { isLoadingUptadeProfile, dispatch, ...state } = useProfile();
   const { setSnackBar } = useAuth();
@@ -431,38 +482,114 @@ export default function AboutMeP() {
                   fontFamily: "monospace",
                 }}
               >
-                Experience Level
+                languages
               </Typography>
               <Box
-                sx={{ border: "1px solid #ddd", mb: 0, borderRadius: "8px" }}
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
               >
-                <TextField
-                  select
-                  fullWidth
-                  size="small"
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "0.3rem",
-                      fontFamily: "monospace",
-                      fontSize: "1.2rem",
-                    },
-                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                      {
-                        border: "none",
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
                       },
-                    "& .MuiInputBase-root": {},
-                    border: "none",
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
                   }}
-                  value={experienceLevel}
-                  onChange={(e) => setExperienceLevel(e.target.value)}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Language"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
                 >
-                  <MenuItem value="junior">junior</MenuItem>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
 
-                  <MenuItem value="mid">mid</MenuItem>
-
-                  <MenuItem value="senior">senior</MenuItem>
-                  <MenuItem value="none">none</MenuItem>
-                </TextField>
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
               </Box>
             </Box>
 
@@ -587,6 +714,7 @@ export default function AboutMeP() {
                 ))}
               </Box>
             </Box>
+
           </Box>
 
           <Button
