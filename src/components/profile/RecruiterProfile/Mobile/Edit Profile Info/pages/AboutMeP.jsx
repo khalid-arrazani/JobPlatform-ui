@@ -19,7 +19,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
- const professionalTitleOptions = [
+const professionalTitleOptions = [
   // Recruitment & HR
   "Recruiter",
   "Technical Recruiter",
@@ -86,10 +86,8 @@ export default function AboutMeP() {
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
 
-
-
-  const [Professional_Title,setProfessional_Title] = useState("")
-  const [Professional_Title_List,setProfessional_Title_List] = useState("")
+  const [Professional_Title, setProfessional_Title] = useState("");
+  const [Professional_Title_List, setProfessional_Title_List] = useState("");
 
   useEffect(() => {
     const profile = state.user?.profile;
@@ -475,7 +473,7 @@ export default function AboutMeP() {
                 />
               </Box>
             </Box>
-            
+
             {/* Professional Title */}
             <Box>
               <Typography
@@ -501,7 +499,7 @@ export default function AboutMeP() {
                 <Autocomplete
                   disablePortal
                   options={professionalTitleOptions}
-                  value={language}
+                  value={Professional_Title}
                   slotProps={{
                     popper: {
                       sx: {
@@ -516,7 +514,7 @@ export default function AboutMeP() {
                       },
                     },
                   }}
-                  onChange={(e, value) => setLanguage(value)}
+                  onChange={(e, value) => setProfessional_Title(value)}
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
@@ -592,7 +590,11 @@ export default function AboutMeP() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={() => handleDelete(item)}
+                    onDelete={(item) => {
+                      setProfessional_Title_List((prev) =>
+                        prev.filter((l) => l !== item),
+                      );
+                    }}
                   />
                 ))}
               </Box>
@@ -719,7 +721,6 @@ export default function AboutMeP() {
                 ))}
               </Box>
             </Box>
-
           </Box>
 
           <Button
