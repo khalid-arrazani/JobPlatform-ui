@@ -420,130 +420,8 @@ export default function AboutMeP() {
               </Box>
             </Box>
 
-            {/* --languages-- */}
-            <Box>
-              <Typography
-                sx={{
-                  fontSize: "1.1rem",
-                  fontWeight: 500,
-                  mb: "0.5rem",
-                  color: "#070e1ee5",
-                  fontFamily: "monospace",
-                }}
-              >
-                languages
-              </Typography>
-              <Box
-                sx={{
-                  display: "flex",
-
-                  alignItems: "center",
-                  border: "1px #ddd solid",
-                  borderRadius: "8px",
-                }}
-              >
-                <Autocomplete
-                  disablePortal
-                  options={lang}
-                  value={language}
-                  slotProps={{
-                    popper: {
-                      sx: {
-                        transition: "none",
-                        animation: "none",
-                        m: 5,
-                      },
-                    },
-                    listbox: {
-                      sx: {
-                        maxHeight: "150px",
-                      },
-                    },
-                  }}
-                  onChange={(e, value) => setLanguage(value)}
-                  sx={{ flex: 1 }}
-                  renderInput={(params) => (
-                    <TextField
-                      placeholder="Language"
-                      sx={{
-                        "& .MuiOutlinedInput-root": {
-                          borderRadius: "0.3rem",
-                          fontFamily: "monospace",
-                          fontSize: "1.2rem",
-                        },
-                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                          {
-                            border: "none",
-                          },
-                        "& .MuiInputBase-root": {
-                          py: 0.5,
-                        },
-                        border: "none",
-                      }}
-                      {...params}
-                      size="small"
-                    />
-                  )}
-                />
-
-                <Button
-                  variant="contained"
-                  onClick={handleAdd}
-                  sx={{
-                    textTransform: "none",
-                    height: "40px",
-                    mr: 0.4,
-                  }}
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 14"
-                    id="Add-1--Streamline-Core"
-                    height="25"
-                    width="25"
-                  >
-                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
-                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
-                      <path
-                        id="Union"
-                        fill="#ffffff"
-                        fill-rule="evenodd"
-                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
-                        clip-rule="evenodd"
-                        stroke-width="1"
-                      ></path>
-                    </g>
-                  </svg>
-                </Button>
-              </Box>
-
-              {/* Chips */}
-              <Box
-                sx={{
-                  display: "flex",
-                  flexWrap: "wrap",
-                  gap: 1,
-                  my: 2,
-                }}
-              >
-                {languagesList.map((item, index) => (
-                  <Chip
-                    sx={{
-                      borderRadius: "8px",
-                      fontSize: "1rem",
-                      fontFamily: "monospace",
-                    }}
-                    key={index}
-                    label={item}
-                    onDelete={() => handleDelete(item)}
-                  />
-                ))}
-              </Box>
-            </Box>
-
-            {/* -----------------------availability and preferredJobType----------------------- */}
-
+            
+   
             {/* Availability */}
             <Box>
               <Typography
@@ -688,6 +566,128 @@ export default function AboutMeP() {
                   <MenuItem value="senior">senior</MenuItem>
                   <MenuItem value="none">none</MenuItem>
                 </TextField>
+              </Box>
+            </Box>
+
+            {/* --languages-- */}
+            <Box>
+              <Typography
+                sx={{
+                  fontSize: "1.1rem",
+                  fontWeight: 500,
+                  mb: "0.5rem",
+                  color: "#070e1ee5",
+                  fontFamily: "monospace",
+                }}
+              >
+                languages
+              </Typography>
+              <Box
+                sx={{
+                  display: "flex",
+
+                  alignItems: "center",
+                  border: "1px #ddd solid",
+                  borderRadius: "8px",
+                }}
+              >
+                <Autocomplete
+                  disablePortal
+                  options={lang}
+                  value={language}
+                  slotProps={{
+                    popper: {
+                      sx: {
+                        transition: "none",
+                        animation: "none",
+                        m: 5,
+                      },
+                    },
+                    listbox: {
+                      sx: {
+                        maxHeight: "150px",
+                      },
+                    },
+                  }}
+                  onChange={(e, value) => setLanguage(value)}
+                  sx={{ flex: 1 }}
+                  renderInput={(params) => (
+                    <TextField
+                      placeholder="Language"
+                      sx={{
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "0.3rem",
+                          fontFamily: "monospace",
+                          fontSize: "1.2rem",
+                        },
+                        "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                          {
+                            border: "none",
+                          },
+                        "& .MuiInputBase-root": {
+                          py: 0.5,
+                        },
+                        border: "none",
+                      }}
+                      {...params}
+                      size="small"
+                    />
+                  )}
+                />
+
+                <Button
+                  variant="contained"
+                  onClick={handleAdd}
+                  sx={{
+                    textTransform: "none",
+                    height: "40px",
+                    mr: 0.4,
+                  }}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 14"
+                    id="Add-1--Streamline-Core"
+                    height="25"
+                    width="25"
+                  >
+                    <desc>Add 1 Streamline Icon: https://streamlinehq.com</desc>
+                    <g id="add-1--expand-cross-buttons-button-more-remove-plus-add-+-mathematics-math">
+                      <path
+                        id="Union"
+                        fill="#ffffff"
+                        fill-rule="evenodd"
+                        d="M8 1c0 -0.552285 -0.44772 -1 -1 -1S6 0.447715 6 1v5H1c-0.552285 0 -1 0.44772 -1 1s0.447715 1 1 1h5v5c0 0.5523 0.44772 1 1 1s1 -0.4477 1 -1V8h5c0.5523 0 1 -0.44772 1 -1s-0.4477 -1 -1 -1H8V1Z"
+                        clip-rule="evenodd"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </Button>
+              </Box>
+
+              {/* Chips */}
+              <Box
+                sx={{
+                  display: "flex",
+                  flexWrap: "wrap",
+                  gap: 1,
+                  my: 2,
+                }}
+              >
+                {languagesList.map((item, index) => (
+                  <Chip
+                    sx={{
+                      borderRadius: "8px",
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                    }}
+                    key={index}
+                    label={item}
+                    onDelete={() => handleDelete(item)}
+                  />
+                ))}
               </Box>
             </Box>
           </Box>
