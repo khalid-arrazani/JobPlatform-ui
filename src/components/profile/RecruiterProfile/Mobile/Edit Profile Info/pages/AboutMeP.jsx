@@ -600,7 +600,7 @@ export default function AboutMeP() {
                     }}
                     key={index}
                     label={item}
-                    onDelete={(item) => {
+                    onDelete={() => {
                       setProfessional_Title_List((prev) =>
                         prev.filter((l) => l !== item),
                       );
