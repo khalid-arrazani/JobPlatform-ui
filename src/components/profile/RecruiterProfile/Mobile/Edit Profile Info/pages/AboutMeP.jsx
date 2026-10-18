@@ -161,6 +161,7 @@ export default function AboutMeP() {
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
+  console.log(Professional_Title);
   return (
     <>
       <Box
@@ -518,6 +519,8 @@ export default function AboutMeP() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
+                  onChange={(e) => setProfessional_Title(e.target.value)}
+
                       placeholder="Professional Title"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -546,7 +549,7 @@ export default function AboutMeP() {
                     if (!Professional_Title) return;
 
                     setProfessional_Title_List((prev) =>
-                      prev.includes(language) ? prev : [...prev, language],
+                      prev.includes(Professional_Title) ? prev : [...prev, Professional_Title],
                     );
                     setProfessional_Title("");
                   }}
