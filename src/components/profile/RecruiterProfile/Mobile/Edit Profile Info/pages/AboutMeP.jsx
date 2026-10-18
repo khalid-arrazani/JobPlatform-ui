@@ -86,6 +86,11 @@ export default function AboutMeP() {
   const [preferredJobType, setPreferredJobType] = useState("");
   const [experienceLevel, setExperienceLevel] = useState("");
 
+
+
+  const [Professional_Title,setProfessional_Title] = useState("")
+  const [Professional_Title_List,setProfessional_Title_List] = useState("")
+
   useEffect(() => {
     const profile = state.user?.profile;
 
@@ -482,7 +487,7 @@ export default function AboutMeP() {
                   fontFamily: "monospace",
                 }}
               >
-                languages
+                Professional Title
               </Typography>
               <Box
                 sx={{
@@ -495,7 +500,7 @@ export default function AboutMeP() {
               >
                 <Autocomplete
                   disablePortal
-                  options={lang}
+                  options={professionalTitleOptions}
                   value={language}
                   slotProps={{
                     popper: {
@@ -515,7 +520,7 @@ export default function AboutMeP() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                      placeholder="Language"
+                      placeholder="Professional Title"
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: "0.3rem",
