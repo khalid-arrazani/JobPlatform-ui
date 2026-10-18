@@ -989,6 +989,8 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
+                  onChange={(e ) => setWorkArrangements(e.target.value)}
+
                       placeholder="Work Arrangements"
                       sx={{
                         "& .MuiOutlinedInput-root": {
