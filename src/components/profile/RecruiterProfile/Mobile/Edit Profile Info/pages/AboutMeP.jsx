@@ -79,34 +79,25 @@ export default function AboutMeP() {
   //---------------------------------
 
   const [about, setAbout] = useState("");
+
   const [language, setLanguage] = useState("");
   const [languagesList, setLanguagesList] = useState([]);
-  // -----------------------availability and preferredJobType----------------------------
-  const [availability, setAvailability] = useState("");
-  const [preferredJobType, setPreferredJobType] = useState("");
-  const [experienceLevel, setExperienceLevel] = useState("");
 
   const [Professional_Title, setProfessional_Title] = useState("");
   const [Professional_Title_List, setProfessional_Title_List] = useState([]);
 
   useEffect(() => {
     const profile = state.user?.profile;
-
     if (!profile) return;
-
     setAbout(profile.aboutMe?.about || "");
     setLanguagesList(profile.aboutMe?.languages || []);
-    setAvailability(profile.aboutMe?.availability || "");
-    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-    setExperienceLevel(profile.aboutMe?.experienceLevel || "");
+  
   }, [state.user?.profile]);
 
   const matching =
-    about == state.user.profile.aboutMe.about &&
-    languagesList == state.user.profile.aboutMe.languages &&
-    availability == state.user.profile.aboutMe.availability &&
-    preferredJobType == state.user.profile.aboutMe.preferredJobType &&
-    experienceLevel == state.user.profile.aboutMe.experienceLevel;
+    about == state.user.profile.aboutMe &&
+    languagesList == state.user.profile.aboutMe.languages && Professional_Title_List == state.user.profile.professional_Title_List
+
 
   const handleAdd = () => {
     if (!language) return;
@@ -120,10 +111,7 @@ export default function AboutMeP() {
   const handleSave = async () => {
     const aboutMe = {
       about,
-      languages: languagesList,
-      availability,
-      preferredJobType,
-      experienceLevel,
+      languages: languagesList
     };
 
     dispatch({
@@ -161,7 +149,7 @@ export default function AboutMeP() {
   const handleDelete = (item) => {
     setLanguagesList((prev) => prev.filter((l) => l !== item));
   };
-  console.log(Professional_Title);
+
   return (
     <>
       <Box
