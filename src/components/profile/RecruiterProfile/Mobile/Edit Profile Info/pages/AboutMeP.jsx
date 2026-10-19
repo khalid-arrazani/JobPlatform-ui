@@ -89,14 +89,15 @@ export default function AboutMeP() {
   useEffect(() => {
     const profile = state.user?.profile;
     if (!profile) return;
-    setAbout(profile.aboutMe?.about || "");
-    setLanguagesList(profile.aboutMe?.languages || []);
+    setAbout(profile.aboutMe || "");
+    setLanguagesList(profile.languages || []);
+    setProfessional_Title_List(profile.professionalTitle|| []);
   
   }, [state.user?.profile]);
 
   const matching =
     about == state.user.profile.aboutMe &&
-    languagesList == state.user?.profile?.aboutMe?.languages && 
+    languagesList == state.user?.profile?.languages && 
     Professional_Title_List == state.user?.profile?.professionalTitle
 
   const handleAdd = () => {
@@ -128,7 +129,7 @@ export default function AboutMeP() {
       });
       setSnackBar({
         open: true,
-        message: "Education Update Seccesfuly",
+        message: "About me Update Seccesfuly",
         severity: "success",
       });
     } catch (error) {
