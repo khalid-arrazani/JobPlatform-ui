@@ -51,7 +51,7 @@ export default function ProfileP() {
       });
       setSnackBar({
         open: true,
-        message: "Header Update Seccesfuly",
+        message: "Profile Update Seccesfuly",
         severity: "success",
       });
     } catch (error) {
