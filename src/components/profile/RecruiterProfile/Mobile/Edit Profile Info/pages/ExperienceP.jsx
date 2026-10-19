@@ -43,7 +43,7 @@ export default function ExperienceP() {
 
 
 
-    console.log(experiences , matchexperiences , matching)
+
 
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
