@@ -118,7 +118,7 @@ export default function AboutMeP() {
     });
 
     try {
-      const data = await updateProfileR({
+      const data = await updateProfileJS({
         aboutMe:about,
         languages:languagesList,
         professionalTitle:Professional_Title_List
