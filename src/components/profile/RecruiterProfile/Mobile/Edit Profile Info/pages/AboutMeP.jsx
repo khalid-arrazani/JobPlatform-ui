@@ -96,7 +96,8 @@ export default function AboutMeP() {
 
   const matching =
     about == state.user.profile.aboutMe &&
-    languagesList == state.user.profile.aboutMe.languages && Professional_Title_List == state.user.profile.professional_Title_List
+    languagesList == state.user?.profile?.aboutMe?.languages && 
+    Professional_Title_List == state.user?.profile?.professionalTitle
 
 
   const handleAdd = () => {
@@ -109,10 +110,7 @@ export default function AboutMeP() {
   };
 
   const handleSave = async () => {
-    const aboutMe = {
-      about,
-      languages: languagesList
-    };
+     
 
     dispatch({
       type: "SET_LOADING_UPDATE_PROFILE",
@@ -121,7 +119,9 @@ export default function AboutMeP() {
 
     try {
       const data = await updateProfileJS({
-        aboutMe,
+        aboutMe:about,
+        languages:languagesList,
+        professionalTitle:Professional_Title_List
       });
       dispatch({
         type: "PROFILE",
