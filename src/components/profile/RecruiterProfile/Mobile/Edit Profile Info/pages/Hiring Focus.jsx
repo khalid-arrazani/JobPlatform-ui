@@ -169,7 +169,10 @@ import spinner from "../../../../../../assets/spainner2.json";
 
 import { Chip, Autocomplete } from "@mui/material";
 
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import {
+  updateProfileJS,
+  updateProfileR,
+} from "../../../../../../logic/api/profile/GetMe";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
@@ -216,21 +219,24 @@ export default function Hiring_Focus() {
   const matching =
     JobCategoriesList == state.user.profile.hiring_Focus.JobCategoriesList &&
     RolesList == state.user.profile.hiring_Focus.RolesList &&
-    ExperienceLevelsList == state.user.profile.hiring_Focus.ExperienceLevelsList &&
-    WorkArrangementsList == state.user.profile.hiring_Focus.WorkArrangementsList &&
-    PreferredSkillsList == state.user.profile.hiring_Focus.PreferredSkillsList &&
+    ExperienceLevelsList ==
+      state.user.profile.hiring_Focus.ExperienceLevelsList &&
+    WorkArrangementsList ==
+      state.user.profile.hiring_Focus.WorkArrangementsList &&
+    PreferredSkillsList ==
+      state.user.profile.hiring_Focus.PreferredSkillsList &&
     AboutHiringfocus == state.user.profile.hiring_Focus.AboutHiringfocus &&
-    EmploymentTypesList == state.user.profile.hiring_Focus.EmploymentTypesList
+    EmploymentTypesList == state.user.profile.hiring_Focus.EmploymentTypesList;
 
   const handleSave = async () => {
     const hiring_Focus = {
-      JobCategoriesList,
-      RolesList,
-      ExperienceLevelsList,
-      EmploymentTypesList,
-      WorkArrangementsList,
-      PreferredSkillsList,
-      AboutHiringfocus,
+      jobCategoriesList: JobCategoriesList,
+      rolesList: RolesList,
+      experienceLevelsList:ExperienceLevelsList,
+      employmentTypesList:EmploymentTypesList,
+      workArrangementsList:WorkArrangementsList,
+      preferredSkillsList:PreferredSkillsList,
+      aboutHiringfocus:AboutHiringfocus,
     };
 
     dispatch({
@@ -239,8 +245,8 @@ export default function Hiring_Focus() {
     });
 
     try {
-      const data = await updateProfileJS({
-        hiring_Focus
+      const data = await updateProfileR({
+        hiring_Focus,
       });
       dispatch({
         type: "PROFILE",
@@ -449,8 +455,7 @@ export default function Hiring_Focus() {
                   renderInput={(params) => (
                     <TextField
                       placeholder="Job Categories"
-                  onChange={(e ) => setJobCategories(e.target.value)}
-
+                      onChange={(e) => setJobCategories(e.target.value)}
                       sx={{
                         "& .MuiOutlinedInput-root": {
                           borderRadius: "0.3rem",
@@ -585,8 +590,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                  onChange={(e ) => setRoles(e.target.value)}
-
+                      onChange={(e) => setRoles(e.target.value)}
                       placeholder="Roles"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -718,8 +722,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                  onChange={(e ) => setExperienceLevels(e.target.value)}
-
+                      onChange={(e) => setExperienceLevels(e.target.value)}
                       placeholder="Experience Levels"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -855,8 +858,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                  onChange={(e ) => setEmploymentTypes(e.target.value)}
-
+                      onChange={(e) => setEmploymentTypes(e.target.value)}
                       placeholder="Employment Types"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -992,8 +994,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                  onChange={(e ) => setWorkArrangements(e.target.value)}
-
+                      onChange={(e) => setWorkArrangements(e.target.value)}
                       placeholder="Work Arrangements"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -1129,8 +1130,7 @@ export default function Hiring_Focus() {
                   sx={{ flex: 1 }}
                   renderInput={(params) => (
                     <TextField
-                  onChange={(e ) => setPreferredSkills(e.target.value)}
-
+                      onChange={(e) => setPreferredSkills(e.target.value)}
                       placeholder="Preferred Skills"
                       sx={{
                         "& .MuiOutlinedInput-root": {
@@ -1163,7 +1163,7 @@ export default function Hiring_Focus() {
                         ? prev
                         : [...prev, PreferredSkills],
                     );
-                    setPreferredSkills("")
+                    setPreferredSkills("");
                   }}
                   sx={{
                     textTransform: "none",
