@@ -21,7 +21,7 @@ export default function ProfileP() {
     location == state.user.profile.location &&
     headline == state.user.profile.headline;
 
-  console.log(matching);
+
 
   useEffect(() => {
     if (state.user?.profile) {
