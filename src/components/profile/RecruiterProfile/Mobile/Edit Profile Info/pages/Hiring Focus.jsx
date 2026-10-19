@@ -254,7 +254,7 @@ export default function Hiring_Focus() {
       });
       setSnackBar({
         open: true,
-        message: "Education Update Seccesfuly",
+        message: "Hiring Focus Update Seccesfuly",
         severity: "success",
       });
     } catch (error) {
