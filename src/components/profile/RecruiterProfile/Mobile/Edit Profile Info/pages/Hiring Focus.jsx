@@ -217,16 +217,16 @@ export default function Hiring_Focus() {
   // }, [state.user?.profile]);
 
   const matching =
-    JobCategoriesList == state.user.profile.hiring_Focus.JobCategoriesList &&
-    RolesList == state.user.profile.hiring_Focus.RolesList &&
+    JobCategoriesList == state.user.profile.hiring_Focus.jobCategoriesList &&
+    RolesList == state.user.profile.hiring_Focus.rolesList &&
     ExperienceLevelsList ==
-      state.user.profile.hiring_Focus.ExperienceLevelsList &&
+      state.user.profile.hiring_Focus.experienceLevelsList &&
     WorkArrangementsList ==
-      state.user.profile.hiring_Focus.WorkArrangementsList &&
+      state.user.profile.hiring_Focus.workArrangementsList &&
     PreferredSkillsList ==
-      state.user.profile.hiring_Focus.PreferredSkillsList &&
-    AboutHiringfocus == state.user.profile.hiring_Focus.AboutHiringfocus &&
-    EmploymentTypesList == state.user.profile.hiring_Focus.EmploymentTypesList;
+      state.user.profile.hiring_Focus.preferredSkillsList &&
+    AboutHiringfocus == state.user.profile.hiring_Focus.aboutHiringfocus &&
+    EmploymentTypesList == state.user.profile.hiring_Focus.employmentTypesList;
 
   const handleSave = async () => {
     const hiring_Focus = {
