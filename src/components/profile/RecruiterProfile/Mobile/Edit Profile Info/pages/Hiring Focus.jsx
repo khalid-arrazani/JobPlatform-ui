@@ -206,14 +206,17 @@ export default function Hiring_Focus() {
   const [AboutHiringfocus, setAboutHiringfocus] = useState("");
 
   useEffect(() => {
-    const profile = state.user?.profile.hiring_Focus;
+    const hiring_Focus = state.user?.profile?.hiring_Focus;
 
-    if (!profile) return;
+    if (!hiring_Focus) return;
 
-    setAbout(profile.aboutMe?.about || "");
-    setLanguagesList(profile.aboutMe?.languages || []);
-    setAvailability(profile.aboutMe?.availability || "");
-    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
+    setJobCategoriesList(hiring_Focus.jobCategoriesList || "");
+    setRolesList(hiring_Focus.rolesList  || []);
+    setExperienceLevelsList(hiring_Focus.experienceLevelsList || "");
+   setEmploymentTypesList(hiring_Focus.employmentTypesList || "");
+   setWorkArrangementsList(hiring_Focus.workArrangementsList || "");
+    setPreferredSkillsList(hiring_Focus.preferredSkillsList || "");
+    setAboutHiringfocus(hiring_Focus.aboutHiringfocus  || "");
   }, [state.user?.profile]);
 
   const matching =
