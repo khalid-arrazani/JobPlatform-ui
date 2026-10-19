@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 
 import { useProfile } from "../../../../../../logic/context/profileContext";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 export default function ProfileP() {
@@ -39,7 +39,7 @@ export default function ProfileP() {
       payload: true,
     });
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         fullName,
         location,
         headline,
