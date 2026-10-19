@@ -205,16 +205,16 @@ export default function Hiring_Focus() {
 
   const [AboutHiringfocus, setAboutHiringfocus] = useState("");
 
-  // useEffect(() => {
-  //   const profile = state.user?.profile;
+  useEffect(() => {
+    const profile = state.user?.profile.hiring_Focus;
 
-  //   if (!profile) return;
+    if (!profile) return;
 
-  //   setAbout(profile.aboutMe?.about || "");
-  //   setLanguagesList(profile.aboutMe?.languages || []);
-  //   setAvailability(profile.aboutMe?.availability || "");
-  //   setPreferredJobType(profile.aboutMe?.preferredJobType || "");
-  // }, [state.user?.profile]);
+    setAbout(profile.aboutMe?.about || "");
+    setLanguagesList(profile.aboutMe?.languages || []);
+    setAvailability(profile.aboutMe?.availability || "");
+    setPreferredJobType(profile.aboutMe?.preferredJobType || "");
+  }, [state.user?.profile]);
 
   const matching =
     JobCategoriesList == state.user.profile.hiring_Focus.jobCategoriesList &&
