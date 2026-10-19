@@ -14,7 +14,7 @@ import spinner from "../../../../../../assets/spainner2.json";
 
 import { Chip, Modal, Divider, Autocomplete } from "@mui/material";
 
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
@@ -99,7 +99,6 @@ export default function AboutMeP() {
     languagesList == state.user?.profile?.aboutMe?.languages && 
     Professional_Title_List == state.user?.profile?.professionalTitle
 
-
   const handleAdd = () => {
     if (!language) return;
 
@@ -118,7 +117,7 @@ export default function AboutMeP() {
     });
 
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         aboutMe:about,
         languages:languagesList,
         professionalTitle:Professional_Title_List
