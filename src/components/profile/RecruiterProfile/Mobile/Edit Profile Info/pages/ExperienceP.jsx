@@ -1,4 +1,11 @@
-import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  TextField,
+  IconButton,
+  Autocomplete,
+} from "@mui/material";
 import { useEffect, useState } from "react";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../../../../logic/context/profileContext";
@@ -215,7 +222,6 @@ export default function ExperienceP() {
               gap: 2,
             }}
           >
-
             {/* jobTitle */}
             <TextField
               fullWidth
@@ -287,6 +293,50 @@ export default function ExperienceP() {
                 },
               }}
             />
+            <Autocomplete
+              disablePortal
+              // options={hiringFocusOptions.jobCategories}
+              // value={JobCategories}
+              slotProps={{
+                popper: {
+                  sx: {
+                    transition: "none",
+                    animation: "none",
+                    m: 5,
+                  },
+                },
+                listbox: {
+                  sx: {
+                    maxHeight: "150px",
+                  },
+                },
+              }}
+              // onChange={(e, value) => setJobCategories(value)}
+              sx={{ flex: 1 }}
+              fullWidth
+              renderInput={(params) => (
+                <TextField
+                  placeholder="Job Categories"
+                  // onChange={(e) => setJobCategories(e.target.value)}
+                  sx={{
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "0.3rem",
+                      fontFamily: "monospace",
+                      fontSize: "1.3rem",
+                    },
+                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                      {
+                        border: "1px dashed #b3b1b1",
+                      },
+                    "& .MuiInputBase-input": {
+                      py: 1,
+                    },
+                  }}
+                  {...params}
+                  size="small"
+                />
+              )}
+            />
 
             {/* location */}
             <TextField
@@ -311,7 +361,7 @@ export default function ExperienceP() {
                 },
               }}
             />
- 
+
             {/* startDate */}
             <TextField
               fullWidth
@@ -375,8 +425,8 @@ export default function ExperienceP() {
                   borderRadius: "0.3rem",
                   fontFamily: "monospace",
                   fontSize: "1.3rem",
-                  px:"14px",
-                  py:"2px"
+                  px: "14px",
+                  py: "2px",
                 },
                 "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                   {
