@@ -271,7 +271,31 @@ export default function ExperienceP() {
               onChange={(e) => {
                 setCompany(e.target.value);
               }}
-              placeholder="employmentType"
+              placeholder="employment Type"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "0.3rem",
+                  fontFamily: "monospace",
+                  fontSize: "1.3rem",
+                },
+                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                  {
+                    border: "1px dashed #b3b1b1",
+                  },
+                "& .MuiInputBase-input": {
+                  py: 1,
+                },
+              }}
+            />
+
+            {/* location */}
+            <TextField
+              fullWidth
+              value={company}
+              onChange={(e) => {
+                setCompany(e.target.value);
+              }}
+              placeholder="location"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
