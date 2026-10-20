@@ -260,30 +260,8 @@ export default function ExperienceP() {
                 },
               }}
             />
-
-            <TextField
-              fullWidth
-              value={period}
-              onChange={(e) => {
-                setPeriod(e.target.value);
-              }}
-              placeholder="Period"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            />
-
+ 
+  
             {/* startDate */}
             <TextField
               fullWidth
