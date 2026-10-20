@@ -38,7 +38,6 @@ export default function ExperienceP() {
       item.title === matchexperiences[index].title &&
       item.company === matchexperiences[index].company &&
       item.period === matchexperiences[index].period 
-  
   );
 
 
