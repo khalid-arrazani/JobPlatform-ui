@@ -29,20 +29,14 @@ export default function ExperienceP() {
     );
   }, [state.user?.profile]);
 
-
-
   const matching =
     experiences.length === matchexperiences.length &&
-    experiences.every((item, index) =>
-      
-      item.title === matchexperiences[index].title &&
-      item.company === matchexperiences[index].company &&
-      item.period === matchexperiences[index].period 
-  );
-
-
-
-
+    experiences.every(
+      (item, index) =>
+        item.title === matchexperiences[index].title &&
+        item.company === matchexperiences[index].company &&
+        item.period === matchexperiences[index].period,
+    );
 
   const handleAddExperience = () => {
     if (!title || !company || !period) return;
@@ -83,7 +77,6 @@ export default function ExperienceP() {
         message: "Experiences Update Seccesfuly",
         severity: "success",
       });
-
     } catch (error) {
       setSnackBar({
         open: true,
@@ -244,6 +237,7 @@ export default function ExperienceP() {
                 },
               }}
             />
+
             <TextField
               fullWidth
               value={company}
@@ -266,6 +260,7 @@ export default function ExperienceP() {
                 },
               }}
             />
+
             <TextField
               fullWidth
               value={period}
@@ -273,6 +268,78 @@ export default function ExperienceP() {
                 setPeriod(e.target.value);
               }}
               placeholder="Period"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "0.3rem",
+                  fontFamily: "monospace",
+                  fontSize: "1.3rem",
+                },
+                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                  {
+                    border: "1px dashed #b3b1b1",
+                  },
+                "& .MuiInputBase-input": {
+                  py: 1,
+                },
+              }}
+            />
+
+            {/* startDate */}
+            <TextField
+              fullWidth
+              value={period}
+              onChange={(e) => {
+                setPeriod(e.target.value);
+              }}
+              placeholder="startDate"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "0.3rem",
+                  fontFamily: "monospace",
+                  fontSize: "1.3rem",
+                },
+                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                  {
+                    border: "1px dashed #b3b1b1",
+                  },
+                "& .MuiInputBase-input": {
+                  py: 1,
+                },
+              }}
+            />
+
+            {/* endDate */}
+            <TextField
+              fullWidth
+              value={period}
+              onChange={(e) => {
+                setPeriod(e.target.value);
+              }}
+              placeholder="endDate"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "0.3rem",
+                  fontFamily: "monospace",
+                  fontSize: "1.3rem",
+                },
+                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                  {
+                    border: "1px dashed #b3b1b1",
+                  },
+                "& .MuiInputBase-input": {
+                  py: 1,
+                },
+              }}
+            />
+
+            {/* description */}
+            <TextField
+              fullWidth
+              value={period}
+              onChange={(e) => {
+                setPeriod(e.target.value);
+              }}
+              placeholder="description"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
