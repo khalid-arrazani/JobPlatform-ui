@@ -364,6 +364,8 @@ export default function ExperienceP() {
             <TextField
               fullWidth
               value={period}
+              multiline
+              rows={3}
               onChange={(e) => {
                 setPeriod(e.target.value);
               }}
@@ -373,6 +375,8 @@ export default function ExperienceP() {
                   borderRadius: "0.3rem",
                   fontFamily: "monospace",
                   fontSize: "1.3rem",
+                  px:"14px",
+                  py:"2px"
                 },
                 "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
                   {
