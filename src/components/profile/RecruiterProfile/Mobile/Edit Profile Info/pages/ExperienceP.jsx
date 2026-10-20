@@ -408,6 +408,8 @@ export default function ExperienceP() {
             <TextField
               fullWidth
               value={period}
+              type="month"
+
               onChange={(e) => {
                 setPeriod(e.target.value);
               }}
