@@ -379,7 +379,16 @@ export default function ExperienceP() {
               }}
             />
 
+
+     
             {/* startDate */}
+            <Box
+            sx={{width:"100%"}}
+            >
+            <Box>
+              Typography
+
+            </Box>
             <TextField
               fullWidth
               value={period}
@@ -403,6 +412,7 @@ export default function ExperienceP() {
                 },
               }}
             />
+            </Box>
 
             {/* endDate */}
             <TextField
