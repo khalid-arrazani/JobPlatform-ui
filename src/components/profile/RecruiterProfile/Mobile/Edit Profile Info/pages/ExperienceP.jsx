@@ -14,6 +14,23 @@ import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 
+
+
+
+const employmentTypes=[
+    "Full-time",
+    "Part-time",
+    "Contract",
+    "Temporary",
+    "Freelance",
+    "Internship",
+    "Apprenticeship",
+    "Seasonal",
+    "Volunteer",
+  ]
+
+
+
 export default function ExperienceP() {
   const { isLoadingUptadeProfile, setExperienceOpen, dispatch, ...state } =
     useProfile();
@@ -295,7 +312,7 @@ export default function ExperienceP() {
             />
             <Autocomplete
               disablePortal
-              // options={hiringFocusOptions.jobCategories}
+              options={employmentTypes}
               // value={JobCategories}
               slotProps={{
                 popper: {
@@ -366,6 +383,7 @@ export default function ExperienceP() {
             <TextField
               fullWidth
               value={period}
+              type="month"
               onChange={(e) => {
                 setPeriod(e.target.value);
               }}
