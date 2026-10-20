@@ -215,13 +215,15 @@ export default function ExperienceP() {
               gap: 2,
             }}
           >
+
+            {/* jobTitle */}
             <TextField
               fullWidth
               value={title}
               onChange={(e) => {
                 setTitle(e.target.value);
               }}
-              placeholder="Role"
+              placeholder="jobTitle"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -238,13 +240,14 @@ export default function ExperienceP() {
               }}
             />
 
+            {/* company Name */}
             <TextField
               fullWidth
               value={company}
               onChange={(e) => {
                 setCompany(e.target.value);
               }}
-              placeholder="Company"
+              placeholder="Company name"
               sx={{
                 "& .MuiOutlinedInput-root": {
                   borderRadius: "0.3rem",
@@ -261,7 +264,6 @@ export default function ExperienceP() {
               }}
             />
  
-  
             {/* startDate */}
             <TextField
               fullWidth
