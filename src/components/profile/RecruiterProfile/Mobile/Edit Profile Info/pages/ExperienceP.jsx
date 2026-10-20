@@ -263,6 +263,30 @@ export default function ExperienceP() {
                 },
               }}
             />
+
+            {/* employmentType */}
+            <TextField
+              fullWidth
+              value={company}
+              onChange={(e) => {
+                setCompany(e.target.value);
+              }}
+              placeholder="employmentType"
+              sx={{
+                "& .MuiOutlinedInput-root": {
+                  borderRadius: "0.3rem",
+                  fontFamily: "monospace",
+                  fontSize: "1.3rem",
+                },
+                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                  {
+                    border: "1px dashed #b3b1b1",
+                  },
+                "& .MuiInputBase-input": {
+                  py: 1,
+                },
+              }}
+            />
  
             {/* startDate */}
             <TextField
