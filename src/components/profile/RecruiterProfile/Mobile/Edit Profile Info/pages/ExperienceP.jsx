@@ -520,10 +520,10 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={period}
+                value={Start_Date}
                 type="month"
                 onChange={(e) => {
-                  setPeriod(e.target.value);
+                  setStart_Date(e.target.value);
                 }}
                 placeholder="startDate"
                 sx={{
@@ -566,10 +566,10 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={period}
+                value={End_Date}
                 type="month"
                 onChange={(e) => {
-                  setPeriod(e.target.value);
+                  setEnd_Date(e.target.value);
                 }}
                 placeholder="endDate"
                 sx={{
