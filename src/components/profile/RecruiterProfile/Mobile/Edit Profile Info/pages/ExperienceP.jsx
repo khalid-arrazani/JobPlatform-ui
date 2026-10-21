@@ -37,8 +37,7 @@ export default function ExperienceP() {
   const [company_Name, setCompany_Name] = useState("");
   const [employment_Type, setEmployment_Type] = useState("");
 
-  const [jobcategories, setJobcategories] = useState("");
-  const [jobcategoriesList, setJobcategoriesList] = useState("");
+
 
 
   const [location, setLocation] = useState("");
