@@ -31,19 +31,20 @@ export default function ExperienceP() {
     useProfile();
 
   const { setSnackBar } = useAuth();
+
  
   const [Company_Name, setCompany_Name] = useState("");
   const [Employment_Type, setEmployment_Type] = useState("");
+
   const [Jobcategories, setJobcategories] = useState("");
   const [JobcategoriesList, setJobcategoriesList] = useState("");
+
+
   const [Location, setLocation] = useState("");
   const [Start_Date, setStart_Date] = useState("");
   const [End_Date, setEnd_Date] = useState("");
   const [Description, setDescription] = useState("");
   
-
-
-
 
 
 
