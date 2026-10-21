@@ -588,32 +588,33 @@ export default function ExperienceP() {
               >
                 About the Experience
               </Typography>
-            <TextField
-              fullWidth
-              value={period}
-              multiline
-              rows={3}
-              onChange={(e) => {
-                setPeriod(e.target.value);
-              }}
-              placeholder="description"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                  px: "14px",
-                  py: "2px",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
+              <TextField
+                fullWidth
+                value={period}
+                multiline
+                rows={3}
+                onChange={(e) => {
+                  setPeriod(e.target.value);
+                }}
+                placeholder="description"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                    px: "14px",
+                    py: "2px",
                   },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            /></Box>
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
             <Button
               fullWidth
