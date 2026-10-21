@@ -294,6 +294,12 @@ export default function ExperienceP() {
             /></Box>
 
             {/* employmentType */}
+            <Box
+            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
+            >
+            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
+              Employment Type
+            </Typography>
             <TextField
               fullWidth
               value={company}
@@ -315,7 +321,7 @@ export default function ExperienceP() {
                   py: 1,
                 },
               }}
-            />
+            /></Box>
 
              {/* Job categories */}
             <Box
