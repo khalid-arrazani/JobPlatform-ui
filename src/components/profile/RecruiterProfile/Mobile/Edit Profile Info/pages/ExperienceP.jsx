@@ -310,6 +310,14 @@ export default function ExperienceP() {
                 },
               }}
             />
+
+
+            <Box
+            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
+            >
+            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
+              Job categories
+            </Typography>
             <Autocomplete
               disablePortal
               options={employmentTypes}
@@ -353,13 +361,12 @@ export default function ExperienceP() {
                   size="small"
                 />
               )}
-            />
+            /></Box>
 
-             {/* endDate */}
+             {/* location */}
              <Box
             sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
             >
-
             <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
               Location
             </Typography>
