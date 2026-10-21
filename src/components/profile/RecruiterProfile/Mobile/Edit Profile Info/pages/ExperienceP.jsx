@@ -27,7 +27,7 @@ const employmentTypes = [
 ];
 
 export default function ExperienceP() {
-  const { isLoadingUptadeProfile, setExperienceOpen, dispatch, ...state } =
+  const { isLoadingUptadeProfile, dispatch, ...state } =
     useProfile();
 
   const { setSnackBar } = useAuth();
