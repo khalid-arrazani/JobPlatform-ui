@@ -586,7 +586,7 @@ export default function ExperienceP() {
                   ml: 0.5,
                 }}
               >
-                End Date
+                About the Experience
               </Typography>
             <TextField
               fullWidth
