@@ -32,6 +32,7 @@ export default function ExperienceP() {
 
   const { setSnackBar } = useAuth();
 
+  const [title, setTitle] = useState("");
  
   const [Company_Name, setCompany_Name] = useState("");
   const [Employment_Type, setEmployment_Type] = useState("");
@@ -53,7 +54,6 @@ export default function ExperienceP() {
 
 
 
-  const [title, setTitle] = useState("");
   const [experiences, setExperiences] = useState([]);
   const [matchexperiences, setMatchExperiences] = useState([]);
 
