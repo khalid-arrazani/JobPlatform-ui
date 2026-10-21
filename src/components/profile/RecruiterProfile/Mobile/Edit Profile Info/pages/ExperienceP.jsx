@@ -355,7 +355,14 @@ export default function ExperienceP() {
               )}
             />
 
-            {/* location */}
+             {/* endDate */}
+             <Box
+            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
+            >
+
+            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
+              Location
+            </Typography>
             <TextField
               fullWidth
               value={company}
@@ -378,6 +385,7 @@ export default function ExperienceP() {
                 },
               }}
             />
+            </Box>
 
 
      
