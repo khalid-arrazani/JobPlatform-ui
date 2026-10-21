@@ -42,7 +42,7 @@ export default function ExperienceP() {
   
   const [experiences, setExperiences] = useState([]);
 
-  
+
   const [matchexperiences, setMatchExperiences] = useState([]);
 
 
@@ -74,8 +74,12 @@ export default function ExperienceP() {
 
     const newExperience = {
       title,
-      company,
-      period,
+      company_Name,
+      employment_Type,
+      location,
+      start_Date,
+      end_Date,
+      description,
     };
 
     setExperiences((prev) => [...prev, newExperience]);
