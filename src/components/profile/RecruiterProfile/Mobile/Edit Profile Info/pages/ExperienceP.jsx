@@ -14,22 +14,17 @@ import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 
-
-
-
-const employmentTypes=[
-    "Full-time",
-    "Part-time",
-    "Contract",
-    "Temporary",
-    "Freelance",
-    "Internship",
-    "Apprenticeship",
-    "Seasonal",
-    "Volunteer",
-  ]
-
-
+const employmentTypes = [
+  "Full-time",
+  "Part-time",
+  "Contract",
+  "Temporary",
+  "Freelance",
+  "Internship",
+  "Apprenticeship",
+  "Seasonal",
+  "Volunteer",
+];
 
 export default function ExperienceP() {
   const { isLoadingUptadeProfile, setExperienceOpen, dispatch, ...state } =
@@ -239,256 +234,360 @@ export default function ExperienceP() {
               gap: 2,
             }}
           >
-
             {/* jobTitle */}
-             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Job Title
-            </Typography>
-            <TextField
-              fullWidth
-              value={title}
-              onChange={(e) => {
-                setTitle(e.target.value);
-              }}
-              placeholder="jobTitle"
+            <Box
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            /></Box>
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Job Title
+              </Typography>
+              <TextField
+                fullWidth
+                value={title}
+                onChange={(e) => {
+                  setTitle(e.target.value);
+                }}
+                placeholder="jobTitle"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
             {/* company Name */}
             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Company Name
-            </Typography>
-            <TextField
-              fullWidth
-              value={company}
-              onChange={(e) => {
-                setCompany(e.target.value);
-              }}
-              placeholder="Company name"
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            /></Box>
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Company Name
+              </Typography>
+              <TextField
+                fullWidth
+                value={company}
+                onChange={(e) => {
+                  setCompany(e.target.value);
+                }}
+                placeholder="Company name"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
             {/* employmentType */}
             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Employment Type
-            </Typography>
-            <TextField
-              fullWidth
-              value={company}
-              onChange={(e) => {
-                setCompany(e.target.value);
-              }}
-              placeholder="employment Type"
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            /></Box>
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Employment Type
+              </Typography>
+              <TextField
+                fullWidth
+                value={company}
+                onChange={(e) => {
+                  setCompany(e.target.value);
+                }}
+                placeholder="employment Type"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
-             {/* Job categories */}
+            {/* Job categories */}
             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Job categories
-            </Typography>
-            <Autocomplete
-              disablePortal
-              options={employmentTypes}
-              // value={JobCategories}
-              slotProps={{
-                popper: {
-                  sx: {
-                    transition: "none",
-                    animation: "none",
-                    m: 5,
-                  },
-                },
-                listbox: {
-                  sx: {
-                    maxHeight: "150px",
-                  },
-                },
-              }}
-              // onChange={(e, value) => setJobCategories(value)}
-              sx={{ flex: 1 }}
-              fullWidth
-              renderInput={(params) => (
-                <TextField
-                  placeholder="Job Categories"
-                  // onChange={(e) => setJobCategories(e.target.value)}
-                  sx={{
-                    "& .MuiOutlinedInput-root": {
-                      borderRadius: "0.3rem",
-                      fontFamily: "monospace",
-                      fontSize: "1.3rem",
-                    },
-                    "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                      {
-                        border: "1px dashed #b3b1b1",
-                      },
-                    "& .MuiInputBase-input": {
-                      py: 1,
-                    },
-                  }}
-                  {...params}
-                  size="small"
-                />
-              )}
-            />
-            </Box>
-
-           {/* location */}
-             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Location
-            </Typography>
-            <TextField
-              fullWidth
-              value={company}
-              onChange={(e) => {
-                setCompany(e.target.value);
-              }}
-              placeholder="location"
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Job categories
+              </Typography>
+              <Autocomplete
+                disablePortal
+                options={employmentTypes}
+                // value={JobCategories}
+                slotProps={{
+                  popper: {
+                    sx: {
+                      transition: "none",
+                      animation: "none",
+                      m: 5,
+                    },
+                  },
+                  listbox: {
+                    sx: {
+                      maxHeight: "150px",
+                    },
+                  },
+                }}
+                // onChange={(e, value) => setJobCategories(value)}
+                sx={{ flex: 1 }}
+                fullWidth
+                renderInput={(params) => (
+                  <TextField
+                    placeholder="Job Categories"
+                    // onChange={(e) => setJobCategories(e.target.value)}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        borderRadius: "0.3rem",
+                        fontFamily: "monospace",
+                        fontSize: "1.3rem",
+                      },
+                      "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                        {
+                          border: "1px dashed #b3b1b1",
+                        },
+                      "& .MuiInputBase-input": {
+                        py: 1,
+                      },
+                    }}
+                    {...params}
+                    size="small"
+                  />
+                )}
+              />
             </Box>
 
+            {/* location */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Location
+              </Typography>
+              <TextField
+                fullWidth
+                value={company}
+                onChange={(e) => {
+                  setCompany(e.target.value);
+                }}
+                placeholder="location"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
-     
             {/* startDate */}
             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              Start Date
-            </Typography>
-
-
-            <TextField
-              fullWidth
-              value={period}
-              type="month"
-              onChange={(e) => {
-                setPeriod(e.target.value);
-              }}
-              placeholder="startDate"
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Start Date
+              </Typography>
+
+              <TextField
+                fullWidth
+                value={period}
+                type="month"
+                onChange={(e) => {
+                  setPeriod(e.target.value);
+                }}
+                placeholder="startDate"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
             </Box>
 
             {/* endDate */}
-             <Box
-            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
-            >
-
-            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
-              End Date
-            </Typography>
-
-
-            <TextField
-              fullWidth
-              value={period}
-              type="month"
-              onChange={(e) => {
-                setPeriod(e.target.value);
-              }}
-              placeholder="endDate"
+            <Box
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                End Date
+              </Typography>
+
+              <TextField
+                fullWidth
+                value={period}
+                type="month"
+                onChange={(e) => {
+                  setPeriod(e.target.value);
+                }}
+                placeholder="endDate"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
             </Box>
 
-            
-
             {/* description */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                End Date
+              </Typography>
             <TextField
               fullWidth
               value={period}
@@ -514,7 +613,7 @@ export default function ExperienceP() {
                   py: 1,
                 },
               }}
-            />
+            /></Box>
 
             <Button
               fullWidth
