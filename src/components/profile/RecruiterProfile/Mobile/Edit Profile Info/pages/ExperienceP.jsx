@@ -475,9 +475,9 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
-                value={company}
+                value={location}
                 onChange={(e) => {
-                  setCompany(e.target.value);
+                  setLocation(e.target.value);
                 }}
                 placeholder="location"
                 sx={{
