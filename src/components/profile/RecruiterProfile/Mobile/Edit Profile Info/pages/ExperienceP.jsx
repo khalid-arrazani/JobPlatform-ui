@@ -33,33 +33,30 @@ export default function ExperienceP() {
   const { setSnackBar } = useAuth();
 
   const [title, setTitle] = useState("");
- 
   const [company_Name, setCompany_Name] = useState("");
   const [employment_Type, setEmployment_Type] = useState("");
-
-
-
-
   const [location, setLocation] = useState("");
   const [start_Date, setStart_Date] = useState("");
   const [end_Date, setEnd_Date] = useState("");
   const [description, setDescription] = useState("");
   
-
   const [experiences, setExperiences] = useState([]);
   const [matchexperiences, setMatchExperiences] = useState([]);
+
+
+
 
   const [company, setCompany] = useState("");
   const [period, setPeriod] = useState("");
 
-  useEffect(() => {
-    setExperiences(
-      state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
-    );
-    setMatchExperiences(
-      state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
-    );
-  }, [state.user?.profile]);
+  // useEffect(() => {
+  //   setExperiences(
+  //     state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
+  //   );
+  //   setMatchExperiences(
+  //     state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
+  //   );
+  // }, [state.user?.profile]);
 
   const matching =
     experiences.length === matchexperiences.length &&
@@ -71,7 +68,7 @@ export default function ExperienceP() {
     );
 
   const handleAddExperience = () => {
-    if (!title || !company || !period) return;
+    if (!title || !company_Name || !start_Date) return;
 
     const newExperience = {
       title,
@@ -82,8 +79,13 @@ export default function ExperienceP() {
     setExperiences((prev) => [...prev, newExperience]);
 
     setTitle("");
-    setCompany("");
-    setPeriod("");
+    setCompany_Name("");
+    setEmployment_Type("");
+    setLocation("");
+    setStart_Date("");
+    setEnd_Date("");
+    setDescription("");
+   
   };
 
   const handleDelete = (index) => {
