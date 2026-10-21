@@ -343,7 +343,9 @@ export default function ExperienceP() {
               />
             </Box>
 
-            {/* employmentType */}
+             
+
+            {/* employment Type */}
             <Box
               sx={{
                 width: "100%",
@@ -361,29 +363,51 @@ export default function ExperienceP() {
                   ml: 0.5,
                 }}
               >
-                Employment Type
+                 Employment Type
               </Typography>
-              <TextField
-                fullWidth
+              <Autocomplete
+                disablePortal
+                options={employmentTypes}
                 value={employment_Type}
-                onChange={(e) => {
-                  setEmployment_Type(e.target.value);
-                }}
-                placeholder="employment Type"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "0.3rem",
-                    fontFamily: "monospace",
-                    fontSize: "1.3rem",
-                  },
-                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                    {
-                      border: "1px dashed #b3b1b1",
+                slotProps={{
+                  popper: {
+                    sx: {
+                      transition: "none",
+                      animation: "none",
+                      m: 5,
                     },
-                  "& .MuiInputBase-input": {
-                    py: 1,
+                  },
+                  listbox: {
+                    sx: {
+                      maxHeight: "150px",
+                    },
                   },
                 }}
+                onChange={(e, value) => setEmployment_Type(value)}
+                sx={{ flex: 1 }}
+                fullWidth
+                renderInput={(params) => (
+                  <TextField
+                    placeholder="Job Categories"
+                    onChange={(e) => setEmployment_Type(e.target.value)}
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        borderRadius: "0.3rem",
+                        fontFamily: "monospace",
+                        fontSize: "1.3rem",
+                      },
+                      "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                        {
+                          border: "1px dashed #b3b1b1",
+                        },
+                      "& .MuiInputBase-input": {
+                        py: 1,
+                      },
+                    }}
+                    {...params}
+                    size="small"
+                  />
+                )}
               />
             </Box>
 
@@ -454,7 +478,7 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={start_Date}
+                value={Start_Date}
                 type="month"
                 onChange={(e) => {
                   setStart_Date(e.target.value);
@@ -500,7 +524,7 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={end_Date}
+                value={End_Date}
                 type="month"
                 onChange={(e) => {
                   setEnd_Date(e.target.value);
@@ -545,11 +569,11 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
-                value={description}
+                value={period}
                 multiline
                 rows={3}
                 onChange={(e) => {
-                  setDescription(e.target.value);
+                  setPeriod(e.target.value);
                 }}
                 placeholder="description"
                 sx={{
