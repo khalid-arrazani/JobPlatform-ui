@@ -954,20 +954,17 @@ export default function ExperienceP() {
                     </Typography>
                   </Box>
                 </Box>
-                <Box
-                  sx={{
-                    height: "2rem",
-                    width: "5rem",
-
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
-                  }}
-                >
+              
                   <IconButton
                     // onClick={() => {
                     //   handleDelete(index);
                     // }}
+                    sx={{
+                    position: "absolute",
+                    top: 0,
+                    right: 0,
+                    borderRadius:'8px'
+                  }}
                   >
                     <svg
                       viewBox="0 0 24 24"
@@ -1009,7 +1006,8 @@ export default function ExperienceP() {
                       ></path>
                     </svg>
                   </IconButton>
-                </Box>
+
+              
               </Box>
             </Box>
 
