@@ -264,6 +264,12 @@ export default function ExperienceP() {
             />
 
             {/* company Name */}
+            <Box
+            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
+            >
+            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
+              Company Name
+            </Typography>
             <TextField
               fullWidth
               value={company}
@@ -285,7 +291,7 @@ export default function ExperienceP() {
                   py: 1,
                 },
               }}
-            />
+            /></Box>
 
             {/* employmentType */}
             <TextField
@@ -311,7 +317,7 @@ export default function ExperienceP() {
               }}
             />
 
-
+             {/* Job categories */}
             <Box
             sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
             >
@@ -361,9 +367,10 @@ export default function ExperienceP() {
                   size="small"
                 />
               )}
-            /></Box>
+            />
+            </Box>
 
-             {/* location */}
+           {/* location */}
              <Box
             sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
             >
