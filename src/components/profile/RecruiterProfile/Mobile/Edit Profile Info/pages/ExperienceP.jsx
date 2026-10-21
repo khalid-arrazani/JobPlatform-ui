@@ -962,7 +962,7 @@ export default function ExperienceP() {
                     {/* {experience.title} */}  Agadir - Morroco
                   </Typography>
 
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Box sx={{ display: "flex",  gap: 1,flexDirection:"column" }}>
 
                     <Typography
                       sx={{
@@ -974,6 +974,7 @@ export default function ExperienceP() {
                     >
                       {/* {experience.period} */}2022
                     </Typography>
+
                     <Typography
                       sx={{
                         fontFamily: "monospace",
