@@ -924,48 +924,23 @@ export default function ExperienceP() {
                       mb: 0.5,
                     }}
                   >
-                    {/* {experience.company} */}Frontend Developer
+                    {/* {experience.company} */} NexHire
                   </Typography>
                   <Typography
                     sx={{
                       fontFamily: "monospace",
-                      fontSize: "0.8rem",
+                      fontSize: "0.9rem",
                       fontWeight: 600,
                       color: "#06041088",
                       mb: 0.5,
                     }}
                   >
-                    {/* {experience.title} */}gg
+                    {/* {experience.title} */}  Frontend Developer
                   </Typography>
 
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Box sx={{ height: "1.3rem", width: "1.3rem" }}>
-                      <svg
-                        version="1.1"
-                        id="Calendar--Streamline-Carbon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0"
-                        y="0"
-                        viewBox="0 0 16 16"
-                        xml:space="preserve"
-                        enable-background="new 0 0 32 32"
-                        height="20"
-                        width="20"
-                      >
-                        <path
-                          d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
-                          fill="#000000c5"
-                          stroke-width="0.2"
-                        ></path>
-                        <path
-                          id="_Transparent_Rectangle_"
-                          d="M0 0h16v16H0Z"
-                          fill="none"
-                          stroke-width="0.2"
-                        ></path>
-                      </svg>
-                    </Box>
+
+                    
 
                     <Typography
                       sx={{
@@ -975,7 +950,7 @@ export default function ExperienceP() {
                         color: "#120843c6",
                       }}
                     >
-                      {/* {experience.period} */}ddg
+                      {/* {experience.period} */}2022
                     </Typography>
                   </Box>
                 </Box>
