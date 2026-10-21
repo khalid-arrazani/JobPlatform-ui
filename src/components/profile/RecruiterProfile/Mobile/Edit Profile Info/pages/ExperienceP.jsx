@@ -47,8 +47,6 @@ export default function ExperienceP() {
   
 
   const [experiences, setExperiences] = useState([]);
-
-
   const [matchexperiences, setMatchExperiences] = useState([]);
 
   const [company, setCompany] = useState("");
