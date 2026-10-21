@@ -47,10 +47,6 @@ export default function ExperienceP() {
 
 
 
-
-  const [company, setCompany] = useState("");
-  const [period, setPeriod] = useState("");
-
   // useEffect(() => {
   //   setExperiences(
   //     state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
@@ -93,6 +89,7 @@ export default function ExperienceP() {
     setDescription("");
    
   };
+  
 
   const handleDelete = (index) => {
     setExperiences((prev) => prev.filter((_, i) => i !== index));
