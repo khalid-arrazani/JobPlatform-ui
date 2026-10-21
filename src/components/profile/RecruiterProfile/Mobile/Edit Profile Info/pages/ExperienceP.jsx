@@ -410,7 +410,7 @@ export default function ExperienceP() {
               <Autocomplete
                 disablePortal
                 options={employmentTypes}
-                // value={JobCategories}
+                value={Jobcategories}
                 slotProps={{
                   popper: {
                     sx: {
@@ -425,13 +425,13 @@ export default function ExperienceP() {
                     },
                   },
                 }}
-                // onChange={(e, value) => setJobCategories(value)}
+                onChange={(e, value) => setJobcategoriesList(value)}
                 sx={{ flex: 1 }}
                 fullWidth
                 renderInput={(params) => (
                   <TextField
                     placeholder="Job Categories"
-                    // onChange={(e) => setJobCategories(e.target.value)}
+                    onChange={(e) => setJobcategoriesList(e.target.value)}
                     sx={{
                       "& .MuiOutlinedInput-root": {
                         borderRadius: "0.3rem",
