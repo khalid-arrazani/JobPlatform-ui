@@ -7,7 +7,7 @@ import {
   Autocomplete,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 
@@ -89,7 +89,7 @@ export default function ExperienceP() {
     setDescription("");
    
   };
-  
+
 
   const handleDelete = (index) => {
     setExperiences((prev) => prev.filter((_, i) => i !== index));
@@ -101,7 +101,7 @@ export default function ExperienceP() {
       payload: true,
     });
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         experience: experiences,
       });
 
