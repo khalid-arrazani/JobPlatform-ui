@@ -924,7 +924,7 @@ export default function ExperienceP() {
                       mb: 0.5,
                     }}
                   >
-                    {/* {experience.company} */}
+                    {/* {experience.company} */}Frontend Developer
                   </Typography>
                   <Typography
                     sx={{
@@ -935,7 +935,7 @@ export default function ExperienceP() {
                       mb: 0.5,
                     }}
                   >
-                    {/* {experience.title} */}
+                    {/* {experience.title} */}gg
                   </Typography>
 
                   <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
@@ -975,7 +975,7 @@ export default function ExperienceP() {
                         color: "#120843c6",
                       }}
                     >
-                      {/* {experience.period} */}dd
+                      {/* {experience.period} */}ddg
                     </Typography>
                   </Box>
                 </Box>
