@@ -938,9 +938,31 @@ export default function ExperienceP() {
                     {/* {experience.title} */}  Frontend Developer
                   </Typography>
 
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      color: "#06041088",
+                      mb: 0.5,
+                    }}
+                  >
+                    {/* {experience.title} */}  Full-time
+                  </Typography>
 
-                    
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontSize: "0.9rem",
+                      fontWeight: 600,
+                      color: "#06041088",
+                      mb: 0.5,
+                    }}
+                  >
+                    {/* {experience.title} */}  Agadir - Morroco
+                  </Typography>
+
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
 
                     <Typography
                       sx={{
@@ -952,6 +974,7 @@ export default function ExperienceP() {
                     >
                       {/* {experience.period} */}2022
                     </Typography>
+
                   </Box>
                 </Box>
               
