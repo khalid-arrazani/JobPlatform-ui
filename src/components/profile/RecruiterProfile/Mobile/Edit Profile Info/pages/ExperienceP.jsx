@@ -974,6 +974,16 @@ export default function ExperienceP() {
                     >
                       {/* {experience.period} */}2022
                     </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "monospace",
+                        fontSize: "1.1rem",
+                        fontWeight: 600,
+                        color: "#120843c6",
+                      }}
+                    >
+                      {/* {experience.period} */}2025
+                    </Typography>
 
                   </Box>
                 </Box>
