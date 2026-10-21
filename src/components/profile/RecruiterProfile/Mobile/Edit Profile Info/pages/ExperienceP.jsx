@@ -239,7 +239,14 @@ export default function ExperienceP() {
               gap: 2,
             }}
           >
+
             {/* jobTitle */}
+             <Box
+            sx={{width:"100%",display:'flex',flexDirection:'column',gap:1}}
+            >
+            <Typography sx={{fontFamily:'monospace',fontWeight:600,fontSize:'1.1rem',color:'#434242',ml:0.5}}  >
+              Job Title
+            </Typography>
             <TextField
               fullWidth
               value={title}
@@ -261,7 +268,7 @@ export default function ExperienceP() {
                   py: 1,
                 },
               }}
-            />
+            /></Box>
 
             {/* company Name */}
             <Box
