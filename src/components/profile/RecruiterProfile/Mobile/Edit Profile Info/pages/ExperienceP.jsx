@@ -34,17 +34,17 @@ export default function ExperienceP() {
 
   const [title, setTitle] = useState("");
  
-  const [Company_Name, setCompany_Name] = useState("");
-  const [Employment_Type, setEmployment_Type] = useState("");
+  const [company_Name, setCompany_Name] = useState("");
+  const [employment_Type, setEmployment_Type] = useState("");
 
-  const [Jobcategories, setJobcategories] = useState("");
-  const [JobcategoriesList, setJobcategoriesList] = useState("");
+  const [jobcategories, setJobcategories] = useState("");
+  const [jobcategoriesList, setJobcategoriesList] = useState("");
 
 
-  const [Location, setLocation] = useState("");
-  const [Start_Date, setStart_Date] = useState("");
-  const [End_Date, setEnd_Date] = useState("");
-  const [Description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
+  const [start_Date, setStart_Date] = useState("");
+  const [end_Date, setEnd_Date] = useState("");
+  const [description, setDescription] = useState("");
   
 
 
@@ -321,7 +321,7 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
-                value={Company_Name}
+                value={company_Name}
                 onChange={(e) => {
                  setCompany_Name(e.target.value);
                 }}
@@ -365,7 +365,7 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
-                value={Employment_Type}
+                value={employment_Type}
                 onChange={(e) => {
                   setEmployment_Type(e.target.value);
                 }}
@@ -384,72 +384,6 @@ export default function ExperienceP() {
                     py: 1,
                   },
                 }}
-              />
-            </Box>
-
-            {/* Job categories */}
-            <Box
-              sx={{
-                width: "100%",
-                display: "flex",
-                flexDirection: "column",
-                gap: 1,
-              }}
-            >
-              <Typography
-                sx={{
-                  fontFamily: "monospace",
-                  fontWeight: 600,
-                  fontSize: "1.1rem",
-                  color: "#434242",
-                  ml: 0.5,
-                }}
-              >
-                Job categories
-              </Typography>
-              <Autocomplete
-                disablePortal
-                options={employmentTypes}
-                value={Jobcategories}
-                slotProps={{
-                  popper: {
-                    sx: {
-                      transition: "none",
-                      animation: "none",
-                      m: 5,
-                    },
-                  },
-                  listbox: {
-                    sx: {
-                      maxHeight: "150px",
-                    },
-                  },
-                }}
-                onChange={(e, value) => setJobcategoriesList(value)}
-                sx={{ flex: 1 }}
-                fullWidth
-                renderInput={(params) => (
-                  <TextField
-                    placeholder="Job Categories"
-                    onChange={(e) => setJobcategoriesList(e.target.value)}
-                    sx={{
-                      "& .MuiOutlinedInput-root": {
-                        borderRadius: "0.3rem",
-                        fontFamily: "monospace",
-                        fontSize: "1.3rem",
-                      },
-                      "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                        {
-                          border: "1px dashed #b3b1b1",
-                        },
-                      "& .MuiInputBase-input": {
-                        py: 1,
-                      },
-                    }}
-                    {...params}
-                    size="small"
-                  />
-                )}
               />
             </Box>
 
@@ -520,7 +454,7 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={Start_Date}
+                value={start_Date}
                 type="month"
                 onChange={(e) => {
                   setStart_Date(e.target.value);
@@ -566,7 +500,7 @@ export default function ExperienceP() {
 
               <TextField
                 fullWidth
-                value={End_Date}
+                value={end_Date}
                 type="month"
                 onChange={(e) => {
                   setEnd_Date(e.target.value);
@@ -611,11 +545,11 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
-                value={period}
+                value={description}
                 multiline
                 rows={3}
                 onChange={(e) => {
-                  setPeriod(e.target.value);
+                  setDescription(e.target.value);
                 }}
                 placeholder="description"
                 sx={{
