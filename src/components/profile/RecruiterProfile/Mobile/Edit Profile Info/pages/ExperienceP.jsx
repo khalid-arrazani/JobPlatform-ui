@@ -271,6 +271,11 @@ export default function ExperienceP() {
               </Typography>
               <TextField
                 fullWidth
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 10,
+                  },
+                }}
                 value={title}
                 onChange={(e) => {
                   setTitle(e.target.value);
@@ -985,7 +990,7 @@ export default function ExperienceP() {
                     </desc>
                     <path
                       d="M8.5 1.5v13a0.5 0.5 0 0 1 -1 0V1.5a0.5 0.5 0 0 1 1 0Z"
-                      stroke-width="0.0625"
+                      stroke-width="1"
                     ></path>
                   </svg>
 
