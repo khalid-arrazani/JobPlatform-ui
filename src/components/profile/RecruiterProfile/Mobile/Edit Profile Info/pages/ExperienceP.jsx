@@ -837,7 +837,7 @@ export default function ExperienceP() {
               boxSizing: "border-box",
               borderRadius: "10px",
               px: 1.5,
-              py: 1,
+              py: 1.5,
               mb: 1.5,
             }}
           >
