@@ -846,8 +846,10 @@ export default function ExperienceP() {
                 height: "auto",
                 width: "100%",
                 display: "flex",
-                gap: 2,
+                gap: 1,
                 position: "relative",
+                  boxSizing:"border-box"
+
               }}
             >
               <Box
@@ -859,6 +861,7 @@ export default function ExperienceP() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: "10px",
+                  boxSizing:"border-box"
                 }}
               >
                 <svg
@@ -904,10 +907,11 @@ export default function ExperienceP() {
               <Box
                 sx={{
                   height: "auto",
-                  width: "auto",
+                  width: "80%",
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
+                  boxSizing:"border-box"
                 }}
               >
                 <Typography
@@ -957,7 +961,7 @@ export default function ExperienceP() {
                   {/* {experience.title} */} Agadir - Morroco
                 </Typography>
 
-                <Box sx={{ display: "flex",   flexDirection: "column" }}>
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
                   <Typography
                     sx={{
                       fontFamily: "monospace",
@@ -998,7 +1002,37 @@ export default function ExperienceP() {
                   </Typography>
                 </Box>
 
-                
+                <Box
+                  sx={{
+                    width: "90%",
+                    height: " auto",
+                    bgcolor: "#6f6e6e0f",
+                    display: "flex",
+                    gap: 2,
+                    boxSizing: "border-box",
+                    p: 1,
+                    borderRadius: "10px",
+                    mt:1,
+                  
+
+                  }}
+                >
+  
+                      <Typography
+                        sx={{
+                          fontFamily: "monospace",
+                          color: "#0b0317b5",
+                          fontSize: "0.88rem",
+                          fontWeight: 600,
+      
+
+                        }}
+                      >
+                        I recruit junior and mid-level developers for remote and
+                        full-time positions.
+                      </Typography>
+                  
+                </Box>
               </Box>
 
               <IconButton
