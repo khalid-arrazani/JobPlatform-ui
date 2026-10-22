@@ -962,7 +962,8 @@ export default function ExperienceP() {
                     {/* {experience.title} */}  Agadir - Morroco
                   </Typography>
 
-                  <Box sx={{ display: "flex",  gap: 1,flexDirection:"column" }}>
+                  <Box sx={{ display: "flex", 
+                     gap: 1,flexDirection:"column" }}>
 
                     <Typography
                       sx={{
