@@ -273,7 +273,7 @@ export default function ExperienceP() {
                 fullWidth
                 slotProps={{
                   htmlInput: {
-                    maxLength: 10,
+                    maxLength: 100,
                   },
                 }}
                 value={title}
