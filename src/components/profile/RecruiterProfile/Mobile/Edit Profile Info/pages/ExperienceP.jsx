@@ -644,209 +644,260 @@ export default function ExperienceP() {
 
           {experiences?.map((experience, index) => (
             <Box
-              key={index}
-              sx={{
-                width: "100%",
+            key={index}
+            sx={{
+              width: "100%",
 
-                border: "1px solid #c1b9c858",
+              border: "1px solid #c1b9c858",
+              boxSizing: "border-box",
+              borderRadius: "10px",
+              px: 1.5,
+              py: 1.5,
+              mb: 1.5,
+            }}
+          >
+            <Box
+              sx={{
+                height: "auto",
+                width: "100%",
+                display: "flex",
+                gap: 1.5,
+                position: "relative",
                 boxSizing: "border-box",
-                borderRadius: "10px",
-                px: 1.5,
-                py: 1,
-                mb: 1.5,
               }}
             >
               <Box
                 sx={{
-                  height: "auto",
-                  width: "100%",
+                  height: "3rem",
+                  width: "3rem",
+                  bgcolor: "#ecddfd",
                   display: "flex",
-                  gap: 2,
-                  position: "relative",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  borderRadius: "10px",
+                  boxSizing: "border-box",
                 }}
               >
-                <Box
-                  sx={{
-                    height: "3rem",
-                    width: "3rem",
-                    bgcolor: "#ecddfd",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: "10px",
-                  }}
+                <svg
+                  id="Data-Center--Streamline-Carbon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  height="32"
+                  width="32"
                 >
-                  <svg
-                    id="Data-Center--Streamline-Carbon"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 16 16"
-                    height="32"
-                    width="32"
-                  >
-                    <desc>
-                      Data Center Streamline Icon: https://streamlinehq.com
-                    </desc>
-                    <defs></defs>
-                    <path
-                      d="M14 5h-2.5V3a1.00115 1.00115 0 0 0 -1 -1H5.5a1.00115 1.00115 0 0 0 -1 1v2H2a1.00115 1.00115 0 0 0 -1 1v8a1.00115 1.00115 0 0 0 1 1h12a1.00115 1.00115 0 0 0 1 -1V6a1.00115 1.00115 0 0 0 -1 -1ZM2 14V6h2.5v1H3.5v1h1v1H3.5v1h1v1H3.5v1h1v2Zm8.5 0H5.5V3h5Zm3.5 0h-2.5v-2h1v-1h-1v-1h1v-1h-1v-1h1v-1h-1v-1h2.5Z"
-                      fill="#41008b"
-                      stroke-width="0.2"
-                    ></path>
-                    <path
-                      d="M7 4h2v1h-2Z"
-                      fill="#41008b"
-                      stroke-width="0.2"
-                    ></path>
-                    <path
-                      d="M7 6h2v1h-2Z"
-                      fill="#41008b"
-                      stroke-width="0.2"
-                    ></path>
-                    <path
-                      d="M7 8h2v1h-2Z"
-                      fill="#41008b"
-                      stroke-width="0.2"
-                    ></path>
-                    <path
-                      id="_Transparent_Rectangle_"
-                      d="M0 0h16v16H0Z"
-                      fill="none"
-                      stroke-width="0.2"
-                    ></path>
-                  </svg>
-                </Box>
+                  <desc>
+                    Data Center Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <defs></defs>
+                  <path
+                    d="M14 5h-2.5V3a1.00115 1.00115 0 0 0 -1 -1H5.5a1.00115 1.00115 0 0 0 -1 1v2H2a1.00115 1.00115 0 0 0 -1 1v8a1.00115 1.00115 0 0 0 1 1h12a1.00115 1.00115 0 0 0 1 -1V6a1.00115 1.00115 0 0 0 -1 -1ZM2 14V6h2.5v1H3.5v1h1v1H3.5v1h1v1H3.5v1h1v2Zm8.5 0H5.5V3h5Zm3.5 0h-2.5v-2h1v-1h-1v-1h1v-1h-1v-1h1v-1h-1v-1h2.5Z"
+                    fill="#41008b"
+                    stroke-width="0.2"
+                  ></path>
+                  <path
+                    d="M7 4h2v1h-2Z"
+                    fill="#41008b"
+                    stroke-width="0.2"
+                  ></path>
+                  <path
+                    d="M7 6h2v1h-2Z"
+                    fill="#41008b"
+                    stroke-width="0.2"
+                  ></path>
+                  <path
+                    d="M7 8h2v1h-2Z"
+                    fill="#41008b"
+                    stroke-width="0.2"
+                  ></path>
+                  <path
+                    id="_Transparent_Rectangle_"
+                    d="M0 0h16v16H0Z"
+                    fill="none"
+                    stroke-width="0.2"
+                  ></path>
+                </svg>
+              </Box>
 
-                <Box
+              <Box
+                sx={{
+                  height: "auto",
+                  width: "80%",
+                  display: "flex",
+                  justifyContent: "center",
+                  flexDirection: "column",
+                  boxSizing: "border-box",
+                }}
+              >
+                <Typography
                   sx={{
-                    height: "auto",
-                    width: "auto",
-                    display: "flex",
-                    justifyContent: "center",
-                    flexDirection: "column",
+                    fontFamily: "monospace",
+                    fontSize: "1.1rem",
+                    fontWeight: 600,
+                    color: "#120843c6",
+                    mb: 0.5,
                   }}
                 >
+                  {experience.company_Name} 
+                </Typography>
+                <Typography
+                  sx={{
+                    fontFamily: "monospace",
+                    fontSize: "0.98rem",
+                    fontWeight: 600,
+                    color: "#15065fa6",
+                    mb: 0.5,
+                  }}
+                >
+                  {experience.title} 
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontFamily: "monospace",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    color: "#06041088",
+                    mb: 0.5,
+                  }}
+                >
+                  {experience.employment_Type}  
+                </Typography>
+
+                <Typography
+                  sx={{
+                    fontFamily: "monospace",
+                    fontSize: "0.9rem",
+                    fontWeight: 600,
+                    color: "#06041088",
+                    mb: 0.5,
+                  }}
+                >
+                  {experience.location}
+                </Typography>
+
+                <Box sx={{ display: "flex", flexDirection: "column" }}>
                   <Typography
                     sx={{
                       fontFamily: "monospace",
                       fontSize: "1.1rem",
                       fontWeight: 600,
                       color: "#120843c6",
-                      mb: 0.5,
                     }}
                   >
-                    {experience.company}
+                    {experience.start_Date}
                   </Typography>
+
+                  {experience.end_Date ?  
+
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 16 16"
+                    fill="#b935ed"
+                    id="Line-Vertical--Streamline-Phosphor"
+                    height="26"
+                    width="26"
+                  >
+                    <desc>
+                      Line Vertical Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path
+                      d="M8.5 1.5v13a0.5 0.5 0 0 1 -1 0V1.5a0.5 0.5 0 0 1 1 0Z"
+                      stroke-width="1"
+                    ></path>
+                  </svg> : null }
+
                   <Typography
                     sx={{
                       fontFamily: "monospace",
-                      fontSize: "0.8rem",
+                      fontSize: "1.1rem",
                       fontWeight: 600,
-                      color: "#06041088",
-                      mb: 0.5,
+                      color: "#120843c6",
                     }}
                   >
-                    {experience.title}
+                    {experience.end_Date}
                   </Typography>
-
-                  <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-                    <Box sx={{ height: "1.3rem", width: "1.3rem" }}>
-                      <svg
-                        version="1.1"
-                        id="Calendar--Streamline-Carbon"
-                        xmlns="http://www.w3.org/2000/svg"
-                        xmlns:xlink="http://www.w3.org/1999/xlink"
-                        x="0"
-                        y="0"
-                        viewBox="0 0 16 16"
-                        xml:space="preserve"
-                        enable-background="new 0 0 32 32"
-                        height="20"
-                        width="20"
-                      >
-                        <path
-                          d="M13 2h-2V1h-1v1h-4V1h-1v1H3c-0.55 0 -1 0.45 -1 1v10c0 0.55 0.45 1 1 1h10c0.55 0 1 -0.45 1 -1V3c0 -0.55 -0.45 -1 -1 -1zm0 11H3V6h10v7zm0 -8H3V3h2v1h1V3h4v1h1V3h2v2z"
-                          fill="#000000c5"
-                          stroke-width="0.2"
-                        ></path>
-                        <path
-                          id="_Transparent_Rectangle_"
-                          d="M0 0h16v16H0Z"
-                          fill="none"
-                          stroke-width="0.2"
-                        ></path>
-                      </svg>
-                    </Box>
-
-                    <Typography
-                      sx={{
-                        fontFamily: "monospace",
-                        fontSize: "1.1rem",
-                        fontWeight: 600,
-                        color: "#120843c6",
-                      }}
-                    >
-                      {experience.period}
-                    </Typography>
-                  </Box>
                 </Box>
+
                 <Box
                   sx={{
-                    height: "2rem",
-                    width: "5rem",
-
-                    position: "absolute",
-                    top: 0,
-                    right: 0,
+                    width: "90%",
+                    height: " auto",
+                    bgcolor: "#6f6e6e0f",
+                    display: "flex",
+                    gap: 2,
+                    boxSizing: "border-box",
+                    p: 1,
+                    borderRadius: "10px",
+                    mt: 1,
                   }}
                 >
-                  <IconButton
-                    onClick={() => {
-                      handleDelete(index);
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#0b0317b5",
+                      fontSize: "0.88rem",
+                      fontWeight: 600,
                     }}
                   >
-                    <svg
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg"
-                      id="Trash-Bin-Minimalistic--Streamline-Solar-Ar"
-                      height="24"
-                      width="24"
-                    >
-                      <path
-                        d="M9.17065 4c0.41184 -1.16519 1.52305 -2 2.82925 -2 1.3063 0 2.4175 0.83481 2.8293 2"
-                        stroke="#7b1ad5"
-                        stroke-linecap="round"
-                        stroke-width="1.5"
-                      ></path>
-                      <path
-                        d="M20.5 6H3.49988"
-                        stroke="#7b1ad5"
-                        stroke-linecap="round"
-                        stroke-width="1.5"
-                      ></path>
-                      <path
-                        d="m18.8333 8.5 -0.4599 6.8991c-0.177 2.6549 -0.2655 3.9824 -1.1305 4.7916C16.3778 21 15.0474 21 12.3866 21h-0.7733c-2.66082 0 -3.99123 0 -4.85623 -0.8093 -0.86501 -0.8092 -0.95351 -2.1367 -1.1305 -4.7916L5.16663 8.5"
-                        stroke="#7b1ad5"
-                        stroke-linecap="round"
-                        stroke-width="1.5"
-                      ></path>
-                      <path
-                        d="m9.5 11 0.5 5"
-                        stroke="#7b1ad5"
-                        stroke-linecap="round"
-                        stroke-width="1.5"
-                      ></path>
-                      <path
-                        d="m14.5 11 -0.5 5"
-                        stroke="#7b1ad5"
-                        stroke-linecap="round"
-                        stroke-width="1.5"
-                      ></path>
-                    </svg>
-                  </IconButton>
+                    I recruit junior and mid-level developers for remote and
+                    full-time positions.
+                  </Typography>
                 </Box>
               </Box>
+
+              <IconButton
+                onClick={() => {
+                  handleDelete(index);
+                }}
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  borderRadius: "8px",
+                }}
+              >
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Trash-Bin-Minimalistic--Streamline-Solar-Ar"
+                  height="24"
+                  width="24"
+                >
+                  <path
+                    d="M9.17065 4c0.41184 -1.16519 1.52305 -2 2.82925 -2 1.3063 0 2.4175 0.83481 2.8293 2"
+                    stroke="#7b1ad5"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="M20.5 6H3.49988"
+                    stroke="#7b1ad5"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="m18.8333 8.5 -0.4599 6.8991c-0.177 2.6549 -0.2655 3.9824 -1.1305 4.7916C16.3778 21 15.0474 21 12.3866 21h-0.7733c-2.66082 0 -3.99123 0 -4.85623 -0.8093 -0.86501 -0.8092 -0.95351 -2.1367 -1.1305 -4.7916L5.16663 8.5"
+                    stroke="#7b1ad5"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="m9.5 11 0.5 5"
+                    stroke="#7b1ad5"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="m14.5 11 -0.5 5"
+                    stroke="#7b1ad5"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
+              </IconButton>
             </Box>
+          </Box>
           ))}
           <Box
             // key={index}
