@@ -273,7 +273,7 @@ export default function ExperienceP() {
                 fullWidth
                 slotProps={{
                   htmlInput: {
-                    maxLength: 100,
+                    maxLength: 30,
                   },
                 }}
                 value={title}
@@ -321,6 +321,11 @@ export default function ExperienceP() {
               <TextField
                 fullWidth
                 value={company_Name}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 30,
+                  },
+                }}
                 onChange={(e) => {
                   setCompany_Name(e.target.value);
                 }}
@@ -431,6 +436,11 @@ export default function ExperienceP() {
               <TextField
                 fullWidth
                 value={location}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 40,
+                  },
+                }}
                 onChange={(e) => {
                   setLocation(e.target.value);
                 }}
@@ -569,6 +579,11 @@ export default function ExperienceP() {
                 value={description}
                 multiline
                 rows={3}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 500,
+                  },
+                }}
                 onChange={(e) => {
                   setDescription(e.target.value);
                 }}
