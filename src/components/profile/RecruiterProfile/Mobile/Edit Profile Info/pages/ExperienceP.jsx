@@ -957,7 +957,7 @@ export default function ExperienceP() {
                   {/* {experience.title} */} Agadir - Morroco
                 </Typography>
 
-                <Box sx={{ display: "flex", gap: 1, flexDirection: "column" }}>
+                <Box sx={{ display: "flex", gap: 0.2, flexDirection: "column" }}>
                   <Typography
                     sx={{
                       fontFamily: "monospace",
@@ -972,10 +972,10 @@ export default function ExperienceP() {
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 16 16"
-                    fill="#000000"
+                    fill="#b935ed"
                     id="Line-Vertical--Streamline-Phosphor"
-                    height="16"
-                    width="16"
+                    height="26"
+                    width="26"
                   >
                     <desc>
                       Line Vertical Streamline Icon: https://streamlinehq.com
