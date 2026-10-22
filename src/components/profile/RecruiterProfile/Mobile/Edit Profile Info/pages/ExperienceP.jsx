@@ -839,8 +839,8 @@ export default function ExperienceP() {
                       fontWeight: 600,
                     }}
                   >
-                    I recruit junior and mid-level developers for remote and
-                    full-time positions.
+                                        {experience.description}
+
                   </Typography>
                 </Box>
               </Box>
