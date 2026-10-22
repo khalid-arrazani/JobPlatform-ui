@@ -846,10 +846,9 @@ export default function ExperienceP() {
                 height: "auto",
                 width: "100%",
                 display: "flex",
-                gap: 1,
+                gap: 1.5,
                 position: "relative",
-                  boxSizing:"border-box"
-
+                boxSizing: "border-box",
               }}
             >
               <Box
@@ -861,7 +860,7 @@ export default function ExperienceP() {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: "10px",
-                  boxSizing:"border-box"
+                  boxSizing: "border-box",
                 }}
               >
                 <svg
@@ -911,7 +910,7 @@ export default function ExperienceP() {
                   display: "flex",
                   justifyContent: "center",
                   flexDirection: "column",
-                  boxSizing:"border-box"
+                  boxSizing: "border-box",
                 }}
               >
                 <Typography
@@ -928,9 +927,9 @@ export default function ExperienceP() {
                 <Typography
                   sx={{
                     fontFamily: "monospace",
-                    fontSize: "0.9rem",
+                    fontSize: "0.98rem",
                     fontWeight: 600,
-                    color: "#06041088",
+                    color: "#15065fa6",
                     mb: 0.5,
                   }}
                 >
@@ -1012,26 +1011,20 @@ export default function ExperienceP() {
                     boxSizing: "border-box",
                     p: 1,
                     borderRadius: "10px",
-                    mt:1,
-                  
-
+                    mt: 1,
                   }}
                 >
-  
-                      <Typography
-                        sx={{
-                          fontFamily: "monospace",
-                          color: "#0b0317b5",
-                          fontSize: "0.88rem",
-                          fontWeight: 600,
-      
-
-                        }}
-                      >
-                        I recruit junior and mid-level developers for remote and
-                        full-time positions.
-                      </Typography>
-                  
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#0b0317b5",
+                      fontSize: "0.88rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    I recruit junior and mid-level developers for remote and
+                    full-time positions.
+                  </Typography>
                 </Box>
               </Box>
 
