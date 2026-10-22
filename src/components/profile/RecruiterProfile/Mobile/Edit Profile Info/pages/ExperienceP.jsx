@@ -966,7 +966,7 @@ export default function ExperienceP() {
                       color: "#120843c6",
                     }}
                   >
-                    {/* {experience.period} */}2022
+                    {/* {experience.period} */}2022/7
                   </Typography>
 
                   <svg
@@ -994,9 +994,11 @@ export default function ExperienceP() {
                       color: "#120843c6",
                     }}
                   >
-                    {/* {experience.period} */}2025
+                    {/* {experience.period} */}2025/4
                   </Typography>
                 </Box>
+
+                
               </Box>
 
               <IconButton
