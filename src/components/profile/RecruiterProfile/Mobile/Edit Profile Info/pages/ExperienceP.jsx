@@ -99,7 +99,7 @@ export default function ExperienceP() {
     });
     try {
       const data = await updateProfileR({
-        experience: experiences,
+         experiences
       });
 
       dispatch({
