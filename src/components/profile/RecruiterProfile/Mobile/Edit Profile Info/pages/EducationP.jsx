@@ -283,7 +283,7 @@ export default function EducationP() {
                 onChange={(e) => {
                   setDegree(e.target.value);
                 }}
-                placeholder="jobTitle"
+                placeholder="degree"
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
