@@ -15,7 +15,10 @@ export default function EducationP() {
 
   const [degree, setDegree] = useState("");
   const [school, setSchool] = useState("");
-  const [period, setPeriod] = useState("");
+  const [location, setLocation] = useState("");
+  const [start_Date, setStart_Date] = useState("");
+  const [end_Date, setEnd_Date] = useState("");
+  const [description, setDescription] = useState("");
 
   const [educations, setEducations] = useState([]);
   const [matcheducations, setMatchEducations] = useState([]);
@@ -45,13 +48,12 @@ export default function EducationP() {
 
   const matching =
     educations.length === matcheducations.length &&
-    educations.every((item, index) => 
-      item.degree === matcheducations[index].degree &&
-      item.school === matcheducations[index].school &&
-      item.period === matcheducations[index].period 
-  
-  
-  );
+    educations.every(
+      (item, index) =>
+        item.degree === matcheducations[index].degree &&
+        item.school === matcheducations[index].school &&
+        item.period === matcheducations[index].period,
+    );
 
   const handleDelete = (index) => {
     setEducations((prev) => prev.filter((_, i) => i !== index));
@@ -569,7 +571,8 @@ export default function EducationP() {
             fontFamily: "monospace",
             textTransform: "none",
             fontSize: "1.2rem",
-            fontWeight: 600,height: "3rem",
+            fontWeight: 600,
+            height: "3rem",
           }}
         >
           {isLoadingUptadeProfile ? (

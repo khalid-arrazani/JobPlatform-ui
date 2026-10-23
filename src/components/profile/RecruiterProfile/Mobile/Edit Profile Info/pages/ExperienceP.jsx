@@ -554,6 +554,7 @@ export default function ExperienceP() {
               />
             </Box>
 
+          
             {/* description */}
             <Box
               sx={{
@@ -818,7 +819,7 @@ export default function ExperienceP() {
                       {experience.end_Date}
                     </Typography>
                   </Box>
-
+                  {experience.description   &&  
                   <Box
                     sx={{
                       width: "90%",
@@ -842,7 +843,7 @@ export default function ExperienceP() {
                     >
                       {experience.description}
                     </Typography>
-                  </Box>
+                  </Box>}
                 </Box>
 
                 <IconButton
