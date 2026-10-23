@@ -190,11 +190,11 @@ export default function Experience({ state, setSection, setOpenModal }) {
                     stroke-width="1"
                   ></path>
                   <path
-                    stroke="#191919"
+                    stroke="#510f83"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                     d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
-                    stroke-width="0.5"
+                    stroke-width="0.8"
                   ></path>
                   <path
                     stroke="#9842f5"
