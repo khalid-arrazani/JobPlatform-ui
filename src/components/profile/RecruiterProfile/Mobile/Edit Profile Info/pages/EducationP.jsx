@@ -332,7 +332,7 @@ export default function EducationP() {
                 onChange={(e) => {
                   setSchool(e.target.value);
                 }}
-                placeholder="Company name"
+                placeholder="school"
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
@@ -381,7 +381,7 @@ export default function EducationP() {
                 onChange={(e) => {
                   setField_Of_Study(e.target.value);
                 }}
-                placeholder="EField Of Study"
+                placeholder="Enter your Field Of Study"
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
