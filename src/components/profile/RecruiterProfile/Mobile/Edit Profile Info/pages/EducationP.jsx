@@ -15,10 +15,14 @@ export default function EducationP() {
 
   const [degree, setDegree] = useState("");
   const [school, setSchool] = useState("");
+  const [field_Of_Study, setField_Of_Study] = useState("");
+
   const [location, setLocation] = useState("");
   const [start_Date, setStart_Date] = useState("");
   const [end_Date, setEnd_Date] = useState("");
   const [description, setDescription] = useState("");
+
+  
 
   const [educations, setEducations] = useState([]);
   const [matcheducations, setMatchEducations] = useState([]);
@@ -345,7 +349,8 @@ export default function EducationP() {
                 }}
               />
             </Box>
-            {/* company Name */}
+
+            {/* field_Of_Study */}
             <Box
               sx={{
                 width: "100%",
@@ -363,18 +368,18 @@ export default function EducationP() {
                   ml: 0.5,
                 }}
               >
-                Company Name
+                field Of Study
               </Typography>
               <TextField
                 fullWidth
-                value={degree}
+                value={field_Of_Study}
                 slotProps={{
                   htmlInput: {
                     maxLength: 30,
                   },
                 }}
                 onChange={(e) => {
-                  setDegree(e.target.value);
+                  setField_Of_Study(e.target.value);
                 }}
                 placeholder="Company name"
                 sx={{
@@ -392,9 +397,7 @@ export default function EducationP() {
                   },
                 }}
               />
-            </Box>
-
-            
+            </Box> 
 
             {/* location */}
             <Box
@@ -444,6 +447,8 @@ export default function EducationP() {
                 }}
               />
             </Box>
+
+
 
             {/* startDate */}
             <Box
