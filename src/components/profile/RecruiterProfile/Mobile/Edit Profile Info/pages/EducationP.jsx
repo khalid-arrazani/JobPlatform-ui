@@ -1,6 +1,13 @@
-import { Box, Typography, Button, TextField, IconButton, Autocomplete } from "@mui/material";
+import {
+  Box,
+  Typography,
+  Button,
+  TextField,
+  IconButton,
+  Autocomplete,
+} from "@mui/material";
 import { useEffect, useState } from "react";
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
@@ -22,8 +29,6 @@ export default function EducationP() {
   const [end_Date, setEnd_Date] = useState("");
   const [description, setDescription] = useState("");
 
-  
-
   const [educations, setEducations] = useState([]);
   const [matcheducations, setMatchEducations] = useState([]);
 
@@ -41,7 +46,11 @@ export default function EducationP() {
     const newEducation = {
       degree,
       school,
+      field_Of_Study,
+      location,
       start_Date,
+      end_Date,
+      description,
     };
 
     setEducations((prev) => [...prev, newEducation]);
@@ -69,7 +78,7 @@ export default function EducationP() {
       payload: true,
     });
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         education: educations,
       });
       dispatch({
@@ -250,8 +259,6 @@ export default function EducationP() {
               gap: 2,
             }}
           >
-
-
             {/* degree */}
             <Box
               sx={{
@@ -276,7 +283,7 @@ export default function EducationP() {
                 fullWidth
                 slotProps={{
                   htmlInput: {
-                    maxLength: 30,
+                    maxLength: 60,
                   },
                 }}
                 value={degree}
@@ -326,7 +333,7 @@ export default function EducationP() {
                 value={school}
                 slotProps={{
                   htmlInput: {
-                    maxLength: 30,
+                    maxLength: 40,
                   },
                 }}
                 onChange={(e) => {
@@ -375,7 +382,7 @@ export default function EducationP() {
                 value={field_Of_Study}
                 slotProps={{
                   htmlInput: {
-                    maxLength: 30,
+                    maxLength: 50,
                   },
                 }}
                 onChange={(e) => {
@@ -397,7 +404,7 @@ export default function EducationP() {
                   },
                 }}
               />
-            </Box> 
+            </Box>
 
             {/* location */}
             <Box
@@ -447,8 +454,6 @@ export default function EducationP() {
                 }}
               />
             </Box>
-
-
 
             {/* startDate */}
             <Box
