@@ -165,7 +165,7 @@ export default function Experience({ state, setSection, setOpenModal }) {
                 />
 
              
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Pin-2--Streamline-Ultimate" height="24" width="24"    style={{ transform: "rotate(90deg)" }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Pin-2--Streamline-Ultimate" height="24" width="24"    style={{ transform: "rotate(135deg)" }}>
   <desc>
     Pin 2 Streamline Icon: https://streamlinehq.com
   </desc>
