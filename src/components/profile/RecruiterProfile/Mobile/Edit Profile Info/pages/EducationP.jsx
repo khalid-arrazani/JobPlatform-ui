@@ -7,7 +7,10 @@ import {
   Autocomplete,
 } from "@mui/material";
 import { useEffect, useState } from "react";
-import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
+import {
+  updateProfileJS,
+  updateProfileR,
+} from "../../../../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
@@ -56,7 +59,11 @@ export default function EducationP() {
     setEducations((prev) => [...prev, newEducation]);
     setDegree("");
     setSchool("");
+    setLocation("");
+    setField_Of_Study("");
     setStart_Date("");
+    setEnd_Date("");
+    setDescription("");
   };
 
   const matching =
@@ -565,7 +572,7 @@ export default function EducationP() {
                   ml: 0.5,
                 }}
               >
-                About the Experience
+                About the Education
               </Typography>
               <TextField
                 fullWidth
