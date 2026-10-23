@@ -213,7 +213,6 @@ export default function Experience({ state, setSection, setOpenModal }) {
                 />
 
 
-
                  {ex?.end_Date && 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
