@@ -148,12 +148,23 @@ export default function Experience({ state, setSection, setOpenModal }) {
                 >
                   {ex?.company_Name}
                 </Typography>
-                <Box  sx={{display:"flex",justifyContent:"center",gap:1}} >
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="20" width="20">
-  <g id="near-me-fill">
-    <path id="Union" fill="#8b23c85e" d="M20.4424 4.83398 14.7061 21h-1.751l-0.2442 -0.6465 -2.4873 -6.5781 -6.57712 -2.4863L3 11.0449V9.29395l16.166 -5.73633 1.9785 -0.70215z" stroke-width="1"></path>
-  </g>
-</svg>
+                <Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    height="20"
+                    width="20"
+                  >
+                    <g id="near-me-fill">
+                      <path
+                        id="Union"
+                        fill="#8b23c85e"
+                        d="M20.4424 4.83398 14.7061 21h-1.751l-0.2442 -0.6465 -2.4873 -6.5781 -6.57712 -2.4863L3 11.0449V9.29395l16.166 -5.73633 1.9785 -0.70215z"
+                        stroke-width="1"
+                      ></path>
+                    </g>
+                  </svg>
 
                   <Typography
                     color="text.secondary"
@@ -253,6 +264,8 @@ export default function Experience({ state, setSection, setOpenModal }) {
                     bgcolor: "#dddddd5a",
                   }}
                 />
+
+                
               </Box>
             </>
           ))}
