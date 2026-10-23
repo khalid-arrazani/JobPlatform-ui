@@ -46,14 +46,14 @@ export default function ExperienceP() {
 
   const [matchexperiences, setMatchExperiences] = useState([]);
 
-  // useEffect(() => {
-  //   setExperiences(
-  //     state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
-  //   );
-  //   setMatchExperiences(
-  //     state.user?.profile?.experience?.map(({ _id, ...rest }) => rest) || [],
-  //   );
-  // }, [state.user?.profile]);
+  useEffect(() => {
+    setExperiences(
+      state.user?.profile?.experiences?.map(({ _id, ...rest }) => rest) || [],
+    );
+    setMatchExperiences(
+      state.user?.profile?.experiences?.map(({ _id, ...rest }) => rest) || [],
+    );
+  }, [state.user?.profile]);
 
   const matching =
     experiences.length === matchexperiences.length &&
