@@ -265,7 +265,96 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   }}
                 />
 
+                <Box
+            sx={{
+              width: "100%",
+              height: " auto",
+              bgcolor: "#6f6e6e1a",
+              display: "flex",
+              gap: 2,
+              boxSizing:"border-box",p:1,
+              borderRadius:"10px",mt:1.5
+            }}
+          >
+            <Box
+              sx={{
+                height: "2.5rem",
+                width: "2.5rem",
+
+                borderRadius: "8px",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+
+              }}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="#615b63b9"
+                class="bi bi-quote"
+                viewBox="0 0 16 16"
+                id="Quote--Streamline-Bootstrap"
+                height="26"
+                width="26"
+              >
+                <desc>Quote Streamline Icon: https://streamlinehq.com</desc>
+                <path
+                  d="M12 12a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1h-1.388q0 -0.527 0.062 -1.054 0.093 -0.558 0.31 -0.992t0.559 -0.683q0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1H4.612q0 -0.527 0.062 -1.054 0.094 -0.558 0.31 -0.992 0.217 -0.434 0.559 -0.683 0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"
+                  stroke-width="1"
+                ></path>
+              </svg>
+            </Box>
+
+            <Box
+              sx={{
+                height: "auto",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 0.8,
                 
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0f0d12dd",
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                }}
+              >
+                About my hiring focus
+              </Typography>
+
+
+              <Box
+                sx={{
+                  fontFamily: "system-ui",
+             
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  display: "flex ",
+                  gap: 0.5,
+                  flexWrap: "wrap",
+                }}
+              >
+                <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  color: "#0b031792",
+                  fontSize: "0.88rem",
+                  fontWeight: 600,
+                }}
+              >
+                I recruit junior and mid-level developers for remote and full-time positions.
+              </Typography>
+                
+              </Box>
+
+
+
+            </Box>
+          </Box>
               </Box>
             </>
           ))}
