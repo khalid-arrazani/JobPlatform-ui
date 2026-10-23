@@ -738,7 +738,7 @@ export default function EducationP() {
                       mb: 0.5,
                     }}
                   >
-                    {education.company_Name}
+                    {education.degree}
                   </Typography>
                   <Typography
                     sx={{
@@ -749,7 +749,7 @@ export default function EducationP() {
                       mb: 0.5,
                     }}
                   >
-                    {education.title}
+                    {education.school}
                   </Typography>
 
                   <Typography
@@ -761,7 +761,7 @@ export default function EducationP() {
                       mb: 0.5,
                     }}
                   >
-                    {education.employment_Type}
+                    {education.field_Of_Study}
                   </Typography>
 
                   <Typography
