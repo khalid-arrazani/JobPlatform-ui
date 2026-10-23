@@ -57,15 +57,40 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   justifyContent: "center",
                 }}
               >
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" id="Case-Round--Streamline-Solar-Ar" height="24" width="24">
-  <desc>
-    Case Round Streamline Icon: https://streamlinehq.com
-  </desc>
-  <path d="M3 12c0 3.7712 0 7.6569 1.31802 8.8284C5.63604 22 7.75736 22 12 22c4.2426 0 6.364 0 7.682 -1.1716C21 19.6569 21 15.7712 21 12" stroke="#00000099" stroke-width="1.5"></path>
-  <path d="m14.6603 14.2019 6.1976 -1.8593c0.4109 -0.1232 0.6164 -0.1849 0.7685 -0.3071 0.1328 -0.1067 0.2362 -0.2457 0.3002 -0.4036 0.0734 -0.1808 0.0734 -0.3953 0.0734 -0.8242 0 -1.68743 0 -2.53112 -0.3297 -3.17502 -0.2869 -0.56026 -0.7427 -1.01609 -1.303 -1.30297C19.7234 6 18.8797 6 17.1923 6H6.80765c-1.68738 0 -2.53107 0 -3.17497 0.32971 -0.56026 0.28688 -1.01609 0.74271 -1.30297 1.30297C2 8.27658 2 9.12027 2 10.8077c0 0.4289 0 0.6434 0.07336 0.8242 0.06407 0.1579 0.16743 0.2969 0.30027 0.4036 0.15211 0.1222 0.35755 0.1839 0.76843 0.3071l6.19762 1.8593" stroke="#00000099" stroke-width="1.5"></path>
-  <path d="M14 12.5h-4c-0.27614 0 -0.5 0.2239 -0.5 0.5v2.1615c0 0.2044 0.12448 0.3883 0.3143 0.4642l0.7001 0.2801c0.9537 0.3814 2.0175 0.3814 2.9712 0l0.7001 -0.2801c0.1898 -0.0759 0.3143 -0.2598 0.3143 -0.4642V13c0 -0.2761 -0.2239 -0.5 -0.5 -0.5Z" stroke="#00000099" stroke-linecap="round" stroke-width="1.5"></path>
-  <path d="M9.1709 4c0.41183 -1.16519 1.5231 -2 2.8293 -2s2.4175 0.83481 2.8293 2" stroke="#000000" stroke-linecap="round" stroke-width="1.5"></path>
-</svg>
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                  id="Case-Round--Streamline-Solar-Ar"
+                  height="24"
+                  width="24"
+                >
+                  <desc>
+                    Case Round Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path
+                    d="M3 12c0 3.7712 0 7.6569 1.31802 8.8284C5.63604 22 7.75736 22 12 22c4.2426 0 6.364 0 7.682 -1.1716C21 19.6569 21 15.7712 21 12"
+                    stroke="#00000099"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="m14.6603 14.2019 6.1976 -1.8593c0.4109 -0.1232 0.6164 -0.1849 0.7685 -0.3071 0.1328 -0.1067 0.2362 -0.2457 0.3002 -0.4036 0.0734 -0.1808 0.0734 -0.3953 0.0734 -0.8242 0 -1.68743 0 -2.53112 -0.3297 -3.17502 -0.2869 -0.56026 -0.7427 -1.01609 -1.303 -1.30297C19.7234 6 18.8797 6 17.1923 6H6.80765c-1.68738 0 -2.53107 0 -3.17497 0.32971 -0.56026 0.28688 -1.01609 0.74271 -1.30297 1.30297C2 8.27658 2 9.12027 2 10.8077c0 0.4289 0 0.6434 0.07336 0.8242 0.06407 0.1579 0.16743 0.2969 0.30027 0.4036 0.15211 0.1222 0.35755 0.1839 0.76843 0.3071l6.19762 1.8593"
+                    stroke="#00000099"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="M14 12.5h-4c-0.27614 0 -0.5 0.2239 -0.5 0.5v2.1615c0 0.2044 0.12448 0.3883 0.3143 0.4642l0.7001 0.2801c0.9537 0.3814 2.0175 0.3814 2.9712 0l0.7001 -0.2801c0.1898 -0.0759 0.3143 -0.2598 0.3143 -0.4642V13c0 -0.2761 -0.2239 -0.5 -0.5 -0.5Z"
+                    stroke="#00000099"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    d="M9.1709 4c0.41183 -1.16519 1.5231 -2 2.8293 -2s2.4175 0.83481 2.8293 2"
+                    stroke="#000000"
+                    stroke-linecap="round"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
               </Box>
 
               <Typography
@@ -142,53 +167,57 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   {ex?.company_Name}
                 </Typography>
 
-                {ex?.location && 
-                <Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    height="20"
-                    width="20"
+                {ex?.location && (
+                  <Box
+                    sx={{ display: "flex", justifyContent: "center", gap: 1 }}
                   >
-                    <g id="near-me-fill">
-                      <path
-                        id="Union"
-                        fill="#8b23c85e"
-                        d="M20.4424 4.83398 14.7061 21h-1.751l-0.2442 -0.6465 -2.4873 -6.5781 -6.57712 -2.4863L3 11.0449V9.29395l16.166 -5.73633 1.9785 -0.70215z"
-                        stroke-width="1"
-                      ></path>
-                    </g>
-                  </svg>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="20"
+                      width="20"
+                    >
+                      <g id="near-me-fill">
+                        <path
+                          id="Union"
+                          fill="#8b23c85e"
+                          d="M20.4424 4.83398 14.7061 21h-1.751l-0.2442 -0.6465 -2.4873 -6.5781 -6.57712 -2.4863L3 11.0449V9.29395l16.166 -5.73633 1.9785 -0.70215z"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
 
-                  <Typography
-                    color="text.secondary"
+                    <Typography
+                      color="text.secondary"
+                      sx={{
+                        maxWidth: 600,
+                        fontFamily: "monospace",
+                        color: "#4a0d46b6",
+                        fontSize: "1.1rem",
+                        mb: 0.5,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {ex?.location}
+                    </Typography>
+                  </Box>
+                )}
+
+                {ex?.employment_Type && (
+                  <Chip
+                    label={ex?.employment_Type}
                     sx={{
-                      maxWidth: 600,
+                      fontSize: "1rem",
                       fontFamily: "monospace",
-                      color: "#4a0d46b6",
-                      fontSize: "1.1rem",
-                      mb: 0.5,
-                      fontWeight: 600,
+                      borderRadius: "8px",
+                      fontWeight: 500,
+                      color: "#51027e",
+                      bgcolor: "#d8a1f77b",
+                      mb: 1,
                     }}
-                  >
-                    {ex?.location}
-                  </Typography>
-                </Box>}
-
-                 {ex?.employment_Type && 
-                <Chip
-                  label={ex?.employment_Type}
-                  sx={{
-                    fontSize: "1rem",
-                    fontFamily: "monospace",
-                    borderRadius: "8px",
-                    fontWeight: 500,
-                    color: "#51027e",
-                    bgcolor: "#d8a1f77b",
-                    mb: 1,
-                  }}
-                />}
+                  />
+                )}
 
                 <Chip
                   label={ex?.start_Date}
@@ -205,157 +234,155 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   }}
                 />
 
+                {ex?.end_Date && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    id="Pin-2--Streamline-Ultimate"
+                    height="30"
+                    width="30"
+                    style={{
+                      transform: "rotate(135deg)",
+                      marginLeft: "1rem",
+                      marginTop: "5px",
+                      marginBottom: "5px",
+                    }}
+                  >
+                    <desc>Pin 2 Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                      fill="#78eb7b"
+                      d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      fill="#c9f7ca"
+                      d="M14.2915 5.58335c-0.0006 0.49922 0.0897 0.99437 0.2668 1.46117 0.6124 0.46173 1.3415 0.74356 2.1053 0.81384 0.7637 0.07028 1.5319 -0.07377 2.2184 -0.41598 0.6864 -0.34221 1.2638 -0.86903 1.6674 -1.52128 0.4035 -0.65224 0.6172 -1.40409 0.6171 -2.17108 0.0006 -0.49922 -0.0898 -0.99437 -0.2667 -1.46117 -0.6125 -0.46174 -1.3415 -0.74357 -2.1054 -0.81385 -0.7637 -0.07028 -1.5319 0.07377 -2.2184 0.41598 -0.6864 0.34222 -1.2638 0.86903 -1.6673 1.52128 -0.4036 0.65225 -0.6173 1.40409 -0.6172 2.17109Z"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      stroke="#510f83"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
+                      stroke-width="0.8"
+                    ></path>
+                    <path
+                      stroke="#9842f5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.5092 8.51855 1.4585 22.5408"
+                      stroke-width="1.5"
+                    ></path>
+                  </svg>
+                )}
 
-                 {ex?.end_Date && 
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  id="Pin-2--Streamline-Ultimate"
-                  height="30"
-                  width="30"
-                  style={{
-                    transform: "rotate(135deg)",
-                    marginLeft: "1rem",
-                    marginTop: "5px",
-                    marginBottom: "5px",
-                  }}
-                >
-                  <desc>Pin 2 Streamline Icon: https://streamlinehq.com</desc>
-                  <path
-                    fill="#78eb7b"
-                    d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    fill="#c9f7ca"
-                    d="M14.2915 5.58335c-0.0006 0.49922 0.0897 0.99437 0.2668 1.46117 0.6124 0.46173 1.3415 0.74356 2.1053 0.81384 0.7637 0.07028 1.5319 -0.07377 2.2184 -0.41598 0.6864 -0.34221 1.2638 -0.86903 1.6674 -1.52128 0.4035 -0.65224 0.6172 -1.40409 0.6171 -2.17108 0.0006 -0.49922 -0.0898 -0.99437 -0.2667 -1.46117 -0.6125 -0.46174 -1.3415 -0.74357 -2.1054 -0.81385 -0.7637 -0.07028 -1.5319 0.07377 -2.2184 0.41598 -0.6864 0.34222 -1.2638 0.86903 -1.6673 1.52128 -0.4036 0.65225 -0.6173 1.40409 -0.6172 2.17109Z"
-                    stroke-width="1"
-                  ></path>
-                  <path
-                    stroke="#510f83"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
-                    stroke-width="0.8"
-                  ></path>
-                  <path
-                    stroke="#9842f5"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M15.5092 8.51855 1.4585 22.5408"
-                    stroke-width="1.5"
-                  ></path>
-                </svg>}
-
-
-                 {ex?.end_Date && 
-                <Chip
-                  label={ex?.end_Date}
-                  sx={{
-                    borderRadius: "8px",
-                    display: "flex",
-                    alignItems: "center",
-                    textAlign: "center",
-                    fontFamily: "monospace",
-                    fontSize: "1rem",
-                    fontWeight: 600,
-                    color: "#020313ae",
-                    bgcolor: "#dddddd5a",
-                  }}
-                />}
-
-
-
-                {ex?.description &&  
-                <Box
-                  sx={{
-                    width: "100%",
-                    height: " auto",
-                    bgcolor: "#933ab915",
-                    display: "flex",
-                    gap: 2,
-                    boxSizing: "border-box",
-                    p: 1.5,
-                    borderRadius: "10px",
-                    mt: 1.5,
-                  }}
-                >
-                  <Box
+                {ex?.end_Date && (
+                  <Chip
+                    label={ex?.end_Date}
                     sx={{
-                      height: "2.5rem",
-                      width: "2.5rem",
-
                       borderRadius: "8px",
                       display: "flex",
                       alignItems: "center",
-                      justifyContent: "center",
+                      textAlign: "center",
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      fontWeight: 600,
+                      color: "#020313ae",
+                      bgcolor: "#dddddd5a",
                     }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="#693e78b9"
-                      class="bi bi-quote"
-                      viewBox="0 0 16 16"
-                      id="Quote--Streamline-Bootstrap"
-                      height="26"
-                      width="26"
-                    >
-                      <desc>
-                        Quote Streamline Icon: https://streamlinehq.com
-                      </desc>
-                      <path
-                        d="M12 12a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1h-1.388q0 -0.527 0.062 -1.054 0.093 -0.558 0.31 -0.992t0.559 -0.683q0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1H4.612q0 -0.527 0.062 -1.054 0.094 -0.558 0.31 -0.992 0.217 -0.434 0.559 -0.683 0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"
-                        stroke-width="1"
-                      ></path>
-                    </svg>
-                  </Box>
+                  />
+                )}
 
+                {ex?.description && (
                   <Box
                     sx={{
-                      height: "auto",
                       width: "100%",
+                      height: " auto",
+                      bgcolor: "#933ab915",
                       display: "flex",
-                      flexDirection: "column",
-                      gap: 0.8,
+                      gap: 2,
+                      boxSizing: "border-box",
+                      p: 1.5,
+                      borderRadius: "10px",
+                      mt: 1.5,
                     }}
                   >
-                    <Typography
+                    <Box
                       sx={{
-                        fontFamily: "monospace",
-                        color: "#0f0d12dd",
-                        fontSize: "1rem",
-                        fontWeight: 600,
+                        height: "2.5rem",
+                        width: "2.5rem",
+
+                        borderRadius: "8px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
                       }}
                     >
-                      About the experience
-                    </Typography>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#693e78b9"
+                        class="bi bi-quote"
+                        viewBox="0 0 16 16"
+                        id="Quote--Streamline-Bootstrap"
+                        height="26"
+                        width="26"
+                      >
+                        <desc>
+                          Quote Streamline Icon: https://streamlinehq.com
+                        </desc>
+                        <path
+                          d="M12 12a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1h-1.388q0 -0.527 0.062 -1.054 0.093 -0.558 0.31 -0.992t0.559 -0.683q0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1H4.612q0 -0.527 0.062 -1.054 0.094 -0.558 0.31 -0.992 0.217 -0.434 0.559 -0.683 0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"
+                          stroke-width="1"
+                        ></path>
+                      </svg>
+                    </Box>
 
                     <Box
                       sx={{
-                        fontFamily: "system-ui",
-
-                        fontSize: "1rem",
-                        fontWeight: 600,
-                        display: "flex ",
-                        gap: 0.5,
-                        flexWrap: "wrap",
+                        height: "auto",
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 0.8,
                       }}
                     >
                       <Typography
                         sx={{
                           fontFamily: "monospace",
-                          color: "#0b031792",
-                          fontSize: "0.88rem",
+                          color: "#0f0d12dd",
+                          fontSize: "1rem",
                           fontWeight: 600,
                         }}
                       >
-                       {ex?.description}
+                        About the experience
                       </Typography>
+
+                      <Box
+                        sx={{
+                          fontFamily: "system-ui",
+
+                          fontSize: "1rem",
+                          fontWeight: 600,
+                          display: "flex ",
+                          gap: 0.5,
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: "monospace",
+                            color: "#0b031792",
+                            fontSize: "0.88rem",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {ex?.description}
+                        </Typography>
+                      </Box>
                     </Box>
                   </Box>
-                </Box>}
-
+                )}
               </Box>
             </>
           ))}

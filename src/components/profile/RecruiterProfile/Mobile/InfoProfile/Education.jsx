@@ -57,76 +57,17 @@ export default function Education({ state , setSection ,setOpenModal}) {
                   justifyContent: "center",
                 }}
               >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 48 48"
-                  id="Global-Learning--Streamline-Plump"
-                  height="24"
-                  width="24"
-                >
-                  <desc>
-                    Global Learning Streamline Icon: https://streamlinehq.com
-                  </desc>
-                  <g id="global-learning--global-learning-education">
-                    <path
-                      id="Vector 144"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.42969 28.5H13.7511"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Vector 145"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M3.42969 15.334H40.5725"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Vector 2536"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="m18 32.502 0 12.0625"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Ellipse 19"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M30.5725 22c0 -11.0457 -3.8375 -20 -8.5714 -20s-8.5714 8.9543 -8.5714 20c0 2.2754 0.1628 4.4621 0.4628 6.5001"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Ellipse 18"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M41.7765 25c0.1472 -0.9786 0.2235 -1.9804 0.2235 -3 0 -11.0457 -8.9543 -20 -20 -20S2 10.9543 2 22c0 7.8085 4.47484 14.5718 11 17.8654"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Rectangle 1097"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M19.0055 33.9581c-1.3433 -0.6057 -1.3433 -2.3055 0 -2.9112 1.143 -0.5154 2.6524 -1.1677 4.5949 -1.9569 3.1146 -1.2653 5.3631 -2.0782 6.7454 -2.5505 1.0762 -0.3678 2.2331 -0.3678 3.3092 0 1.3824 0.4723 3.6308 1.2852 6.7454 2.5505 1.9426 0.7892 3.452 1.4415 4.5949 1.9569 1.3433 0.6057 1.3433 2.3055 0 2.9112 -1.1429 0.5155 -2.6523 1.1677 -4.5949 1.9569 -3.1146 1.2653 -5.363 2.0782 -6.7454 2.5506 -1.0761 0.3677 -2.233 0.3677 -3.3092 0 -1.3823 -0.4724 -3.6308 -1.2853 -6.7454 -2.5506 -1.9425 -0.7892 -3.4519 -1.4414 -4.5949 -1.9569Z"
-                      stroke-width="3"
-                    ></path>
-                    <path
-                      id="Subtract"
-                      stroke="#000000c8"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d="M23.5 35.874v3.0866c0 1.5888 0.0648 2.7105 0.1425 3.4845 0.1025 1.0215 0.6811 1.8929 1.6177 2.3133 1.2676 0.569 3.462 1.2439 6.7398 1.2439 3.2778 0 5.4722 -0.6749 6.7398 -1.2439 0.9366 -0.4204 1.5152 -1.2918 1.6177 -2.3133 0.0777 -0.774 0.1425 -1.8957 0.1425 -3.4845l0 -3.0862"
-                      stroke-width="3"
-                    ></path>
-                  </g>
-                </svg>
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 48 48" id="Graduation-Cap--Streamline-Plump" height="30" width="30">
+  <desc>
+    Graduation Cap Streamline Icon: https://streamlinehq.com
+  </desc>
+  <g id="graduation-cap--graduation-cap-education">
+    <path id="Vector 2536" stroke="#000000db" stroke-linecap="round" stroke-linejoin="round" d="m5 18 0 19" stroke-width="1.5"></path>
+    <path id="Rectangle 1097" stroke="#000000db" stroke-linecap="round" stroke-linejoin="round" d="M3.052 16.555c-1.382 -0.662 -1.382 -2.448 0 -3.11 1.812 -0.868 4.519 -2.1 8.348 -3.695 5.32 -2.216 8.954 -3.53 10.905 -4.196a5.23 5.23 0 0 1 3.39 0c1.95 0.666 5.586 1.98 10.905 4.196 3.83 1.595 6.536 2.827 8.349 3.695 1.38 0.662 1.38 2.448 0 3.11 -1.813 0.868 -4.52 2.1 -8.349 3.695 -5.32 2.216 -8.954 3.53 -10.905 4.196a5.23 5.23 0 0 1 -3.39 0c-1.95 -0.666 -5.586 -1.98 -10.905 -4.196 -3.83 -1.596 -6.536 -2.827 -8.348 -3.695Z" stroke-width="2"></path>
+    <path id="Subtract" stroke="#000000db" stroke-linecap="round" stroke-linejoin="round" d="M11.102 20.125A74.846 74.846 0 0 0 11 24.166c0 3.094 0.159 5.037 0.315 6.2 0.137 1.016 0.719 1.88 1.627 2.355C14.698 33.641 18.265 35 24 35c5.735 0 9.302 -1.358 11.058 -2.278 0.908 -0.475 1.49 -1.339 1.627 -2.354 0.156 -1.164 0.315 -3.107 0.315 -6.2a74.83 74.83 0 0 0 -0.102 -4.042" stroke-width="2"></path>
+    <path id="Ellipse 20" stroke="#000000db" stroke-linecap="round" stroke-linejoin="round" d="M8 40a3 3 0 1 1 -6 0 3 3 0 1 1 6 0" stroke-width="1.5"></path>
+  </g>
+</svg>
               </Box>
 
               <Typography
@@ -165,7 +106,7 @@ export default function Education({ state , setSection ,setOpenModal}) {
 
           {state.user?.profile?.education?.map((ex) => (
             <>
-              <Divider />
+               <Divider />
 
               <Box
                 sx={{
@@ -203,8 +144,60 @@ export default function Education({ state , setSection ,setOpenModal}) {
                   {ex?.school}
                 </Typography>
 
+                {ex?.location && (
+                  <Box
+                    sx={{ display: "flex", justifyContent: "center", gap: 1 }}
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      height="20"
+                      width="20"
+                    >
+                      <g id="near-me-fill">
+                        <path
+                          id="Union"
+                          fill="#8b23c85e"
+                          d="M20.4424 4.83398 14.7061 21h-1.751l-0.2442 -0.6465 -2.4873 -6.5781 -6.57712 -2.4863L3 11.0449V9.29395l16.166 -5.73633 1.9785 -0.70215z"
+                          stroke-width="1"
+                        ></path>
+                      </g>
+                    </svg>
+
+                    <Typography
+                      color="text.secondary"
+                      sx={{
+                        maxWidth: 600,
+                        fontFamily: "monospace",
+                        color: "#4a0d46b6",
+                        fontSize: "1.1rem",
+                        mb: 0.5,
+                        fontWeight: 600,
+                      }}
+                    >
+                      {ex?.location}
+                    </Typography>
+                  </Box>
+                )}
+
+                {ex?.field_Of_Study && (
+                  <Chip
+                    label={ex?.field_Of_Study}
+                    sx={{
+                      fontSize: "1rem",
+                      fontFamily: "monospace",
+                      borderRadius: "8px",
+                      fontWeight: 500,
+                      color: "#51027e",
+                      bgcolor: "#d8a1f77b",
+                      mb: 1,
+                    }}
+                  />
+                )}
+
                 <Chip
-                  label={ex?.period}
+                  label={ex?.start_Date}
                   sx={{
                     borderRadius: "8px",
                     display: "flex",
@@ -217,6 +210,156 @@ export default function Education({ state , setSection ,setOpenModal}) {
                     bgcolor: "#dddddd5a",
                   }}
                 />
+
+                {ex?.end_Date && (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    id="Pin-2--Streamline-Ultimate"
+                    height="30"
+                    width="30"
+                    style={{
+                      transform: "rotate(135deg)",
+                      marginLeft: "1rem",
+                      marginTop: "5px",
+                      marginBottom: "5px",
+                    }}
+                  >
+                    <desc>Pin 2 Streamline Icon: https://streamlinehq.com</desc>
+                    <path
+                      fill="#78eb7b"
+                      d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      fill="#c9f7ca"
+                      d="M14.2915 5.58335c-0.0006 0.49922 0.0897 0.99437 0.2668 1.46117 0.6124 0.46173 1.3415 0.74356 2.1053 0.81384 0.7637 0.07028 1.5319 -0.07377 2.2184 -0.41598 0.6864 -0.34221 1.2638 -0.86903 1.6674 -1.52128 0.4035 -0.65224 0.6172 -1.40409 0.6171 -2.17108 0.0006 -0.49922 -0.0898 -0.99437 -0.2667 -1.46117 -0.6125 -0.46174 -1.3415 -0.74357 -2.1054 -0.81385 -0.7637 -0.07028 -1.5319 0.07377 -2.2184 0.41598 -0.6864 0.34222 -1.2638 0.86903 -1.6673 1.52128 -0.4036 0.65225 -0.6173 1.40409 -0.6172 2.17109Z"
+                      stroke-width="1"
+                    ></path>
+                    <path
+                      stroke="#510f83"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M18.4165 9.70746c2.2782 0 4.125 -1.84683 4.125 -4.125 0 -2.27818 -1.8468 -4.125 -4.125 -4.125s-4.125 1.84682 -4.125 4.125c0 2.27817 1.8468 4.125 4.125 4.125Z"
+                      stroke-width="0.8"
+                    ></path>
+                    <path
+                      stroke="#9842f5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M15.5092 8.51855 1.4585 22.5408"
+                      stroke-width="1.5"
+                    ></path>
+                  </svg>
+                )}
+
+                {ex?.end_Date && (
+                  <Chip
+                    label={ex?.end_Date}
+                    sx={{
+                      borderRadius: "8px",
+                      display: "flex",
+                      alignItems: "center",
+                      textAlign: "center",
+                      fontFamily: "monospace",
+                      fontSize: "1rem",
+                      fontWeight: 600,
+                      color: "#020313ae",
+                      bgcolor: "#dddddd5a",
+                    }}
+                  />
+                )}
+
+                {ex?.description && (
+                  <Box
+                    sx={{
+                      width: "100%",
+                      height: " auto",
+                      bgcolor: "#933ab915",
+                      display: "flex",
+                      gap: 2,
+                      boxSizing: "border-box",
+                      p: 1.5,
+                      borderRadius: "10px",
+                      mt: 1.5,
+                    }}
+                  >
+                    <Box
+                      sx={{
+                        height: "2.5rem",
+                        width: "2.5rem",
+
+                        borderRadius: "8px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                      }}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="#693e78b9"
+                        class="bi bi-quote"
+                        viewBox="0 0 16 16"
+                        id="Quote--Streamline-Bootstrap"
+                        height="26"
+                        width="26"
+                      >
+                        <desc>
+                          Quote Streamline Icon: https://streamlinehq.com
+                        </desc>
+                        <path
+                          d="M12 12a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1h-1.388q0 -0.527 0.062 -1.054 0.093 -0.558 0.31 -0.992t0.559 -0.683q0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1 -1V8.558a1 1 0 0 0 -1 -1H4.612q0 -0.527 0.062 -1.054 0.094 -0.558 0.31 -0.992 0.217 -0.434 0.559 -0.683 0.34 -0.279 0.868 -0.279V3q-0.868 0 -1.52 0.372a3.3 3.3 0 0 0 -1.085 0.992 4.9 4.9 0 0 0 -0.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"
+                          stroke-width="1"
+                        ></path>
+                      </svg>
+                    </Box>
+
+                    <Box
+                      sx={{
+                        height: "auto",
+                        width: "100%",
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 0.8,
+                      }}
+                    >
+                      <Typography
+                        sx={{
+                          fontFamily: "monospace",
+                          color: "#0f0d12dd",
+                          fontSize: "1rem",
+                          fontWeight: 600,
+                        }}
+                      >
+                        About the experience
+                      </Typography>
+
+                      <Box
+                        sx={{
+                          fontFamily: "system-ui",
+
+                          fontSize: "1rem",
+                          fontWeight: 600,
+                          display: "flex ",
+                          gap: 0.5,
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <Typography
+                          sx={{
+                            fontFamily: "monospace",
+                            color: "#0b031792",
+                            fontSize: "0.88rem",
+                            fontWeight: 600,
+                          }}
+                        >
+                          {ex?.description}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </Box>
+                )}
               </Box>
             </>
           ))}
