@@ -33,17 +33,17 @@ export default function EducationP() {
   }, [state.user?.profile]);
 
   const handleAddEducation = () => {
-    if (!degree || !school || !period) return;
+    if (!degree || !school || !start_Date) return;
     const newEducation = {
       degree,
       school,
-      period,
+      start_Date,
     };
 
     setEducations((prev) => [...prev, newEducation]);
     setDegree("");
     setSchool("");
-    setPeriod("");
+    setStart_Date("");
   };
 
   const matching =
