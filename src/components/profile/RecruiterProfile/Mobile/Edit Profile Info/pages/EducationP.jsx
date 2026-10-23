@@ -290,28 +290,7 @@ export default function EducationP() {
                 },
               }}
             />
-            <TextField
-              fullWidth
-              value={period}
-              onChange={(e) => {
-                setPeriod(e.target.value);
-              }}
-              placeholder="Period"
-              sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            />
+            
 
             <Button
               onClick={handleAddEducation}
@@ -484,16 +463,7 @@ export default function EducationP() {
                       </svg>
                     </Box>
 
-                    <Typography
-                      sx={{
-                        fontFamily: "monospace",
-                        fontSize: "1.1rem",
-                        fontWeight: 600,
-                        color: "#120843c6",
-                      }}
-                    >
-                      {education.period}
-                    </Typography>
+                  
                   </Box>
                 </Box>
                 <Box
