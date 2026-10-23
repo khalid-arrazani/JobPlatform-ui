@@ -1,4 +1,4 @@
-import { Box, Typography, Button, TextField, IconButton } from "@mui/material";
+import { Box, Typography, Button, TextField, IconButton, Autocomplete } from "@mui/material";
 import { useEffect, useState } from "react";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
@@ -246,51 +246,349 @@ export default function EducationP() {
               gap: 2,
             }}
           >
-            <TextField
-              fullWidth
-              value={degree}
-              onChange={(e) => {
-                setDegree(e.target.value);
-              }}
-              placeholder="Degree"
+
+
+            {/* degree */}
+            <Box
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
                   fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                degree
+              </Typography>
+              <TextField
+                fullWidth
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 30,
                   },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
-              }}
-            />
-            <TextField
-              fullWidth
-              value={school}
-              onChange={(e) => {
-                setSchool(e.target.value);
-              }}
-              placeholder="School"
+                }}
+                value={degree}
+                onChange={(e) => {
+                  setDegree(e.target.value);
+                }}
+                placeholder="jobTitle"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+
+            {/* school */}
+            <Box
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
               }}
-            />
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                school
+              </Typography>
+              <TextField
+                fullWidth
+                value={school}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 30,
+                  },
+                }}
+                onChange={(e) => {
+                  setSchool(e.target.value);
+                }}
+                placeholder="Company name"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+            {/* company Name */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Company Name
+              </Typography>
+              <TextField
+                fullWidth
+                value={degree}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 30,
+                  },
+                }}
+                onChange={(e) => {
+                  setDegree(e.target.value);
+                }}
+                placeholder="Company name"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+
             
+
+            {/* location */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Location
+              </Typography>
+              <TextField
+                fullWidth
+                value={location}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 40,
+                  },
+                }}
+                onChange={(e) => {
+                  setLocation(e.target.value);
+                }}
+                placeholder="location"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+
+            {/* startDate */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                Start Date
+              </Typography>
+
+              <TextField
+                fullWidth
+                value={start_Date}
+                type="month"
+                onChange={(e) => {
+                  setStart_Date(e.target.value);
+                }}
+                placeholder="startDate"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+
+            {/* endDate */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                End Date
+              </Typography>
+
+              <TextField
+                fullWidth
+                value={end_Date}
+                type="month"
+                onChange={(e) => {
+                  setEnd_Date(e.target.value);
+                }}
+                placeholder="endDate"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
+
+            {/* description */}
+            <Box
+              sx={{
+                width: "100%",
+                display: "flex",
+                flexDirection: "column",
+                gap: 1,
+              }}
+            >
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  fontSize: "1.1rem",
+                  color: "#434242",
+                  ml: 0.5,
+                }}
+              >
+                About the Experience
+              </Typography>
+              <TextField
+                fullWidth
+                value={description}
+                multiline
+                rows={3}
+                slotProps={{
+                  htmlInput: {
+                    maxLength: 500,
+                  },
+                }}
+                onChange={(e) => {
+                  setDescription(e.target.value);
+                }}
+                placeholder="description"
+                sx={{
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "0.3rem",
+                    fontFamily: "monospace",
+                    fontSize: "1.3rem",
+                    px: "14px",
+                    py: "2px",
+                  },
+                  "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                    {
+                      border: "1px dashed #b3b1b1",
+                    },
+                  "& .MuiInputBase-input": {
+                    py: 1,
+                  },
+                }}
+              />
+            </Box>
 
             <Button
               onClick={handleAddEducation}
@@ -462,8 +760,6 @@ export default function EducationP() {
                         ></path>
                       </svg>
                     </Box>
-
-                  
                   </Box>
                 </Box>
                 <Box
