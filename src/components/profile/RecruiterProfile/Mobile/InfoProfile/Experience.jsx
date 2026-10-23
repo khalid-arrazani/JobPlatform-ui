@@ -149,6 +149,8 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   {ex?.company_Name}
                 </Typography>
 
+                
+
                 <Chip
                   label={ex?.start_Date}
                   sx={{
