@@ -381,7 +381,7 @@ export default function EducationP() {
                 onChange={(e) => {
                   setField_Of_Study(e.target.value);
                 }}
-                placeholder="Company name"
+                placeholder="EField Of Study"
                 sx={{
                   "& .MuiOutlinedInput-root": {
                     borderRadius: "0.3rem",
