@@ -148,6 +148,8 @@ export default function Experience({ state, setSection, setOpenModal }) {
                 >
                   {ex?.company_Name}
                 </Typography>
+
+                {ex?.location && 
                 <Box sx={{ display: "flex", justifyContent: "center", gap: 1 }}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -179,8 +181,9 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   >
                     {ex?.location}
                   </Typography>
-                </Box>
+                </Box>}
 
+                 {ex?.employment_Type && 
                 <Chip
                   label={ex?.employment_Type}
                   sx={{
@@ -192,7 +195,7 @@ export default function Experience({ state, setSection, setOpenModal }) {
                     bgcolor: "#d8a1f77b",
                     mb: 1,
                   }}
-                />
+                />}
 
                 <Chip
                   label={ex?.start_Date}
@@ -209,6 +212,9 @@ export default function Experience({ state, setSection, setOpenModal }) {
                   }}
                 />
 
+
+
+                 {ex?.end_Date && 
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
@@ -248,8 +254,10 @@ export default function Experience({ state, setSection, setOpenModal }) {
                     d="M15.5092 8.51855 1.4585 22.5408"
                     stroke-width="1.5"
                   ></path>
-                </svg>
+                </svg>}
 
+
+                 {ex?.end_Date && 
                 <Chip
                   label={ex?.end_Date}
                   sx={{
@@ -263,7 +271,10 @@ export default function Experience({ state, setSection, setOpenModal }) {
                     color: "#020313ae",
                     bgcolor: "#dddddd5a",
                   }}
-                />
+                />}
+
+
+
                 {ex?.description &&  
                 <Box
                   sx={{
