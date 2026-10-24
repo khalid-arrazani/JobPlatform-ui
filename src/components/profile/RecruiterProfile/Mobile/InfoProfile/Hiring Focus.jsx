@@ -704,6 +704,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
             </Box>}
 
             {/* Preferred Skills */}
+            {state.user?.profile?.hiring_Focus.preferredSkillsList.length > 0 && 
             <Box
               sx={{
                 width: "100%",
@@ -817,9 +818,10 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* About My hiring focus */}
+            {state.user?.profile?.hiring_Focus.aboutHiringfocus.trim() !== "" && 
             <Box
               sx={{
                 width: "100%",
@@ -904,7 +906,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   </Typography>
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
 
           </Box>
