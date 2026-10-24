@@ -703,7 +703,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
               </Box>
             </Box>}
 
-            {/* Work Arrangements */}
+            {/* Preferred Skills */}
             <Box
               sx={{
                 width: "100%",
