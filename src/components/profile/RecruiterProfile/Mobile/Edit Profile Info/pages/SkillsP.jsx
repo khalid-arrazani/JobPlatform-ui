@@ -3,14 +3,14 @@ import {
   Typography,
   Button,
   TextField,
-  IconButton,
+  
   Chip,
   Autocomplete,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
-import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
+import {  updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 
 const skills = [
   // Recruitment & Talent Acquisition
@@ -166,6 +166,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
 
 export default function SkillsP() {
+
   const { isLoadingUptadeProfile, setSkillOpen, dispatch, ...state } =
     useProfile();
 
