@@ -3,8 +3,7 @@ import {
   Typography,
   Button,
   TextField,
-  Card,
-  MenuItem,
+  
 } from "@mui/material";
 
 const hiringFocusOptions = {
@@ -162,7 +161,7 @@ const hiringFocusOptions = {
   ],
 };
 
-import ISO6391 from "iso-639-1";
+
 
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
@@ -170,7 +169,7 @@ import spinner from "../../../../../../assets/spainner2.json";
 import { Chip, Autocomplete } from "@mui/material";
 
 import {
-  updateProfileJS,
+
   updateProfileR,
 } from "../../../../../../logic/api/profile/GetMe";
 import { useEffect, useState } from "react";
