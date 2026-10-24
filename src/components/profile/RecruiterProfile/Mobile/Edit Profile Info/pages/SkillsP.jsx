@@ -179,7 +179,10 @@ export default function SkillsP() {
   }, [state.user?.profile]);
 
   const handleAdd = () => {
+
     if (inputAdd) {
+      
+
       setEditSkills((S) => [...S, inputAdd]);
       setInputAdd("");
     } else {
