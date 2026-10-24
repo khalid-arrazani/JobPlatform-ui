@@ -650,8 +650,9 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                       flexWrap: "wrap",
                     }}
                   >
+                    {state.user?.profile?.hiring_Focus.workArrangementsList.map((label)=>(
                     <Chip
-                      label="Remote"
+                      label={label}
                       sx={{
                         fontSize: "0.8rem",
                         fontFamily: "monospace",
@@ -660,18 +661,8 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                         color: "#51027e",
                         bgcolor: "#d8a1f77b",
                       }}
-                    />
-                    <Chip
-                      label="Hybrid"
-                      sx={{
-                        fontSize: "0.8rem",
-                        fontFamily: "monospace",
-                        borderRadius: "8px",
-                        fontWeight: 500,
-                        color: "#51027e",
-                        bgcolor: "#d8a1f77b",
-                      }}
-                    />
+                    />))}
+                    
                   </Box>
                 </Box>
               </Box>
