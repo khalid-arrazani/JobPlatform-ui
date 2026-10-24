@@ -7,23 +7,18 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
     setOpenModal(true);
   };
 
-
-    const hasHiringFocus = 
-  state.user?.profile?.hiring_Focus.jobCategoriesList.length > 0 ||
-  state.user?.profile?.hiring_Focus.rolesList.length > 0 ||
-  state.user?.profile?.hiring_Focus.experienceLevelsList.length > 0 ||
-  state.user?.profile?.hiring_Focus.employmentTypesList.length > 0 ||
-  state.user?.profile?.hiring_Focus.workArrangementsList.length > 0 ||
-  state.user?.profile?.hiring_Focus.preferredSkillsList.length > 0 ||
-  state.user?.profile?.hiring_Focus.aboutHiringfocus.trim() !== "";
-
+  const hasHiringFocus =
+    state.user?.profile?.hiring_Focus.jobCategoriesList.length > 0 ||
+    state.user?.profile?.hiring_Focus.rolesList.length > 0 ||
+    state.user?.profile?.hiring_Focus.experienceLevelsList.length > 0 ||
+    state.user?.profile?.hiring_Focus.employmentTypesList.length > 0 ||
+    state.user?.profile?.hiring_Focus.workArrangementsList.length > 0 ||
+    state.user?.profile?.hiring_Focus.preferredSkillsList.length > 0 ||
+    state.user?.profile?.hiring_Focus.aboutHiringfocus.trim() !== "";
 
   return (
     <>
-
-   {}
-
-
+      {hasHiringFocus ? (
         <Paper
           elevation={0}
           sx={{
@@ -153,6 +148,9 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
               gap: 2,
             }}
           >
+
+
+
             {/* Job categories */}
             <Box
               sx={{
@@ -902,174 +900,176 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                 </Box>
               </Box>
             </Box>
+
+            
           </Box>
         </Paper>
-
-
-
-      <Paper
-        elevation={0}
-        sx={{
-          borderRadius: "1rem",
-          p: "1rem",
-
-          width: "100%",
-
-          boxSizing: "border-box",
-          border: "1px dashed #ddd",
-          mb: 3,
-        }}
-      >
-        <Box
+      ) : (
+        <Paper
+          elevation={0}
           sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            pb: 1,
-            borderBottom: " solid #ddd 1px",
+            borderRadius: "1rem",
+            p: "1rem",
+
+            width: "100%",
+
+            boxSizing: "border-box",
+            border: "1px dashed #ddd",
+            mb: 3,
           }}
         >
           <Box
             sx={{
               display: "flex",
+              justifyContent: "space-between",
               alignItems: "center",
-              gap: 1,
+              pb: 1,
+              borderBottom: " solid #ddd 1px",
             }}
           >
             <Box
               sx={{
-                borderRadius: "50%",
-
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                gap: 1,
+              }}
+            >
+              <Box
+                sx={{
+                  borderRadius: "50%",
+
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Cursor-Target-1--Streamline-Ultimate"
+                  height="30"
+                  width="30"
+                >
+                  <desc>
+                    Cursor Target 1 Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.002 17.2471v6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M12.002 0.74707v6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6.75201 11.9971H0.752014"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M23.252 11.9971h-6"
+                    stroke-width="1.5"
+                  ></path>
+                  <path
+                    stroke="#41008b"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M3.75201 11.998c0 1.0835 0.2134 2.1562 0.628 3.1572 0.4146 1.0009 1.02229 1.9104 1.78837 2.6765 0.76609 0.7661 1.67556 1.3738 2.6765 1.7884 1.00093 0.4146 2.07372 0.6279 3.15712 0.6279 1.0834 0 2.1562 -0.2133 3.1572 -0.6279 1.0009 -0.4146 1.9104 -1.0223 2.6764 -1.7884 0.7661 -0.7661 1.3738 -1.6756 1.7884 -2.6765 0.4146 -1.001 0.628 -2.0737 0.628 -3.1572 0 -1.0834 -0.2134 -2.15616 -0.628 -3.15709 -0.4146 -1.00094 -1.0223 -1.91041 -1.7884 -2.67649 -0.766 -0.76609 -1.6755 -1.37378 -2.6764 -1.78838 -1.001 -0.4146 -2.0738 -0.62799 -3.1572 -0.62799 -1.0834 0 -2.15619 0.21339 -3.15712 0.62799 -1.00094 0.4146 -1.91041 1.02229 -2.6765 1.78838 -0.76608 0.76608 -1.37377 1.67555 -1.78837 2.67649 -0.4146 1.00093 -0.628 2.07369 -0.628 3.15709Z"
+                    stroke-width="1.5"
+                  ></path>
+                </svg>
+              </Box>
+
+              <Typography
+                variant="h6"
+                sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
+              >
+                Hiring Focus
+              </Typography>
+            </Box>
+
+            <Button
+              onClick={onClick}
+              sx={{
+                textTransform: "none",
+                fontWeight: 600,
               }}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                id="Cursor-Target-1--Streamline-Ultimate"
-                height="30"
-                width="30"
+                viewBox="0 0 16 16"
+                fill="#000000"
+                id="Pencil-Simple-Light--Streamline-Phosphor"
+                height="24"
+                width="24"
               >
-                <desc>
-                  Cursor Target 1 Streamline Icon: https://streamlinehq.com
-                </desc>
                 <path
-                  stroke="#41008b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12.002 17.2471v6"
-                  stroke-width="1.5"
-                ></path>
-                <path
-                  stroke="#41008b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12.002 0.74707v6"
-                  stroke-width="1.5"
-                ></path>
-                <path
-                  stroke="#41008b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M6.75201 11.9971H0.752014"
-                  stroke-width="1.5"
-                ></path>
-                <path
-                  stroke="#41008b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M23.252 11.9971h-6"
-                  stroke-width="1.5"
-                ></path>
-                <path
-                  stroke="#41008b"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.75201 11.998c0 1.0835 0.2134 2.1562 0.628 3.1572 0.4146 1.0009 1.02229 1.9104 1.78837 2.6765 0.76609 0.7661 1.67556 1.3738 2.6765 1.7884 1.00093 0.4146 2.07372 0.6279 3.15712 0.6279 1.0834 0 2.1562 -0.2133 3.1572 -0.6279 1.0009 -0.4146 1.9104 -1.0223 2.6764 -1.7884 0.7661 -0.7661 1.3738 -1.6756 1.7884 -2.6765 0.4146 -1.001 0.628 -2.0737 0.628 -3.1572 0 -1.0834 -0.2134 -2.15616 -0.628 -3.15709 -0.4146 -1.00094 -1.0223 -1.91041 -1.7884 -2.67649 -0.766 -0.76609 -1.6755 -1.37378 -2.6764 -1.78838 -1.001 -0.4146 -2.0738 -0.62799 -3.1572 -0.62799 -1.0834 0 -2.15619 0.21339 -3.15712 0.62799 -1.00094 0.4146 -1.91041 1.02229 -2.6765 1.78838 -0.76608 0.76608 -1.37377 1.67555 -1.78837 2.67649 -0.4146 1.00093 -0.628 2.07369 -0.628 3.15709Z"
-                  stroke-width="1.5"
+                  d="m15.5115375 4.0630625 -3.575 -3.575c-0.43736875 -0.43741875 -1.1465375 -0.43741875 -1.58390625 0L0.48838125 10.35310625c-0.21046875 0.20974375 -0.32853125 0.49481875 -0.32798125 0.79195625v3.575c0 0.618525 0.5014125 1.1199375 1.1199375 1.1199375h3.575c0.2971375 0.00055 0.5822125 -0.1175125 0.79195625 -0.32798125L15.5115375 5.64696875c0.43741875 -0.43736875 0.43741875 -1.1465375 0 -1.58390625ZM4.96813125 14.83285625c-0.02986875 0.03004375 -0.07043125 0.04701875 -0.11279375 0.04719375h-3.575c-0.0883625 0.00000625 -0.1599875 -0.071625 -0.1599875 -0.1599875v-3.575c0.000175 -0.0423625 0.01715 -0.082925 0.04719375 -0.11279375L8.31994375 3.87906875l3.8005875 3.8013875ZM14.832375 4.9686125l-2.03268125 2.03268125 -3.8005875 -3.80058125 2.03268125 -2.0334875c0.0625 -0.0625625 0.16389375 -0.0625625 0.2263875 0l3.5742 3.575c0.0625625 0.06249375 0.0625625 0.1638875 0 0.2263875Z"
+                  stroke-width="0.0625"
                 ></path>
               </svg>
-            </Box>
-
-            <Typography
-              variant="h6"
-              sx={{ fontFamily: "system-ui", color: "#0b0317d8" }}
-            >
-              Hiring Focus
-            </Typography>
+            </Button>
           </Box>
 
-          <Button
-            onClick={onClick}
+          <Box
             sx={{
-              textTransform: "none",
-              fontWeight: 600,
+              pt: "1rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
             }}
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 16 16"
-              fill="#000000"
-              id="Pencil-Simple-Light--Streamline-Phosphor"
-              height="24"
-              width="24"
+            <Typography
+              variant="h5"
+              sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
             >
-              <path
-                d="m15.5115375 4.0630625 -3.575 -3.575c-0.43736875 -0.43741875 -1.1465375 -0.43741875 -1.58390625 0L0.48838125 10.35310625c-0.21046875 0.20974375 -0.32853125 0.49481875 -0.32798125 0.79195625v3.575c0 0.618525 0.5014125 1.1199375 1.1199375 1.1199375h3.575c0.2971375 0.00055 0.5822125 -0.1175125 0.79195625 -0.32798125L15.5115375 5.64696875c0.43741875 -0.43736875 0.43741875 -1.1465375 0 -1.58390625ZM4.96813125 14.83285625c-0.02986875 0.03004375 -0.07043125 0.04701875 -0.11279375 0.04719375h-3.575c-0.0883625 0.00000625 -0.1599875 -0.071625 -0.1599875 -0.1599875v-3.575c0.000175 -0.0423625 0.01715 -0.082925 0.04719375 -0.11279375L8.31994375 3.87906875l3.8005875 3.8013875ZM14.832375 4.9686125l-2.03268125 2.03268125 -3.8005875 -3.80058125 2.03268125 -2.0334875c0.0625 -0.0625625 0.16389375 -0.0625625 0.2263875 0l3.5742 3.575c0.0625625 0.06249375 0.0625625 0.1638875 0 0.2263875Z"
-                stroke-width="0.0625"
-              ></path>
-            </svg>
-          </Button>
-        </Box>
+              No Hiring Focus added yet
+            </Typography>
 
-        <Box
-          sx={{
-            pt: "1rem",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-          }}
-        >
-          <Typography
-            variant="h5"
-            sx={{ color: "#000000af", fontFamily: "monospace", mb: 0.6 }}
-          >
-            No Hiring Focus added yet
-          </Typography>
+            <Typography
+              color="text.secondary"
+              sx={{
+                maxWidth: 500,
+                fontFamily: "monospace",
 
-          <Typography
-            color="text.secondary"
-            sx={{
-              maxWidth: 500,
-              fontFamily: "monospace",
+                color: "#00000077",
+                fontSize: "0.8rem",
+              }}
+            >
+              Showcase the roles, skills, and industries you focus on hiring
+              for.
+            </Typography>
 
-              color: "#00000077",
-              fontSize: "0.8rem",
-            }}
-          >
-            Showcase the roles, skills, and industries you focus on hiring for.
-          </Typography>
-
-          <Button
-            startIcon={<AddIcon />}
-            onClick={onClick}
-            sx={{
-              textTransform: "none",
-              fontWeight: 400,
-              fontFamily: "system-ui",
-              border: "1px solid #ddd",
-              mt: 2,
-              borderRadius: "15px",
-            }}
-          >
-            Add Experience
-          </Button>
-        </Box>
-      </Paper>
+            <Button
+              startIcon={<AddIcon />}
+              onClick={onClick}
+              sx={{
+                textTransform: "none",
+                fontWeight: 400,
+                fontFamily: "system-ui",
+                border: "1px solid #ddd",
+                mt: 2,
+                borderRadius: "15px",
+              }}
+            >
+              Add Experience
+            </Button>
+          </Box>
+        </Paper>
+      )}
     </>
   );
 }
