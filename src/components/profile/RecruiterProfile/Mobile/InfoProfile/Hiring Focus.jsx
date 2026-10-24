@@ -559,9 +559,9 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                       gap: 0.5,
                       flexWrap: "wrap",
                     }}
-                  >
+                  >{state.user?.profile?.hiring_Focus.employmentTypesList.map((label)=>(
                     <Chip
-                      label="Full-Time"
+                      label={label}
                       sx={{
                         fontSize: "0.8rem",
                         fontFamily: "monospace",
@@ -571,17 +571,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                         bgcolor: "#d8a1f77b",
                       }}
                     />
-                    <Chip
-                      label="Contract"
-                      sx={{
-                        fontSize: "0.8rem",
-                        fontFamily: "monospace",
-                        borderRadius: "8px",
-                        fontWeight: 500,
-                        color: "#51027e",
-                        bgcolor: "#d8a1f77b",
-                      }}
-                    />
+                     ))}
                   </Box>
                 </Box>
               </Box>
