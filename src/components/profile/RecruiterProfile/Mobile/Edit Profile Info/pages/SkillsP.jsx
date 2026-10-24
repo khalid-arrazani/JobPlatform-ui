@@ -10,7 +10,7 @@ import {
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 
 const skills = [
   // Recruitment & Talent Acquisition
@@ -181,9 +181,13 @@ export default function SkillsP() {
   const handleAdd = () => {
 
     if (inputAdd) {
-      
 
-      setEditSkills((S) => [...S, inputAdd]);
+      setEditSkills((prev) =>
+                      prev.includes(inputAdd)
+                        ? prev
+                        : [...prev, inputAdd],
+                    );
+      
       setInputAdd("");
     } else {
       setSnackBar({
@@ -204,7 +208,7 @@ export default function SkillsP() {
       payload: true,
     });
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         skills: editSkills,
       });
 
