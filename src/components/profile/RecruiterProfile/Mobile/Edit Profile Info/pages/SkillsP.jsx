@@ -443,7 +443,7 @@ export default function SkillsP() {
           </Box>
 
           {/* --------- */}
-
+         {editSkills.length >=1 && 
           <Box
             sx={{
               width: "100%",
@@ -482,8 +482,8 @@ export default function SkillsP() {
                 }}
               />
             ))}
-          </Box>
-          {/* ---------- */}
+          </Box>}
+           
         </Box>
 
         <Button
