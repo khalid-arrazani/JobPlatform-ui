@@ -6,9 +6,14 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
     setSection("Experience");
     setOpenModal(true);
   };
+
+
+    const chacke_if_there_is_any_
+
+
   return (
     <>
-    
+
 
 
 
