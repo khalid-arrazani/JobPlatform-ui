@@ -8,13 +8,20 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
   };
 
 
-    const chacke_if_there_is_any_
+    const hasHiringFocus = 
+  state.user?.profile?.hiring_Focus.jobCategoriesList.length > 0 ||
+  state.user?.profile?.hiring_Focus.rolesList.length > 0 ||
+  state.user?.profile?.hiring_Focus.experienceLevelsList.length > 0 ||
+  state.user?.profile?.hiring_Focus.employmentTypesList.length > 0 ||
+  state.user?.profile?.hiring_Focus.workArrangementsList.length > 0 ||
+  state.user?.profile?.hiring_Focus.preferredSkillsList.length > 0 ||
+  state.user?.profile?.hiring_Focus.aboutHiringfocus.trim() !== "";
 
 
   return (
     <>
 
-
+   {}
 
 
         <Paper
