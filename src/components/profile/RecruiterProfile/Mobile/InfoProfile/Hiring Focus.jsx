@@ -852,8 +852,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                         fontWeight: 600,
                       }}
                     >
-                      I recruit junior and mid-level developers for remote and
-                      full-time positions.
+                      {state.user?.profile?.hiring_Focus.aboutHiringfocus}
                     </Typography>
                   </Box>
                 </Box>
