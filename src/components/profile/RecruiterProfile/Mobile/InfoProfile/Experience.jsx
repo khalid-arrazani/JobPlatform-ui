@@ -17,6 +17,8 @@ export default function Experience({ state, setSection, setOpenModal }) {
     setSection("Experience");
     setOpenModal(true);
   };
+
+  const 
   return (
     <>
       {state.user?.profile?.experiences?.length >= 1 ? (
