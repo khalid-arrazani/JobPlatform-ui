@@ -3,7 +3,7 @@ import AddIcon from "@mui/icons-material/Add";
 
 export default function Hiring_Focus({ state, setSection, setOpenModal }) {
   const onClick = () => {
-    setSection("Experience");
+    setSection("Hiring Focus");
     setOpenModal(true);
   };
 
@@ -149,9 +149,10 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
             }}
           >
 
-
-
+             
+            
             {/* Job categories */}
+            { state.user?.profile?.hiring_Focus.jobCategoriesList.length > 0 && 
             <Box
               sx={{
                 width: "100%",
@@ -264,7 +265,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* Role */}
             <Box
@@ -901,7 +902,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
               </Box>
             </Box>
 
-            
+
           </Box>
         </Paper>
       ) : (
