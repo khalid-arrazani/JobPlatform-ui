@@ -5,11 +5,162 @@ import {
   TextField,
   IconButton,
   Chip,
+  Autocomplete,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+
+const skills = [
+  // Recruitment & Talent Acquisition
+  "Talent Acquisition",
+  "Full-Cycle Recruiting",
+  "Corporate Recruiting",
+  "Technical Recruiting",
+  "Executive Search",
+  "Volume Recruiting",
+  "International Recruiting",
+  "Graduate Recruitment",
+  "Campus Recruiting",
+  "IT Recruitment",
+  "Contract Recruitment",
+  "Permanent Placement",
+  "Temporary Staffing",
+  "Recruitment Process Outsourcing (RPO)",
+
+  // Candidate Sourcing
+  "Candidate Sourcing",
+  "Active Sourcing",
+  "Passive Candidate Sourcing",
+  "Boolean Search",
+  "X-Ray Search",
+  "LinkedIn Recruiter",
+  "Social Media Recruiting",
+  "Talent Pipeline Development",
+  "Talent Pool Management",
+  "Referral Recruiting",
+  "Job Board Management",
+  "Market Mapping",
+
+  // Screening & Interviewing
+  "Resume Screening",
+  "CV Review",
+  "Candidate Assessment",
+  "Behavioral Interviewing",
+  "Competency-Based Interviewing",
+  "Structured Interviewing",
+  "Technical Interviewing",
+  "Phone Screening",
+  "Video Interviewing",
+  "Interview Coordination",
+  "Reference Checking",
+  "Background Screening",
+  "Candidate Evaluation",
+  "Skills Assessment",
+
+  // Recruitment Operations
+  "Applicant Tracking Systems (ATS)",
+  "Recruitment CRM",
+  "Recruitment Workflow Management",
+  "Recruitment Administration",
+  "Job Description Writing",
+  "Job Posting Management",
+  "Recruitment Reporting",
+  "Recruitment Analytics",
+  "Time-to-Hire Optimization",
+  "Cost-per-Hire Optimization",
+  "Hiring Process Optimization",
+  "Recruitment Metrics",
+  "Workforce Planning",
+  "Headcount Planning",
+
+  // Candidate & Stakeholder Management
+  "Candidate Relationship Management",
+  "Candidate Experience",
+  "Hiring Manager Collaboration",
+  "Stakeholder Management",
+  "Client Relationship Management",
+  "Candidate Engagement",
+  "Offer Management",
+  "Offer Negotiation",
+  "Salary Negotiation",
+  "Talent Pipeline Management",
+  "Recruitment Follow-Up",
+  "Applicant Communication",
+
+  // Employer Branding & Marketing
+  "Employer Branding",
+  "Recruitment Marketing",
+  "Talent Attraction",
+  "Career Page Optimization",
+  "Employee Referral Programs",
+  "Social Recruiting Campaigns",
+  "Job Advertisement Writing",
+  "Employment Value Proposition (EVP)",
+
+  // HR & Employment
+  "Human Resources Management",
+  "HR Administration",
+  "Onboarding Coordination",
+  "Employee Relations",
+  "Labor Market Research",
+  "Compensation Benchmarking",
+  "Salary Benchmarking",
+  "Employment Law Awareness",
+  "Diversity and Inclusion Recruiting",
+  "Equal Employment Opportunity",
+  "International Hiring",
+  "Relocation Coordination",
+  "Immigration and Work Permit Coordination",
+
+  // Industry Specializations
+  "Software Engineering Recruitment",
+  "IT Talent Acquisition",
+  "Healthcare Recruitment",
+  "Finance Recruitment",
+  "Sales Recruitment",
+  "Marketing Recruitment",
+  "Engineering Recruitment",
+  "Manufacturing Recruitment",
+  "Logistics Recruitment",
+  "Hospitality Recruitment",
+  "Retail Recruitment",
+  "Construction Recruitment",
+  "Executive Recruitment",
+  "Legal Recruitment",
+
+  // Recruitment Technology
+  "LinkedIn Talent Solutions",
+  "Workday Recruiting",
+  "Greenhouse ATS",
+  "Lever ATS",
+  "SmartRecruiters",
+  "iCIMS",
+  "Bullhorn",
+  "SAP SuccessFactors",
+  "Applicant Tracking",
+  "Recruitment Automation",
+  "AI-Assisted Recruiting",
+  "HR Information Systems (HRIS)",
+
+  // Professional Skills
+  "Communication",
+  "Negotiation",
+  "Organization",
+  "Time Management",
+  "Relationship Building",
+  "Conflict Resolution",
+  "Decision Making",
+  "Analytical Thinking",
+  "Attention to Detail",
+  "Project Management",
+  "Consultative Selling",
+  "Persuasion",
+  "Presentation Skills",
+  "Cross-Cultural Communication",
+  "Confidentiality",
+];
 
 import { Player } from "@lottiefiles/react-lottie-player";
 import spinner from "../../../../../../assets/spainner2.json";
@@ -198,26 +349,63 @@ export default function SkillsP() {
               gap: 2,
             }}
           >
-            <TextField
-              fullWidth
-              placeholder="Put your Skills"
-              value={inputAdd}
-              onChange={(e) => setInputAdd(e.target.value)}
+            <Box
               sx={{
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "0.3rem",
-                  fontFamily: "monospace",
-                  fontSize: "1.3rem",
-                },
-                "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
-                  {
-                    border: "1px dashed #b3b1b1",
-                  },
-                "& .MuiInputBase-input": {
-                  py: 1,
-                },
+                display: "flex",
+
+                alignItems: "center",
+                border: "1px #adacac dashed",
+                borderRadius: "8px",
+                width:"100%"
               }}
-            />
+            >
+              <Autocomplete
+                 fullWidth
+                disablePortal
+                options={skills}
+                value={inputAdd}
+                slotProps={{
+                  popper: {
+                    sx: {
+                      transition: "none",
+                      animation: "none",
+                      m: 5,
+                    },
+                  },
+                  listbox: {
+                    sx: {
+                      maxHeight: "150px",
+                    },
+                  },
+                }}
+                onChange={(e, value) => setInputAdd(value)}
+                sx={{ flex: 1 }}
+                renderInput={(params) => (
+                  <TextField
+                    placeholder="Job Categories"
+                    onChange={(e) => setInputAdd(e.target.value)}
+                    fullWidth
+                    sx={{
+                      "& .MuiOutlinedInput-root": {
+                        borderRadius: "0.3rem",
+                        fontFamily: "monospace",
+                        fontSize: "1.2rem",
+                      },
+                      "& .css-18p5xg2-MuiNotchedOutlined-root-MuiOutlinedInput-notchedOutline":
+                        {
+                          border: "none",
+                        },
+                      "& .MuiInputBase-root": {
+                        py: 0.5,
+                      },
+                      border: "none",
+                    }}
+                    {...params}
+                    size="small"
+                  />
+                )}
+              />
+            </Box>
 
             <Button
               fullWidth
