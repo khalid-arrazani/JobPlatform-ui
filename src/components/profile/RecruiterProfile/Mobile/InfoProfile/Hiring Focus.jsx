@@ -268,6 +268,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
             </Box>}
 
             {/* Role */}
+            { state.user?.profile?.hiring_Focus.rolesList.length > 0 && 
             <Box
               sx={{
                 width: "100%",
@@ -407,9 +408,10 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* Experience Levels */}
+            {state.user?.profile?.hiring_Focus.experienceLevelsList.length > 0 &&
             <Box
               sx={{
                 width: "100%",
@@ -503,9 +505,10 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* Employment Types */}
+            {state.user?.profile?.hiring_Focus.employmentTypesList.length > 0 && 
             <Box
               sx={{
                 width: "100%",
@@ -600,9 +603,10 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* Work Arrangements */}
+            {state.user?.profile?.hiring_Focus.workArrangementsList.length > 0 && 
             <Box
               sx={{
                 width: "100%",
@@ -697,7 +701,7 @@ export default function Hiring_Focus({ state, setSection, setOpenModal }) {
                   />
                 </Box>
               </Box>
-            </Box>
+            </Box>}
 
             {/* Work Arrangements */}
             <Box
