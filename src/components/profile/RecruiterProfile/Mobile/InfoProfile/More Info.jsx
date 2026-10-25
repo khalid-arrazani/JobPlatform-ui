@@ -241,7 +241,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              Joined {format(new Date(state?.user?.profile?.createdAt),"MMMM yyyy")}
+              Joined {format(new Date(state?.user?.profile?.createdAt || 0),"MMMM yyyy")}
             </Typography>
           </Box>
         </Box>
