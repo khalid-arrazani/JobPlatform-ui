@@ -25,7 +25,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
         }}
       >
         {/* Professional Title */}
-        {state.user?.profile?.professionalTitle.length > 0 && 
+        {state.user?.profile?.professionalTitle?.length > 0 && 
         <Box
           sx={{
             width: "100%",
@@ -89,7 +89,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-               {state.user?.profile?.professionalTitle.join(" - ")}
+               {state.user?.profile?.professionalTitle?.join(" - ")}
             </Typography>
           </Box>
         </Box>}
@@ -241,13 +241,13 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              Joined {format(new Date(state.user?.profile?.createdAt),"MMMM yyyy")}
+              Joined {format(new Date(state?.user?.profile?.createdAt),"MMMM yyyy")}
             </Typography>
           </Box>
         </Box>
 
         {/* Languages */}
-        {state.user?.profile?.languages.length > 0 &&
+        {state.user?.profile?.languages?.length > 0 &&
         <Box
           sx={{
             width: "100%",
