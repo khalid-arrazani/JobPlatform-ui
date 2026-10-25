@@ -1,19 +1,19 @@
 import {
   Box,
   Typography,
-  Avatar,
-  IconButton,
-  Drawer,
-  Chip,
+ 
 } from "@mui/material";
+import { formatDistanceToNow } from "date-fns";
 
-import AddIcon from "@mui/icons-material/Add";
+
 
 export default function More_Info({ state, setSection, setOpenModal }) {
+
   const onClick = () => {
     setSection("About me");
     setOpenModal(true);
   };
+
   return (
     <>
       <Box
