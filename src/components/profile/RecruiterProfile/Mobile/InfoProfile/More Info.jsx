@@ -28,6 +28,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
         }}
       >
         {/* Professional Title */}
+        {state.user?.profile?.professionalTitle.length > 0 && 
         <Box
           sx={{
             width: "100%",
@@ -71,7 +72,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
             </svg>
           </Box>
 
-          <Box>
+          <Box sx={{width:"80%"}}>
             <Typography
               sx={{
                 fontFamily: "system-ui",
@@ -91,86 +92,14 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              HR Manager · Recruiter · CEO
+               {state.user?.profile?.professionalTitle.join(" - ")}
             </Typography>
           </Box>
-        </Box>
+        </Box>}
 
-        {/* Experience Level */}
-        <Box
-          sx={{
-            width: "100%",
-            border: "1px solid #ddd",
-            borderRadius: "15px",
-            boxSizing: "border-box",
-            bgcolor: "#d4c4da48",
-            px: 1,
-            mb: 1,
-            display: "flex",
-            alignItems: "center",
-            gap: 1,
-            py: 0.9,
-          }}
-        >
-          <Box
-            sx={{
-              bgcolor: "#9340f123",
-              display: "flex",
-              alignItems: "center",
-              borderRadius: "10px",
-              height: "3rem",
-              width: "3rem",
-              justifyContent: "center",
-            }}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 14 14"
-              id="Arrow-Cursor-2--Streamline-Core"
-              height="22"
-              width="22"
-            >
-              <desc>
-                Arrow Cursor 2 Streamline Icon: https://streamlinehq.com
-              </desc>
-              <g id="arrow-cursor-2--mouse-select-cursor">
-                <path
-                  id="Vector"
-                  stroke="#1c0674ee"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M13.0055 5.42823c0.1561 -0.06508 0.2569 -0.09398 0.3497 -0.18665 0.0927 -0.09268 0.1448 -0.21836 0.1448 -0.34942s-0.0521 -0.25675 -0.1448 -0.34942c-0.0928 -0.09267 -0.1241 -0.14819 -0.3497 -0.21437C12.7798 4.26219 1.80942 0.553527 1.80942 0.553527c-0.17507 -0.059892 -0.36344 -0.069509 -0.5437 -0.027758C1.08546 0.567521 0.920531 0.658965 0.789686 0.78971c-0.130844 0.130745 -0.222358 0.29555 -0.264142 0.47567 -0.041783 0.18013 -0.032159 0.36835 0.027779 0.54329 0 0 3.796377 11.04723 3.842757 11.19743 0.04638 0.1502 0.10621 0.2567 0.19895 0.3494 0.09274 0.0927 0.21852 0.1447 0.34968 0.1447s0.25694 -0.052 0.34968 -0.1447c0.09274 -0.0927 0.11394 -0.1452 0.18346 -0.3494 0.06953 -0.2042 1.93949 -5.59378 1.93949 -5.59378s5.43206 -1.91901 5.58816 -1.98409Z"
-                  stroke-width="1"
-                ></path>
-              </g>
-            </svg>
-          </Box>
-          <Box>
-            <Typography
-              sx={{
-                fontFamily: "system-ui",
-                color: "#0b0317d8",
-                fontSize: "1rem",
-                fontWeight: 600,
-                pb: 0.5,
-              }}
-            >
-              Location
-            </Typography>
-            <Typography
-              sx={{
-                fontFamily: "monospace",
-                color: "#3e157b9f",
-                fontSize: "0.8rem",
-              }}
-            >
-              Mountain View, California, USA
-            </Typography>
-          </Box>
-        </Box>
+         
 
-        {/* Preferred Job Type */}
+        {/* Member since */}
         <Box
           sx={{
             width: "100%",
@@ -321,6 +250,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
         </Box>
 
         {/* Languages */}
+        {state.user?.profile?.languages.length > 0 &&
         <Box
           sx={{
             width: "100%",
@@ -393,7 +323,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
             </svg>
           </Box>
 
-          <Box>
+          <Box sx={{width:"80%"}} >
             <Typography
               sx={{
                 fontFamily: "system-ui",
@@ -416,14 +346,11 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 width: "17rem",
               }}
             >
-              {/* {state.user?.profile.aboutMe?.languages?.join(" - ")}
-              {state.user?.profile.aboutMe?.languages?.length >= 1
-                ? null
-                : "Unknown"} */}
-              English · French · Arabic
+               {state.user?.profile?.languages.join(" - ")}
+           
             </Typography>
           </Box>
-        </Box>
+        </Box>}
       </Box>
     </>
   );
