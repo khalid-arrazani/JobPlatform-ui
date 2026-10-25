@@ -14,7 +14,7 @@ const platforms = ["LinkedIn", "GitHub", "Twitter", "Facebook", "Instagram"];
 
 import { useEffect, useState } from "react";
 import { useAuth } from "../../../../../../logic/context/AuthContext";
-import { updateProfileJS } from "../../../../../../logic/api/profile/GetMe";
+import { updateProfileJS, updateProfileR } from "../../../../../../logic/api/profile/GetMe";
 import { useProfile } from "../../../../../../logic/context/profileContext";
 
 import { Player } from "@lottiefiles/react-lottie-player";
@@ -74,7 +74,7 @@ export default function SocialLinksP() {
       payload: true,
     });
     try {
-      const data = await updateProfileJS({
+      const data = await updateProfileR({
         socialLinks: socialLinks,
       });
 

@@ -144,7 +144,7 @@ export default function Skills({ state, setSection ,setOpenModal }) {
                 <Chip
                   label={s}
                   sx={{
-                    fontSize: "1.3rem",
+                    fontSize: "0.98rem",
                     fontFamily: "monospace",
                     py: 2.2,
                     borderRadius: "8px",
