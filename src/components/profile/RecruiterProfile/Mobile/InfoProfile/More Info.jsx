@@ -3,16 +3,13 @@ import {
   Typography,
  
 } from "@mui/material";
-import { formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 
 
 
 export default function More_Info({ state, setSection, setOpenModal }) {
 
-  const onClick = () => {
-    setSection("About me");
-    setOpenModal(true);
-  };
+  
 
   return (
     <>
@@ -244,7 +241,7 @@ export default function More_Info({ state, setSection, setOpenModal }) {
                 fontSize: "0.8rem",
               }}
             >
-              Joined March 2026
+              Joined {format(new Date(state.user?.profile?.createdAt),"MMMM yyyy")}
             </Typography>
           </Box>
         </Box>
