@@ -13,22 +13,28 @@ import {
  import logoTitle from "../../../../assets/Logo/logo.png";
  import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
  
- 
+
  import MainList from "./mainList";
-
- 
-
- 
-
+import { useContext, useState } from "react";
+import { ProfileContext } from "../../../../logic/context/profileContext";
 
 export default function MobileNavbar () {
+  const { ...state } = useContext(ProfileContext);
+  
+    const [open, setOpen] = useState(false);
+    const [openModal, setOpenModal] = useState(false);
+    const [section , setSection] = useState("Profile")
+  
+    const onClose = () => {
+      setOpen(false);
+      setOpenModal(false);
+    };
 
 
   return <>
 
 
-      {/* Header */}
-
+      {/* TopNavbar */}
         <Box
           sx={{
             height: "4.5rem",
@@ -44,9 +50,9 @@ export default function MobileNavbar () {
           }}
         >
           <IconButton
-            // onClick={() => {
-            //   setOpen(true);
-            // }}
+            onClick={() => {
+              setOpen(true);
+            }}
             size="small"
           >
             <Avatar
@@ -120,7 +126,7 @@ export default function MobileNavbar () {
           </IconButton>
         </Box>
 
-
+      {/* ButtomNavbar */}
         <Box
           sx={{
             height: "4.9rem",
@@ -135,6 +141,7 @@ export default function MobileNavbar () {
             placeSelf: "center",
             position: "absolute",
             bottom: 0,
+            zIndex:"1"
           }}
         >
           {/* Home */}
