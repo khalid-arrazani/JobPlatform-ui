@@ -276,6 +276,7 @@ export default function JobSeekerProfileMobile() {
             bottom: 0,
           }}
         >
+          {/* Home */}
           <Box
             sx={{
               bgcolor: "#faeefd",
@@ -319,6 +320,7 @@ export default function JobSeekerProfileMobile() {
             </Typography>
           </Box>
 
+          {/* Companies */}
           <Box
             sx={{
               bgcolor: "#faeefd",
@@ -412,6 +414,7 @@ export default function JobSeekerProfileMobile() {
             </Typography>
           </Box>
 
+          {/* Save */}
           <Box
             sx={{
               bgcolor: "#faeefd",
@@ -447,7 +450,8 @@ export default function JobSeekerProfileMobile() {
               Save
             </Typography>
           </Box>
-
+          
+          {/* Apply */}
           <Box
             sx={{
               bgcolor: "#faeefd",
@@ -501,6 +505,7 @@ export default function JobSeekerProfileMobile() {
               Apply
             </Typography>
           </Box>
+
         </Box>
 
 
