@@ -210,6 +210,7 @@ export default function MobileNavbar() {
             gap: 0.5,
             scale: 1.2,cursor:"pointer",
           }}
+          onClick={() => navigate("/Dashboard/Companies")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -345,6 +346,7 @@ export default function MobileNavbar() {
         </Box>
 
         {/* My Jobs */}
+         {authState.user?.user?.role == "recruiter" && (
         <Box
           sx={{
             bgcolor: "#faeefd",
@@ -355,6 +357,7 @@ export default function MobileNavbar() {
             flexDirection: "column",
             gap: 0.5,cursor:"pointer",
           }}
+          onClick={() => navigate("/Dashboard/My_Jobs")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -398,7 +401,7 @@ export default function MobileNavbar() {
           <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
             My Jobs
           </Typography>
-        </Box>
+        </Box>)}
 
         {/* Apply */}
         <Box
@@ -411,6 +414,7 @@ export default function MobileNavbar() {
             flexDirection: "column",
             gap: 0.5,cursor:"pointer",
           }}
+          onClick={() => navigate("/Dashboard/Applications")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
