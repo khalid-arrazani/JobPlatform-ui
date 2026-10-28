@@ -164,6 +164,7 @@ export default function MobileNavbar() {
             flexDirection: "column",
             gap: 0.5,cursor:"pointer",
           }}
+          onClick={() => navigate("/Dashboard/Jobs")}
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
