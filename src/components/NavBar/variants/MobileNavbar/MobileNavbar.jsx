@@ -24,6 +24,7 @@ export default function MobileNavbar () {
     const [open, setOpen] = useState(false);
     const [openModal, setOpenModal] = useState(false);
     const [section , setSection] = useState("Profile")
+
   
     const onClose = () => {
       setOpen(false);
