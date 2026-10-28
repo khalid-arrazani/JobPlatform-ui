@@ -1,6 +1,6 @@
 import { useMediaQuery, useTheme } from "@mui/material";
-// import DesktopNavbar from "./DesktopNavbar";
-// import MobileNavbar from "./MobileNavbar";
+import DesktopNavbar from "./variants/DesktopNavbar/DesktopNavbar";
+
 
 export default function Navbar() {
   const theme = useTheme();
@@ -9,7 +9,7 @@ export default function Navbar() {
     theme.breakpoints.down("md")
   );
 
-//   return isMobile
-//     ? <MobileNavbar />
-//     : <DesktopNavbar />;
+  return isMobile
+    ? <MobileNavbar />
+    : <DesktopNavbar />;
 }

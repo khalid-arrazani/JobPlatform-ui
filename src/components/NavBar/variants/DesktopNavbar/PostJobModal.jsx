@@ -144,13 +144,14 @@ import {
   Chip,
   Autocomplete,
   CircularProgress,
-} from "@mui/material";
+}from "@mui/material";
 
-import logoTitle from "../../assets/Logo/logo.png";
-import { createJob } from "../../logic/api/job/Job";
-import { useAuth } from "../../logic/context/AuthContext";
-import { useProfile } from "../../logic/context/profileContext";
+import logoTitle from "../../../../assets/Logo/logo.png";
+
 import { green } from "@mui/material/colors";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { createJob } from "../../../../logic/api/job/Job";
 
 const PostJobModal = ({ open, setOpen }) => {
   const { dispatch, ...state } = useProfile();
