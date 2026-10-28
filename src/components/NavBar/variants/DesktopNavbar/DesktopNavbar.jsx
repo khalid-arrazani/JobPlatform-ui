@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
-import MainList from "../../../dashboard/UserProfile/mainList.jsx";
+import MainList from "./mainList.jsx";
 
 import Badge from "@mui/material/Badge";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
@@ -20,7 +20,7 @@ import WorkIcon from "@mui/icons-material/Work";
 
 import AddCircleIcon from "@mui/icons-material/AddCircle";
 
-import logoTitle from "../../../assets/Logo/logo.png";
+import logoTitle from "../../../../assets/Logo/logo.png";
 import { useState } from "react";
 
 
@@ -64,7 +64,7 @@ export default function DesktopNavbar() {
         color: "#1B1B1B",
         borderBottom: "1px solid #EEE",
         width: "100%",
-        height: "100%",
+        height: "4rem",
         display: "flex",
         justifyContent: "center",
       }}
@@ -89,7 +89,7 @@ export default function DesktopNavbar() {
         >
           <img
             src={logoTitle}
-            width={40}
+            width={35}
             style={{ marginRight: "0.5rem" }}
             alt=""
           />
@@ -282,8 +282,8 @@ export default function DesktopNavbar() {
             <Avatar
               src={state.user?.profile?.ProfileImage?.url}
               sx={{
-                width: 55,
-                height: 55,
+                width: 50,
+                height: 50,
               }}
              
             />

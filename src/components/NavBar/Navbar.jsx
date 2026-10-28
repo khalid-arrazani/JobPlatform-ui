@@ -1,5 +1,6 @@
 import { useMediaQuery, useTheme } from "@mui/material";
 import DesktopNavbar from "./variants/DesktopNavbar/DesktopNavbar";
+import MobileNavbar from "./variants/MobileNavbar/MobileNavbar";
 
 
 export default function Navbar() {

@@ -14,6 +14,7 @@ import { useEffect } from "react";
 import LoadingPage from "./LoadingPage.jsx";
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
 import { getMeR } from "../../../../logic/api/profile/GetMe.jsx";
+import Navbar from "../../../NavBar/Navbar.jsx";
 
 
 
@@ -55,7 +56,11 @@ export default function RecruiterProfileDesktop() {
   return (
     <>
     {state.isLoading ? <LoadingPage/> : 
+
       <div className="par1">
+
+        <Navbar/>
+        
         <div style={{ height: "25vh" }}>
           <Header />
         </div>

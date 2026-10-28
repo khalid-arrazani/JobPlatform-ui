@@ -1,11 +1,14 @@
+import { Box } from "lucide-react";
 
  
 
 
-export default function DesktopNavbar() {
+export default function MobileNavbar() {
 
 
   return (
-   
-  );
+  <>
+  
+  </>
+  )
 }
