@@ -36,7 +36,7 @@ export default function DashboardLayout({ children }) {
       <Box
         sx={{
           width: "100%",
-          height: "3rem",
+          height: "4rem",
           background: "#eedcef",
           display: "flex",
           alignItems: "center",
