@@ -14,7 +14,8 @@ export default function MobileNavbar () {
 
 
   return (
-        <Box
+    
+        <div
           sx={{
             height: "4.9rem",
             width: "95%",
@@ -31,7 +32,7 @@ export default function MobileNavbar () {
           }}
         >
           {/* Home */}
-          <Box
+          <div
             sx={{
               bgcolor: "#faeefd",
 
@@ -72,10 +73,10 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Home
             </Typography>
-          </Box>
+          </div>
 
           {/* Companies */}
-          <Box
+          <div
             sx={{
               bgcolor: "#faeefd",
 
@@ -166,10 +167,10 @@ export default function MobileNavbar () {
             >
               Companies
             </Typography>
-          </Box>
+          </div>
 
           {/* Save */}
-          <Box
+          <div
             sx={{
               bgcolor: "#faeefd",
 
@@ -203,10 +204,10 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Save
             </Typography>
-          </Box>
+          </div>
           
           {/* Apply */}
-          <Box
+          <div
             sx={{
               bgcolor: "#faeefd",
 
@@ -258,9 +259,9 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Apply
             </Typography>
-          </Box>
+          </div>
 
-        </Box>
+        </div>
   
   )
 }
