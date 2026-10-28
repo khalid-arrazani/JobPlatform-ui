@@ -19,6 +19,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../logic/context/profileContext";
 import { Logout } from "../../logic/api/auth/auth";
 
+
 export default function MainList() {
   const navigate = useNavigate();
   const { ...state } = useProfile();

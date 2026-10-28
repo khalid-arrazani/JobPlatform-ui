@@ -7,7 +7,7 @@ import {
 } from "@mui/material";
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
-import MainList from "./mainList.jsx";
+import MainList from "../../../dashboard/UserProfile/mainList.jsx";
 
 import Badge from "@mui/material/Badge";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
