@@ -6,19 +6,40 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import MainList from "./mainList";
 import { useContext, useState } from "react";
 import { ProfileContext } from "../../../../logic/context/profileContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function MobileNavbar() {
   const { ...state } = useContext(ProfileContext);
 
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
-  
+
   const [section, setSection] = useState("Profile");
 
   const onClose = () => {
     setOpen(false);
     setOpenModal(false);
   };
+
+ 
+  
+    const { ...authState } = useAuth();
+  
+    const navigate = useNavigate();
+  
+    const location = useLocation();
+    
+  
+    const currentTab =
+      {
+        "/Dashboard/Jobs": "Jobs",
+        "/Dashboard/Companies": "Companies",
+        "/Dashboard/Saved": "Saved",
+        "/Dashboard/My_Jobs": "My_Jobs",
+        "/Dashboard/Applications": "Applications",
+        "/Dashboard/My_Company": 5,
+      }[location.pathname] ?? null;
 
   return (
     <>
