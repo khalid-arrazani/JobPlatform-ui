@@ -49,7 +49,7 @@ export default function Navbar() {
       "/Dashboard/Saved": "Saved",
       "/Dashboard/My_Jobs": "My_Jobs",
       "/Dashboard/Applications": "Applications",
-      "/Dashboard/My_Company": 5,
+      "/Dashboard/My_Company": "My_Company",
     }[location.pathname] ?? null;
 
   return (
