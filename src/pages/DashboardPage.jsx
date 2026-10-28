@@ -21,9 +21,7 @@ import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDe
 import {
   Box,
   Typography,
-  Avatar,
-  IconButton,
-  Drawer,
+ 
 } from "@mui/material";
 
 export default function DashboardPage() {
