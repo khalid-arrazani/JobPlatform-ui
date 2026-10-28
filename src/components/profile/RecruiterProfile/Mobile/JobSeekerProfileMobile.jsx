@@ -510,7 +510,7 @@ export default function JobSeekerProfileMobile() {
         </Box>
 
 
-        
+         <MobileNavbar></MobileNavbar>
 
         
 

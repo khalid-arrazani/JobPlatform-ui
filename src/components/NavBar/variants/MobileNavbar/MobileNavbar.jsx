@@ -2,9 +2,7 @@ import { Box } from "lucide-react";
 import {
   
   Typography,
-  Avatar,
-  IconButton,
-  Drawer,
+ 
 } from "@mui/material";  
 
 
@@ -12,12 +10,10 @@ import {
  
 
 
-export default function MobileNavbar() {
+export default function MobileNavbar () {
 
 
   return (
-  <>
-  {/* Bottom Navbar */}
         <Box
           sx={{
             height: "4.9rem",
@@ -265,6 +261,6 @@ export default function MobileNavbar() {
           </Box>
 
         </Box>
-  </>
+  
   )
 }
