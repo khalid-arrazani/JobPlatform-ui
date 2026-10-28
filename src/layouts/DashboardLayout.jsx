@@ -41,7 +41,7 @@ export default function DashboardLayout({ children }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          borderBottom: "solid 2px #b3afaf3e",
+          // borderBottom: "solid 2px #b3afaf3e",
         }}
       >
         <Navbar/>
