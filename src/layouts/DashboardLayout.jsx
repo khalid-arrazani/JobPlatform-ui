@@ -1,11 +1,12 @@
 import { Box } from "@mui/material";
 
-import Navbar from "../components/dashboard/Navbar5.jsx";
+
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
+import Navbar from "../components/NavBar/Navbar.jsx";
 
 
-export default function DashboardLayout({ children, part, setPart }) {
+export default function DashboardLayout({ children }) {
 
   const {fetchUser , ...state } = useProfile();
 
@@ -43,7 +44,7 @@ export default function DashboardLayout({ children, part, setPart }) {
           borderBottom: "solid 2px #b3afaf3e",
         }}
       >
-        <Navbar part={part} setPart={setPart} />
+        <Navbar/>
       </Box>
 
       {children}
