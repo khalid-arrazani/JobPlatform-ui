@@ -1,7 +1,7 @@
-import { Box } from "lucide-react";
+
 import {
   
-  Typography,
+  Typography,Box
  
 } from "@mui/material";  
 
@@ -14,8 +14,7 @@ export default function MobileNavbar () {
 
 
   return (
-    
-        <div
+        <Box
           sx={{
             height: "4.9rem",
             width: "95%",
@@ -32,7 +31,7 @@ export default function MobileNavbar () {
           }}
         >
           {/* Home */}
-          <div
+          <Box
             sx={{
               bgcolor: "#faeefd",
 
@@ -73,10 +72,10 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Home
             </Typography>
-          </div>
+          </Box>
 
           {/* Companies */}
-          <div
+          <Box
             sx={{
               bgcolor: "#faeefd",
 
@@ -167,10 +166,10 @@ export default function MobileNavbar () {
             >
               Companies
             </Typography>
-          </div>
+          </Box>
 
           {/* Save */}
-          <div
+          <Box
             sx={{
               bgcolor: "#faeefd",
 
@@ -204,10 +203,10 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Save
             </Typography>
-          </div>
+          </Box>
           
           {/* Apply */}
-          <div
+          <Box
             sx={{
               bgcolor: "#faeefd",
 
@@ -259,9 +258,9 @@ export default function MobileNavbar () {
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
               Apply
             </Typography>
-          </div>
+          </Box>
 
-        </div>
+        </Box>
   
   )
 }
