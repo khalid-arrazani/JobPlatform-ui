@@ -509,6 +509,9 @@ export default function JobSeekerProfileMobile() {
         </Box>
 
 
+        
+
+
       </Box>
     </>
   );
