@@ -15,7 +15,7 @@ export default function MobileNavbar() {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
-  const [section, setSection] = useState("Profile");
+  const [section, setSection] = useState("Jobs");
 
   const onClose = () => {
     setOpen(false);
@@ -29,7 +29,7 @@ export default function MobileNavbar() {
     const navigate = useNavigate();
   
     const location = useLocation();
-    
+
   
     const currentTab =
       {
