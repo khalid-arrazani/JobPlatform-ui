@@ -27,6 +27,7 @@ import Social_Links from "./InfoProfile/Social Links";
 import Skills from "./InfoProfile/Skills";
 import Hiring_Focus from "./InfoProfile/Hiring Focus";
 import Navbar from "../../../NavBar/Navbar";
+import MobileNavbar from "../../../NavBar/variants/MobileNavbar/MobileNavbar";
 
 
 export default function JobSeekerProfileMobile() {
@@ -510,7 +511,7 @@ export default function JobSeekerProfileMobile() {
         </Box>
 
 
-         <MobileNavbar></MobileNavbar>
+         <MobileNavbar/>
 
         
 
