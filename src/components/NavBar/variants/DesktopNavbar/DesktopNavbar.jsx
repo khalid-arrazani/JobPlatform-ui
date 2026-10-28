@@ -26,9 +26,10 @@ import { useState } from "react";
 
 import PostJobModal from "./PostJobModal.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
-import { useJob } from "../../../../logic/context/JobContext.jsx";
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
 import { useAuth } from "../../../../logic/context/AuthContext.jsx";
+import { useJob } from "../../../../logic/context/JobContext.jsx";
+ 
 
 
 export default function DesktopNavbar() {
