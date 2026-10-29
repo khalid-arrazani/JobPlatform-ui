@@ -10,13 +10,13 @@ import {
 import { formatDistanceToNow } from "date-fns";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
-import { useJob } from "../../../logic/context/JobContext";
+import { useJob } from "../../../../logic/context/JobContext";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
 import TurnedInIcon from "@mui/icons-material/TurnedIn";
-import { toggleSaveJob } from "../../../logic/api/job/Job";
+import { toggleSaveJob } from "../../../../logic/api/job/Job";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { millify } from "millify";
 
