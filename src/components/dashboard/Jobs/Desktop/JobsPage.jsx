@@ -20,7 +20,7 @@ import LoadingList from "./LoadingList.jsx";
 
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
 
-export default function JobsPage() {
+export default function JobsDesktop() {
   const {  dispatch : dispatch1, ...state1 } = useProfile();
   const { dispatch, ...state } = useJob();
 
@@ -30,9 +30,6 @@ export default function JobsPage() {
     search :"", 
     page: 1
   });
-
-
-
 
   const [search , setSearch] = useState("")
 
@@ -53,7 +50,6 @@ export default function JobsPage() {
   return () => clearTimeout(timeout);
 
  }, [search]);
-
 
 
 
