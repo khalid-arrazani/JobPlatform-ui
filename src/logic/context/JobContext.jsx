@@ -29,10 +29,7 @@ export default function JobProvider({ children }) {
     sort: "Newest First",
     page: 1,
   });
-
-
   
- 
 
   const fetchCompany = async () => {
     setMyJobsLoading(true);
