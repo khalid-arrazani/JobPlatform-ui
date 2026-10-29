@@ -15,9 +15,6 @@ export default function JobsPage() {
      { isMobile
           ? null
           : <JobsDesktop />}
-
-
-
     </>
   );
 }
