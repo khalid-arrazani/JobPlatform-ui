@@ -207,7 +207,8 @@ export default function MobileNavbar() {
             alignItems: "center",
             flexDirection: "column",
             gap: 0.5,
-            scale: 1.2,cursor:"pointer",
+            scale: currentTab == "Companies" ? 1.2: 1,
+            cursor:"pointer",
           }}
           onClick={() => navigate("/Dashboard/Companies")}
         >
@@ -233,7 +234,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Subtract"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="m30.722 45 11.07 0a2.957 2.957 0 0 0 2.968 -2.836c0.106 -2.688 0.24 -7 0.24 -11.664 0 -3.563 -0.156 -6.775 -0.325 -9.202 -0.188 -2.72 -2.296 -4.858 -5.017 -5.047a103.875 103.875 0 0 0 -5.775 -0.241"
@@ -241,7 +242,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Intersect"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="m23.416 45 0.006 -0.105c0.043 -1.1 0.078 -2.677 0.078 -4.895 0 -2.218 -0.035 -3.795 -0.078 -4.895 -0.059 -1.488 -0.89 -2.746 -2.365 -2.95A18.78 18.78 0 0 0 18.5 32a18.78 18.78 0 0 0 -2.557 0.155c-1.475 0.204 -2.306 1.462 -2.365 2.95 -0.043 1.1 -0.078 2.677 -0.078 4.895a126.983 126.983 0 0 0 0.084 5"
@@ -249,7 +250,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 860"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M13 12v2"
@@ -257,7 +258,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 862"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M13 23v2"
@@ -265,7 +266,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 861"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M24 12v2"
@@ -273,7 +274,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 863"
-                stroke="#b611b9"
+                stroke={currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M24 23v2"
@@ -285,7 +286,7 @@ export default function MobileNavbar() {
             sx={{
               fontFamily: "monospace",
               fontSize: "0.8rem",
-              color: "#b611b9",
+              color: currentTab == "Companies" ? "#b611b9": "#000000" ,
             }}
           >
             Companies
