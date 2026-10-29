@@ -2,7 +2,7 @@ import "./JobPage.css";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-import JobList from "../ListJobs.jsx";
+import JobList from "./ListJobs.jsx";
 import CardAds from "./cardAds.jsx";
 import CardProfile from "./CardProfile.jsx";
 
