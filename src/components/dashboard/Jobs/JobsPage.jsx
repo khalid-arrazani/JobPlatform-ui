@@ -100,7 +100,7 @@ export default function JobsPage() {
 
      { isMobile
           ? null
-          : <JobsDesktop state={state} search={search} setSearch={setSearch} />}
+          : <JobsDesktop state={state} search={search} setSearch={setSearch} handleChange={handleChange} />}
     </>
   );
 }
