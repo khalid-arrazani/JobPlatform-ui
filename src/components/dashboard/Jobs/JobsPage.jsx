@@ -25,14 +25,11 @@ export default function JobsPage() {
   const {  dispatch : dispatch1, ...state1 } = useProfile();
   const { dispatch, ...state } = useJob();
 
-
-
+  
   const [filter , setFilter ] = useState({
     search :"", 
     page: 1
   });
-
-
 
 
   const [search , setSearch] = useState("")
