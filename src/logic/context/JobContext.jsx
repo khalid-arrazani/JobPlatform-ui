@@ -17,19 +17,25 @@ const initialState = {
   MyJobs: null,
 };
 import { useLocation } from "react-router-dom";
+
+
+
+
+
+
 export default function JobProvider({ children }) {
+
   const [state, dispatch] = useReducer(JobReducer, initialState);
   const [openModal, setOpenModal] = useState(false);
 
   const [myJobsLoading, setMyJobsLoading] = useState(false);
-
   const [felterData, setFelterData] = useState({
     status: "",
     search: "",
     sort: "Newest First",
     page: 1,
   });
-  
+
 
   const fetchCompany = async () => {
     setMyJobsLoading(true);
@@ -59,13 +65,18 @@ export default function JobProvider({ children }) {
     }
   };
 
-
  const location = useLocation();
 
   useEffect(() => {
     if (location.pathname !== "/Dashboard/My_Jobs") return;
     fetchCompany();
   }, [felterData, location.pathname]);
+
+
+
+
+
+
 
 
   
