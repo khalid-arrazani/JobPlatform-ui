@@ -6,8 +6,6 @@ export default function CardAds() {
     <>
       <Box
         sx={{
-           
-         
           borderRadius: "10px",
           background: "#ffffff00",
           mt: "20px"
