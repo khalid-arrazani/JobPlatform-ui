@@ -16,7 +16,7 @@ import { Box } from "@mui/material";
 
 import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
-
+import { useMediaQuery } from "@mui/material";
 
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
 
@@ -110,6 +110,8 @@ export default function JobsPage() {
   },[state1.reloadListJob])
 
 
+  const isMobile = useMediaQuery("(max-width:600px)");
+  const isTablet = useMediaQuery("(min-width:601px) and (max-width:1024px)");
 
  
 
