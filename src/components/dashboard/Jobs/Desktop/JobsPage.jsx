@@ -22,8 +22,9 @@ import { getJobList } from "../../../../logic/api/job/Job.jsx";
 
 
 
-export default function JobsDesktop() {
-  const {  dispatch : dispatch1, ...state1 } = useProfile();
+export default function JobsDesktop({state, search, setSearch, handleChange }) {
+
+
   const { dispatch, ...state } = useJob();
 
 
@@ -53,55 +54,6 @@ export default function JobsDesktop() {
  }, [search]);
 
 
-  const { setSnackBar } = useAuth();
-
-
-  const handleChange = (event, value) => {
-    setFilter(prev => ({...prev , search , page:value}) )
-  };
-
-  const fetchJob = async () => {
-    dispatch({
-      type: "SET_LOADING",
-      payload: true,
-    });
-
-    try {
-      const data = await getJobList(filter);
-
-      dispatch({
-        type: "SET-JOB-LIST",
-        payload: data,
-      });
-    } catch (error) {
-      setSnackBar({
-        open: true,
-        message: error.response?.data.message,
-        severity: "error",
-      });
-    } finally {
-      dispatch({
-        type: "SET_LOADING",
-        payload: false,
-      });
-    }
-  };
-
-  useEffect(() => {
-    fetchJob();
-  }, [filter]);
-
-
-  useEffect(()=>{
-
-    dispatch1({
-        type: "RELOADLISTJOB",
-        payload: false,
-      });
-
-      fetchJob();
-
-  },[state1.reloadListJob])
 
   return (
     <>
