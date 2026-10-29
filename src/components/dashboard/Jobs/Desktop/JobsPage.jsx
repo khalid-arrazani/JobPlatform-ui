@@ -7,18 +7,20 @@ import CardAds from "./cardAds.jsx";
 import CardProfile from "./CardProfile.jsx";
 
 import { useEffect, useState } from "react";
-import { getJobList } from "../../../../logic/api/job/Job.jsx";
-import { useJob } from "../../../../logic/context/JobContext.jsx";
-import { useAuth } from "../../../../logic/context/AuthContext.jsx";
+
 
 import { Box } from "@mui/material";
 
 
 import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
-
-
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
+import { useJob } from "../../../../logic/context/JobContext.jsx";
+import { useAuth } from "../../../../logic/context/AuthContext.jsx";
+import { getJobList } from "../../../../logic/api/job/Job.jsx";
+
+
+
 
 export default function JobsDesktop() {
   const {  dispatch : dispatch1, ...state1 } = useProfile();
