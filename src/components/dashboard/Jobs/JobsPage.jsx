@@ -120,7 +120,7 @@ export default function JobsPage() {
     <>
 
       isMobile
-          ? <MobileNavbar />
+          ? null
           : <JobsDesktop />;
 
 
