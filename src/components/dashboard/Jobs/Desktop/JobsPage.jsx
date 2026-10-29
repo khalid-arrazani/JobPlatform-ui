@@ -32,7 +32,6 @@ export default function JobsDesktop() {
     search :"", 
     page: 1
   });
-
   const [search , setSearch] = useState("")
 
   useEffect(() => {
@@ -54,9 +53,7 @@ export default function JobsDesktop() {
  }, [search]);
 
 
-
   const { setSnackBar } = useAuth();
-
 
 
   const handleChange = (event, value) => {
@@ -95,7 +92,6 @@ export default function JobsDesktop() {
   }, [filter]);
 
 
-
   useEffect(()=>{
 
     dispatch1({
@@ -106,10 +102,6 @@ export default function JobsDesktop() {
       fetchJob();
 
   },[state1.reloadListJob])
-
-
-
- 
 
   return (
     <>
