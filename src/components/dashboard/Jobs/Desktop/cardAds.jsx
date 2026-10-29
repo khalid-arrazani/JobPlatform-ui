@@ -1,4 +1,4 @@
-import ads from "../../../assets/ads.png";
+import ads from "../../../../assets/ads.png";
 import { Box } from "@mui/material";
 
 export default function CardAds() {

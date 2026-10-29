@@ -1,6 +1,7 @@
 import { Card } from "@mui/material";
 import { Avatar, Typography, Box } from "@mui/material";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 export default function CardProfile() {
   const { ...state } = useProfile();
