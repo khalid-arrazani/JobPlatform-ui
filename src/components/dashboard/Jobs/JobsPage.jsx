@@ -3,7 +3,6 @@ import JobsDesktop from "./Desktop/JobsPage";
 import { useEffect, useState } from "react";
 import { getJobList } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
-import { useJob } from "../../../logic/context/JobContext";
 import { useProfile } from "../../../logic/context/profileContext";
 
 
