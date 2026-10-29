@@ -411,7 +411,7 @@ export default function MobileNavbar() {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            gap: 0.5,cursor:"pointer",
+            gap: 0.5,cursor:"pointer",scale: currentTab == "Applications" ? 1.2: 1,
           }}
           onClick={() => navigate("/Dashboard/Applications")}
         >
