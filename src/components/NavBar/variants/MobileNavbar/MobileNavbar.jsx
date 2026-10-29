@@ -162,7 +162,7 @@ export default function MobileNavbar() {
             alignItems: "center",
             flexDirection: "column",
             gap: 0.5,cursor:"pointer",
-            scale: currentTab == "Jobs" ? 1.2: 1,
+            scale: currentTab == "Jobs" ? 1.2: 1,transition:"0.3s"
           }}
           onClick={() => navigate("/Dashboard/Jobs")}
         >
