@@ -19,6 +19,7 @@ import LoadingList from "./LoadingList.jsx";
 import { useMediaQuery } from "@mui/material";
 
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
+import JobsDesktop from "./Desktop/JobsPage.jsx";
 
 export default function JobsPage() {
   const {  dispatch : dispatch1, ...state1 } = useProfile();
@@ -118,43 +119,9 @@ export default function JobsPage() {
   return (
     <>
 
-      <Box sx={{height:"100%",width:"100%"}}>
-
-        <Box sx={{height:"90%",width:"100%", display:"flex",overflow:"hidden"}} >
-
-          <Box sx={{height:"100%",width:"23%" ,display:"flex" , justifyContent:"center"}} >
-            <CardProfile/>   
-          </Box>
-
-          <Box sx={{height:"100%",width:"51%",pt:"0.5rem"}} >
-
-             <SearchInput  search={search} setSearch={setSearch} />
-        
-             {state.isLoading ? <LoadingList /> : <JobList />}
-
-          </Box>
-
-
-          <Box sx={{height:"100%",width:"26%",display:"flex" , justifyContent:"center"}} >
-            <CardAds />
-            
-          </Box>
-
-        </Box>
-
-
-
-
-        <Box sx={{height:"10%",width:"100%",display:"flex" , justifyContent:"center",alignItems:"center"}}>
-           <Stack spacing={2}>
-            <Pagination
-              onChange={handleChange}
-              count={state.JobInfo?.totalPages}
-            />
-          </Stack>
-        </Box>
-
-      </Box>
+      isMobile
+          ? <MobileNavbar />
+          : <JobsDesktop />;
 
 
 
