@@ -356,7 +356,7 @@ export default function MobileNavbar() {
 
             alignItems: "center",
             flexDirection: "column",
-            gap: 0.5,cursor:"pointer",
+            gap: 0.5,cursor:"pointer", scale: currentTab == "My_Jobs" ? 1.2: 1,
           }}
           onClick={() => navigate("/Dashboard/My_Jobs")}
         >
@@ -374,7 +374,7 @@ export default function MobileNavbar() {
             <g id="bag-suitcase-4--product-business-briefcase">
               <path
                 id="Intersect"
-                stroke="#000000"
+                stroke={currentTab == "My_Jobs" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M7.00023 3.63989c-1.47511 0 -3.01706 0 -4.30967 0.23102 -0.61959 0.11073 -1.10769 0.58388 -1.24071 1.19907 -0.20962 0.96937 -0.20962 1.87358 -0.20962 3.24991 0 1.37634 0 2.28051 0.20962 3.24991 0.13302 0.6152 0.62112 1.0883 1.24071 1.1991 1.29261 0.231 2.83456 0.231 4.30967 0.231 1.47512 0 3.01707 0 4.30967 -0.231 0.6196 -0.1108 1.1077 -0.5839 1.2407 -1.1991 0.2096 -0.9694 0.2096 -1.87357 0.2096 -3.24991 0 -1.37633 0 -2.28054 -0.2096 -3.24991 -0.133 -0.61519 -0.6211 -1.08834 -1.2407 -1.19907 -1.2926 -0.23102 -2.83455 -0.23102 -4.30967 -0.23102Z"
@@ -382,7 +382,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 194"
-                stroke="#000000"
+                stroke={currentTab == "My_Jobs" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M4.59961 3.64V3c0 -1.10457 0.89543 -2 2 -2h0.8c1.10457 0 2 0.89543 2 2v0.64"
@@ -390,7 +390,7 @@ export default function MobileNavbar() {
               ></path>
               <path
                 id="Vector 2184"
-                stroke="#000000"
+                stroke={currentTab == "My_Jobs" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M1.24707 7 6.3703 8.71027c0.41105 0.13722 0.85555 0.13722 1.2666 0L12.7601 7"
@@ -428,7 +428,7 @@ export default function MobileNavbar() {
             <path
               d="m6.814 7.952 -0.145 -1.424a1 1 0 0 1 0.893 -1.1l13.474 -1.375a1 1 0 0 1 1.1 0.894l0.849 8.3a1 1 0 0 1 -0.89 1.1L8.62 15.756a1 1 0 0 1 -1.1 -0.893l-0.339 -3.031"
               fill="none"
-              stroke="#000000"
+              stroke={currentTab == "Applications" ? "#b611b9": "#000000" }
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
@@ -436,7 +436,7 @@ export default function MobileNavbar() {
             <path
               d="m14.255 10.761 5.848 -0.598"
               fill="none"
-              stroke="#000000"
+              stroke={currentTab == "Applications" ? "#b611b9": "#000000" }
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
@@ -444,7 +444,7 @@ export default function MobileNavbar() {
             <path
               d="m17.403 7.389 2.041 -0.208"
               fill="none"
-              stroke="#000000"
+              stroke={currentTab == "Applications" ? "#b611b9": "#000000" }
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
@@ -452,7 +452,7 @@ export default function MobileNavbar() {
             <path
               d="M1.013 10.517h1.714a3.861 3.861 0 0 1 1.645 -2.171 4.088 4.088 0 0 1 1.151 -0.394h4.215a1.477 1.477 0 0 1 1.477 1.477h0a1.476 1.476 0 0 1 -1.477 1.476H7.557l-0.031 0.117a3.159 3.159 0 0 1 -3.4 2.322h0"
               fill="none"
-              stroke="#000000"
+              stroke={currentTab == "Applications" ? "#b611b9": "#000000" }
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
@@ -460,7 +460,7 @@ export default function MobileNavbar() {
             <path
               d="M1.086 18.267h2.206a3.85 3.85 0 0 0 3.158 1.685h7.317a2.831 2.831 0 0 0 1.863 -0.7h0a2.835 2.835 0 0 0 0.864 -1.358l0.2 -0.712"
               fill="none"
-              stroke="#000000"
+              stroke={currentTab == "Applications" ? "#b611b9": "#000000" }
               stroke-linecap="round"
               stroke-linejoin="round"
               stroke-width="1"
