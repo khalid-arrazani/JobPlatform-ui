@@ -2,9 +2,6 @@ import "./JobPage.css";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
-import JobList from "./ListJobs.jsx";
-import CardAds from "./cardAds.jsx";
-import CardProfile from "./CardProfile.jsx";
 
 import { useEffect, useState } from "react";
 
@@ -18,6 +15,7 @@ import { useProfile } from "../../../../logic/context/profileContext.jsx";
 import { useJob } from "../../../../logic/context/JobContext.jsx";
 import { useAuth } from "../../../../logic/context/AuthContext.jsx";
 import { getJobList } from "../../../../logic/api/job/Job.jsx";
+import CardProfile from "./CardProfile.jsx";
 
 
 
@@ -49,8 +47,8 @@ export default function JobsDesktop({ search, setSearch, handleChange }) {
 
              <SearchInput  search={search} setSearch={setSearch} />
         
-             {state.isLoading ? <LoadingList /> : <JobList />}
-
+             {state.isLoading ? <LoadingList /> : <JobList/>} 
+             
           </Box>
 
 

@@ -72,8 +72,7 @@ export default function JobList() {
       console.log(error.response?.data.message);
     }
   };
- 
- 
+  
 
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
