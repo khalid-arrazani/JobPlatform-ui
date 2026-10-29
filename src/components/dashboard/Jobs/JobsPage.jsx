@@ -22,7 +22,7 @@ export default function JobsPage() {
       search :"", 
       page: 1
     });
-    
+
     const [search , setSearch] = useState("")
   
     useEffect(() => {
@@ -100,7 +100,7 @@ export default function JobsPage() {
 
      { isMobile
           ? null
-          : <JobsDesktop />}
+          : <JobsDesktop state={state} search={search} setSearch={setSearch} />}
     </>
   );
 }

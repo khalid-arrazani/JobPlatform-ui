@@ -125,7 +125,6 @@ export default function JobsDesktop() {
 
           <Box sx={{height:"100%",width:"26%",display:"flex" , justifyContent:"center"}} >
             <CardAds />
-            
           </Box>
 
         </Box>
