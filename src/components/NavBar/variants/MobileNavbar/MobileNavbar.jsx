@@ -209,7 +209,7 @@ export default function MobileNavbar() {
             flexDirection: "column",
             gap: 0.5,
             scale: currentTab == "Companies" ? 1.2: 1,
-            cursor:"pointer",
+            cursor:"pointer",transition:"0.3s"
           }}
           onClick={() => navigate("/Dashboard/Companies")}
         >
@@ -302,7 +302,7 @@ export default function MobileNavbar() {
             alignItems: "center",
             flexDirection: "column",
             gap: 0.5,
-            cursor:"pointer",
+            cursor:"pointer",transition:"0.3s"
           }}
         >
           <svg
@@ -356,7 +356,7 @@ export default function MobileNavbar() {
 
             alignItems: "center",
             flexDirection: "column",
-            gap: 0.5,cursor:"pointer", scale: currentTab == "My_Jobs" ? 1.2: 1,
+            gap: 0.5,cursor:"pointer", scale: currentTab == "My_Jobs" ? 1.2: 1,transition:"0.3s"
           }}
           onClick={() => navigate("/Dashboard/My_Jobs")}
         >
@@ -411,7 +411,7 @@ export default function MobileNavbar() {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            gap: 0.5,cursor:"pointer",scale: currentTab == "Applications" ? 1.2: 1,
+            gap: 0.5,cursor:"pointer",scale: currentTab == "Applications" ? 1.2: 1,transition:"0.3s"
           }}
           onClick={() => navigate("/Dashboard/Applications")}
         >
