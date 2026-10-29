@@ -22,36 +22,15 @@ import { getJobList } from "../../../../logic/api/job/Job.jsx";
 
 
 
-export default function JobsDesktop({state, search, setSearch, handleChange }) {
+export default function JobsDesktop({ search, setSearch, handleChange }) {
 
 
-  const { dispatch, ...state } = useJob();
+  const { ...state } = useJob();
 
 
 
-  const [filter , setFilter ] = useState({
-    search :"", 
-    page: 1
-  });
-  const [search , setSearch] = useState("")
+  
 
-  useEffect(() => {
-  const timeout = setTimeout(() => {
-
-    setFilter(prev => {
-      if (prev.search === search) return prev;
-
-      return {
-        ...prev,
-        search : search.trim(),
-        page: 1
-      };
-    });
-  },500);
-
-  return () => clearTimeout(timeout);
-
- }, [search]);
 
 
 

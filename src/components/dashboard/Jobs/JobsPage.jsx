@@ -14,7 +14,7 @@ export default function JobsPage() {
 
 
    const {  dispatch : dispatch1, ...state1 } = useProfile();
-    const { dispatch, ...state } = useJob();
+    const {  , ...state } = useJob();
   
   
   
@@ -99,7 +99,7 @@ export default function JobsPage() {
     <>
      { isMobile
           ? null
-          : <JobsDesktop state={state} search={search} setSearch={setSearch} handleChange={handleChange} />}
+          : <JobsDesktop  search={search} setSearch={setSearch} handleChange={handleChange} />}
     </>
   );
 }
