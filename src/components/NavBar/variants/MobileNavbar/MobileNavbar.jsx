@@ -37,8 +37,7 @@ export default function MobileNavbar() {
         "/Dashboard/Companies": "Companies",
         "/Dashboard/Saved": "Saved",
         "/Dashboard/My_Jobs": "My_Jobs",
-        "/Dashboard/Applications": "Applications",
-        "/Dashboard/My_Company": 5,
+        "/Dashboard/Applications": "Applications"   
       }[location.pathname] ?? null;
 
   return (
@@ -226,7 +225,7 @@ export default function MobileNavbar() {
             <g id="building-office--travel-places-building-office">
               <path
                 id="Rectangle 57"
-                stroke="#b611b9"
+                stroke= {currentTab == "Companies" ? "#b611b9": "#000000" }
                 stroke-linecap="round"
                 stroke-linejoin="round"
                 d="M28.61 3.492a5.37 5.37 0 0 1 4.899 4.995C33.748 11.807 34 16.973 34 24c0 8.605 -0.189 14.836 -0.324 18.182A2.939 2.939 0 0 1 30.722 45L18.5 45 6.288 45a2.948 2.948 0 0 1 -2.96 -2.83C3.193 38.746 3 32.383 3 24c0 -6.858 0.258 -12.082 0.5 -15.467a5.417 5.417 0 0 1 4.933 -5.045C11.098 3.242 14.689 3 18.5 3c3.831 0 7.44 0.244 10.11 0.492Z"
@@ -407,9 +406,7 @@ export default function MobileNavbar() {
         <Box
           sx={{
             bgcolor: "#faeefd",
-
             display: "flex",
-
             alignItems: "center",
             flexDirection: "column",
             gap: 0.5,cursor:"pointer",
@@ -471,6 +468,7 @@ export default function MobileNavbar() {
             Apply
           </Typography>
         </Box>
+
       </Box>
     </>
   );
