@@ -57,9 +57,7 @@ export default function JobsPage() {
 
 
 
-
   const { setSnackBar } = useAuth();
-
 
 
   const handleChange = (event, value) => {
