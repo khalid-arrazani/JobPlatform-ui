@@ -134,7 +134,7 @@ export default function JobList() {
                     {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
 
                 
-                    <Typography sx={{fontSize:"0.8rem",fontWeight:600,color:"#080811b1",fontFamily:"monospace"}}>Front End developer mobile
+                    <Typography sx={{fontSize:"0.8rem",fontWeight:600,color:"#080811b1",fontFamily:"-apple-system"}}>Front End developer mobile
 
                     </Typography>
                     <Chip
@@ -150,7 +150,7 @@ export default function JobList() {
                         fontSize: "0.6rem",
                   
                         height: "24px",
-                        ml: "",fontWeight: 500,color:"#000000ab"
+                       fontWeight:500,color:"#000000ab"
                       }}
                     />
                     
