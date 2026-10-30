@@ -458,7 +458,8 @@ export default function JobList() {
 
                 <Box sx={{ mt: 1 }}>
                   <Chip
-                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+                    // label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+                    label={}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
