@@ -158,7 +158,7 @@ export default function JobList() {
             <Button sx={{
                   position: "absolute",
                   top: "0.2rem",
-                  right: "0.2rem",
+                  right: "0rem",
                   textTransform: "none",
                   borderRadius: "10px",
                   fontWeight: 500,
@@ -168,7 +168,8 @@ export default function JobList() {
                     transform: "translateY(-2px)",
                     boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
                   },
-                  width:"f10px"
+                  minWidth:"5px",
+                  p:0
                 }}>
                    
                       <TurnedInIcon sx={{ color: "#1976d2" }} />
