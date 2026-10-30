@@ -119,7 +119,7 @@ export default function JobList() {
           </Box>
 
           {/* content */}
-          <Box sx={{height:"100%",bgcolor:"#d8d8d8",flex:1}} >
+          <Box sx={{height:"100%",bgcolor:"#d8d8d815",flex:1}} >
             <Box
               sx={{
                 flex: 1,
@@ -130,12 +130,12 @@ export default function JobList() {
                 position: "relative",
               }}
             >
-              <Box sx={{display:"flex",height:"fit-Content"}} >
+              <Box sx={{display:"flex",height:"fit-Content",gap:0.2}} >
                     {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
 
                     
 
-                    <Typography sx={{fontSize:"0.8rem",fontWeight:500}}>Front End developer mobile , desktop , full stake dff</Typography>
+                    <Typography sx={{fontSize:"0.8rem",fontWeight:500,color:"#080811cb"}}>Front End developer mobile , desktop , full stake dff</Typography>
                     <Chip
                     
                       icon={<AccessTimeIcon />}
@@ -147,9 +147,9 @@ export default function JobList() {
                       variant="outlined"
                       sx={{
                         fontSize: "0.6rem",
-                    fontFamily: "monospace",
+                  
                         height: "24px",
-                        ml: "",fontWeight: 600,
+                        ml: "",fontWeight: 500,color:"#000000ab"
                       }}
                     />
                   </Box>
