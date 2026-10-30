@@ -93,7 +93,7 @@ export default function JobList() {
         
           sx={{
             display: "flex",
-            gap: 0.5,
+            gap: 0.8,
             background: "#ffffffe3",
             borderRadius: "10px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
@@ -120,7 +120,7 @@ export default function JobList() {
 
           {/* content */}
           <Box sx={{height:"100%",bgcolor:"#8e2424",flex:1}} >
-            
+
           </Box>
           
        
