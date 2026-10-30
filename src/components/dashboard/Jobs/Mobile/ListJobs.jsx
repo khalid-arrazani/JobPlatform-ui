@@ -168,10 +168,10 @@ export default function JobList() {
                   variant="outlined"
                   sx={{
                     fontSize: "0.6rem",
-                    height: "24px",
+                    height: "22px",
                     fontWeight: 500,
                     color: "#000000ab",
-                    borderRadius:"5px"
+                    borderRadius:"5px",fontFamily:""
                   }}
                 />
               </Box>
