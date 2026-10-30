@@ -144,6 +144,7 @@ export default function JobList() {
                 alignContent: "center",
                 width: "90%",
                 position: "relative",
+                flexDirection:"column"
               }}
             >
               <Box sx={{ display: "flex", height: "fit-Content", gap: 0.5 }}>
@@ -204,8 +205,7 @@ export default function JobList() {
                         height: "22px",
                       }}
                     />
-               
-                  
+
                     <Chip
                       label={"Remote"}
                       size="small"
@@ -224,22 +224,29 @@ export default function JobList() {
                   useFlexGap
                   sx={{ mt: 1, mb: 0.5 }}
                 >
-                  {job.skills?.slice(0, 3).map((skill, index) => (
+   
                     <Chip
-                      key={index}
-                      label={skill}
+                      label={"JavaScript"}
                       size="small"
                       sx={{
                         fontSize: "0.7rem",
                         height: "22px",
                       }}
-                    />
-                  ))}
+                    />  <Chip
+                    
+                      label={"Node.Js"}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                      }}
+                    /> 
+ 
                 </Stack>
 
                 <Box sx={{ mt: 1 }}>
                   <Chip
-                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+                    label={`1.2M-124K/USD`}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
