@@ -110,7 +110,11 @@ export default function JobList() {
           }}
         >
           <Box sx={{height:"100%",bgcolor:"#222020",width:"5rem"}} >
-            
+          <Box sx={{height:"4.5rem",bgcolor:"#cdc0c0",width:"5rem"}} >
+            <Avatar
+            src=""
+            />
+          </Box>
           </Box>
           <Box sx={{height:"100%",bgcolor:"#8e2424",flex:1}} ></Box>
           
