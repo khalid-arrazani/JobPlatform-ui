@@ -83,7 +83,7 @@ export default function JobList() {
         style={{
           display: "flex",
           flexDirection: "column",
-          height: "77vh",
+          height: "75vh",
           overflow: "scroll",
           marginTop: "0.5rem",
           alignItems:"center", 
