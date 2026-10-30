@@ -168,7 +168,7 @@ export default function JobList() {
                     transform: "translateY(-2px)",
                     boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
                   },
-                  width:"fit-"
+                  width:"fit-Content"
                 }}>
                    
                       <TurnedInIcon sx={{ color: "#1976d2" }} />
