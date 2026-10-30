@@ -85,12 +85,11 @@ export default function JobList() {
           flexDirection: "column",
           height: "75vh",
           marginTop: "0.5rem",
-          alignItems:"center", 
+          alignItems: "center",
         }}
-        sx={{bgcolor:"#e9e8e8"}}
+        sx={{ bgcolor: "#e9e8e8" }}
       >
         <Card
-        
           sx={{
             display: "flex",
             gap: 0.8,
@@ -105,21 +104,38 @@ export default function JobList() {
 
             minHeight: "8rem",
             p: 1,
-            width:"95%",
-            boxSizing:"border-box"
+            width: "95%",
+            boxSizing: "border-box",
           }}
         >
-          <Box sx={{height:"100%",width:"4rem"}} >
-          <Box sx={{height:"4rem ",bgcolor:"#cdc0c07c",width:"4rem",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"8px"}} >
-            <Avatar
-            src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
-            sx={{borderRadius:"5px",width:"3.5rem",height:"3.5rem"}}
-            />
-          </Box>
+          <Box sx={{ height: "100%", width: "4rem" }}>
+            <Box
+              sx={{
+                height: "4rem ",
+                bgcolor: "#cdc0c07c",
+                width: "4rem",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                borderRadius: "8px",
+              }}
+            >
+              <Avatar
+                src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
+                sx={{ borderRadius: "5px", width: "3.5rem", height: "3.5rem" }}
+              />
+            </Box>
           </Box>
 
           {/* content */}
-          <Box sx={{height:"100%",bgcolor:"#d8d8d815",flex:1,position:"relative"}} >
+          <Box
+            sx={{
+              height: "100%",
+              bgcolor: "#d8d8d815",
+              flex: 1,
+              position: "relative",
+            }}
+          >
             <Box
               sx={{
                 flex: 1,
@@ -130,83 +146,80 @@ export default function JobList() {
                 position: "relative",
               }}
             >
-              <Box sx={{display:"flex",height:"fit-Content",gap:0.5}} >
-                    {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
+              <Box sx={{ display: "flex", height: "fit-Content", gap: 0.5 }}>
+                {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    color: "#080811b1",
+                    fontFamily: "-apple-system",
+                  }}
+                >
+                  Front End developer mobile
+                </Typography>
+                <Chip
+                  // label={formatDistanceToNow(new Date(job.createdAt), {
+                  //   addSuffix: true,
+                  // })}
+                  label={"4 months ago"}
+                  size="small"
+                  variant="outlined"
+                  sx={{
+                    fontSize: "0.6rem",
 
-                
-                    <Typography sx={{fontSize:"0.8rem",fontWeight:600,color:"#080811b1",fontFamily:"-apple-system"}}>Front End developer mobile
-
-                    </Typography>
-                    <Chip
-                    
-                     
-                      // label={formatDistanceToNow(new Date(job.createdAt), {
-                      //   addSuffix: true,
-                      // })}
-                      label={"4 months ago"}
-                      size="small"
-                      variant="outlined"
-                      sx={{
-                        fontSize: "0.6rem",
-                  
-                        height: "24px",
-                       fontWeight:500,color:"#000000ab"
-                      }}
-                    />
-                    
-                  </Box>
-                  
+                    height: "24px",
+                    fontWeight: 500,
+                    color: "#000000ab",
+                  }}
+                />
+              </Box>
             </Box>
-            <Button sx={{
-                  position: "absolute",
-                  top: "0.2rem",
-                  right: "0rem",
-                  textTransform: "none",
-                  borderRadius: "10px",
-                  fontWeight: 500,
-                  fontSize: "0.6rem",
-                  transition: "all 0.2s ease",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
-                  },
-                  minWidth:"5px",
-                  p:0
-                }}>
-                   
-                      <TurnedInIcon sx={{ color: "#1976d2" }} />
-                   
-             </Button>
-
+            <Button
+              sx={{
+                position: "absolute",
+                top: "0.2rem",
+                right: "0rem",
+                textTransform: "none",
+                borderRadius: "10px",
+                fontWeight: 500,
+                fontSize: "0.6rem",
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                },
+                minWidth: "5px",
+                p: 0,
+              }}
+            >
+              <TurnedInIcon sx={{ color: "#1976d2" }} />
+            </Button>
 
             <Button
-                variant="contained"
-                // data-id={job._id}
-                onClick={openJob}
-                
-                sx={{
-                  position: "absolute",
-                  bottom: "0.2rem",
-                  right: "0.2rem",
-                  textTransform: "none",
-                  borderRadius: "10px",
-                  px: 2,
-                  py: 0.8,
-                  fontWeight: 500,
-                  fontSize: "0.6rem",
-                  transition: "all 0.2s ease",
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
-                  },
-                }}
-              >
-                Open position
-              </Button>
-
+              variant="contained"
+              // data-id={job._id}
+              onClick={openJob}
+              sx={{
+                position: "absolute",
+                bottom: "0.2rem",
+                right: "0.2rem",
+                textTransform: "none",
+                borderRadius: "10px",
+                px: 2,
+                py: 0.8,
+                fontWeight: 500,
+                fontSize: "0.6rem",
+                transition: "all 0.2s ease",
+                "&:hover": {
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                },
+              }}
+            >
+              Open position
+            </Button>
           </Box>
-          
-       
         </Card>
       </Box>
     </>
