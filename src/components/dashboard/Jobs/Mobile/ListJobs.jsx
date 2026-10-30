@@ -174,6 +174,84 @@ export default function JobList() {
                   }}
                 />
               </Box>
+              
+                <Typography
+                  sx={{
+                    fontSize: "0.8rem",
+                    fontWeight: 600,
+                    fontFamily: "monospace",
+                    color: "#02020db4",
+                  }}
+                >
+                  {/* {job?.createdBy?.name} • {job?.location} */}
+                  NexHire • Taroudant - Morocco
+                </Typography>
+
+                <Stack
+                  direction="row"
+                  spacing={0.5}
+                  flexWrap="wrap"
+                  useFlexGap
+                  sx={{ mt: 0.5, mb: 1 }}
+                >
+                
+                    <Chip
+                      label={"Full-time"}
+                      size="small"
+                      color="primary"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                      }}
+                    />
+               
+                  
+                    <Chip
+                      label={"Remote"}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                        bgcolor: "#f6d8ff",
+                      }}
+                    />
+               
+                </Stack>
+                <Stack
+                  direction="row"
+                  spacing={0.5}
+                  flexWrap="wrap"
+                  useFlexGap
+                  sx={{ mt: 1, mb: 0.5 }}
+                >
+                  {job.skills?.slice(0, 3).map((skill, index) => (
+                    <Chip
+                      key={index}
+                      label={skill}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "22px",
+                      }}
+                    />
+                  ))}
+                </Stack>
+
+                <Box sx={{ mt: 1 }}>
+                  <Chip
+                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
+                    size="small"
+                    sx={{
+                      fontSize: "0.7rem",
+                      height: "22px",
+                      bgcolor: "#c4e6d2",
+                      color: "#289e5d",
+                      fontWeight: 400,
+                      py: 1.5,
+                      borderRadius: "8px",
+                    }}
+                  />
+                </Box>
             </Box>
             <Button
               sx={{
