@@ -153,8 +153,8 @@ export default function JobList() {
                   sx={{
                     fontSize: "0.8rem",
                     fontWeight: 600,
-                    color: "#0808119a",
-                    fontFamily: "monospace",
+                    color: "#080811aa",
+                    fontFamily: "ui-sans-serif",
                   }}
                 >
                   Front End developer mobile 
