@@ -103,13 +103,14 @@ export default function JobList() {
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
             },
 
-            minHeight: "7.5rem",
+            minHeight: "8rem",
             p: 1,
             width:"95%",
             boxSizing:"border-box"
           }}
         >
-          <Box sx={{height:"100%",bgcolor:"#222020",width:"6rem"}} ></Box>
+          <Box sx={{height:"100%",bgcolor:"#222020",width:"5.5rem"}} ></Box>
+          <Box sx={{height:"100%",bgcolor:"#8e2424",width:"5.5rem"}} ></Box>
           
        
         </Card>
