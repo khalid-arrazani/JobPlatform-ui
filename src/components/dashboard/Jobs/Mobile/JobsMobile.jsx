@@ -44,9 +44,6 @@ export default function JobsMobile({ search, setSearch, handleChange }) {
              
           </Box>
 
-
-         
-
         </Box>
 
 
