@@ -178,7 +178,7 @@ export default function JobList() {
               
                 <Typography
                   sx={{
-                    fontSize: "0.8rem",
+                    fontSize: "0.7rem",
                     fontWeight: 600,
                     fontFamily: "monospace",
                     color: "#02020db4",
@@ -190,10 +190,10 @@ export default function JobList() {
 
                 <Stack
                   direction="row"
-                  spacing={0.5}
+                  spacing={0.8}
                   flexWrap="wrap"
                   useFlexGap
-                  sx={{ mt: 0.5, mb: 1 }}
+                  sx={{ mt: 0.5, mb:0 }}
                 >
                 
                     <Chip
@@ -203,6 +203,7 @@ export default function JobList() {
                       sx={{
                         fontSize: "0.7rem",
                         height: "22px",
+                        borderRadius:""
                       }}
                     />
 
