@@ -88,7 +88,7 @@ export default function JobList() {
           marginTop: "0.5rem",
           alignItems:"center", 
         }}
-        sx={{bgcolor:"#fffefe"}}
+        sx={{bgcolor:"#e9e8e8"}}
       >
         <Card
           // key={job._id}
