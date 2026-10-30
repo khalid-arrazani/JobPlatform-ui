@@ -109,6 +109,7 @@ export default function JobList() {
             boxSizing:"border-box"
           }}
         >
+          <Box sx={{height:"100%",bgcolor:"#222020",width:"6rem"}} ></Box>
           
        
         </Card>
