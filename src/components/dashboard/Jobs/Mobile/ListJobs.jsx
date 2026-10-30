@@ -153,11 +153,11 @@ export default function JobList() {
                   sx={{
                     fontSize: "0.8rem",
                     fontWeight: 600,
-                    color: "#080811b1",
-                    fontFamily: "-apple-system",
+                    color: "#0808119a",
+                    fontFamily: "monospace",
                   }}
                 >
-                  Front End developer mobile
+                  Front End developer mobile 
                 </Typography>
                 <Chip
                   // label={formatDistanceToNow(new Date(job.createdAt), {
@@ -168,10 +168,10 @@ export default function JobList() {
                   variant="outlined"
                   sx={{
                     fontSize: "0.6rem",
-
                     height: "24px",
                     fontWeight: 500,
                     color: "#000000ab",
+                    borderRadius:"5px"
                   }}
                 />
               </Box>
@@ -202,8 +202,8 @@ export default function JobList() {
                       color="primary"
                       sx={{
                         fontSize: "0.7rem",
-                        height: "22px",
-                        borderRadius:""
+                        height: "20px",
+                        borderRadius:"5px"
                       }}
                     />
 
@@ -211,8 +211,9 @@ export default function JobList() {
                       label={"Remote"}
                       size="small"
                       sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
+                         fontSize: "0.7rem",
+                        height: "20px",
+                        borderRadius:"5px",
                         bgcolor: "#f6d8ff",
                       }}
                     />
@@ -223,40 +224,43 @@ export default function JobList() {
                   spacing={0.5}
                   flexWrap="wrap"
                   useFlexGap
-                  sx={{ mt: 1, mb: 0.5 }}
+                  sx={{ mt: 0.7 }}
                 >
    
                     <Chip
                       label={"JavaScript"}
                       size="small"
                       sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
+                         fontSize: "0.7rem",
+                        height: "20px",
+                        borderRadius:"5px"
                       }}
                     />  <Chip
                     
                       label={"Node.Js"}
                       size="small"
                       sx={{
-                        fontSize: "0.7rem",
-                        height: "22px",
+                         fontSize: "0.7rem",
+                        height: "20px",
+                        borderRadius:"5px"
                       }}
                     /> 
  
                 </Stack>
 
-                <Box sx={{ mt: 1 }}>
+                <Box sx={{ mt:0.5 }}>
                   <Chip
                     label={`1.2M-124K/USD`}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
-                      height: "22px",
+                        height: "20px",
+                        borderRadius:"5px",
                       bgcolor: "#c4e6d2",
                       color: "#289e5d",
                       fontWeight: 400,
-                      py: 1.5,
-                      borderRadius: "8px",
+                    
+                      
                     }}
                   />
                 </Box>
