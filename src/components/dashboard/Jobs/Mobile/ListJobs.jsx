@@ -299,7 +299,7 @@ export default function JobList() {
 
 
  <Card
-            key={job._id}
+            // key={job._id}
             sx={{
               display: "flex",
               gap: 1,
@@ -331,7 +331,7 @@ export default function JobList() {
               }}
             >
               <Avatar
-                src={job.createdBy?.companyLogo?.url}
+                // src={job.createdBy?.companyLogo?.url}
                 sx={{
                   width: "5rem",
                   height: "5rem",
@@ -368,13 +368,13 @@ export default function JobList() {
                   }}
                 >
                   <Box sx={{display:"flex",alignItems:"end",height:"fit-Content"}} >
-                    {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null }
+                    {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
                     <Chip
                     
                       icon={<AccessTimeIcon />}
-                      label={formatDistanceToNow(new Date(job.createdAt), {
-                        addSuffix: true,
-                      })}
+                      // label={formatDistanceToNow(new Date(job.createdAt), {
+                      //   addSuffix: true,
+                      // })}
                       size="small"
                       variant="outlined"
                       sx={{
@@ -385,14 +385,14 @@ export default function JobList() {
                       }}
                     />
                   </Box>
-
+{/* 
                   <Button data-id={job._id} onClick={saveJob}>
                     {job.isSaved ? (
                       <TurnedInIcon sx={{ color: "#1976d2" }} />
                     ) : (
                       <TurnedInNotOutlinedIcon />
                     )}
-                  </Button>
+                  </Button> */}
                 </Box>
 
                 <Typography
@@ -403,7 +403,7 @@ export default function JobList() {
                     color: "#02020db4",
                   }}
                 >
-                  {job?.createdBy?.name} • {job?.location}
+                  {/* {job?.createdBy?.name} • {job?.location} */}
                 </Typography>
 
                 <Stack
@@ -413,7 +413,7 @@ export default function JobList() {
                   useFlexGap
                   sx={{ mt: 0.5, mb: 1 }}
                 >
-                  {job.jobType && (
+                  {/* {job.jobType && (
                     <Chip
                       label={job.jobType}
                       size="small"
@@ -423,10 +423,10 @@ export default function JobList() {
                         height: "22px",
                       }}
                     />
-                  )}
-                  {job.workMode && (
+                  )} */}
+                  {/* {job.workMode && (
                     <Chip
-                      label={job.workMode}
+                      // label={job.workMode}
                       size="small"
                       sx={{
                         fontSize: "0.7rem",
@@ -434,7 +434,7 @@ export default function JobList() {
                         bgcolor: "#f6d8ff",
                       }}
                     />
-                  )}
+                  )} */}
                 </Stack>
                 <Stack
                   direction="row"
@@ -443,7 +443,7 @@ export default function JobList() {
                   useFlexGap
                   sx={{ mt: 1, mb: 0.5 }}
                 >
-                  {job.skills?.slice(0, 3).map((skill, index) => (
+                  {/* {job.skills?.slice(0, 3).map((skill, index) => (
                     <Chip
                       key={index}
                       label={skill}
@@ -453,13 +453,13 @@ export default function JobList() {
                         height: "22px",
                       }}
                     />
-                  ))}
+                  ))} */}
                 </Stack>
 
                 <Box sx={{ mt: 1 }}>
                   <Chip
                     // label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
-                    label={}
+                    label={"1400 - 5685 / "}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
