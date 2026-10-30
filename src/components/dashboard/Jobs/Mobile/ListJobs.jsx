@@ -133,8 +133,7 @@ export default function JobList() {
               <Box sx={{display:"flex",height:"fit-Content",gap:0.2}} >
                     {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
 
-                    
-
+                
                     <Typography sx={{fontSize:"0.8rem",fontWeight:500,color:"#080811cb"}}>Front End developer mobile , desktop , full stake dff</Typography>
                     <Chip
                     
@@ -152,8 +151,31 @@ export default function JobList() {
                         ml: "",fontWeight: 500,color:"#000000ab"
                       }}
                     />
+                    
                   </Box>
+                  
             </Box>
+            <Button sx={{
+                  position: "absolute",
+                  top: "0.2rem",
+                  right: "0.2rem",
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  fontWeight: 500,
+                  fontSize: "0.6rem",
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                  },
+                  width:"fit-"
+                }}>
+                   
+                      <TurnedInIcon sx={{ color: "#1976d2" }} />
+                   
+             </Button>
+
+
             <Button
                 variant="contained"
                 // data-id={job._id}
