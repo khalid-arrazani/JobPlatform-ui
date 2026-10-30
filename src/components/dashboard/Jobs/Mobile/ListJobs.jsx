@@ -119,7 +119,7 @@ export default function JobList() {
           </Box>
 
           {/* content */}
-          <Box sx={{height:"100%",bgcolor:"#d8d8d815",flex:1}} >
+          <Box sx={{height:"100%",bgcolor:"#d8d8d815",flex:1,position:"relative"}} >
             <Box
               sx={{
                 flex: 1,
@@ -158,19 +158,17 @@ export default function JobList() {
                 variant="contained"
                 // data-id={job._id}
                 onClick={openJob}
-                endIcon={<ArrowOutwardIcon />}
+                
                 sx={{
                   position: "absolute",
-                  bottom: "1rem",
-                  right: "1rem",
-
+                  bottom: "0.2rem",
+                  right: "0.2rem",
                   textTransform: "none",
                   borderRadius: "10px",
                   px: 2,
                   py: 0.8,
-                  fontWeight: 600,
-                  fontSize: "0.8rem",
-
+                  fontWeight: 500,
+                  fontSize: "0.6rem",
                   transition: "all 0.2s ease",
                   "&:hover": {
                     transform: "translateY(-2px)",
