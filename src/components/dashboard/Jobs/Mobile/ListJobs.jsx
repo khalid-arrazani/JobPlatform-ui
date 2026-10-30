@@ -154,6 +154,32 @@ export default function JobList() {
                     />
                   </Box>
             </Box>
+            <Button
+                variant="contained"
+                // data-id={job._id}
+                onClick={openJob}
+                endIcon={<ArrowOutwardIcon />}
+                sx={{
+                  position: "absolute",
+                  bottom: "1rem",
+                  right: "1rem",
+
+                  textTransform: "none",
+                  borderRadius: "10px",
+                  px: 2,
+                  py: 0.8,
+                  fontWeight: 600,
+                  fontSize: "0.8rem",
+
+                  transition: "all 0.2s ease",
+                  "&:hover": {
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
+                  },
+                }}
+              >
+                Open position
+              </Button>
 
           </Box>
           
