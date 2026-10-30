@@ -102,8 +102,8 @@ export default function JobList() {
               transform: "translateY(-2px)",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
             },
-         
-            minHeight: "8.5rem",
+
+            minHeight: "7.5rem",
             p: 1,
             width:"95%",
             boxSizing:"border-box"
