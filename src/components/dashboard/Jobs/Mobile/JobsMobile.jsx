@@ -1,9 +1,9 @@
-import "./JobPage.css";
+
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 
-import { useEffect, useState } from "react";
+ 
 
 
 import { Box } from "@mui/material";
@@ -11,25 +11,20 @@ import { Box } from "@mui/material";
 
 import SearchInput from "./searchInput.jsx";
 import LoadingList from "./LoadingList.jsx";
-import { useProfile } from "../../../../logic/context/profileContext.jsx";
+
 import { useJob } from "../../../../logic/context/JobContext.jsx";
-import { useAuth } from "../../../../logic/context/AuthContext.jsx";
-import { getJobList } from "../../../../logic/api/job/Job.jsx";
-import CardProfile from "./CardProfile.jsx";
+
+
+import JobList from "./ListJobs.jsx";
 
 
 
 
-export default function JobsDesktop({ search, setSearch, handleChange }) {
+
+export default function JobsMobile({ search, setSearch, handleChange }) {
 
 
   const { ...state } = useJob();
-
-
-
-  
-
-
 
 
   return (
@@ -39,11 +34,9 @@ export default function JobsDesktop({ search, setSearch, handleChange }) {
 
         <Box sx={{height:"90%",width:"100%", display:"flex",overflow:"hidden"}} >
 
-          <Box sx={{height:"100%",width:"23%" ,display:"flex" , justifyContent:"center"}} >
-            <CardProfile/>   
-          </Box>
+          
 
-          <Box sx={{height:"100%",width:"51%",pt:"0.5rem"}} >
+          <Box sx={{height:"100%",width:"100%",pt:"0.5rem"}} >
 
              <SearchInput  search={search} setSearch={setSearch} />
         
@@ -52,9 +45,7 @@ export default function JobsDesktop({ search, setSearch, handleChange }) {
           </Box>
 
 
-          <Box sx={{height:"100%",width:"26%",display:"flex" , justifyContent:"center"}} >
-            <CardAds />
-          </Box>
+         
 
         </Box>
 

@@ -31,7 +31,6 @@ export default function JobList() {
     setJobs(state);
   }, [state?.JobInfo]);
 
-  
   const saveJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
     try {

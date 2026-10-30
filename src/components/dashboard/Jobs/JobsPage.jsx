@@ -1,9 +1,12 @@
 import { useMediaQuery } from "@mui/material";
-import JobsDesktop from "./Desktop/JobsPage";
+ 
 import { useEffect, useState } from "react";
 import { getJobList } from "../../../logic/api/job/Job";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { useProfile } from "../../../logic/context/profileContext";
+import JobsDesktop from "./Desktop/JobsDesktop";
+import { useJob } from "../../../logic/context/JobContext";
+import JobsMobile from "./Mobile/JobsMobile";
 
 
 export default function JobsPage() {
@@ -13,6 +16,8 @@ export default function JobsPage() {
 
 
    const {  dispatch : dispatch1, ...state1 } = useProfile();
+     const {dispatch, ...state } = useJob();
+   
 
     const [filter , setFilter ] = useState({
       search :"", 
@@ -94,7 +99,7 @@ export default function JobsPage() {
   return (
     <>
      { isMobile
-          ? null
+          ? <JobsMobile  search={search} setSearch={setSearch} handleChange={handleChange} />
           : <JobsDesktop  search={search} setSearch={setSearch} handleChange={handleChange} />}
     </>
   );
