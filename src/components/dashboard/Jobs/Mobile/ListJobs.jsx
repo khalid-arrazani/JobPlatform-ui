@@ -109,7 +109,9 @@ export default function JobList() {
             boxSizing:"border-box"
           }}
         >
-          <Box sx={{height:"100%",bgcolor:"#222020",width:"5rem"}} ></Box>
+          <Box sx={{height:"100%",bgcolor:"#222020",width:"5rem"}} >
+            
+          </Box>
           <Box sx={{height:"100%",bgcolor:"#8e2424",flex:1}} ></Box>
           
        
