@@ -93,7 +93,7 @@ export default function JobList() {
         
           sx={{
             display: "flex",
-            gap: 1,
+            gap: 0.5,
             background: "#ffffffe3",
             borderRadius: "10px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
@@ -109,7 +109,7 @@ export default function JobList() {
             boxSizing:"border-box"
           }}
         >
-          <Box sx={{height:"100%",bgcolor:"#222020",width:"5.5rem"}} ></Box>
+          <Box sx={{height:"100%",bgcolor:"#222020",width:"5rem"}} ></Box>
           <Box sx={{height:"100%",bgcolor:"#8e2424",flex:1}} ></Box>
           
        
