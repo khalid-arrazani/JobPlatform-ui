@@ -110,7 +110,7 @@ export default function JobList() {
           }}
         >
           <Box sx={{height:"100%",bgcolor:"#222020",width:"5.5rem"}} ></Box>
-          <Box sx={{height:"100%",bgcolor:"#8e2424",width:"5.5rem"}} ></Box>
+          <Box sx={{height:"100%",bgcolor:"#8e2424",flex:1}} ></Box>
           
        
         </Card>
