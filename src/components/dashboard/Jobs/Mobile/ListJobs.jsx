@@ -110,7 +110,7 @@ export default function JobList() {
           }}
         >
           <Box sx={{height:"100%",width:"5rem"}} >
-          <Box sx={{height:"5rem ",bgcolor:"#cdc0c0",width:"5rem",display:"flex",alignItems:"center",justifyContent:"center"}} >
+          <Box sx={{height:"5rem ",bgcolor:"#cdc0c0",width:"5rem",display:"flex",alignItems:"center",justifyContent:"center",borderRadius:"8px"}} >
             <Avatar
             src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
             sx={{borderRadius:"5px",width:"4.5rem",height:"4.5rem"}}
