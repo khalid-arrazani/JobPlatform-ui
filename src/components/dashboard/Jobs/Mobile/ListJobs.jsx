@@ -84,14 +84,13 @@ export default function JobList() {
           display: "flex",
           flexDirection: "column",
           height: "75vh",
-          overflow: "scroll",
           marginTop: "0.5rem",
           alignItems:"center", 
         }}
         sx={{bgcolor:"#e9e8e8"}}
       >
         <Card
-          // key={job._id}
+        
           sx={{
             display: "flex",
             gap: 1,
@@ -103,15 +102,14 @@ export default function JobList() {
               transform: "translateY(-2px)",
               boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
             },
-            mb: "0.8rem",
+         
             minHeight: "8.5rem",
             p: 1,
-            width:"98%",
+            width:"95%",
             boxSizing:"border-box"
           }}
         >
           
-
        
         </Card>
       </Box>
