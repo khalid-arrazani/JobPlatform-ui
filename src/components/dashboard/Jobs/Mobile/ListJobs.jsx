@@ -95,16 +95,15 @@ export default function JobList() {
             key={job._id}
             sx={{
               display: "flex",
+              alignItems: "stretch",
               gap: 0.8,
               background: "#ffffffe3",
               borderRadius: "10px",
               boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
-              transition: "0.2s",
               p: 1,
               width: "95%",
               boxSizing: "border-box",
               height: "auto",
-              minHeight: 0,
             }}
           >
             <Box sx={{ height: "100%", width: "4rem" }}>
