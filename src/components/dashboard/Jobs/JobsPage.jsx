@@ -12,11 +12,11 @@ import JobsMobile from "./Mobile/JobsMobile";
 export default function JobsPage() {
   
   const isMobile = useMediaQuery("(max-width:600px)");
-  const isTablet = useMediaQuery("(min-width:601px) and (max-width:1024px)");
+
 
 
    const {  dispatch : dispatch1, ...state1 } = useProfile();
-     const {dispatch, ...state } = useJob();
+     const {dispatch } = useJob();
    
 
     const [filter , setFilter ] = useState({
