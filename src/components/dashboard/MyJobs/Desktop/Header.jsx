@@ -3,7 +3,7 @@ import { Box, Typography, Button, Tab, Tabs, Chip } from "@mui/material";
  
 
 import AddIcon from "@mui/icons-material/Add";
-import { useJob } from "../../../logic/context/JobContext";
+import { useJob } from "../../../../logic/context/JobContext";
 
 export default function Header() {
 

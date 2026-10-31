@@ -146,49 +146,33 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-import logoTitle from "../../../../assets/Logo/logo.png";
+import logoTitle from "../../../assets/Logo/logo.png";
+
 
 import { green } from "@mui/material/colors";
+import { UpdateJob } from "../../../../logic/api/job/Job";
+import { useAuth } from "../../../../logic/context/AuthContext";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { useJob } from "../../../../logic/context/JobContext";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { UpdateJob } from "../../../../logic/api/job/Job";
 
-const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
+const EditeJobModal = ({ open, setOpen,jobInfo }) => {
   const { dispatch, ...state } = useProfile();
   const { fetchCompany } = useJob();
   const { setSnackBar } = useAuth();
 
-  console.log(jobInfo);
-
   const [jobData, setJobData] = useState({
-    title: jobInfo?.title,
-    description: jobInfo?.description,
-    location: jobInfo?.location,
-    minSalary: jobInfo?.minSalary,
+    title:jobInfo?.title,
+    description:jobInfo?.description,
+    location:jobInfo?.location,
+    minSalary:jobInfo?.minSalary,
     maxSalary: jobInfo?.maxSalary,
-    salaryCurrency: jobInfo?.salaryCurrency,
-    salaryPeriod: jobInfo?.salaryPeriod,
-    jobType: jobInfo?.jobType,
-    workMode: jobInfo?.workMode,
-    experienceLevel: jobInfo?.experienceLevel,
-    skills: jobInfo?.skills,
+    salaryCurrency:jobInfo?.salaryCurrency,
+    salaryPeriod:jobInfo?.salaryPeriod,
+    jobType:jobInfo?.jobType,
+    workMode:jobInfo?.workMode,
+    experienceLevel:jobInfo?.experienceLevel,
+    skills:jobInfo?.skills,
   });
-
-  const hasNoChange =
-    jobData.title === jobInfo?.title &&
-    jobData.description === jobInfo?.description &&
-    jobData.location === jobInfo?.location &&
-    jobData.minSalary === jobInfo?.minSalary &&
-    jobData.maxSalary === jobInfo?.maxSalary &&
-    jobData.salaryCurrency === jobInfo?.salaryCurrency &&
-    jobData.salaryPeriod === jobInfo?.salaryPeriod &&
-    jobData.jobType === jobInfo?.jobType &&
-    jobData.workMode === jobInfo?.workMode &&
-    jobData.experienceLevel === jobInfo?.experienceLevel &&
-    jobData.skills === jobInfo?.skills;
-
-  console.log("hasChange", hasNoChange);
 
   const handleChange = (e) => {
     setJobData({
@@ -208,17 +192,14 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     });
 
     try {
-      const data = await UpdateJob(
-        { ...jobData, status: "active" },
-        jobInfo._id,
-      );
+      const data = await UpdateJob(jobData , jobInfo._id );
 
       setSnackBar({
         open: true,
         message: data?.message,
         severity: "success",
       });
-      fetchCompany();
+      fetchCompany()
       handleClose();
 
       setJobData({
@@ -240,7 +221,7 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
         payload: true,
       });
     } catch (error) {
-      console.log(error.response?.data);
+      console.log(error.response?.data)
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -254,68 +235,7 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
     }
   };
 
-  const handleSubmitDraft = async () => {
-    if (hasNoChange) {
-      return setSnackBar({
-        open: true,
-        message: "No changes made.",
-        severity: "info",
-      });
-    }
 
-    dispatch({
-      type: "SET_LOADING_UPDATE_PROFILE",
-      payload: true,
-    });
-
-    try {
-      const data = await UpdateJob(
-        { ...jobData, status: "draft" },
-        jobInfo._id,
-      );
-
-      setSnackBar({
-        open: true,
-        message: data?.message,
-        severity: "success",
-      });
-
-      fetchCompany();
-      handleClose();
-
-      setJobData({
-        title: "",
-        description: "",
-        location: "",
-        minSalary: "",
-        maxSalary: "",
-        salaryCurrency: "USD",
-        salaryPeriod: "Per Year",
-        jobType: "",
-        workMode: "",
-        experienceLevel: "Mid",
-        skills: [],
-      });
-
-      dispatch({
-        type: "RELOADLISTJOB",
-        payload: true,
-      });
-    } catch (error) {
-      setSnackBar({
-        open: true,
-        message: error.response?.data.message,
-        severity: "error",
-      });
-
-      console.log(error?.response?.data);
-    } finally {
-      dispatch({
-        type: "SET_LOADING_UPDATE_PROFILE",
-        payload: false,
-      });
-    }
-  };
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
@@ -603,39 +523,6 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
       </DialogContent>
 
       <DialogActions sx={{ p: 2 }}>
-        <Button
-          variant="contained"
-          disabled={state.isLoadingUptadeProfile}
-          sx={{
-            width: "15%",
-            height: "2.5rem",
-            position: "absolute",
-            left: 10,
-            bgcolor: "#FFF7E6",
-            color: "#A16207",
-            border: "1px solid #F5D58B",
-            "&:hover": {
-              bgcolor: "#FDECC8",
-            },
-          }}
-          onClick={handleSubmitDraft}
-        >
-          {state.isLoadingUptadeProfile ? (
-            <CircularProgress
-              aria-label="Loading…"
-              size={30}
-              sx={{
-                color: green[800],
-                position: "absolute",
-              }}
-            />
-          ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              New Draft
-            </Box>
-          )}
-        </Button>
-
         <Button onClick={handleClose} variant="outlined">
           Cancel
         </Button>
@@ -656,14 +543,13 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
               }}
             />
           ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              Post Job
-            </Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Update Info</Box>
           )}
         </Button>
+
       </DialogActions>
     </Dialog>
   );
 };
 
-export default EditeDraftJobModal;
+export default EditeJobModal;

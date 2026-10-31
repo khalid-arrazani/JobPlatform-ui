@@ -4,8 +4,8 @@ import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 
 import { Search } from "lucide-react";
-import CardJobs from "./ListJobs";
-import { useJob } from "../../../logic/context/JobContext";
+import CardJobs from "../ListJobs";
+import { useJob } from "../../../../logic/context/JobContext";
 import { useEffect, useState } from "react";
 
 import NoJobsYet from "./emptyList/NoJobsYet";

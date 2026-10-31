@@ -11,21 +11,22 @@ import {
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
-import PauseCircleOutlineOutlinedIcon from "@mui/icons-material/PauseCircleOutlineOutlined";
+
 import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
-import { DeleteMyJobs, ToggleStatusJob } from "../../../logic/api/job/Job";
-import { useJob } from "../../../logic/context/JobContext";
-import { useAuth } from "../../../logic/context/AuthContext";
+import { useJob } from "../../../../../logic/context/JobContext";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { DeleteMyJobs } from "../../../../../logic/api/job/Job";
+import EditeJobModal from "./EditeDraftModal";
 
-import EditeJobModal from "./EditeJobModal";
 
-import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
-export default function MenuCard({ JobId, Status, jobInfo }) {
+
+
+
+export default function MenuCardDraft({ JobId,  jobInfo }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
-  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
+  
 
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompanyWitoutReload } = useJob();
@@ -42,17 +43,20 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
   };
 
   const handleDelete = async (event, jobId) => {
+    console.log(jobId);
     try {
       const deleteJob = await DeleteMyJobs(jobId);
+
       setSnackBar({
         open: true,
         message: deleteJob.message,
         severity: "success",
       });
+
       fetchCompanyWitoutReload();
       setAnchorEl(null);
     } catch (err) {
-      console.log(err);
+      console.log(err?.response);
       setSnackBar({
         open: true,
         message: err?.response?.data.message,
@@ -61,25 +65,6 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
     }
   };
 
-  const handleStatus = async (event, jobId) => {
-    try {
-      const deleteJob = await ToggleStatusJob(jobId);
-      setSnackBar({
-        open: true,
-        message: deleteJob.message,
-        severity: "success",
-      });
-      fetchCompanyWitoutReload();
-      setAnchorEl(null);
-    } catch (err) {
-      console.log(err);
-      setSnackBar({
-        open: true,
-        message: err?.response?.data.message,
-        severity: "error",
-      });
-    }
-  };
 
   const handleModalEdite = async () => {
     setEditeJobModal(true);
@@ -89,11 +74,13 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
     <>
       <IconButton
         onClick={(e) => handleOpen(e, JobId)}
+       
+        style={{padding:2}} 
+        
         sx={{
-          position: "absolute",
-          top: "13%",
-          right: "2%",
-          ":hover": { bgcolor: "#dddddd00" },
+          ":hover": { bgcolor: "#dddddd00"
+           }
+           ,bgcolor:"#f5f5f5",borderRadius:"5px",
         }}
       >
         <MoreVertIcon />
@@ -128,32 +115,14 @@ export default function MenuCard({ JobId, Status, jobInfo }) {
           </ListItemIcon>
           Edit Job
         </MenuItem>
+        
         <EditeJobModal
           open={openEditeJobModal}
           setOpen={setEditeJobModal}
           jobInfo={jobInfo}
         />
 
-        <MenuItem onClick={() => setMyJobDetailsModal(true)}>
-          <ListItemIcon>
-            <VisibilityOutlinedIcon fontSize="small" />
-          </ListItemIcon>
-          View Job
-        </MenuItem>
 
-        <MyJobDetailsModal
-          open={openMyJobDetailsModal}
-          setOpen={setMyJobDetailsModal}
-          jobInfo={jobInfo}
-        />
-
-        <MenuItem onClick={(e) => handleStatus(e, JobId)}>
-          <ListItemIcon>
-            <PauseCircleOutlineOutlinedIcon fontSize="small" />
-          </ListItemIcon>
-
-          {Status == "closed" ? "Active Job" : "Close Job"}
-        </MenuItem>
 
         <Divider sx={{ my: 0.5 }} />
 

@@ -1,5 +1,5 @@
 import { Box,Typography } from "@mui/material";
-import { useJob } from "../../../../logic/context/JobContext";
+import { useJob } from "../../../../../logic/context/JobContext";
 
 export default function NoSearchResults () {
     const { felterData} = useJob();
