@@ -124,7 +124,7 @@ export default function JobList() {
               bgcolor: "#d8d8d815",
               flex: 1,
               position: "relative",
-              height:"auto"
+              
             }}
           >
             <Box
@@ -265,6 +265,8 @@ export default function JobList() {
                   />
                 </Box>
             </Box>
+
+
             <Button
               sx={{
                 position: "absolute",
