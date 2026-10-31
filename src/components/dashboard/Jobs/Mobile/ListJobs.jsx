@@ -88,7 +88,7 @@ export default function JobList() {
           alignItems: "center",
           gap: 6,
         }}
-        sx={{ bgcolor: "#e9e8e8", overflow: "auto" }}
+        sx={{ bgcolor: "#e9e8e8", overflow: "scroll" }}
       >
         {jobs?.JobInfo?.jobs.map((job) => (
           <Card
@@ -305,6 +305,7 @@ export default function JobList() {
             </Box>
           </Card>
         ))}
+        
       </Box>
     </>
   );
