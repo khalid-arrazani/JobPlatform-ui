@@ -146,14 +146,11 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-import logoTitle from "../../../assets/Logo/logo.png";
+import logoTitle from "../../../../assets/Logo/logo.png";
 
 
 import { green } from "@mui/material/colors";
-import { UpdateJob } from "../../../../logic/api/job/Job";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { useProfile } from "../../../../logic/context/profileContext";
-import { useJob } from "../../../../logic/context/JobContext";
+
 
 const EditeJobModal = ({ open, setOpen,jobInfo }) => {
   const { dispatch, ...state } = useProfile();

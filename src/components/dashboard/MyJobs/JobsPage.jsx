@@ -11,9 +11,9 @@ export default function JobsPage() {
 
   return (
     <>
-     { isMobile
+     {/* { isMobile
           ? <JobsMobile  search={search} setSearch={setSearch} handleChange={handleChange} />
-          : <JobsDesktop  search={search} setSearch={setSearch} handleChange={handleChange} />}
+          : <JobsDesktop  search={search} setSearch={setSearch} handleChange={handleChange} />} */}
     </>
   );
 }
