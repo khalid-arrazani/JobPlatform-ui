@@ -40,7 +40,7 @@ export default function JobsMobile({ search, setSearch, handleChange }) {
 
              <SearchInput  search={search} setSearch={setSearch} />
         
-             {state.isLoading ? <LoadingList /> : <JobList/>} 
+             {state.isLoading ? <LoadingList /> : <JobList handleChange={handleChange} />} 
              
           </Box>
 

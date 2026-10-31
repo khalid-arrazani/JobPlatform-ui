@@ -5,7 +5,7 @@ import {
   Button,
   Card,
   Chip,
-  Stack,
+  Stack,Pagination
 } from "@mui/material";
 import { formatDistanceToNow } from "date-fns";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
@@ -20,7 +20,7 @@ import { useAuth } from "../../../../logic/context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { millify } from "millify";
 
-export default function JobList() {
+export default function JobList({handleChange}) {
   const { ...state } = useJob();
   const { setSnackBar } = useAuth();
 
@@ -86,11 +86,12 @@ export default function JobList() {
           height: "85vh",
           marginTop: "0.5rem",
           alignItems: "center",
-          gap: 7,
+          gap: 7 
 
         }}
-        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6rem",boxSizing:"border-box"}}
+        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6rem",boxSizing:"border-box",position:"relative"}}
       >
+        
         {jobs?.JobInfo?.jobs.map((job) => (
           <Card
             key={job._id}
@@ -298,6 +299,8 @@ export default function JobList() {
             </Box>
           </Card>
         ))}
+
+        
       </Box>
     </>
   );
