@@ -88,8 +88,9 @@ export default function JobList() {
           alignItems: "center",
           gap: 6,
         }}
-        sx={{ bgcolor: "#e9e8e8", overflow: "scroll" }}
+        sx={{ bgcolor: "#e9e8e8", }}
       >
+        <Box sx={{height:"100%",width:"100%",overflow:'auto'}}>
         {jobs?.JobInfo?.jobs.map((job) => (
           <Card
             key={job._id}
@@ -304,7 +305,7 @@ export default function JobList() {
               </Button>
             </Box>
           </Card>
-        ))}
+        ))}</Box>
         
       </Box>
     </>
