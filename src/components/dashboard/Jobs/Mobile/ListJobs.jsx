@@ -125,7 +125,7 @@ export default function JobList() {
                 bgcolor: "#d8d8d815",
                 flex: 1,
                 position: "relative",
-                height:"fit-content"
+                height:"auto"
               }}
             >
               <Box
