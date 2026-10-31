@@ -237,13 +237,13 @@ export default function JobList({handleChange}) {
                   
                 </Stack>
 
-                <Box sx={{ mt: 0.8 }}>
+                <Box sx={{ mt: 1.2 }}>
                   <Chip
                     label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
-                      height: "20px",
+                      height: "22px",
                       borderRadius: "5px",
                       bgcolor: "#c4e6d2",
                       color: "#289e5d",
