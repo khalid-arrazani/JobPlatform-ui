@@ -86,7 +86,7 @@ export default function JobList({handleChange}) {
           height: "85vh",
           marginTop: "0.5rem",
           alignItems: "center",
-          gap: 7 
+          gap: 8 
 
         }}
         sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6.5rem",boxSizing:"border-box",position:"relative"}}
