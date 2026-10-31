@@ -128,10 +128,7 @@ export default function JobList() {
             }}
           >
             <Box
-              sx={{
-                 
-               
-                display: "flex",
+              sx={{ display: "flex",
                 alignContent: "center",
                 width: "90%",
                 position: "relative",
