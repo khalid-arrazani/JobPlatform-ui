@@ -121,10 +121,10 @@ export default function JobList() {
           {/* content */}
           <Box
             sx={{
-            
               bgcolor: "#d8d8d815",
               flex: 1,
               position: "relative",
+              height:"auto"
             }}
           >
             <Box
@@ -208,6 +208,7 @@ export default function JobList() {
                     />
                
                 </Stack>
+
                 <Stack
                   direction="row"
                   spacing={0.5}
