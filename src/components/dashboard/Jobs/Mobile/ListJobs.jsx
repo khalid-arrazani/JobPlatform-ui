@@ -300,7 +300,11 @@ export default function JobList({handleChange}) {
           </Card>
         ))}
 
-        
+        <Pagination
+              onChange={handleChange}
+              count={state.JobInfo?.totalPages}
+              sx={{mt:'auto'}}
+            />
       </Box>
     </>
   );

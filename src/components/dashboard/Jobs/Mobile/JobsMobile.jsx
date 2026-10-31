@@ -49,14 +49,7 @@ export default function JobsMobile({ search, setSearch, handleChange }) {
 
 
 
-        <Box sx={{height:"10%",width:"100%",display:"flex" , justifyContent:"center",alignItems:"center"}}>
-           <Stack spacing={2}>
-            <Pagination
-              onChange={handleChange}
-              count={state.JobInfo?.totalPages}
-            />
-          </Stack>
-        </Box>
+        
 
       </Box>
 
