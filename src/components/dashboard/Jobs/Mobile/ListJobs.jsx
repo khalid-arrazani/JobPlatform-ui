@@ -88,15 +88,14 @@ export default function JobList() {
           alignItems: "center",
           gap: 6,
         }}
-        sx={{ bgcolor: "#e9e8e8", }}
+        sx={{ bgcolor: "#e9e8e8", overflowY: "auto" }}
       >
-        <Box sx={{height:"100%",width:"100%",overflow:'auto'}}>
         {jobs?.JobInfo?.jobs.map((job) => (
           <Card
             key={job._id}
             sx={{
               display: "flex",
-              alignItems: "stretch",
+              flexShrink: 0,
               gap: 0.8,
               background: "#ffffffe3",
               borderRadius: "10px",
@@ -126,7 +125,7 @@ export default function JobList() {
                 bgcolor: "#d8d8d815",
                 flex: 1,
                 position: "relative",
-                height:"auto"
+                height: "auto",
               }}
             >
               <Box
@@ -305,8 +304,7 @@ export default function JobList() {
               </Button>
             </Box>
           </Card>
-        ))}</Box>
-        
+        ))}
       </Box>
     </>
   );
