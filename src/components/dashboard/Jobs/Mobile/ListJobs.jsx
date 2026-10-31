@@ -89,7 +89,10 @@ export default function JobList() {
         }}
         sx={{ bgcolor: "#e9e8e8" }}
       >
-        <Card
+
+
+         {jobs?.JobInfo?.jobs.map((job) => (
+           <Card
           sx={{
             display: "flex",
             gap: 0.8,
@@ -305,6 +308,10 @@ export default function JobList() {
             </Button>
           </Box>
         </Card>
+        ))}
+        
+
+
       </Box>
     </>
   );
