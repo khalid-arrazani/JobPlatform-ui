@@ -102,7 +102,7 @@ export default function JobList() {
             borderRadius: "10px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
             transition: "0.2s",
-            minHeight: "8rem",
+            minHeight: "8.5rem",
             p: 1,
             width: "95%",
             boxSizing: "border-box",
