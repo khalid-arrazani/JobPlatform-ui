@@ -86,7 +86,7 @@ export default function JobList() {
           height: "75vh",
           marginTop: "0.5rem",
           alignItems: "center",
-          gap: 6,
+          gap: 7,
         }}
         sx={{ bgcolor: "#e9e8e8", overflowY: "auto" }}
       >
@@ -150,10 +150,9 @@ export default function JobList() {
                     {job?.title.length >= 60 ? "..." : null}
                   </Typography>
                   <Chip
-                    // label={formatDistanceToNow(new Date(job.createdAt), {
-                    //   addSuffix: true,
-                    // })}
-                    label={"4 months ago"}
+                    label={formatDistanceToNow(new Date(job.createdAt), {
+                      addSuffix: true,
+                    })}
                     size="small"
                     variant="outlined"
                     sx={{
