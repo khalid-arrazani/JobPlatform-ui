@@ -97,10 +97,7 @@ export default function JobList() {
             borderRadius: "10px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
             transition: "0.2s",
-            "&:hover": {
-              transform: "translateY(-2px)",
-              boxShadow: "0 4px 12px rgba(0, 0, 0, 0.05)",
-            },
+          
 
             minHeight: "8rem",
             p: 1,
@@ -109,22 +106,12 @@ export default function JobList() {
           }}
         >
           <Box sx={{ height: "100%", width: "4rem" }}>
-            <Box
-              sx={{
-                height: "4rem ",
-                bgcolor: "#cdc0c07c",
-                width: "4rem",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: "8px",
-              }}
-            >
+           
               <Avatar
                 src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
-                sx={{ borderRadius: "5px", width: "3.5rem", height: "3.5rem" }}
+                sx={{ borderRadius: "5px", width: "3.5rem", height: "3.5rem",border :"1px dashed #c5c5c5" }}
               />
-            </Box>
+      
           </Box>
 
           {/* content */}
@@ -245,10 +232,20 @@ export default function JobList() {
                         borderRadius:"5px"
                       }}
                     /> 
+                    <Chip
+                    
+                      label={"Node.Js"}
+                      size="small"
+                      sx={{
+                         fontSize: "0.7rem",
+                        height: "20px",
+                        borderRadius:"5px"
+                      }}
+                    /> 
  
                 </Stack>
 
-                <Box sx={{ mt:0.5 }}>
+                <Box sx={{ mt:0.8 }}>
                   <Chip
                     label={`1.2M-124K/USD`}
                     size="small"
@@ -292,19 +289,16 @@ export default function JobList() {
               onClick={openJob}
               sx={{
                 position: "absolute",
-                bottom: "0.2rem",
-                right: "0.2rem",
+                bottom: "0rem",
+                right: "0rem",
                 textTransform: "none",
-                borderRadius: "10px",
-                px: 2,
-                py: 0.8,
+                borderRadius: "3px",
+                px: 0.5,
+                py: 0.3,
                 fontWeight: 500,
-                fontSize: "0.6rem",
+                fontSize: "0.7rem",
                 transition: "all 0.2s ease",
-                "&:hover": {
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 6px 16px rgba(25, 118, 210, 0.35)",
-                },
+                fontFamily:"monospace"
               }}
             >
               Open position
