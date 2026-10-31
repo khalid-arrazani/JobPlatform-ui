@@ -3,7 +3,7 @@ import { useMediaQuery } from "@mui/material";
 
 
 
-export default function JobsPage() {
+export default function MyJobsPage() {
   
   const isMobile = useMediaQuery("(max-width:600px)");
 

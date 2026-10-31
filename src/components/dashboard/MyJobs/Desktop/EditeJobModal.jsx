@@ -150,6 +150,10 @@ import logoTitle from "../../../../assets/Logo/logo.png";
 
 
 import { green } from "@mui/material/colors";
+import { useProfile } from "../../../../logic/context/profileContext";
+import { useJob } from "../../../../logic/context/JobContext";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { UpdateJob } from "../../../../logic/api/job/Job";
 
 
 const EditeJobModal = ({ open, setOpen,jobInfo }) => {
