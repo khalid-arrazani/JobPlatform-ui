@@ -174,8 +174,8 @@ export default function JobList() {
                     color: "#02020db4",
                   }}
                 >
-                  {/* {job?.createdBy?.name} • {job?.location} */}
-                  NexHire • Taroudant - Morocco
+                  {job?.createdBy?.name} • {job?.location}
+                  
                 </Typography>
 
                 <Stack
@@ -185,27 +185,31 @@ export default function JobList() {
                   useFlexGap
                   sx={{ mt: 0.5, mb: 0 }}
                 >
-                  <Chip
-                    label={"Full-time"}
-                    size="small"
-                    color="primary"
-                    sx={{
-                      fontSize: "0.7rem",
+                   
+                  {job.jobType && (
+                    <Chip
+                      label={job.jobType}
+                      size="small"
+                      color="primary"
+                      sx={{
+                         fontSize: "0.7rem",
                       height: "20px",
                       borderRadius: "5px",
-                    }}
-                  />
+                      }}
+                    />
+                  )}
 
-                  <Chip
-                    label={"Remote"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "20px",
-                      borderRadius: "5px",
-                      bgcolor: "#f6d8ff",
-                    }}
-                  />
+                  {job.workMode && (
+                    <Chip
+                      label={job.workMode}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        height: "20px",
+                        bgcolor: "#f6d8ff",borderRadius: "5px",
+                      }}
+                    />
+                  )}
                 </Stack>
 
                 <Stack
@@ -215,38 +219,25 @@ export default function JobList() {
                   useFlexGap
                   sx={{ mt: 0.7 }}
                 >
-                  <Chip
-                    label={"JavaScript"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
+                  {job.skills?.slice(0, 3).map((skill, index) => (
+                    <Chip
+                      key={index}
+                      label={skill}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
                       height: "20px",
                       borderRadius: "5px",
-                    }}
-                  />{" "}
-                  <Chip
-                    label={"Node.Js"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "20px",
-                      borderRadius: "5px",
-                    }}
-                  />
-                  <Chip
-                    label={"Node.Js"}
-                    size="small"
-                    sx={{
-                      fontSize: "0.7rem",
-                      height: "20px",
-                      borderRadius: "5px",
-                    }}
-                  />
+                      }}
+                    />
+                  ))}
+                   
+                  
                 </Stack>
 
                 <Box sx={{ mt: 0.8 }}>
                   <Chip
-                    label={`1.2M-124K/USD`}
+                    label={` ${millify(job.maxSalary)} - ${millify(job.minSalary)} / ${job.salaryCurrency}`}
                     size="small"
                     sx={{
                       fontSize: "0.7rem",
