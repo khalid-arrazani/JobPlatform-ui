@@ -94,6 +94,7 @@ export default function JobList() {
 
          {jobs?.JobInfo?.jobs.map((job) => (
            <Card
+           key={job._id}
           sx={{
             display: "flex",
             gap: 0.8,
@@ -101,18 +102,17 @@ export default function JobList() {
             borderRadius: "10px",
             boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
             transition: "0.2s",
-          
-
             minHeight: "8rem",
             p: 1,
             width: "95%",
             boxSizing: "border-box",
+            height:"auto"
           }}
         >
           <Box sx={{ height: "100%", width: "4rem" }}>
            
               <Avatar
-                src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
+                src={job.createdBy?.companyLogo?.url}
                 sx={{ borderRadius: "5px", width: "3.5rem", height: "3.5rem",border :"1px dashed #c5c5c5" }}
               />
       
@@ -121,7 +121,7 @@ export default function JobList() {
           {/* content */}
           <Box
             sx={{
-              height: "100%",
+              height: "auto",
               bgcolor: "#d8d8d815",
               flex: 1,
               position: "relative",
@@ -130,7 +130,7 @@ export default function JobList() {
             <Box
               sx={{
                 flex: 1,
-                height: "100%",
+                height: "auto",
                 display: "flex",
                 alignContent: "center",
                 width: "90%",
@@ -139,7 +139,7 @@ export default function JobList() {
               }}
             >
               <Box sx={{ display: "flex", height: "fit-Content", gap: 0.5 }}>
-                {/* {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null } */}
+               
                 <Typography
                   sx={{
                     fontSize: "0.8rem",
@@ -148,7 +148,8 @@ export default function JobList() {
                     fontFamily: "ui-sans-serif",
                   }}
                 >
-                  Front End developer mobile 
+         
+                   {job?.title.slice(0,60)}  {job?.title.length >= 60 ? "..." : null }
                 </Typography>
                 <Chip
                   // label={formatDistanceToNow(new Date(job.createdAt), {
