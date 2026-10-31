@@ -89,7 +89,7 @@ export default function JobList({handleChange}) {
           gap: 7 
 
         }}
-        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6rem",boxSizing:"border-box",position:"relative"}}
+        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6.5rem",boxSizing:"border-box",position:"relative"}}
       >
         
         {jobs?.JobInfo?.jobs.map((job) => (
@@ -101,7 +101,7 @@ export default function JobList({handleChange}) {
               gap: 0.8,
               background: "#ffffffe3",
               borderRadius: "10px",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.07)",
+              boxShadow: "0 2px 8px rgba(0, 0, 0, 0)",
               p: 1,
               width: "95%",
               boxSizing: "border-box",
