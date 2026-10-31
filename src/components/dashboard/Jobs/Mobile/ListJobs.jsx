@@ -122,9 +122,7 @@ export default function JobList() {
           <Box
             sx={{
               bgcolor: "#d8d8d815",
-              flex: 1,
               position: "relative",
-              
             }}
           >
             <Box
