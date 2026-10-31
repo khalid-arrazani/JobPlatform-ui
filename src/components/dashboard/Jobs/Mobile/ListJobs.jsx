@@ -86,8 +86,9 @@ export default function JobList() {
           height: "75vh",
           marginTop: "0.5rem",
           alignItems: "center",
+          gap:6
         }}
-        sx={{ bgcolor: "#e9e8e8" }}
+        sx={{ bgcolor: "#e9e8e8",overflow:"auto" }}
       >
 
 
