@@ -121,7 +121,7 @@ export default function JobList() {
           {/* content */}
           <Box
             sx={{
-              height: "auto",
+            
               bgcolor: "#d8d8d815",
               flex: 1,
               position: "relative",
@@ -129,8 +129,8 @@ export default function JobList() {
           >
             <Box
               sx={{
-                flex: 1,
-                height: "auto",
+                 
+               
                 display: "flex",
                 alignContent: "center",
                 width: "90%",
