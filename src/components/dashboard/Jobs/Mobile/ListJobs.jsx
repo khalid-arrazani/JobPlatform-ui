@@ -83,12 +83,13 @@ export default function JobList() {
         style={{
           display: "flex",
           flexDirection: "column",
-          height: "75vh",
+          height: "85vh",
           marginTop: "0.5rem",
           alignItems: "center",
           gap: 7,
+
         }}
-        sx={{ bgcolor: "#e9e8e8", overflowY: "auto" }}
+        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6rem",boxSizing:"border-box"}}
       >
         {jobs?.JobInfo?.jobs.map((job) => (
           <Card
@@ -250,9 +251,7 @@ export default function JobList() {
                   />
                 </Box>
               </Box>
-
-              <Button
-                sx={{
+              <Button   sx={{
                   position: "absolute",
                   top: "0.2rem",
                   right: "0rem",
@@ -267,15 +266,19 @@ export default function JobList() {
                   },
                   minWidth: "5px",
                   p: 0,
-                }}
-              >
-                <TurnedInIcon sx={{ color: "#1976d2" }} />
-              </Button>
+                }} data-id={job._id} onClick={saveJob}>
+                    {job.isSaved ? (
+                      <TurnedInIcon sx={{ color: "#1976d2" }} />
+                    ) : (
+                      <TurnedInNotOutlinedIcon />
+                    )}
+                  </Button>
 
               <Button
                 variant="contained"
-                // data-id={job._id}
+                data-id={job._id}
                 onClick={openJob}
+                endIcon={<ArrowOutwardIcon sx={{height:"1rem",width:"1rem"}} />}
                 sx={{
                   position: "absolute",
                   bottom: "0rem",
