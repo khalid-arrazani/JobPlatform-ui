@@ -89,7 +89,7 @@ export default function JobList({handleChange}) {
           gap: 8 
 
         }}
-        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6.5rem",boxSizing:"border-box",position:"relative"}}
+        sx={{ bgcolor: "#e9e8e8", overflowY: "auto",pb:"6.5rem",boxSizing:"border-box",position:"relative",pt:1}}
       >
         
         {jobs?.JobInfo?.jobs.map((job) => (
