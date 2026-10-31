@@ -24,8 +24,8 @@ export default function SearchInput({search , setSearch}) {
             borderRadius: "0.5rem",
             width: "80%",
             border:"1px dashed #c3c0c0",
-            mt:'6px',
-            mb:'6px',
+            mt:'5px',
+            mb:'5px',
             
           }}
         >
