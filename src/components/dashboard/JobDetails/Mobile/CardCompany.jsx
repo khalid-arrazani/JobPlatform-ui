@@ -263,7 +263,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           </Box>
 
           <Box
-            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid",display:"flex",boxSizing:"border-box",py:"5px",gap:2, }}
+            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid",display:"flex",boxSizing:"border-box",py:"8px",gap:2,px:1 }}
           >
           
               <Button
@@ -273,16 +273,17 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                 }
                 onClick={saveJob}
                 sx={{
-                  borderRadius: "14px",
+                  borderRadius: "8px",
                   textTransform: "none",
-                  px: 1,
-                  py: 1,
+                  px: 2,
+                  py: 1.2,
                   borderColor: "#DDD",
                   color: jobs?.isSaved ? "#ffffff" : "#a320e5",
                   background: jobs?.isSaved
                     ? "linear-gradient(30deg, #7100dbaa 0%, #a11aa4c1 35%, #8a2feb 100%)"
                     : "#ffffff",
                   fontSize: "0.88rem",
+                  flex:1,fontFamily:'monospace'
                 }}
               >
                 Save Job
@@ -294,7 +295,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   onClick={() => setOpenCancelApply(true)}
                   startIcon={<CheckIcon />}
                   sx={{
-                    borderRadius: "14px",
+                    borderRadius: "8px",
                     textTransform: "none",
                     px: 2,
                     py: 1.2,
@@ -309,7 +310,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                       background:
                         "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                     },
-                    fontSize: "0.8rem",
+                    fontSize: "0.8rem",flex:1,fontFamily:'monospace'
                   }}
                 >
                   Applied
@@ -320,7 +321,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   onClick={apply}
                   startIcon={<TelegramIcon />}
                   sx={{
-                    borderRadius: "14px",
+                    borderRadius: "8px",
                     textTransform: "none",
                     px: 2,
                     py: 1.2,
@@ -335,7 +336,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                       background:
                         "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                     },
-                    fontSize: "0.8rem",
+                    fontSize: "0.8rem",flex:1,fontFamily:'monospace'
                   }}
                 >
                   Apply Now
