@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 
 
-export default function MyJobsPage() {
+export default function MyJobsPageDesktop() {
 
 
   return (

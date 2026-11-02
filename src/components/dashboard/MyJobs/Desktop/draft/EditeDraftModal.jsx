@@ -146,7 +146,7 @@ import {
   CircularProgress,
 } from "@mui/material";
 
-import logoTitle from "../../../../assets/Logo/logo.png";
+import logoTitle from "../../../../../assets/Logo/logo.png";
 
 import { green } from "@mui/material/colors";
 import { useProfile } from "../../../../../logic/context/profileContext";

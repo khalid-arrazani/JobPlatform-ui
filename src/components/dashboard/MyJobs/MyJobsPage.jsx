@@ -1,4 +1,5 @@
 import { useMediaQuery } from "@mui/material";
+import MyJobsPageDesktop from "./Desktop/MyJobsPageDesktop";
  
 
 
@@ -11,9 +12,9 @@ export default function MyJobsPage() {
 
   return (
     <>
-     {/* { isMobile
-          ? <JobsMobile  search={search} setSearch={setSearch} handleChange={handleChange} />
-          : <JobsDesktop  search={search} setSearch={setSearch} handleChange={handleChange} />} */}
+     { isMobile? null
+          // ? <JobsMobile  search={search} setSearch={setSearch} handleChange={handleChange} />
+          : <MyJobsPageDesktop/>}
     </>
   );
 }

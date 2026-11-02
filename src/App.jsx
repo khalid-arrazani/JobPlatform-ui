@@ -100,11 +100,12 @@ function App() {
       ) : null}
 
       <SimpleSnackbar />
+
       <Routes>
         <Route path="/Dashboard/*" element={<DashboardPage />} />
+     
 
         <Route path="/profile" element={<ProfilePage />} />
-
         <Route path="/login" element={<AuthPage1 />} />
 
         <Route path="/CompleteProfile" element={<CompleteProfilePage />} />

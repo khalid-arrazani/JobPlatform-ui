@@ -9,15 +9,14 @@ import {
 } from "@mui/material";
 
 import TurnedInNotOutlinedIcon from "@mui/icons-material/TurnedInNotOutlined";
-import TurnedInIcon from "@mui/icons-material/TurnedIn";
+
 
 import TelegramIcon from "@mui/icons-material/Telegram";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { toggleSaveJob } from "../../../../logic/api/job/Job";
+
 
 export default function CardCompany({ jobInfo, JobId }) {
   const [jobs, setJobs] = useState();
