@@ -230,15 +230,19 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           justifyContent: "space-between",
           alignItems: "center",
           bgcolor: "#fff",
-          pr: "1rem",
+      
           boxSizing:"border-box",
           flexDirection:"column"
         }}
       >
         <Box
-        sx={{width:"100%",height:"7rem"}}
+        sx={{width:"100%",height:"6rem",border:"#ddd 1px solid"}}
         ></Box>
-        <Box></Box>
+        
+        <Box
+        sx={{width:"100%",height:"4rem",border:"#ddd 1px solid"}}
+        ></Box>
+       
         
       
       </Card>
