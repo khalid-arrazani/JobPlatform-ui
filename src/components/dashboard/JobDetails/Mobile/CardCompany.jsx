@@ -251,13 +251,98 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             py: "0.5rem",
           }}
         >
-          <Box sx={{ width: "100%", height: "5.5rem", }}>
-            <Box sx={{ width: "5.5rem", height: "5.5rem", border: "#ddd 1px solid" ,borderRadius:"10px"}} ></Box>
+          <Box sx={{ width: "100%", height: "5.5rem" }}>
+            <Box
+              sx={{
+                width: "5.5rem",
+                height: "5.5rem",
+                border: "#ddd 1px solid",
+                borderRadius: "10px",
+              }}
+            ></Box>
           </Box>
 
           <Box
-            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid"}}
-          ></Box>
+            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid",display:"flex",boxSizing:"border-box", }}
+          >
+          
+              <Button
+                variant="outlined"
+                startIcon={
+                  jobs?.isSaved ? <TurnedInIcon /> : <TurnedInNotOutlinedIcon />
+                }
+                onClick={saveJob}
+                sx={{
+                  borderRadius: "14px",
+                  textTransform: "none",
+                  px: 1,
+                  py: 1,
+                  borderColor: "#DDD",
+                  color: jobs?.isSaved ? "#ffffff" : "#a320e5",
+                  background: jobs?.isSaved
+                    ? "linear-gradient(30deg, #7100dbaa 0%, #a11aa4c1 35%, #8a2feb 100%)"
+                    : "#ffffff",
+                  fontSize: "0.88rem",
+                }}
+              >
+                Save Job
+              </Button>
+
+              {jobs?.isApply ? (
+                <Button
+                  variant="contained"
+                  onClick={() => setOpenCancelApply(true)}
+                  startIcon={<CheckIcon />}
+                  sx={{
+                    borderRadius: "14px",
+                    textTransform: "none",
+                    px: 2,
+                    py: 1.2,
+                    fontWeight: 300,
+
+                    background:
+                      "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+                    transition: "all 0.3s ease",
+
+                    "&:hover": {
+                      background:
+                        "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+                    },
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  Applied
+                </Button>
+              ) : (
+                <Button
+                  variant="contained"
+                  onClick={apply}
+                  startIcon={<TelegramIcon />}
+                  sx={{
+                    borderRadius: "14px",
+                    textTransform: "none",
+                    px: 2,
+                    py: 1.2,
+                    fontWeight: 300,
+
+                    background:
+                      "linear-gradient(30deg, #4c078c 0%, #be81fa 35%, #440884 100%)",
+
+                    transition: "all 0.3s ease",
+
+                    "&:hover": {
+                      background:
+                        "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
+                    },
+                    fontSize: "0.8rem",
+                  }}
+                >
+                  Apply Now
+                </Button>
+              )}
+        
+          </Box>
         </Card>
       </Box>
     </>
