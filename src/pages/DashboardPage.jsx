@@ -17,7 +17,8 @@ import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/
 
 import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.jsx";
 import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDetailsPage.jsx";
-import JobDetailsPage from "../components/dashboard/JobDetails/JobDetailspage.jsx";
+import JobDetails from "../components/dashboard/JobDetails/JobDetails.jsx";
+ 
  
 
 
@@ -35,7 +36,7 @@ export default function DashboardPage() {
 
       <Routes>
         <Route path="Jobs" element={<JobsPage />} />
-        <Route path="Jobs/Details/:JobId" element={<JobDetailsPage/>} />
+        <Route path="Jobs/Details/:JobId" element={<JobDetails/>} />
         <Route path="Company/:CompanyId" element={<CompanyDetailsPage />} />
 
         <Route path="Companies" element={<CompaniesPage />} />

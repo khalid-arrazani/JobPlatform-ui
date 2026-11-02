@@ -214,9 +214,9 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
       
       <Card
         sx={{
-          flex: 1,
+          
           height: "auto",
-
+          width:"100%",
           borderRadius: "10px",
           boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
           display: "flex",

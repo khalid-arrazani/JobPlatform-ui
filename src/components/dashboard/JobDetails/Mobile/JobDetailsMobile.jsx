@@ -36,6 +36,7 @@ export default function JobDetailsMobile() {
   };
 
 
+
   const fetchJobByIdWithoutReload = async () => {
     try {
       const jobById = await getJobID(JobId);
@@ -47,7 +48,8 @@ export default function JobDetailsMobile() {
     }
   };
 
-console.log(555887);
+
+
   return (
     <>
       {loading ? (
@@ -78,7 +80,7 @@ console.log(555887);
             <Box
               sx={{
                 height: "100%",
-                width: "70%",
+                width: "100%",
                 background: "#f7f7f7",
                 pl: "1.9rem",
               }}
