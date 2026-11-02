@@ -95,7 +95,7 @@ export default function JobsPage() {
   
     },[state1.reloadListJob])
  
-
+ 
   return (
     <>
      { isMobile

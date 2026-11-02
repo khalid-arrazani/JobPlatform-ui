@@ -47,7 +47,7 @@ export default function JobDetailsMobile() {
     }
   };
 
-
+console.log(555887);
   return (
     <>
       {loading ? (
