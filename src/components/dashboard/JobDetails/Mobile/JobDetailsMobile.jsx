@@ -75,6 +75,7 @@ export default function JobDetailsMobile() {
               justifyContent: "center",
               gap: 3,
               pt: 1,
+              boxSizing:"border-box"
             }}
           >
             <Box
@@ -82,7 +83,7 @@ export default function JobDetailsMobile() {
                 height: "100%",
                 width: "100%",
                 background: "#f7f7f7",
-                pl: "1.9rem",
+               
               }}
             >
               <Button
