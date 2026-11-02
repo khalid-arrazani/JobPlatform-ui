@@ -1,7 +1,7 @@
 import DashboardLayout from "../layouts/DashboardLayout.jsx";
 import JobsPage from "../components/dashboard/Jobs/JobsPage.jsx";
 import CompaniesPage from "../components/dashboard/Companies/CompaniesPage.jsx";
-import JobDetailsPage from "../components/dashboard/JobDetails/Desktop/JobDetailspage.jsx";
+
 import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
 import CompanyPage from "../components/dashboard/Company/CompanyPage.jsx";
 import CreateCompanyPage from "../components/dashboard/CreateCompany/CreateCompanyPage.jsx";
@@ -17,6 +17,7 @@ import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/
 
 import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.jsx";
 import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDetailsPage.jsx";
+import JobDetailsPage from "../components/dashboard/JobDetails/JobDetailspage.jsx";
 
 
 
