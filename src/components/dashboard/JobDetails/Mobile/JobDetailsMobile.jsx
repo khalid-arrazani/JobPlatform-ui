@@ -46,6 +46,8 @@ export default function JobDetailsMobile() {
       setLoading(false);
     }
   };
+
+
   return (
     <>
       {loading ? (
@@ -55,7 +57,6 @@ export default function JobDetailsMobile() {
           sx={{
             width: "100%",
             height: "auto",
-
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
