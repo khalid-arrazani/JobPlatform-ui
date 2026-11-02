@@ -83,7 +83,7 @@ export default function JobDetailsMobile() {
                 height: "100%",
                 width: "100%",
                 background: "#f7f7f7",
-                
+
                
               }}
             >
@@ -92,6 +92,7 @@ export default function JobDetailsMobile() {
 
                 width: "100%",
                 background: "#f7f7f7",
+                display:"flex"
                
               }}
             >
@@ -120,7 +121,7 @@ export default function JobDetailsMobile() {
                 Go Back
               </Button>
 
-              </Box>
+            </Box>
 
               <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobByIdWithoutReload} />
               {/* <DescriptionSection jobInfo={job} /> */}
