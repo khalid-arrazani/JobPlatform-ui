@@ -12,11 +12,12 @@ import AccountSettingsPage from "./pages/AccountSettingsPage.jsx";
 
 import SimpleSnackbar from "./logic/context/SnackBars.jsx";
 
-import JobDetailsPage from "./pages/JobDetailsPage.jsx";
+ 
 // import CompanyLayout from "./layouts/CompanyLayout.jsx";
 
 import { Routes, Route } from "react-router-dom";
 import { useAuth } from "./logic/context/AuthContext.jsx";
+import JobDetailsPage from "./components/dashboard/JobDetails/JobDetailspage.jsx";
 
 function App() {
   const { ...state } = useAuth();
@@ -113,7 +114,7 @@ function App() {
 
         <Route path="/AccountSettings" element={<AccountSettingsPage />} />
 
-        <Route path="/JobDetails" element={<JobDetailsPage />} />
+        <Route path="/JobDetails" element={<JobDetailsPage/>} />
       </Routes>
     </>
   );

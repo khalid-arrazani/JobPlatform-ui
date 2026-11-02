@@ -9,6 +9,7 @@ import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
 import { useEffect, useState } from "react";
 import LoadingPage from "./LoadingPage";
+import { getJobID } from "../../../../logic/api/job/Job";
 
 
 

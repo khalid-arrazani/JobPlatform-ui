@@ -17,13 +17,9 @@ import CheckIcon from "@mui/icons-material/Check";
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
-import { useAuth } from "../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
-import { toggleSaveJob } from "../../../logic/api/job/Job";
-import {
-  ApplyForAJob,
-  CancelApplyForAJob,
-} from "../../../logic/api/apply/Apply.jsx";
+
+
 
  
 import ErrorRoundedIcon from "@mui/icons-material/ErrorRounded";
@@ -31,6 +27,9 @@ import { Badge } from "@mui/material";
 
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useNavigate } from "react-router-dom";
+import { toggleSaveJob } from "../../../../logic/api/job/Job";
+import { useAuth } from "../../../../logic/context/AuthContext";
+import { ApplyForAJob, CancelApplyForAJob } from "../../../../logic/api/apply/Apply";
 
 export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
   const { setSnackBar } = useAuth();
