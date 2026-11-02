@@ -50,6 +50,8 @@ export default function JobDetailsDesktop() {
       setLoading(false);
     }
   };
+
+  console.log(444444555);
   return (
     <>
       {loading ? (
