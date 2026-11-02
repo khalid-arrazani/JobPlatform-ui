@@ -235,7 +235,9 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           flexDirection:"column"
         }}
       >
-        <Box></Box>
+        <Box
+        sx={{}}
+        ></Box>
         <Box></Box>
         
       
