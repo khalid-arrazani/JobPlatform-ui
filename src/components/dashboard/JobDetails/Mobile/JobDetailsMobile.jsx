@@ -92,7 +92,7 @@ export default function JobDetailsMobile() {
 
                 width: "100%",
                 background: "#f7f7f7",
-                display:"flex"
+                display:"flex",bl:1
                
               }}
             >
