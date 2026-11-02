@@ -92,7 +92,7 @@ export default function JobDetailsMobile() {
 
                 width: "100%",
                 background: "#f7f7f7",
-                display:"flex",bl:1
+                display:"flex",
                
               }}
             >
@@ -107,6 +107,7 @@ export default function JobDetailsMobile() {
                   px: 1.5,
 
                   mb: 0.8,
+                  ml: 1.5,
                   transition: "all 0.2s ease",
 
                   "&:hover": {
