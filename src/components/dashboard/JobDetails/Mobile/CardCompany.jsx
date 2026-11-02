@@ -251,8 +251,8 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             py: "0.5rem",
           }}
         >
-          <Box sx={{ width: "100%", height: "5.5rem", border: "#ddd 1px solid" }}>
-            <Box sx={{ width: "5.5rem", height: "5.5rem", border: "#ddd 1px solid" }} ></Box>
+          <Box sx={{ width: "100%", height: "5.5rem", }}>
+            <Box sx={{ width: "5.5rem", height: "5.5rem", border: "#ddd 1px solid" ,borderRadius:"10px"}} ></Box>
           </Box>
 
           <Box
