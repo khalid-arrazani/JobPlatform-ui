@@ -231,9 +231,12 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           alignItems: "center",
           bgcolor: "#fff",
           pr: "1rem",
-          boxSizing:"border-box"
+          boxSizing:"border-box",
+          flexDirection:"column"
         }}
       >
+        <Box></Box>
+        <Box></Box>
         
       
       </Card>
