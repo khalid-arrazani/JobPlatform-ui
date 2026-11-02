@@ -107,6 +107,7 @@ function App() {
 
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/login" element={<AuthPage1 />} />
+   
 
         <Route path="/CompleteProfile" element={<CompleteProfilePage />} />
 
