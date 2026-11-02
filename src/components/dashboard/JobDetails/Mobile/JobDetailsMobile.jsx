@@ -83,6 +83,15 @@ export default function JobDetailsMobile() {
                 height: "100%",
                 width: "100%",
                 background: "#f7f7f7",
+                
+               
+              }}
+            >
+              <Box
+              sx={{
+
+                width: "100%",
+                background: "#f7f7f7",
                
               }}
             >
@@ -110,6 +119,8 @@ export default function JobDetailsMobile() {
               >
                 Go Back
               </Button>
+
+              </Box>
 
               <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobByIdWithoutReload} />
               {/* <DescriptionSection jobInfo={job} /> */}

@@ -211,12 +211,19 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           </Box>
         </Card>
       </Modal>
-      
-      <Card
-        sx={{
-          
-          height: "10rem",
+      <Box
+      sx={{ 
+    
           width:"100%",
+          display:"flex",
+          justifyContent:"center"
+          
+        }}
+      >
+      <Card
+        sx={{ 
+          height: "10rem",
+          width:"95%",
           borderRadius: "10px",
           boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
           display: "flex",
@@ -230,6 +237,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
         
       
       </Card>
+      </Box>
     </>
   );
 }
