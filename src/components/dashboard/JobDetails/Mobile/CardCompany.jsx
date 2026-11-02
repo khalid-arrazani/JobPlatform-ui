@@ -263,7 +263,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           </Box>
 
           <Box
-            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid",display:"flex",boxSizing:"border-box", }}
+            sx={{ width: "100%", height: "3.5rem", border: "#ddd 1px solid",display:"flex",boxSizing:"border-box",py:"5px",gap:2, }}
           >
           
               <Button
