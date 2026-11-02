@@ -8,6 +8,7 @@ import JobDetailsMobile from "./Mobile/JobDetailsMobile";
 export default function JobDetailsPage (){
 
    const isMobile = useMediaQuery("(max-width:600px)");
+   
 
 
   return <>
