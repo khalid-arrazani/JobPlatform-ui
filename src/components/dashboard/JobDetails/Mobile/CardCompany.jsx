@@ -283,7 +283,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             </Box>
 
             {/* info */}
-            <Box sx={{ height: "100%", display:"flex:",flexDirection:"column",justifyContent:"space-between" }}>
+            <Box sx={{display:"flex", height: "100%", flex: 1,flexDirection:"column",justifyContent:"space-between",gap:1 }}>
               <Stack direction="row" spacing={0.5}>
                 <Chip
                   
