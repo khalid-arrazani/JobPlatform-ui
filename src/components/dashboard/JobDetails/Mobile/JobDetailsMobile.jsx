@@ -97,7 +97,7 @@ export default function JobDetailsMobile() {
               }}
             >
               <Button
-                startIcon={<KeyboardBackspaceIcon />}
+                startIcon={<KeyboardBackspaceIcon sx={{width:"0.8rem"}} />}
                 onClick={() => navigate(-1)}
                 sx={{
                   textTransform: "none",
@@ -117,6 +117,7 @@ export default function JobDetailsMobile() {
                   },
                   display: "flex",
                   alignContent: "center",
+                  fontSize:"0.78rem"
                 }}
               >
                 Go Back

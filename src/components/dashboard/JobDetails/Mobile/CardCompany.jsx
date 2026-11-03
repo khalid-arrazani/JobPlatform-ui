@@ -290,8 +290,9 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   sx={{
                     bgcolor: "#e8ffea",
                     color: "#238a3f",
-                    fontWeight: 400,fontSize:"0.5rem",
-                    borderRadius:"5px"
+                    fontWeight: 400,
+                    fontSize:"0.5rem",
+                    borderRadius:"7px"
                   }}
                 />
                 <Chip
@@ -302,11 +303,13 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                         })
                       : ""
                   }`}
+                  
                   size="small"
                   sx={{
                     bgcolor: "#f2f0f0",
                     color: "#404040c5",
-                    fontWeight: 400,
+                    fontWeight: 400,fontSize:"0.5rem",
+                    borderRadius:"7px"
                   }}
                 />
               </Stack>
