@@ -8,6 +8,7 @@ import { useEffect, useState } from "react";
 import LoadingPage from "./LoadingPage";
 import { getJobID } from "../../../../logic/api/job/Job";
 import JobOverview from "./CardJobOverview";
+import DescriptionSection from "./DescriptionSection";
 
 
 
@@ -73,7 +74,7 @@ export default function JobDetailsMobile() {
                 height: "100%",
                 width: "100%",
                 background: "#f7f7f7" ,
-                pb:"6rem"
+                pb:"10rem",boxSizing:"border-box"
               }}
             >
               <Box
@@ -116,7 +117,9 @@ export default function JobDetailsMobile() {
 
               <CardCompany jobInfo={job} JobId={JobId} fetchJobById={fetchJobByIdWithoutReload} />
               <JobOverview  jobInfo={job} />
-              {/* <DescriptionSection jobInfo={job} /> */}
+
+
+              <DescriptionSection jobInfo={job} />
               {/* <AbouttheCompany jobInfo={job} /> */}
               {/* <Divider /> */}
             </Box>

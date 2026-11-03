@@ -9,14 +9,23 @@ export default function DescriptionSection({jobInfo}) {
 
 useEffect(()=>{ setDescription(jobInfo?.description) },[jobInfo?.description])
   return (
+    <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
     <Card
       sx={{
-        flex: 1,
-        height: "auto", px: "1.5rem",py: "1.5rem",
-        borderRadius: "10px",
+        width: "93%",
+        px: 2,
+        py: 1.5,
+        borderRadius: "5px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
+        height: "auto",
         mt: 2,
-        mb:2
+        boxSizing:"border-box"
       }}
     >
       <Typography
@@ -72,6 +81,6 @@ useEffect(()=>{ setDescription(jobInfo?.description) },[jobInfo?.description])
           </Typography>
         )}
       </Box>
-    </Card>
+    </Card></Box>
   );
 }
