@@ -258,8 +258,26 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                 height: "5.5rem",
                 border: "#ddd 1px solid",
                 borderRadius: "10px",
+                boxSizing:"border-box",
+                p:0.5
               }}
-            ></Box>
+            >
+               <Avatar
+          data-id={jobInfo?.createdBy?._id}
+             onClick={openCompany}
+            src={jobInfo?.createdBy.companyLogo.url}
+            sx={{
+              width: "100%",
+              height:  "100%",
+              bgcolor: "#fff",
+              borderRadius: "10px",
+              cursor:"pointer",
+              transition:".2s",
+              
+              ":active":{bgcolor: "#ececec",}
+            }}
+          />
+            </Box>
           </Box>
 
           <Box
