@@ -257,8 +257,8 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             {/* avatar */}
             <Box
               sx={{
-                width: "5.5rem",
-                height: "5.5rem",
+                width: "4.5rem",
+                height: "4.5rem",
                 border: "#ddd 1px solid",
                 borderRadius: "10px",
                 boxSizing: "border-box",
@@ -321,9 +321,10 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               <Typography
               title={jobInfo?.title}
                 sx={{
-                  fontSize: "0.8rem",
+                  fontSize: "0.88rem",
                   fontWeight: 600,
                   color: "#060505dc",
+                  fontFamily:"monospace",ml:"1px"
                 }}
               >
                 {jobInfo?.title.slice(0,45)}
@@ -332,16 +333,16 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
 
               <Typography
                 sx={{
-                  color: "#000000",
-                  
+                  color: "#000000ad",
                   fontSize: "0.6rem",
+                  fontFamily:"monospace",ml:"1px"
                   
                 }}
               >
                 {jobInfo?.createdBy.name} • {jobInfo?.location}
               </Typography>
 
-              <Stack direction="row" spacing={1}>
+              <Stack direction="row" spacing={0.5}>
                 <Chip
                   label={jobInfo?.jobType}
                   size="small"
@@ -350,6 +351,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     color: "#7C3AED",
                   fontSize: "0.5rem",
                     fontWeight: 400,
+                    height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
                   }}
                 />
 
@@ -361,17 +363,19 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   fontSize: "0.5rem",
                     color: "#7C3AED",
                     fontWeight: 400,
+                    height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
                   }}
                 />
                 <Chip
-                  label={`${millify(jobInfo?.minSalary)} - ${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency} / ${jobInfo?.salaryPeriod}`}
+                  label={`${millify(jobInfo?.minSalary)}-${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency}/${jobInfo?.salaryPeriod}`}
                   size="small"
                   sx={{
                     bgcolor: "#e9fcf1",
                     color: "#27a25e",
-                    fontWeight: 500,
+                    fontWeight: 400,
                   fontSize: "0.5rem",
-                    fontFamily: "-apple-system",
+                    height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
+                    
                   }}
                 />
               </Stack>
