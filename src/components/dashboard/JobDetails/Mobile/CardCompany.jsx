@@ -321,7 +321,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               <Typography
               title={jobInfo?.title}
                 sx={{
-                  fontSize: "0.88rem",
+                  fontSize: "0.8rem",
                   fontWeight: 600,
                   color: "#060505dc",
                 }}
@@ -334,7 +334,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                 sx={{
                   color: "#000000",
                   
-                  fontSize: "0.7rem",
+                  fontSize: "0.6rem",
                   
                 }}
               >
