@@ -11,22 +11,23 @@ export default function SkillsCard({ jobInfo }) {
       >
     <Card
       sx={{
-        width: "80%",
+        width: "93%",
         px: 2,
         py: 1.5,
         borderRadius: "5px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
         height: "auto",
         mt: 2,
-        mb: 2,
+        boxSizing:"border-box"
       }}
     >
       <Typography
         sx={{
+          fontSize: "1.1rem",
           fontWeight: 700,
-          fontSize: "1rem",
-          color: "#1F2937",
-          mb: 2,
+          color: "#1f2937ed",
+          mb: 1,
+          fontFamily:'monospace'
         }}
       >
         Skills
@@ -45,14 +46,14 @@ export default function SkillsCard({ jobInfo }) {
             sx={{
               bgcolor: "#F3E8FF",
               color: "#8B5CF6",
-              fontSize: "0.72rem",
+              fontSize: "0.88rem",
               fontWeight: 500,
               borderRadius: "8px",
               height: "28px",
 
               "& .MuiChip-label": {
                 px: 1.2,
-              },
+              },fontFamily:'monospace'
             }}
             label={skill}
           />
@@ -60,6 +61,7 @@ export default function SkillsCard({ jobInfo }) {
 
        
       </Box>
-    </Card></Box>
+    </Card>
+    </Box>
   );
 }
