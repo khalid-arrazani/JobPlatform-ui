@@ -30,10 +30,11 @@ useEffect(()=>{ setDescription(jobInfo?.description) },[jobInfo?.description])
     >
       <Typography
         sx={{
-          fontSize: "1.2rem",
+          fontSize: "1.1rem",
           fontWeight: 700,
-          color: "#1F2937",
-          mb: 2,
+          color: "#1f2937ed",
+          mb: 1,
+          fontFamily:'monospace'
         }}
       >
         About this role
@@ -48,6 +49,7 @@ useEffect(()=>{ setDescription(jobInfo?.description) },[jobInfo?.description])
             overflowWrap: "break-word",
             lineHeight: 1.6,
             fontSize: "0.95rem",
+            fontFamily:"monospace",
 
             ...(expanded
               ? {}
@@ -74,7 +76,7 @@ useEffect(()=>{ setDescription(jobInfo?.description) },[jobInfo?.description])
 
               "&:hover": {
                 textDecoration: "underline",
-              },
+              },fontFamily:"monospace"
             }}
           >
             {expanded ? "Show less" : "More"}
