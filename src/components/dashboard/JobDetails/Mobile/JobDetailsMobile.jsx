@@ -63,7 +63,7 @@ export default function JobDetailsMobile() {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            overflow: "auto",boxSizing:"border-box" ,pb:"5rem"
+            overflow: "auto",boxSizing:"border-box"  
 
           }}
         >
@@ -72,9 +72,8 @@ export default function JobDetailsMobile() {
               sx={{
                 height: "100%",
                 width: "100%",
-                background: "#f7f7f7" 
-
-               
+                background: "#f7f7f7" ,
+                pb:"6rem"
               }}
             >
               <Box
