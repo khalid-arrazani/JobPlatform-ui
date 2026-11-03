@@ -9,6 +9,7 @@ import LoadingPage from "./LoadingPage";
 import { getJobID } from "../../../../logic/api/job/Job";
 import JobOverview from "./CardJobOverview";
 import DescriptionSection from "./DescriptionSection";
+import AbouttheCompany from "./AbouttheCompany";
 
 
 
@@ -121,7 +122,7 @@ export default function JobDetailsMobile() {
 
 
               <DescriptionSection jobInfo={job} />
-              {/* <AbouttheCompany jobInfo={job} /> */}
+              <AbouttheCompany jobInfo={job} />
               {/* <Divider /> */}
             </Box>
 
