@@ -295,6 +295,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     fontWeight: 400,
                     fontSize: "0.6rem",
                     borderRadius: "7px",
+                    fontFamily:"monospace"
                   }}
                 />
                 <Chip
@@ -311,7 +312,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     color: "#404040c5",
                     fontWeight: 400,
                     fontSize: "0.6rem",
-                    borderRadius: "7px",
+                    borderRadius: "7px",fontFamily:"monospace"
                   }}
                 />
               </Stack>
