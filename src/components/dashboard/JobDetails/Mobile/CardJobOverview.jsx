@@ -51,11 +51,11 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <WorkOutlineRoundedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#0b16289a",fontFamily:"monospace" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Job Title
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500,fontFamily:"monospace" }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {jobInfo?.title}
           </Typography>
         </Box>
@@ -65,7 +65,7 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Company
           </Typography>
 
@@ -85,11 +85,11 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <LocationOnOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Location
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {jobInfo?.location}
           </Typography>
         </Box>
@@ -99,11 +99,11 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <BadgeOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Job Type
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {jobInfo?.jobType}
           </Typography>
         </Box>
@@ -114,11 +114,11 @@ export default function JobOverview({ jobInfo }) {
         <WorkOutlineOutlinedIcon sx={{ color: "#8B5CF6" }} />
 
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Work Mode
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {jobInfo?.workMode}
           </Typography>
         </Box>
@@ -128,7 +128,7 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <TimelineOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Experience
           </Typography>
 
@@ -142,7 +142,7 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <PaidOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Salary
           </Typography>
 
@@ -156,7 +156,7 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <AccessTimeOutlinedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.88rem", color: "#250351b3",fontFamily:"monospace",fontWeight:"600" }}>
             Posted
           </Typography>
 
