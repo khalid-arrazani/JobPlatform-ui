@@ -40,7 +40,8 @@ export default function JobOverview({ jobInfo }) {
           fontWeight: 700,
           fontSize: "1rem",
           mb: 2,
-          color: "#1F2937",
+          color: "#0b1016c4",
+          fontFamily:"monospace"
         }}
       >
         Job Overview
@@ -50,11 +51,11 @@ export default function JobOverview({ jobInfo }) {
       <Box sx={{ display: "flex", gap: 1.5, mb: 1.5 }}>
         <WorkOutlineRoundedIcon sx={{ color: "#8B5CF6" }} />
         <Box>
-          <Typography sx={{ fontSize: "0.72rem", color: "#9CA3AF" }}>
+          <Typography sx={{ fontSize: "0.72rem", color: "#0b16289a",fontFamily:"monospace" }}>
             Job Title
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500,fontFamily:"monospace" }}>
             {jobInfo?.title}
           </Typography>
         </Box>
