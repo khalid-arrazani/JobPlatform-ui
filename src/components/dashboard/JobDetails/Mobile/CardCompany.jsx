@@ -251,45 +251,48 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             py: "0.5rem",
           }}
         >
-          <Box sx={{ width: "100%", height: "5.5rem" }}>
+          <Box sx={{ width: "100%", height: "5.5rem",display:"flex" }}>
+            {/* avatar */}
             <Box
               sx={{
                 width: "5.5rem",
                 height: "5.5rem",
                 border: "#ddd 1px solid",
                 borderRadius: "10px",
-                boxSizing:"border-box",
-                p:0.5
+                boxSizing: "border-box",
+                p: 0.5,
               }}
             >
-               <Avatar
-          data-id={jobInfo?.createdBy?._id}
-             onClick={openCompany}
-            src={jobInfo?.createdBy.companyLogo.url}
-            sx={{
-              width: "100%",
-              height:  "100%",
-              bgcolor: "#fff",
-              borderRadius: "10px",
-              cursor:"pointer",
-              transition:".2s",
-              
-              ":active":{bgcolor: "#ececec",}
-            }}
-          />
+              <Avatar
+                data-id={jobInfo?.createdBy?._id}
+                onClick={openCompany}
+                src={jobInfo?.createdBy.companyLogo.url}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  bgcolor: "#fff",
+                  borderRadius: "10px",
+                  cursor: "pointer",
+                  transition: ".2s",
+
+                  ":active": { bgcolor: "#ececec" },
+                }}
+              />
             </Box>
+
+            {/* info */}
+            <Box sx={{height:"100%"}} ></Box>
           </Box>
 
           <Box
             sx={{
               width: "100%",
               height: "3.5rem",
-            
+
               display: "flex",
               boxSizing: "border-box",
               py: "9px",
               gap: 2,
-             
             }}
           >
             <Button
@@ -382,7 +385,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   borderRadius: "8px",
                   textTransform: "none",
                   px: 2,
-                  
+
                   fontWeight: 300,
 
                   background:
@@ -410,7 +413,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   borderRadius: "8px",
                   textTransform: "none",
                   px: 2,
-                 
+
                   fontWeight: 300,
 
                   background:
