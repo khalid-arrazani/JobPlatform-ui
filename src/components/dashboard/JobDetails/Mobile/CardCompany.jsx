@@ -247,7 +247,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             bgcolor: "#fff",
             boxSizing: "border-box",
             flexDirection: "column",
-            px: "1rem",
+            px: ".5rem",
             py: "0.5rem",
           }}
         >
@@ -293,7 +293,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     bgcolor: "#e5fee7",
                     color: "#238a3f",
                     fontWeight: 400,
-                    fontSize: "0.6rem",
+                    fontSize: "0.68rem",
                     borderRadius: "4px",
                     py:0.3,
                     fontFamily:"monospace",height:"fit-content"
@@ -312,7 +312,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     bgcolor: "#f2f0f0",
                     color: "#404040c5",
                     fontWeight: 400,
-                    fontSize: "0.6rem",
+                    fontSize: "0.68rem",
                     borderRadius: "4px",py:0.3,
                     fontFamily:"monospace",height:"fit-content"
                   }}
@@ -335,7 +335,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               <Typography
                 sx={{
                   color: "#000000ad",
-                  fontSize: "0.6rem",
+                  fontSize: "0.68rem",
                   fontFamily:"monospace",ml:"1px"
                   
                 }}
