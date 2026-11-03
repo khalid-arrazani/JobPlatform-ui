@@ -237,7 +237,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
       >
         <Card
           sx={{
-            height: "10rem",
+            height: "fit-content",
             width: "93%",
             borderRadius: "10px",
             boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
@@ -283,7 +283,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             </Box>
 
             {/* info */}
-            <Box sx={{display:"flex", height: "100%", flex: 1,flexDirection:"column",justifyContent:"space-between",gap:1 }}>
+            <Box sx={{display:"flex", height: "100%", flex: 1,flexDirection:"column",justifyContent:"space-between",}}>
               <Stack direction="row" spacing={0.5}>
                 <Chip
                   
@@ -386,12 +386,13 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           <Box
             sx={{
               width: "100%",
-              height: "3.5rem",
+              height: "auto",
 
               display: "flex",
               boxSizing: "border-box",
-              py: "9px",
+              py: "7px",
               gap: 2,
+            
             }}
           >
             <Button
@@ -403,8 +404,8 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     fill="none"
                     viewBox="0 0 14 14"
                     id="Bookmark--Streamline-Flex-Gradient"
-                    height="16"
-                    width="16"
+                    height="15"
+                    width="15"
                   >
                     <desc>
                       Bookmark Streamline Icon: https://streamlinehq.com
@@ -438,8 +439,8 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     fill="none"
                     viewBox="0 0 14 14"
                     id="Bookmark--Streamline-Flex"
-                    height="16"
-                    width="16"
+                    height="15"
+                    width="15"
                   >
                     <desc>
                       Bookmark Streamline Icon: https://streamlinehq.com
@@ -467,9 +468,10 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                 background: jobs?.isSaved
                   ? "linear-gradient(30deg, #7100dbaa 0%, #a11aa4c1 35%, #8a2feb 100%)"
                   : "#ffffff",
-                fontSize: "0.78rem",
+                fontSize: "0.7rem",
                 flex: 1,
                 fontFamily: "monospace",
+                height:"fit-content"
               }}
             >
               Save Job
@@ -496,9 +498,11 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     background:
                       "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                   },
-                  fontSize: "0.78rem",
+                  fontSize: "0.7rem",
                   flex: 1,
                   fontFamily: "monospace",
+                height:"fit-content"
+
                 }}
               >
                 Applied
@@ -524,9 +528,11 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     background:
                       "linear-gradient(90deg, #AA6EEA 0%, #7F28E3 100%)",
                   },
-                  fontSize: "0.78rem",
+                  fontSize: "0.7rem",
                   flex: 1,
                   fontFamily: "monospace",
+                height:"fit-content"
+
                 }}
               >
                 Apply Now
