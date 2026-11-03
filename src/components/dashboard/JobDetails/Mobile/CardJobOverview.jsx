@@ -183,6 +183,7 @@ export default function JobOverview({ jobInfo }) {
           color: "#EF4444",
           cursor: "pointer",
           transition: "0.2s",
+           
 
           "&:hover": {
             opacity: 0.8,
@@ -191,7 +192,7 @@ export default function JobOverview({ jobInfo }) {
       >
         <FlagOutlinedIcon sx={{ fontSize: "1rem" }} />
 
-        <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+        <Typography sx={{ fontSize: "0.82rem",  fontFamily:"monospace",fontWeight: 600 }}>
           Report this job
         </Typography>
       </Box>
