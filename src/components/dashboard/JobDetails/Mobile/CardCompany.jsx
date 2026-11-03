@@ -252,13 +252,13 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
           }}
         >
           <Box
-            sx={{ width: "100%", height: "5.5rem", display: "flex", gap: 1 }}
+            sx={{ width: "100%", height: "5rem", display: "flex", gap: 1 }}
           >
             {/* avatar */}
             <Box
               sx={{
-                width: "4.5rem",
-                height: "4.5rem",
+                width: "5rem",
+                height: "5rem",
                 border: "#ddd 1px solid",
                 borderRadius: "10px",
                 boxSizing: "border-box",
@@ -283,7 +283,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             </Box>
 
             {/* info */}
-            <Box sx={{ height: "100%", flex: 1 }}>
+            <Box sx={{ height: "100%", display:"flex:",flexDirection:"column",justifyContent:"space-between" }}>
               <Stack direction="row" spacing={0.5}>
                 <Chip
                   
@@ -379,6 +379,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   }}
                 />
               </Stack>
+
             </Box>
           </Box>
 
