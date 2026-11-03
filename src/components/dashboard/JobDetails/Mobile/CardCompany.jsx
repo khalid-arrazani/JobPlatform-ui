@@ -281,7 +281,7 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
             </Box>
 
             {/* info */}
-            <Box sx={{height:"100%"}} ></Box>
+            <Box sx={{height:"100%",flex:1}} ></Box>
           </Box>
 
           <Box
