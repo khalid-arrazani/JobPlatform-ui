@@ -74,7 +74,8 @@ export default function JobDetailsMobile() {
                 height: "100%",
                 width: "100%",
                 background: "#f7f7f7" ,
-                pb:"10rem",boxSizing:"border-box"
+                pb:"20rem",
+                boxSizing:"border-box"
               }}
             >
               <Box
