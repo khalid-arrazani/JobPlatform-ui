@@ -71,10 +71,10 @@ export default function JobDetailsMobile() {
          
             <Box
               sx={{
-                height: "100%",
+                height: "auto",
                 width: "100%",
-                background: "#f7f7f7" ,
-                pb:"20rem",
+                background: "#f7f7f7e9" ,
+                pb:"6rem",
                 boxSizing:"border-box"
               }}
             >
