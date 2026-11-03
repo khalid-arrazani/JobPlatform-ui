@@ -132,7 +132,7 @@ export default function JobOverview({ jobInfo }) {
             Experience
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {jobInfo?.experienceLevel} Level
           </Typography>
         </Box>
@@ -146,7 +146,7 @@ export default function JobOverview({ jobInfo }) {
             Salary
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {`${millify(jobInfo?.minSalary)} - ${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency} / ${jobInfo?.salaryPeriod}`}
           </Typography>
         </Box>
@@ -160,7 +160,7 @@ export default function JobOverview({ jobInfo }) {
             Posted
           </Typography>
 
-          <Typography sx={{ fontSize: "0.82rem", fontWeight: 500 }}>
+          <Typography sx={{ fontSize: "0.82rem", fontWeight: 600,fontFamily:"monospace" }}>
             {` ${
               jobInfo?.createdAt
                 ? formatDistanceToNow(new Date(jobInfo.createdAt), {
