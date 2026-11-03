@@ -63,22 +63,11 @@ export default function JobDetailsMobile() {
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            overflow: "auto",
+            overflow: "auto",boxSizing:"border-box"
+
           }}
         >
-          <Box
-            sx={{
-              width: "100%",
-              flex: 1,
-              background: "#f7f7f7",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              gap: 3,
-              pt: 1,
-              boxSizing:"border-box"
-            }}
-          >
+         
             <Box
               sx={{
                 height: "100%",
@@ -135,7 +124,7 @@ export default function JobDetailsMobile() {
 
             
           </Box>
-        </Box>
+       
       )}
     </>
   );
