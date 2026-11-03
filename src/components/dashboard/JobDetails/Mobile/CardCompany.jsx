@@ -284,18 +284,19 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
 
             {/* info */}
             <Box sx={{ height: "100%", flex: 1 }}>
-              <Stack direction="row" spacing={1.5}>
+              <Stack direction="row" spacing={0.5}>
                 <Chip
                   
                   label="Verified Company"
                   size="small"
                   sx={{
-                    bgcolor: "#e8ffea",
+                    bgcolor: "#e5fee7",
                     color: "#238a3f",
                     fontWeight: 400,
                     fontSize: "0.6rem",
-                    borderRadius: "7px",
-                    fontFamily:"monospace"
+                    borderRadius: "4px",
+                    py:0.3,
+                    fontFamily:"monospace",height:"fit-content"
                   }}
                 />
                 <Chip
@@ -312,7 +313,65 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                     color: "#404040c5",
                     fontWeight: 400,
                     fontSize: "0.6rem",
-                    borderRadius: "7px",fontFamily:"monospace"
+                    borderRadius: "4px",py:0.3,
+                    fontFamily:"monospace",height:"fit-content"
+                  }}
+                />
+              </Stack>
+              <Typography
+              title={jobInfo?.title}
+                sx={{
+                  fontSize: "0.88rem",
+                  fontWeight: 600,
+                  color: "#060505dc",
+                }}
+              >
+                {jobInfo?.title.slice(0,45)}
+                {jobInfo?.title.length > 30 ? "..." : null}
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "#000000",
+                  
+                  fontSize: "0.7rem",
+                  
+                }}
+              >
+                {jobInfo?.createdBy.name} • {jobInfo?.location}
+              </Typography>
+
+              <Stack direction="row" spacing={1}>
+                <Chip
+                  label={jobInfo?.jobType}
+                  size="small"
+                  sx={{
+                    bgcolor: "#fce8ff",
+                    color: "#7C3AED",
+                  fontSize: "0.5rem",
+                    fontWeight: 400,
+                  }}
+                />
+
+                <Chip
+                  label={`${jobInfo?.experienceLevel} Level`}
+                  size="small"
+                  sx={{
+                    bgcolor: "#fce8ff",
+                  fontSize: "0.5rem",
+                    color: "#7C3AED",
+                    fontWeight: 400,
+                  }}
+                />
+                <Chip
+                  label={`${millify(jobInfo?.minSalary)} - ${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency} / ${jobInfo?.salaryPeriod}`}
+                  size="small"
+                  sx={{
+                    bgcolor: "#e9fcf1",
+                    color: "#27a25e",
+                    fontWeight: 500,
+                  fontSize: "0.5rem",
+                    fontFamily: "-apple-system",
                   }}
                 />
               </Stack>
