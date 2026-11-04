@@ -105,7 +105,7 @@ export default function CompanyHeader({ CompanyInfo }) {
           </Card>
 
           <Box sx={{ height: "100%", flex: 1, ml: "7rem" }}>
-            <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd" }}>
+            <Box sx={{ height: "100%", flex: 1,  }}>
               {/* Company Name */}
               <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
                 <Typography
@@ -132,25 +132,74 @@ export default function CompanyHeader({ CompanyInfo }) {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-              
-                  
+
                   flexWrap: "wrap",
                 }}
               >
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <BusinessCenterOutlinedIcon
-                    sx={{ fontSize: "1rem", color: "#666" }}
-                  />
-                  <Typography sx={{ fontSize: "0.78rem", color: "#555",fontFamily:"monospace" }}>
+                <Box sx={{ display: "flex", gap: 0.5 }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 48 48"
+                    id="Bag-Suitcase-4--Streamline-Plump"
+                    height="15"
+                    width="15"
+                  >
+                    <desc>
+                      Bag Suitcase 4 Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <g id="bag-suitcase-4--product-business-briefcase">
+                      <path
+                        id="Rectangle 97"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M3.586 14.236c0.21 -2.133 1.67 -3.848 3.785 -4.196C10.353 9.548 15.57 9 24 9c8.43 0 13.647 0.548 16.63 1.04 2.114 0.348 3.575 2.063 3.784 4.196C44.69 17.033 45 21.426 45 27c0 5.574 -0.31 9.967 -0.586 12.764 -0.21 2.133 -1.67 3.848 -3.785 4.196C37.647 44.452 32.43 45 24 45c-8.43 0 -13.646 -0.548 -16.63 -1.04 -2.114 -0.348 -3.575 -2.063 -3.784 -4.196C3.31 36.967 3 32.574 3 27c0 -5.573 0.31 -9.967 0.586 -12.764Z"
+                        stroke-width="2"
+                      ></path>
+                      <path
+                        id="Intersect"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M44.986 24.972C39.6 26.67 28.47 30 24 30c-4.47 0 -15.6 -3.33 -20.986 -5.028"
+                        stroke-width="2"
+                      ></path>
+                      <path
+                        id="Subtract"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M16.738 9.2c0.457 -1.408 1.238 -3.052 1.824 -4.204 0.478 -0.938 1.34 -1.615 2.384 -1.755A22.939 22.939 0 0 1 24 3.045c1.245 0 2.278 0.091 3.053 0.196 1.044 0.14 1.906 0.817 2.384 1.755 0.586 1.152 1.367 2.796 1.824 4.203"
+                        stroke-width="2"
+                      ></path>
+                    </g>
+                  </svg>
+                  <Typography
+                    sx={{
+                      fontSize: "0.78rem",
+                      color: "#555",
+                      fontFamily: "monospace",
+                    }}
+                  >
                     {CompanyInfo?.industry}
                   </Typography>
                 </Box>
 
                 <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                  <LocationOnOutlinedIcon
-                    sx={{ fontSize: "1rem", color: "#666" }}
-                  />
-                  <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Location-Pin--Streamline-Guidance-Free" height="15" width="15">
+  <desc>
+    Location Pin Streamline Icon: https://streamlinehq.com
+  </desc>
+  <path stroke="#000000" d="M12 23.92a9.04 9.04 0 0 0 -2.96 -6.61l-2.567 -2.334A8.365 8.365 0 0 1 3.75 8.799C3.75 4.242 7.444 0.5 12 0.5s8.25 3.741 8.25 8.298c0 2.343 -0.989 4.6 -2.723 6.177l-2.568 2.334a9.041 9.041 0 0 0 -2.96 6.61Zm0 0V24l0 -0.057M12 11.5a2.5 2.5 0 1 1 0 -5 2.5 2.5 0 0 1 0 5Z" stroke-width="1"></path>
+</svg>
+                  <Typography
+                    sx={{
+                      fontSize: "0.78rem",
+                      color: "#555",
+                      fontFamily: "monospace",
+                    }}
+                  >
                     {CompanyInfo?.headquarters}
                   </Typography>
                 </Box>
