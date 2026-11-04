@@ -63,10 +63,10 @@ export default function CompanyHeader({ CompanyInfo }) {
             height: "50% ",
             width: "100%",
             bgcolor: "#fdfcfc",
-      
             backgroundSize: "cover",
             backgroundPosition: "center",
-            position: "relative",
+            position: "relative",borderRadius: "15px",
+            
           }}
         ></Box>
 
