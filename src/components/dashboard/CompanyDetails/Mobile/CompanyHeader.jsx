@@ -58,7 +58,7 @@ export default function CompanyHeader({ CompanyInfo }) {
         }}
       >
         {/* banner */}
-        <Box
+        <Card
           sx={{
             height: "50% ",
             width: "100%",
@@ -102,7 +102,7 @@ export default function CompanyHeader({ CompanyInfo }) {
               srcset=""
             />
           </Card>
-        </Box>
+        </Card>
 
        
       </Box>
