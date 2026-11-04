@@ -28,7 +28,6 @@ const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
 export default function CompanyHeader({ CompanyInfo }) {
-  
   let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
@@ -38,7 +37,7 @@ export default function CompanyHeader({ CompanyInfo }) {
 
   console.log(CompanyInfo);
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -48,13 +47,13 @@ export default function CompanyHeader({ CompanyInfo }) {
           width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
-           
-            backgroundImage: `${BG} `,
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            position: "relative",
-            display:"flex",
-            alignItems:"end" 
+
+          backgroundImage: `${BG} `,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          position: "relative",
+          display: "flex",
+          alignItems: "end",
         }}
       >
         {/* banner */}
@@ -68,10 +67,10 @@ export default function CompanyHeader({ CompanyInfo }) {
             position: "relative",
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
-            display:"flex"
+            display: "flex",
           }}
         >
-           {/* logo */}
+          {/* logo */}
           <Card
             component="label"
             sx={{
@@ -87,13 +86,14 @@ export default function CompanyHeader({ CompanyInfo }) {
               cursor: "pointer",
               transition: "0.2s",
               TransformOrigin: "center",
-              
+
               "&:active": {
                 top: "-35%",
                 height: "5.2rem  ",
                 width: "5.2rem ",
               },
-              boxShadow:"0 1px 5px 5px #5351511e",p:"2px"
+              boxShadow: "0 1px 5px 5px #5351511e",
+              p: "2px",
             }}
           >
             <img
@@ -104,34 +104,60 @@ export default function CompanyHeader({ CompanyInfo }) {
             />
           </Card>
 
+          <Box sx={{ height: "100%", flex: 1, ml: "7rem" }}>
+            <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd" }}>
+              {/* Company Name */}
+              <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <Typography
+                  sx={{
+                    fontSize: "1.2rem",
+                    fontWeight: 600,
+                    color: "#2e2e2e",
+                    fontFamily: "monospace",
+                  }}
+                >
+                  {CompanyInfo?.name}
+                </Typography>
 
-          <Box sx={{height:"100%",flex:1,  ml:"7rem"}}>
-            <Box sx={{height:"100%",flex:1, bgcolor:"#ddd" }}>
-               {/* Company Name */}
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <Typography
-              sx={{
-                fontSize: "1.6rem",
-                fontWeight: 600,
-                color: "#2e2e2e",
-                fontFamily: "-apple-system",
-              }}
-            >
-              {CompanyInfo?.name}
-            </Typography>
+                <VerifiedIcon
+                  sx={{
+                    color: "#1a73e8",
+                    fontSize: "1.1rem",
+                  }}
+                />
+              </Box>
 
-            <VerifiedIcon
-              sx={{
-                color: "#1a73e8",
-                fontSize: "1.3rem",
-              }}
-            />
-          </Box>
+              {/* Info Row */}
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+              
+                  
+                  flexWrap: "wrap",
+                }}
+              >
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <BusinessCenterOutlinedIcon
+                    sx={{ fontSize: "1rem", color: "#666" }}
+                  />
+                  <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                    {CompanyInfo?.industry}
+                  </Typography>
+                </Box>
+
+                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                  <LocationOnOutlinedIcon
+                    sx={{ fontSize: "1rem", color: "#666" }}
+                  />
+                  <Typography sx={{ fontSize: "0.85rem", color: "#555" }}>
+                    {CompanyInfo?.headquarters}
+                  </Typography>
+                </Box>
+              </Box>
             </Box>
           </Box>
         </Box>
-
-       
       </Box>
     </>
   );
