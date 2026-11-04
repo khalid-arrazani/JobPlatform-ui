@@ -10,7 +10,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 import { useCompany } from "../../../../logic/context/CompanyContext";
 
-export default function CompanyDetailsDesktop() {
+export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
 
   return (

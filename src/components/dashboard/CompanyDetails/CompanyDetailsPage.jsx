@@ -5,6 +5,7 @@ import { useCompany } from "../../../logic/context/CompanyContext";
 import { GetCompanyById } from "../../../logic/api/company/Company";
 import { useMediaQuery } from "@mui/material";
 import CompanyDetailsDesktop from "./Desktop/CompanyDetailsDesktop";
+import CompanyDetailsMobile from "./Mobile/CompanyDetailsMobile";
 
 export default function CompanyDetailsPage() {
   const isMobile = useMediaQuery("(max-width:600px)");
@@ -41,5 +42,5 @@ export default function CompanyDetailsPage() {
     fetchCompany();
   }, []);
 
-  return <>{isMobile ? null : <CompanyDetailsDesktop />}</>;
+  return <>{isMobile ? <CompanyDetailsMobile /> : <CompanyDetailsDesktop />}</>;
 }
