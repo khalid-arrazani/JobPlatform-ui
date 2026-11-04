@@ -74,8 +74,8 @@ export default function CompanyHeader({ CompanyInfo }) {
           <Card
             component="label"
             sx={{
-              height: "6rem ",
-              width: "6rem",
+              height: "5.5rem ",
+              width: "5.5rem",
 
               boxSizing: "border-box",
               bgcolor: "#fffafa",
