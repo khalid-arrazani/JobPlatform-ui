@@ -19,9 +19,6 @@ import { useCompany } from "../../../../logic/context/CompanyContext";
 
 export default function CompanyDetailsDesktop() {
   const {  ...state } = useCompany();
- 
-
-
 
   return (
     <>
