@@ -56,10 +56,10 @@ export default function CompanyHeader({ CompanyInfo }) {
           alignItems: "end",
         }}
       >
-        {/* banner */}
+        {/* content */}
         <Box
           sx={{
-            height: "50% ",
+            height: "fit-content ",
             width: "100%",
             bgcolor: "#fffefe",
             backgroundSize: "cover",
@@ -68,6 +68,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
             display: "flex",
+            py:1
           }}
         >
           {/* logo */}
@@ -226,16 +227,53 @@ export default function CompanyHeader({ CompanyInfo }) {
               >
                 <Chip
                   icon={
-                    <svg viewBox="-0.5 -0.5 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id="Language--Streamline-Iconoir" height="14" width="14">
-  <desc>
-    Language Streamline Icon: https://streamlinehq.com
-  </desc>
-  <path d="M0.6628125 7.5c0 3.7760624999999997 3.061125 6.837187500000001 6.837187500000001 6.837187500000001 3.7760624999999997 0 6.837187500000001 -3.061125 6.837187500000001 -6.837187500000001 0 -3.7760624999999997 -3.061125 -6.837187500000001 -6.837187500000001 -6.837187500000001C3.7239375000000003 0.6628125 0.6628125 3.7239375000000003 0.6628125 7.5Z" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-  <path d="M8.18375 0.6965s2.051125 2.7011249999999998 2.051125 6.8034375c0 4.1023125 -2.051125 6.8035 -2.051125 6.8035" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-  <path d="M6.81625 14.303437500000001s-2.051125 -2.7011875 -2.051125 -6.8035S6.81625 0.6965 6.81625 0.6965" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-  <path d="M1.0933125000000001 9.892999999999999h12.8134375" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-  <path d="M1.0933125000000001 5.107h12.8134375" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-</svg>
+                    <svg
+                      viewBox="-0.5 -0.5 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      id="Language--Streamline-Iconoir"
+                      height="12"
+                      width="12"
+                    >
+                      <desc>
+                        Language Streamline Icon: https://streamlinehq.com
+                      </desc>
+                      <path
+                        d="M0.6628125 7.5c0 3.7760624999999997 3.061125 6.837187500000001 6.837187500000001 6.837187500000001 3.7760624999999997 0 6.837187500000001 -3.061125 6.837187500000001 -6.837187500000001 0 -3.7760624999999997 -3.061125 -6.837187500000001 -6.837187500000001 -6.837187500000001C3.7239375000000003 0.6628125 0.6628125 3.7239375000000003 0.6628125 7.5Z"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="0.7"
+                      ></path>
+                      <path
+                        d="M8.18375 0.6965s2.051125 2.7011249999999998 2.051125 6.8034375c0 4.1023125 -2.051125 6.8035 -2.051125 6.8035"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="0.7"
+                      ></path>
+                      <path
+                        d="M6.81625 14.303437500000001s-2.051125 -2.7011875 -2.051125 -6.8035S6.81625 0.6965 6.81625 0.6965"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="0.7"
+                      ></path>
+                      <path
+                        d="M1.0933125000000001 9.892999999999999h12.8134375"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="0.7"
+                      ></path>
+                      <path
+                        d="M1.0933125000000001 5.107h12.8134375"
+                        stroke="#000000"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="0.7"
+                      ></path>
+                  </svg>
                   }
                   size="small"
                   label={CompanyInfo?.website}
@@ -245,12 +283,10 @@ export default function CompanyHeader({ CompanyInfo }) {
                     fontWeight: 500,
                     bgcolor: "#f5f8ff",
                     border: "1px solid #dbe7ff",
-                    "& .MuiChip-icon": {
-                      color: "#666",
-                    },
                     fontFamily: "monospace",
                     borderRadius: "5px",
-                    fontSize: "0.7rem",
+                    fontSize: "0.62rem",
+                    height:"fit-content"
                   }}
                 />
               </Box>
