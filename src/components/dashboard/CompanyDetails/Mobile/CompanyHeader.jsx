@@ -141,7 +141,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                   <BusinessCenterOutlinedIcon
                     sx={{ fontSize: "1rem", color: "#666" }}
                   />
-                  <Typography sx={{ fontSize: "0.85rem", color: "#555",fontFamily:"monospace" }}>
+                  <Typography sx={{ fontSize: "0.78rem", color: "#555",fontFamily:"monospace" }}>
                     {CompanyInfo?.industry}
                   </Typography>
                 </Box>
