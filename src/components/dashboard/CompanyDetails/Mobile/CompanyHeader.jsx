@@ -70,7 +70,42 @@ export default function CompanyHeader({ CompanyInfo }) {
             borderTopRightRadius: "20px",
           }}
         >
-          
+           {/* logo */}
+          <Card
+            component="label"
+            sx={{
+              height: "6rem ",
+              width: "6rem",
+
+              boxSizing: "border-box",
+              bgcolor: "#fffafa",
+              position: "absolute",
+              top: "-50%",
+              left: "2%",
+              borderRadius: "15px",
+              cursor: "pointer",
+              transition: "0.2s",
+              TransformOrigin: "center",
+              "&:hover": {
+                top: "-53%",
+                height: "8.7rem ",
+                width: "8.7rem",
+                bgcolor: "#e6e5e5",
+              },
+              "&:active": {
+                top: "-49%",
+                height: "8.7rem ",
+                width: "8.7rem",
+              },
+            }}
+          >
+            <img
+              style={{ width: "100%" }}
+              src={CompanyInfo?.companyLogo?.url}
+              alt=""
+              srcset=""
+            />
+          </Card>
         </Box>
 
        
