@@ -46,9 +46,14 @@ export default function CompanyHeader({ CompanyInfo }) {
         sx={{
           height: "13rem",
           width: "100%",
-          bgcolor: "#ffffff",
           borderRadius: "15px",
           overflow: "hidden",
+           
+            backgroundImage: `${BG} `,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative",
+            alignItems:"end"
         }}
       >
         {/* banner */}
