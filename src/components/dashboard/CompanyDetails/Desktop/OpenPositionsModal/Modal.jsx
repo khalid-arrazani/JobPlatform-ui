@@ -16,11 +16,12 @@ import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
+
 import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
 import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
+import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
