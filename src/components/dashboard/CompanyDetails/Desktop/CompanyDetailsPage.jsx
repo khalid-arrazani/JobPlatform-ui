@@ -9,12 +9,10 @@ import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect } from "react";
-import { GetCompanyById } from "../../../logic/api/company/Company";
 
-import spinner from "../../../assets/spinner.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 
-import { useCompany } from "../../../logic/context/CompanyContext";
+
 import { useParams } from "react-router-dom";
 
 export default function CompanyDetailsPage() {
