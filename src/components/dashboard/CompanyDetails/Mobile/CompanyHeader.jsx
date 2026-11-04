@@ -69,7 +69,9 @@ export default function CompanyHeader({ CompanyInfo }) {
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
           }}
-        ></Box>
+        >
+          
+        </Box>
 
        
       </Box>
