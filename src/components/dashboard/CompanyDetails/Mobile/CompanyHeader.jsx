@@ -68,6 +68,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             position: "relative",
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
+            display:"flex"
           }}
         >
            {/* logo */}
@@ -104,7 +105,9 @@ export default function CompanyHeader({ CompanyInfo }) {
           </Card>
 
 
-          <Box sx={{height:"100%"}}></Box>
+          <Box sx={{height:"100%",flex:1,  ml:"7rem"}}>
+            <Box sx={{height:"100%",flex:1, bgcolor:"#ddd" }}></Box>
+          </Box>
         </Box>
 
        
