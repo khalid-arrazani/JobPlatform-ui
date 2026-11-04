@@ -92,6 +92,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                 height: "5.2rem  ",
                 width: "5.2rem ",
               },
+              boxShadow:"0 1px 5px 5px #5351511e"
             }}
           >
             <img
