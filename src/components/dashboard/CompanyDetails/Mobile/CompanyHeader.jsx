@@ -54,7 +54,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundPosition: "center",
             position: "relative",
             display:"flex",
-            alignItems:"end"
+            alignItems:"end" 
         }}
       >
         {/* banner */}
@@ -66,7 +66,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
-            borderRadius: "20px",
+            borderRadius: "20px"
 
           }}
         ></Box>
