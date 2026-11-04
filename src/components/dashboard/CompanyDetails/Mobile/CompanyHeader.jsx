@@ -54,7 +54,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundPosition: "center",
             position: "relative",
             display:"flex",
-            alignItems:"end" ,borderBottom:"1px solid #fffefe "
+            alignItems:"end" 
         }}
       >
         {/* banner */}
