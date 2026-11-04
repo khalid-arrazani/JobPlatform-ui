@@ -54,7 +54,7 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundPosition: "center",
             position: "relative",
             display:"flex",
-            alignItems:"end" 
+            alignItems:"end" ,borderBottom:"1px solid #fffefe "
         }}
       >
         {/* banner */}
@@ -62,12 +62,12 @@ export default function CompanyHeader({ CompanyInfo }) {
           sx={{
             height: "50% ",
             width: "100%",
-            bgcolor: "#fdfcfc",
+            bgcolor: "#fffefe",
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
-            borderRadius: "20px"
-
+            borderTopLeftRadius: "20px",
+            borderTopRightRadius: "20px",
           }}
         ></Box>
 
