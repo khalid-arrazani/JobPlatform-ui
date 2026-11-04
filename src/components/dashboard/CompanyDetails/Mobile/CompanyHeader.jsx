@@ -105,7 +105,7 @@ export default function CompanyHeader({ CompanyInfo }) {
           </Card>
 
           <Box sx={{ height: "100%", flex: 1, ml: "7rem" }}>
-            <Box sx={{ height: "100%", flex: 1,  }}>
+            <Box sx={{ height: "100%", flex: 1 }}>
               {/* Company Name */}
               <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
                 <Typography
@@ -186,13 +186,24 @@ export default function CompanyHeader({ CompanyInfo }) {
                   </Typography>
                 </Box>
 
-                <Box sx={{ display: "flex",  gap: 0.5 }}>
-                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Location-Pin--Streamline-Guidance-Free" height="15" width="15">
-  <desc>
-    Location Pin Streamline Icon: https://streamlinehq.com
-  </desc>
-  <path stroke="#000000" d="M12 23.92a9.04 9.04 0 0 0 -2.96 -6.61l-2.567 -2.334A8.365 8.365 0 0 1 3.75 8.799C3.75 4.242 7.444 0.5 12 0.5s8.25 3.741 8.25 8.298c0 2.343 -0.989 4.6 -2.723 6.177l-2.568 2.334a9.041 9.041 0 0 0 -2.96 6.61Zm0 0V24l0 -0.057M12 11.5a2.5 2.5 0 1 1 0 -5 2.5 2.5 0 0 1 0 5Z" stroke-width="1"></path>
-</svg>
+                <Box sx={{ display: "flex", gap: 0.5 }}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    id="Location-Pin--Streamline-Guidance-Free"
+                    height="15"
+                    width="15"
+                  >
+                    <desc>
+                      Location Pin Streamline Icon: https://streamlinehq.com
+                    </desc>
+                    <path
+                      stroke="#000000"
+                      d="M12 23.92a9.04 9.04 0 0 0 -2.96 -6.61l-2.567 -2.334A8.365 8.365 0 0 1 3.75 8.799C3.75 4.242 7.444 0.5 12 0.5s8.25 3.741 8.25 8.298c0 2.343 -0.989 4.6 -2.723 6.177l-2.568 2.334a9.041 9.041 0 0 0 -2.96 6.61Zm0 0V24l0 -0.057M12 11.5a2.5 2.5 0 1 1 0 -5 2.5 2.5 0 0 1 0 5Z"
+                      stroke-width="1"
+                    ></path>
+                  </svg>
                   <Typography
                     sx={{
                       fontSize: "0.78rem",
