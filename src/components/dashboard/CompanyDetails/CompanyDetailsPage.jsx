@@ -8,9 +8,14 @@ import { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { useCompany } from "../../../logic/context/CompanyContext";
 import { GetCompanyById } from "../../../logic/api/company/Company";
-
+import { useMediaQuery } from "@mui/material";
+import CompanyDetailsDesktop from "./Desktop/CompanyDetailsDesktop";
 
 export default function CompanyDetailsPage() {
+  const isMobile = useMediaQuery("(max-width:600px)");
+
+
+
   const { dispatch } = useCompany();
   const { CompanyId } = useParams();
 
@@ -47,7 +52,9 @@ export default function CompanyDetailsPage() {
 
   return (
     <>
-      
+      { isMobile
+                ? null
+                : <CompanyDetailsDesktop/>}
     </>
   );
 }

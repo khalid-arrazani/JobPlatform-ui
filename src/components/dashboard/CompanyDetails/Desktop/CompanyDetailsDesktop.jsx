@@ -8,7 +8,7 @@ import CompanyStatistics from "./CompanyStatistics";
 import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
-import { useEffect } from "react";
+
  
 
 import spinner from "../../../../assets/spinner.json";
@@ -17,12 +17,9 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 import { useCompany } from "../../../../logic/context/CompanyContext";
 
-export default function CompanyDetailsPage() {
+export default function CompanyDetailsDesktop() {
   const {  ...state } = useCompany();
  
-
- 
-
 
 
 
