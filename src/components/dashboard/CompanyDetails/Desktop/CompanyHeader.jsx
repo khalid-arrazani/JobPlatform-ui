@@ -35,9 +35,6 @@ export default function CompanyHeader({ CompanyInfo }) {
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
-
-  
-
   const navigate = useNavigate();
 
   return (

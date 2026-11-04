@@ -9,6 +9,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 
 import { useCompany } from "../../../../logic/context/CompanyContext";
+import CompanyHeader from "./CompanyHeader";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -44,17 +45,16 @@ export default function CompanyDetailsMobile() {
             width: "100vw",
             bgcolor: "#f2f2f5",
             boxSizing: "border-box",
-            px: 6,
-            pt: 3,
             overflow: "auto",
+            minHeight:"100dvh"
           }}
         >
           {/* top side or Company Card or  Header   */}
-          {/* <CompanyHeader CompanyInfo={state.CompanyDetails?.company} /> */}
+          <CompanyHeader CompanyInfo={state.CompanyDetails?.company} />
 
 
 
-          
+
 
           {/* Content about Company or bottom side  */}
           <Box
