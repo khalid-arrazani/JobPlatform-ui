@@ -106,7 +106,28 @@ export default function CompanyHeader({ CompanyInfo }) {
 
 
           <Box sx={{height:"100%",flex:1,  ml:"7rem"}}>
-            <Box sx={{height:"100%",flex:1, bgcolor:"#ddd" }}></Box>
+            <Box sx={{height:"100%",flex:1, bgcolor:"#ddd" }}>
+               {/* Company Name */}
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            <Typography
+              sx={{
+                fontSize: "1.6rem",
+                fontWeight: 600,
+                color: "#2e2e2e",
+                fontFamily: "-apple-system",
+              }}
+            >
+              {CompanyInfo?.name}
+            </Typography>
+
+            <VerifiedIcon
+              sx={{
+                color: "#1a73e8",
+                fontSize: "1.3rem",
+              }}
+            />
+          </Box>
+            </Box>
           </Box>
         </Box>
 
