@@ -80,22 +80,17 @@ export default function CompanyHeader({ CompanyInfo }) {
               boxSizing: "border-box",
               bgcolor: "#fffafa",
               position: "absolute",
-              top: "-50%",
+              top: "-35%",
               left: "2%",
               borderRadius: "15px",
               cursor: "pointer",
               transition: "0.2s",
               TransformOrigin: "center",
-              "&:hover": {
-                top: "-53%",
-                height: "8.7rem ",
-                width: "8.7rem",
-                bgcolor: "#e6e5e5",
-              },
+              
               "&:active": {
-                top: "-49%",
-                height: "8.7rem ",
-                width: "8.7rem",
+                top: "-35%",
+                height: "6.2rem ",
+                width: "6.2rem",
               },
             }}
           >
