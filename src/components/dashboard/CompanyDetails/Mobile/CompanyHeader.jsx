@@ -186,7 +186,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                   </Typography>
                 </Box>
 
-                <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                <Box sx={{ display: "flex",  gap: 0.5 }}>
                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" id="Location-Pin--Streamline-Guidance-Free" height="15" width="15">
   <desc>
     Location Pin Streamline Icon: https://streamlinehq.com
