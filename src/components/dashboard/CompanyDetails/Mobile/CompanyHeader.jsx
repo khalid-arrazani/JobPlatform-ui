@@ -44,7 +44,7 @@ export default function CompanyHeader({ CompanyInfo }) {
     <>
       <Box
         sx={{
-          height: "13rem",
+          height: "11rem",
           width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
