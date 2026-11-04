@@ -38,7 +38,7 @@ export default function CompanyHeader({ CompanyInfo }) {
 
   
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <>
