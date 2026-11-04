@@ -215,6 +215,35 @@ export default function CompanyHeader({ CompanyInfo }) {
                   </Typography>
                 </Box>
               </Box>
+
+              {/* Website */}
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 0.5,
+             
+            }}
+          >
+            <Chip
+              icon={<LanguageOutlinedIcon />}
+              size="small"
+              label={CompanyInfo?.website}
+              clickable
+              sx={{
+                color: "#1a73e8",
+                fontWeight: 500,
+                bgcolor: "#f5f8ff",
+                border: "1px solid #dbe7ff",
+                "& .MuiChip-icon": {
+                  color: "#666",
+                },
+                fontFamily:"monospace",
+                borderRadius: "5px",
+                fontSize:"0.8rem"
+              }}
+            />
+          </Box>
             </Box>
           </Box>
         </Box>
