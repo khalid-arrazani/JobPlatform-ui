@@ -46,7 +46,7 @@ export default function CompanyHeader({ CompanyInfo }) {
         sx={{
           height: "13rem",
           width: "100%",
-          borderRadius: "15px",
+          borderRadius: "20px",
           overflow: "hidden",
            
             backgroundImage: `${BG} `,
@@ -65,7 +65,8 @@ export default function CompanyHeader({ CompanyInfo }) {
             bgcolor: "#fdfcfc",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            position: "relative",borderRadius: "15px",
+            position: "relative",
+            borderRadius: "20px",
 
           }}
         ></Box>
