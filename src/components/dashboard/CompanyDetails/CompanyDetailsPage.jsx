@@ -1,9 +1,4 @@
-
-
 import { useEffect } from "react";
-
-
-
 
 import { useParams } from "react-router-dom";
 import { useCompany } from "../../../logic/context/CompanyContext";
@@ -13,8 +8,6 @@ import CompanyDetailsDesktop from "./Desktop/CompanyDetailsDesktop";
 
 export default function CompanyDetailsPage() {
   const isMobile = useMediaQuery("(max-width:600px)");
-
-
 
   const { dispatch } = useCompany();
   const { CompanyId } = useParams();
@@ -48,13 +41,5 @@ export default function CompanyDetailsPage() {
     fetchCompany();
   }, []);
 
-
-
-  return (
-    <>
-      { isMobile
-                ? null
-                : <CompanyDetailsDesktop/>}
-    </>
-  );
+  return <>{isMobile ? null : <CompanyDetailsDesktop />}</>;
 }
