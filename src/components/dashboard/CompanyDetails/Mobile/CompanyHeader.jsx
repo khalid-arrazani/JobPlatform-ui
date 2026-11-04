@@ -102,6 +102,9 @@ export default function CompanyHeader({ CompanyInfo }) {
               srcset=""
             />
           </Card>
+
+
+          <Box sx={{height:"100%"}}></Box>
         </Box>
 
        
