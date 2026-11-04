@@ -1,8 +1,8 @@
-import { Box } from "@mui/material";
+
 
 import { useEffect } from "react";
 
-import { Player } from "@lottiefiles/react-lottie-player";
+
 
 
 import { useParams } from "react-router-dom";
@@ -11,7 +11,7 @@ import { GetCompanyById } from "../../../logic/api/company/Company";
 
 
 export default function CompanyDetailsPage() {
-  const { dispatch, ...state } = useCompany();
+  const { dispatch } = useCompany();
   const { CompanyId } = useParams();
 
   const fetchCompany = async () => {
