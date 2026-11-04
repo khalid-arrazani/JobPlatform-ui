@@ -53,16 +53,17 @@ export default function CompanyHeader({ CompanyInfo }) {
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
+            display:"flex",
             alignItems:"end"
         }}
       >
         {/* banner */}
         <Box
           sx={{
-            height: "65% ",
+            height: "50% ",
             width: "100%",
-            bgcolor: "#544f4f",
-            backgroundImage: `${BG} `,
+            bgcolor: "#fdfcfc",
+      
             backgroundSize: "cover",
             backgroundPosition: "center",
             position: "relative",
