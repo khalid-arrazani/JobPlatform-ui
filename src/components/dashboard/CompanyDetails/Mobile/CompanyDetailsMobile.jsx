@@ -67,7 +67,7 @@ export default function CompanyDetailsMobile() {
               borderRadius: "15px",
               display: "flex",
               gap: 1.5,
-              boxSizing:"border-box"
+              boxSizing:"border-box",pb:'8rem'
             }}
           >
           
