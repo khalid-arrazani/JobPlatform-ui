@@ -10,14 +10,14 @@ import VisibilityIcon from "@mui/icons-material/Visibility";
 
 import { ChartColumn } from "lucide-react";
 
-const CompanyStatistics = ({CompanyInfo}) => {
+const CompanyStatistics = ({ CompanyInfo }) => {
   const stats = {
-    totalJobs:CompanyInfo?.totalJobs||0 ,
-    activeJobs: CompanyInfo?.totalActiveJobs||0,
-    totalApplicants: CompanyInfo?.applicants||0,
-    newApplicants: CompanyInfo?.newApplicants||0,
-    hired: CompanyInfo?.hired||0,
-    avgViewsPerJob: CompanyInfo?.companyViews||0,
+    totalJobs: CompanyInfo?.totalJobs || 0,
+    activeJobs: CompanyInfo?.totalActiveJobs || 0,
+    totalApplicants: CompanyInfo?.applicants || 0,
+    newApplicants: CompanyInfo?.newApplicants || 0,
+    hired: CompanyInfo?.hired || 0,
+    avgViewsPerJob: CompanyInfo?.companyViews || 0,
   };
 
   const cardStyle = (color) => ({
@@ -27,32 +27,33 @@ const CompanyStatistics = ({CompanyInfo}) => {
     alignItems: "center",
     gap: 2,
     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-    backgroundColor: `${color}15`, 
+    backgroundColor: `${color}15`,
   });
 
   return (
-    <Box sx={{
-          width: "100%",
-          borderRadius: "10px",
-          p: 1.5,
-          boxSizing: "border-box",
-          bgcolor:"#fff"
-        }}>
-      <Typography
-        variant="h6"
-        sx={{
-          mb: 2,
-          fontWeight: "bold",
-          fontFamily: "initial",
-          color: "#090909d8",
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
-        }}
-      >
-        <ChartColumn color="#1f8afc" />
-        Company Statistics
-      </Typography>
+    <Box
+      sx={{
+        width: "100%",
+        borderRadius: "10px",
+        p: 1.5,
+        boxSizing: "border-box",
+        bgcolor: "#fff",
+      }}
+    >
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "8px" }}>
+        <ChartColumn size={"1.2rem"} color="#66a8f4" />
+        <Typography
+          variant="h6"
+          sx={{
+            fontWeight: 600,
+            fontFamily: "monospace",
+            color: "#0c031fb2",
+            fontSize: "1rem",
+          }}
+        >
+          Company Statistics
+        </Typography>
+      </Box>
 
       {/* Total Jobs */}
       <Box
@@ -72,7 +73,7 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#0289d11a"
+            bgcolor: "#0289d11a",
           }}
         >
           <Card sx={cardStyle("#1976d2")}>
@@ -96,7 +97,7 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#06a70e48"
+            bgcolor: "#06a70e48",
           }}
         >
           <Card sx={cardStyle("#2e7d32")}>
@@ -120,22 +121,22 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#0289d144"
+            bgcolor: "#0289d144",
           }}
         >
-        <Card sx={cardStyle("#0288d1")}>
-          <PeopleAltIcon sx={{ color: "#0288d1" }} />
-          <Box>
-            <Typography variant="body2">Applicants</Typography>
-            <Typography variant="h6" fontWeight="bold">
-              {stats.totalApplicants}
-            </Typography>
-          </Box>
-        </Card>
+          <Card sx={cardStyle("#0288d1")}>
+            <PeopleAltIcon sx={{ color: "#0288d1" }} />
+            <Box>
+              <Typography variant="body2">Applicants</Typography>
+              <Typography variant="h6" fontWeight="bold">
+                {stats.totalApplicants}
+              </Typography>
+            </Box>
+          </Card>
         </Box>
 
         {/* New Applicants */}
-         <Box
+        <Box
           sx={{
             borderRadius: "15px",
             transition: "0.5s",
@@ -144,18 +145,18 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#f57b002d"
+            bgcolor: "#f57b002d",
           }}
         >
-        <Card sx={cardStyle("#f57c00")}>
-          <PersonAddAlt1Icon sx={{ color: "#f57c00" }} />
-          <Box>
-            <Typography variant="body2">New Applicants</Typography>
-            <Typography variant="h6" fontWeight="bold">
-              {stats.newApplicants}
-            </Typography>
-          </Box>
-        </Card>
+          <Card sx={cardStyle("#f57c00")}>
+            <PersonAddAlt1Icon sx={{ color: "#f57c00" }} />
+            <Box>
+              <Typography variant="body2">New Applicants</Typography>
+              <Typography variant="h6" fontWeight="bold">
+                {stats.newApplicants}
+              </Typography>
+            </Box>
+          </Card>
         </Box>
 
         {/* Hired */}
@@ -168,18 +169,18 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#9b27b031"
+            bgcolor: "#9b27b031",
           }}
         >
-        <Card sx={cardStyle("#9c27b0")}>
-          <CheckCircleIcon sx={{ color: "#9c27b0" }} />
-          <Box>
-            <Typography variant="body2">Hired</Typography>
-            <Typography variant="h6" fontWeight="bold">
-              {stats.hired}
-            </Typography>
-          </Box>
-        </Card>
+          <Card sx={cardStyle("#9c27b0")}>
+            <CheckCircleIcon sx={{ color: "#9c27b0" }} />
+            <Box>
+              <Typography variant="body2">Hired</Typography>
+              <Typography variant="h6" fontWeight="bold">
+                {stats.hired}
+              </Typography>
+            </Box>
+          </Card>
         </Box>
 
         {/* Views */}
@@ -192,21 +193,19 @@ const CompanyStatistics = ({CompanyInfo}) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor:"#455a6420"
+            bgcolor: "#455a6420",
           }}
-          >
-        <Card sx={cardStyle("#455a64")}>
-          <VisibilityIcon sx={{ color: "#455a64" }} />
-          <Box>
-            <Typography variant="body2">Avg Views / Job</Typography>
-            <Typography variant="h6" fontWeight="bold">
-              {stats.avgViewsPerJob}
-            </Typography>
-          </Box>
-        </Card>
+        >
+          <Card sx={cardStyle("#455a64")}>
+            <VisibilityIcon sx={{ color: "#455a64" }} />
+            <Box>
+              <Typography variant="body2">Avg Views / Job</Typography>
+              <Typography variant="h6" fontWeight="bold">
+                {stats.avgViewsPerJob}
+              </Typography>
+            </Box>
+          </Card>
         </Box>
-
-
       </Box>
     </Box>
   );
