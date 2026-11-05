@@ -8,13 +8,12 @@ export default function AboutCompany({ CompanyInfo }) {
 
   return (
     <>
-      <Card
+      <Box
         sx={{
           width: "100%",
           borderRadius: "10px",
           p: 1.5,
           boxSizing: "border-box",
-          mb: 2,
           bgcolor:"#fff"
         }}
       >
@@ -92,7 +91,7 @@ export default function AboutCompany({ CompanyInfo }) {
             </Button>
           </>
         )}
-      </Card>
+      </Box>
     </>
   );
 }

@@ -54,7 +54,7 @@ const SocialContact = ({ CompanyInfo }) => {
         borderRadius: "10px",
         p: 1.5,
         boxSizing: "border-box",
-        mb: 1,
+       
         bgcolor: "#fff",
         position: "relative",
       }}

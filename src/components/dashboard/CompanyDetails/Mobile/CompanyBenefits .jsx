@@ -195,8 +195,14 @@ const CompanyBenefits = ({ CompanyInfo }) => {
   );
 
   return (
-    <Card sx={{ p: 2, borderRadius: "12px", }}>
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1,mb:'8px' }}>  <CircleCheckBig color="#66a8f4"  />
+    <Box sx={{
+          width: "100%",
+          borderRadius: "10px",
+          p: 1.5,
+          boxSizing: "border-box",
+          bgcolor:"#fff"
+        }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1,mb:'8px' }}>  <CircleCheckBig size={"1.2rem"} color="#66a8f4"  />
       <Typography
         variant="h6"
          sx={{
@@ -261,7 +267,7 @@ const CompanyBenefits = ({ CompanyInfo }) => {
         </Box>
 
       )}
-    </Card>
+    </Box>
   );
 };
 
