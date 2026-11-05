@@ -43,7 +43,7 @@ export default function CompanyHeader({ CompanyInfo }) {
     <>
       <Box
         sx={{
-          height: "11rem",
+          height: "13rem",
           width: "100%",
           borderRadius: "20px",
           overflow: "hidden",
@@ -54,6 +54,7 @@ export default function CompanyHeader({ CompanyInfo }) {
           position: "relative",
           display: "flex",
           alignItems: "end",
+          
         }}
       >
         {/* content */}
