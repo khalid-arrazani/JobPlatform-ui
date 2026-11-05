@@ -230,7 +230,7 @@ const CompanyBenefits = ({ CompanyInfo }) => {
               <Box>
                 <Card
                   sx={{
-                    p:1.3,
+                    p:1,
                     borderRadius: "8px",
                     display: "flex",
                     transition: "0.5s",
@@ -248,10 +248,10 @@ const CompanyBenefits = ({ CompanyInfo }) => {
                   }}
                 >
                   <Box sx={{ color: item.color }}>
-                    <Icon color={item.color} />{" "}
+                    <Icon color={item.color} width={"1.2rem"} />{" "}
                   </Box>
 
-                  <Typography sx={{fontSize:""}}>
+                  <Typography sx={{fontSize:"0.8rem",fontFamily:"monospace"}}>
                     {item.label}
                   </Typography>
                 </Card>
