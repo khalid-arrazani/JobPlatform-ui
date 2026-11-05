@@ -54,12 +54,12 @@ const SocialContact = ({ CompanyInfo }) => {
         borderRadius: "10px",
         p: 1.5,
         boxSizing: "border-box",
-        mb: 2,
+        mb: 1,
         bgcolor: "#fff",
         position: "relative",
       }}
     >
-      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1,mb:'8px' }}>
         <RiContactsLine color="#66a8f4" />
         <Typography
           variant="h6"
@@ -68,6 +68,7 @@ const SocialContact = ({ CompanyInfo }) => {
             fontFamily: "monospace",
             color: "#0c031fb2",
             fontSize: "1rem",
+            
           }}
         >
           Contact
