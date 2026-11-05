@@ -59,7 +59,7 @@ const SocialContact = ({ CompanyInfo }) => {
         }}
       >
       <img
-        style={{ position: "absolute", width: "12.5rem", right: 0, }}
+        style={{ position: "absolute", width: "12.5rem", right: 0,zIndex:0 }}
         src={sendMessage}
         alt=""
       />
