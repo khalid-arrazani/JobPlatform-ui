@@ -54,7 +54,7 @@ export default function CompanyHeader({ CompanyInfo }) {
           position: "relative",
           display: "flex",
           alignItems: "end",
-          
+          boxSizing:"border-box"
         }}
       >
         {/* content */}

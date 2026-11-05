@@ -10,6 +10,7 @@ import { Player } from "@lottiefiles/react-lottie-player";
 
 import { useCompany } from "../../../../logic/context/CompanyContext";
 import CompanyHeader from "./CompanyHeader";
+import AboutCompany from "./AboutCompany";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -46,7 +47,8 @@ export default function CompanyDetailsMobile() {
             bgcolor: "#f8eefa",
             boxSizing: "border-box",
             overflow: "auto",
-            minHeight:"100dvh"
+            minHeight:"100dvh",
+            px:"6px"
           }}
         >
           {/* top side or Company Card or  Header   */}
@@ -65,18 +67,18 @@ export default function CompanyDetailsMobile() {
               borderRadius: "15px",
               display: "flex",
               gap: 1.5,
+              boxSizing:"border-box"
             }}
           >
-            {/* left side  */}
-            <Box
-              sx={{
-                width: "50%",
-                borderRadius: "15px",
-              }}
-            >
+          
+          
+          
+          
               {/* About Company Card  */}
-              {/* <AboutCompany CompanyInfo={state.CompanyDetails?.company} /> */}
+              <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
+
               {/* Company Statistics  */}
+
               {/* <CompanyStatistics CompanyInfo={state?.CompanyDetails} /> */}
 
               {/* Open Positions Card  */}
@@ -84,16 +86,11 @@ export default function CompanyDetailsMobile() {
                 CompanyInfo={state?.CompanyDetails}
                 CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
               /> */}
-            </Box>
+         
+         
 
-            {/* right side  */}
-            <Box
-              sx={{
-                width: "50%",
-                height: "fit-Content",
-                borderRadius: "15px",
-              }}
-            >
+            
+            
               {/* Company Benefits Card  */}
               {/* <SocialContact CompanyInfo={state.CompanyDetails?.company} /> */}
 
@@ -102,7 +99,8 @@ export default function CompanyDetailsMobile() {
 
               {/* Company Info Card  */}
               {/* <CompanyInfo CompanyInfo={state.CompanyDetails?.company} /> */}
-            </Box>
+            
+            
           </Box>
         </Box>
       )}
