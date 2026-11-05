@@ -13,6 +13,7 @@ import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
 import CompanyInfo from "./CompanyInfo";
 import SocialContact from "./SocialContact";
+import CompanyBenefits from "./CompanyBenefits ";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -79,15 +80,18 @@ export default function CompanyDetailsMobile() {
               {/* About Company Card  */}
               <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
 
-              {/* Company Benefits Card  */}
+              {/* Company SocialContact Card  */}
               <SocialContact CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* Company Benefits Card  */}
+              <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
+              
 
               {/* Company Info Card  */}
               {/* <CompanyInfo CompanyInfo={state.CompanyDetails?.company} /> */}
               
 
               {/* Company Statistics  */}
-
               {/* <CompanyStatistics CompanyInfo={state?.CompanyDetails} /> */}
 
               {/* Open Positions Card  */}
