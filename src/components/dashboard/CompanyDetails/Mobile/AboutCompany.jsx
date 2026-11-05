@@ -25,9 +25,10 @@ export default function AboutCompany({ CompanyInfo }) {
             fontSize="1rem"
             sx={{
               fontWeight: 600,
-              fontFamily: "initial",
+              fontFamily:"monospace",
               color: "#090909d8",
-              fontSize: "1.2rem",
+              fontSize: "1rem",
+
             }}
           >
             About Company
@@ -38,13 +39,13 @@ export default function AboutCompany({ CompanyInfo }) {
           <EmptyAboutCompany />
         ) : (
           <>
-            <Collapse in={expanded} collapsedSize={70}>
+            <Collapse in={expanded} collapsedSize={200}>
               <Typography
                 sx={{
                   mt: 1.5,
                   color: "#555",
                   fontSize: "0.95rem",
-                  lineHeight: 1.8,
+                  lineHeight: 1.8, fontFamily:"monospace"
                 }}
               >
                 {CompanyInfo?.description}
@@ -57,6 +58,7 @@ export default function AboutCompany({ CompanyInfo }) {
                 mt: 1,
                 textTransform: "none",
                 fontWeight: 600,
+                fontFamily:"monospace"
               }}
             >
               {expanded ? "Show Less" : "Read More"}
