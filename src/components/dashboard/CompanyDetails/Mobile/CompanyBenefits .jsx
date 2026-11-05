@@ -251,7 +251,7 @@ const CompanyBenefits = ({ CompanyInfo }) => {
                     <Icon color={item.color} />{" "}
                   </Box>
 
-                  <Typography variant="body2" fontWeight="bold">
+                  <Typography sx={{fontSize:""}}>
                     {item.label}
                   </Typography>
                 </Card>
