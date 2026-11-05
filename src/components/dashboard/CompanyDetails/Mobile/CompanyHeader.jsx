@@ -184,6 +184,7 @@ export default function CompanyHeader({ CompanyInfo }) {
                     }}
                   >
                     {CompanyInfo?.industry}
+                    
                   </Typography>
                 </Box>
 
