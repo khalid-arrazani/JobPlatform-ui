@@ -52,7 +52,7 @@ export default function AboutCompany({ CompanyInfo }) {
             sx={{
               fontWeight: 600,
               fontFamily: "monospace",
-              color: "#090909c5",
+              color: "#0c031fb2",
               fontSize: "1rem",
             }}
           >
@@ -69,7 +69,7 @@ export default function AboutCompany({ CompanyInfo }) {
                 sx={{
                   mt: 1.5,
                   color: "#555",
-                  fontSize: "0.95rem",
+                  fontSize: "0.85rem",
                   lineHeight: 1.8,
                   fontFamily: "monospace",
                 }}
