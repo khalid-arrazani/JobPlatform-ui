@@ -11,6 +11,8 @@ import { Player } from "@lottiefiles/react-lottie-player";
 import { useCompany } from "../../../../logic/context/CompanyContext";
 import CompanyHeader from "./CompanyHeader";
 import AboutCompany from "./AboutCompany";
+import CompanyInfo from "./CompanyInfo";
+import SocialContact from "./SocialContact";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -66,8 +68,8 @@ export default function CompanyDetailsMobile() {
               my: 2,
               borderRadius: "15px",
               display: "flex",
-              gap: 1.5,
-              boxSizing:"border-box",pb:'8rem'
+       
+              boxSizing:"border-box",pb:'8rem',flexDirection:"column"
             }}
           >
           
@@ -76,6 +78,12 @@ export default function CompanyDetailsMobile() {
           
               {/* About Company Card  */}
               <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* Company Benefits Card  */}
+              <SocialContact CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* Company Info Card  */}
+              {/* <CompanyInfo CompanyInfo={state.CompanyDetails?.company} /> */}
               
 
               {/* Company Statistics  */}
