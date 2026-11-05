@@ -55,11 +55,11 @@ const SocialContact = ({ CompanyInfo }) => {
           p: 1.5,
           boxSizing: "border-box",
           mb: 2,
-          bgcolor:"#fff"
+          bgcolor:"#fff",position:"relative"
         }}
       >
       <img
-        style={{ position: "absolute", width: "12.5rem", right: 0, zIndex: 0 }}
+        style={{ position: "absolute", width: "12.5rem", right: 0, }}
         src={sendMessage}
         alt=""
       />
@@ -92,7 +92,7 @@ const SocialContact = ({ CompanyInfo }) => {
           justifyContent: "space-between",
           width: "60%",
           boxShadow: "0 8px 20px rgba(8, 8, 8, 0.08)",
-          zIndex: 1,
+     
           mb: 2,
           cursor: "pointer",
           transition: ".25s",
@@ -178,7 +178,7 @@ const SocialContact = ({ CompanyInfo }) => {
                   boxShadow: social.shadow,
                   textDecoration: "none",
                   display: "flex",
-                  zIndex: 1,
+            
                   alignItems: "center",
                   justifyContent: "center",
                   p: 1.2,
@@ -203,7 +203,7 @@ const SocialContact = ({ CompanyInfo }) => {
             bgcolor: "#fff",
             display: "flex",
             alignItems: "center",
-            zIndex: 1,
+
             gap: 1.2,
             cursor: "pointer",
             transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
