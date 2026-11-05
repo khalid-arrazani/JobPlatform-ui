@@ -4,13 +4,13 @@ import sendMessage from "../../../../assets/Sent Message-bro.svg";
 
 import InstagramIcon from "@mui/icons-material/Instagram";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import XIcon from '@mui/icons-material/X';
+import XIcon from "@mui/icons-material/X";
 
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 
 const icons = {
   linkdin: {
-    icon: <LinkedInIcon sx={{ fontSize: "2rem" }} />,
+    icon: <LinkedInIcon sx={{ fontSize: "1.6rem" }} />,
     color: "#0A66C2",
     border: "#cfe5ff",
     shadow: "0 8px 20px rgba(10, 102, 194, 0.15)",
@@ -18,16 +18,16 @@ const icons = {
   },
 
   facebook: {
-    icon: <FacebookIcon sx={{ fontSize: "2rem" }} />,
+    icon: <FacebookIcon sx={{ fontSize: "1.6rem" }} />,
     color: "#1877F2",
     border: "#d5e7ff",
     shadow: "0 8px 20px rgba(24, 119, 242, 0.15)",
-  
+
     hoverShadow: "0 15px 30px rgba(24, 119, 242, 0.25)",
   },
 
   instagram: {
-    icon: <InstagramIcon sx={{ fontSize: "2rem" }} />,
+    icon: <InstagramIcon sx={{ fontSize: "1.6rem" }} />,
     color: "#E1306C",
     border: "#f3d4e1",
     shadow: "0 8px 20px rgba(225, 48, 108, 0.15)",
@@ -35,7 +35,7 @@ const icons = {
   },
 
   x: {
-    icon: <XIcon sx={{ fontSize: "2rem" }} />,
+    icon: <XIcon sx={{ fontSize: "1.6rem" }} />,
     color: "#2b2c2d",
     border: "#ddd",
     shadow: "0 8px 20px rgba(0, 0, 0, 0.15)",
@@ -49,32 +49,30 @@ import EmailIcon from "@mui/icons-material/Email";
 const SocialContact = ({ CompanyInfo }) => {
   return (
     <Box
-        sx={{
-          width: "100%",
-          borderRadius: "10px",
-          p: 1.5,
-          boxSizing: "border-box",
-          mb: 2,
-          bgcolor:"#fff",position:"relative"
-        }}
-      >
-    
-
+      sx={{
+        width: "100%",
+        borderRadius: "10px",
+        p: 1.5,
+        boxSizing: "border-box",
+        mb: 2,
+        bgcolor: "#fff",
+        position: "relative",
+      }}
+    >
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+      <RiContactsLine color="#66a8f4" />
       <Typography
         variant="h6"
         sx={{
-          mb: 1.5,
-          fontWeight: "bold",
-          display: "flex",
-          alignItems: "center",
-          gap: 1,
+          fontWeight: 600,
           fontFamily: "monospace",
-          color: "#090909d8",
+          color: "#0c031fb2",
+          fontSize: "1rem",
         }}
       >
-        <RiContactsLine color="#66a8f4" />
+        
         Contact
-      </Typography>
+      </Typography></Box>
 
       {/* Phone */}
       <Card
@@ -143,11 +141,10 @@ const SocialContact = ({ CompanyInfo }) => {
         />
       </Card>
 
-      <Divider sx={{ my: 2.5 }} />
 
       {/* Social Icons */}
 
-      <Box sx={{ zIndex: 1, display: "flex", gap: 2, flexWrap: "wrap" }}>
+      <Box sx={{ display: "flex", gap: 0.5, flexWrap: "wrap" }}>
         {CompanyInfo?.socialLinks
           .filter((item) => item.url.trim() !== "")
           .map((item) => {
@@ -162,17 +159,16 @@ const SocialContact = ({ CompanyInfo }) => {
                 rel="noopener noreferrer"
                 sx={{
                   color: social.color,
-
                   border: `1px solid ${social.border}`,
-                  borderRadius: "14px",
+                  borderRadius: "8px",
                   boxShadow: social.shadow,
                   textDecoration: "none",
                   display: "flex",
-            
                   alignItems: "center",
                   justifyContent: "center",
-                  p: 1.2,
-                  cursor: "pointer", transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
+                  p: 0.5,
+                  cursor: "pointer",
+                  transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
                   "&:hover": {
                     boxShadow: social.hoverShadow,
                     transform: "translateY(-4px)",
@@ -187,14 +183,13 @@ const SocialContact = ({ CompanyInfo }) => {
         {/* Email */}
         <Card
           sx={{
-            px: 2,
+           
             border: "1px solid #dbeafe",
-            borderRadius: "14px",
+            borderRadius: "8px",
             bgcolor: "#fff",
             display: "flex",
             alignItems: "center",
-
-            gap: 1.2,
+            gap: 0.5,
             cursor: "pointer",
             transition: "all 0.3s cubic-bezier(.4,0,.2,1)",
             boxShadow: "0 8px 20px rgba(37, 99, 235, 0.12)",
@@ -202,32 +197,23 @@ const SocialContact = ({ CompanyInfo }) => {
               transform: "translateY(-4px)",
               boxShadow: "0 15px 30px rgba(37, 99, 235, 0.2)",
             },
+            px:"0.5rem"
           }}
         >
-          <Box
-            sx={{
-              width: 42,
-              height: 42,
-              borderRadius: "12px",
-
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
+          
             <EmailIcon
               sx={{
                 color: "#2563eb",
                 fontSize: "1.5rem",
               }}
             />
-          </Box>
+          
 
           <Typography
             sx={{
               color: "#020203bc",
-              fontSize: "1rem",
-              fontFamily: "Inter",
+              fontSize: "0.8rem",
+              fontFamily: "monospace",
             }}
           >
             {CompanyInfo?.company_email}
