@@ -76,6 +76,7 @@ export default function CompanyDetailsMobile() {
           
               {/* About Company Card  */}
               <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
+              
 
               {/* Company Statistics  */}
 

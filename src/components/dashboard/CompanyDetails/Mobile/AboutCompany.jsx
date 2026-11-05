@@ -64,7 +64,7 @@ export default function AboutCompany({ CompanyInfo }) {
           <EmptyAboutCompany />
         ) : (
           <>
-            <Collapse in={expanded} collapsedSize={200}>
+            <Collapse in={expanded} collapsedSize={150}>
               <Typography
                 sx={{
                   mt: 1.5,
