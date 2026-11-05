@@ -80,7 +80,7 @@ const SocialContact = ({ CompanyInfo }) => {
             p: 1.5,
             borderRadius: "14px",
             bgcolor: "#f8fcf8",
-            border: "1px solid #e7f7ea",
+            border: "1px solid #e8ede9",
             display: "flex",
             alignItems: "center",
             justifyContent: "space-between",
