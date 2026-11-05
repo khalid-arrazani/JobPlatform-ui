@@ -31,7 +31,13 @@ const CompanyStatistics = ({CompanyInfo}) => {
   });
 
   return (
-    <Card sx={{ p: 2, borderRadius: "12px" }}>
+    <Box sx={{
+          width: "100%",
+          borderRadius: "10px",
+          p: 1.5,
+          boxSizing: "border-box",
+          bgcolor:"#fff"
+        }}>
       <Typography
         variant="h6"
         sx={{
@@ -202,7 +208,7 @@ const CompanyStatistics = ({CompanyInfo}) => {
 
 
       </Box>
-    </Card>
+    </Box>
   );
 };
 
