@@ -24,8 +24,8 @@ export default function AboutCompany({ CompanyInfo }) {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             id="Info-Circle--Streamline-Solar-Broken"
-            height="20"
-            width="20"
+            height="18"
+            width="18"
           >
             <desc>Info Circle Streamline Icon: https://streamlinehq.com</desc>
             <path
@@ -52,7 +52,7 @@ export default function AboutCompany({ CompanyInfo }) {
             sx={{
               fontWeight: 600,
               fontFamily: "monospace",
-              color: "#090909d8",
+              color: "#090909c5",
               fontSize: "1rem",
             }}
           >
