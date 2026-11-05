@@ -248,7 +248,7 @@ const CompanyBenefits = ({ CompanyInfo }) => {
                   }}
                 >
                   <Box sx={{ color: item.color }}>
-                    <Icon color={item.color} width={"1.2rem"} />{" "}
+                    <Icon color={item.color} width={"1.2rem"} />
                   </Box>
 
                   <Typography sx={{fontSize:"0.8rem",fontFamily:"monospace"}}>
