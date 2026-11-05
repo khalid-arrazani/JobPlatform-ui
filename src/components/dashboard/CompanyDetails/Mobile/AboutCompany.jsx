@@ -12,7 +12,7 @@ export default function AboutCompany({ CompanyInfo }) {
         sx={{
           width: "100%",
           borderRadius: "15px",
-          p: 2.5,
+          p: 1.5,
           boxSizing: "border-box",
           mb: 2,
         }}
