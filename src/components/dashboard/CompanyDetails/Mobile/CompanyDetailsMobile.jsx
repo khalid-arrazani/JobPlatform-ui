@@ -103,14 +103,10 @@ export default function CompanyDetailsMobile() {
 
             
             
-              {/* Company Benefits Card  */}
-              {/* <SocialContact CompanyInfo={state.CompanyDetails?.company} /> */}
+            
 
-              {/* Company Benefits Card  */}
-              {/* <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} /> */}
-
-              {/* Company Info Card  */}
-              {/* <CompanyInfo CompanyInfo={state.CompanyDetails?.company} /> */}
+           
+ 
             
             
           </Box>
