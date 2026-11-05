@@ -30,18 +30,18 @@ export default function AboutCompany({ CompanyInfo }) {
             <desc>Info Circle Streamline Icon: https://streamlinehq.com</desc>
             <path
               d="M12 17v-6"
-              stroke="#000000"
+              stroke="#398dfa"
               stroke-linecap="round"
               stroke-width="1.2"
             ></path>
             <path
-              fill="#000000"
+              fill="#398dfa"
               d="M11 8a1 1 0 1 1 2 0 1 1 0 1 1 -2 0"
               stroke-width="1.2"
             ></path>
             <path
               d="M7 3.33782C8.47087 2.48697 10.1786 2 12 2c5.5228 0 10 4.47715 10 10 0 5.5228 -4.4772 10 -10 10 -5.52285 0 -10 -4.4772 -10 -10 0 -1.8214 0.48697 -3.52913 1.33782 -5"
-              stroke="#000000"
+              stroke="#398dfa"
               stroke-linecap="round"
               stroke-width="1.2"
             ></path>
