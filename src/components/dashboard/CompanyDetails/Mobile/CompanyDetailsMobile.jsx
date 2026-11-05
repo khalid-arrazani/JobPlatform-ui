@@ -44,7 +44,7 @@ export default function CompanyDetailsMobile() {
           sx={{
             height: "auto",
             width: "100vw",
-            bgcolor: "#f8eefa",
+            bgcolor: "#dfd0e296",
             boxSizing: "border-box",
             overflow: "auto",
             minHeight:"100dvh",
