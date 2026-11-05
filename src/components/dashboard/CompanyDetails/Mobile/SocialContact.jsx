@@ -58,11 +58,7 @@ const SocialContact = ({ CompanyInfo }) => {
           bgcolor:"#fff",position:"relative"
         }}
       >
-      <img
-        style={{ position: "absolute", width: "12.5rem", right: 0,zIndex:0 }}
-        src={sendMessage}
-        alt=""
-      />
+    
 
       <Typography
         variant="h6"
@@ -72,11 +68,11 @@ const SocialContact = ({ CompanyInfo }) => {
           display: "flex",
           alignItems: "center",
           gap: 1,
-          fontFamily: "initial",
+          fontFamily: "monospace",
           color: "#090909d8",
         }}
       >
-        <RiContactsLine color="#2b88f3" />
+        <RiContactsLine color="#66a8f4" />
         Contact
       </Typography>
 
@@ -92,14 +88,8 @@ const SocialContact = ({ CompanyInfo }) => {
           justifyContent: "space-between",
           width: "60%",
           boxShadow: "0 8px 20px rgba(8, 8, 8, 0.08)",
-     
           mb: 2,
           cursor: "pointer",
-          transition: ".25s",
-          "&:hover": {
-            transform: "translateY(-3px)",
-            boxShadow: "0 8px 20px rgba(188, 245, 130, 0.2)",
-          },
         }}
       >
         <Box sx={{ display: "flex", alignItems: "center", gap: 1.5 }}>
