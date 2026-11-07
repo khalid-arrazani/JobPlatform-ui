@@ -70,14 +70,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
       >
         <Box
           sx={{
-            borderRadius: "8px",
+  
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#0289d11a",
+       
             height:"fit-content"
           }}
         >
