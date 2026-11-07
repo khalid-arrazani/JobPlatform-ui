@@ -64,7 +64,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         sx={{
           display: "flex",
           flexWrap: "wrap",
-          gap: 2,
+          gap: 1,
           justifyContent: "space-around",
         }}
       >
@@ -96,14 +96,13 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Active Jobs */}
         <Box
           sx={{
-            borderRadius: "8px",
+            borderRadius: "0px",
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#0289d11a",
             height:"fit-content"
           }}
         >
@@ -121,14 +120,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Applicants */}
         <Box
           sx={{
-            borderRadius: "15px",
+     
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#0289d144", height:"fit-content"
+       height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#0288d1")}>
