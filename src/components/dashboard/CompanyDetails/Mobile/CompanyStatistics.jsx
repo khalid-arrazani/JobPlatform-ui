@@ -148,7 +148,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* New Applicants */}
         <Box
           sx={{
-            borderRadius: "15px",
+         
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
@@ -174,14 +174,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Hired */}
         <Box
           sx={{
-            borderRadius: "15px",
+    
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#9b27b031",
+      
             height: "fit-content",
           }}
         >
@@ -201,14 +201,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Views */}
         <Box
           sx={{
-            borderRadius: "15px",
+
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#455a6420",
+        
             height: "fit-content",
           }}
         >
