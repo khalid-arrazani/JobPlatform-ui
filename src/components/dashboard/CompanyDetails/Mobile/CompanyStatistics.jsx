@@ -151,7 +151,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#f57b002d",  height:"fit-content"
+       height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#f57c00")}>
