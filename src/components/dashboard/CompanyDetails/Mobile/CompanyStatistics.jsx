@@ -21,7 +21,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
   };
 
   const cardStyle = (color) => ({
-    p:1,
+    p: 1,
     borderRadius: "20px",
     display: "flex",
     alignItems: "center",
@@ -31,8 +31,8 @@ const CompanyStatistics = ({ CompanyInfo }) => {
   });
 
   const titel = {
-    fontFamily:""
-  }
+    fontFamily: "",
+  };
 
   return (
     <Box
@@ -70,23 +70,25 @@ const CompanyStatistics = ({ CompanyInfo }) => {
       >
         <Box
           sx={{
-  
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-       
-            height:"fit-content"
+
+            height: "fit-content",
           }}
         >
-          <Card sx={cardStyle("#1976d2")
-          }>
-            <WorkOutlineOutlinedIcon sx={{ color: "#1976d2",fontSize:"1.4rem" }} />
+          <Card sx={cardStyle("#1976d2")}>
+            <WorkOutlineOutlinedIcon
+              sx={{ color: "#1976d2", fontSize: "1.4rem" }}
+            />
             <Box>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Total Jobs</Typography>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                Total Jobs
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.totalJobs}
               </Typography>
             </Box>
@@ -96,21 +98,22 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Active Jobs */}
         <Box
           sx={{
-   
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            height:"fit-content"
+            height: "fit-content",
           }}
         >
           <Card sx={cardStyle("#2e7d32")}>
-            <WorkIcon sx={{ color: "#2e7d32",fontSize:"1.4rem" }} />
+            <WorkIcon sx={{ color: "#2e7d32", fontSize: "1.4rem" }} />
             <Box>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Active Jobs</Typography>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                Active Jobs
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.activeJobs}
               </Typography>
             </Box>
@@ -120,21 +123,22 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Applicants */}
         <Box
           sx={{
-     
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-       height:"fit-content"
+            height: "fit-content",
           }}
         >
           <Card sx={cardStyle("#0288d1")}>
-            <PeopleAltIcon sx={{ color: "#2e7d32",fontSize:"1.4rem" }} />
+            <PeopleAltIcon sx={{ color: "#2e7d32", fontSize: "1.4rem" }} />
             <Box>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Applicants</Typography>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                Applicants
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.totalApplicants}
               </Typography>
             </Box>
@@ -151,14 +155,16 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-       height:"fit-content"
+            height: "fit-content",
           }}
         >
           <Card sx={cardStyle("#f57c00")}>
-            <PersonAddAlt1Icon sx={{ color: "#f57c00",fontSize:"1.4rem" }} />
+            <PersonAddAlt1Icon sx={{ color: "#f57c00", fontSize: "1.4rem" }} />
             <Box>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>New Applicants</Typography>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                New Applicants
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.newApplicants}
               </Typography>
             </Box>
@@ -175,14 +181,17 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#9b27b031",height:"fit-content"
+            bgcolor: "#9b27b031",
+            height: "fit-content",
           }}
         >
           <Card sx={cardStyle("#9c27b0")}>
-            <CheckCircleIcon sx={{ color: "#9c27b0",fontSize:"1.4rem"  }} />
+            <CheckCircleIcon sx={{ color: "#9c27b0", fontSize: "1.4rem" }} />
             <Box>
-              <Typography  sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Hired</Typography>
-              <Typography  sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                Hired
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.hired}
               </Typography>
             </Box>
@@ -199,14 +208,17 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#455a6420",height:"fit-content"
+            bgcolor: "#455a6420",
+            height: "fit-content",
           }}
         >
           <Card sx={cardStyle("#455a64")}>
-            <VisibilityIcon sx={{ color: "#455a64" ,fontSize:"1.4rem"}} />
+            <VisibilityIcon sx={{ color: "#455a64", fontSize: "1.4rem" }} />
             <Box>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Avg Views / Job</Typography>
-              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.8rem" }}>
+                Avg Views / Job
+              </Typography>
+              <Typography sx={{ fontFamily: "monospace", fontSize: "0.9rem" }}>
                 {stats.avgViewsPerJob}
               </Typography>
             </Box>
