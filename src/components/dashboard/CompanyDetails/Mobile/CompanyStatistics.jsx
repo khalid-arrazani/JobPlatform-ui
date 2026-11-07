@@ -176,14 +176,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#9b27b031",
+            bgcolor: "#9b27b031",height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#9c27b0")}>
-            <CheckCircleIcon sx={{ color: "#9c27b0" }} />
+            <CheckCircleIcon sx={{ color: "#9c27b0",fontSize:"1.4rem"  }} />
             <Box>
-              <Typography variant="body2">Hired</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography  sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Hired</Typography>
+              <Typography  sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.hired}
               </Typography>
             </Box>
@@ -200,14 +200,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#455a6420",
+            bgcolor: "#455a6420",height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#455a64")}>
-            <VisibilityIcon sx={{ color: "#455a64" }} />
+            <VisibilityIcon sx={{ color: "#455a64" ,fontSize:"1.4rem"}} />
             <Box>
-              <Typography variant="body2">Avg Views / Job</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Avg Views / Job</Typography>
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.avgViewsPerJob}
               </Typography>
             </Box>
