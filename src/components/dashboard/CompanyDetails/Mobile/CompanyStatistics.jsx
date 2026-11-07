@@ -25,7 +25,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
     borderRadius: "8px",
     display: "flex",
     alignItems: "center",
-    gap: 1.5,
+    gap: 1,
     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
     backgroundColor: `${color}40`,
   });
