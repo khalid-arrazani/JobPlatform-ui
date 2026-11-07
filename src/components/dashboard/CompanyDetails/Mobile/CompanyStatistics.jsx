@@ -82,7 +82,6 @@ const CompanyStatistics = ({ CompanyInfo }) => {
           }}
         >
           <Card sx={cardStyle("#1976d2")
-
           }>
             <WorkOutlineOutlinedIcon sx={{ color: "#1976d2",fontSize:"1.4rem" }} />
             <Box>
@@ -97,21 +96,22 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Active Jobs */}
         <Box
           sx={{
-            borderRadius: "15px",
+            borderRadius: "8px",
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#06a70e48",
+            bgcolor: "#0289d11a",
+            height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#2e7d32")}>
-            <WorkIcon sx={{ color: "#2e7d32" }} />
+            <WorkIcon sx={{ color: "#2e7d32",fontSize:"1.4rem" }} />
             <Box>
-              <Typography variant="body2">Active Jobs</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Active Jobs</Typography>
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.activeJobs}
               </Typography>
             </Box>
