@@ -128,14 +128,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#0289d144",
+            bgcolor: "#0289d144", height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#0288d1")}>
-            <PeopleAltIcon sx={{ color: "#0288d1" }} />
+            <PeopleAltIcon sx={{ color: "#2e7d32",fontSize:"1.4rem" }} />
             <Box>
-              <Typography variant="body2">Applicants</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Applicants</Typography>
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.totalApplicants}
               </Typography>
             </Box>
@@ -152,14 +152,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
               borderColor: "#dbeafe",
             },
-            bgcolor: "#f57b002d",
+            bgcolor: "#f57b002d",  height:"fit-content"
           }}
         >
           <Card sx={cardStyle("#f57c00")}>
-            <PersonAddAlt1Icon sx={{ color: "#f57c00" }} />
+            <PersonAddAlt1Icon sx={{ color: "#f57c00",fontSize:"1.4rem" }} />
             <Box>
-              <Typography variant="body2">New Applicants</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>New Applicants</Typography>
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.newApplicants}
               </Typography>
             </Box>
