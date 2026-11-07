@@ -90,7 +90,7 @@ export default function CompanyDetailsMobile() {
               <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
 
               {/* Company Info Card  */}
-              {/* <CompanyInfo CompanyInfo={state.CompanyDetails?.company} /> */}
+              <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
               
 
 
@@ -99,6 +99,8 @@ export default function CompanyDetailsMobile() {
                 CompanyInfo={state?.CompanyDetails}
                 CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
               /> */}
+
+
          
          
 
