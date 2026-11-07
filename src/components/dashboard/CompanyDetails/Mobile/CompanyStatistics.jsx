@@ -21,14 +21,18 @@ const CompanyStatistics = ({ CompanyInfo }) => {
   };
 
   const cardStyle = (color) => ({
-    p: 2,
-    borderRadius: "12px",
+    p:1,
+    borderRadius: "20px",
     display: "flex",
     alignItems: "center",
-    gap: 2,
+    gap: 1.5,
     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
     backgroundColor: `${color}15`,
   });
+
+  const titel = {
+    fontFamily:""
+  }
 
   return (
     <Box
@@ -66,7 +70,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
       >
         <Box
           sx={{
-            borderRadius: "15px",
+            borderRadius: "8px",
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
@@ -74,13 +78,16 @@ const CompanyStatistics = ({ CompanyInfo }) => {
               borderColor: "#dbeafe",
             },
             bgcolor: "#0289d11a",
+            height:"fit-content"
           }}
         >
-          <Card sx={cardStyle("#1976d2")}>
-            <WorkOutlineOutlinedIcon sx={{ color: "#1976d2" }} />
+          <Card sx={cardStyle("#1976d2")
+
+          }>
+            <WorkOutlineOutlinedIcon sx={{ color: "#1976d2",fontSize:"1.4rem" }} />
             <Box>
-              <Typography variant="body2">Total Jobs</Typography>
-              <Typography variant="h6" fontWeight="bold">
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.8rem"}}>Total Jobs</Typography>
+              <Typography sx={{fontFamily:"monospace",fontSize:"0.9rem"}}>
                 {stats.totalJobs}
               </Typography>
             </Box>
