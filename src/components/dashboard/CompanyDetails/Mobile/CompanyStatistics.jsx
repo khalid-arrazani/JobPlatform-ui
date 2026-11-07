@@ -22,17 +22,14 @@ const CompanyStatistics = ({ CompanyInfo }) => {
 
   const cardStyle = (color) => ({
     p: 1,
-    borderRadius: "20px",
+    borderRadius: "8px",
     display: "flex",
     alignItems: "center",
     gap: 1.5,
     boxShadow: "0 2px 10px rgba(0,0,0,0.05)",
-    backgroundColor: `${color}15`,
+    backgroundColor: `${color}40`,
   });
 
-  const titel = {
-    fontFamily: "",
-  };
 
   return (
     <Box
