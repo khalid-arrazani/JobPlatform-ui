@@ -76,7 +76,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
             bgcolor: "#0289d11a",
           }}
         >
-          <Card sx={ cardStyle("#1976d2")}>
+          <Card sx={cardStyle("#1976d2")}>
             <WorkOutlineOutlinedIcon sx={{ color: "#1976d2" }} />
             <Box>
               <Typography variant="body2">Total Jobs</Typography>
