@@ -96,7 +96,7 @@ const CompanyStatistics = ({ CompanyInfo }) => {
         {/* Active Jobs */}
         <Box
           sx={{
-            borderRadius: "0px",
+   
             transition: "0.5s",
             "&:hover": {
               transform: "translateY(-3px)",
