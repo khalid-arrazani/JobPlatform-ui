@@ -88,7 +88,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
               py: 1,
               px: 1.5,
               width: "100%",
-              mb: 1.3,
+              mb: 1,
 
               border: "1px solid #eef2f7",
               background: "#fff",
