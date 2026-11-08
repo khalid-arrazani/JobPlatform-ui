@@ -236,8 +236,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   >
                     <Typography
                       sx={{
-                        fontSize: "0.78rem",
-                        fontFamily: "monospace",
+                        fontSize: "0.7rem",
+                       
                         fontWeight: 600,
                         color: "#00001bc5",
                       }}
