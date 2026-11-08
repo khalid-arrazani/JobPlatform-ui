@@ -112,7 +112,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             }}
           >
             <Box>
-              <Typography fontWeight={600}> {item.title} </Typography>
+              <Typography fontWeight={500}> {item.title} </Typography>
 
               <Box
                 sx={{
