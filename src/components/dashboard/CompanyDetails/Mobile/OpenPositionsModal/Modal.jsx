@@ -272,6 +272,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
               
                   </Box>
 
+
+
+
                   <Box
                     sx={{
                       height: "100%",
@@ -319,6 +322,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
                           {item?.workMode}
                         </Typography>
                   </Box>
+
+
+
+
+
 
                   <Box
                     sx={{
