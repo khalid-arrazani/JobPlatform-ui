@@ -218,9 +218,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor:"#ffff"
                   }}
                 >
-                  
-
-
+                   
 
                   {/* left info */}
                   {/* <Box
