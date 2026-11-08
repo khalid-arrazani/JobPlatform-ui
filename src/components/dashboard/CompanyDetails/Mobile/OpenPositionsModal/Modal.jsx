@@ -369,6 +369,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         display: "flex",
                         alignContent: "center",
                         justifyContent: "space-between",
+                        fontSize:"0.8rem"
                       }}
                     >
                       View Job <MdChevronRight />
