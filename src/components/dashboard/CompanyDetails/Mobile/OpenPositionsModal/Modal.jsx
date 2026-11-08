@@ -349,11 +349,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         color: "#3867ffe4",
                         fontWeight: 600,
                         textTransform: "none",
-                        fontFamily: "monospace",
+                   
                         display: "flex",
                         alignContent: "center",
                         justifyContent: "space-between",
-                       
+                       width:'fit-content'
                       }}
                     >
                      <MdChevronRight />
