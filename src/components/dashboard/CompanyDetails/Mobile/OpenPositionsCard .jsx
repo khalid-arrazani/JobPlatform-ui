@@ -81,12 +81,12 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             }}
             sx={{
               boxSizing: "border-box",
-              borderRadius: "16px",
+              borderRadius: "8px",
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
-              py: 2,
-              px: 2.5,
+              py: 1,
+              px: 1.5,
               width: "100%",
               mb: 1.5,
 
