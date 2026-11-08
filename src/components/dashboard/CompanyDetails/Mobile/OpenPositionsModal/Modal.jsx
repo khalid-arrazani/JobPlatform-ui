@@ -221,7 +221,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
 
 
-                  <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd" }}>
+                  <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd",boxSizing:"border-box",px:0.5 }}>
                     <Typography
                       sx={{
                         fontSize: "0.78rem",
