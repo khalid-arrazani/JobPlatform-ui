@@ -23,7 +23,6 @@ import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
 import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
 
-
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
 
@@ -41,22 +40,20 @@ export default function ModalOpenPositions({ open, setOpen }) {
   });
 
   useEffect(() => {
-  const timeout = setTimeout(() => {
+    const timeout = setTimeout(() => {
+      setFelterData((prev) => {
+        if (prev.search === search) return prev;
 
-    setFelterData(prev => {
-      if (prev.search === search) return prev;
+        return {
+          ...prev,
+          search: search.trim(),
+          page: 1,
+        };
+      });
+    }, 500);
 
-      return {
-        ...prev,
-        search : search.trim(),
-        page: 1
-      };
-    });
-  },500);
-
-  return () => clearTimeout(timeout);
-
- }, [search]);
+    return () => clearTimeout(timeout);
+  }, [search]);
 
   const fetchCompany = async () => {
     setLoading(true);
@@ -76,7 +73,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
   useEffect(() => {
     fetchCompany();
   }, []);
-  
+
   useEffect(() => {
     fetchCompany();
   }, [felterData]);
@@ -91,7 +88,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
   };
 
   const handleChange = (event, value) => {
-    setFelterData(prev => ({...prev , page:value}) )
+    setFelterData((prev) => ({ ...prev, page: value }));
   };
 
   return (
@@ -131,7 +128,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               flexDirection: "column",
               justifyContent: "space-between",
               py: 1,
-              gap:1
+              gap: 1,
             }}
           >
             <Box
@@ -164,7 +161,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               >
                 <Typography
                   sx={{
-                    fontFamily:"monospace",
+                    fontFamily: "monospace",
                     color: "#010318b5",
                     fontWeight: 600,
                     fontSize: "1.1rem",
@@ -174,14 +171,18 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 </Typography>
 
                 <Typography
-                  sx={{ fontFamily: "monospace", color: "#0205226f",fontSize:"0.9rem"}}
+                  sx={{
+                    fontFamily: "monospace",
+                    color: "#0205226f",
+                    fontSize: "0.9rem",
+                  }}
                 >
-                  Explore all current job openings at Google. 
+                  Explore all current job openings at Google.
                 </Typography>
               </Box>
             </Box>
 
-            <SearchAndFilter  search={search} setSearch={setSearch} />
+            <SearchAndFilter search={search} setSearch={setSearch} />
           </Box>
 
           {/* jobs list section  */}
@@ -200,184 +201,182 @@ export default function ModalOpenPositions({ open, setOpen }) {
           >
             {/* list jobs */}
 
-           {loading ? <LoadingList/> : 
-
-            list?.jobs?.map((item) => (
-              <Box
-                key={item?._id}
-                sx={{
-                  height: "fit-content",
-                  width: "100%",
-                  boxSizing: "border-box",
-                  border: "1px solid #ddd",
-                  borderRadius: "10px",
-                  display: "flex",
-
-                  transition: "all .3s cubic-bezier(.4,0,.2,1)",
-
-                  "&:hover": {
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 8px 30px rgba(8, 11, 18, 0.12)",
-                    borderColor: "#dbeafe",
-                  },
-                  mb: 1,
-                }}
-              >
+            {loading ? (
+              <LoadingList />
+            ) : (
+              list?.jobs?.map((item) => (
                 <Box
+                  key={item?._id}
                   sx={{
-                    height: "100%",
-                    width: "40%",
+                    height: "fit-content",
+                    width: "100%",
                     boxSizing: "border-box",
-                    px: 1,
-                    placeContent: "center",
+                    border: "1px solid #ddd",
+                    borderRadius: "10px",
+                    display: "flex",
+
+                    transition: "all .3s cubic-bezier(.4,0,.2,1)",
+
+                    "&:hover": {
+                      transform: "translateY(-2px)",
+                      boxShadow: "0 8px 30px rgba(8, 11, 18, 0.12)",
+                      borderColor: "#dbeafe",
+                    },
+                    mb: 1,
                   }}
                 >
-                  <Typography
+                  <Box
                     sx={{
-                      fontSize: "0.78rem",
-                      fontFamily: "monospace",
-                      fontWeight: 600,
-                      color: "#00001bc5",
+                      height: "100%",
+                      width: "40%",
+                      boxSizing: "border-box",
+                      px: 1,
+                      placeContent: "center",
                     }}
-                    title={item.title}
                   >
-                    {item?.title?.slice(0, 20)}
-                    {item?.title?.length > 20 ? "..." : null}
-                  </Typography>
-
-                  <Stack direction="row" spacing={2}>
-                    <Box
+                    <Typography
                       sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 0.5,
+                        fontSize: "0.78rem",
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        color: "#00001bc5",
                       }}
+                      title={item.title}
                     >
-                      <LocationOnOutlinedIcon
-                        sx={{ fontSize: "0.9rem", color: "#575757" }}
-                      />
+                      {item?.title?.slice(0, 20)}
+                      {item?.title?.length > 20 ? "..." : null}
+                    </Typography>
 
-                      <Typography
+                    <Stack direction="row">
+                      <Box
                         sx={{
-                          fontSize: "0.9rem",
-                          fontFamily: "monospace",
-                          fontWeight: 600,
-                          color: "#010115a7",
-                          textAlign: "center",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 0.5,
                         }}
                       >
-                        {item?.location}
-                      </Typography>
-                    </Box>
+                        <LocationOnOutlinedIcon
+                          sx={{ fontSize: "0.9rem", color: "#575757" }}
+                        />
 
-                    <Box
-                      sx={{
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 0.5,
-                      }}
-                    >
-                      <LuWorkflow
-                        sx={{ fontSize: "0.9rem", color: "#575757" }}
-                      />
+                        <Typography
+                          sx={{
+                            fontSize: "0.6rem",
+                            fontFamily: "monospace",
+                            fontWeight: 600,
+                            color: "#010115a7",
+                            textAlign: "center",
+                          }}
+                        >
+                          {item?.location}
+                        </Typography>
+                      </Box>
 
-                      <Typography
+                      <Box
                         sx={{
-                          fontSize: "0.9rem",
-                          fontFamily: "monospace",
-                          fontWeight: 600,
-                          color: "#0101159c",
-                          textAlign: "center",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 0.5,
                         }}
                       >
-                        {item?.workMode}
-                      </Typography>
-                    </Box>
-                  </Stack>
-                </Box>
+                        <LuWorkflow
+                          sx={{ fontSize: "0.9rem", color: "#575757" }}
+                        />
 
-                <Box
-                  sx={{
-                    height: "100%",
-                    width: "30%",
-                    boxSizing: "border-box",
+                        <Typography
+                          sx={{
+                            fontSize: "0.6rem",
+                            fontFamily: "monospace",
+                            fontWeight: 600,
+                            color: "#0101159c",
+                            textAlign: "center",
+                          }}
+                        >
+                          {item?.workMode}
+                        </Typography>
+                      </Box>
+                    </Stack>
+                  </Box>
 
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  <Chip
-                    size="small"
+                  <Box
                     sx={{
-                      bgcolor: "#a4c5ffa8",
-                      color: "#221c73c3",
-                      fontWeight: 600,
-                      borderRadius: "5px",
-                      fontFamily: "monospace",
-                    }}
-                    label={item?.jobType}
-                  />
+                      height: "100%",
+                      width: "30%",
+                      boxSizing: "border-box",
 
-                  <Typography
-                    sx={{
-                      fontSize: "0.75rem",
-                      fontFamily: "monospace",
-                      fontWeight: 600,
-                      color: "#010215b2",
-                    }}
-                  >
-                    {millify(item.maxSalary)}-{millify(item.minSalary)}{" "}
-                    {item.salaryCurrency}
-                  </Typography>
-                </Box>
-
-                <Box
-                  sx={{
-                    height: "100%",
-                    width: "30%",
-                    boxSizing: "border-box",
-
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "space-evenly",
-                  }}
-                >
-                  <Typography
-                    sx={{
-                      fontSize: "0.8rem",
-                      fontFamily: "monospace",
-                      fontWeight: 600,
-                      color: "#010215b2",
-                    }}
-                  >
-                    {formatRelative(
-  new Date(item.createdAt),
-  new Date()
-)}
-                  </Typography>
-
-                  <Button
-                   data-id={item._id}
-                  onClick={openJob}
-                    sx={{
-                      border: "1px solid #b3b9ff",
-                      color: "#3867ffe4",
-                      fontWeight: 600,
-                      textTransform: "none",
-                      fontFamily: "monospace",
                       display: "flex",
-                      alignContent: "center",
-                      justifyContent: "space-between",
+                      alignItems: "center",
+                      justifyContent: "space-evenly",
                     }}
                   >
-                    View Job <MdChevronRight />
-                  </Button>
+                    <Chip
+                      size="small"
+                      sx={{
+                        bgcolor: "#a4c5ffa8",
+                        color: "#221c73c3",
+                        fontWeight: 600,
+                        borderRadius: "5px",
+                        fontFamily: "monospace",
+                        fontSize: "0.6rem",
+                      }}
+                      label={item?.jobType}
+                    />
+
+                    <Typography
+                      sx={{
+                        fontSize: "0.6rem",
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        color: "#010215b2",
+                      }}
+                    >
+                      {millify(item.maxSalary)}-{millify(item.minSalary)}{" "}
+                      {item.salaryCurrency}
+                    </Typography>
+                  </Box>
+
+                  <Box
+                    sx={{
+                      height: "100%",
+                      width: "30%",
+                      boxSizing: "border-box",
+
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-evenly",
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: "0.6rem",
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        color: "#010215b2",
+                      }}
+                    >
+                      {formatRelative(new Date(item.createdAt), new Date())}
+                    </Typography>
+
+                    <Button
+                      data-id={item._id}
+                      onClick={openJob}
+                      sx={{
+                        border: "1px solid #b3b9ff",
+                        color: "#3867ffe4",
+                        fontWeight: 600,
+                        textTransform: "none",
+                        fontFamily: "monospace",
+                        display: "flex",
+                        alignContent: "center",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      View Job <MdChevronRight />
+                    </Button>
+                  </Box>
                 </Box>
-              </Box>
-            ))}
-
-
+              ))
+            )}
           </Box>
 
           {/* pagination section */}
@@ -394,10 +393,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
             }}
           >
             <Stack spacing={2}>
-              <Pagination
-              onChange={handleChange}
-              count={list?.totalPages}
-              />
+              <Pagination onChange={handleChange} count={list?.totalPages} />
             </Stack>
           </Box>
         </Box>
