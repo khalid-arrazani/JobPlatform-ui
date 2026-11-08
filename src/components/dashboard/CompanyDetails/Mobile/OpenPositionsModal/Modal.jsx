@@ -272,29 +272,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         </Typography>
                       </Box>
 
-                      <Box
-                        sx={{
-                          display: "flex",
-                          alignItems: "center",
-                          gap: 0.5,
-                        }}
-                      >
-                        <LuWorkflow
-                          sx={{ fontSize: "0.9rem", color: "#575757" }}
-                        />
-
-                        <Typography
-                          sx={{
-                            fontSize: "0.6rem",
-                            fontFamily: "monospace",
-                            fontWeight: 600,
-                            color: "#0101159c",
-                            textAlign: "center",
-                          }}
-                        >
-                          {item?.workMode}
-                        </Typography>
-                      </Box>
+                       
                     </Stack>
                   </Box>
 
@@ -333,6 +311,17 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       {millify(item.maxSalary)}-{millify(item.minSalary)}{" "}
                       {item.salaryCurrency}
                     </Typography>
+                       <Typography
+                          sx={{
+                            fontSize: "0.6rem",
+                            fontFamily: "monospace",
+                            fontWeight: 600,
+                            color: "#0101159c",
+                            textAlign: "center",
+                          }}
+                        >
+                          {item?.workMode}
+                        </Typography>
                   </Box>
 
                   <Box
