@@ -45,15 +45,13 @@ const CompanyInfo = ( {CompanyInfo}) => {
   ];
 
   return (
-    <Card
+    <Box
       sx={{
-       
-        p: 2,
-        borderRadius: "20px",
-        border: "1px solid #eef2f7",
-        background:
-          "linear-gradient(180deg, #ffffff 0%, #fafbfc 100%)",
-        boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
+        width: "100%",
+        borderRadius: "10px",
+        p: 1.5,
+        boxSizing: "border-box",
+        bgcolor: "#fff",
       }}
     >
       <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "8px" }}>
@@ -148,7 +146,7 @@ const CompanyInfo = ( {CompanyInfo}) => {
           )}
         </Box>
       ))}
-    </Card>
+    </Box>
   );
 };
 
