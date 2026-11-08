@@ -208,16 +208,12 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 <Box
                   key={item?._id}
                   sx={{
-                    height: "fit-content",
+                    height: "5rem",
                     width: "100%",
                     boxSizing: "border-box",
                     border: "1px solid #ddd",
                     borderRadius: "8px",
                     display: "flex",
-
-                  
-
-                   
                     mb: 1,
                   }}
                 >
