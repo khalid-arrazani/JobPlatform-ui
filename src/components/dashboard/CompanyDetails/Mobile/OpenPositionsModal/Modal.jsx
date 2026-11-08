@@ -206,7 +206,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               <Box
                 key={item?._id}
                 sx={{
-                  height: "5rem",
+                  height: "fit-content",
                   width: "100%",
                   boxSizing: "border-box",
                   border: "1px solid #ddd",
@@ -228,13 +228,13 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     height: "100%",
                     width: "40%",
                     boxSizing: "border-box",
-                    px: 1.5,
+                    px: 1,
                     placeContent: "center",
                   }}
                 >
                   <Typography
                     sx={{
-                      fontSize: "1.3rem",
+                      fontSize: "1rem",
                       fontFamily: "monospace",
                       fontWeight: 600,
                       color: "#00001bc5",
