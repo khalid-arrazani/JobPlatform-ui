@@ -239,7 +239,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         fontSize: "0.7rem",
                        
                         fontWeight: 600,
-                        color: "#00001bc5",
+                        color: "#00001bb8",
                       }}
                       title={item.title}
                     >
@@ -247,7 +247,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       {item?.title?.length > 20 ? "..." : null}
                     </Typography>
 
-                    <Stack direction="row">
+                   
                       <Box
                         sx={{
                           display: "flex",
@@ -269,7 +269,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       </Box>
 
                        
-                    </Stack>
+              
                   </Box>
 
                   <Box
@@ -325,8 +325,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       height: "100%",
                       width: "30%",
                       boxSizing: "border-box",
-
-                      display: "flex",
+                  
                       alignItems: "center",
                       justifyContent: "space-evenly",
                     }}
@@ -354,10 +353,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         display: "flex",
                         alignContent: "center",
                         justifyContent: "space-between",
-                        fontSize:"0.6rem"
+                       
                       }}
                     >
-                      View Job <MdChevronRight />
+                     <MdChevronRight />
                     </Button>
                   </Box>
                 </Box>
