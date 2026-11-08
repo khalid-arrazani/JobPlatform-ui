@@ -17,7 +17,8 @@ import SimpleSnackbar from "./logic/context/SnackBars.jsx";
 
 import { Routes, Route } from "react-router-dom";
 import { useAuth } from "./logic/context/AuthContext.jsx";
-import JobDetailsPage from "./components/dashboard/JobDetails/JobDetailspage.jsx";
+import JobDetails from "./components/dashboard/JobDetails/JobDetails.jsx";
+ 
 
 function App() {
   const { ...state } = useAuth();
@@ -114,7 +115,7 @@ function App() {
 
         <Route path="/AccountSettings" element={<AccountSettingsPage />} />
 
-        <Route path="/JobDetails" element={<JobDetailsPage/>} />
+        <Route path="/JobDetails" element={<JobDetails/>} />
       </Routes>
     </>
   );
