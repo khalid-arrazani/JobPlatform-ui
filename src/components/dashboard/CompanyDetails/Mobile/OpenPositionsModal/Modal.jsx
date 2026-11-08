@@ -121,17 +121,17 @@ export default function ModalOpenPositions({ open, setOpen }) {
           {/* header section */}
           <Box
             sx={{
-              height: "20%",
+              height: "fit-content",
               width: "100%",
               overflow: "hidden",
               boxSizing: "border-box",
-              px: "1rem",
+              px: "0.5rem",
               alignItems: "center",
               display: "flex",
               flexDirection: "column",
-
               justifyContent: "space-between",
-              py: 1.2,
+              py: 1,
+              gap:1
             }}
           >
             <Box
