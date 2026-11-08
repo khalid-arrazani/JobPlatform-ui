@@ -59,7 +59,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             sx={{
               color: "primary.main",
               fontSize: "0.75rem",
-              cursor: "pointer",
+              cursor: "pointer",fontFamily:"monospace",
             }}
           >
             View all jobs
