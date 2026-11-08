@@ -275,7 +275,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
 
                    {/* center info */}
-
                   <Box
                     sx={{
                       height: "100%",
@@ -328,7 +327,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
 
                   {/* right info */}
-
                   <Box
                     sx={{
                       height: "100%",
