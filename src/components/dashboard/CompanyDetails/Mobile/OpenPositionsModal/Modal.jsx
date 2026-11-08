@@ -194,7 +194,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               boxSizing: "border-box",
               borderTop: "1px solid #ddd",
               borderBottom: "1px solid #ddd",
-              px: 2,
+              px: 1,
               py: 1,
               overflow: "scroll",
             }}
@@ -218,6 +218,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor:"#ffff"
                   }}
                 >
+                  
+
+
+
                   {/* left info */}
                   {/* <Box
                     sx={{
