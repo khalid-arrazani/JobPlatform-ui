@@ -8,24 +8,21 @@ import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import ModalOpenPositions from "./OpenPositionsModal/Modal";
- 
 
-export default function OpenPositionsCard({CompanyactiveJobs }) {
-   const navigate = useNavigate();
+export default function OpenPositionsCard({ CompanyactiveJobs }) {
+  const navigate = useNavigate();
 
-   const [open , setOpen ] = useState(false);
-   
+  const [open, setOpen] = useState(false);
 
   return (
     <>
-      <Card
+      <Box
         sx={{
           width: "100%",
-          height:"22.5rem",
-          borderRadius: "15px",
+          borderRadius: "10px",
+          p: 1.5,
           boxSizing: "border-box",
-          p: 2.5,
-          mt: 2,
+          bgcolor: "#fff",
         }}
       >
         {/* Header */}
@@ -37,13 +34,17 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             mb: 2,
           }}
         >
-          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
-            <WorkOutlineOutlinedIcon color="primary" />
+          <Box
+            sx={{ display: "flex", alignItems: "center", gap: 1, mb: "8px" }}
+          >
+            <WorkOutlineOutlinedIcon   sx={{fontSize:"1.2rem" , color:"#66a8f4"}} /> 
+
             <Typography
               sx={{
-                fontFamily: "initial",
-                color: "#090909d8",
-                fontSize: "1.2rem",
+                fontWeight: 600,
+                fontFamily: "monospace",
+                color: "#0c031fb2",
+                fontSize: "1rem",
               }}
             >
               Open Positions
@@ -51,7 +52,9 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
           </Box>
 
           <Button
-            onClick={()=>{setOpen(true)}}
+            onClick={() => {
+              setOpen(true);
+            }}
             size="small"
             sx={{
               color: "primary.main",
@@ -62,8 +65,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             View all jobs
           </Button>
 
-          <ModalOpenPositions open={open}   setOpen={setOpen} />
-
+          <ModalOpenPositions open={open} setOpen={setOpen} />
         </Box>
 
         {/* <EmptyOpenPositions/> */}
@@ -71,10 +73,12 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
         {/* Job Item */}
         {!CompanyactiveJobs?.length && <EmptyOpenPositions />}
 
-        {CompanyactiveJobs?.slice(0,3).map((item) => (
+        {CompanyactiveJobs?.slice(0, 3).map((item) => (
           <Card
             key={item._id}
-            onClick={()=>{ navigate(`/Dashboard/Jobs/Details/${item._id}`) }}
+            onClick={() => {
+              navigate(`/Dashboard/Jobs/Details/${item._id}`);
+            }}
             sx={{
               boxSizing: "border-box",
               borderRadius: "16px",
@@ -140,7 +144,14 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 justifyContent: "space-between",
               }}
             >
-              <Box sx={{ display: "flex", gap: 2,boxSizing:"border-box",px:0.8 }}>
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  boxSizing: "border-box",
+                  px: 0.8,
+                }}
+              >
                 <Chip
                   size="small"
                   sx={{
@@ -189,8 +200,8 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
                 <Chip
                   size="small"
                   label={formatDistanceToNow(new Date(item.createdAt), {
-                      addSuffix: true,
-                    })}
+                    addSuffix: true,
+                  })}
                   sx={{ fontSize: "0.7rem", borderRadius: "5px" }}
                 ></Chip>
 
@@ -204,8 +215,7 @@ export default function OpenPositionsCard({CompanyactiveJobs }) {
             </Box>
           </Card>
         ))}
-
-      </Card>
+      </Box>
     </>
   );
 }
