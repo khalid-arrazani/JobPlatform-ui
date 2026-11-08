@@ -347,7 +347,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       sx={{
                         border: "1px solid #b3b9ff",
                         color: "#3867ffe4",
-                        fontWeight: 600,
+             
                         textTransform: "none",
                         display: "flex",
                         alignContent: "center",
