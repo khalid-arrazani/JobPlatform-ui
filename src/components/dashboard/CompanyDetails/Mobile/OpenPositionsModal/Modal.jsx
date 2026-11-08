@@ -218,16 +218,20 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor: "#ffff",
                   }}
                 >
-
-
-
-                  <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd",boxSizing:"border-box",px:0.5 }}>
+                  <Box
+                    sx={{
+                      height: "100%",
+                      flex: 1,
+                      boxSizing: "border-box",
+                      px: 0.5,
+                    }}
+                  >
                     <Typography
                       sx={{
                         fontSize: "1.2rem",
                         fontWeight: 600,
                         color: "#00001bb8",
-                        fontFamily:"monospace"
+                        fontFamily: "monospace",
                       }}
                       title={item.title}
                     >
@@ -235,30 +239,50 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       {item?.title?.length > 20 ? "..." : null}
                     </Typography>
 
-
                     <Box
+                      sx={{
+                        display: "flex",
+                        gap: 1,
+                      }}
+                    >
+                      <Typography
                         sx={{
-                          display: "flex",
-                          
-                         
+                          fontSize: "0.8rem",
+                          fontFamily: "monospace",
+                          fontWeight: 600,
+                          color: "#010115a7",
+                          textAlign: "center",
                         }}
                       >
+                        {item?.location}
+                      </Typography>
+
+                      
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "center",
+                          gap: 0.5,
+                        }}
+                      >
+                        <LuWorkflow
+                         color="#010115a7"
+                        />
+
                         <Typography
                           sx={{
                             fontSize: "0.9rem",
                             fontFamily: "monospace",
                             fontWeight: 600,
-                            color: "#010115a7",
+                            color: "#0101159c",
                             textAlign: "center",
                           }}
                         >
-                          {item?.location}
+                          {item?.workMode}
                         </Typography>
                       </Box>
+                    </Box>
                   </Box>
-
-
-
 
                   <Box
                     sx={{
