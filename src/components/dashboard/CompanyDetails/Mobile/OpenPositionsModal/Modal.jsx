@@ -108,9 +108,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
         <Box
           sx={{
             height: "95%",
-            width: "60%",
+            width: "96%",
             bgcolor: "#ffffff",
-            borderRadius: "20px",
+            borderRadius: "10px",
             overflow: "hidden",
             boxSizing: "border-box",
             outline: "none",
