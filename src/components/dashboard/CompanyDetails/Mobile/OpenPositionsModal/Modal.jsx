@@ -267,6 +267,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       >
                         <LuWorkflow
                          color="#010115a7"
+                         size={"0.8rem"}
                         />
 
                         <Typography
