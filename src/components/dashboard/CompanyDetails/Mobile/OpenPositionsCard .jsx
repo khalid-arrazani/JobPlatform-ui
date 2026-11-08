@@ -37,7 +37,9 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
           <Box
             sx={{ display: "flex", alignItems: "center", gap: 1, mb: "8px" }}
           >
-            <WorkOutlineOutlinedIcon   sx={{fontSize:"1.2rem" , color:"#66a8f4"}} /> 
+            <WorkOutlineOutlinedIcon
+              sx={{ fontSize: "1.2rem", color: "#66a8f4" }}
+            />
 
             <Typography
               sx={{
@@ -59,7 +61,8 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             sx={{
               color: "primary.main",
               fontSize: "0.75rem",
-              cursor: "pointer",fontFamily:"monospace",
+              cursor: "pointer",
+              fontFamily: "monospace",
             }}
           >
             View all jobs
@@ -112,7 +115,17 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             }}
           >
             <Box>
-              <Typography fontWeight={500}> {item.title} </Typography>
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#050312ce",
+                  fontSize: "0.8rem",
+                }}
+              >
+                {" "}
+                {item.title}{" "}
+              </Typography>
 
               <Box
                 sx={{
