@@ -212,21 +212,17 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     width: "100%",
                     boxSizing: "border-box",
                     border: "1px solid #ddd",
-                    borderRadius: "10px",
+                    borderRadius: "8px",
                     display: "flex",
 
-                    transition: "all .3s cubic-bezier(.4,0,.2,1)",
+                  
 
-                    "&:hover": {
-                      transform: "translateY(-2px)",
-                      boxShadow: "0 8px 30px rgba(8, 11, 18, 0.12)",
-                      borderColor: "#dbeafe",
-                    },
+                   
                     mb: 1,
                   }}
                 >
                   {/* left info */}
-                  <Box
+                  {/* <Box
                     sx={{
                       height: "100%",
                       width: "40%",
@@ -271,11 +267,11 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
                        
               
-                  </Box>
+                  </Box> */}
 
 
                    {/* center info */}
-                  <Box
+                  {/* <Box
                     sx={{
                       height: "100%",
                       width: "30%",
@@ -321,13 +317,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         >
                           {item?.workMode}
                         </Typography>
-                  </Box>
-
-
-
+                  </Box> */}
 
                   {/* right info */}
-                  <Box
+                  {/* <Box
                     sx={{
                       height: "100%",
                       width: "30%",
@@ -364,7 +357,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     >
                      <MdChevronRight />
                     </Button>
-                  </Box>
+                  </Box> */}
+
                 </Box>
               ))
             )}
