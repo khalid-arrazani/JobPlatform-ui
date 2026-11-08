@@ -20,7 +20,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
         sx={{
           width: "100%",
           borderRadius: "10px",
-          p: 1.5,
+          p: 1,
           boxSizing: "border-box",
           bgcolor: "#fff",
         }}
