@@ -251,14 +251,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       <Box
                         sx={{
                           display: "flex",
-                          alignItems: "center",
-                          gap: 0.5,
+                          
+                         
                         }}
                       >
-                        <LocationOnOutlinedIcon
-                          sx={{ fontSize: "0.9rem", color: "#575757" }}
-                        />
-
                         <Typography
                           sx={{
                             fontSize: "0.6rem",
