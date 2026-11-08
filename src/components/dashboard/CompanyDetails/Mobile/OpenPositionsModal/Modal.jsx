@@ -106,7 +106,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
           sx={{
             height: "95%",
             width: "96%",
-            bgcolor: "#ffffff",
+            bgcolor: "#fdf4ff",
             borderRadius: "10px",
             overflow: "hidden",
             boxSizing: "border-box",
@@ -211,7 +211,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     height: "5rem",
                     width: "100%",
                     boxSizing: "border-box",
-                    border: "1px solid #ddd",
+                    border: "1px solid #ecd7f9",
                     borderRadius: "8px",
                     display: "flex",
                     mb: 1,
