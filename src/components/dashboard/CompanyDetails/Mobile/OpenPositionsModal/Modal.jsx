@@ -303,10 +303,10 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       height: "100%",
                       width: "30%",
                       boxSizing: "border-box",
-
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "space-evenly",
+                      flexDirection:'column'
                     }}
                   >
                     <Chip
@@ -369,7 +369,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         display: "flex",
                         alignContent: "center",
                         justifyContent: "space-between",
-                        fontSize:"0.8rem"
+                        fontSize:"0.6rem"
                       }}
                     >
                       View Job <MdChevronRight />
