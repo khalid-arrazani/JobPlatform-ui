@@ -167,16 +167,16 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     fontFamily:"monospace",
                     color: "#010318b5",
                     fontWeight: 600,
-                    fontSize: "1rem",
+                    fontSize: "1.1rem",
                   }}
                 >
                   Google Open Positions
                 </Typography>
 
                 <Typography
-                  sx={{ fontFamily: "monospace", color: "#0205226f",}}
+                  sx={{ fontFamily: "monospace", color: "#0205226f",fontSize:"0.9rem"}}
                 >
-                  Explore all current job openings at Google.{" "}
+                  Explore all current job openings at Google. 
                 </Typography>
               </Box>
             </Box>

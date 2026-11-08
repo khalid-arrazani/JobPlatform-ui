@@ -18,7 +18,7 @@ export default function SearchAndFilter ({ search, setSearch }) {
             px: 1.5,
             borderRadius: "5px",
             minWidth: "250px",
-            width: "50vw",
+            width: "90%",
             border: "solid 1px #ddd",
             boxSizing: "border-box",
           }}
@@ -39,6 +39,7 @@ export default function SearchAndFilter ({ search, setSearch }) {
             fullWidth
             sx={{
               ml: 1,
+              fontFamily:"monospace"
             }}
           />
         </Box>
