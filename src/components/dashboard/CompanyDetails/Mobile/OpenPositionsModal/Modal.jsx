@@ -273,7 +273,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   </Box>
 
 
-
+                   {/* center info */}
 
                   <Box
                     sx={{
@@ -326,7 +326,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
 
 
-
+                  {/* right info */}
 
                   <Box
                     sx={{
