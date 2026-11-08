@@ -68,10 +68,10 @@ export default function CompanyDetailsMobile() {
             sx={{
               width: "100%",
               height: "fit-Content",
-              my: 2,
+              my: 1,
               borderRadius: "15px",
               display: "flex",
-              boxSizing:"border-box",pb:'9rem',flexDirection:"column",gap:1
+              boxSizing:"border-box",pb:'10rem',flexDirection:"column",gap:1
             }}
           >
           
