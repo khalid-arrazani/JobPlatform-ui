@@ -165,9 +165,9 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 <Typography
                   sx={{
                     fontFamily:"monospace",
-                    color: "#010318d0",
+                    color: "#010318b5",
                     fontWeight: 600,
-                    fontSize: "1.1rem",
+                    fontSize: "1rem",
                   }}
                 >
                   Google Open Positions
