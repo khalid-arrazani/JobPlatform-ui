@@ -218,6 +218,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor:"#ffff"
                   }}
                 >
+                  <Box sx={{height:""}}></Box>
                    
 
                   {/* left info */}
