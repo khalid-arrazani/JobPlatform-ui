@@ -218,7 +218,26 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor: "#ffff",
                   }}
                 >
-                  <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd" }}></Box>
+
+
+
+                  <Box sx={{ height: "100%", flex: 1, bgcolor: "#ddd" }}>
+                    <Typography
+                      sx={{
+                        fontSize: "0.78rem",
+                        fontWeight: 600,
+                        color: "#00001bb8",
+                        fontFamily:"monospace"
+                      }}
+                      title={item.title}
+                    >
+                      {item?.title?.slice(0, 20)}
+                      {item?.title?.length > 20 ? "..." : null}
+                    </Typography>
+                  </Box>
+
+
+
 
                   <Box
                     sx={{
