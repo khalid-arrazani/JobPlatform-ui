@@ -215,6 +215,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     borderRadius: "8px",
                     display: "flex",
                     mb: 1,
+                    bgcolor:"#ffff"
                   }}
                 >
                   {/* left info */}
