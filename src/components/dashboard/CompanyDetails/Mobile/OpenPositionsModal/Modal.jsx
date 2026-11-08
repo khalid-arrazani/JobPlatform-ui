@@ -208,22 +208,23 @@ export default function ModalOpenPositions({ open, setOpen }) {
                 <Box
                   key={item?._id}
                   sx={{
-                    height: "5rem",
+                    height: "fit-content",
                     width: "100%",
                     boxSizing: "border-box",
                     border: "1px solid #ecd7f9a3",
                     borderRadius: "8px",
                     display: "flex",
                     mb: 1,
-                    bgcolor: "#ffff",
+                    bgcolor: "#ffff",py:1.2
                   }}
                 >
+                  {/* right */}
                   <Box
                     sx={{
                       height: "100%",
                       flex: 1,
                       boxSizing: "border-box",
-                      px: 0.5,
+                      px: 0.8,
                     }}
                   >
                     <Typography
@@ -283,16 +284,55 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         </Typography>
                       </Box>
                     </Box>
+                    
+                     <Box
+                    sx={{
+                      width: "fit-content",
+                      boxSizing: "border-box",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "space-evenly",gap:1
+                    }}
+                  >
+                    <Chip
+                      size="small"
+                      sx={{
+                        bgcolor: "#a4c5ffa8",
+                        color: "#1845c4ee",
+                        fontWeight: 600,
+                        borderRadius: "5px",
+                        fontFamily: "monospace",
+                        fontSize: "0.8rem",
+                      }}
+                      label={item?.jobType}
+                    />
+                    <Chip
+                      size="small"
+                      sx={{
+                        bgcolor: "#e4c8f9a8",
+                        color: "#6a1ca5d3",
+                        fontWeight: 600,
+                        borderRadius: "5px",
+                        fontFamily: "monospace",
+                        fontSize: "0.7rem",
+                      }}
+                      label={`${millify(item.maxSalary)}-${millify(item.minSalary)}
+                      ${item.salaryCurrency}`}
+                    />
+
                   </Box>
+                  </Box>
+
+                  {/* left */}
 
                   <Box
                     sx={{
-                      height: "100%",
+                     
                       width: "6rem",
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-around",
-                      px: 0.5,
+                      px: 0.6,
                       boxSizing: "border-box",
                     }}
                   >
