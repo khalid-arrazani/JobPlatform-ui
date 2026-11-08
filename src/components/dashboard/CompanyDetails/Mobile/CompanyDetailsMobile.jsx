@@ -15,6 +15,7 @@ import CompanyInfo from "./CompanyInfo";
 import SocialContact from "./SocialContact";
 import CompanyBenefits from "./CompanyBenefits ";
 import CompanyStatistics from "./CompanyStatistics";
+import OpenPositionsCard from "./OpenPositionsCard ";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -95,10 +96,10 @@ export default function CompanyDetailsMobile() {
 
 
               {/* Open Positions Card  */}
-              {/* <OpenPositionsCard
+              <OpenPositionsCard
                 CompanyInfo={state?.CompanyDetails}
                 CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
-              /> */}
+              />
 
 
          
