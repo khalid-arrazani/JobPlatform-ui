@@ -225,6 +225,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     mb: 1,
                   }}
                 >
+                  {/* left info */}
                   <Box
                     sx={{
                       height: "100%",
