@@ -131,18 +131,19 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 1,
+                  gap: 0.2,
                   mt: 0.5,
                 }}
               >
                 <LocationOnOutlinedIcon
-                  sx={{ fontSize: "0.9rem", color: "#666" }}
+                  sx={{ fontSize: "0.7rem", color: "#666" }}
                 />
 
                 <Typography
                   sx={{
-                    fontSize: "0.8rem",
+                    fontSize: "0.7rem",
                     color: "#666",
+                    fontFamily:"monospace",letterSpacing:"0px"
                   }}
                 >
                   {item.location}
@@ -160,18 +161,20 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
               <Box
                 sx={{
                   display: "flex",
-                  gap: 2,
+                  gap: 0.4,
                   boxSizing: "border-box",
                   px: 0.8,
+                  flexDirection:"column"
                 }}
               >
                 <Chip
                   size="small"
                   sx={{
-                    fontSize: "0.7rem",
+                    fontSize: "0.6rem",
                     borderRadius: "3px",
-                    color: "#04b630",
+                    color: "#0ba933e8",
                     bgcolor: "#e9fdef",
+                    fontFamily:"monospace",letterSpacing:"0.3px",fontWeight:600
                   }}
                   label={item.jobType}
                 />
@@ -179,7 +182,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
                 <Chip
                   size="small"
                   sx={{
-                    fontSize: "0.7rem",
+                    fontSize: "0.6rem",
                     borderRadius: "3px",
                     color:
                       item.workMode === "Remote"
@@ -197,7 +200,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
                           ? "rgba(211, 47, 47, 0.1)"
                           : item.workMode === "Hybrid"
                             ? "rgba(156,39,176,0.1)"
-                            : "rgba(0,0,0,0.05)",
+                            : "rgba(0,0,0,0.05)",fontFamily:"monospace",letterSpacing:"0.3px",fontWeight:600
                   }}
                   label={item.workMode}
                 />
@@ -215,7 +218,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
                   label={formatDistanceToNow(new Date(item.createdAt), {
                     addSuffix: true,
                   })}
-                  sx={{ fontSize: "0.7rem", borderRadius: "5px" }}
+                  sx={{ fontSize: "0.6rem", borderRadius: "5px" }}
                 ></Chip>
 
                 <ArrowForwardIosIcon
