@@ -56,22 +56,21 @@ const CompanyInfo = ( {CompanyInfo}) => {
         boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
       }}
     >
+      <Box sx={{ display: "flex", alignItems: "center", gap: 1, mb: "8px" }}>
+
+      <Building2 color="#3091ff" size={"1.2rem"}/>
       <Typography
         variant="h6"
-        sx={{
-          mb: 1,
-          fontWeight: 600,
-          color: "#111827d5",
-          fontFamily:"-apple-system",
-          letterSpacing: "-0.3px",
-          display:"flex",
-          alignItems:"center",
-          gap:1
-        }}
+          sx={{
+            fontWeight: 600,
+            fontFamily: "monospace",
+            color: "#0c031fb2",
+            fontSize: "1rem",
+          }}
       >
-        <Building2 color="#3091ff"/>
+        
         Company Information
-      </Typography>
+      </Typography></Box>
 
       {info.map((item, index) => (
         <Box key={index}>
