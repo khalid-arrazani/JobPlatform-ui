@@ -140,7 +140,7 @@ const CompanyInfo = ( {CompanyInfo}) => {
             <Divider
               sx={{
                 borderColor: "#f1f5f9",
-                my: 0.5,
+                my: 0.3
               }}
             />
           )}
