@@ -218,7 +218,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     bgcolor:"#ffff"
                   }}
                 >
-                  <Box sx={{height:""}}></Box>
+                  <Box sx={{height:"100%"}}></Box>
                    
 
                   {/* left info */}
