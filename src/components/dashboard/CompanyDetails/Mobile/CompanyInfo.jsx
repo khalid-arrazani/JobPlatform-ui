@@ -76,9 +76,9 @@ const CompanyInfo = ( {CompanyInfo}) => {
             sx={{
               display: "flex",
               alignItems: "center",
-              py: 1,
-              px: 1,
-              borderRadius: "14px",
+              py:0.5,
+              px: 0.5,
+        
               transition: "all .25s ease",
               "&:hover": {
                 bgcolor: "#f8fafc",
@@ -89,16 +89,16 @@ const CompanyInfo = ( {CompanyInfo}) => {
             {/* Icon */}
             <Box
               sx={{
-                width: 42,
-                height: 42,
-                borderRadius: "12px",
+                width: 30,
+                height: 30,
+                borderRadius: "4px",
                 background:
                   "linear-gradient(135deg, #2563eb 0%, #3b82f6 100%)",
                 color: "#fff",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                mr: 2,
+                mr: 1.5,
                 flexShrink: 0,
                 boxShadow: "0 8px 16px rgba(37,99,235,.2)",
               }}
@@ -109,13 +109,14 @@ const CompanyInfo = ( {CompanyInfo}) => {
             {/* Text */}
             <Box sx={{ flex: 1 }}>
               <Typography
-                variant="caption"
+                
                 sx={{
-                  color: "#64748b",
+                  color: "#455265",
                   fontWeight: 600,
-                  fontFamily: "Inter, sans-serif",
-                  textTransform: "uppercase",
-                  letterSpacing: "0.8px",
+                  fontFamily: "monospace",
+           
+                  fontSize:"0.88rem"
+                 
                 }}
               >
                 {item.label}
@@ -125,10 +126,9 @@ const CompanyInfo = ( {CompanyInfo}) => {
                 sx={{
                   mt: 0.5,
                   color: "#0f172a",
-                  fontWeight: 700,
-                  fontSize: "0.95rem",
-                  lineHeight: 1.5,
-                  fontFamily: "Inter, sans-serif",
+                  fontWeight: 500,
+                  fontSize: "0.9rem",
+                  fontFamily: "monospace",
                 }}
               >
                 {item.value}
