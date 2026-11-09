@@ -9,7 +9,7 @@ import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import ModalOpenPositions from "./OpenPositionsModal/Modal";
 
-export default function OpenPositionsCard({ CompanyactiveJobs }) {
+export default function OpenPositionsCard({ CompanyactiveJobs,CompanyInfo }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -67,7 +67,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
             View all jobs
           </Button>
 
-          <ModalOpenPositions open={open} setOpen={setOpen} />
+          <ModalOpenPositions open={open} setOpen={setOpen} CompanyInfo={CompanyInfo} />
         </Box>
 
         {/* <EmptyOpenPositions/> */}

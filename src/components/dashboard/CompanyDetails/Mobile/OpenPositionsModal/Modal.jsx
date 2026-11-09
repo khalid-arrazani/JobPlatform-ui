@@ -24,7 +24,7 @@ import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
 import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
 
-export default function ModalOpenPositions({ open, setOpen }) {
+export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -40,6 +40,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     CompanyId: CompanyId,
   });
 
+  console.log(CompanyInfo.company);
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFelterData((prev) => {
@@ -143,7 +144,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               }}
             >
               <Avatar
-                src="https://res.cloudinary.com/dzppmepd9/image/upload/v1786651831/profile-images/rppnczrtt7z2zdvjehe0.png"
+                src={CompanyInfo.company.companyLogo.url}
                 sx={{
                   height: "3.5rem",
                   width: "3.5rem",
@@ -169,7 +170,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                       fontSize: "1.1rem",
                     }}
                   >
-                    Google Open Positions
+                    {CompanyInfo?.company?.name ||"company"} Open Positions
                   </Typography>
                   <IconButton  onClick={()=>{setOpen(false)}} >
                     <svg
@@ -199,7 +200,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     fontSize: "0.9rem",
                   }}
                 >
-                  Explore all current job openings at Google.
+                  Explore all current job openings at {CompanyInfo?.company?.name||"company"}.
                 </Typography>
               </Box>
             </Box>
