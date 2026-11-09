@@ -9,7 +9,12 @@ import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import ModalOpenPositions from "./OpenPositionsModal/Modal";
 
-export default function OpenPositionsCard({ CompanyactiveJobs,CompanyInfo }) {
+import { millify } from "millify";
+
+import { formatRelative } from "date-fns";
+import { LuWorkflow } from "react-icons/lu";
+
+export default function OpenPositionsCard({ CompanyactiveJobs, CompanyInfo }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
 
@@ -67,7 +72,11 @@ export default function OpenPositionsCard({ CompanyactiveJobs,CompanyInfo }) {
             View all jobs
           </Button>
 
-          <ModalOpenPositions open={open} setOpen={setOpen} CompanyInfo={CompanyInfo} />
+          <ModalOpenPositions
+            open={open}
+            setOpen={setOpen}
+            CompanyInfo={CompanyInfo}
+          />
         </Box>
 
         {/* <EmptyOpenPositions/> */}
@@ -76,159 +85,281 @@ export default function OpenPositionsCard({ CompanyactiveJobs,CompanyInfo }) {
         {!CompanyactiveJobs?.length && <EmptyOpenPositions />}
 
         {CompanyactiveJobs?.slice(0, 3).map((item) => (
-          <Card
-            key={item._id}
-            onClick={() => {
-              navigate(`/Dashboard/Jobs/Details/${item._id}`);
-            }}
+          <Box
+            key={item?._id}
             sx={{
+              height: "fit-content",
+              width: "100%",
               boxSizing: "border-box",
+              border: "1px solid #ecd7f9a3",
               borderRadius: "8px",
               display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              py: 1,
-              px: 1.5,
-              width: "100%",
               mb: 1,
-
-              border: "1px solid #eef2f7",
-              background: "#fff",
-
-              boxShadow: "0 2px 8px rgba(15, 23, 42, 0.1)",
-
-              transition: "all .3s cubic-bezier(.4,0,.2,1)",
-
-              "&:hover": {
-                transform: "translateY(-3px)",
-                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
-                borderColor: "#dbeafe",
-              },
-              "&:active": {
-                transform: "translateY(-10px)",
-                boxShadow: "0 8px 30px rgba(15, 23, 42, 0.28)",
-                borderColor: "#dbeafe",
-                background: "#ebf9ff",
-              },
-              cursor: "pointer",
+              bgcolor: "#ffff",
+              py: 1.2,
             }}
           >
-            <Box>
+            {/* right */}
+            <Box
+              sx={{
+                height: "100%",
+                flex: 1,
+                boxSizing: "border-box",
+                px: 0.8,
+              }}
+            >
               <Typography
                 sx={{
-                  fontFamily: "monospace",
+                  fontSize: "1.2rem",
                   fontWeight: 600,
-                  color: "#050312ce",
-                  fontSize: "0.8rem",
+                  color: "#00001bb8",
+                  fontFamily: "monospace",
                 }}
+                title={item?.title}
               >
-                {" "}
-                {item.title}{" "}
+                {item?.title?.slice(0, 20)}
+                {item?.title?.length > 20 ? "..." : null}
               </Typography>
 
               <Box
                 sx={{
                   display: "flex",
-                  alignItems: "center",
-                  gap: 0.2,
-                  mt: 0.5,
+                  gap: 1,
                 }}
               >
-                <LocationOnOutlinedIcon
-                  sx={{ fontSize: "0.7rem", color: "#666" }}
-                />
-
                 <Typography
                   sx={{
-                    fontSize: "0.7rem",
-                    color: "#666",
-                    fontFamily:"monospace",letterSpacing:"0px"
+                    fontSize: "0.8rem",
+                    fontFamily: "monospace",
+                    fontWeight: 600,
+                    color: "#010115a7",
+                    textAlign: "center",
                   }}
                 >
-                  {item.location}
+                  {item?.location}
                 </Typography>
+
+                <Box
+                  sx={{
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 0.5,
+                  }}
+                >
+                  <LuWorkflow color="#010115a7" size={"0.8rem"} />
+
+                  <Typography
+                    sx={{
+                      fontSize: "0.9rem",
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      color: "#0101159c",
+                      textAlign: "center",
+                    }}
+                  >
+                    {item?.workMode}
+                  </Typography>
+                </Box>
+              </Box>
+
+              <Box
+                sx={{
+                  width: "fit-content",
+                  boxSizing: "border-box",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-evenly",
+                  gap: 1,
+                }}
+              >
+                <Chip
+                  size="small"
+                  sx={{
+                    bgcolor: "#a4c5ffa8",
+                    color: "#1845c4ee",
+                    fontWeight: 600,
+                    borderRadius: "5px",
+                    fontFamily: "monospace",
+                    fontSize: "0.8rem",
+                  }}
+                  label={item?.jobType}
+                />
+                <Chip
+                  size="small"
+                  sx={{
+                    bgcolor: "#e4c8f9a8",
+                    color: "#6a1ca5d3",
+                    fontWeight: 600,
+                    borderRadius: "5px",
+                    fontFamily: "monospace",
+                    fontSize: "0.7rem",
+                  }}
+                  label={`${millify(item.maxSalary)}-${millify(item.minSalary)}
+                      ${item.salaryCurrency}`}
+                />
               </Box>
             </Box>
+
+            {/* left */}
 
             <Box
               sx={{
+                width: "6rem",
                 display: "flex",
-                width: "60%",
-                justifyContent: "space-between",
+                flexDirection: "column",
+                justifyContent: "space-around",
+                px: 0.6,
+                boxSizing: "border-box",
               }}
             >
-              <Box
+              <Typography
                 sx={{
-                  display: "flex",
-                  gap: 0.4,
-                  boxSizing: "border-box",
-                  px: 0.8,
-                  flexDirection:"column"
-                }}
-              >
-                <Chip
-                  size="small"
-                  sx={{
-                    fontSize: "0.6rem",
-                    borderRadius: "3px",
-                    color: "#0ba933e8",
-                    bgcolor: "#e9fdef",
-                    fontFamily:"monospace",letterSpacing:"0.3px",fontWeight:600
-                  }}
-                  label={item.jobType}
-                />
-
-                <Chip
-                  size="small"
-                  sx={{
-                    fontSize: "0.6rem",
-                    borderRadius: "3px",
-                    color:
-                      item.workMode === "Remote"
-                        ? "#1976d2"
-                        : item.workMode === "On-site"
-                          ? "#d32f2f"
-                          : item.workMode === "Hybrid"
-                            ? "#9c27b0"
-                            : "#555",
-
-                    bgcolor:
-                      item.workMode === "Remote"
-                        ? "rgba(25, 118, 210, 0.1)"
-                        : item.workMode === "On-site"
-                          ? "rgba(211, 47, 47, 0.1)"
-                          : item.workMode === "Hybrid"
-                            ? "rgba(156,39,176,0.1)"
-                            : "rgba(0,0,0,0.05)",fontFamily:"monospace",letterSpacing:"0.3px",fontWeight:600
-                  }}
-                  label={item.workMode}
-                />
-              </Box>
-
-              <Box
-                sx={{
+                  fontSize: "0.75rem",
+                  fontFamily: "monospace",
+                  fontWeight: 600,
+                  color: "#010215b2",
                   display: "flex",
                   alignItems: "center",
-                  gap: 2,
+                  gap: 0.5,
                 }}
               >
-                <Chip
-                  size="small"
-                  label={formatDistanceToNow(new Date(item.createdAt), {
-                    addSuffix: true,
-                  })}
-                  sx={{ fontSize: "0.6rem", borderRadius: "5px" }}
-                ></Chip>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 48 48"
+                  id="Calendar-Mark--Streamline-Plump"
+                  height="12"
+                  width="12"
+                >
+                  <desc>
+                    Calendar Mark Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <g id="calendar-mark--calendar-date-day-month-mark">
+                    <path
+                      id="Vector 1380"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 25h4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector 1381"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M32 25h4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector 1382"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 25h-4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector 1383"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M22 35h4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector 1384"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M32 35h4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector 1385"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M16 35h-4"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Subtract"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M11.003 8.563c-1.137 0.11 -2.12 0.225 -2.952 0.336 -2.199 0.293 -3.877 1.948 -4.192 4.144C3.451 15.887 3 20.41 3 26.5c0 6.09 0.451 10.614 0.859 13.458 0.315 2.196 1.993 3.85 4.192 4.144 3.13 0.417 8.38 0.898 15.949 0.898 7.568 0 12.818 -0.48 15.949 -0.898 2.199 -0.293 3.877 -1.948 4.192 -4.144 0.408 -2.844 0.859 -7.368 0.859 -13.458 0 -6.089 -0.451 -10.613 -0.859 -13.457 -0.315 -2.196 -1.993 -3.851 -4.192 -4.144a82.173 82.173 0 0 0 -2.952 -0.336"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Subtract_2"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M29 8.074A164.037 164.037 0 0 0 24 8c-1.796 0 -3.462 0.027 -5 0.074"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M29.013 9.27c0.043 2.08 1.409 3.694 3.489 3.726a32.976 32.976 0 0 0 0.996 0c2.08 -0.032 3.446 -1.646 3.489 -3.726a61.262 61.262 0 0 0 0 -2.54c-0.043 -2.08 -1.409 -3.694 -3.489 -3.726a32.444 32.444 0 0 0 -0.996 0c-2.08 0.032 -3.446 1.646 -3.489 3.726a61.262 61.262 0 0 0 0 2.54Z"
+                      stroke-width="3"
+                    ></path>
+                    <path
+                      id="Vector_2"
+                      stroke="#000000"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M11.013 9.27c0.043 2.08 1.409 3.694 3.489 3.726a32.976 32.976 0 0 0 0.996 0c2.08 -0.032 3.446 -1.646 3.489 -3.726a61.262 61.262 0 0 0 0 -2.54c-0.043 -2.08 -1.409 -3.694 -3.489 -3.726a32.444 32.444 0 0 0 -0.996 0c-2.08 0.032 -3.446 1.646 -3.489 3.726a61.262 61.262 0 0 0 0 2.54Z"
+                      stroke-width="3"
+                    ></path>
+                  </g>
+                </svg>
+                {formatRelative(new Date(item.createdAt), new Date())}
+              </Typography>
 
-                <ArrowForwardIosIcon
-                  sx={{
-                    fontSize: "0.9rem",
-                    color: "#999",
-                  }}
-                />
-              </Box>
+              <Button
+                data-id={item._id}
+                onClick={() => {
+                  navigate(`/Dashboard/Jobs/Details/${item._id}`);
+                }}
+                sx={{
+                  border: "1px solid #8856dde4",
+                  color: "#4f0fbce4",
+                  fontWeight: 600,
+                  textTransform: "none",
+                  fontFamily: "monospace",
+                  display: "flex",
+                  alignContent: "center",
+                  justifyContent: "space-between",
+                  fontSize: "0.65rem",
+                  borderRadius: "10px",
+                }}
+              >
+                View Job
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  id="Arrow-Forward-Ios-Fill--Streamline-Outlined-Fill-Material"
+                  height="14"
+                  width="14"
+                >
+                  <desc>
+                    Arrow Forward Ios Fill Streamline Icon:
+                    https://streamlinehq.com
+                  </desc>
+                  <path
+                    fill="#4f0fbce4"
+                    d="m7.59995 21.9502 -1.4 -1.425 8.575 -8.575 -8.575 -8.575005 1.4 -1.425 10 10.000005 -10 10Z"
+                    stroke-width="0.5"
+                  ></path>
+                </svg>
+              </Button>
             </Box>
-          </Card>
+          </Box>
         ))}
       </Box>
     </>
