@@ -171,7 +171,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   >
                     Google Open Positions
                   </Typography>
-                  <IconButton>
+                  <IconButton  onClick={()=>{setOpen(false)}} >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="#000000"
