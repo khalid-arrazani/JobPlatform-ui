@@ -11,7 +11,6 @@ import ModalOpenPositions from "./OpenPositionsModal/Modal";
 
 export default function OpenPositionsCard({ CompanyactiveJobs }) {
   const navigate = useNavigate();
-
   const [open, setOpen] = useState(false);
 
   return (
