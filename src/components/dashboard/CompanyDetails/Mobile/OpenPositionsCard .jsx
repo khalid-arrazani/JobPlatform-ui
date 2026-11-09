@@ -1,10 +1,9 @@
-import { Card, Typography, Box, Chip, Button } from "@mui/material";
+import {  Typography, Box, Chip, Button } from "@mui/material";
 
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
-import ArrowForwardIosIcon from "@mui/icons-material/ArrowForwardIos";
+
 import { useNavigate } from "react-router-dom";
-import { formatDistanceToNow } from "date-fns";
+
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import ModalOpenPositions from "./OpenPositionsModal/Modal";
