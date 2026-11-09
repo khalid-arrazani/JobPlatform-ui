@@ -40,7 +40,7 @@ export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
     CompanyId: CompanyId,
   });
 
-  console.log(CompanyInfo.company);
+   
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFelterData((prev) => {
@@ -144,7 +144,7 @@ export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
               }}
             >
               <Avatar
-                src={CompanyInfo.company.companyLogo.url}
+                src={CompanyInfo?.company?.companyLogo?.url}
                 sx={{
                   height: "3.5rem",
                   width: "3.5rem",
@@ -182,9 +182,7 @@ export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
                       height="16"
                       width="16"
                     >
-                      <desc>
-                        X Lg Streamline Icon: https://streamlinehq.com
-                      </desc>
+                      
                       <path
                         d="M2.146 2.854a0.5 0.5 0 1 1 0.708 -0.708L8 7.293l5.146 -5.147a0.5 0.5 0 0 1 0.708 0.708L8.707 8l5.147 5.146a0.5 0.5 0 0 1 -0.708 0.708L8 8.707l-5.146 5.147a0.5 0.5 0 0 1 -0.708 -0.708L7.293 8z"
                         stroke-width="1"
