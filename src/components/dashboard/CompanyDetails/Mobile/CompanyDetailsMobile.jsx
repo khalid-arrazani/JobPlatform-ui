@@ -81,6 +81,7 @@ export default function CompanyDetailsMobile() {
               {/* About Company Card  */}
               <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
 
+
               {/* Company SocialContact Card  */}
               <SocialContact CompanyInfo={state.CompanyDetails?.company} />
 
