@@ -6,6 +6,7 @@ import {
   Avatar,
   Stack,
   Chip,
+  IconButton,
 } from "@mui/material";
 
 import { LuWorkflow } from "react-icons/lu";
@@ -159,16 +160,37 @@ export default function ModalOpenPositions({ open, setOpen }) {
                   alignContent: "center",
                 }}
               >
-                <Typography
-                  sx={{
-                    fontFamily: "monospace",
-                    color: "#010318b5",
-                    fontWeight: 600,
-                    fontSize: "1.1rem",
-                  }}
-                >
-                  Google Open Positions
-                </Typography>
+                <Box sx={{display:"flex",justifyContent:"space-between"}} >
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      color: "#010318b5",
+                      fontWeight: 600,
+                      fontSize: "1.1rem",
+                    }}
+                  >
+                    Google Open Positions
+                  </Typography>
+                  <IconButton>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="#000000"
+                      class="bi bi-x-lg"
+                      viewBox="0 0 16 16"
+                      id="X-Lg--Streamline-Bootstrap"
+                      height="16"
+                      width="16"
+                    >
+                      <desc>
+                        X Lg Streamline Icon: https://streamlinehq.com
+                      </desc>
+                      <path
+                        d="M2.146 2.854a0.5 0.5 0 1 1 0.708 -0.708L8 7.293l5.146 -5.147a0.5 0.5 0 0 1 0.708 0.708L8.707 8l5.147 5.146a0.5 0.5 0 0 1 -0.708 0.708L8 8.707l-5.146 5.147a0.5 0.5 0 0 1 -0.708 -0.708L7.293 8z"
+                        stroke-width="1"
+                      ></path>
+                    </svg>
+                  </IconButton>
+                </Box>
 
                 <Typography
                   sx={{
@@ -215,7 +237,8 @@ export default function ModalOpenPositions({ open, setOpen }) {
                     borderRadius: "8px",
                     display: "flex",
                     mb: 1,
-                    bgcolor: "#ffff",py:1.2
+                    bgcolor: "#ffff",
+                    py: 1.2,
                   }}
                 >
                   {/* right */}
@@ -258,7 +281,6 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         {item?.location}
                       </Typography>
 
-                      
                       <Box
                         sx={{
                           display: "flex",
@@ -266,10 +288,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
                           gap: 0.5,
                         }}
                       >
-                        <LuWorkflow
-                         color="#010115a7"
-                         size={"0.8rem"}
-                        />
+                        <LuWorkflow color="#010115a7" size={"0.8rem"} />
 
                         <Typography
                           sx={{
@@ -284,50 +303,49 @@ export default function ModalOpenPositions({ open, setOpen }) {
                         </Typography>
                       </Box>
                     </Box>
-                    
-                     <Box
-                    sx={{
-                      width: "fit-content",
-                      boxSizing: "border-box",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-evenly",gap:1
-                    }}
-                  >
-                    <Chip
-                      size="small"
-                      sx={{
-                        bgcolor: "#a4c5ffa8",
-                        color: "#1845c4ee",
-                        fontWeight: 600,
-                        borderRadius: "5px",
-                        fontFamily: "monospace",
-                        fontSize: "0.8rem",
-                      }}
-                      label={item?.jobType}
-                    />
-                    <Chip
-                      size="small"
-                      sx={{
-                        bgcolor: "#e4c8f9a8",
-                        color: "#6a1ca5d3",
-                        fontWeight: 600,
-                        borderRadius: "5px",
-                        fontFamily: "monospace",
-                        fontSize: "0.7rem",
-                      }}
-                      label={`${millify(item.maxSalary)}-${millify(item.minSalary)}
-                      ${item.salaryCurrency}`}
-                    />
 
-                  </Box>
+                    <Box
+                      sx={{
+                        width: "fit-content",
+                        boxSizing: "border-box",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-evenly",
+                        gap: 1,
+                      }}
+                    >
+                      <Chip
+                        size="small"
+                        sx={{
+                          bgcolor: "#a4c5ffa8",
+                          color: "#1845c4ee",
+                          fontWeight: 600,
+                          borderRadius: "5px",
+                          fontFamily: "monospace",
+                          fontSize: "0.8rem",
+                        }}
+                        label={item?.jobType}
+                      />
+                      <Chip
+                        size="small"
+                        sx={{
+                          bgcolor: "#e4c8f9a8",
+                          color: "#6a1ca5d3",
+                          fontWeight: 600,
+                          borderRadius: "5px",
+                          fontFamily: "monospace",
+                          fontSize: "0.7rem",
+                        }}
+                        label={`${millify(item.maxSalary)}-${millify(item.minSalary)}
+                      ${item.salaryCurrency}`}
+                      />
+                    </Box>
                   </Box>
 
                   {/* left */}
 
                   <Box
                     sx={{
-                     
                       width: "6rem",
                       display: "flex",
                       flexDirection: "column",
