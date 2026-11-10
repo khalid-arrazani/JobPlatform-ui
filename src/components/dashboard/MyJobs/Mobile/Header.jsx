@@ -90,6 +90,9 @@ export default function Header() {
               top: "51px", 
             },
             width:"100%",p:0,
+            "& .MuiTabs-list":{
+              justifyContent:"space-between"
+            }
           }}
         >
           <Tab
