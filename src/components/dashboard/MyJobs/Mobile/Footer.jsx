@@ -158,16 +158,16 @@ export default function Footer() {
 
           {page}
 
-        
-        </Box>
-
-        <Stack sx={{ placeSelf: "center", my: 2 }} spacing={2}>
-          <Pagination
+        <Pagination
             onChange={handleChange}
             page={felterData.page}
             count={state?.MyJobs?.totalPages}
           />
-        </Stack>
+        </Box>
+
+        
+          
+     
       </Box>
     </>
   );
