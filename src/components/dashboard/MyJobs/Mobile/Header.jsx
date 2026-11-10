@@ -87,9 +87,9 @@ export default function Header() {
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
               height: "2px",
-              top: "51px",
+              top: "51px",display:"flex",justifyContent:"space-between"
             },
-            width:"100%",p:0
+            width:"100%",p:0,
           }}
         >
           <Tab
