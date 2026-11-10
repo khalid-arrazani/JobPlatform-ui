@@ -54,7 +54,7 @@ export default function CardJobs() {
                     md: "95%",
                     lg: "90%",
                     xl: "85%",
-                  },
+                   },
                   border: "1px dashed #dddddd",
                   borderRadius: "10px",
                   display: "flex",
