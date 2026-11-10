@@ -81,12 +81,12 @@ export default function Header() {
             }));
           }}
           textColor="inherit"
+          
           sx={{
             maxHeight: 53,
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
               height: "2px",
-              borderRadius: "999px",
               top: "51px",
             },
             ml: 2,
@@ -142,6 +142,7 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+
           <Tab
             value={"draft"}
             label={
@@ -160,6 +161,7 @@ export default function Header() {
               minHeight: 64,
             }}
           />
+          
         </Tabs>
       </Box>
     </>
