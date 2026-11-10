@@ -1,14 +1,10 @@
 import { Box, Typography, Button, Tab, Tabs, Chip } from "@mui/material";
 
- 
-
 import AddIcon from "@mui/icons-material/Add";
 import { useJob } from "../../../../logic/context/JobContext";
 
 export default function Header() {
-
-  const { setOpenModal, felterData, setFelterData,...state } = useJob();
-  
+  const { setOpenModal, felterData, setFelterData, ...state } = useJob();
 
   return (
     <>
@@ -16,7 +12,7 @@ export default function Header() {
         sx={{
           width: "100%",
           height: "fit-Content",
-          px: 2.5,
+
           boxSizing: "border-box",
           borderBottom: "solid 1px #ddd",
         }}
@@ -25,7 +21,7 @@ export default function Header() {
           sx={{
             width: "100%",
             height: "6rem",
-            px: 2.5,
+            px: 1,
             boxSizing: "border-box",
             display: "flex",
             alignItems: "center",
@@ -33,15 +29,31 @@ export default function Header() {
           }}
         >
           <Box>
-            <Typography
-              sx={{
-                fontSize: "1.8rem",
-                fontWeight: 600,
-                color: "#050713ee",
-              }}
-            >
-              My Jobs
-            </Typography>
+            <Box  sx={{display:"flex",justifyContent:"space-between"}} >
+              <Typography
+                sx={{
+                  fontSize: "1.8rem",
+                  fontWeight: 600,
+                  color: "#050713ee",
+                }}
+              >
+                My Jobs
+              </Typography>
+              <Button
+                variant="contained"
+                onClick={() => setOpenModal(true)}
+                sx={{
+                  gap: 1.5,
+                  textTransform: "none",
+                  flexShrink: 0,
+                  height: "2.3rem",
+                  bgcolor: "#6a36eb",
+                  fontSize: "0.8rem",
+                }}
+              >
+                <AddIcon /> Post a New Job
+              </Button>
+            </Box>
             <Typography
               sx={{
                 fontSize: "0.9rem",
@@ -52,33 +64,17 @@ export default function Header() {
               Manage and track all the job positions you have posted.
             </Typography>
           </Box>
-
-
-          <Button
-            variant="contained"
-            onClick={()=>setOpenModal(true)}
-            sx={{
-              gap: 1.5,
-              textTransform: "none",
-              flexShrink: 0,
-              height: "2.3rem",
-              bgcolor: "#6a36eb",
-              fontSize: "0.8rem",
-            }}
-          >
-            <AddIcon /> Post a New Job
-          </Button>
-
-
-
         </Box>
-
-        
 
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
-            setFelterData((prev)=>({...prev , status :newValue ,page:1 , search:""}))
+            setFelterData((prev) => ({
+              ...prev,
+              status: newValue,
+              page: 1,
+              search: "",
+            }));
           }}
           textColor="inherit"
           sx={{
@@ -109,7 +105,7 @@ export default function Header() {
                 <span>Active</span>
 
                 <Chip
-                  label={state?.MyJobs?.countActive||0}
+                  label={state?.MyJobs?.countActive || 0}
                   size="small"
                   sx={{ color: "#02310e", bgcolor: "#8efb88" }}
                 />
@@ -130,7 +126,7 @@ export default function Header() {
                 <span>Closed</span>
 
                 <Chip
-                  label={state?.MyJobs?.countClosed||0}
+                  label={state?.MyJobs?.countClosed || 0}
                   size="small"
                   sx={{ color: "#2e2700", bgcolor: "#fbd588" }}
                 />
@@ -147,7 +143,11 @@ export default function Header() {
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
                 <span>Draft</span>
-                <Chip label={state?.MyJobs?.countDraft||0} size="small" sx={{}} />
+                <Chip
+                  label={state?.MyJobs?.countDraft || 0}
+                  size="small"
+                  sx={{}}
+                />
               </Box>
             }
             sx={{
@@ -157,9 +157,6 @@ export default function Header() {
             }}
           />
         </Tabs>
-
-
-
       </Box>
     </>
   );

@@ -9,7 +9,7 @@ import Footer from "./Footer";
 
 
 
-export default function MyJobsPageDesktop() {
+export default function MyJobsPageMobile() {
 
 
   return (
@@ -20,8 +20,8 @@ export default function MyJobsPageDesktop() {
           width: "100vw",
           bgcolor: "#f2f2f5",
           boxSizing: "border-box",
-          pt: 3,
-          px: 2,
+          pt: 2,
+          px: 1,
           overflow: "auto",
           display: "flex",
           gap: 1.5,
