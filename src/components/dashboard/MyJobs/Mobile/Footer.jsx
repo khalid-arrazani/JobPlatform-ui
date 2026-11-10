@@ -156,8 +156,6 @@ export default function Footer() {
           </Box>
 
 
-        
-          
           {page}
 
         
