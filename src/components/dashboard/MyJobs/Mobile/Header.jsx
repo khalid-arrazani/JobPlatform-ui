@@ -90,6 +90,7 @@ export default function Header() {
               top: "51px",
             },
             ml: 2,
+            width:"100%"
           }}
         >
           <Tab
@@ -100,13 +101,14 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 64,
               padding: 0,
+              fontSize:"0.8rem",fontFamily:'monospace'
             }}
           />
 
           <Tab
             label={
               <Box sx={{ display: "flex", gap: 1, alignItems: "center" }}>
-                <span>Active</span>
+                <span >Active</span>
 
                 <Chip
                   label={state?.MyJobs?.countActive || 0}
@@ -161,7 +163,7 @@ export default function Header() {
               minHeight: 64,
             }}
           />
-          
+
         </Tabs>
       </Box>
     </>
