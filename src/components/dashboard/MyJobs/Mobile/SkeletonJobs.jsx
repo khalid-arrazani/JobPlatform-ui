@@ -8,7 +8,7 @@ import {
 export default function SkeletonJobs (){
 
     return <>
-    <Stack spacing={2} sx={{placeItems:"center"}} >
+    <Stack spacing={2} sx={{placeItems:"center",width:"100%"}} >
       {[...Array(2)].map((_, i) => (
         <Card key={i} sx={{ p: 3 ,height:"5rem",border:"dashed 1px #ddd",boxShadow:"none",width:"90%"}}>
           <Stack   sx={{width:"100%"}} spacing={2}>
