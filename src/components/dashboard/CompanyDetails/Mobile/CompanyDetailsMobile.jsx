@@ -1,12 +1,7 @@
 import { Box } from "@mui/material";
 
-
-
- 
-
 import spinner from "../../../../assets/spinner.json";
 import { Player } from "@lottiefiles/react-lottie-player";
-
 
 import { useCompany } from "../../../../logic/context/CompanyContext";
 import CompanyHeader from "./CompanyHeader";
@@ -19,7 +14,7 @@ import OpenPositionsCard from "./OpenPositionsCard ";
 import Owner from "./Owner";
 
 export default function CompanyDetailsMobile() {
-  const {  ...state } = useCompany();
+  const { ...state } = useCompany();
 
   return (
     <>
@@ -53,16 +48,12 @@ export default function CompanyDetailsMobile() {
             bgcolor: "#dfd0e296",
             boxSizing: "border-box",
             overflow: "auto",
-            minHeight:"100dvh",
-            px:"6px"
+            minHeight: "100dvh",
+            px: "6px",
           }}
         >
           {/* top side or Company Card or  Header   */}
           <CompanyHeader CompanyInfo={state.CompanyDetails?.company} />
-
-
-
-
 
           {/* Content about Company or bottom side  */}
           <Box
@@ -72,54 +63,34 @@ export default function CompanyDetailsMobile() {
               my: 1,
               borderRadius: "15px",
               display: "flex",
-              boxSizing:"border-box",pb:'10rem',flexDirection:"column",gap:1
+              boxSizing: "border-box",
+              pb: "10rem",
+              flexDirection: "column",
+              gap: 1,
             }}
           >
-          
-          
-          
-          
-              {/* About Company Card  */}
-              <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
+            {/* About Company Card  */}
+            <AboutCompany CompanyInfo={state.CompanyDetails?.company} />
 
+            {/* Company SocialContact Card  */}
+            <SocialContact CompanyInfo={state.CompanyDetails?.company} />
 
-              {/* Company SocialContact Card  */}
-              <SocialContact CompanyInfo={state.CompanyDetails?.company} />
+            {/* Company Benefits Card  */}
+            <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
 
-              {/* Company Benefits Card  */}
-              <CompanyBenefits CompanyInfo={state.CompanyDetails?.company} />
-              
-              {/* Company Statistics  */}
-              <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
+            {/* Company Statistics  */}
+            <CompanyStatistics CompanyInfo={state?.CompanyDetails} />
 
-              {/* Company Info Card  */}
-              <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
+            {/* Company Info Card  */}
+            <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
 
-              {/* company owner */}
-              <Owner CompanyInfo={state.CompanyDetails?.company} />
-              
-
-              
-
-
-              {/* Open Positions Card  */}
-              <OpenPositionsCard
-                CompanyInfo={state?.CompanyDetails}
-                CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
-              />
-
-
-         
-         
-
-            
-            
-            
-
-           
- 
-            
-            
+            {/* Open Positions Card  */}
+            <OpenPositionsCard
+              CompanyInfo={state?.CompanyDetails}
+              CompanyactiveJobs={state?.CompanyDetails?.activeJobs}
+            />
+            {/* company owner */}
+            <Owner CompanyInfo={state.CompanyDetails?.company} />
           </Box>
         </Box>
       )}
