@@ -159,7 +159,7 @@ export default function Footer() {
           </Box>
 
           <Box
-          sx={{display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,bgcolor:"#fdff",alignItems:"center"}}
+          sx={{display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,alignItems:"center"}}
           
           >
           {page}
@@ -169,7 +169,7 @@ export default function Footer() {
             onChange={handleChange}
             page={felterData.page}
             count={state?.MyJobs?.totalPages}
-            sx={{mb:"0.4rem"}}
+            sx={{mb:"0.6rem"}}
           />
           
           </Box>
