@@ -89,7 +89,7 @@ export default function Footer() {
               borderRadius: "20px",
             },
             display:"flex",
-            flexDirection:"column"
+            flexDirection:"column",boxSizing:"border-box",pb:"2.5rem"
             
 
             
@@ -159,15 +159,17 @@ export default function Footer() {
           </Box>
 
           <Box
-          sx={{display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,bgcolor:"#fdff"}}
+          sx={{display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,bgcolor:"#fdff",alignItems:"center"}}
           
           >
           {page}
+          
 
         <Pagination
             onChange={handleChange}
             page={felterData.page}
             count={state?.MyJobs?.totalPages}
+            sx={{mb:"0.4rem"}}
           />
           
           </Box>
