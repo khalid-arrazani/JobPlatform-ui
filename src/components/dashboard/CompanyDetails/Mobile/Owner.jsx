@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Chip, Avatar } from "@mui/material";
+import { Box,  Typography, Chip, Avatar } from "@mui/material";
 
  
 import { HiOutlineShieldCheck } from "react-icons/hi";
@@ -9,16 +9,19 @@ export default function Owner ({CompanyInfo}){
   const navigate = useNavigate();
 
     return <>
-    <Card
+    <Box
             sx={{
               height: "100%",
-              width: "18rem",
+              width: "100%",
                
               right: "0",
               display: "flex",
               alignItems: "center",
-              justifyContent: "center",
               boxSizing: "border-box",
+              borderRadius: "10px",
+        p: 1.5,
+      
+        bgcolor: "#fff",
             }}
           >
             <Box
@@ -101,6 +104,6 @@ export default function Owner ({CompanyInfo}){
                 </Typography>
               </Box>
             </Box>
-          </Card>
+          </Box>
     </>
 }
