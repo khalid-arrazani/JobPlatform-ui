@@ -21,7 +21,7 @@ export default function Header() {
           sx={{
             width: "100%",
             height: "6rem",
-            px: 1,
+            px: 1.3,
             boxSizing: "border-box",
             display: "flex",
             alignItems: "center",
@@ -29,26 +29,29 @@ export default function Header() {
           }}
         >
           <Box>
-            <Box  sx={{display:"flex",justifyContent:"space-between"}} >
+            <Box  sx={{display:"flex",justifyContent:"space-between",mb:1}} >
               <Typography
                 sx={{
-                  fontSize: "1.8rem",
+                  fontSize: "1.6rem",
                   fontWeight: 600,
-                  color: "#050713ee",
+                  color: "#050713c3",
+                  fontFamily:"monospace"
                 }}
               >
                 My Jobs
               </Typography>
               <Button
+
                 variant="contained"
                 onClick={() => setOpenModal(true)}
                 sx={{
-                  gap: 1.5,
+                  gap: .5,
                   textTransform: "none",
                   flexShrink: 0,
                   height: "2.3rem",
                   bgcolor: "#6a36eb",
                   fontSize: "0.8rem",
+                  fontFamily:"unset",px:0.8
                 }}
               >
                 <AddIcon /> Post a New Job
@@ -59,6 +62,7 @@ export default function Header() {
                 fontSize: "0.9rem",
                 fontWeight: 600,
                 color: "#6f6e6ee7",
+                fontFamily:"monospace"
               }}
             >
               Manage and track all the job positions you have posted.
