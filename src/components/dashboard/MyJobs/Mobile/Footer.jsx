@@ -69,10 +69,11 @@ export default function Footer() {
         sx={{
           width: "100%",
           height: "74%",
-          px: 4,
+         
           display: "flex",
           flexDirection: "column",
           boxSizing: "border-box",
+          px:1
         }}
       >
         <Box
@@ -88,17 +89,17 @@ export default function Footer() {
               borderRadius: "20px",
             },
 
-            pr: 2,
+            
           }}
         >
           {/* filter and search */}
           <Box
             sx={{
               width: "100%",
-              height: "10%",
-              my: 2,
-              display: "flex",
+            
+              my: 1, display: "flex",
               justifyContent: "space-between",
+              flexDirection:"column",gap:0.5
             }}
           >
             <TextField
@@ -106,12 +107,13 @@ export default function Footer() {
               onChange={(e) => {
                 handleSearch(e);
               }}
+              fullWidth
               value={search}
               placeholder="Search Jobs..."
               sx={{
-                width: "45%",
+                 
                 borderRadius: "20px",
-                "& .MuiInputBase-root": { borderRadius: "10px" },
+                "& .MuiInputBase-root": { borderRadius: "8px",fontFamily:"monospace" }
               }}
               slotProps={{
                 input: {
@@ -126,12 +128,13 @@ export default function Footer() {
 
             <Autocomplete
               size="small"
+              fullWidth
               sx={{
-                width: 220,
+                
                 "& .MuiAutocomplete-clearIndicator": {
                   display: "none",
                 },
-                "& .MuiInputBase-root": { borderRadius: "8px" },
+                "& .MuiInputBase-root": { borderRadius: "8px",fontFamily:"monospace" }
               }}
               options={["Newest First", "Oldest First"]}
               value={felterData.sort}
