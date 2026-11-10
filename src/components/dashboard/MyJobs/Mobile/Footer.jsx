@@ -88,6 +88,9 @@ export default function Footer() {
               background: "#a1a2d87f",
               borderRadius: "20px",
             },
+            display:"flex",
+            flexDirection:"column"
+            
 
             
           }}
@@ -155,7 +158,10 @@ export default function Footer() {
             />
           </Box>
 
-
+          <Box
+          sx={{display:"flex",flexDirection:"column",justifyContent:"space-between",flex:1,bgcolor:"#fdff"}}
+          
+          >
           {page}
 
         <Pagination
@@ -163,6 +169,8 @@ export default function Footer() {
             page={felterData.page}
             count={state?.MyJobs?.totalPages}
           />
+          
+          </Box>
         </Box>
 
         
