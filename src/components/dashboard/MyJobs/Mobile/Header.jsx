@@ -89,8 +89,7 @@ export default function Header() {
               height: "2px",
               top: "51px",
             },
-            ml: 2,
-            width:"100%"
+            width:"100%",p:0
           }}
         >
           <Tab
@@ -101,7 +100,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 64,
               padding: 0,
-              fontSize:"0.8rem",fontFamily:'monospace'
+              fontSize:"0.8rem",fontFamily:'monospace',p:0
             }}
           />
 
@@ -121,7 +120,7 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 64,fontSize:"0.8rem",fontFamily:'monospace',p:0
             }}
           />
 
@@ -141,7 +140,7 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 64,fontSize:"0.8rem",fontFamily:'monospace',p:0
             }}
           />
 
@@ -160,7 +159,7 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 64,fontSize:"0.8rem",fontFamily:'monospace',p:0
             }}
           />
 
