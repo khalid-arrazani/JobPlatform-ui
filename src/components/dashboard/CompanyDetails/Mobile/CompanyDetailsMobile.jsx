@@ -93,6 +93,8 @@ export default function CompanyDetailsMobile() {
 
               {/* Company Info Card  */}
               <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
+
+              {/* company owner */}
               
 
 
