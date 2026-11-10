@@ -16,6 +16,7 @@ import SocialContact from "./SocialContact";
 import CompanyBenefits from "./CompanyBenefits ";
 import CompanyStatistics from "./CompanyStatistics";
 import OpenPositionsCard from "./OpenPositionsCard ";
+import Owner from "./Owner";
 
 export default function CompanyDetailsMobile() {
   const {  ...state } = useCompany();
@@ -95,6 +96,9 @@ export default function CompanyDetailsMobile() {
               <CompanyInfo CompanyInfo={state.CompanyDetails?.company} />
 
               {/* company owner */}
+              <Owner CompanyInfo={state.CompanyDetails?.company} />
+              
+
               
 
 
