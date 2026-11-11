@@ -516,7 +516,7 @@ export default function CardJobs() {
               <Card
                 sx={{
                   bgcolor: "#ffffff",
-                  height: "12.5rem",
+                  height: "auto",
                   width: "100%",
                   border: "1px solid #ddddddb9",
                   borderRadius: "10px",
@@ -535,7 +535,7 @@ export default function CardJobs() {
                 <Box
                   sx={{
                     bgcolor: "#ffffff",
-                    height: "6.5rem",
+                    height: "auto",
                     borderBottom: "1px solid #ddddddb9",
                     width: "100%",
                     display: "flex",
@@ -543,6 +543,7 @@ export default function CardJobs() {
                     boxShadow: "none",
                   }}
                 >
+                  {/* Avatar */}
                   <Box
                     sx={{
                       height: "100%",
@@ -566,7 +567,7 @@ export default function CardJobs() {
 
                   <Box
                     sx={{
-                      height: "100%",
+                      height: "auto",
                       flex: 1,
                       boxSizing: "border-box",
                       py: "0.7rem",
@@ -614,36 +615,40 @@ export default function CardJobs() {
                       </Typography>
                     </Box>
 
-                    
+
                     <Stack direction="row" spacing={1} sx={{ mt:0.2 }}>
                       <Chip
                         label={job?.jobType}
                         size="small"
                         sx={{
-                          fontSize: "0.7rem",
+                          fontSize: "0.8rem",
                           height: "22px",
                           bgcolor: "#d8f3ff",
                           borderRadius: "5px",
-                          color: "#0150b7",
+                          color: "#013578bf",
                           fontWeight: 600,
+                          fontFamily:"monospace"
                         }}
                       />
                       <Chip
                         label={job?.workMode}
                         size="small"
                         sx={{
-                          fontSize: "0.7rem",
+                          fontSize: "0.8rem",
                           height: "22px",
                           bgcolor: "#f6d8ff",
-                          color: "#72037c",
+                          color: "#72037cd2",
                           borderRadius: "5px",
                           fontWeight: 600,
+                          fontFamily:"monospace"
                         }}
                       />
                     </Stack>
 
                   </Box>
                 </Box>
+
+                {/* fotor */}
 
                 <Box
                   sx={{
@@ -657,6 +662,9 @@ export default function CardJobs() {
                     boxShadow: "none",
                   }}
                 ></Box>
+
+
+
               </Card>
             </Box>
           </>
