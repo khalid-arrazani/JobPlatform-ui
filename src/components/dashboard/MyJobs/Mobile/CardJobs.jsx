@@ -544,8 +544,8 @@ export default function CardJobs() {
                   
                  
                 }}>
-                  <Box sx={{borderBottom: "1px solid #ddddddb9",height:"100%",width:"10rem"}}></Box>
-                  <Box></Box>
+                  <Box sx={{border: "1px solid #ddddddb9",height:"100%",width:"5rem"}}></Box>
+                  <Box sx={{border: "1px solid #ddddddb9",height:"100%",width:"5rem"}}></Box>
 
                 </Box>
 
