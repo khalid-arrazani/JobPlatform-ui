@@ -332,7 +332,7 @@ export default function CardJobs() {
                     }}
                   >
                     <Avatar
-                      src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg"
+                       src={job.createdBy?.companyLogo?.url}
                       sx={{
                         width: "4.5rem",
                         height: "4.5rem",
@@ -358,7 +358,7 @@ export default function CardJobs() {
                         position: "relative",
                       }}
                     >
-                      Senior Software Engineer, Search, Mobile (Android)
+                      {job?.title || "-----------------------"}
                       {/* MoreVertIcon - Menu  */}
                       <MenuCard
                         JobId={job?._id}
