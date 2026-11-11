@@ -540,7 +540,8 @@ export default function CardJobs() {
                   <Box sx={{
                   bgcolor: "#ffffff",
                   height: "6.5rem",
-                  border: "1px solid #ddddddb9",
+                  borderBottom: "1px solid #ddddddb9",
+                  width:"100%",
                   
                   display: "flex",
                   boxSizing: "border-box",
