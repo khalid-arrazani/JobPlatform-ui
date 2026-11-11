@@ -647,8 +647,33 @@ export default function CardJobs() {
                   }}
                 >
                   <Box sx={{height:"4rem",width:"100%",bgcolor:"#d6d2d2"}}>
-                   
-
+                   <Chip
+                      label={`• ${job.status}`}
+                      size="small"
+                      sx={{
+                        fontSize: "0.9rem",
+                        height: "22px",
+                        bgcolor:
+                          job.status == "closed"
+                            ? "#fde4af"
+                            : job.status == "active"
+                              ? "#d8ffda"
+                              : null,
+                        color:
+                          job.status == "closed"
+                            ? "rgb(137, 109, 10)"
+                            : job.status == "active"
+                              ? "rgb(27, 137, 10)"
+                              : null,
+                        borderRadius: "10px",
+                        fontWeight: 600,
+                        fontFamily: "monospace",
+                       
+                        top: "18%",
+                        right: "20%",
+                      }}
+                    />
+                    
                   </Box>
 
                   <Box sx={{height:"3rem",width:"100%",bgcolor:"#fff"}}></Box>
