@@ -16,6 +16,7 @@ import MenuCardDraft from "./draft/MenuDraft";
 import LinearProgress from "@mui/material/LinearProgress";
 import { useJob } from "../../../../logic/context/JobContext";
 import { useState } from "react";
+import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function CardJobs() {
   const { ...state } = useJob();
@@ -544,6 +545,11 @@ export default function CardJobs() {
                   flexDirection: "column",
                 }}
               >
+                <MyJobDetailsModal
+                          open={openMyJobDetailsModal}
+                          setOpen={setMyJobDetailsModal}
+                          jobInfo={job}
+                        />
                 <Box
                   sx={{
                     bgcolor: "#ffffff",
