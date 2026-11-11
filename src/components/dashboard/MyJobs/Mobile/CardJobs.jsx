@@ -538,7 +538,6 @@ export default function CardJobs() {
                   height: "6.5rem",
                   borderBottom: "1px solid #ddddddb9",
                   width:"100%",
-                  
                   display: "flex",
                   boxSizing: "border-box",
                   boxShadow: "none",
@@ -546,7 +545,7 @@ export default function CardJobs() {
                  
                 }}>
 
-                  <Box sx={{ height:"100%",width:"5rem",display:"flex",justifyContent:"center",boxSizing:"border-box",py:"0.7rem"}}>
+                  <Box sx={{ height:"100%",width:"5rem",display:"flex",justifyContent:"center",boxSizing:"border-box",py:"0.7rem",bgcolor:"#ddd"}}>
                     <Avatar sx={{width:"3.5rem",height:"3.5rem",borderRadius:"6px"}} />
                   </Box>
 
@@ -557,7 +556,7 @@ export default function CardJobs() {
 
 
                 <Box sx={{
-                  bgcolor: "#ffffff",
+                  bgcolor: "#dedcdc65",
                   height: "6.5rem",
        
                   width:"100%",
@@ -569,12 +568,7 @@ export default function CardJobs() {
                  
                 }}>
 
-                  <Box sx={{ height:"100%",width:"5rem",display:"flex",justifyContent:"center",boxSizing:"border-box",py:"0.7rem"}}>
-                    <Avatar sx={{width:"3.5rem",height:"3.5rem",borderRadius:"6px"}} />
-                  </Box>
-
                   
-                  <Box sx={{ height:"100%",flex:1}}></Box>
 
                 </Box>
 
