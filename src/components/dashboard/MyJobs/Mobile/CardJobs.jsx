@@ -617,6 +617,7 @@ export default function CardJobs() {
 
 
                     <Stack direction="row" spacing={1} sx={{ mt:0.2 }}>
+
                       <Chip
                         label={job?.jobType}
                         size="small"
@@ -630,6 +631,7 @@ export default function CardJobs() {
                           fontFamily:"monospace"
                         }}
                       />
+                      
                       <Chip
                         label={job?.workMode}
                         size="small"
