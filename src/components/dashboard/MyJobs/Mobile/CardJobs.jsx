@@ -616,7 +616,7 @@ export default function CardJobs() {
                     </Box>
 
 
-                    <Stack direction="row" spacing={1} sx={{ mt:0.2 }}>
+                    <Stack direction="row" spacing={1}>
 
                       <Chip
                         label={job?.jobType}
