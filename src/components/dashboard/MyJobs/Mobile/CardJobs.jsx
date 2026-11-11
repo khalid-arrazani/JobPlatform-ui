@@ -51,6 +51,8 @@ export default function CardJobs() {
         return (
           <>
             <Box sx={{ width: "100%", placeItems: "center" }}>
+
+              
               {job.status === "draft" ? (
                 <Card
                   sx={{
@@ -871,6 +873,8 @@ export default function CardJobs() {
                   </Box>
                 </Box>
               </Card>
+
+
             </Box>
           </>
         );
