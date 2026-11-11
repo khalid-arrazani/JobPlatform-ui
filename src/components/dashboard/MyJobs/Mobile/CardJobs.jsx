@@ -582,7 +582,7 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android)
                     </Typography>
 
-                    <Box sx={{ display: "flex", gap:0.5 }}>
+                    <Box sx={{ display: "flex", gap:0.8 }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
