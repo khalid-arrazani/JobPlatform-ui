@@ -639,7 +639,7 @@ export default function CardJobs() {
                           fontSize: "0.8rem",
                           height: "22px",
                           bgcolor: "#f6d8ff",
-                          color: "#72037cd2",
+                          color: "#6f0779ba",
                           borderRadius: "5px",
                           fontWeight: 600,
                           fontFamily:"monospace"
