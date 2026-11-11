@@ -54,8 +54,6 @@ export default function CardJobs() {
         return (
           <>
             <Box sx={{ width: "100%", placeItems: "center" }}>
-
-
               {job.status === "draft" ? (
                 <Card
                   sx={{
@@ -546,10 +544,10 @@ export default function CardJobs() {
                 }}
               >
                 <MyJobDetailsModal
-                          open={openMyJobDetailsModal}
-                          setOpen={setMyJobDetailsModal}
-                          jobInfo={job}
-                        />
+                  open={openMyJobDetailsModal}
+                  setOpen={setMyJobDetailsModal}
+                  jobInfo={job}
+                />
                 <Box
                   sx={{
                     bgcolor: "#ffffff",
@@ -605,7 +603,8 @@ export default function CardJobs() {
                         JobId={job?._id}
                         Status={job?.status}
                         jobInfo={job}
-                        openMyJobDetailsModal={openMyJobDetailsModal} setMyJobDetailsModal={setMyJobDetailsModal}
+                        openMyJobDetailsModal={openMyJobDetailsModal}
+                        setMyJobDetailsModal={setMyJobDetailsModal}
                       />
                     </Typography>
 
@@ -841,9 +840,9 @@ export default function CardJobs() {
                     />
 
                     <Button
-                    onClick={()=>{
-                      setMyJobDetailsModal(true)
-                    }}
+                      onClick={() => {
+                        setMyJobDetailsModal(true);
+                      }}
                       sx={{
                         height: "30px",
                         color: "#5911b1",
@@ -885,8 +884,6 @@ export default function CardJobs() {
                   </Box>
                 </Box>
               </Card>
-
-
             </Box>
           </>
         );

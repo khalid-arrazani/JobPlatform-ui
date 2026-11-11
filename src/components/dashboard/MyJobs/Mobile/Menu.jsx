@@ -141,11 +141,7 @@ export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal,
           View Job
         </MenuItem>
 
-        <MyJobDetailsModal
-          open={openMyJobDetailsModal}
-          setOpen={setMyJobDetailsModal}
-          jobInfo={jobInfo}
-        />
+        
 
         <MenuItem onClick={(e) => handleStatus(e, JobId)}>
           <ListItemIcon>
