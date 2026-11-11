@@ -553,7 +553,7 @@ export default function CardJobs() {
 
 
                   <Box sx={{ height:"100%",flex:1,boxSizing:"border-box",py:"0.7rem"}}>
-                    <Typography>
+                    <Typography sx={{fontWeight:600,fontFamily:"system-ui"}} >
                       Senior Software Engineer, Search, Mobile (Android) 
                     </Typography>
                   </Box>
