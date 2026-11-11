@@ -515,8 +515,44 @@ export default function CardJobs() {
               </Card>
             )}
 
-            <Card>
-              
+            <Card sx={{
+                  bgcolor: "#ffffff",
+                  height: "12.5rem",
+                  width: {
+                    xs: "100%",
+                    sm: "98%",
+                    md: "95%",
+                    lg: "90%",
+                    xl: "85%",
+                  },
+                  border: "1px solid #ddddddb9",
+                  borderRadius: "10px",
+                  display: "flex",
+                  boxSizing: "border-box",
+                  boxShadow: "none",
+                  transition: "0.5s",
+                  "&:hover": {
+                    transform: "translateY(-4px)",
+                    boxShadow: "0 8px 20px rgba(0, 0, 0, 0.06)",
+                  },
+                  my: 2,
+                }}>
+                  <Box sx={{
+                  bgcolor: "#ffffff",
+                  height: "6.5rem",
+                  border: "1px solid #ddddddb9",
+                  
+                  display: "flex",
+                  boxSizing: "border-box",
+                  boxShadow: "none",
+                  
+                 
+                }}>
+
+                </Box>
+
+
+
             </Card>
 
 
