@@ -557,7 +557,21 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android) 
                     </Typography>
 
-                    
+                    <Box>
+                      
+                      <Typography
+                      sx={{
+                        fontSize: "0.8rem",
+                        fontWeight: 700,
+                        fontFamily: "monospace",
+                        color: "#02020d7a",
+                      }}
+                    >
+                      {job?.location || "---------------"}
+                    </Typography>
+                    </Box>
+
+
                   </Box>
 
                 </Box>
