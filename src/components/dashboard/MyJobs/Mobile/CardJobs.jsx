@@ -582,21 +582,28 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android)
                     </Typography>
 
-                    <Box sx={{display:"flex",alignItems:""}}>
+                    <Box sx={{ display: "flex", gap:0.5 }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 24 24"
-                        id="Location-Pin--Streamline-Guidance-Free"
-                        height="16"
-                        width="16"
+                        viewBox="0 0 48 48"
+                        id="Location-Pin--Streamline-Plump"
+                        height="14"
+                        width="14"
                       >
-                        
-                        <path
-                          stroke="#000000"
-                          d="M12 23.92a9.04 9.04 0 0 0 -2.96 -6.61l-2.567 -2.334A8.365 8.365 0 0 1 3.75 8.799C3.75 4.242 7.444 0.5 12 0.5s8.25 3.741 8.25 8.298c0 2.343 -0.989 4.6 -2.723 6.177l-2.568 2.334a9.041 9.041 0 0 0 -2.96 6.61Zm0 0V24l0 -0.057M12 11.5a2.5 2.5 0 1 1 0 -5 2.5 2.5 0 0 1 0 5Z"
-                          stroke-width="1"
-                        ></path>
+                        <desc>
+                          Location Pin Streamline Icon: https://streamlinehq.com
+                        </desc>
+                        <g id="location-pin--navigation-map-maps-pin-gps-location">
+                          <path
+                            id="Subtract"
+                            fill="#0000008d"
+                            fill-rule="evenodd"
+                            d="M4.5 21C4.5 10.2304 13.2304 1.5 24 1.5S43.5 10.2304 43.5 21c0 6.9874 -3.6056 12.8651 -7.5258 17.2028 -3.9325 4.3513 -8.3265 7.3161 -10.2376 8.5062 -1.072 0.6675 -2.4012 0.6675 -3.4732 0 -1.9111 -1.1901 -6.3051 -4.1549 -10.2376 -8.5062C8.1056 33.8651 4.5 27.9874 4.5 21ZM24 29c4.4183 0 8 -3.5817 8 -8s-3.5817 -8 -8 -8 -8 3.5817 -8 8 3.5817 8 8 8Z"
+                            clip-rule="evenodd"
+                            stroke-width="1"
+                          ></path>
+                        </g>
                       </svg>
                       <Typography
                         sx={{
