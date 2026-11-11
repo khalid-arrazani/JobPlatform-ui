@@ -583,40 +583,10 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android)
                     </Typography>
 
-                    <Box sx={{ display: "flex", gap: 0.8 }}>
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                        id="Location-Pin-3--Streamline-Sharp"
-                        height="18"
-                        width="18"
-                      >
-                        <desc>
-                          Location Pin 3 Streamline Icon:
-                          https://streamlinehq.com
-                        </desc>
-                        <g id="location-pin-3--navigation-map-maps-pin-gps-location">
-                          <path
-                            id="Vector"
-                            stroke="#000000"
-                            d="M17.716 16.83h1.892l2.283 5.451H2.109l2.283 -5.452h1.892"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            id="Vector_2"
-                            stroke="#000000"
-                            d="M12.215 19.135s7.214 -5.411 7.214 -10.236C19.43 5.156 16.724 2 12.215 2 7.705 2 5 5.156 5 8.899c0 4.825 7.215 10.236 7.215 10.236Z"
-                            stroke-width="1.5"
-                          ></path>
-                          <path
-                            id="Rectangle 847"
-                            stroke="#000000"
-                            d="M10.465 6.5h3.5V10h-3.5z"
-                            stroke-width="1.5"
-                          ></path>
-                        </g>
-                      </svg>
+                    <Box
+                      sx={{ display: "flex", gap: 0.8, alignItems: "center" }}
+                    >
+                      
                       <Typography
                         sx={{
                           fontSize: "0.88rem",
@@ -634,7 +604,7 @@ export default function CardJobs() {
                         label={job?.jobType}
                         size="small"
                         sx={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.88rem",
                           height: "22px",
                           bgcolor: "#d8f3ff",
                           borderRadius: "5px",
@@ -648,7 +618,7 @@ export default function CardJobs() {
                         label={job?.workMode}
                         size="small"
                         sx={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.88rem",
                           height: "22px",
                           bgcolor: "#f6d8ff",
                           color: "#6f0779ba",
@@ -674,7 +644,9 @@ export default function CardJobs() {
                     boxSizing: "border-box",
                     boxShadow: "none",
                   }}
-                ></Box>
+                >
+                  
+                </Box>
               </Card>
             </Box>
           </>
