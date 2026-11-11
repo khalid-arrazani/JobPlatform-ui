@@ -588,8 +588,8 @@ export default function CardJobs() {
                         fill="none"
                         viewBox="0 0 24 24"
                         id="Location-Pin--Streamline-Guidance-Free"
-                        height="24"
-                        width="24"
+                        height="18"
+                        width="18"
                       >
                         <desc>
                           Location Pin Streamline Icon: https://streamlinehq.com
