@@ -589,8 +589,8 @@ export default function CardJobs() {
                         fill="none"
                         viewBox="0 0 24 24"
                         id="Location-Pin-3--Streamline-Sharp"
-                        height="24"
-                        width="24"
+                        height="18"
+                        width="18"
                       >
                         <desc>
                           Location Pin 3 Streamline Icon:
