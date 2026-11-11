@@ -583,29 +583,43 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android)
                     </Typography>
 
-                    <Box sx={{ display: "flex", gap:0.8 }}>
+                    <Box sx={{ display: "flex", gap: 0.8 }}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
-                        viewBox="0 0 48 48"
-                        id="Location-Pin--Streamline-Plump"
-                        height="14"
-                        width="14"
+                        viewBox="0 0 24 24"
+                        id="Location-Pin-3--Streamline-Sharp"
+                        height="24"
+                        width="24"
                       >
-                        <g id="location-pin--navigation-map-maps-pin-gps-location">
+                        <desc>
+                          Location Pin 3 Streamline Icon:
+                          https://streamlinehq.com
+                        </desc>
+                        <g id="location-pin-3--navigation-map-maps-pin-gps-location">
                           <path
-                            id="Subtract"
-                            fill="#0000008d"
-                            fill-rule="evenodd"
-                            d="M4.5 21C4.5 10.2304 13.2304 1.5 24 1.5S43.5 10.2304 43.5 21c0 6.9874 -3.6056 12.8651 -7.5258 17.2028 -3.9325 4.3513 -8.3265 7.3161 -10.2376 8.5062 -1.072 0.6675 -2.4012 0.6675 -3.4732 0 -1.9111 -1.1901 -6.3051 -4.1549 -10.2376 -8.5062C8.1056 33.8651 4.5 27.9874 4.5 21ZM24 29c4.4183 0 8 -3.5817 8 -8s-3.5817 -8 -8 -8 -8 3.5817 -8 8 3.5817 8 8 8Z"
-                            clip-rule="evenodd"
-                            stroke-width="1"
+                            id="Vector"
+                            stroke="#000000"
+                            d="M17.716 16.83h1.892l2.283 5.451H2.109l2.283 -5.452h1.892"
+                            stroke-width="1.5"
+                          ></path>
+                          <path
+                            id="Vector_2"
+                            stroke="#000000"
+                            d="M12.215 19.135s7.214 -5.411 7.214 -10.236C19.43 5.156 16.724 2 12.215 2 7.705 2 5 5.156 5 8.899c0 4.825 7.215 10.236 7.215 10.236Z"
+                            stroke-width="1.5"
+                          ></path>
+                          <path
+                            id="Rectangle 847"
+                            stroke="#000000"
+                            d="M10.465 6.5h3.5V10h-3.5z"
+                            stroke-width="1.5"
                           ></path>
                         </g>
                       </svg>
                       <Typography
                         sx={{
-                          fontSize: "0.8rem",
+                          fontSize: "0.88rem",
                           fontWeight: 700,
                           fontFamily: "monospace",
                           color: "#02020d7a",
@@ -615,9 +629,7 @@ export default function CardJobs() {
                       </Typography>
                     </Box>
 
-
                     <Stack direction="row" spacing={1}>
-
                       <Chip
                         label={job?.jobType}
                         size="small"
@@ -628,10 +640,10 @@ export default function CardJobs() {
                           borderRadius: "5px",
                           color: "#013578bf",
                           fontWeight: 600,
-                          fontFamily:"monospace"
+                          fontFamily: "monospace",
                         }}
                       />
-                      
+
                       <Chip
                         label={job?.workMode}
                         size="small"
@@ -642,11 +654,10 @@ export default function CardJobs() {
                           color: "#6f0779ba",
                           borderRadius: "5px",
                           fontWeight: 600,
-                          fontFamily:"monospace"
+                          fontFamily: "monospace",
                         }}
                       />
                     </Stack>
-
                   </Box>
                 </Box>
 
@@ -664,9 +675,6 @@ export default function CardJobs() {
                     boxShadow: "none",
                   }}
                 ></Box>
-
-
-
               </Card>
             </Box>
           </>
