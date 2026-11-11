@@ -518,13 +518,7 @@ export default function CardJobs() {
             <Card sx={{
                   bgcolor: "#ffffff",
                   height: "12.5rem",
-                  width: {
-                    xs: "100%",
-                    sm: "98%",
-                    md: "95%",
-                    lg: "90%",
-                    xl: "85%",
-                  },
+                  width:"100%",
                   border: "1px solid #ddddddb9",
                   borderRadius: "10px",
                   display: "flex",
@@ -537,7 +531,8 @@ export default function CardJobs() {
                   },
                   my: 2,
                 }}>
-                  <Box sx={{
+
+                <Box sx={{
                   bgcolor: "#ffffff",
                   height: "6.5rem",
                   borderBottom: "1px solid #ddddddb9",
@@ -549,6 +544,8 @@ export default function CardJobs() {
                   
                  
                 }}>
+                  <Box sx={{}}></Box>
+                  <Box></Box>
 
                 </Box>
 
