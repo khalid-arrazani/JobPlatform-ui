@@ -552,7 +552,11 @@ export default function CardJobs() {
                   </Box>
 
 
-                  <Box sx={{ height:"100%",flex:1}}></Box>
+                  <Box sx={{ height:"100%",flex:1}}>
+                    <Typography>
+                      
+                    </Typography>
+                  </Box>
 
                 </Box>
 
