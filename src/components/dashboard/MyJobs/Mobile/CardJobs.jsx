@@ -15,9 +15,11 @@ import MenuCardDraft from "./draft/MenuDraft";
 
 import LinearProgress from "@mui/material/LinearProgress";
 import { useJob } from "../../../../logic/context/JobContext";
+import { useState } from "react";
 
 export default function CardJobs() {
   const { ...state } = useJob();
+  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
 
   return (
     <>
@@ -52,7 +54,7 @@ export default function CardJobs() {
           <>
             <Box sx={{ width: "100%", placeItems: "center" }}>
 
-              
+
               {job.status === "draft" ? (
                 <Card
                   sx={{
@@ -597,6 +599,7 @@ export default function CardJobs() {
                         JobId={job?._id}
                         Status={job?.status}
                         jobInfo={job}
+                        openMyJobDetailsModal={openMyJobDetailsModal} setMyJobDetailsModal={setMyJobDetailsModal}
                       />
                     </Typography>
 
@@ -832,6 +835,9 @@ export default function CardJobs() {
                     />
 
                     <Button
+                    onClick={()=>{
+                      setMyJobDetailsModal(true)
+                    }}
                       sx={{
                         height: "30px",
                         color: "#5911b1",

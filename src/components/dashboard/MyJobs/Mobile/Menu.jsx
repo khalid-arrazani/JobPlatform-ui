@@ -22,10 +22,10 @@ import EditeJobModal from "./EditeJobModal";
 
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
-export default function MenuCard({ JobId, Status, jobInfo }) {
+export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal, setMyJobDetailsModal }) {
   const [openEditeJobModal, setEditeJobModal] = useState(false);
 
-  const [openMyJobDetailsModal, setMyJobDetailsModal] = useState(false);
+  
 
   const [anchorEl, setAnchorEl] = useState(null);
   const { fetchCompanyWitoutReload } = useJob();

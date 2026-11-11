@@ -24,6 +24,8 @@ export default function Footer() {
   const [search, setSearch] = useState("");
   const {myJobsLoading, felterData, setFelterData, ...state } = useJob();
 
+  
+
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
