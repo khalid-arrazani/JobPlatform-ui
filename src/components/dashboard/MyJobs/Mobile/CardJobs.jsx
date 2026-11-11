@@ -591,9 +591,6 @@ export default function CardJobs() {
                         height="14"
                         width="14"
                       >
-                        <desc>
-                          Location Pin Streamline Icon: https://streamlinehq.com
-                        </desc>
                         <g id="location-pin--navigation-map-maps-pin-gps-location">
                           <path
                             id="Subtract"
