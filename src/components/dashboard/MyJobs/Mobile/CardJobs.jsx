@@ -582,14 +582,14 @@ export default function CardJobs() {
                       Senior Software Engineer, Search, Mobile (Android)
                     </Typography>
 
-                    <Box sx={{display:"flex",alignItems:"end"}}>
+                    <Box sx={{display:"flex",alignItems:""}}>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
                         viewBox="0 0 24 24"
                         id="Location-Pin--Streamline-Guidance-Free"
-                        height="18"
-                        width="18"
+                        height="16"
+                        width="16"
                       >
                         <desc>
                           Location Pin Streamline Icon: https://streamlinehq.com
