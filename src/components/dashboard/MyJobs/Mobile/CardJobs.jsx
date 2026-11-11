@@ -668,7 +668,6 @@ export default function CardJobs() {
                         borderRadius: "10px",
                         fontWeight: 600,
                         fontFamily: "monospace",
-                       
                         top: "18%",
                         right: "20%",
                       }}
