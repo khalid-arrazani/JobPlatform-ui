@@ -544,7 +544,12 @@ export default function CardJobs() {
                   
                  
                 }}>
-                  <Box sx={{ height:"100%",width:"5rem"}}></Box>
+                  <Box sx={{ height:"100%",width:"5rem",display:"flex",justifyContent:"center",boxSizing:"border-box",py:"0.4rem"}}>
+                    <Avatar sx={{width:"4rem",height:"4rem"}} />
+                  </Box>
+
+
+
                   <Box sx={{ height:"100%",flex:1}}></Box>
 
                 </Box>
