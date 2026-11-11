@@ -546,7 +546,9 @@ export default function CardJobs() {
                 }}>
 
                   <Box sx={{ height:"100%",width:"6rem",display:"flex",justifyContent:"center",boxSizing:"border-box",py:"0.7rem"}}>
-                    <Avatar src="https://imgs.search.brave.com/GXWOlL5Ppf7NTGOhbfTUHGmvzfY5Ad-fbFtnV2gl0Ag/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9kZXZl/bG9wZXJzLmdvb2ds/ZS5jb20vc3RhdGlj/L2lkZW50aXR5L2lt/YWdlcy9icmFuZGlu/Z19ndWlkZWxpbmVf/c2FtcGxlX250X3Nx/X3NsLnN2Zw" sx={{width:"4.5rem",height:"4.5rem",borderRadius:"6px"}} />
+                    <Avatar
+                     src="https://1000logos.net/wp-content/uploads/2016/11/New-Google-Logo-497x500.jpg" 
+                     sx={{width:"4.5rem",height:"4.5rem",borderRadius:"6px",border:"1px solid #ebebebca"}} />
                   </Box>
 
 
