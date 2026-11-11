@@ -613,6 +613,32 @@ export default function CardJobs() {
                         {job?.location || "---------------"}
                       </Typography>
                     </Box>
+                    <Stack direction="row" spacing={1.5} sx={{ mt:0.2 }}>
+                      <Chip
+                        label={job?.jobType}
+                        size="small"
+                        sx={{
+                          fontSize: "0.7rem",
+                          height: "22px",
+                          bgcolor: "#d8f3ff",
+                          borderRadius: "5px",
+                          color: "#0150b7",
+                          fontWeight: 600,
+                        }}
+                      />
+                      <Chip
+                        label={job?.workMode}
+                        size="small"
+                        sx={{
+                          fontSize: "0.7rem",
+                          height: "22px",
+                          bgcolor: "#f6d8ff",
+                          color: "#72037c",
+                          borderRadius: "5px",
+                          fontWeight: 600,
+                        }}
+                      />
+                    </Stack>
                   </Box>
                 </Box>
 
