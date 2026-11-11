@@ -646,13 +646,13 @@ export default function CardJobs() {
                     flexDirection:"column"
                   }}
                 >
-                  <Box sx={{height:"4rem",width:"100%",bgcolor:"#d6d2d2"}}>
+                  <Box sx={{height:"4rem",width:"100%",bgcolor:"#d6d2d2",display:"flex",alignItems:"center",justifyContent:"space-around"}}>
                    <Chip
                       label={`• ${job.status}`}
                       size="small"
                       sx={{
-                        fontSize: "0.9rem",
-                        height: "22px",
+                        fontSize: "1.2rem",
+                        
                         bgcolor:
                           job.status == "closed"
                             ? "#fde4af"
@@ -665,13 +665,48 @@ export default function CardJobs() {
                             : job.status == "active"
                               ? "rgb(27, 137, 10)"
                               : null,
-                        borderRadius: "10px",
+                        borderRadius: "5px",
                         fontWeight: 600,
                         fontFamily: "monospace",
-                        top: "18%",
-                        right: "20%",
+                        
                       }}
                     />
+                    <Box sx={{ height: "fit-content", width: "fit-content",display:"flex",alignItems:"center",justifyContent:"space-around",flexDirection:"column" }}>
+                        <Typography
+                          sx={{ fontWeight: 600, fontFamily: "system-ui" }}
+                        >
+                          {job.applicationsCount}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            color: "#04020e9a",
+                            fontSize: "0.85rem",
+                            fontFamily: "system-ui",
+                          }}
+                        >
+                          Applicants
+                        </Typography>
+                      </Box>
+                      <Box sx={{height: "fit-content",width: "fit-content",display:"flex",alignItems:"center",justifyContent:"space-around",flexDirection:"column" }}>
+                        <Typography
+                          sx={{ fontWeight: 600, fontFamily: "system-ui" }}
+                        >
+                          {job.jobViews}
+                        </Typography>
+                        <Typography
+                          sx={{
+                            fontWeight: 500,
+                            color: "#04020e9a",
+                            fontSize: "0.85rem",
+                            fontFamily: "system-ui",
+                          }}
+                        >
+                          Views
+                        </Typography>
+                      </Box>
+
+
                     
                   </Box>
 
