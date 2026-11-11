@@ -646,7 +646,11 @@ export default function CardJobs() {
                     flexDirection:"column"
                   }}
                 >
-                  <Box sx={{height:"4rem",width:"100%",bgcolor:"#fff"}}></Box>
+                  <Box sx={{height:"4rem",width:"100%",bgcolor:"#d6d2d2"}}>
+                   
+
+                  </Box>
+
                   <Box sx={{height:"3rem",width:"100%",bgcolor:"#fff"}}></Box>
                 </Box>
 
