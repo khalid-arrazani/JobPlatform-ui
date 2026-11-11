@@ -643,6 +643,7 @@ export default function CardJobs() {
                     display: "flex",
                     boxSizing: "border-box",
                     boxShadow: "none",
+                    flexDirection:"column"
                   }}
                 >
                   <Box sx={{height:"4rem",width:"100%",bgcolor:"#fff"}}></Box>
