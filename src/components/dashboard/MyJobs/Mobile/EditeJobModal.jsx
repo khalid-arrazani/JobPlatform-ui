@@ -239,7 +239,8 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
 
 
   return (
-    <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+    <Dialog open={open} onClose={handleClose} sx={{width:"100%"}} >
+
       <Box
         sx={{
           display: "flex",
