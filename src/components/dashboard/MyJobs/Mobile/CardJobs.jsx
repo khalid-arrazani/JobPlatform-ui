@@ -440,7 +440,7 @@ export default function CardJobs() {
                       display: "flex",
                       justifyContent: "space-between",
                       px: 1,
-                      alignItems:"center"
+                      alignItems:"center",boxSizing:"border-box"
                     }}
                   >
                     <Chip
@@ -454,7 +454,7 @@ export default function CardJobs() {
                         
                         width: "fit-content", 
                         color: "#666666",
-                        fontWeight: 500,
+                        fontWeight: 600,
                         borderRadius: "5px",
                         fontFamily:"monospace"
                       }}
@@ -472,7 +472,7 @@ export default function CardJobs() {
                     <Typography
                       sx={{
                         fontSize: ".68rem",
-                        fontWeight: 400,
+                        fontWeight: 600,
                         color: "#727272",
                         fontFamily:"monospace"
                       }}
