@@ -397,10 +397,10 @@ export default function CardJobs() {
                               fontSize: "0.8rem",
                               height: "22px",
                               bgcolor: "#d8f3ff",
-                              color: "#0150b7",
+                              color: "#013f8f",
                               borderRadius: "5px",
                               fontWeight: 600,
-                              fontFamily:"monospace"                            }}
+                              fontFamily:"monospace"  }}
                           />
                         ) : null}
 
@@ -409,12 +409,12 @@ export default function CardJobs() {
                             label={job.experienceLevel}
                             size="small"
                             sx={{
-                              fontSize: "0.7rem",
+                              fontSize: "0.8rem",
                               height: "22px",
                               bgcolor: "#ffd8de",
                               color: "rgb(158,64,64)",
                               borderRadius: "5px",
-                              fontWeight: 600,
+                              fontWeight: 600,fontFamily:"monospace" 
                             }}
                           />
                         ) : null}
@@ -424,12 +424,12 @@ export default function CardJobs() {
                             label={job.workMode}
                             size="small"
                             sx={{
-                              fontSize: "0.7rem",
+                              fontSize: "0.8rem",
                               height: "22px",
                               bgcolor: "#f6d8ff",
                               color: "#72037c",
                               borderRadius: "5px",
-                              fontWeight: 600,
+                              fontWeight: 600,fontFamily:"monospace" 
                             }}
                           />
                         ) : null}
