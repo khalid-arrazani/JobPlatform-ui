@@ -294,7 +294,7 @@ export default function CardJobs() {
                     flexDirection: "column",
                   }}
                 >
-                  <Box sx={{ height: "6rem", width: "100%", display: "flex" }}>
+                  <Box sx={{ height: "auto", width: "100%", display: "flex",borderBottom:"1px #ddd solid" }}>
 
 
 
