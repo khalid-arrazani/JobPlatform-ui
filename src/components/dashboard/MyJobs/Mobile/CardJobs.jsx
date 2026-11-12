@@ -394,13 +394,13 @@ export default function CardJobs() {
                             label={job.jobType}
                             size="small"
                             sx={{
-                              fontSize: "0.7rem",
+                              fontSize: "0.8rem",
                               height: "22px",
                               bgcolor: "#d8f3ff",
                               color: "#0150b7",
                               borderRadius: "5px",
                               fontWeight: 600,
-                            }}
+                              fontFamily:"monospace"                            }}
                           />
                         ) : null}
 
