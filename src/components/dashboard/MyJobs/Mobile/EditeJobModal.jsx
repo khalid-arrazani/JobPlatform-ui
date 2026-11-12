@@ -242,33 +242,28 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
   return (
     <Modal open={open} onClose={handleClose}  >
 
-     <Box  sx={{width:"100%",bgcolor:"#fff",overflow:"auto",height:"100%"}}>
+     <Box  sx={{width:"100%",bgcolor:"#fff",height:"100%",boxSizing:"border-box",display:"flex",flexDirection:"column"}}>
 
       <Box
         sx={{
           display: "flex",
           alignItems: "center",
-          width: "55%",
-          justifyContent: "space-between",
+          width: "100%",
+          justifyContent: "space-between",px:1.3,boxSizing:"border-box"
         }}
       >
-        <DialogTitle
+        <Typography
           sx={{
-            fontSize: "1rem",
-            fontFamily:"monospace"
+            fontSize: "1.2rem",
+            fontFamily:"monospace",
+            fontWeight:600
           }}
         >
           Update your Job
-        </DialogTitle>
-
-
-
-
-        
-          
+        </Typography>
 
           <svg
-            width="100"
+            width="80"
             height="50"
             viewBox="0 0 80 18"
             fill="none"
@@ -282,7 +277,9 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
        
       </Box>
 
-      <DialogContent>
+      <Box  sx={{flex:1,overflow:"auto",px:1.3,boxSizing:"border-box"}}>
+
+      <Box>
         {/* Job Title */}
         <Box sx={{ mt: 1, mb: 2 }}>
           <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Job Title *</Typography>
@@ -524,7 +521,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
             )}
           />
         </Box>
-      </DialogContent>
+      </Box>
 
       <DialogActions sx={{ p: 2 }}>
         <Button onClick={handleClose} variant="outlined">
@@ -552,6 +549,8 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
         </Button>
 
       </DialogActions>
+      
+      </Box>
 </Box>
 
     </Modal>
