@@ -375,10 +375,10 @@ export default function CardJobs() {
                             fontSize: "0.8rem",
                             fontWeight: 600,
                             fontFamily: "monospace",
-                            color: "#02020db4",
+                            color: "#02020d93",
                           }}
                         >
-                          {job?.location || "---------------"}
+                          {job?.location || "---------------"} 
                       </Typography>
 
 
@@ -412,7 +412,7 @@ export default function CardJobs() {
                               fontSize: "0.8rem",
                               height: "22px",
                               bgcolor: "#ffd8de",
-                              color: "rgb(158,64,64)",
+                              color: "rgb(158, 30, 30)",
                               borderRadius: "5px",
                               fontWeight: 600,fontFamily:"monospace" 
                             }}
