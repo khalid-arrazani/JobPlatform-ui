@@ -9,15 +9,15 @@ export default function NoSearchResults () {
       <Box
         sx={{
           border: "dashed 1px #ddd",
-          width: "95%",
-          height: "80%",
+          width: "100%",
+          height: "100%",
           placeSelf: "center",
           borderRadius: "10px",
           overflow:"hidden",
           display:"flex",
           justifyContent:"center",
           alignItems:"center",
-          flexDirection:"column",boxSizing:"border-box",bgcolor:"#fff9f891",gap:1
+          flexDirection:"column",boxSizing:"border-box",px:1.5,textAlign:"center",bgcolor:"#fff9f891",gap:1
         }}
       >
     

@@ -8,8 +8,8 @@ export default function NoDraftsJobsYet() {
       <Box
         sx={{
           border: "dashed 1px #ddd",
-          width: "95%",
-          height: "80%",
+          width: "100%",
+          height: "100%",
           placeSelf: "center",
           borderRadius: "10px",
           overflow:"hidden",
@@ -18,7 +18,7 @@ export default function NoDraftsJobsYet() {
           alignItems:"center",
           flexDirection:"column",
           gap:1,
-          bgcolor:"#fff9f891"
+          bgcolor:"#fff9f891",boxSizing:"border-box",px:1.5
         }}
       >
 

@@ -14,7 +14,7 @@ export default function NoJobsYet() {
           display:"flex",
           justifyContent:"center",
           alignItems:"center",
-          flexDirection:"column",boxSizing:"border-box",bgcolor:"#fff9f891",gap:1
+          flexDirection:"column",boxSizing:"border-box",bgcolor:"#fff9f891",gap:1 ,px:1.5,textAlign:"center"
         }}
       >
     
