@@ -144,6 +144,7 @@ import {
   Chip,
   Autocomplete,
   CircularProgress,
+  Modal
 } from "@mui/material";
 
 import logoTitle from "../../../../assets/Logo/logo.png";
@@ -239,7 +240,9 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
 
 
   return (
-    <Dialog open={open} onClose={handleClose} sx={{width:"100%"}} >
+    <Modal open={open} onClose={handleClose}  >
+
+     <Box  sx={{width:"100%",bgcolor:"#fff",overflow:"auto",height:"100%"}}>
 
       <Box
         sx={{
@@ -550,7 +553,9 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
         </Button>
 
       </DialogActions>
-    </Dialog>
+</Box>
+
+    </Modal>
   );
 };
 
