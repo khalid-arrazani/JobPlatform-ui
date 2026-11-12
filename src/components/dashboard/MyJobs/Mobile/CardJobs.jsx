@@ -278,7 +278,7 @@ export default function CardJobs() {
                 <Card
                   sx={{
                     bgcolor: "#ffffff",
-                    height: "10rem",
+                    height: "auto",
                     width: "100%",
                     border: "1px solid #ddddddb9",
                     borderRadius: "10px",
@@ -294,10 +294,14 @@ export default function CardJobs() {
                     flexDirection: "column",
                   }}
                 >
-                  <Box sx={{ height: "auto", width: "100%", display: "flex",borderBottom:"1px #ddd solid" }}>
-
-
-
+                  <Box
+                    sx={{
+                      height: "auto",
+                      width: "100%",
+                      display: "flex",
+                      borderBottom: "1px #ddd solid",
+                    }}
+                  >
                     {/* Avatar */}
                     <Box
                       sx={{
@@ -320,8 +324,6 @@ export default function CardJobs() {
                       />
                     </Box>
 
-
-
                     {/* right content */}
                     <Box
                       sx={{
@@ -329,7 +331,7 @@ export default function CardJobs() {
                         flex: 1,
                         boxSizing: "border-box",
                         py: "0.7rem",
-                        px:0.5
+                        px: 0.5,
                       }}
                     >
                       <Stack
@@ -355,9 +357,7 @@ export default function CardJobs() {
                             width: "fit-Content",
                           }}
                         />
-
                       </Stack>
-
 
                       <Typography
                         sx={{
@@ -369,26 +369,19 @@ export default function CardJobs() {
                       >
                         {job?.title || "-----------------------"}
                       </Typography>
-                      
+
                       <Typography
-                          sx={{
-                            fontSize: "0.8rem",
-                            fontWeight: 600,
-                            fontFamily: "monospace",
-                            color: "#02020d93",
-                          }}
-                        >
-                          {job?.location || "---------------"} 
+                        sx={{
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          fontFamily: "monospace",
+                          color: "#02020d93",
+                        }}
+                      >
+                        {job?.location || "---------------"}
                       </Typography>
 
-
-                      <Stack
-                        direction="row"
-                        spacing={1.5}
-                        
-                      >
-                        
-
+                      <Stack direction="row" spacing={1.5}>
                         {job.jobType ? (
                           <Chip
                             label={job.jobType}
@@ -400,7 +393,8 @@ export default function CardJobs() {
                               color: "#013f8f",
                               borderRadius: "5px",
                               fontWeight: 600,
-                              fontFamily:"monospace"  }}
+                              fontFamily: "monospace",
+                            }}
                           />
                         ) : null}
 
@@ -414,7 +408,8 @@ export default function CardJobs() {
                               bgcolor: "#ffd8de",
                               color: "rgb(158, 30, 30)",
                               borderRadius: "5px",
-                              fontWeight: 600,fontFamily:"monospace" 
+                              fontWeight: 600,
+                              fontFamily: "monospace",
                             }}
                           />
                         ) : null}
@@ -429,14 +424,83 @@ export default function CardJobs() {
                               bgcolor: "#f6d8ff",
                               color: "#72037c",
                               borderRadius: "5px",
-                              fontWeight: 600,fontFamily:"monospace" 
+                              fontWeight: 600,
+                              fontFamily: "monospace",
                             }}
                           />
                         ) : null}
                       </Stack>
                     </Box>
                   </Box>
-                  <Box></Box>
+
+                  <Box
+                    sx={{
+                      height: "3.5rem",
+                      width: "100%",
+                      display: "flex",
+                      justifyContent: "space-between",
+                      px: 1,
+                      alignItems:"center"
+                    }}
+                  >
+                    <Chip
+                      label={`Last saved ${formatDistanceToNow(
+                        new Date(job.updatedAt),
+                        { addSuffix: true },
+                      )}`}
+                      
+                      sx={{
+                        fontSize: "0.7rem",
+                        
+                        width: "fit-content", 
+                        color: "#666666",
+                        fontWeight: 500,
+                        borderRadius: "5px",
+                        fontFamily:"monospace"
+                      }}
+                    />
+
+                    <Box
+                    sx={{
+                      display: "flex",
+                      alignItems: "center",
+                      gap: 0.3,
+                      flexDirection:"column"
+
+                    }}
+                  >
+                    <Typography
+                      sx={{
+                        fontSize: ".68rem",
+                        fontWeight: 400,
+                        color: "#727272",
+                        fontFamily:"monospace"
+                      }}
+                    >
+                      {completed} of 11 completed
+                    </Typography>
+
+                    <LinearProgress
+                      variant="determinate"
+                      value={(completed / 11) * 100}
+                      sx={{
+                        width: 100,
+                        height: 8,
+                        borderRadius: 2,
+                        bgcolor: "#ECECEC",
+
+                        "& .MuiLinearProgress-bar": {
+                          borderRadius: 5,
+                          bgcolor: "#6C3CF0",
+                        },
+                      }}
+                    />
+                  </Box>
+
+
+
+
+                  </Box>
                 </Card>
               ) : (
                 <Card
