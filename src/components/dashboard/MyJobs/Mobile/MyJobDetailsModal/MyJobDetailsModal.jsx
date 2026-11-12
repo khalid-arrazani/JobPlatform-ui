@@ -1,9 +1,5 @@
- 
-
-import { Box, Button,Modal   } from "@mui/material";
+import { Box, Button, Modal } from "@mui/material";
 import { useParams } from "react-router-dom";
- 
- 
 
 import CardCompany from "./CardCompany";
 import JobOverview from "./CardJobOverview";
@@ -11,59 +7,53 @@ import SkillsCard from "./SkillsCard";
 import DescriptionSection from "./DescriptionSection";
 import AbouttheCompany from "./AbouttheCompany";
 
+import UndoOutlinedIcon from '@mui/icons-material/UndoOutlined';
 
 
-
-export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
+export default function MyJobDetailsModal({ open, setOpen, jobInfo }) {
   const { JobId } = useParams();
 
-
-  const onClose = ()=>{
-    setOpen(false)
-  }
-
-
+  const onClose = () => {
+    setOpen(false);
+  };
 
   return (
     <>
-    <Modal
-    open={open}
-    onClose={onClose}
-    sx={{display:"flex",alignItems:"center",justifyContent:"center"}}
-    >
+      <Modal
+        open={open}
+        onClose={onClose}
+        sx={{ display: "flex", alignItems: "center", justifyContent: "center" }}
+      >
         <Box
           sx={{
             width: "100%",
-            height: "auto",
+            height: "100%",
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
-            overflow: "auto",boxSizing:"border-box"  
-
+            overflow: "auto",
+            boxSizing: "border-box",
           }}
         >
-         
+          <Box
+            sx={{
+              height: "auto",
+              width: "100%",
+              background: "#f7f7f7e9",
+              pb: "2rem",
+              boxSizing: "border-box",
+            }}
+          >
             <Box
               sx={{
-                height: "auto",
-                width: "100%",
-                background: "#f7f7f7e9" ,
-                pb:"6rem",
-                boxSizing:"border-box"
-              }}
-            >
-              <Box
-              sx={{
-
                 width: "100%",
                 background: "#f7f7f7",
-                display:"flex",
-               
+                display: "flex",
               }}
             >
               <Button
-                startIcon={<KeyboardBackspaceIcon sx={{width:"0.8rem"}} />}
-                onClick={() => navigate(-1)}
+                startIcon={<UndoOutlinedIcon sx={{ width: "0.8rem" }} />}
+                onClick={()=>setOpen(false)}
                 sx={{
                   textTransform: "none",
                   fontWeight: 600,
@@ -82,29 +72,22 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
                   },
                   display: "flex",
                   alignContent: "center",
-                  fontSize:"0.78rem"
+                  fontSize: "0.78rem",
                 }}
               >
                 Go Back
               </Button>
-
             </Box>
 
-              <CardCompany jobInfo={jobInfo} JobId={JobId} />
-              <JobOverview  jobInfo={jobInfo} />
+            <CardCompany jobInfo={jobInfo} JobId={JobId} />
+            <JobOverview jobInfo={jobInfo} />
 
-
-              <DescriptionSection jobInfo={jobInfo} />
-              <AbouttheCompany jobInfo={jobInfo} />
-              <SkillsCard jobInfo={jobInfo} />
-
-              {/* <Divider /> */}
-            </Box>
-
-            
+            <DescriptionSection jobInfo={jobInfo} />
+            <AbouttheCompany jobInfo={jobInfo} />
+            <SkillsCard jobInfo={jobInfo} />
+          </Box>
         </Box>
-       </Modal>
-      
+      </Modal>
     </>
   );
 }
