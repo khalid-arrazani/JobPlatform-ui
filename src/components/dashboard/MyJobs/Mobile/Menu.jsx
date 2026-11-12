@@ -113,16 +113,17 @@ export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal,
         slotProps={{
           paper: {
             sx: {
-              mt: 1,
+              
               borderRadius: 3,
               minWidth: 220,
-              p: 1,
+             
               boxShadow: "0 20px 40px rgba(15,23,42,.15)",
+              border:"1px solid #edebebcd"
             },
           },
         }}
       >
-        <MenuItem onClick={(e) => handleModalEdite(e, JobId, jobInfo)}>
+        <MenuItem  sx={{fontFamily:"monospace",fontWeight:600}} onClick={(e) => handleModalEdite(e, JobId, jobInfo)}>
           <ListItemIcon>
             <EditOutlinedIcon fontSize="small" />
           </ListItemIcon>
@@ -134,7 +135,7 @@ export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal,
           jobInfo={jobInfo}
         />
 
-        <MenuItem onClick={() => setMyJobDetailsModal(true)}>
+        <MenuItem  sx={{fontFamily:"monospace",fontWeight:600}} onClick={() => setMyJobDetailsModal(true)}>
           <ListItemIcon>
             <VisibilityOutlinedIcon fontSize="small" />
           </ListItemIcon>
@@ -143,7 +144,7 @@ export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal,
 
         
 
-        <MenuItem onClick={(e) => handleStatus(e, JobId)}>
+        <MenuItem sx={{fontFamily:"monospace",fontWeight:600}} onClick={(e) => handleStatus(e, JobId)}>
           <ListItemIcon>
             <PauseCircleOutlineOutlinedIcon fontSize="small" />
           </ListItemIcon>
@@ -151,11 +152,11 @@ export default function MenuCard({ JobId, Status, jobInfo,openMyJobDetailsModal,
           {Status == "closed" ? "Active Job" : "Close Job"}
         </MenuItem>
 
-        <Divider sx={{ my: 0.5 }} />
+        <Divider  />
 
         <MenuItem
           onClick={(e) => handleDelete(e, JobId)}
-          sx={{ color: "error.main" }}
+          sx={{ color: "error.main",fontFamily:"monospace",fontWeight:600 }}
         >
           <ListItemIcon>
             <DeleteOutlineOutlinedIcon fontSize="small" color="error" />

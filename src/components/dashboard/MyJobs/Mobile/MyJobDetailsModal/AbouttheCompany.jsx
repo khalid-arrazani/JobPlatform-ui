@@ -11,31 +11,37 @@ export default function AbouttheCompany({ jobInfo }) {
     setDescription(jobInfo?.createdBy?.description);
   }, [jobInfo?.createdBy]);
 
-  console.log(description);
+
   return (
+    <Box
+        sx={{
+          width: "100%",
+          display: "flex",
+          justifyContent: "center",
+        }}
+      >
     <Card
       sx={{
-        flex: 1,
-        height: "auto",
-        px: "1.5rem",
-        py: "1.5rem",
-        borderRadius: "10px",
+        width: "93%",
+        px: 2,
+        py: 1.5,
+        borderRadius: "5px",
         boxShadow: "0 8px 30px rgba(0,0,0,0.06)",
+        height: "auto",
         mt: 2,
-        mb: 2,
+        boxSizing:"border-box"
       }}
     >
       <Typography
         sx={{
-          fontSize: "1.2rem",
+          fontSize: "1.1rem",
           fontWeight: 700,
-          color: "#1F2937",
-          mb: 2,
-          display: "flex",
-          gap: 1,
+          color: "#1f2937ed",
+          mb: 1,
+          fontFamily:'monospace'
         }}
       >
-        <BusinessOutlinedIcon sx={{ color: "#8B5CF6" }} />
+        
         About the Company
       </Typography>
 
@@ -47,7 +53,8 @@ export default function AbouttheCompany({ jobInfo }) {
             wordBreak: "break-word",
             overflowWrap: "break-word",
             lineHeight: 1.6,
-            fontSize: "0.95rem",
+           fontSize: "0.95rem",
+            fontFamily:"monospace",
 
             ...(expanded
               ? {}
@@ -74,13 +81,13 @@ export default function AbouttheCompany({ jobInfo }) {
 
               "&:hover": {
                 textDecoration: "underline",
-              },
+              },fontFamily:"monospace"
             }}
           >
             {expanded ? "Show less" : "More"}
           </Typography>
         )}
       </Box>
-    </Card>
+    </Card></Box>
   );
 }
