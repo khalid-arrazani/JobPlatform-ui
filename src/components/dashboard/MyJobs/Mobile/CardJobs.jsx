@@ -451,7 +451,6 @@ export default function CardJobs() {
                       
                       sx={{
                         fontSize: "0.7rem",
-                        
                         width: "fit-content", 
                         color: "#666666",
                         fontWeight: 600,
@@ -466,12 +465,11 @@ export default function CardJobs() {
                       alignItems: "center",
                       gap: 0.3,
                       flexDirection:"column"
-
                     }}
                   >
                     <Typography
                       sx={{
-                        fontSize: ".68rem",
+                        fontSize: ".7rem",
                         fontWeight: 600,
                         color: "#727272",
                         fontFamily:"monospace"
@@ -484,7 +482,7 @@ export default function CardJobs() {
                       variant="determinate"
                       value={(completed / 11) * 100}
                       sx={{
-                        width: 100,
+                        width: 110,
                         height: 8,
                         borderRadius: 2,
                         bgcolor: "#ECECEC",
