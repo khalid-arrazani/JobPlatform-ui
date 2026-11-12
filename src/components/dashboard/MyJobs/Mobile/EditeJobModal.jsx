@@ -257,7 +257,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
             fontSize: "1rem",
           }}
         >
-          Post New Job
+          Update your Job
         </DialogTitle>
 
         <Box sx={{ display: "flex", alignItems: "center", width: "25%" }}>
