@@ -322,7 +322,127 @@ export default function CardJobs() {
                       flex: 1,
                       boxSizing: "border-box",
                       py: "0.7rem",
-                    }}></Box>
+                    }}>
+
+
+
+                      <Stack
+                      direction="row"
+                      spacing={1.5}
+                      sx={{
+                        mt: 1,
+                        width: "100%",
+                        justifyContent: "space-between",
+                      }}
+                    >
+                      <Chip
+                        label="● Draft"
+                        size="small"
+                        sx={{
+                          fontSize: "0.9rem",
+                          height: "22px",
+                          bgcolor: "#e1e1e1",
+                          color: "rgb(98, 98, 98)",
+                          borderRadius: "2px",
+                          fontWeight: 600,
+                          fontFamily: "monospace",
+                          width: "fit-Content",
+                        }}
+                      />
+
+                      <Box
+                        sx={{ display: "flex", height: "fit-Content", gap: 3 }}
+                      >
+                        <Chip
+                          label={`Last saved ${formatDistanceToNow(
+                            new Date(job.updatedAt),
+                            { addSuffix: true },
+                          )}`}
+                          size="small"
+                          sx={{
+                            fontSize: "0.8rem",
+                            height: "25px",
+                            width: "fit-content",
+                            bgcolor: "#e4e4e400",
+                            color: "#666666",
+                            fontWeight: 500,
+                            borderRadius: "5px",
+                          }}
+                        />
+
+                        {/* Menu */}
+                        <MenuCardDraft JobId={job._id} jobInfo={job} />
+                      </Box>
+                    </Stack>
+                    <Typography
+                      sx={{
+                        fontSize: "1.7rem",
+                        fontWeight: 600,
+                        fontFamily: "ui-monospace",
+                        color: "#02020dda",
+                      }}
+                    >
+                      {job?.title || "-----------------------"}
+                    </Typography>
+
+                    <Stack direction="row" spacing={1.5} sx={{ mt: 1, mb: 1 }}>
+                      <Typography
+                        sx={{
+                          fontSize: "0.8rem",
+                          fontWeight: 600,
+                          fontFamily: "monospace",
+                          color: "#02020db4",
+                        }}
+                      >
+                        {job?.location || "---------------"}
+                      </Typography>
+
+                      {job.jobType ? (
+                        <Chip
+                          label={job.jobType}
+                          size="small"
+                          sx={{
+                            fontSize: "0.7rem",
+                            height: "22px",
+                            bgcolor: "#d8f3ff",
+                            color: "#0150b7",
+                            borderRadius: "5px",
+                            fontWeight: 600,
+                          }}
+                        />
+                      ) : null}
+
+                      {job.experienceLevel ? (
+                        <Chip
+                          label={job.experienceLevel}
+                          size="small"
+                          sx={{
+                            fontSize: "0.7rem",
+                            height: "22px",
+                            bgcolor: "#ffd8de",
+                            color: "rgb(158,64,64)",
+                            borderRadius: "5px",
+                            fontWeight: 600,
+                          }}
+                        />
+                      ) : null}
+
+                      {job.workMode ? (
+                        <Chip
+                          label={job.workMode}
+                          size="small"
+                          sx={{
+                            fontSize: "0.7rem",
+                            height: "22px",
+                            bgcolor: "#f6d8ff",
+                            color: "#72037c",
+                            borderRadius: "5px",
+                            fontWeight: 600,
+                          }}
+                        />
+                      ) : null}
+                    </Stack>
+                    </Box>
 
 
 
