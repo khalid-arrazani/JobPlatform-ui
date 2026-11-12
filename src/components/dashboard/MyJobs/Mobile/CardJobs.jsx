@@ -364,18 +364,13 @@ export default function CardJobs() {
                           fontSize: "1rem",
                           fontWeight: 600,
                           fontFamily: "monospace",
-                          color: "#02020dbf",
+                          color: "#02020dcc",
                         }}
                       >
                         {job?.title || "-----------------------"}
                       </Typography>
-
-                      <Stack
-                        direction="row"
-                        spacing={1.5}
-                        sx={{ mt: 1, mb: 1 }}
-                      >
-                        <Typography
+                      
+                      <Typography
                           sx={{
                             fontSize: "0.8rem",
                             fontWeight: 600,
@@ -384,7 +379,15 @@ export default function CardJobs() {
                           }}
                         >
                           {job?.location || "---------------"}
-                        </Typography>
+                      </Typography>
+
+
+                      <Stack
+                        direction="row"
+                        spacing={1.5}
+                        
+                      >
+                        
 
                         {job.jobType ? (
                           <Chip
