@@ -293,8 +293,22 @@ export default function CardJobs() {
                   my: 2,
                   flexDirection: "column",
                 }}>
-                  <Box sx={{height:"6rem",width:"100%",bgcolor:"#ddd"}} >
-                    <Box></Box>
+                  <Box sx={{height:"6rem",width:"100%",bgcolor:"#fedede",display:"flex"}} >
+
+                    {/* Avatar */}
+                    <Box sx={{
+                      height: "100%",
+                      width: "6rem",
+                      display: "flex",
+                      justifyContent: "center",
+                      boxSizing: "border-box",
+                      py: "0.7rem",bgcolor:"#818080"
+                    }} ></Box>
+
+
+
+
+
                     <Box></Box>
                   </Box>
                   <Box></Box>
