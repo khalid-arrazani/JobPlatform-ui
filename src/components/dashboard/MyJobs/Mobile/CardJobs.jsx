@@ -293,7 +293,7 @@ export default function CardJobs() {
                   my: 2,
                   flexDirection: "column",
                 }}>
-                  <Box sx={{height:"6rem",width:"100%",bgcolor:"#fedede",display:"flex"}} >
+                  <Box sx={{height:"6rem",width:"100%", display:"flex"}} >
 
                     {/* Avatar */}
                     <Box sx={{
@@ -302,16 +302,17 @@ export default function CardJobs() {
                       display: "flex",
                       justifyContent: "center",
                       boxSizing: "border-box",
-                      py: "0.7rem",bgcolor:"#818080"
-                    }} >
+                      py: "0.7rem",
+                    }}>
 
                       <Avatar
                         src={job.createdBy?.companyLogo?.url}
                         sx={{
-                          width: "100%",
-                          height: "100%",
-                          borderRadius: "8px",
-                        }}
+                        width: "4.5rem",
+                        height: "4.5rem",
+                        borderRadius: "6px",
+                        border: "1px solid #ebebebca",
+                      }}
                       />
                     </Box>
 
