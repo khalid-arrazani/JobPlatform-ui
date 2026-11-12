@@ -293,7 +293,7 @@ export default function CardJobs() {
                   my: 2,
                   flexDirection: "column",
                 }}>
-                  <Box sx={{height:"6rem",width:"100%"}} >
+                  <Box sx={{height:"6rem",width:"100%",bgcolor:"#ddd"}} >
                     <Box></Box>
                     <Box></Box>
                   </Box>
