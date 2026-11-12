@@ -303,13 +303,30 @@ export default function CardJobs() {
                       justifyContent: "center",
                       boxSizing: "border-box",
                       py: "0.7rem",bgcolor:"#818080"
-                    }} ></Box>
+                    }} >
+
+                      <Avatar
+                        src={job.createdBy?.companyLogo?.url}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          borderRadius: "8px",
+                        }}
+                      />
+                    </Box>
+
+
+                    <Box   sx={{
+                      height: "auto",
+                      flex: 1,
+                      boxSizing: "border-box",
+                      py: "0.7rem",
+                    }}></Box>
 
 
 
 
 
-                    <Box></Box>
                   </Box>
                   <Box></Box>
 
