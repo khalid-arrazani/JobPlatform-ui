@@ -255,22 +255,21 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
         <DialogTitle
           sx={{
             fontSize: "1rem",
+            fontFamily:"monospace"
           }}
         >
           Update your Job
         </DialogTitle>
 
-        <Box sx={{ display: "flex", alignItems: "center", width: "25%" }}>
-          <img
-            src={logoTitle}
-            width={"30%"}
-            style={{ marginRight: "0.5rem" }}
-            alt=""
-          />
+
+
+
+        
+          
 
           <svg
-            width="80"
-            height="18"
+            width="100"
+            height="50"
             viewBox="0 0 80 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -280,7 +279,7 @@ const EditeJobModal = ({ open, setOpen,jobInfo }) => {
               fill="black"
             />
           </svg>
-        </Box>
+       
       </Box>
 
       <DialogContent>
