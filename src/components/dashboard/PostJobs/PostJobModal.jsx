@@ -132,8 +132,6 @@ const currencies = [
   "ZAR ",
 ];
 
-
-
 import PostJobModalMobile from "./mobile/PostJobModalMobile";
 import PostJobModalDesktop from "./Desktop/PostJobModalDesktop";
 
@@ -143,7 +141,7 @@ import { useAuth } from "../../../logic/context/AuthContext";
 import { createJob } from "../../../logic/api/job/Job";
 
 const PostJobModal = ({ open, setOpen }) => {
-  const { dispatch } = useProfile();
+  const {dispatch , ...state  } = useProfile();
 
   const { setSnackBar } = useAuth();
 
@@ -282,7 +280,25 @@ const PostJobModal = ({ open, setOpen }) => {
 
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  return <>{isMobile ? <PostJobModalMobile /> : <PostJobModalDesktop />}</>;
+  return (
+    <>
+      {isMobile ? (
+        <PostJobModalMobile
+         skillOptions={skillOptions}
+         currencies={currencies}
+         jobData={jobData}
+         setJobData={setJobData}
+         handleChange={handleChange}
+         handleClose={handleClose}
+         handleSubmit={handleSubmit}
+         handleSubmitDraft={handleSubmitDraft}  
+         handleSubmit={handleSubmit}  
+          />
+      ) : (
+        <PostJobModalDesktop />
+      )}
+    </>
+  );
 };
 
 export default PostJobModal;
