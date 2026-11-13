@@ -144,6 +144,7 @@ import {
   Chip,
   Autocomplete,
   CircularProgress,
+  Modal
 } from "@mui/material";
 
 import logoTitle from "../../../../../assets/Logo/logo.png";
@@ -318,34 +319,40 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
   };
 
   return (
-    <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+    <Modal open={open} onClose={handleClose}>
       <Box
         sx={{
+          width: "100%",
+          bgcolor: "#fff",
+          height: "100%",
+          boxSizing: "border-box",
           display: "flex",
-          alignItems: "center",
-          width: "55%",
-          justifyContent: "space-between",
+          flexDirection: "column",
         }}
       >
-        <DialogTitle
+        <Box
           sx={{
-            fontSize: "1rem",
+            display: "flex",
+            alignItems: "center",
+            width: "100%",
+            justifyContent: "space-between",
+            px: 1.3,
+            boxSizing: "border-box",
           }}
         >
-          Post New Job
-        </DialogTitle>
-
-        <Box sx={{ display: "flex", alignItems: "center", width: "25%" }}>
-          <img
-            src={logoTitle}
-            width={"30%"}
-            style={{ marginRight: "0.5rem" }}
-            alt=""
-          />
+          <Typography
+            sx={{
+              fontSize: "1.2rem",
+              fontFamily: "monospace",
+              fontWeight: 600,
+            }}
+          >
+            Update your Job
+          </Typography>
 
           <svg
             width="80"
-            height="18"
+            height="50"
             viewBox="0 0 80 18"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -356,313 +363,349 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
             />
           </svg>
         </Box>
-      </Box>
 
-      <DialogContent>
-        {/* Job Title */}
-        <Box sx={{ mt: 1, mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Job Title *</Typography>
-
-          <TextField
-            fullWidth
-            size="small"
-            name="title"
-            placeholder="Frontend Developer"
-            value={jobData.title}
-            onChange={handleChange}
-          />
-        </Box>
-
-        {/* Description */}
-        <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
-            Job Description *
-          </Typography>
-          <TextField
-            fullWidth
-            size="small"
-            multiline
-            rows={4}
-            name="description"
-            placeholder="Describe the role, responsibilities and requirements..."
-            value={jobData.description}
-            onChange={handleChange}
-          />
-        </Box>
-
-        {/* Location */}
-        <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Location *</Typography>
-
-          <TextField
-            fullWidth
-            size="small"
-            name="location"
-            placeholder="Agadir, Morocco"
-            value={jobData.location}
-            onChange={handleChange}
-          />
-        </Box>
-
-        {/* Salary */}
-        <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 1, fontWeight: 600 }}>Salary</Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              gap: 1.5,
-              flexWrap: "wrap",
-            }}
-          >
-            {/* Min Salary */}
-            <TextField
-              size="small"
-              label="Min Salary"
-              name="minSalary"
-              type="number"
-              value={jobData.minSalary || ""}
-              onChange={handleChange}
-              sx={{ flex: 1, minWidth: "120px" }}
-            />
-
-            {/* Max Salary */}
-            <TextField
-              size="small"
-              label="Max Salary"
-              name="maxSalary"
-              type="number"
-              value={jobData.maxSalary || ""}
-              onChange={handleChange}
-              sx={{ flex: 1, minWidth: "120px" }}
-            />
-
-            {/* Currency */}
-            <Autocomplete
-              size="small"
-              options={currencies}
-              slotProps={{
-                popper: { sx: { transition: "none", animation: "none", m: 5 } },
-              }}
-              value={jobData.salaryCurrency || null}
-              onChange={(e, value) =>
-                setJobData({
-                  ...jobData,
-                  salaryCurrency: value,
-                })
-              }
-              sx={{ width: 130 }}
-              renderInput={(params) => (
-                <TextField {...params} label="Currency" />
-              )}
-            />
-
-            {/* Monthly / Yearly */}
-            <Autocomplete
-              size="small"
-              options={["Per Month", "Per Year"]}
-              value={jobData.salaryPeriod || null}
-              onChange={(e, value) =>
-                setJobData({
-                  ...jobData,
-                  salaryPeriod: value,
-                })
-              }
-              slotProps={{
-                popper: { sx: { transition: "none", animation: "none", m: 5 } },
-              }}
-              sx={{ width: 180 }}
-              renderInput={(params) => <TextField {...params} label="Period" />}
-            />
-          </Box>
-        </Box>
-
-        {/* Job Type & Work Mode */}
-        <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
-            Employment Details
-          </Typography>
-
-          <Box
-            sx={{
-              display: "flex",
-              gap: 2,
-              justifyContent: "space-between",
-            }}
-          >
-            <Autocomplete
-              sx={{ width: "48%" }}
-              size="small"
-              slotProps={{
-                popper: { sx: { transition: "none", animation: "none", m: 5 } },
-              }}
-              options={[
-                "Full-time",
-                "Part-time",
-                "Contract",
-                "Internship",
-                "Freelance",
-                "Temporary",
-              ]}
-              value={jobData.jobType}
-              onChange={(e, value) =>
-                setJobData({
-                  ...jobData,
-                  jobType: value,
-                })
-              }
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Job Type"
-                  placeholder="Select job type"
-                />
-              )}
-            />
-
-            <Autocomplete
-              sx={{ width: "48%" }}
-              size="small"
-              slotProps={{
-                popper: { sx: { transition: "none", animation: "none", m: 5 } },
-              }}
-              options={["Remote", "Hybrid", "On-site"]}
-              value={jobData.workMode}
-              onChange={(e, value) =>
-                setJobData({
-                  ...jobData,
-                  workMode: value,
-                })
-              }
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Work Mode"
-                  placeholder="Select work mode"
-                />
-              )}
-            />
-          </Box>
-        </Box>
-
-        {/* Experience Level */}
-        <Box sx={{ mb: 2 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>
-            Experience Level *
-          </Typography>
-
-          <Autocomplete
-            size="small"
-            sx={{ maxWidth: "50%" }}
-            options={["Junior", "Mid", "Senior"]}
-            slotProps={{
-              popper: { sx: { transition: "none", animation: "none", m: 5 } },
-            }}
-            value={jobData.experienceLevel}
-            onChange={(e, value) =>
-              setJobData({
-                ...jobData,
-                experienceLevel: value,
-              })
-            }
-            renderInput={(params) => (
-              <TextField {...params} placeholder="Select level" />
-            )}
-          />
-        </Box>
-
-        {/* Skills */}
-        <Box sx={{ mb: 1 }}>
-          <Typography sx={{ mb: 0.5, fontWeight: 600 }}>Skills *</Typography>
-
-          <Autocomplete
-            multiple
-            size="small"
-            freeSolo
-            slotProps={{
-              popper: { sx: { transition: "none", animation: "none", m: 5 } },
-            }}
-            options={skillOptions}
-            value={jobData.skills}
-            onChange={(e, value) =>
-              setJobData({
-                ...jobData,
-                skills: value,
-              })
-            }
-            renderTags={(value, getTagProps) =>
-              value.map((option, index) => (
-                <Chip label={option} {...getTagProps({ index })} key={index} />
-              ))
-            }
-            renderInput={(params) => (
-              <TextField {...params} placeholder="Add skills..." />
-            )}
-          />
-        </Box>
-      </DialogContent>
-
-      <DialogActions sx={{ p: 2 }}>
-        <Button
-          variant="contained"
-          disabled={state.isLoadingUptadeProfile}
+        <Box
           sx={{
-            width: "15%",
-            height: "2.5rem",
-            position: "absolute",
-            left: 10,
-            bgcolor: "#FFF7E6",
-            color: "#A16207",
-            border: "1px solid #F5D58B",
-            "&:hover": {
-              bgcolor: "#FDECC8",
-            },
+            flex: 1,
+            overflow: "auto",
+            px: 1.3,
+            boxSizing: "border-box",
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "space-between",
           }}
-          onClick={handleSubmitDraft}
         >
-          {state.isLoadingUptadeProfile ? (
-            <CircularProgress
-              aria-label="Loading…"
-              size={30}
-              sx={{
-                color: green[800],
-                position: "absolute",
-              }}
-            />
-          ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              New Draft
-            </Box>
-          )}
-        </Button>
+          <Box>
+            {/* Job Title */}
+            <Box sx={{ mt: 1, mb: 2 }}>
+              <Typography
+                sx={{ mb: 0.5, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Job Title *
+              </Typography>
 
-        <Button onClick={handleClose} variant="outlined">
-          Cancel
-        </Button>
-
-        <Button
-          variant="contained"
-          disabled={state.isLoadingUptadeProfile}
-          sx={{ width: "15%", height: "2.5rem" }}
-          onClick={handleSubmit}
-        >
-          {state.isLoadingUptadeProfile ? (
-            <CircularProgress
-              aria-label="Loading…"
-              size={30}
-              sx={{
-                color: green[800],
-                position: "absolute",
-              }}
-            />
-          ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>
-              Post Job
+              <TextField
+                fullWidth
+                size="small"
+                name="title"
+                placeholder="Frontend Developer"
+                value={jobData.title}
+                onChange={handleChange}
+                sx={{ fontFamily: "monospace" }}
+              />
             </Box>
-          )}
-        </Button>
-      </DialogActions>
-    </Dialog>
+
+            {/* Description */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                sx={{ mb: 0.5, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Job Description *
+              </Typography>
+              <TextField
+                fullWidth
+                size="small"
+                multiline
+                rows={4}
+                name="description"
+                placeholder="Describe the role, responsibilities and requirements..."
+                value={jobData.description}
+                onChange={handleChange}
+              />
+            </Box>
+
+            {/* Location */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                sx={{ mb: 0.5, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Location *
+              </Typography>
+
+              <TextField
+                fullWidth
+                size="small"
+                name="location"
+                placeholder="Agadir, Morocco"
+                value={jobData.location}
+                onChange={handleChange}
+              />
+            </Box>
+
+            {/* Salary */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                sx={{ mb: 1, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Salary
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 1.5,
+                  flexWrap: "wrap",
+                }}
+              >
+                {/* Min Salary */}
+                <TextField
+                  size="small"
+                  label="Min Salary"
+                  name="minSalary"
+                  type="number"
+                  value={jobData.minSalary || ""}
+                  onChange={handleChange}
+                  sx={{ flex: 1, minWidth: "120px", fontFamily: "monospace" }}
+                />
+
+                {/* Max Salary */}
+                <TextField
+                  size="small"
+                  label="Max Salary"
+                  name="maxSalary"
+                  type="number"
+                  value={jobData.maxSalary || ""}
+                  onChange={handleChange}
+                  sx={{ flex: 1, minWidth: "120px", fontFamily: "monospace" }}
+                />
+
+                {/* Currency */}
+                <Autocomplete
+                  size="small"
+                  options={currencies}
+                  slotProps={{
+                    popper: {
+                      sx: { transition: "none", animation: "none", m: 5 },
+                    },
+                  }}
+                  value={jobData.salaryCurrency || null}
+                  onChange={(e, value) =>
+                    setJobData({
+                      ...jobData,
+                      salaryCurrency: value,
+                    })
+                  }
+                  sx={{ width: 130 }}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Currency" />
+                  )}
+                />
+
+                {/* Monthly / Yearly */}
+                <Autocomplete
+                  size="small"
+                  options={["Per Month", "Per Year"]}
+                  value={jobData.salaryPeriod || null}
+                  onChange={(e, value) =>
+                    setJobData({
+                      ...jobData,
+                      salaryPeriod: value,
+                    })
+                  }
+                  slotProps={{
+                    popper: {
+                      sx: { transition: "none", animation: "none", m: 5 },
+                    },
+                  }}
+                  sx={{ width: 180 }}
+                  renderInput={(params) => (
+                    <TextField {...params} label="Period" />
+                  )}
+                />
+              </Box>
+            </Box>
+
+            {/* Job Type & Work Mode */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                sx={{ mb: 1, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Employment Details
+              </Typography>
+
+              <Box
+                sx={{
+                  display: "flex",
+                  gap: 2,
+                  justifyContent: "space-between",
+                }}
+              >
+                <Autocomplete
+                  sx={{ width: "48%" }}
+                  size="small"
+                  slotProps={{
+                    popper: {
+                      sx: { transition: "none", animation: "none", m: 5 },
+                    },
+                  }}
+                  options={[
+                    "Full-time",
+                    "Part-time",
+                    "Contract",
+                    "Internship",
+                    "Freelance",
+                    "Temporary",
+                  ]}
+                  value={jobData.jobType}
+                  onChange={(e, value) =>
+                    setJobData({
+                      ...jobData,
+                      jobType: value,
+                    })
+                  }
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Job Type"
+                      placeholder="Select job type"
+                    />
+                  )}
+                />
+
+                <Autocomplete
+                  sx={{ width: "48%" }}
+                  size="small"
+                  slotProps={{
+                    popper: {
+                      sx: { transition: "none", animation: "none", m: 5 },
+                    },
+                  }}
+                  options={["Remote", "Hybrid", "On-site"]}
+                  value={jobData.workMode}
+                  onChange={(e, value) =>
+                    setJobData({
+                      ...jobData,
+                      workMode: value,
+                    })
+                  }
+                  renderInput={(params) => (
+                    <TextField
+                      {...params}
+                      label="Work Mode"
+                      placeholder="Select work mode"
+                    />
+                  )}
+                />
+              </Box>
+            </Box>
+
+            {/* Experience Level */}
+            <Box sx={{ mb: 2 }}>
+              <Typography
+                sx={{ mb: 1, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Experience Level *
+              </Typography>
+
+              <Autocomplete
+                size="small"
+                sx={{ maxWidth: "50%" }}
+                options={["Junior", "Mid", "Senior"]}
+                slotProps={{
+                  popper: {
+                    sx: { transition: "none", animation: "none", m: 5 },
+                  },
+                }}
+                value={jobData.experienceLevel}
+                onChange={(e, value) =>
+                  setJobData({
+                    ...jobData,
+                    experienceLevel: value,
+                  })
+                }
+                renderInput={(params) => (
+                  <TextField {...params} placeholder="Select level" />
+                )}
+              />
+            </Box>
+
+            {/* Skills */}
+            <Box sx={{ mb: 1 }}>
+              <Typography
+                sx={{ mb: 0.5, fontWeight: 600, fontFamily: "monospace" }}
+              >
+                Skills *
+              </Typography>
+
+              <Autocomplete
+                multiple
+                size="small"
+                freeSolo
+                slotProps={{
+                  popper: {
+                    sx: { transition: "none", animation: "none", m: 5 },
+                  },
+                }}
+                options={skillOptions}
+                value={jobData.skills}
+                onChange={(e, value) =>
+                  setJobData({
+                    ...jobData,
+                    skills: value,
+                  })
+                }
+                renderTags={(value, getTagProps) =>
+                  value.map((option, index) => (
+                    <Chip
+                      sx={{ fontFamily: "monospace" }}
+                      label={option}
+                      {...getTagProps({ index })}
+                      key={index}
+                    />
+                  ))
+                }
+                renderInput={(params) => (
+                  <TextField {...params} placeholder="Add skills..." />
+                )}
+              />
+            </Box>
+          </Box>
+
+          <Box
+            sx={{
+              width: "100%",
+              display: "flex",
+              justifyContent: "end",
+             
+              gap:2,height:'6rem',alignItems:"center"
+            }}
+          >
+            <Box>
+            <Button
+              sx={{ fontFamily: "monospace" }}
+              onClick={handleClose}
+              variant="outlined"
+            >
+              Cancel
+            </Button>
+
+            <Button
+              variant="contained"
+              disabled={state.isLoadingUptadeProfile}
+              sx={{ width: "8rem",  textTransform:"none",fontFamily:"monospace" }}
+              onClick={handleSubmit}
+            >
+              {state.isLoadingUptadeProfile ? (
+                <CircularProgress
+                  aria-label="Loading…"
+                  size={30}
+                  sx={{
+                    color: green[800],
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  Update Info
+                </Box>
+              )}
+            </Button>
+            </Box>
+
+          </Box>
+        </Box>
+      </Box>
+    </Modal>
   );
 };
 
