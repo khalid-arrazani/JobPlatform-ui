@@ -134,22 +134,18 @@ const currencies = [
 
 
 
-
-import { createJob } from "../../logic/api/job/Job";
-import { useAuth } from "../../logic/context/AuthContext";
-import { useProfile } from "../../logic/context/profileContext";
-
 import PostJobModalMobile from "./mobile/PostJobModalMobile";
 import PostJobModalDesktop from "./Desktop/PostJobModalDesktop";
 
 import { useMediaQuery } from "@mui/material";
-
+import { useProfile } from "../../../logic/context/profileContext";
+import { useAuth } from "../../../logic/context/AuthContext";
+import { createJob } from "../../../logic/api/job/Job";
 
 const PostJobModal = ({ open, setOpen }) => {
-  const { dispatch} = useProfile();
+  const { dispatch } = useProfile();
 
   const { setSnackBar } = useAuth();
-
 
   const [jobData, setJobData] = useState({
     title: "",
@@ -269,7 +265,6 @@ const PostJobModal = ({ open, setOpen }) => {
         payload: true,
       });
     } catch (error) {
-      
       setSnackBar({
         open: true,
         message: error.response?.data.message,
@@ -287,11 +282,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
   const isMobile = useMediaQuery("(max-width:600px)");
 
-  return <>
-
-    { isMobile?  <PostJobModalMobile/>
-              : <PostJobModalDesktop/>}
-  </>
+  return <>{isMobile ? <PostJobModalMobile /> : <PostJobModalDesktop />}</>;
 };
 
 export default PostJobModal;
