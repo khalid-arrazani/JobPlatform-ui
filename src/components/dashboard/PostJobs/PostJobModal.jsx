@@ -141,7 +141,7 @@ import { useAuth } from "../../../logic/context/AuthContext";
 import { createJob } from "../../../logic/api/job/Job";
 
 const PostJobModal = ({ open, setOpen }) => {
-  const {dispatch , ...state  } = useProfile();
+  const { dispatch, ...state } = useProfile();
 
   const { setSnackBar } = useAuth();
 
@@ -284,18 +284,28 @@ const PostJobModal = ({ open, setOpen }) => {
     <>
       {isMobile ? (
         <PostJobModalMobile
-         skillOptions={skillOptions}
-         currencies={currencies}
-         jobData={jobData}
-         setJobData={setJobData}
-         handleChange={handleChange}
-         handleClose={handleClose}
-         handleSubmit={handleSubmit}
-         handleSubmitDraft={handleSubmitDraft}  
-         handleSubmit={handleSubmit}  
-          />
+          skillOptions={skillOptions}
+          currencies={currencies}
+          jobData={jobData}
+          setJobData={setJobData}
+          handleChange={handleChange}
+          handleClose={handleClose}
+          handleSubmit={handleSubmit}
+          handleSubmitDraft={handleSubmitDraft}
+          state={state}
+        />
       ) : (
-        <PostJobModalDesktop />
+        <PostJobModalDesktop
+          skillOptions={skillOptions}
+          currencies={currencies}
+          jobData={jobData}
+          setJobData={setJobData}
+          handleChange={handleChange}
+          handleClose={handleClose}
+          handleSubmit={handleSubmit}
+          handleSubmitDraft={handleSubmitDraft}
+          state={state}
+        />
       )}
     </>
   );
