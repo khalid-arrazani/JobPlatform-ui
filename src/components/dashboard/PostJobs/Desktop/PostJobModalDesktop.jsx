@@ -152,7 +152,7 @@ import { useAuth } from "../../logic/context/AuthContext";
 import { useProfile } from "../../logic/context/profileContext";
 import { green } from "@mui/material/colors";
 
-const PostJobModal = ({ open, setOpen }) => {
+const PostJobModalDesktop = ({ open, setOpen }) => {
   const { dispatch, ...state } = useProfile();
 
   const { setSnackBar } = useAuth();
@@ -638,4 +638,4 @@ const PostJobModal = ({ open, setOpen }) => {
   );
 };
 
-export default PostJobModal;
+export default PostJobModalDesktop;
