@@ -660,17 +660,45 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
               />
             </Box>
           </Box>
+          
 
           <Box
             sx={{
               width: "100%",
               display: "flex",
-              justifyContent: "end",
+              justifyContent: "space-between",
              
               gap:2,height:'6rem',alignItems:"center"
             }}
           >
-            <Box>
+            <Button
+              variant="contained"
+              disabled={state.isLoadingUptadeProfile}
+              sx={{ width: "8rem",  textTransform:"none",fontFamily:"monospace" }}
+              onClick={handleSubmit}
+            >
+              {state.isLoadingUptadeProfile ? (
+                <CircularProgress
+                  aria-label="Loading…"
+                  size={30}
+                  sx={{
+                    color: green[800],
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  Update Info
+                </Box>
+              )}
+            </Button>
+            <Box  sx={{
+              width: "auto",
+              display: "flex",
+              justifyContent: "end",
+             
+              gap:1,height:'6rem',alignItems:"center"
+            }}>
             <Button
               sx={{ fontFamily: "monospace" }}
               onClick={handleClose}
@@ -701,6 +729,9 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
               )}
             </Button>
             </Box>
+            
+
+
 
           </Box>
         </Box>
