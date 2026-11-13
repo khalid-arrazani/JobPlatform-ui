@@ -307,6 +307,8 @@ const PostJobModal = ({ open, setOpen }) => {
           handleSubmit={handleSubmit}
           handleSubmitDraft={handleSubmitDraft}
           state={state}
+          open={open}
+          setOpen={setOpen}
         />
       )}
     </>

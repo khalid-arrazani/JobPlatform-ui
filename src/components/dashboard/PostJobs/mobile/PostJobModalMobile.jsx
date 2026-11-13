@@ -149,7 +149,7 @@ import {
 import logoTitle from "../../assets/Logo/logo.png";
 import { green } from "@mui/material/colors";
 
-const PostJobModalMobile = ({ open, setOpen }) => {
+const PostJobModalMobile = ({ open, setOpen,handleClose, jobData,handleChange}) => {
 
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
