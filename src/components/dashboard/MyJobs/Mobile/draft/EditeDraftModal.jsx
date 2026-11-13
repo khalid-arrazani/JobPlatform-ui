@@ -144,7 +144,7 @@ import {
   Chip,
   Autocomplete,
   CircularProgress,
-  Modal
+  Modal,
 } from "@mui/material";
 
 import logoTitle from "../../../../../assets/Logo/logo.png";
@@ -660,79 +660,93 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
               />
             </Box>
           </Box>
-          
 
           <Box
             sx={{
               width: "100%",
               display: "flex",
               justifyContent: "space-between",
-             
-              gap:2,height:'6rem',alignItems:"center"
+
+              gap: 2,
+              height: "6rem",
+              alignItems: "center",
             }}
           >
             <Button
-              variant="contained"
-              disabled={state.isLoadingUptadeProfile}
-              sx={{ width: "8rem",  textTransform:"none",fontFamily:"monospace" }}
-              onClick={handleSubmit}
-            >
-              {state.isLoadingUptadeProfile ? (
-                <CircularProgress
-                  aria-label="Loading…"
-                  size={30}
-                  sx={{
-                    color: green[800],
-                    position: "absolute",
-                  }}
-                />
-              ) : (
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  Update Info
-                </Box>
-              )}
-            </Button>
-            <Box  sx={{
-              width: "auto",
-              display: "flex",
-              justifyContent: "end",
-             
-              gap:1,height:'6rem',alignItems:"center"
-            }}>
-            <Button
-              sx={{ fontFamily: "monospace" }}
-              onClick={handleClose}
-              variant="outlined"
-            >
-              Cancel
-            </Button>
-
-            <Button
-              variant="contained"
-              disabled={state.isLoadingUptadeProfile}
-              sx={{ width: "8rem",  textTransform:"none",fontFamily:"monospace" }}
-              onClick={handleSubmit}
-            >
-              {state.isLoadingUptadeProfile ? (
-                <CircularProgress
-                  aria-label="Loading…"
-                  size={30}
-                  sx={{
-                    color: green[800],
-                    position: "absolute",
-                  }}
-                />
-              ) : (
-                <Box sx={{ display: "flex", justifyContent: "center" }}>
-                  Update Info
-                </Box>
-              )}
-            </Button>
-            </Box>
             
+              disabled={state.isLoadingUptadeProfile}
+              sx={{
+                width: "8rem",
+                height: "2.5rem",
+                
+                bgcolor: "#FFF7E6",
+                color: "#A16207",
+                border: "1px solid #F5D58B",
+                textTransform:"none",
+              }}
+              onClick={handleSubmitDraft}
+            >
+              {state.isLoadingUptadeProfile ? (
+                <CircularProgress
+                  aria-label="Loading…"
+                  size={30}
+                  sx={{
+                    color: green[800],
+                    position: "absolute",
+                  }}
+                />
+              ) : (
+                <Box sx={{ display: "flex", justifyContent: "center" }}>
+                  New Draft
+                </Box>
+              )}
+            </Button>
 
+            <Box
+              sx={{
+                width: "auto",
+                display: "flex",
+                justifyContent: "end",
 
+                gap: 1,
+                height: "6rem",
+                alignItems: "center",
+              }}
+            >
+              <Button
+                sx={{ fontFamily: "monospace" }}
+                onClick={handleClose}
+                variant="outlined"
+              >
+                Cancel
+              </Button>
 
+              <Button
+                variant="contained"
+                disabled={state.isLoadingUptadeProfile}
+                sx={{
+                  width: "8rem",
+                  textTransform: "none",
+                  fontFamily: "monospace",
+                }}
+                onClick={handleSubmit}
+              >
+                {state.isLoadingUptadeProfile ? (
+                  <CircularProgress
+                    aria-label="Loading…"
+                    size={30}
+                    sx={{
+                      color: green[800],
+                      position: "absolute",
+                    }}
+                  />
+                ) : (
+                  <Box sx={{ display: "flex", justifyContent: "center" }}>
+                    Update Info
+                  </Box>
+                )}
+              </Button>
+            </Box>
           </Box>
         </Box>
       </Box>
