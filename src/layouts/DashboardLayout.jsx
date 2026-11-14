@@ -4,6 +4,7 @@ import { Box } from "@mui/material";
 import { useProfile } from "../logic/context/profileContext.jsx";
 import { useEffect } from "react";
 import Navbar from "../components/NavBar/Navbar.jsx";
+import PostJobModal from "../components/dashboard/PostJobs/PostJobModal.jsx";
 
 
 export default function DashboardLayout({ children }) {
@@ -41,10 +42,10 @@ export default function DashboardLayout({ children }) {
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          // borderBottom: "solid 2px #b3afaf3e",
         }}
       >
         <Navbar/>
+        <PostJobModal/>
       </Box>
 
       {children}
