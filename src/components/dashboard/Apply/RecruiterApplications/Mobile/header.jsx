@@ -133,7 +133,8 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
            
               fontSize:"0.8rem",fontFamily:'monospace'
 
