@@ -10,25 +10,15 @@ import {
 
 import MoreVertIcon from "@mui/icons-material/MoreVert";
 
- 
-import ScheduleSendIcon from '@mui/icons-material/ScheduleSend';
-
+import ScheduleSendIcon from "@mui/icons-material/ScheduleSend";
 
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
- 
+
 import SelectStatus from "./selectStatus";
 
-
-
-
-
-
-
-export default function MenuApply({ JobId,ApplyId,status}) {
-    const navigate = useNavigate();
-  
- 
+export default function MenuApply({ JobId, ApplyId, status }) {
+  const navigate = useNavigate();
 
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -38,28 +28,19 @@ export default function MenuApply({ JobId,ApplyId,status}) {
     setAnchorEl(event.currentTarget);
   };
 
-
-
   const handleClose = () => {
     setAnchorEl(null);
   };
 
- 
- 
   return (
     <>
- 
-
-
       <IconButton
         onClick={(e) => handleOpen(e, JobId)}
-       
-        style={{padding:2}} 
-        
+        style={{ padding: 2 }}
         sx={{
-          ":hover": { bgcolor: "#dddddd00"
-           }
-           ,bgcolor:"#f5f5f5",borderRadius:"5px",
+          ":hover": { bgcolor: "#dddddd00" },
+          bgcolor: "#f5f5f5",
+          borderRadius: "5px",
         }}
       >
         <MoreVertIcon />
@@ -88,31 +69,25 @@ export default function MenuApply({ JobId,ApplyId,status}) {
           },
         }}
       >
-        <MenuItem onClick={ ()=> navigate(`/Dashboard/Jobs/Details/${JobId}`)}>
+        <MenuItem onClick={() => navigate(`/Dashboard/Jobs/Details/${JobId}`)}>
           <ListItemIcon>
-         <VisibilityOutlinedIcon fontSize="small" />
-
+            <VisibilityOutlinedIcon fontSize="small" />
           </ListItemIcon>
           View Job
         </MenuItem>
-        
-        
-        
+
         <Divider sx={{ my: 0.5 }} />
-        
-        <MenuItem
-       
-          sx={{ color: "error.main" }}
-        >
+
+        <MenuItem sx={{ color: "error.main" }}>
           <ListItemIcon>
-            <ScheduleSendIcon  />
+            <ScheduleSendIcon />
           </ListItemIcon>
-          < SelectStatus  ApplyId={ApplyId} nowStatus={status} setAnchorEl={setAnchorEl} />
+          <SelectStatus
+            ApplyId={ApplyId}
+            nowStatus={status}
+            setAnchorEl={setAnchorEl}
+          />
         </MenuItem>
-
-        
-
-       
       </Menu>
     </>
   );
