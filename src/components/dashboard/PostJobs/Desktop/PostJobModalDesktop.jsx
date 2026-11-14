@@ -19,8 +19,6 @@ import { green } from "@mui/material/colors";
 
 const PostJobModalDesktop = ({ open,handleClose, jobData,setJobData,handleChange,state,handleSubmitDraft,handleSubmit,skillOptions,currencies}) => {
   
-  
-
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
       <Box
