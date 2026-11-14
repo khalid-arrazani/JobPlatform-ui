@@ -64,7 +64,7 @@ export default function Header() {
           </Box>
 
           {/* Right */}
-          <Box
+          {/* <Box
             sx={{
               display: "flex",
               gap: 2,
@@ -98,7 +98,7 @@ export default function Header() {
                 <TextField {...params} placeholder="Sort by" />
               )}
             />
-          </Box>
+          </Box> */}
         </Box>
 
 
