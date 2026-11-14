@@ -1,12 +1,13 @@
 import { Box, Avatar, Typography, Chip } from "@mui/material";
-import { useApply } from "../../../../logic/context/ApplyContext";
+
 
 
 import Person2Icon from "@mui/icons-material/Person2";
+import { useApply } from "../../../../../logic/context/ApplyContext";
 
 export default function Profile() {
   const { Profile } = useApply();
-  console.log(Profile);
+
 
   return (
     <>

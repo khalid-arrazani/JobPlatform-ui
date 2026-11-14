@@ -1,33 +1,27 @@
-import { Box} from "@mui/material";
+import { Box } from "@mui/material";
 
 import { Pagination } from "@mui/material";
 
-import { useEffect} from "react";
+import { useEffect } from "react";
 
-import Header from "./header";
-import ListGrid from "./ListGrid";
-import { useApply } from "../../../../logic/context/ApplyContext";
+import Header from "../header";
+import ListGrid from "../ListGrid";
+
 import LoadingList from "./LoadingList";
-import Profile from "./ProfileCard";
+import Profile from "../ProfileCard";
+import { useApply } from "../../../../../logic/context/ApplyContext";
 
-export default function ApplicationsRc() {
+export default function ApplicationsDesktopRc() {
   const { isLoading, ApplyJobs, felterData, setFelterData, ...state } =
     useApply();
 
-
-
-    
   const handleChange = (event, value) => {
     setFelterData((prev) => ({ ...prev, page: value }));
   };
 
-
-  
   useEffect(() => {
     ApplyJobs();
   }, []);
-
-
 
   return (
     <>
@@ -79,10 +73,7 @@ export default function ApplicationsRc() {
         </Box>
 
         {/* right side profile card  */}
-        <Profile/>
-
-
-
+        <Profile />
       </Box>
     </>
   );

@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
-import { useApply } from "../../../../../logic/context/ApplyContext";
+import { useApply } from "../../../../../../logic/context/ApplyContext";
+
 
 export default function NoApplyFound() {
     const {felterData} = useApply()
