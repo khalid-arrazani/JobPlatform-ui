@@ -17,13 +17,14 @@ export default function Header() {
     <>
       <Box
         sx={{
-          height: "30%",
+          height: "fit-content",
           width: "100%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
           boxSizing: "border-box",
           pt: 1,
+          gap:1
         }}
       >
         <Box
@@ -57,7 +58,7 @@ export default function Header() {
               sx={{
                 mt: 1,
                 color: "#64748B",
-                fontSize: "0.95rem",
+                fontSize: "0.88rem", fontFamily:"monospace"
               }}
             >
               Review and mange applications for your job posts
