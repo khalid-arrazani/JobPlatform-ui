@@ -13,11 +13,12 @@ import { useProfile } from "../logic/context/profileContext.jsx";
 import MyJobsPage from "../components/dashboard/MyJobs/MyJobsPage.jsx";
 import ApplicationsJs from "../components/dashboard/Apply/JoobSeekerApplications/ApplicationsPage.jsx";
 import { useAuth } from "../logic/context/AuthContext.jsx";
-import ApplicationsRc from "../components/dashboard/Apply/RecruiterApplications/ApplicationsPage.jsx";
+ 
 
 import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.jsx";
 import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDetailsPage.jsx";
 import JobDetails from "../components/dashboard/JobDetails/JobDetails.jsx";
+import RecruiterApplicationsPage from "../components/dashboard/Apply/RecruiterApplications/RecruiterApplicationsPage.jsx";
  
  
 
@@ -47,7 +48,7 @@ export default function DashboardPage() {
 
         <Route path="Profile/Details/:ProfileId/:Role" element={<ProfileDetails />} />    
     
-        <Route path="Applications" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <ApplicationsRc /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
+        <Route path="Applications" element={state.isLoading ? <LoadingPage/> : ( checkRole == "recruiter"  ?  <RecruiterApplicationsPage /> : checkRole == "jobSeeker"  ?  <ApplicationsJs />:null  )  } />
        
         <Route path="My_Company" element={state.isLoading ? <LoadingPage/> : ( state.user?.hasCompany  ?  <CompanyPage /> :  <CreateCompanyPage /> )  } />
 
