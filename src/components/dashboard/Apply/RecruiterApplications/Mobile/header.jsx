@@ -250,13 +250,15 @@ export default function Header() {
             height: "7rem",
             display: "flex",
             flexDirection: "column",
+            gap:1
           }}
         >
+
           <Box
             sx={{
               width: "100%",
-              height: "50%",
-              bgcolor: "#741616",
+              height: "fit-content",
+      
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -264,22 +266,23 @@ export default function Header() {
               px: 1,
             }}
           >
+
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px"}}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
           </Box>
 
           <Box
             sx={{
               width: "100%",
-              height: "50%",
-              bgcolor: "#741616",
+              height: "fit-content",
+             
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -288,13 +291,13 @@ export default function Header() {
             }}
           >
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
           </Box>
         </Box>
