@@ -135,10 +135,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 5,
               minWidth:5,
-           
-              fontSize:"0.8rem",fontFamily:'monospace'
-
-              ,"& .MuiButtonBase-root":{minHeight:"1px"}
+              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
             }}
           />
 
@@ -150,15 +147,17 @@ export default function Header() {
                 <Chip
                   label={state?.ListApply?.countPending || 0}
                   size="small"
-                  sx={{ color: "#F59E0B", bgcolor: "#FEF3C7" }}
+                  sx={{ color: "#F59E0B", bgcolor: "#FEF3C7",fontSize:"0.7rem" }}
                 />
               </Box>
             }
             value={"Pending"}
-            sx={{
+           sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
+              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
             }}
           />
 
@@ -175,10 +174,12 @@ export default function Header() {
                 />
               </Box>
             }
-            sx={{
+           sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
+              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
             }}
           />
 
