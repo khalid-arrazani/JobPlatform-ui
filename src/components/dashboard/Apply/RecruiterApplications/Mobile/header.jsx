@@ -23,7 +23,7 @@ export default function Header() {
           flexDirection: "column",
           justifyContent: "space-between",
           boxSizing: "border-box",
-          pt: 4,
+          pt: 1,
         }}
       >
         <Box
@@ -46,7 +46,8 @@ export default function Header() {
               sx={{
                 fontSize: "1.4rem",
                 fontWeight: 700,
-                color: "#0F172A",
+                color: "#03060ec4",
+                fontFamily:"monospace"
               }}
             >
              Applications
