@@ -124,7 +124,7 @@ export default function Header() {
             width:"100%",p:0,
             
             
-            "& .css-rvn5oh-MuiTabs-root":{height:1}
+            "& .css-rvn5oh-MuiTabs-root":{height:1},overflow:"auto"
           }}
         >
           <Tab
@@ -135,7 +135,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 5,
               minWidth:5,
-              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
+              fontSize:"0.7rem",fontFamily:'monospace', padding:.5
             }}
           />
 
@@ -157,7 +157,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 5,
               minWidth:5,
-              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
+              fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
 
@@ -179,7 +179,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 5,
               minWidth:5,
-              fontSize:"0.7rem",fontFamily:'monospace',padding:1.5
+              fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
 
@@ -196,10 +196,12 @@ export default function Header() {
                 />
               </Box>
             }
-            sx={{
+           sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
+              fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
 
@@ -219,7 +221,9 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
+              fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
 
@@ -238,7 +242,9 @@ export default function Header() {
             sx={{
               textTransform: "none",
               fontWeight: 600,
-              minHeight: 64,
+              minHeight: 5,
+              minWidth:5,
+              fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
         </Tabs>
