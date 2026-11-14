@@ -16,7 +16,7 @@ export default function Header() {
           justifyContent: "space-between",
           boxSizing: "border-box",
           pt: 1,
-          gap: 1,
+          gap: 2,
         }}
       >
         <Box
@@ -268,13 +268,15 @@ export default function Header() {
           >
 
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
+            >
+              All
+            </Box>
+            <Box
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px"}}
-            ></Box>
-            <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
           </Box>
 
@@ -291,13 +293,13 @@ export default function Header() {
             }}
           >
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
             <Box
-              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d",borderRadius:"8px" }}
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
             ></Box>
           </Box>
         </Box>
