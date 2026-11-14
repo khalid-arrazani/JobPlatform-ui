@@ -12,6 +12,8 @@ import { useLocation, useNavigate } from "react-router-dom";
 export default function MobileNavbar() {
   const { ...state } = useContext(ProfileContext);
 
+  
+
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
 
