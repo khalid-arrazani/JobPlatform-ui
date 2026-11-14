@@ -45,7 +45,10 @@ export default function DashboardLayout({ children }) {
         }}
       >
         <Navbar/>
+
+
         <PostJobModal/>
+        
       </Box>
 
       {children}

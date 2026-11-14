@@ -140,9 +140,12 @@ import { useMediaQuery } from "@mui/material";
 import { useProfile } from "../../../logic/context/profileContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { createJob } from "../../../logic/api/job/Job";
+import { useJob } from "../../../logic/context/JobContext";
 
-const PostJobModal = ({ open, setOpen }) => {
+const PostJobModal = () => {
   const { dispatch, ...state } = useProfile();
+
+  const { openModal, setOpenModal } = useJob();
 
   const { setSnackBar } = useAuth();
 
@@ -171,7 +174,7 @@ const PostJobModal = ({ open, setOpen }) => {
   };
 
   const handleClose = () => {
-    setOpen(false);
+    setOpenModal(false);
   };
 
   const handleSubmit = async () => {
@@ -283,7 +286,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
   return (
     <>
-          {isMobile ? (
+      {isMobile ? (
         <PostJobModalMobile
           skillOptions={skillOptions}
           currencies={currencies}
@@ -294,8 +297,8 @@ const PostJobModal = ({ open, setOpen }) => {
           handleSubmit={handleSubmit}
           handleSubmitDraft={handleSubmitDraft}
           state={state}
-          open={open}
-          setOpen={setOpen}
+          open={openModal}
+          setOpen={setOpenModal}
         />
       ) : (
         <PostJobModalDesktop
@@ -308,8 +311,8 @@ const PostJobModal = ({ open, setOpen }) => {
           handleSubmit={handleSubmit}
           handleSubmitDraft={handleSubmitDraft}
           state={state}
-          open={open}
-          setOpen={setOpen}
+          open={openModal}
+          setOpen={setOpenModal}
         />
       )}
     </>

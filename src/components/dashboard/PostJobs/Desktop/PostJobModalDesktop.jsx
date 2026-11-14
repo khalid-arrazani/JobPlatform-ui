@@ -17,7 +17,7 @@ import logoTitle from "../../../../assets/Logo/logo.png";
 
 import { green } from "@mui/material/colors";
 
-const PostJobModalDesktop = ({ open, setOpen,handleClose, jobData,setJobData,handleChange,state,handleSubmitDraft,handleSubmit,skillOptions,currencies}) => {
+const PostJobModalDesktop = ({ open,handleClose, jobData,setJobData,handleChange,state,handleSubmitDraft,handleSubmit,skillOptions,currencies}) => {
   
   
 
