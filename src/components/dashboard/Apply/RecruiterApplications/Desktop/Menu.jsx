@@ -17,7 +17,7 @@ import ScheduleSendIcon from '@mui/icons-material/ScheduleSend';
 import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined";
 import { useNavigate } from "react-router-dom";
  
-import SelectStatus from "../selectStatus";
+import SelectStatus from "./selectStatus";
 
 
 

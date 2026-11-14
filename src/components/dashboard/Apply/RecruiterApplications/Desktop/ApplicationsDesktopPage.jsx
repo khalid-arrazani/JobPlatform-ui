@@ -4,11 +4,11 @@ import { Pagination } from "@mui/material";
 
 import { useEffect } from "react";
 
-import Header from "../header";
-import ListGrid from "../ListGrid";
+import Header from "./header";
+import ListGrid from "./ListGrid";
 
 import LoadingList from "./LoadingList";
-import Profile from "../ProfileCard";
+import Profile from "./ProfileCard";
 import { useApply } from "../../../../../logic/context/ApplyContext";
 
 export default function ApplicationsDesktopRc() {
