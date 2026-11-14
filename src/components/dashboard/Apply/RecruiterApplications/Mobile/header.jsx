@@ -274,10 +274,10 @@ export default function Header() {
             </Box>
             <Box
               sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
-            ></Box>
+            >Pending</Box>
             <Box
-              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
-            ></Box>
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
+            >Under review</Box>
           </Box>
 
           <Box
@@ -293,14 +293,14 @@ export default function Header() {
             }}
           >
             <Box
-              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
-            ></Box>
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
+            >Accepted</Box>
             <Box
-              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
-            ></Box>
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
+            >Interview</Box>
             <Box
-              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#332d2d",borderRadius:"8px" }}
-            ></Box>
+              sx={{ width: "6rem", height: "2.5rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"1rem",fontWeight:600}}
+            >Rejected</Box>
           </Box>
         </Box>
       </Box>
