@@ -115,17 +115,15 @@ export default function Header() {
           }}
          
            sx={{
-            maxHeight: 0,
+       
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
               height: "1px",
               top: "52px", 
             },
             width:"100%",p:0,
-            "& .MuiTabs-list":{
-              justifyContent:"space-between",maxHeight: 0,
-            }
-            ,
+            
+            
             "& .css-rvn5oh-MuiTabs-root":{height:1}
           }}
         >
@@ -136,8 +134,8 @@ export default function Header() {
               textTransform: "none",
               fontWeight: 600,
               minHeight: 64,
-              padding: 0,
-              fontSize:"0.8rem",fontFamily:'monospace',p:0
+           
+              fontSize:"0.8rem",fontFamily:'monospace'
 
               ,"& .MuiButtonBase-root":{minHeight:"1px"}
             }}
