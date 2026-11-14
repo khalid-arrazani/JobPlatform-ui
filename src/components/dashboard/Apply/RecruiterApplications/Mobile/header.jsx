@@ -105,6 +105,7 @@ export default function Header() {
 
         <Tabs
           value={felterData.status}
+          size="small"
           onChange={(event, newValue) => {
             setFelterData((prev) => ({
               ...prev,
