@@ -1,14 +1,6 @@
-import {
-  Box,
-  Typography,
-  TextField,
-  Autocomplete,
-} from "@mui/material";
+import { Box, Typography, TextField, Autocomplete } from "@mui/material";
 import { Tab, Tabs, Chip } from "@mui/material";
 import { useApply } from "../../../../../logic/context/ApplyContext";
-
-
-
 
 export default function Header() {
   const { felterData, setFelterData, ...state } = useApply();
@@ -24,7 +16,7 @@ export default function Header() {
           justifyContent: "space-between",
           boxSizing: "border-box",
           pt: 1,
-          gap:1
+          gap: 1,
         }}
       >
         <Box
@@ -48,17 +40,19 @@ export default function Header() {
                 fontSize: "1.4rem",
                 fontWeight: 700,
                 color: "#03060ec4",
-                fontFamily:"monospace"
+                fontFamily: "monospace",
               }}
             >
-             Applications
+              Applications
             </Typography>
 
             <Typography
               sx={{
                 mt: 1,
                 color: "#64748B",
-                fontSize: "0.88rem",fontWeight: 700, fontFamily:"monospace"
+                fontSize: "0.88rem",
+                fontWeight: 700,
+                fontFamily: "monospace",
               }}
             >
               Review and mange applications for your job posts
@@ -102,8 +96,6 @@ export default function Header() {
             />
           </Box> */}
         </Box>
-
-
 
         {/* <Tabs
           value={felterData.status}
@@ -252,10 +244,60 @@ export default function Header() {
           />
         </Tabs> */}
 
-        <Box sx={{width:"100%",height:"6rem",bgcolor:"#ddd"}}></Box>
+        <Box
+          sx={{
+            width: "100%",
+            height: "7rem",
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
+          <Box
+            sx={{
+              width: "100%",
+              height: "50%",
+              bgcolor: "#741616",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              boxSizing: "border-box",
+              px: 1,
+            }}
+          >
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+          </Box>
 
-
-
+          <Box
+            sx={{
+              width: "100%",
+              height: "50%",
+              bgcolor: "#741616",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              boxSizing: "border-box",
+              px: 1,
+            }}
+          >
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+            <Box
+              sx={{ width: "7rem", height: "3rem", bgcolor: "#332d2d" }}
+            ></Box>
+          </Box>
+        </Box>
       </Box>
     </>
   );
