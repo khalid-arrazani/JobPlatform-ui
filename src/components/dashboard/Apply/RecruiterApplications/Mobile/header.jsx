@@ -58,7 +58,7 @@ export default function Header() {
               sx={{
                 mt: 1,
                 color: "#64748B",
-                fontSize: "0.88rem", fontFamily:"monospace"
+                fontSize: "0.88rem",fontWeight: 700, fontFamily:"monospace"
               }}
             >
               Review and mange applications for your job posts
