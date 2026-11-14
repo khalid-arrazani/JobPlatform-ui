@@ -32,6 +32,7 @@ const PostJobModalMobile = ({
 }) => {
   return (
     <Dialog open={open} onClose={handleClose} maxWidth="md" fullWidth>
+
       <Box
         sx={{
           display: "flex",
@@ -315,21 +316,18 @@ const PostJobModalMobile = ({
         </Box>
       </DialogContent>
 
-      <DialogActions sx={{ p: 2 }}>
+      <Box sx={{display:"flex",justifyContent:"space-between",width:"100%",boxSizing:"border-box",px:1,py:1}}>
+
         <Button
-          variant="contained"
+ 
           disabled={state.isLoadingUptadeProfile}
           sx={{
-            width: "15%",
-            height: "2.5rem",
-            position: "absolute",
-            left: 10,
+            width: "4rem",
+            textTransform: "none",
+            fontFamily: "monospace",
             bgcolor: "#FFF7E6",
             color: "#A16207",
             border: "1px solid #F5D58B",
-            "&:hover": {
-              bgcolor: "#FDECC8",
-            },
           }}
           onClick={handleSubmitDraft}
         >
@@ -347,6 +345,11 @@ const PostJobModalMobile = ({
           )}
         </Button>
 
+
+
+
+        <Box  sx={{display:"flex",gap:1}}>
+
         <Button onClick={handleClose} variant="outlined">
           Cancel
         </Button>
@@ -354,7 +357,11 @@ const PostJobModalMobile = ({
         <Button
           variant="contained"
           disabled={state.isLoadingUptadeProfile}
-          sx={{ width: "15%", height: "2.5rem" }}
+          sx={{
+            width: "7rem",
+            textTransform: "none",
+            fontFamily: "monospace",
+          }}
           onClick={handleSubmit}
         >
           {state.isLoadingUptadeProfile ? (
@@ -367,10 +374,13 @@ const PostJobModalMobile = ({
               }}
             />
           ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>Save</Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              Post new
+            </Box>
           )}
-        </Button>
-      </DialogActions>
+        </Button></Box>
+
+      </Box>
     </Dialog>
   );
 };

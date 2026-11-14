@@ -742,7 +742,7 @@ const EditeDraftJobModal = ({ open, setOpen, jobInfo }) => {
                   />
                 ) : (
                   <Box sx={{ display: "flex", justifyContent: "center" }}>
-                    Update Info
+                    Post new
                   </Box>
                 )}
               </Button>

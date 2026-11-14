@@ -356,7 +356,7 @@ const PostJobModalDesktop = ({ open,handleClose, jobData,setJobData,handleChange
               }}
             />
           ) : (
-            <Box sx={{ display: "flex", justifyContent: "center" }}>Save</Box>
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Post new</Box>
           )}
         </Button>
       </DialogActions>
