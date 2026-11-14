@@ -103,7 +103,7 @@ export default function Header() {
 
 
 
-        <Tabs
+        {/* <Tabs
           value={felterData.status}
           size="small"
           onChange={(event, newValue) => {
@@ -248,10 +248,12 @@ export default function Header() {
               fontSize:"0.7rem",fontFamily:'monospace',padding:.5
             }}
           />
-        </Tabs>
+        </Tabs> */}
+
+        <Box sx={{width:"100%",height:"6rem",bgcolor:"#ddd"}}></Box>
 
 
-        
+
       </Box>
     </>
   );
