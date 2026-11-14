@@ -138,6 +138,8 @@ export default function Header() {
               minHeight: 64,
               padding: 0,
               fontSize:"0.8rem",fontFamily:'monospace',p:0
+
+              ,"& .MuiButtonBase-root":{minHeight:"1px"}
             }}
           />
 
