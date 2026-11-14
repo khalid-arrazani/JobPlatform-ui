@@ -8,20 +8,24 @@ import { useContext, useState } from "react";
 import { ProfileContext } from "../../../../logic/context/profileContext";
 import { useAuth } from "../../../../logic/context/AuthContext";
 import { useLocation, useNavigate } from "react-router-dom";
+import { useJob } from "../../../../logic/context/JobContext";
 
 export default function MobileNavbar() {
   const { ...state } = useContext(ProfileContext);
 
+    
   
 
   const [open, setOpen] = useState(false);
-  const [openModal, setOpenModal] = useState(false);
+  const { openModal, setOpenModal } = useJob();
+ 
 
   const [section, setSection] = useState("Jobs");
 
   const onClose = () => {
     setOpen(false);
     setOpenModal(false);
+    
   };
 
  
@@ -298,6 +302,7 @@ export default function MobileNavbar() {
 
         {/* Add Jobs */}
         <Box
+        onClick={()=>{setOpenModal(true)}}
           sx={{
             bgcolor: "#faeefd",
             display: "flex",
