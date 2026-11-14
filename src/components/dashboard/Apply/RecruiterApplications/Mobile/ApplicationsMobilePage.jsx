@@ -36,14 +36,14 @@ export default function ApplicationsMobileRc() {
         {/* left side header and SavedJobsList */}
         <Box
           sx={{
-            width: "70vw",
+            width: "100%",
             height: "100%",
             bgcolor: "#ffffff",
             display: "flex",
             flexDirection: "column",
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
-            px: 5,
+            px: 1,
           }}
         >
           <Header />
@@ -72,8 +72,7 @@ export default function ApplicationsMobileRc() {
           />
         </Box>
 
-        {/* right side profile card  */}
-        <Profile />
+      
       </Box>
     </>
   );

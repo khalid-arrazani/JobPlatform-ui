@@ -1,5 +1,6 @@
 import { useMediaQuery } from "@mui/material";
 import ApplicationsDesktopRc from "./Desktop/ApplicationsDesktopPage";
+import ApplicationsMobileRc from "./Mobile/ApplicationsMobilePage";
 
 
 export default function RecruiterApplicationsPage() {
@@ -12,7 +13,7 @@ export default function RecruiterApplicationsPage() {
 
   return (
     <>
-      <ApplicationsDesktopRc />
+      <ApplicationsMobileRc />
     </>
   );
 }
