@@ -101,6 +101,8 @@ export default function Header() {
           </Box>
         </Box>
 
+
+
         <Tabs
           value={felterData.status}
           onChange={(event, newValue) => {
@@ -112,18 +114,19 @@ export default function Header() {
             }));
           }}
          
-          sx={{
+           sx={{
+            maxHeight: 0,
             "& .MuiTabs-indicator": {
               backgroundColor: "#5590ff",
               height: "1px",
-              borderRadius: "999px",
-             
-            
-              
+              top: "52px", 
             },
-            "& .MuiButtonBase-root":{p:1,minHeight:"2rem",},
-            "& .MuiTabs-list":{p:0,gap:0.5}, pl:2
-      
+            width:"100%",p:0,
+            "& .MuiTabs-list":{
+              justifyContent:"space-between",maxHeight: 0,
+            }
+            ,
+            "& .css-rvn5oh-MuiTabs-root":{height:1}
           }}
         >
           <Tab
@@ -134,6 +137,7 @@ export default function Header() {
               fontWeight: 600,
               minHeight: 64,
               padding: 0,
+              fontSize:"0.8rem",fontFamily:'monospace',p:0
             }}
           />
 
