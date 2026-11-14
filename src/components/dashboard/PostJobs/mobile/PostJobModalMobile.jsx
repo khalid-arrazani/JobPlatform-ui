@@ -316,7 +316,36 @@ const PostJobModalMobile = ({
       </DialogContent>
 
       <DialogActions sx={{ p: 2 }}>
-    
+        <Button
+          variant="contained"
+          disabled={state.isLoadingUptadeProfile}
+          sx={{
+            width: "15%",
+            height: "2.5rem",
+            position: "absolute",
+            left: 10,
+            bgcolor: "#FFF7E6",
+            color: "#A16207",
+            border: "1px solid #F5D58B",
+            "&:hover": {
+              bgcolor: "#FDECC8",
+            },
+          }}
+          onClick={handleSubmitDraft}
+        >
+          {state.isLoadingUptadeProfile ? (
+            <CircularProgress
+              aria-label="Loading…"
+              size={30}
+              sx={{
+                color: green[800],
+                position: "absolute",
+              }}
+            />
+          ) : (
+            <Box sx={{ display: "flex", justifyContent: "center" }}>Draft</Box>
+          )}
+        </Button>
 
         <Button onClick={handleClose} variant="outlined">
           Cancel
