@@ -23,12 +23,12 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import { useState } from "react";
 
-
-import PostJobModal from "./PostJobModal.jsx";
+ 
 import { useLocation, useNavigate } from "react-router-dom";
 import { useProfile } from "../../../../logic/context/profileContext.jsx";
 import { useAuth } from "../../../../logic/context/AuthContext.jsx";
 import { useJob } from "../../../../logic/context/JobContext.jsx";
+import PostJobModal from "../../../dashboard/PostJobs/PostJobModal.jsx";
  
 
 

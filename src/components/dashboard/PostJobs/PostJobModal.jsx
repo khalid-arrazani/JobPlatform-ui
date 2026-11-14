@@ -136,6 +136,7 @@ import PostJobModalMobile from "./mobile/PostJobModalMobile";
 import PostJobModalDesktop from "./Desktop/PostJobModalDesktop";
 
 import { useMediaQuery } from "@mui/material";
+
 import { useProfile } from "../../../logic/context/profileContext";
 import { useAuth } from "../../../logic/context/AuthContext";
 import { createJob } from "../../../logic/api/job/Job";
