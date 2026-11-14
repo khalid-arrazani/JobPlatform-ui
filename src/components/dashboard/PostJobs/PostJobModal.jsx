@@ -283,7 +283,7 @@ const PostJobModal = ({ open, setOpen }) => {
 
   return (
     <>
-      {isMobile ? (
+          {isMobile ? (
         <PostJobModalMobile
           skillOptions={skillOptions}
           currencies={currencies}

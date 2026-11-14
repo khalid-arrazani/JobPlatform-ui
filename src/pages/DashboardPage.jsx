@@ -34,6 +34,8 @@ export default function DashboardPage() {
   return (
     <DashboardLayout part={part} setPart={setPart}>
 
+      
+
       <Routes>
         <Route path="Jobs" element={<JobsPage />} />
         <Route path="Jobs/Details/:JobId" element={<JobDetails/>} />
