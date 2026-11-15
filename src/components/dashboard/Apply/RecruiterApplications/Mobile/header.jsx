@@ -257,7 +257,7 @@ export default function Header() {
         <Box
           sx={{
             width: "100%",
-            height: "7rem",
+            height: "fit-content",
             display: "flex",
             flexDirection: "column",
             gap: 1,
@@ -423,6 +423,44 @@ export default function Header() {
             </Box>
           </Box>
         </Box>
+        {/* Right */}
+          <Box
+            sx={{
+              display: "flex",
+              gap: 2,
+              alignItems: "center",
+              flexWrap: "wrap",
+              width:'100%',bgcolor:"#ddd"
+            }}
+          >
+            <Autocomplete
+              size="small"
+              sx={{
+                width: 220,
+                "& .MuiAutocomplete-clearIndicator": {
+                  display: "none",
+                },
+                "& .MuiInputBase-root": { borderRadius: "8px" },
+              }}
+              options={["Newest First", "Oldest First"]}
+              value={felterData.sort}
+              onChange={(event, newValue) => {
+                setFelterData((prev) => ({ ...prev, sort: newValue }));
+              }}
+              slotProps={{
+                popper: {
+                  sx: {
+                    transition: "none",
+                    animation: "none",
+                  },
+                },
+              }}
+              renderInput={(params) => (
+                <TextField {...params} placeholder="Sort by" />
+              )}
+            />
+
+          </Box>
       </Box>
     </>
   );
