@@ -281,18 +281,20 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width:felterData.status == "" ?  "6.8rem":"7rem",
+                width: felterData.status == "" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "" ?  "#f7dcff":"#fff" ,
+                bgcolor: felterData.status == "" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "" ?  "#320369d2":"#010317d2"   ,
+                color: felterData.status == "" ? "#320369d2" : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               All
@@ -302,19 +304,22 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-               sx={{
-                width:felterData.status == "Pending" ?  "6.8rem":"7rem",
+              sx={{
+                width: felterData.status == "Pending" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "Pending" ?  "#f7dcff":"#fff" ,
+                bgcolor: felterData.status == "Pending" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "Pending" ?  "#320369d2":"#010317d2"   ,
+                color:
+                  felterData.status == "Pending" ? "#320369d2" : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "Pending" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "Pending" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               Pending
@@ -325,18 +330,24 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width:felterData.status == "Under review" ?  "6.8rem":"7rem",
+                width: felterData.status == "Under review" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "Under review" ?  "#f7dcff":"#fff" ,
+                bgcolor:
+                  felterData.status == "Under review" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "Under review" ?  "#320369d2":"#010317d2"   ,
+                color:
+                  felterData.status == "Under review"
+                    ? "#320369d2"
+                    : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "Under review" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "Under review" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               Under review
@@ -360,19 +371,22 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-               sx={{
-                width:felterData.status == "Accepted" ?  "6.8rem":"7rem",
+              sx={{
+                width: felterData.status == "Accepted" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "Accepted" ?  "#f7dcff":"#fff" ,
+                bgcolor: felterData.status == "Accepted" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "Accepted" ?  "#320369d2":"#010317d2"   ,
+                color:
+                  felterData.status == "Accepted" ? "#320369d2" : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "Accepted" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "Accepted" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               Accepted
@@ -382,19 +396,22 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-             sx={{
-                width:felterData.status == "Interview" ?  "6.8rem":"7rem",
+              sx={{
+                width: felterData.status == "Interview" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "Interview" ?  "#f7dcff":"#fff" ,
+                bgcolor: felterData.status == "Interview" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "Interview" ?  "#320369d2":"#010317d2"   ,
+                color:
+                  felterData.status == "Interview" ? "#320369d2" : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "Interview" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "Interview" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               Interview
@@ -405,18 +422,21 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width:felterData.status == "Rejected" ?  "6.8rem":"7rem",
+                width: felterData.status == "Rejected" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor:felterData.status == "Rejected" ?  "#f7dcff":"#fff" ,
+                bgcolor: felterData.status == "Rejected" ? "#f7dcff" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color:felterData.status == "Rejected" ?  "#320369d2":"#010317d2"   ,
+                color:
+                  felterData.status == "Rejected" ? "#320369d2" : "#010317d2",
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:felterData.status == "Rejected" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
+                scale: felterData.status == "Rejected" ? 1.1 : 1,
+                transition: "0.3s",
+                cursor: "pointer",
               }}
             >
               Rejected
@@ -424,43 +444,52 @@ export default function Header() {
           </Box>
         </Box>
         {/* Right */}
-          <Box
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            alignItems: "center",
+            width: "100%",
+            justifyContent: "end",
+          }}
+        >
+          <Autocomplete
+            size="small"
             sx={{
-              display: "flex",
-              gap: 2,
-              alignItems: "center",
-              width:'100%'
-              ,justifyContent:'end'
+              width: 220,
+              "& .MuiAutocomplete-clearIndicator": {
+                display: "none",
+              },
+              "& .MuiInputBase-root": {
+                borderRadius: "5px",
+                fontFamily: "monospace",
+              },
             }}
-          >
-            <Autocomplete
-              size="small"
-              sx={{
-                width: 220,
-                "& .MuiAutocomplete-clearIndicator": {
-                  display: "none",
+            options={["Newest First", "Oldest First"]}
+            value={felterData.sort}
+            onChange={(event, newValue) => {
+              setFelterData((prev) => ({ ...prev, sort: newValue }));
+            }}
+            slotProps={{
+              popper: {
+                sx: {
+                  transition: "none",
+                  animation: "none",
                 },
-                "& .MuiInputBase-root": { borderRadius: "8px" },fontFamily:'monospace'
-              }}
-              options={["Newest First", "Oldest First"]}
-              value={felterData.sort}
-              onChange={(event, newValue) => {
-                setFelterData((prev) => ({ ...prev, sort: newValue }));
-              }}
-              slotProps={{
-                popper: {
-                  sx: {
-                    transition: "none",
-                    animation: "none",
-                  },
-                },
-              }}
-              renderInput={(params) => (
-                <TextField sx={{fontFamily:'monospace'}} {...params} placeholder="Sort by" />
-              )}
-            />
-
-          </Box>
+              },
+            }}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Sort by"
+                inputProps={{
+                  ...params.inputProps,
+                  readOnly: true,
+                }}
+              />
+            )}
+          />
+        </Box>
       </Box>
     </>
   );
