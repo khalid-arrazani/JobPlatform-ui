@@ -5,19 +5,14 @@ import { useApply } from "../../../../../logic/context/ApplyContext";
 export default function Header() {
   const { felterData, setFelterData, ...state } = useApply();
 
-
-
-
-  const TapsChange = (e)=>{
+  const TapsChange = (e) => {
     setFelterData((prev) => ({
-              ...prev,
-              status: e.target.title,
-              page: 1,
-              search: "",
-            }));
-  }
-
-
+      ...prev,
+      status: e.target.title,
+      page: 1,
+      search: "",
+    }));
+  };
 
   return (
     <>
@@ -265,14 +260,14 @@ export default function Header() {
             height: "7rem",
             display: "flex",
             flexDirection: "column",
-            gap:1
+            gap: 1,
           }}
         >
           <Box
             sx={{
               width: "100%",
               height: "fit-content",
-      
+
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -280,37 +275,76 @@ export default function Header() {
               px: 1,
             }}
           >
-
             <Box
               title=""
-               onClick={(e)=>{
-              TapsChange(e)
-            }}
-              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}} 
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
             >
               All
             </Box>
             <Box
-            title="Pending"
-            onClick={(e)=>{
-              TapsChange(e)
-            }}
-              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
-            >Pending</Box>
+              title="Pending"
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
+            >
+              Pending
+            </Box>
             <Box
-            title="Under review"
-             onClick={(e)=>{
-              TapsChange(e)
-            }}
-              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
-            >Under review</Box>
+              title="Under review"
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
+            >
+              Under review
+            </Box>
           </Box>
 
           <Box
             sx={{
               width: "100%",
               height: "fit-content",
-             
+
               display: "flex",
               justifyContent: "space-between",
               alignItems: "center",
@@ -319,30 +353,70 @@ export default function Header() {
             }}
           >
             <Box
-            title="Accepted"
-             onClick={(e)=>{
-              TapsChange(e)
-            }}
-             sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
-            >Accepted</Box>
+              title="Accepted"
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
+            >
+              Accepted
+            </Box>
             <Box
-            title="Interview"
-             onClick={(e)=>{
-              TapsChange(e)
-            }}
-              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
-            >Interview</Box>
+              title="Interview"
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
+            >
+              Interview
+            </Box>
             <Box
-            title="Rejected"
-             onClick={(e)=>{
-              TapsChange(e)
-            }}
-              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
-            >Rejected</Box>
+              title="Rejected"
+              onClick={(e) => {
+                TapsChange(e);
+              }}
+              sx={{
+                width: "7rem",
+                height: "2rem",
+                bgcolor: "#fff",
+                borderRadius: "8px",
+                border: "1px solid #e1e0e097",
+                fontFamily: "monospace",
+                textAlign: "center",
+                alignContent: "center",
+                color: "#010317d2",
+                fontSize: "0.85rem",
+                fontWeight: 600,
+              }}
+            >
+              Rejected
+            </Box>
           </Box>
         </Box>
-
-
       </Box>
     </>
   );
