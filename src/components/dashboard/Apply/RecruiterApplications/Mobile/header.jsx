@@ -244,6 +244,7 @@ export default function Header() {
           />
         </Tabs> */}
 
+        {/* Taps category */}
         <Box
           sx={{
             width: "100%",
@@ -253,7 +254,6 @@ export default function Header() {
             gap:1
           }}
         >
-
           <Box
             sx={{
               width: "100%",
