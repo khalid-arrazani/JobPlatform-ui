@@ -283,16 +283,16 @@ export default function Header() {
               sx={{
                 width:felterData.status == "" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#f7dcff",
+                bgcolor:felterData.status == "" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#320369d2",
+                color:felterData.status == "" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
                 fontWeight: 700,
-                scale:1.1
+                scale:felterData.status == "" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               All
@@ -302,18 +302,19 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-              sx={{
-                width: "7rem",
+               sx={{
+                width:felterData.status == "Pending" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#fff",
+                bgcolor:felterData.status == "Pending" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#010317d2",
+                color:felterData.status == "Pending" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
-                fontWeight: 600,
+                fontWeight: 700,
+                scale:felterData.status == "Pending" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               Pending
@@ -324,17 +325,18 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width: "7rem",
+                width:felterData.status == "Under review" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#fff",
+                bgcolor:felterData.status == "Under review" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#010317d2",
+                color:felterData.status == "Under review" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
-                fontWeight: 600,
+                fontWeight: 700,
+                scale:felterData.status == "Under review" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               Under review
@@ -358,18 +360,19 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-              sx={{
-                width: "7rem",
+               sx={{
+                width:felterData.status == "Accepted" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#fff",
+                bgcolor:felterData.status == "Accepted" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#010317d2",
+                color:felterData.status == "Accepted" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
-                fontWeight: 600,
+                fontWeight: 700,
+                scale:felterData.status == "Accepted" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               Accepted
@@ -379,18 +382,19 @@ export default function Header() {
               onClick={(e) => {
                 TapsChange(e);
               }}
-              sx={{
-                width: "7rem",
+             sx={{
+                width:felterData.status == "Interview" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#fff",
+                bgcolor:felterData.status == "Interview" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#010317d2",
+                color:felterData.status == "Interview" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
-                fontWeight: 600,
+                fontWeight: 700,
+                scale:felterData.status == "Interview" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               Interview
@@ -401,17 +405,18 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width: "7rem",
+                width:felterData.status == "Rejected" ?  "6.8rem":"7rem",
                 height: "2rem",
-                bgcolor: "#fff",
+                bgcolor:felterData.status == "Rejected" ?  "#f7dcff":"#fff" ,
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
-                color: "#010317d2",
+                color:felterData.status == "Rejected" ?  "#320369d2":"#010317d2"   ,
                 fontSize: "0.85rem",
-                fontWeight: 600,
+                fontWeight: 700,
+                scale:felterData.status == "Rejected" ?  1.1:1 ,transition:"0.3s",cursor:"pointer"
               }}
             >
               Rejected
