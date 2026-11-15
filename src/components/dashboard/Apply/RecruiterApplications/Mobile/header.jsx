@@ -281,7 +281,7 @@ export default function Header() {
                 TapsChange(e);
               }}
               sx={{
-                width:felterData.status "6.8rem",
+                width:felterData.status == title ?  "6.8rem":"7rem",
                 height: "2rem",
                 bgcolor: "#f7dcff",
                 borderRadius: "8px",
