@@ -24,7 +24,7 @@ export default function Header() {
           flexDirection: "column",
           justifyContent: "space-between",
           boxSizing: "border-box",
-          pt: 1,
+          py: 1,
           gap: 2,
         }}
       >
@@ -36,7 +36,7 @@ export default function Header() {
             alignItems: "end",
           }}
         >
-          {/* Left */}
+          {/* titel */}
           <Box
             sx={{
               display: "flex",
@@ -429,8 +429,8 @@ export default function Header() {
               display: "flex",
               gap: 2,
               alignItems: "center",
-              flexWrap: "wrap",
-              width:'100%',bgcolor:"#ddd"
+              width:'100%'
+              ,justifyContent:'end'
             }}
           >
             <Autocomplete
@@ -440,7 +440,7 @@ export default function Header() {
                 "& .MuiAutocomplete-clearIndicator": {
                   display: "none",
                 },
-                "& .MuiInputBase-root": { borderRadius: "8px" },
+                "& .MuiInputBase-root": { borderRadius: "8px" },fontFamily:'monospace'
               }}
               options={["Newest First", "Oldest First"]}
               value={felterData.sort}
@@ -456,7 +456,7 @@ export default function Header() {
                 },
               }}
               renderInput={(params) => (
-                <TextField {...params} placeholder="Sort by" />
+                <TextField sx={{fontFamily:'monospace'}} {...params} placeholder="Sort by" />
               )}
             />
 
