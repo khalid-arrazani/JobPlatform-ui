@@ -455,6 +455,7 @@ export default function Header() {
         >
           <Autocomplete
             size="small"
+           
             sx={{
               width: 220,
               "& .MuiAutocomplete-clearIndicator": {
@@ -480,12 +481,11 @@ export default function Header() {
             }}
             renderInput={(params) => (
               <TextField
+              
                 {...params}
                 placeholder="Sort by"
-                inputProps={{
-                  ...params.inputProps,
-                  readOnly: true,
-                }}
+                
+                 
               />
             )}
           />
