@@ -268,18 +268,20 @@ export default function Header() {
           >
 
             <Box
-              value=""
+              title=""
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}} 
             >
               All
             </Box>
             <Box
-            value="Pending"
-            OnClick
+            title="Pending"
+            onClick={(e)=>{
+              console.log(e.target.id)
+            }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Pending</Box>
             <Box
-            value="Under review"
+            title="Under review"
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Under review</Box>
           </Box>
@@ -297,12 +299,15 @@ export default function Header() {
             }}
           >
             <Box
+            title="Accepted"
              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Accepted</Box>
             <Box
+            title="Interview"
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Interview</Box>
             <Box
+            title="Rejected"
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Rejected</Box>
           </Box>
