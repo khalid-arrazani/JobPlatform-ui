@@ -5,6 +5,20 @@ import { useApply } from "../../../../../logic/context/ApplyContext";
 export default function Header() {
   const { felterData, setFelterData, ...state } = useApply();
 
+
+
+
+  const TapsChange = (e)=>{
+    setFelterData((prev) => ({
+              ...prev,
+              status: e.target.title,
+              page: 1,
+              search: "",
+            }));
+  }
+
+
+
   return (
     <>
       <Box
@@ -269,6 +283,9 @@ export default function Header() {
 
             <Box
               title=""
+               onClick={(e)=>{
+              TapsChange(e)
+            }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}} 
             >
               All
@@ -276,12 +293,15 @@ export default function Header() {
             <Box
             title="Pending"
             onClick={(e)=>{
-              console.log(e.target.id)
+              TapsChange(e)
             }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Pending</Box>
             <Box
             title="Under review"
+             onClick={(e)=>{
+              TapsChange(e)
+            }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Under review</Box>
           </Box>
@@ -300,14 +320,23 @@ export default function Header() {
           >
             <Box
             title="Accepted"
+             onClick={(e)=>{
+              TapsChange(e)
+            }}
              sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Accepted</Box>
             <Box
             title="Interview"
+             onClick={(e)=>{
+              TapsChange(e)
+            }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Interview</Box>
             <Box
             title="Rejected"
+             onClick={(e)=>{
+              TapsChange(e)
+            }}
               sx={{ width: "7rem", height: "2rem", bgcolor: "#fff",borderRadius:"8px",border:"1px solid #e1e0e097",fontFamily:"monospace",textAlign:"center",alignContent:"center",color:"#010317d2",fontSize:"0.85rem",fontWeight:600}}
             >Rejected</Box>
           </Box>
