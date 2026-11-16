@@ -44,6 +44,7 @@ export default function ApplicationsMobileRc() {
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
             px: 1,
+            pb:'3.2rem'
           }}
         >
           <Header />
