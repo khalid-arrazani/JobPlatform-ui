@@ -59,9 +59,10 @@ export default function ApplicationsMobileRc() {
               border: "solid 0.1px #8d8d8d3a",
             }}
           >
+            
             {isLoading ? <LoadingList /> : <ListGrid />}
 
-            
+
             <Pagination
             onChange={handleChange}
             page={felterData.page}
