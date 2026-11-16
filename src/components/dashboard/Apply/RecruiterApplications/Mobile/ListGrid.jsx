@@ -20,7 +20,7 @@ export default function ListGrid() {
         >
           
             {state?.ListApply?.applications?.map((apply) => (
-              <Box  sx={{width:"100%",height:"5rem",bgcolor:"#ddd"}}>
+              <Box  sx={{width:"100%",height:"8rem",bgcolor:"#fff"}}>
 
               </Box>
               
