@@ -28,6 +28,7 @@ export default function ListGrid() {
         >
           {state?.ListApply?.applications?.map((apply) => (
             <Box
+            key={apply._id}
               sx={{
                 width: "100%",
                 height: "8rem",
@@ -39,7 +40,16 @@ export default function ListGrid() {
               <Box sx={{ width: "100%", height: "5rem", bgcolor: "#ddd",display:"flex",boxSizing:"border-box" }}>
                 <Box
                   sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
-                ></Box>
+                >
+                  <Avatar
+                    src={apply?.profile?.ProfileImage?.url}
+                    sx={{ height: "3rem", width: "3rem" }}
+                  />
+
+                </Box>
+
+
+
                 <Box
                   sx={{ flex:1, height: "100%", bgcolor: "#8e6060" }}
                 ></Box>
