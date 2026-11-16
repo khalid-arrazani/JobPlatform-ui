@@ -169,7 +169,7 @@ export default function ListGrid() {
                   width: "100%",
 
                   display: "flex",
-                  gap: 1,
+                  
                   boxSizing: "border-box",
                   py: 0.5,
                 }}
@@ -206,13 +206,13 @@ export default function ListGrid() {
                     height: "100%",
                     flex: 1,
                     borderLeft: "1px dashed #ddd",
-                    borderRight: "1px dashed #ddd",
+                    borderRight: "1px dashed #ddd",boxSizing:"border-box",p:0.5 ,
                   }}
                 ></Box>
 
 
 
-                <Box sx={{ height: "100%", flex: 1 }}></Box>
+                <Box sx={{ height: "100%", flex: 1,boxSizing:"border-box",p:0.5  }}></Box>
               </Box>
             </Box>
           ))}
