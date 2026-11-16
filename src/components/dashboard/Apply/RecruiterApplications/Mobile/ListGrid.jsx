@@ -74,7 +74,8 @@ export default function ListGrid() {
                     flex: 1,
                     height: "100%",
                     boxSizing: "border-box",
-                    p: 0.5,
+                    p: 0.6,
+                    py:1.1,
                     display: "flex",
                   }}
                 >
