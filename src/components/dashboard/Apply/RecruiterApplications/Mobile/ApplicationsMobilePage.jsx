@@ -73,7 +73,6 @@ export default function ApplicationsMobileRc() {
               sx={{
                 mt: "auto",
                 alignSelf: "center",
-               
               }}
             />
           </Box>
