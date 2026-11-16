@@ -60,10 +60,11 @@ export default function ApplicationsMobileRc() {
               bgcolor: "#ddd",
               display: "flex",
               flexDirection: "column",
+              pb:1,gap:2
             }}
           >
             {isLoading ? <LoadingList /> : <ListGrid />}
-            <ListGrid />
+
 
             <Pagination
               onChange={handleChange}
@@ -72,7 +73,7 @@ export default function ApplicationsMobileRc() {
               sx={{
                 mt: "auto",
                 alignSelf: "center",
-                my: 2,
+               
               }}
             />
           </Box>
