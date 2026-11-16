@@ -195,13 +195,13 @@ export default function ListGrid() {
 
                   <Typography
                     sx={{
-                      fontFamily: "system-ui",
+                      fontFamily: "monospace",
                       fontWeight: 600,
                       fontSize: "0.7rem",
                       color: "#020210df",
                     }}
                   >
-                    {apply?.job?.title.slice(0, 26)}
+                    {apply?.job?.title.slice(0, 26)} 
                     {apply?.job?.title.length > 26 ? "....." : null}
                   </Typography>
                 </Box>
