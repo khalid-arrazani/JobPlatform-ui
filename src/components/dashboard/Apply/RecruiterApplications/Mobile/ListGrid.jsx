@@ -31,12 +31,13 @@ export default function ListGrid() {
               key={apply._id}
               sx={{
                 width: "100%",
-                height: "8rem",
+                height: "auto",
                 bgcolor: "#fff",
                 border: "1px solid #eeeeee",
                 borderRadius: "8px",
               }}
             >
+              {/* top content */}
               <Box
                 sx={{
                   width: "100%",
@@ -81,7 +82,7 @@ export default function ListGrid() {
                     sx={{
                       height: "auto",
                       boxSizing: "border-box",
-                      bgcolor: "#dddd",
+                   
                       width: "12em",
                     }}
                   >
@@ -93,6 +94,7 @@ export default function ListGrid() {
                         color: "#01010edf",
                       }}
                     >
+                       
                       {apply?.profile?.fullName}
                     </Typography>
                     <Typography
@@ -122,12 +124,12 @@ export default function ListGrid() {
 
                    <Box
                   sx={{
-                    width: "auto",
+                    flex:1,
                     height: "auto",
                     display: "flex",
                     alignItems: "end",
                     gap: 1,
-                    flexDirection:"column",justifyContent:"space-between",bgcolor:"#ddd"                  }}
+                    flexDirection:"column",justifyContent:"space-between"                  }}
                 > 
                   <MenuApply
                     ApplyId={apply?._id}
@@ -143,7 +145,7 @@ export default function ListGrid() {
                     }
                     sx={{
                       textTransform: "none",
-                      fontSize: "0.5rem",
+                      fontSize: "0.65rem",
                       color: "#7d09bb",
                       border: "#7d09bb87 1px solid",
                       fontWeight: 600,
@@ -159,6 +161,13 @@ export default function ListGrid() {
 
                 </Box>
 
+              </Box>
+
+              {/* bottom content */}
+              <Box sx={{height:"4rem",width:"100%",bgcolor:"#ddd"}}>
+                <Box sx={{height:"4rem",width:"100%",bgcolor:"#ddd"}}  >
+
+                </Box>
               </Box>
             </Box>
           ))}
