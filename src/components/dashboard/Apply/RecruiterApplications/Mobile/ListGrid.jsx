@@ -57,8 +57,8 @@ export default function ListGrid() {
                       sx={{
                         fontFamily:"monospace",
                         fontWeight: 600,
-                        fontSize: "1rem",
-                        color: "#020210df",
+                        fontSize: "1.1rem",
+                        color: "#01010edf",
                       }}
                     >
                       {apply?.profile?.fullName}
@@ -67,7 +67,8 @@ export default function ListGrid() {
                       sx={{
                         fontFamily: "monospace",
                         fontWeight: 600,
-                        fontSize: "0.75rem",
+                        fontSize: "0.8rem",
+                        color: "#01010e90",
                       }}
                     >
                       {apply?.applicant?.email}
@@ -76,7 +77,7 @@ export default function ListGrid() {
                       sx={{
                         fontFamily: "monospace",
                         fontWeight: 600,
-                        fontSize: "0.75rem",
+                        fontSize: "0.8rem",color: "#01010e90",
                       }}
                     >
                       {apply?.profile?.location.slice(0, 40)}
