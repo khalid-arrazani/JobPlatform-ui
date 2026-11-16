@@ -59,7 +59,7 @@ export default function ApplicationsMobileRc() {
               border: "solid 0.1px #8d8d8d3a",
             }}
           >
-            
+
             {isLoading ? <LoadingList /> : <ListGrid />}
 
 
@@ -72,6 +72,7 @@ export default function ApplicationsMobileRc() {
               alignSelf: "center",
               mb: 1,
             }}
+            
           />
           </Box>
           
