@@ -75,7 +75,7 @@ export default function ListGrid() {
                     height: "100%",
                     boxSizing: "border-box",
                     p: 0.6,
-                    py:1.1,
+                    py: 1.1,
                     display: "flex",
                   }}
                 >
@@ -167,15 +167,52 @@ export default function ListGrid() {
                 sx={{
                   height: "4rem",
                   width: "100%",
-               
+
                   display: "flex",
                   gap: 1,
-                  boxSizing:"border-box",py:0.5
+                  boxSizing: "border-box",
+                  py: 0.5,
                 }}
               >
-                <Box sx={{ height: "100%", flex: 1,  }}></Box>
-                <Box sx={{ height: "100%", flex: 1 ,borderLeft:"1px dashed #ddd",borderRight:"1px dashed #ddd", }}></Box>
-                <Box sx={{ height: "100%", flex: 1,   }}></Box>
+                <Box sx={{ height: "100%", flex: 1,boxSizing:"border-box",p:0.5 }}>
+                  
+                   <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      fontSize: "0.8rem",
+                      color: "#020210df",
+                    }}
+                  >
+                   Job post
+                  </Typography>
+                  
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      fontWeight: 600,
+                      fontSize: "0.7rem",
+                      color: "#020210df",
+                    }}
+                  >
+                    {apply?.job?.title.slice(0, 26)}
+                    {apply?.job?.title.length > 26 ? "....." : null}
+                  </Typography>
+                </Box>
+
+
+                <Box
+                  sx={{
+                    height: "100%",
+                    flex: 1,
+                    borderLeft: "1px dashed #ddd",
+                    borderRight: "1px dashed #ddd",
+                  }}
+                ></Box>
+
+
+
+                <Box sx={{ height: "100%", flex: 1 }}></Box>
               </Box>
             </Box>
           ))}
