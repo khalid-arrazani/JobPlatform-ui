@@ -56,7 +56,7 @@ export default function ApplicationsMobileRc() {
               boxSizing: "border-box",
               placeItems: "center",
               overflow: "auto",
-              border: "solid 0.1px #8d8d8d3a",
+              borderTop: "solid 0.1px #8d8d8d3a",
             
               display: "flex",
               flexDirection: "column",

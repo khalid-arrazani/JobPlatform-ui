@@ -16,11 +16,26 @@ export default function ListGrid() {
     <>
       {state?.ListApply?.hasApply ? (
         <Box
-          sx={{  width: "100%", px: 1, boxSizing: "border-box" }}
+          sx={{  width: "100%", px: 1, boxSizing: "border-box",display:"flex",flexDirection:"column",gap:1,py:1 }}
         >
           
             {state?.ListApply?.applications?.map((apply) => (
-              <Box
+              <Box  sx={{width:"100%",height:"5rem",bgcolor:"#ddd"}}>
+
+              </Box>
+              
+            ))}
+        
+        </Box>
+      ) : (
+        <NoApplyFound />
+      )}
+    </>
+  );
+}
+
+
+{/* <Box
                 key={apply._id}
                 onClick={() => {
                   setProfile(apply);
@@ -246,13 +261,4 @@ export default function ListGrid() {
                     View Profile
                   </Button>
                 </Box>
-              </Box>
-            ))}
-        
-        </Box>
-      ) : (
-        <NoApplyFound />
-      )}
-    </>
-  );
-}
+              </Box> */}
