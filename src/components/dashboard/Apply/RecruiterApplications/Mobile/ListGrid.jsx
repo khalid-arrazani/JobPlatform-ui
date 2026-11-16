@@ -37,13 +37,13 @@ export default function ListGrid() {
                 borderRadius: "8px",
               }}
             >
-              <Box sx={{ width: "100%", height: "5rem", bgcolor: "#ddd",display:"flex",boxSizing:"border-box" }}>
+              <Box sx={{ width: "100%", height: "5rem" ,display:"flex",boxSizing:"border-box",borderBottom:"1px solid #dddddd" }}>
                 <Box
-                  sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
+                  sx={{ width: "4.5rem", height: "100%" ,display:"flex",justifyContent:"center",boxSizing:"border-box",py:0.5 }}
                 >
                   <Avatar
                     src={apply?.profile?.ProfileImage?.url}
-                    sx={{ height: "3rem", width: "3rem" }}
+                    sx={{ height: "3.5rem", width: "3.5rem",borderRadius:"10px" ,border:"1px solid #dddddd"}}
                   />
 
                 </Box>
@@ -51,7 +51,7 @@ export default function ListGrid() {
 
 
                 <Box
-                  sx={{ flex:1, height: "100%", bgcolor: "#8e6060" }}
+                  sx={{ flex:1, height: "100%" }}
                 ></Box>
               </Box>
             </Box>
