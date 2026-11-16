@@ -51,10 +51,10 @@ export default function ApplicationsMobileRc() {
           <Box
             sx={{
               width: "100%",
-              height: "62%",
+              flex: 1,
               boxSizing: "border-box",
               placeItems: "center",
-              overflow: "hidden",
+              overflow: "auto",
               border: "solid 0.1px #8d8d8d3a",
             }}
           >
