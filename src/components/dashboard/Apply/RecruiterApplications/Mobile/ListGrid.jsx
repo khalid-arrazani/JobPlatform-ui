@@ -44,7 +44,7 @@ export default function ListGrid() {
                   height: "auto",
                   display: "flex",
                   boxSizing: "border-box",
-                  borderBottom: "1px solid #dddddd",
+                  borderBottom: "1px solid #ddddddb3",
                 }}
               >
                 {/* avatar */}
@@ -75,14 +75,14 @@ export default function ListGrid() {
                     height: "100%",
                     boxSizing: "border-box",
                     p: 0.5,
-                    display:"flex"
+                    display: "flex",
                   }}
                 >
                   <Box
                     sx={{
                       height: "auto",
                       boxSizing: "border-box",
-                   
+
                       width: "12em",
                     }}
                   >
@@ -94,7 +94,6 @@ export default function ListGrid() {
                         color: "#01010edf",
                       }}
                     >
-                       
                       {apply?.profile?.fullName}
                     </Typography>
                     <Typography
@@ -122,52 +121,60 @@ export default function ListGrid() {
                     </Typography>
                   </Box>
 
-                   <Box
-                  sx={{
-                    flex:1,
-                    height: "auto",
-                    display: "flex",
-                    alignItems: "end",
-                    gap: 1,
-                    flexDirection:"column",justifyContent:"space-between"                  }}
-                > 
-                  <MenuApply
-                    ApplyId={apply?._id}
-                    JobId={apply?.job._id}
-                    status={apply.status}
-                  />
-
-                  <Button
-                    onClick={() =>
-                      navigate(
-                        `/Dashboard/Profile/Details/${apply?.profile?._id}/${apply?.applicant?.role}`,
-                      )
-                    }
+                  <Box
                     sx={{
-                      textTransform: "none",
-                      fontSize: "0.65rem",
-                      color: "#7d09bb",
-                      border: "#7d09bb87 1px solid",
-                      fontWeight: 600,
-                      fontFamily: "system-ui",
-                      bgcolor: "#fffefe",
-                      borderRadius:"8px",
+                      flex: 1,
+                      height: "auto",
+                      display: "flex",
+                      alignItems: "end",
+                      gap: 1,
+                      flexDirection: "column",
+                      justifyContent: "space-between",
                     }}
                   >
-                    View Profile
-                  </Button>
+                    <MenuApply
+                      ApplyId={apply?._id}
+                      JobId={apply?.job._id}
+                      status={apply.status}
+                    />
+
+                    <Button
+                      onClick={() =>
+                        navigate(
+                          `/Dashboard/Profile/Details/${apply?.profile?._id}/${apply?.applicant?.role}`,
+                        )
+                      }
+                      sx={{
+                        textTransform: "none",
+                        fontSize: "0.65rem",
+                        color: "#7d09bb",
+                        border: "#7d09bb87 1px solid",
+                        fontWeight: 600,
+                        fontFamily: "system-ui",
+                        bgcolor: "#fffefe",
+                        borderRadius: "8px",
+                      }}
+                    >
+                      View Profile
+                    </Button>
+                  </Box>
                 </Box>
-
-
-                </Box>
-
               </Box>
 
               {/* bottom content */}
-              <Box sx={{height:"4rem",width:"100%",bgcolor:"#ddd"}}>
-                <Box sx={{height:"100%",width:"100%",bgcolor:"#ddd"}}  >
-
-                </Box>
+              <Box
+                sx={{
+                  height: "4rem",
+                  width: "100%",
+               
+                  display: "flex",
+                  gap: 1,
+                  boxSizing:"border-box",py:0.5
+                }}
+              >
+                <Box sx={{ height: "100%", flex: 1,  }}></Box>
+                <Box sx={{ height: "100%", flex: 1 ,borderLeft:"1px dashed #ddd",borderRight:"1px dashed #ddd", }}></Box>
+                <Box sx={{ height: "100%", flex: 1,   }}></Box>
               </Box>
             </Box>
           ))}
