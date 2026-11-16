@@ -81,7 +81,7 @@ export default function ListGrid() {
                       height: "auto",
                       boxSizing: "border-box",
                       bgcolor: "#dddd",
-                      width: "13rem",
+                      width: "12em",
                     }}
                   >
                     <Typography
@@ -121,19 +121,14 @@ export default function ListGrid() {
 
                    <Box
                   sx={{
-                    width: "17%",
+                    width: "auto",
                     height: "100%",
                     display: "flex",
-                    alignItems: "center",
-                    
-                    fontFamily: "system-ui",
-                    fontWeight: 600,
-                    color: "#02010e9c",
-                    fontSize: "0.9rem",
+                    alignItems: "end",
                     gap: 1,
-                    flexDirection:"column"
+                    flexDirection:"column",justifyContent:"space-between",bgcolor:"#ddd"
                   }}
-                >
+                > 
                   <MenuApply
                     ApplyId={apply?._id}
                     JobId={apply?.job._id}
@@ -148,7 +143,7 @@ export default function ListGrid() {
                     }
                     sx={{
                       textTransform: "none",
-                      fontSize: "0.8rem",
+                      fontSize: "0.5rem",
                       color: "#000000c3",
                       border: "#ddd 1px solid",
                       fontWeight: 600,
