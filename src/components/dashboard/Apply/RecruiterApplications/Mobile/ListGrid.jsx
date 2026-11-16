@@ -165,18 +165,24 @@ export default function ListGrid() {
               {/* bottom content */}
               <Box
                 sx={{
-                  height: "4rem",
+                  height: "auto",
                   width: "100%",
 
                   display: "flex",
-                  
+
                   boxSizing: "border-box",
                   py: 0.5,
                 }}
               >
-                <Box sx={{ height: "100%", flex: 1,boxSizing:"border-box",p:0.5 }}>
-                  
-                   <Typography
+                <Box
+                  sx={{
+                    height: "auto",
+                    flex: 1,
+                    boxSizing: "border-box",
+                    p: 0.5,
+                  }}
+                >
+                  <Typography
                     sx={{
                       fontFamily: "monospace",
                       fontWeight: 600,
@@ -184,9 +190,9 @@ export default function ListGrid() {
                       color: "#6f6f70df",
                     }}
                   >
-                   Job post
-                  </Typography> 
-                  
+                    Job post
+                  </Typography>
+
                   <Typography
                     sx={{
                       fontFamily: "system-ui",
@@ -200,19 +206,104 @@ export default function ListGrid() {
                   </Typography>
                 </Box>
 
+                <Box
+                  sx={{
+                    height: "auto",
+                    flex: 1,
+                    borderLeft: "1px dashed #ddd",
+                    borderRight: "1px dashed #ddd",
+                    boxSizing: "border-box",
+                    p: 0.5,
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      fontSize: "0.8rem",
+                      color: "#6f6f70df",
+                    }}
+                  >
+                    Status
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      fontFamily: "system-ui",
+                      fontWeight: 600,
+                      fontSize: "0.7rem",
+                      color: "#020210df",
+                    }}
+                  >
+                    <Chip
+                      label={`• ${apply?.status}`}
+                      size="small"
+                      sx={{
+                        fontSize: "0.7rem",
+                        alignItems: "center",
+                        borderRadius: "8px",
+                        fontFamily: "system-ui",
+                        color:
+                          apply?.status == "Pending"
+                            ? "#F59E0B"
+                            : apply?.status == "Accepted"
+                              ? "#10B981"
+                              : apply?.status == "Interview"
+                                ? "#8B5CF6"
+                                : apply?.status == "Rejected"
+                                  ? "#EF4444"
+                                  : apply?.status == "Under review"
+                                    ? "#3B82F6"
+                                    : null,
+
+                        bgcolor:
+                          apply?.status == "Pending"
+                            ? "#FEF3C7"
+                            : apply?.status == "Accepted"
+                              ? "#D1FAE5"
+                              : apply?.status == "Interview"
+                                ? "#8a5cf620 "
+                                : apply?.status == "Rejected"
+                                  ? "#FEE2E2"
+                                  : apply?.status == "Under review"
+                                    ? "#DBEAFE"
+                                    : null,
+                        fontWeight: 600,
+                      }}
+                    />
+                  </Typography>
+                </Box>
 
                 <Box
                   sx={{
                     height: "100%",
                     flex: 1,
-                    borderLeft: "1px dashed #ddd",
-                    borderRight: "1px dashed #ddd",boxSizing:"border-box",p:0.5 ,
+                    boxSizing: "border-box",
+                    p: 0.5,
                   }}
-                ></Box>
+                >
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      fontSize: "0.8rem",
+                      color: "#6f6f70df",
+                    }}
+                  >
+                    Applied On
+                  </Typography>
 
-
-
-                <Box sx={{ height: "100%", flex: 1,boxSizing:"border-box",p:0.5  }}></Box>
+                  <Typography
+                    sx={{
+                      fontFamily: "monospace",
+                      fontWeight: 600,
+                      fontSize: "0.7rem",
+                      color: "#020210df",
+                    }}
+                  >
+                    {format(new Date(apply?.createdAt), "MMM dd, yyyy")}
+                  </Typography>
+                </Box>
               </Box>
             </Box>
           ))}
