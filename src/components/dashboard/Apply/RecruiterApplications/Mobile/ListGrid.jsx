@@ -181,11 +181,11 @@ export default function ListGrid() {
                       fontFamily: "monospace",
                       fontWeight: 600,
                       fontSize: "0.8rem",
-                      color: "#020210df",
+                      color: "#6f6f70df",
                     }}
                   >
                    Job post
-                  </Typography>
+                  </Typography> 
                   
                   <Typography
                     sx={{
