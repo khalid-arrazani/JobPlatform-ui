@@ -46,6 +46,7 @@ export default function ListGrid() {
                   borderBottom: "1px solid #dddddd",
                 }}
               >
+                {/* avatar */}
                 <Box
                   sx={{
                     width: "4.5rem",
@@ -69,10 +70,10 @@ export default function ListGrid() {
 
                 <Box
                   sx={{
-                    width: "auto",
+                    flex: 1,
                     height: "100%",
                     boxSizing: "border-box",
-                    p: 1,
+                    p: 0.5,
                     display:"flex"
                   }}
                 >
@@ -122,12 +123,11 @@ export default function ListGrid() {
                    <Box
                   sx={{
                     width: "auto",
-                    height: "100%",
+                    height: "auto",
                     display: "flex",
                     alignItems: "end",
                     gap: 1,
-                    flexDirection:"column",justifyContent:"space-between",bgcolor:"#ddd"
-                  }}
+                    flexDirection:"column",justifyContent:"space-between",bgcolor:"#ddd"                  }}
                 > 
                   <MenuApply
                     ApplyId={apply?._id}
@@ -144,8 +144,8 @@ export default function ListGrid() {
                     sx={{
                       textTransform: "none",
                       fontSize: "0.5rem",
-                      color: "#000000c3",
-                      border: "#ddd 1px solid",
+                      color: "#7d09bb",
+                      border: "#7d09bb87 1px solid",
                       fontWeight: 600,
                       fontFamily: "system-ui",
                       bgcolor: "#fffefe",
