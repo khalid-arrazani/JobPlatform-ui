@@ -57,7 +57,7 @@ export default function ApplicationsMobileRc() {
               placeItems: "center",
               overflow: "auto",
               border: "solid 0.1px #8d8d8d3a",
-              bgcolor: "#ddd",
+            
               display: "flex",
               flexDirection: "column",
               pb:1,gap:2
