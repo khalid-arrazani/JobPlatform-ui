@@ -44,7 +44,7 @@ export default function ApplicationsMobileRc() {
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
             px: 1,
-            pb:'3.2rem'
+            pb:'5.5rem'
           }}
         >
           <Header />
@@ -60,8 +60,9 @@ export default function ApplicationsMobileRc() {
             }}
           >
             {isLoading ? <LoadingList /> : <ListGrid />}
-          </Box>
-          <Pagination
+
+            
+            <Pagination
             onChange={handleChange}
             page={felterData.page}
             count={state?.ListApply?.totalPages}
@@ -71,6 +72,8 @@ export default function ApplicationsMobileRc() {
               mb: 1,
             }}
           />
+          </Box>
+          
         </Box>
 
       
