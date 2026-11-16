@@ -149,6 +149,7 @@ export default function ListGrid() {
                       fontWeight: 600,
                       fontFamily: "system-ui",
                       bgcolor: "#fffefe",
+                      borderRadius:"8px",
                     }}
                   >
                     View Profile
