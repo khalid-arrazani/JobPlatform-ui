@@ -165,7 +165,7 @@ export default function ListGrid() {
 
               {/* bottom content */}
               <Box sx={{height:"4rem",width:"100%",bgcolor:"#ddd"}}>
-                <Box sx={{height:"4rem",width:"100%",bgcolor:"#ddd"}}  >
+                <Box sx={{height:"100%",width:"100%",bgcolor:"#ddd"}}  >
 
                 </Box>
               </Box>
