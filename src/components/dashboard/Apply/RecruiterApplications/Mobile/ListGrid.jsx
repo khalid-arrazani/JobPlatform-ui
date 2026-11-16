@@ -36,12 +36,12 @@ export default function ListGrid() {
                 borderRadius: "8px",
               }}
             >
-              <Box sx={{ width: "100%", height: "5rem", bgcolor: "#ddd",display:"flex" }}>
+              <Box sx={{ width: "100%", height: "5rem", bgcolor: "#ddd",display:"flex",boxSizing:"border-box" }}>
                 <Box
                   sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
                 ></Box>
                 <Box
-                  sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
+                  sx={{ flex:1, height: "100%", bgcolor: "#8e6060" }}
                 ></Box>
               </Box>
             </Box>
