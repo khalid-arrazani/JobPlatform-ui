@@ -39,7 +39,7 @@ export default function ListGrid() {
             >
               <Box sx={{ width: "100%", height: "5rem" ,display:"flex",boxSizing:"border-box",borderBottom:"1px solid #dddddd" }}>
                 <Box
-                  sx={{ width: "4.5rem", height: "100%" ,display:"flex",justifyContent:"center",boxSizing:"border-box",py:0.5 }}
+                  sx={{ width: "4.5rem", height: "100%" ,display:"flex",justifyContent:"center",boxSizing:"border-box",p:1 }}
                 >
                   <Avatar
                     src={apply?.profile?.ProfileImage?.url}
@@ -51,8 +51,41 @@ export default function ListGrid() {
 
 
                 <Box
-                  sx={{ flex:1, height: "100%" }}
-                ></Box>
+                  sx={{ flex:1, height: "100%",boxSizing:"border-box",p:1 }}
+                >
+                   <Typography
+                      sx={{
+                        fontFamily:"monospace",
+                        fontWeight: 600,
+                        fontSize: "1rem",
+                        color: "#020210df",
+                      }}
+                    >
+                      {apply?.profile?.fullName}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {apply?.applicant?.email}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        fontFamily: "monospace",
+                        fontWeight: 600,
+                        fontSize: "0.75rem",
+                      }}
+                    >
+                      {apply?.profile?.location.slice(0, 40)}
+                      {apply?.profile?.location.length > 40
+                        ? "....."
+                        : null}{" "}
+                    </Typography>
+
+                </Box>
               </Box>
             </Box>
           ))}
