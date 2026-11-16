@@ -44,7 +44,7 @@ export default function ApplicationsMobileRc() {
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box",
             px: 1,
-            pb:'5.5rem'
+            pb: "5.5rem",
           }}
         >
           <Header />
@@ -57,29 +57,26 @@ export default function ApplicationsMobileRc() {
               placeItems: "center",
               overflow: "auto",
               border: "solid 0.1px #8d8d8d3a",
-              bgcolor:"#ddd"
+              bgcolor: "#ddd",
+              display: "flex",
+              flexDirection: "column",
             }}
           >
-
             {isLoading ? <LoadingList /> : <ListGrid />}
-
+            <ListGrid />
 
             <Pagination
-            onChange={handleChange}
-            page={felterData.page}
-            count={state?.ListApply?.totalPages}
-            sx={{
-              mt: "auto",
-              alignSelf: "center",
-              mb: 1,
-            }}
-            
-          />
+              onChange={handleChange}
+              page={felterData.page}
+              count={state?.ListApply?.totalPages}
+              sx={{
+                mt: "auto",
+                alignSelf: "center",
+                my: 2,
+              }}
+            />
           </Box>
-          
         </Box>
-
-      
       </Box>
     </>
   );

@@ -16,7 +16,7 @@ export default function ListGrid() {
     <>
       {state?.ListApply?.hasApply ? (
         <Box
-          sx={{ height: "100%", width: "100%", px: 1, boxSizing: "border-box" }}
+          sx={{  width: "100%", px: 1, boxSizing: "border-box" }}
         >
           
             {state?.ListApply?.applications?.map((apply) => (
