@@ -28,7 +28,7 @@ export default function ListGrid() {
         >
           {state?.ListApply?.applications?.map((apply) => (
             <Box
-            key={apply._id}
+              key={apply._id}
               sx={{
                 width: "100%",
                 height: "8rem",
@@ -37,25 +37,56 @@ export default function ListGrid() {
                 borderRadius: "8px",
               }}
             >
-              <Box sx={{ width: "100%", height: "5rem" ,display:"flex",boxSizing:"border-box",borderBottom:"1px solid #dddddd" }}>
+              <Box
+                sx={{
+                  width: "100%",
+                  height: "auto",
+                  display: "flex",
+                  boxSizing: "border-box",
+                  borderBottom: "1px solid #dddddd",
+                }}
+              >
                 <Box
-                  sx={{ width: "4.5rem", height: "100%" ,display:"flex",justifyContent:"center",boxSizing:"border-box",p:1 }}
+                  sx={{
+                    width: "4.5rem",
+                    height: "100%",
+                    display: "flex",
+                    justifyContent: "center",
+                    boxSizing: "border-box",
+                    p: 1,
+                  }}
                 >
                   <Avatar
                     src={apply?.profile?.ProfileImage?.url}
-                    sx={{ height: "3.5rem", width: "3.5rem",borderRadius:"10px" ,border:"1px solid #dddddd"}}
+                    sx={{
+                      height: "3.5rem",
+                      width: "3.5rem",
+                      borderRadius: "10px",
+                      border: "1px solid #dddddd",
+                    }}
                   />
-
                 </Box>
 
-
-
                 <Box
-                  sx={{ flex:1, height: "100%",boxSizing:"border-box",p:1 }}
+                  sx={{
+                    width: "auto",
+                    height: "100%",
+                    boxSizing: "border-box",
+                    p: 1,
+                    display:"flex"
+                  }}
                 >
-                   <Typography
+                  <Box
+                    sx={{
+                      height: "auto",
+                      boxSizing: "border-box",
+                      bgcolor: "#dddd",
+                      width: "13rem",
+                    }}
+                  >
+                    <Typography
                       sx={{
-                        fontFamily:"monospace",
+                        fontFamily: "monospace",
                         fontWeight: 600,
                         fontSize: "1.1rem",
                         color: "#01010edf",
@@ -77,7 +108,8 @@ export default function ListGrid() {
                       sx={{
                         fontFamily: "monospace",
                         fontWeight: 600,
-                        fontSize: "0.8rem",color: "#01010e90",
+                        fontSize: "0.8rem",
+                        color: "#01010e90",
                       }}
                     >
                       {apply?.profile?.location.slice(0, 40)}
@@ -85,8 +117,52 @@ export default function ListGrid() {
                         ? "....."
                         : null}{" "}
                     </Typography>
+                  </Box>
+
+                   <Box
+                  sx={{
+                    width: "17%",
+                    height: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    
+                    fontFamily: "system-ui",
+                    fontWeight: 600,
+                    color: "#02010e9c",
+                    fontSize: "0.9rem",
+                    gap: 1,
+                    flexDirection:"column"
+                  }}
+                >
+                  <MenuApply
+                    ApplyId={apply?._id}
+                    JobId={apply?.job._id}
+                    status={apply.status}
+                  />
+
+                  <Button
+                    onClick={() =>
+                      navigate(
+                        `/Dashboard/Profile/Details/${apply?.profile?._id}/${apply?.applicant?.role}`,
+                      )
+                    }
+                    sx={{
+                      textTransform: "none",
+                      fontSize: "0.8rem",
+                      color: "#000000c3",
+                      border: "#ddd 1px solid",
+                      fontWeight: 600,
+                      fontFamily: "system-ui",
+                      bgcolor: "#fffefe",
+                    }}
+                  >
+                    View Profile
+                  </Button>
+                </Box>
+
 
                 </Box>
+
               </Box>
             </Box>
           ))}
