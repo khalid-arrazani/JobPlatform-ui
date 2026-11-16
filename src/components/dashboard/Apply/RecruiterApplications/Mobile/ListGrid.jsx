@@ -23,7 +23,10 @@ export default function ListGrid() {
               <Box  sx={{width:"100%",height:"8rem",bgcolor:"#fff",border:"1px solid #eeeeee",borderRadius:"8px"}}>
 
                 <Box sx={{width:"100%",height:"5rem",bgcolor:"#ddd"}}>
-                  
+                  <Box sx={{width:"5rem",height:"100%",bgcolor:"#b2afaf"}}>
+
+                  </Box>
+                   <Box></Box>
                 </Box>
 
               </Box>
