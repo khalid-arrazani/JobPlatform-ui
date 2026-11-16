@@ -16,23 +16,36 @@ export default function ListGrid() {
     <>
       {state?.ListApply?.hasApply ? (
         <Box
-          sx={{  width: "100%", px: 1, boxSizing: "border-box",display:"flex",flexDirection:"column",gap:1,py:1 }}
+          sx={{
+            width: "100%",
+            px: 1,
+            boxSizing: "border-box",
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            py: 1,
+          }}
         >
-          
-            {state?.ListApply?.applications?.map((apply) => (
-              <Box  sx={{width:"100%",height:"8rem",bgcolor:"#fff",border:"1px solid #eeeeee",borderRadius:"8px"}}>
-
-                <Box sx={{width:"100%",height:"5rem",bgcolor:"#ddd"}}>
-                  <Box sx={{width:"5rem",height:"100%",bgcolor:"#b2afaf"}}>
-
-                  </Box>
-                   <Box></Box>
-                </Box>
-
+          {state?.ListApply?.applications?.map((apply) => (
+            <Box
+              sx={{
+                width: "100%",
+                height: "8rem",
+                bgcolor: "#fff",
+                border: "1px solid #eeeeee",
+                borderRadius: "8px",
+              }}
+            >
+              <Box sx={{ width: "100%", height: "5rem", bgcolor: "#ddd",display:"flex" }}>
+                <Box
+                  sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
+                ></Box>
+                <Box
+                  sx={{ width: "5rem", height: "100%", bgcolor: "#b2afaf" }}
+                ></Box>
               </Box>
-              
-            ))}
-        
+            </Box>
+          ))}
         </Box>
       ) : (
         <NoApplyFound />
@@ -41,8 +54,8 @@ export default function ListGrid() {
   );
 }
 
-
-{/* <Box
+{
+  /* <Box
                 key={apply._id}
                 onClick={() => {
                   setProfile(apply);
@@ -268,4 +281,5 @@ export default function ListGrid() {
                     View Profile
                   </Button>
                 </Box>
-              </Box> */}
+              </Box> */
+}
