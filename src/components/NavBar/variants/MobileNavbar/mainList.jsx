@@ -17,7 +17,6 @@ import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { Logout } from "../../../../logic/api/auth/auth";
- 
 
 export default function MainList() {
   const navigate = useNavigate();
@@ -53,7 +52,7 @@ export default function MainList() {
           }}
         >
           <Avatar
-             src={state.user?.profile?.ProfileImage?.url}
+            src={state.user?.profile?.ProfileImage?.url}
             sx={{
               width: 90,
               height: 90,
@@ -74,13 +73,38 @@ export default function MainList() {
           </Typography>
         </Box>
 
-        <Box>
-          
-        </Box>
+        <List>
+          <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => navigate("/")}
+              sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
+            >
+              <ListItemIcon sx={{ color: "white" }}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 10"
+                  id="Bookmark--Streamline-Micro"
+                  height="20"
+                  width="20"
+                >
+                  <desc>
+                    Bookmark Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path
+                    fill="#f1f1f1"
+                    d="M7.5 0h-5A1.5 1.5 0 0 0 1 1.5v8a0.5 0.5 0 0 0 0.791 0.407l3.064 -2.189a0.249 0.249 0 0 1 0.29 0l3.064 2.189A0.5 0.5 0 0 0 9 9.5v-8A1.5 1.5 0 0 0 7.5 0"
+                    stroke-width="1"
+                  ></path>
+                </svg>
+              </ListItemIcon>
 
-
-
-
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
+                Save Jobs
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+        </List>
 
         {/*  Navigation */}
         <List>
