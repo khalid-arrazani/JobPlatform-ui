@@ -290,7 +290,7 @@ export default function Header() {
                 textAlign: "center",
                 alignContent: "center",
                 color: felterData.status == "" ? "#320369d2" : "#010317d2",
-                fontSize: "0.85rem",
+                fontSize: "0.75rem",
                 fontWeight: 700,
                 scale: felterData.status == "" ? 1.1 : 1,
                 transition: "0.3s",
@@ -343,14 +343,15 @@ export default function Header() {
                   felterData.status == "Under review"
                     ? "#320369d2"
                     : "#010317d2",
-                fontSize: "0.85rem",
+                fontSize: "0.75rem",
                 fontWeight: 700,
                 scale: felterData.status == "Under review" ? 1.1 : 1,
                 transition: "0.3s",
                 cursor: "pointer",
               }}
             >
-              Under review
+              Under review  
+              <Typography></Typography>
             </Box>
           </Box>
 
