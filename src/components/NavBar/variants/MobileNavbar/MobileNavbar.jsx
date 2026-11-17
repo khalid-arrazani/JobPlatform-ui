@@ -17,10 +17,10 @@ export default function MobileNavbar() {
   
 
   const [open, setOpen] = useState(false);
-  const { openModal, setOpenModal } = useJob();
+  const {  setOpenModal } = useJob();
  
 
-  const [section, setSection] = useState("Jobs");
+
 
   const onClose = () => {
     setOpen(false);

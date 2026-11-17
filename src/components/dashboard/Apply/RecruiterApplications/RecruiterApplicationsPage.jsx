@@ -12,8 +12,8 @@ export default function RecruiterApplicationsPage() {
 
 
   return (
-    <>
-      <ApplicationsMobileRc />
+    <> {isMobile ? <ApplicationsMobileRc /> :<ApplicationsDesktopRc />  }
+     
     </>
   );
 }
