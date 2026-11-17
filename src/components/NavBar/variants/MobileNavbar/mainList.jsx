@@ -73,6 +73,10 @@ export default function MainList() {
             {state.user?.profile?.headline}
           </Typography>
         </Box>
+        
+
+
+
 
         {/*  Navigation */}
         <List>
