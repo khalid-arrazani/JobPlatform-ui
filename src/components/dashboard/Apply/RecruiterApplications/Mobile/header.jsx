@@ -290,7 +290,7 @@ export default function Header() {
                 textAlign: "center",
                 alignContent: "center",
                 color: felterData.status == "" ? "#320369d2" : "#010317d2",
-                fontSize: "0.75rem",
+                fontSize: "0.8rem",
                 fontWeight: 700,
                 scale: felterData.status == "" ? 1.1 : 1,
                 transition: "0.3s",
@@ -315,14 +315,24 @@ export default function Header() {
                 alignContent: "center",
                 color:
                   felterData.status == "Pending" ? "#320369d2" : "#010317d2",
-                fontSize: "0.85rem",
+                 fontSize: "0.8rem",
                 fontWeight: 700,
                 scale: felterData.status == "Pending" ? 1.1 : 1,
                 transition: "0.3s",
-                cursor: "pointer",
+                cursor: "pointer",display:"flex",justifyContent:"center",alignItems:"center",gap:0.5
               }}
             >
               Pending
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "0.9rem",
+                  fontWeight: 700,
+                  color: "#F59E0B"
+                }}
+              >
+                {state?.ListApply?.countPending || 0}
+              </Typography>
             </Box>
             <Box
               title="Under review"
@@ -343,15 +353,28 @@ export default function Header() {
                   felterData.status == "Under review"
                     ? "#320369d2"
                     : "#010317d2",
-                fontSize: "0.75rem",
+                fontSize: "0.8rem",
                 fontWeight: 700,
                 scale: felterData.status == "Under review" ? 1.1 : 1,
                 transition: "0.3s",
                 cursor: "pointer",
+                display:"flex",justifyContent:"center",alignItems:"center",gap:0.5
               }}
             >
-              Under review  
-              <Typography></Typography>
+
+              Under review
+
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "0.9rem",
+                  fontWeight: 700,color: "#8B5CF6"
+                }}
+              >
+               {state?.ListApply?.countUnder_review || 0}
+              </Typography>
+
+
             </Box>
           </Box>
 
@@ -383,14 +406,23 @@ export default function Header() {
                 alignContent: "center",
                 color:
                   felterData.status == "Accepted" ? "#320369d2" : "#010317d2",
-                fontSize: "0.85rem",
+                fontSize: "0.8rem",
                 fontWeight: 700,
                 scale: felterData.status == "Accepted" ? 1.1 : 1,
                 transition: "0.3s",
-                cursor: "pointer",
+                cursor: "pointer",display:"flex",justifyContent:"center",alignItems:"center",gap:0.5
               }}
             >
               Accepted
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "0.9rem",
+                  fontWeight: 700,color: "#10B981"
+                }}
+              >
+                {state?.ListApply?.countAccepted || 0}
+              </Typography>
             </Box>
             <Box
               title="Interview"
@@ -412,10 +444,19 @@ export default function Header() {
                 fontWeight: 700,
                 scale: felterData.status == "Interview" ? 1.1 : 1,
                 transition: "0.3s",
-                cursor: "pointer",
+                cursor: "pointer",display:"flex",justifyContent:"center",alignItems:"center",gap:0.5
               }}
             >
               Interview
+               <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "0.9rem",
+                  fontWeight: 700,color: "#8B5CF6"
+                }}
+              >
+                {state?.ListApply?.countInterview || 0}
+              </Typography>
             </Box>
             <Box
               title="Rejected"
@@ -425,22 +466,31 @@ export default function Header() {
               sx={{
                 width: felterData.status == "Rejected" ? "6.8rem" : "7rem",
                 height: "2rem",
-                bgcolor: felterData.status == "Rejected" ? "#f7dcff" : "#fff",
+                bgcolor: felterData.status == "Rejected" ? "#f6caca" : "#fff",
                 borderRadius: "8px",
                 border: "1px solid #e1e0e097",
                 fontFamily: "monospace",
                 textAlign: "center",
                 alignContent: "center",
                 color:
-                  felterData.status == "Rejected" ? "#320369d2" : "#010317d2",
-                fontSize: "0.85rem",
+                  felterData.status == "Rejected" ? "#EF4444" : "#010317d2",
+                fontSize: "0.8rem",
                 fontWeight: 700,
                 scale: felterData.status == "Rejected" ? 1.1 : 1,
                 transition: "0.3s",
-                cursor: "pointer",
+                 cursor: "pointer",display:"flex",justifyContent:"center",alignItems:"center",gap:0.5
               }}
             >
               Rejected
+              <Typography
+                sx={{
+                  fontFamily: "monospace",
+                  fontSize: "0.9rem",
+                  fontWeight: 700,color: "#EF4444"
+                }}
+              >
+                {state?.ListApply?.countRejected || 0}
+              </Typography>
             </Box>
           </Box>
         </Box>
@@ -456,7 +506,6 @@ export default function Header() {
         >
           <Autocomplete
             size="small"
-           
             sx={{
               width: 220,
               "& .MuiAutocomplete-clearIndicator": {
@@ -481,13 +530,7 @@ export default function Header() {
               },
             }}
             renderInput={(params) => (
-              <TextField
-              
-                {...params}
-                placeholder="Sort by"
-                
-                 
-              />
+              <TextField {...params} placeholder="Sort by" />
             )}
           />
         </Box>

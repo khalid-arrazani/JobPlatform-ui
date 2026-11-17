@@ -9,8 +9,8 @@ export default function NoApplyFound() {
       <Box
         sx={{
           border: "dashed 1px #ddd",
-          width: "95%",
-          height: "90%",
+          width: "98%",
+          height: "100%",
           placeSelf: "center",
           borderRadius: "10px",
           overflow: "hidden",
@@ -20,13 +20,13 @@ export default function NoApplyFound() {
           flexDirection: "column",
           gap: 1,
           bgcolor: "#fff9f891",
-          my:2
+          boxSizing:"border-box",px:2,textAlign:"center"
         }}
       >
         <Typography
           sx={{
             fontWeight: 600,
-            fontSize: "2rem",
+            fontSize: "1.8rem",
             color: "#010214ce",
             fontFamily: "ui-rounded",
           }}
