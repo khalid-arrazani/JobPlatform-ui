@@ -74,7 +74,9 @@ export default function MainList() {
           </Typography>
         </Box>
 
-        
+        <Box>
+          
+        </Box>
 
 
 
