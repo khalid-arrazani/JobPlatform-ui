@@ -19,7 +19,8 @@ import ProfileDetails from "../components/dashboard/UserProfile/ProfileDetails.j
 import CompanyDetailsPage from "../components/dashboard/CompanyDetails/CompanyDetailsPage.jsx";
 import JobDetails from "../components/dashboard/JobDetails/JobDetails.jsx";
 import RecruiterApplicationsPage from "../components/dashboard/Apply/RecruiterApplications/RecruiterApplicationsPage.jsx";
-import SavedJobsPage from "../components/dashboard/savedJobs/savedJobs.jsx";
+ 
+import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
  
  
  
@@ -45,7 +46,7 @@ export default function DashboardPage() {
         <Route path="Company/:CompanyId" element={<CompanyDetailsPage />} />
 
         <Route path="Companies" element={<CompaniesPage />} />
-        <Route path="Saved" element={<SavedJobsPage/>} />
+        <Route path="Saved" element={<SavedJobs/>} />
         <Route path="My_Jobs" element={<MyJobsPage />} />
 
         <Route path="Profile/Details/:ProfileId/:Role" element={<ProfileDetails />} />    
