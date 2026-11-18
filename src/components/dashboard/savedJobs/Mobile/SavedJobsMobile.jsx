@@ -1,4 +1,10 @@
-import { Box, Pagination } from "@mui/material";
+import {
+  Autocomplete,
+  Box,
+  InputAdornment,
+  Pagination,
+  TextField,
+} from "@mui/material";
 
 import Header from "./header";
 
@@ -8,6 +14,7 @@ import { useEffect, useState } from "react";
 
 import LoadingList from "./LoadingList";
 import { getSavedJobs } from "../../../../logic/api/job/Job";
+import { Search } from "lucide-react";
 
 export default function SavedJobsMobile() {
   const [savedJobs, setSavedJobs] = useState();
@@ -58,10 +65,87 @@ export default function SavedJobsMobile() {
         >
           <Header />
 
-          <Box sx={{ width: "100%", flex: 1, bgcolor: "#ddd", pb: "6rem",display:"flex",flexDirection:"column",alignItems:"center",px:0.5,boxSizing:"border-box" }}>
+          <Box
+            sx={{
+              width: "100%",
+              flex: 1,
+              bgcolor: "#fff",
+              pb: "6rem",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              px: 0.5,
+              boxSizing: "border-box",
+            }}
+          >
+            {/* filter and search */}
+            <Box
+              sx={{
+                width: "100%",
 
+                my: 1,
+                display: "flex",
+                justifyContent: "space-between",
+                flexDirection: "column",
+                gap: 0.5,
+              }}
+            >
+              <TextField
+                size="small"
+                // onChange={(e) => {
+                //   handleSearch(e);
+                // }}
+                fullWidth
+                // value={search}
+                placeholder="Search Jobs..."
+                sx={{
+                  borderRadius: "20px",
+                  "& .MuiInputBase-root": {
+                    borderRadius: "8px",
+                    fontFamily: "monospace",
+                  },
+                }}
+                slotProps={{
+                  input: {
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search size={18} color="#64748B" />
+                      </InputAdornment>
+                    ),
+                  },
+                }}
+              />
 
-
+              <Autocomplete
+                size="small"
+                fullWidth
+                sx={{
+                  "& .MuiAutocomplete-clearIndicator": {
+                    display: "none",
+                  },
+                  "& .MuiInputBase-root": {
+                    borderRadius: "8px",
+                    fontFamily: "monospace",
+                  },
+                }}
+                options={["Newest First", "Oldest First"]}
+                // value={felterData.sort}
+                // onChange={(event, newValue) => {
+                //   setFelterData((prev) => ({ ...prev, sort: newValue }));
+                // }}
+                slotProps={{
+                  popper: {
+                    sx: {
+                      transition: "none",
+                      animation: "none",
+                    },
+                  },
+                }}
+                renderInput={(params) => (
+                  <TextField {...params} placeholder="Sort by" />
+                )}
+              />
+            </Box>
 
             {loading ? (
               <LoadingList />
@@ -71,8 +155,6 @@ export default function SavedJobsMobile() {
                 handleChange={handleChange}
               />
             )}
-
-
 
             <Pagination
               onChange={handleChange}
