@@ -18,11 +18,12 @@ import WorkHistoryOutlinedIcon from "@mui/icons-material/WorkHistoryOutlined";
 import DescriptionOutlinedIcon from "@mui/icons-material/DescriptionOutlined";
 
 import PsychologyIcon from "@mui/icons-material/Psychology";
-import { useProfile } from "../../../logic/context/profileContext";
+import { useProfile } from "../../../../logic/context/profileContext";
+
 
 export default function ProfileCard() {
   const { ...state } = useProfile();
-  console.log(state.user);
+
   return (
     <Card
       sx={{

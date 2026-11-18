@@ -5,50 +5,39 @@ import Header from "./header";
 import ListJobsSaved from "./ListJobsSaved";
 import ProfileCard from "./ProfileCard";
 import { useEffect, useState } from "react";
-import { getSavedJobs } from "../../../logic/api/job/Job";
+
 import LoadingList from "./LoadingList";
+import { getSavedJobs } from "../../../../logic/api/job/Job";
 
-export default function SavedJobs() {
+export default function SavedJobsDesktop() {
+  const [savedJobs, setSavedJobs] = useState();
+  const [loading, setLoading] = useState(false);
 
-
-
-  const [savedJobs , setSavedJobs] = useState()
-  const [loading , setLoading ] = useState(false)
-
- const handleChange = (event, value) => {
-     SavedJobs(value)
+  const handleChange = (event, value) => {
+    SavedJobs(value);
   };
 
+  useEffect(() => {
+    SavedJobs();
+  }, []);
 
+  const SavedJobs = async (value) => {
+    setLoading(true);
+    try {
+      const SavedJobs = await getSavedJobs(value);
 
-  useEffect(()=>{
-   SavedJobs()
-  },[])
-
-  
-
-  const SavedJobs = async(value)=>{
-    setLoading(true)
-     try{
-
-      const SavedJobs = await getSavedJobs(value)
-      
-      setSavedJobs(SavedJobs)
-
-    }catch (err){
-
+      setSavedJobs(SavedJobs);
+    } catch (err) {
       console.log(err);
-
-    }finally{
-      setLoading(false)
-    }}
-
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
       <Box
         sx={{
-            
           width: "100vw",
           height: "92.4vh",
           bgcolor: "#dcdbdb",
@@ -69,17 +58,20 @@ export default function SavedJobs() {
           }}
         >
           <Header />
-          { loading ? <LoadingList/> : <ListJobsSaved savedJobs={savedJobs}  handleChange={handleChange}/> }
-            <Pagination
-                   onChange={handleChange}
-                   
-                   count={savedJobs?.totalPages}
-                    sx={{
-                      mt: "auto",
-                      alignSelf: "center",
-                      mb: 2,
-                    }}
-                  />
+          {loading ? (
+            <LoadingList />
+          ) : (
+            <ListJobsSaved savedJobs={savedJobs} handleChange={handleChange} />
+          )}
+          <Pagination
+            onChange={handleChange}
+            count={savedJobs?.totalPages}
+            sx={{
+              mt: "auto",
+              alignSelf: "center",
+              mb: 2,
+            }}
+          />
         </Box>
 
         {/* right side profile card  */}
@@ -93,10 +85,8 @@ export default function SavedJobs() {
             justifyContent: "center",
           }}
         >
-         
-            <ProfileCard/>
-          </Box>
-   
+          <ProfileCard />
+        </Box>
       </Box>
     </>
   );
