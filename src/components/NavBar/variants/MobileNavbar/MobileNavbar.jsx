@@ -81,7 +81,7 @@ export default function MobileNavbar() {
         </IconButton>
 
         <Drawer onClose={onClose} open={open} anchor="left">
-          <MainList />
+          <MainList onClose={onClose} />
         </Drawer>
 
         {/* Logo */}
