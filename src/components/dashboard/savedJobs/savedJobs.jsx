@@ -8,8 +8,6 @@ import SavedJobsMobile from "./Mobile/SavedJobsMobile";
 export default function SavedJobsPage() {
 
 
-
-
   const isMobile = useMediaQuery("(max-width:600px)");
 
 
