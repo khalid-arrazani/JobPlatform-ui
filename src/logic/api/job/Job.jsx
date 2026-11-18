@@ -86,10 +86,10 @@ export const toggleSaveJob  = async (jobData) => {
 };
 
 
-export const getSavedJobs  = async (page) => {
+export const getSavedJobs  = async (felterData) => {
   const response = await API.get(
-    `savedJob/jobs/save/${page}`, 
-    { withCredentials: true }
+    `savedJob/jobs/save`, 
+    {params:felterData, withCredentials: true }
   );
   return response.data;
 };
