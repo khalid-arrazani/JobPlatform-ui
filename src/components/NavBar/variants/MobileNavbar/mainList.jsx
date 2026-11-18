@@ -18,7 +18,7 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { Logout } from "../../../../logic/api/auth/auth";
 
-export default function MainList({onClose}) {
+export default function MainList({ onClose }) {
   const navigate = useNavigate();
   const { ...state } = useProfile();
 
@@ -76,7 +76,10 @@ export default function MainList({onClose}) {
         <List>
           <ListItem disablePadding>
             <ListItemButton
-              onClick={() =>{ navigate("/Dashboard/Saved") ;onClose()}}
+              onClick={() => {
+                navigate("/Dashboard/Saved");
+                onClose();
+              }}
               sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
             >
               <ListItemIcon sx={{ color: "white" }}>
