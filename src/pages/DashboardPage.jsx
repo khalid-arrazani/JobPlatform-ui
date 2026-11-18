@@ -21,6 +21,7 @@ import JobDetails from "../components/dashboard/JobDetails/JobDetails.jsx";
 import RecruiterApplicationsPage from "../components/dashboard/Apply/RecruiterApplications/RecruiterApplicationsPage.jsx";
  
 import SavedJobs from "../components/dashboard/savedJobs/savedJobs.jsx";
+import SavedJobsDesktop from "../components/dashboard/savedJobs/Desktop/SavedJobsDesktop.jsx";
  
  
  
