@@ -53,11 +53,18 @@ export default function SavedJobsMobile() {
             display: "flex",
             flexDirection: "column",
             borderRight: "solid 0.5px #6160601c",
-            boxSizing: "border-box",
-            px: 5,
+            boxSizing: "border-box", 
+           
           }}
         >
           <Header />
+          <Box sx={{width:"100%"}} >
+
+          </Box>
+
+
+
+
           {loading ? (
             <LoadingList />
           ) : (

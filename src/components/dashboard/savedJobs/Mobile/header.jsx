@@ -14,15 +14,11 @@ export default function Header (){
               display:"flex",
               justifyContent:"space-between",
               borderBottom:"solid 0.1px #8d8d8d3a",
-              boxSizing:"border-box"
+              boxSizing:"border-box",flexDirection:"column",p:1
             }}
           >
-            
-            
-
-
-
-            <Box>
+    
+             
             <Box  sx={{display:"flex",justifyContent:"space-between",mb:1}} >
               <Typography
                 sx={{
@@ -46,10 +42,6 @@ export default function Header (){
             >
               Jobs you've saved for later.
             </Typography>
-          </Box>
-        
-
           
-
           </Box></>
 }
