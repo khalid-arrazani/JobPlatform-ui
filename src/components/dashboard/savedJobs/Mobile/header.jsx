@@ -9,7 +9,7 @@ export default function Header (){
     return <>
       <Box
             sx={{
-              height: "17%",
+              height: "fit-content",
               width: "100%",
               display:"flex",
               justifyContent:"space-between",
@@ -17,75 +17,39 @@ export default function Header (){
               boxSizing:"border-box"
             }}
           >
-            {/* Left */}
-            <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
-              <Typography
-                sx={{
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  color: "#0F172A",
-                }}
-              >
-                Saved Jobs
-              </Typography>
+            
+            
 
+
+
+            <Box>
+            <Box  sx={{display:"flex",justifyContent:"space-between",mb:1}} >
               <Typography
                 sx={{
-                  mt: 1,
-                  color: "#64748B",
-                  fontSize: "0.95rem",
+                  fontSize: "1.6rem",
+                  fontWeight: 600,
+                  color: "#050713c3",
+                  fontFamily:"monospace"
                 }}
               >
-                Jobs you've saved for later.
+                 Saved Jobs
               </Typography>
+              
             </Box>
-
-            {/* Right */}
-            <Box
+            <Typography
               sx={{
-                display: "flex",
-                gap: 2,
-                alignItems: "center",
-                flexWrap: "wrap",
+                fontSize: "0.9rem",
+                fontWeight: 600,
+                color: "#6f6e6ee7",
+                fontFamily:"monospace"
               }}
             >
-              <TextField
-                placeholder="Search saved jobs..."
-                size="small"
-               
-                sx={{
-                  width: 280,
+              Jobs you've saved for later.
+            </Typography>
+          </Box>
+        
 
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "8px",
-                    bgcolor: "#fff",
-                    height: 40,
-                  },
-                }}
-              />
-
-              <Button
-                variant="outlined"
-                size="small"
-                startIcon={<TuneOutlinedIcon />}
-                sx={{
-                  height: 45,
-                  px: 3,
-                  borderRadius: "14px",
-                  textTransform: "none",
-                  fontWeight: 600,
-                  color: "#475569",
-                  borderColor: "#E2E8F0",
-
-                  "&:hover": {
-                    borderColor: "#8B5CF6",
-                    bgcolor: "#FAF5FF",
-                  },
-                }}
-              >
-                Filters
-              </Button>
-            </Box>
+          
 
           </Box></>
 }
