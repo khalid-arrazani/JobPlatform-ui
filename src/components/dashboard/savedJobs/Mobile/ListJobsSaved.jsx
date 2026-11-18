@@ -20,20 +20,12 @@ export default function ListJobsSaved({ savedJobs  }) {
 
   return (
     <>
-      <Box
-        sx={{
-          height: "70%",
-          overflow: "auto",
-          boxSizing: "border-box",
-          pt: 2,
-          display: "flex",
-          flexDirection: "column"
-        }}
-      >
+      
         {savedJobs?.jobs?.map((job) => (
           <Card
             key={job.id}
             sx={{
+              width:"100%",
               py: 1.5,
               px: 2,
               borderRadius: "10px",
@@ -41,13 +33,7 @@ export default function ListJobsSaved({ savedJobs  }) {
               boxShadow: "none",
               mb: 2,
               cursor: "pointer",
-              transition: "all 0.2s ease",
-              "&:hover": {
-                boxShadow: "0 8px 24px rgba(15, 23, 42, 0.11)",
-                transform: "translateY(-2px)",
-              },
-              minHeight: "9rem",
-              mr: 1,
+              boxSizing:"border-box"
             }}
           >
             <Box
@@ -250,8 +236,7 @@ export default function ListJobsSaved({ savedJobs  }) {
           </Card>
         ))}
 
-      
-      </Box>
+   
     </>
   );
 }

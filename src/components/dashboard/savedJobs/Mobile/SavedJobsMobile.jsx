@@ -53,37 +53,38 @@ export default function SavedJobsMobile() {
             display: "flex",
             flexDirection: "column",
             borderRight: "solid 0.5px #6160601c",
-            boxSizing: "border-box", 
-           
-           
+            boxSizing: "border-box",
           }}
         >
           <Header />
 
-          <Box sx={{width:"100%",flex:1,bgcolor:"#ddd",pb:"6rem"}} >
-{loading ? (
-            <LoadingList />
-          ) : (
-            <ListJobsSaved savedJobs={savedJobs} handleChange={handleChange} />
-          )}
-          <Pagination
-            onChange={handleChange}
-            count={savedJobs?.totalPages}
-            sx={{
-              mt: "auto",
-              alignSelf: "center",
-              mb: 2,
-            }}
-          />
+          <Box sx={{ width: "100%", flex: 1, bgcolor: "#ddd", pb: "6rem",display:"flex",flexDirection:"column",alignItems:"center",px:0.5,boxSizing:"border-box" }}>
+
+
+
+
+            {loading ? (
+              <LoadingList />
+            ) : (
+              <ListJobsSaved
+                savedJobs={savedJobs}
+                handleChange={handleChange}
+              />
+            )}
+
+
+
+            <Pagination
+              onChange={handleChange}
+              count={savedJobs?.totalPages}
+              sx={{
+                mt: "auto",
+                alignSelf: "center",
+                mb: 0.5,
+              }}
+            />
           </Box>
-
-
-
-
-          
         </Box>
-
-        
       </Box>
     </>
   );
