@@ -55,17 +55,13 @@ export default function SavedJobsMobile() {
             borderRight: "solid 0.5px #6160601c",
             boxSizing: "border-box", 
            
+           
           }}
         >
           <Header />
-          <Box sx={{width:"100%",flex:1,bgcolor:"#ddd"}} >
 
-          </Box>
-
-
-
-
-          {loading ? (
+          <Box sx={{width:"100%",flex:1,bgcolor:"#ddd",pb:"6rem"}} >
+{loading ? (
             <LoadingList />
           ) : (
             <ListJobsSaved savedJobs={savedJobs} handleChange={handleChange} />
@@ -79,6 +75,12 @@ export default function SavedJobsMobile() {
               mb: 2,
             }}
           />
+          </Box>
+
+
+
+
+          
         </Box>
 
         
