@@ -15,12 +15,17 @@ import { getSavedJobs } from "../../../../logic/api/job/Job";
 import { Search } from "lucide-react";
 
 export default function Footer() {
+
   const [felterData, setFelterData] = useState({
     search: "",
     sort: "Newest First",
     page: 1,
   });
+
+
+
   const [search, setSearch] = useState("");
+
   useEffect(() => {
     const timeout = setTimeout(() => {
       setFelterData((prev) => {
@@ -90,11 +95,11 @@ export default function Footer() {
         >
           <TextField
             size="small"
-            // onChange={(e) => {
-            //   handleSearch(e);
-            // }}
+            onChange={(e) => {
+              handleSearch(e);
+            }}
             fullWidth
-            // value={search}
+            value={search}
             placeholder="Search Jobs..."
             sx={{
               borderRadius: "20px",
