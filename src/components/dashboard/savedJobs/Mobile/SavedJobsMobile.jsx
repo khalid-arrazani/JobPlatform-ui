@@ -58,7 +58,7 @@ export default function SavedJobsMobile() {
           }}
         >
           <Header />
-          <Box sx={{width:"100%"}} >
+          <Box sx={{width:"100%",flex:1,bgcolor:"#ddd"}} >
 
           </Box>
 
