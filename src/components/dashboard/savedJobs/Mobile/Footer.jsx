@@ -96,7 +96,7 @@ export default function Footer() {
           <TextField
             size="small"
             onChange={(e) => {
-              handleSearch(e);
+               setSearch(e.target.value)
             }}
             fullWidth
             value={search}
