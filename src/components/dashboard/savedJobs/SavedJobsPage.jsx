@@ -1,20 +1,13 @@
-
 import { useMediaQuery } from "@mui/material";
 import SavedJobsDesktop from "./Desktop/SavedJobsDesktop";
 import SavedJobsMobile from "./Mobile/SavedJobsMobile";
 
-export default function SavedJobs() {
-
+export default function SavedJobsPage (){
+     const isMobile = useMediaQuery("(max-width:600px)");
  
-  const isMobile = useMediaQuery("(max-width:600px)");
-
-  console.log(aaa);
-
-  return (
-    <>
-    {/* {isMobile
+    return<>
+    {isMobile
     ? <SavedJobsMobile />
-    : <SavedJobsDesktop />} */}
+    : <SavedJobsDesktop />}
     </>
-  );
 }
