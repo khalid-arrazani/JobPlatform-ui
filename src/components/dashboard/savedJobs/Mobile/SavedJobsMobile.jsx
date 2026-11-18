@@ -47,7 +47,7 @@ export default function SavedJobsMobile() {
         {/* left side header and SavedJobsList */}
         <Box
           sx={{
-            width: "70vw",
+            width: "100%",
             height: "100%",
             bgcolor: "#ffffff",
             display: "flex",
@@ -74,19 +74,7 @@ export default function SavedJobsMobile() {
           />
         </Box>
 
-        {/* right side profile card  */}
-        <Box
-          sx={{
-            width: "30vw",
-            height: "100%",
-            bgcolor: "#ffffff",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          <ProfileCard />
-        </Box>
+        
       </Box>
     </>
   );
