@@ -11,6 +11,7 @@ export default function SavedJobsPage() {
   const isMobile = useMediaQuery("(max-width:600px)");
 
 
+
   return (
     <>
     {isMobile

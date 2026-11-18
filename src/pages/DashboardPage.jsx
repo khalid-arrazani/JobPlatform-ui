@@ -22,6 +22,7 @@ import RecruiterApplicationsPage from "../components/dashboard/Apply/RecruiterAp
 import SavedJobsPage from "../components/dashboard/savedJobs/savedJobs.jsx";
  
  
+ 
 
 
 
