@@ -88,12 +88,12 @@ export default function Footer() {
         <Box
           sx={{
             width: "100%",
-
             my: 1,
             display: "flex",
             justifyContent: "space-between",
             flexDirection: "column",
             gap: 0.5,
+            overflow:"auto"
           }}
         >
           <TextField
