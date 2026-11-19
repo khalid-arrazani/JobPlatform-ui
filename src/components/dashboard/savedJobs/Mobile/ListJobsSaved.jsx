@@ -39,7 +39,6 @@ export default function ListJobsSaved({ savedJobs }) {
         >
           <Box
             sx={{
-             
               height: "auto",
               borderBottom: "1px solid #ddddddb9",
               width: "100%",
@@ -132,6 +131,20 @@ export default function ListJobsSaved({ savedJobs }) {
                   }}
                 />
               </Stack>
+
+              <Chip
+                size="small"
+                label={`${millify(job?.minSalary)} - ${millify(job?.maxSalary)} ${job?.salaryCurrency} / ${job?.salaryPeriod}`}
+                sx={{
+                    fontSize: "0.8rem",
+                    height: "22px",
+                    bgcolor: "#d8ffded8",
+                    color: "#077912ba",
+                    borderRadius: "5px",
+                    fontWeight: 600,
+                    fontFamily: "monospace",mt:0.8
+                  }}
+              />
             </Box>
           </Box>
 
@@ -139,7 +152,6 @@ export default function ListJobsSaved({ savedJobs }) {
 
           <Box
             sx={{
-               
               height: "auto",
 
               width: "100%",
@@ -150,13 +162,11 @@ export default function ListJobsSaved({ savedJobs }) {
               flexDirection: "column",
             }}
           >
-            
-
             <Box
               sx={{
                 height: "3rem",
                 width: "100%",
-                 
+
                 display: "flex",
                 justifyContent: "space-around",
                 alignItems: "center",
