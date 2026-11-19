@@ -25,7 +25,7 @@ export default function ListJobsSaved({ savedJobs  }) {
 
           <Box
             key={job.id}
-            
+
             sx={{
               width:"100%",
               py: 1.5,
@@ -56,8 +56,8 @@ export default function ListJobsSaved({ savedJobs  }) {
                 <Avatar
                   src={job?.createdBy?.companyLogo?.url}
                   sx={{
-                    width: 70,
-                    height: 70,
+                    width: 50,
+                    height: 50,
                     borderRadius: "18px",
                     background: "linear-gradient(135deg, #9333EA, #3B82F6)",
                     fontSize: "1.8rem",
