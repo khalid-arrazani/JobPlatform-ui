@@ -83,7 +83,8 @@ export default function ListJobsSaved({ savedJobs }) {
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                  boxSizing:"border-box"
+                  boxSizing:"border-box",pr:1
+                  
                 }}
               >
                 <Typography
