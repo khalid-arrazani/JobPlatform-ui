@@ -81,7 +81,7 @@ export default function Footer() {
           flexDirection: "column",
           alignItems: "center",
           px: 0.5,
-          boxSizing: "border-box",
+          boxSizing: "border-box",overflow:"auto"
         }}
       >
         {/* filter and search */}
@@ -93,7 +93,7 @@ export default function Footer() {
             justifyContent: "space-between",
             flexDirection: "column",
             gap: 0.5,
-            overflow:"auto"
+            
           }}
         >
           <TextField
