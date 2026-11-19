@@ -52,8 +52,12 @@ export default function Footer() {
   useEffect(() => {
     SavedJobs();
   }, []);
+  useEffect(() => {
+    SavedJobs();
+  }, [felterData]);
 
   const SavedJobs = async () => {
+    console.log(45654655);
     setLoading(true);
     try {
       const SavedJobs = await getSavedJobs(felterData);
