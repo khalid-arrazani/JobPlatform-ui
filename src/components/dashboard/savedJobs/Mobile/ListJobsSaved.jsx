@@ -25,6 +25,7 @@ export default function ListJobsSaved({ savedJobs  }) {
 
           <Box
             key={job.id}
+            
             sx={{
               width:"100%",
               py: 1.5,
