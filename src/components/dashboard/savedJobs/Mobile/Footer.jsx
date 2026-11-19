@@ -23,7 +23,6 @@ export default function Footer() {
   });
 
 
-
   const [search, setSearch] = useState("");
 
   useEffect(() => {
@@ -42,22 +41,22 @@ export default function Footer() {
     return () => clearTimeout(timeout);
   }, [search]);
 
-  const [savedJobs, setSavedJobs] = useState();
+
+ const [savedJobs, setSavedJobs] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (event, value) => {
-    SavedJobs(value);
+   const handleChange = (event, value) => {
+    setFelterData((prev) => ({ ...prev, page: value }));
   };
 
   useEffect(() => {
     SavedJobs();
   }, []);
 
-  const SavedJobs = async (value) => {
+  const SavedJobs = async () => {
     setLoading(true);
     try {
-      const SavedJobs = await getSavedJobs(value);
-
+      const SavedJobs = await getSavedJobs(felterData);
       setSavedJobs(SavedJobs);
     } catch (err) {
       console.log(err);
@@ -159,6 +158,7 @@ export default function Footer() {
         <Pagination
           onChange={handleChange}
           count={savedJobs?.totalPages}
+          page={felterData.page}
           sx={{
             mt: "auto",
             alignSelf: "center",
