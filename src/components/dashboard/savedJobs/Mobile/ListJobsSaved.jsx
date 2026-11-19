@@ -23,7 +23,7 @@ export default function ListJobsSaved({ savedJobs  }) {
       
         {savedJobs?.jobs?.map((job) => (
 
-          <Card
+          <Box
             key={job.id}
             sx={{
               width:"100%",
@@ -34,7 +34,7 @@ export default function ListJobsSaved({ savedJobs  }) {
               boxShadow: "none",
               mb: 2,
               cursor: "pointer",
-              boxSizing:"border-box"
+              boxSizing:"border-box",height:"fit-content"
             }}
           >
             <Box
@@ -234,7 +234,7 @@ export default function ListJobsSaved({ savedJobs  }) {
                 </Stack>
               </Box>
             </Box>
-          </Card>
+          </Box>
           
         ))}
 
