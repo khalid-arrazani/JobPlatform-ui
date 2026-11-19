@@ -14,7 +14,14 @@ import BookmarkAddedOutlinedIcon from "@mui/icons-material/BookmarkAddedOutlined
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
+import { useNavigate } from "react-router-dom";
+
 export default function ListJobsSaved({ savedJobs }) {
+    const navigate = useNavigate();
+  const openJob = async (e) => {
+    const jobId = e.currentTarget.dataset.id;
+    navigate(`Details/${jobId}`);
+  };
   return (
     <>
       {savedJobs?.jobs?.map((job) => (
@@ -282,9 +289,9 @@ export default function ListJobsSaved({ savedJobs }) {
               />
 
               <Button
-                // onClick={() => {
-                //   setMyJobDetailsModal(true);
-                // }}
+                onClick={() => {
+                  openJob()
+                }}
                 sx={{
                   height: "30px",
                   color: "#5911b1",
