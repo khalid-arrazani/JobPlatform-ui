@@ -18,14 +18,20 @@ import { useNavigate } from "react-router-dom";
 
 export default function ListJobsSaved({ savedJobs }) {
     const navigate = useNavigate();
+
+
+
+
+
   const openJob = async (e) => {
-    const jobId = e.currentTarget.dataset.id;
-    navigate(`Details/${jobId}`);
+    console.log(e);
+    navigate(`/Dashboard/Jobs/Details/${e}`);
   };
   return (
     <>
       {savedJobs?.jobs?.map((job) => (
         <Box
+        key={job._id}
           sx={{
             bgcolor: "#fff",
             height: "auto",
@@ -290,7 +296,7 @@ export default function ListJobsSaved({ savedJobs }) {
 
               <Button
                 onClick={() => {
-                  openJob()
+                  openJob(job._id)
                 }}
                 sx={{
                   height: "30px",
