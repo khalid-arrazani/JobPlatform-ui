@@ -52,6 +52,8 @@ export default function Footer() {
   useEffect(() => {
     SavedJobs();
   }, []);
+
+  
   useEffect(() => {
     SavedJobs();
   }, [felterData]);
