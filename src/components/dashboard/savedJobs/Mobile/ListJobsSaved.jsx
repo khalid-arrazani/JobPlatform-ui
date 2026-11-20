@@ -28,7 +28,7 @@ export default function ListJobsSaved({ savedJobs }) {
     navigate(`/Dashboard/Jobs/Details/${e}`);
   };
 
-  console.log(savedJobs?.jobs);
+  console.log(savedJobs);
   return (
     <>
       {savedJobs?.jobs?.map((job) => (

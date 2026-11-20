@@ -53,7 +53,7 @@ export default function Footer() {
     SavedJobs();
   }, []);
 
-  
+
   useEffect(() => {
     SavedJobs();
   }, [felterData]);
@@ -64,7 +64,7 @@ export default function Footer() {
       const SavedJobs = await getSavedJobs(felterData);
       setSavedJobs(SavedJobs);
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     } finally {
       setLoading(false);
     }
