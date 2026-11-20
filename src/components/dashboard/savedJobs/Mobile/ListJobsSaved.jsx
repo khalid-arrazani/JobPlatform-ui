@@ -7,7 +7,9 @@ import {
   Stack,
   Typography,
   Button,
+  CircularProgress,
 } from "@mui/material";
+
 
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
@@ -30,14 +32,15 @@ export default function ListJobsSaved({ savedJobs }) {
         const [loading, setLoading] = useState(false);
 
 
-        
+
         const saveJob = async () => {
           const jobId = job._id;
           setLoading(true);
           try {
             const savejobs = await toggleSaveJob({
               jobId,
-            });
+            })
+            console.log(savejobs);
           } catch (error) {
             console.log(error.response?.data.message);
           } finally {
@@ -132,8 +135,10 @@ export default function ListJobsSaved({ savedJobs }) {
                   >
                     {job?.title || "-----------------------"}
                   </Typography>
-                  <IconButton onClick={onClick}>
+                  <IconButton onClick={saveJob}>
                     {loading ? (
+                        <CircularProgress enableTrackSlot size="30px" aria-label="Loading…" />
+                    ) : (
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         fill="none"
@@ -152,8 +157,6 @@ export default function ListJobsSaved({ savedJobs }) {
                           stroke-width="0.5"
                         ></path>
                       </svg>
-                    ) : (
-                      "e"
                     )}
                   </IconButton>
                 </Box>
