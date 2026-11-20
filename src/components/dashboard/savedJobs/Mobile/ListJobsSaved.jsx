@@ -14,6 +14,7 @@ import { formatDistanceToNow } from "date-fns";
 
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { toggleSaveJob } from "../../../../logic/api/job/Job";
 
 export default function ListJobsSaved({ savedJobs }) {
   const navigate = useNavigate();
@@ -27,6 +28,25 @@ export default function ListJobsSaved({ savedJobs }) {
     <>
       {savedJobs?.jobs?.map((job) => {
         const [loading, setLoading] = useState(false);
+
+
+          const saveJob = async () => {
+            const jobId = job._id
+            setLoading(true)
+            try {
+              
+              const savejobs = await toggleSaveJob({
+                jobId,
+              });
+             
+            } catch (error) {
+
+              console.log(error.response?.data.message);
+               
+            }finally{
+              setLoading(false)
+            }
+          };
         const onClick = () => {
           setLoading(true);
         };
