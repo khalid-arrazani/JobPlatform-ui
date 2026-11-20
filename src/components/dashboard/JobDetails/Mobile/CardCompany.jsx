@@ -335,22 +335,21 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
               <Typography
                 sx={{
                   color: "#000000ad",
-                  fontSize: "0.68rem",
+                  fontSize: "0.8rem",
                   fontFamily:"monospace",ml:"1px"
-                  
                 }}
               >
-                {jobInfo?.createdBy.name} • {jobInfo?.location}
+                {jobInfo?.createdBy.name} • {jobInfo?.location} 
               </Typography>
 
-              <Stack direction="row" spacing={0.5}>
+              <Stack direction="row" spacing={0.5} sx={{mt:0.5}} >
                 <Chip
                   label={jobInfo?.jobType}
                   size="small"
                   sx={{
                     bgcolor: "#fce8ff",
                     color: "#7C3AED",
-                  fontSize: "0.5rem",
+                  fontSize: "0.8rem",
                     fontWeight: 400,
                     height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
                   }}
@@ -361,25 +360,26 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
                   size="small"
                   sx={{
                     bgcolor: "#fce8ff",
-                  fontSize: "0.5rem",
+                  fontSize: "0.8rem",
                     color: "#7C3AED",
                     fontWeight: 400,
                     height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
                   }}
                 />
-                <Chip
+                
+              </Stack>
+              <Chip
                   label={`${millify(jobInfo?.minSalary)}-${millify(jobInfo?.maxSalary)} ${jobInfo?.salaryCurrency}/${jobInfo?.salaryPeriod}`}
                   size="small"
                   sx={{
                     bgcolor: "#e9fcf1",
                     color: "#27a25e",
                     fontWeight: 400,
-                  fontSize: "0.5rem",
-                    height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace"
+                  fontSize: "0.8rem",
+                    height:"fit-content",py:0.2,borderRadius:"4px",fontFamily:"monospace",width:"fit-content",mt:0.7
                     
                   }}
                 />
-              </Stack>
 
             </Box>
           </Box>
