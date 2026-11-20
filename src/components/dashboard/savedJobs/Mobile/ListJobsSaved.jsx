@@ -1,7 +1,7 @@
 import {
   Avatar,
   Box,
-  Card,
+
   Chip,
   IconButton,
   Stack,
@@ -23,11 +23,10 @@ export default function ListJobsSaved({ savedJobs }) {
   const openJob = async (e) => {
     navigate(`/Dashboard/Jobs/Details/${e}`);
   };
-
-  console.log(savedJobs);
   return (
     <>
       {savedJobs?.jobs?.map((job) => {
+
         const [loading, setLoading] = useState(false);
         const [saved, setSaved] = useState(true);
 
