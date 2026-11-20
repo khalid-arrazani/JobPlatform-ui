@@ -57,7 +57,6 @@ export default function Footer() {
   }, [felterData]);
 
   const SavedJobs = async () => {
-    console.log(45654655);
     setLoading(true);
     try {
       const SavedJobs = await getSavedJobs(felterData);
