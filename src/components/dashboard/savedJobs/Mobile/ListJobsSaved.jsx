@@ -9,22 +9,15 @@ import {
   Button,
 } from "@mui/material";
 
-
-
 import { millify } from "millify";
 import { formatDistanceToNow } from "date-fns";
 
 import { useNavigate } from "react-router-dom";
 
 export default function ListJobsSaved({ savedJobs }) {
-    const navigate = useNavigate();
-
-
-
-
+  const navigate = useNavigate();
 
   const openJob = async (e) => {
-    
     navigate(`/Dashboard/Jobs/Details/${e}`);
   };
 
@@ -33,7 +26,7 @@ export default function ListJobsSaved({ savedJobs }) {
     <>
       {savedJobs?.jobs?.map((job) => (
         <Box
-        key={job._id}
+          key={job._id}
           sx={{
             bgcolor: "#fff",
             height: "auto",
@@ -98,8 +91,8 @@ export default function ListJobsSaved({ savedJobs }) {
                   width: "100%",
                   display: "flex",
                   justifyContent: "space-between",
-                  boxSizing:"border-box",pr:1
-
+                  boxSizing: "border-box",
+                  pr: 1,
                 }}
               >
                 <Typography
@@ -110,29 +103,27 @@ export default function ListJobsSaved({ savedJobs }) {
                     position: "relative",
                     display: "flex",
                     justifyContent: "space-between",
-                    width:"90%"
+                    width: "90%",
                   }}
                 >
                   {job?.title || "-----------------------"}
                 </Typography>
 
-
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
-                  id="Bookmark-Added--Streamline-Rounded-Material"
-                  height="24"
-                  width="24"
-                   
+                  id="Bookmark-Remove-Fill--Streamline-Rounded-Fill-Material"
+                  height="28"
+                  width="28"
                 >
                   <desc>
-                    Bookmark Added Streamline Icon: https://streamlinehq.com
+                    Bookmark Remove Fill Streamline Icon:
+                    https://streamlinehq.com
                   </desc>
                   <path
-                    fill="#7c1de9"
-                    
-                    d="m17.9 6.75 3.175 -3.175c0.14665 -0.15 0.32085 -0.225 0.5225 -0.225 0.20165 0 0.3775 0.075415 0.5275 0.22625 0.15 0.151 0.225 0.330165 0.225 0.5375 0 0.2075 -0.075 0.38625 -0.225 0.53625l-3.7 3.7c-0.15 0.15 -0.325 0.225 -0.525 0.225s-0.375 -0.075 -0.525 -0.225l-1.6 -1.6c-0.15 -0.15 -0.225 -0.32635 -0.225 -0.529 0 -0.20265 0.07175 -0.37765 0.21525 -0.525 0.1565 -0.14735 0.33865 -0.221 0.5465 -0.221 0.20765 0 0.3871 0.075 0.53825 0.225l1.05 1.05ZM12 18l-4.9 2.1c-0.5 0.21665 -0.975 0.177 -1.425 -0.119 -0.45 -0.29585 -0.675 -0.7145 -0.675 -1.256V4.375c0 -0.4 0.15 -0.75 0.45 -1.05 0.3 -0.3 0.65 -0.45 1.05 -0.45h6.5c0.2125 0 0.39065 0.072335 0.5345 0.217 0.14365 0.1445 0.2155 0.323665 0.2155 0.5375 0 0.213665 -0.07185 0.391335 -0.2155 0.533 -0.14385 0.141665 -0.322 0.2125 -0.5345 0.2125H6.5v14.35l5.5 -2.325 5.5 2.325v-7.6c0 -0.2125 0.07235 -0.39065 0.217 -0.5345 0.1445 -0.14365 0.32365 -0.2155 0.5375 -0.2155 0.21365 0 0.39135 0.07185 0.533 0.2155 0.14165 0.14385 0.2125 0.322 0.2125 0.5345v7.6c0 0.5415 -0.225 0.96015 -0.675 1.256 -0.45 0.296 -0.925 0.33565 -1.425 0.119L12 18Zm0 -13.625H6.5h7.25H12Z"
+                    fill="#921f9b"
+                    d="M16 6.625c-0.2125 0 -0.3906 -0.07235 -0.53425 -0.217 -0.14385 -0.1445 -0.21575 -0.32365 -0.21575 -0.5375 0 -0.21365 0.0719 -0.39135 0.21575 -0.533 0.14365 -0.14165 0.32175 -0.2125 0.53425 -0.2125h4.5c0.2125 0 0.39065 0.07235 0.5345 0.217 0.14365 0.1445 0.2155 0.32365 0.2155 0.5375 0 0.21365 -0.07185 0.39135 -0.2155 0.533 -0.14385 0.14165 -0.322 0.2125 -0.5345 0.2125h-4.5ZM12 18l-4.9 2.1c-0.5 0.21665 -0.975 0.177 -1.425 -0.119 -0.45 -0.29585 -0.675 -0.7145 -0.675 -1.256V4.375c0 -0.4125 0.1469 -0.765665 0.44075 -1.0595 0.29365 -0.293665 0.64675 -0.4405 1.05925 -0.4405h7.3c0.225 0 0.39375 0.1 0.50625 0.3 0.1125 0.2 0.1021 0.4 -0.03125 0.6 -0.18335 0.316665 -0.31665 0.65 -0.4 1 -0.08335 0.35 -0.125 0.71665 -0.125 1.1 0 1.11665 0.35835 2.09165 1.075 2.925 0.71665 0.83335 1.60835 1.34165 2.675 1.525 0.15 0.02215 0.2844 0.0361 0.40325 0.04175 0.11865 0.0055 0.23425 0.00825 0.34675 0.00825 0.2 0 0.375 0.06625 0.525 0.19875 0.15 0.13235 0.225 0.2994 0.225 0.50125v7.65c0 0.5415 -0.225 0.96015 -0.675 1.256 -0.45 0.296 -0.925 0.33565 -1.425 0.119L12 18Z"
                     stroke-width="0.5"
                   ></path>
                 </svg>
@@ -298,7 +289,7 @@ export default function ListJobsSaved({ savedJobs }) {
 
               <Button
                 onClick={() => {
-                  openJob(job._id)
+                  openJob(job._id);
                 }}
                 sx={{
                   height: "30px",
