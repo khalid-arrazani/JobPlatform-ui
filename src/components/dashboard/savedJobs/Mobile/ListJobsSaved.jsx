@@ -30,23 +30,21 @@ export default function ListJobsSaved({ savedJobs }) {
         const [loading, setLoading] = useState(false);
 
 
-          const saveJob = async () => {
-            const jobId = job._id
-            setLoading(true)
-            try {
-              
-              const savejobs = await toggleSaveJob({
-                jobId,
-              });
-             
-            } catch (error) {
+        
+        const saveJob = async () => {
+          const jobId = job._id;
+          setLoading(true);
+          try {
+            const savejobs = await toggleSaveJob({
+              jobId,
+            });
+          } catch (error) {
+            console.log(error.response?.data.message);
+          } finally {
+            setLoading(false);
+          }
+        };
 
-              console.log(error.response?.data.message);
-               
-            }finally{
-              setLoading(false)
-            }
-          };
         const onClick = () => {
           setLoading(true);
         };
