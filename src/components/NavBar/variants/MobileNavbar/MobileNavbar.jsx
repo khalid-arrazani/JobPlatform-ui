@@ -53,8 +53,6 @@ export default function MobileNavbar() {
         sx={{
           height: "4.5rem",
           width: "100%",
-       
-
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
@@ -480,7 +478,7 @@ export default function MobileNavbar() {
         </Box>
 
       </Box>
-      
+
     </>
   );
 }
