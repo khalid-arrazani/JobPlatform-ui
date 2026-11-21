@@ -29,7 +29,7 @@ export default function DashboardLayout({ children }) {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        background: "#eedcefc2",
+        background: "#f0f0f0c2",
         padding: 0,
         boxSizing: "border-box",
       }}
