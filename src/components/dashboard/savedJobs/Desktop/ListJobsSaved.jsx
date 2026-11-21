@@ -21,7 +21,8 @@ export default function ListJobsSaved({ savedJobs }) {
   const navigate = useNavigate();
 
   const openJob = async (e) => {
-    navigate(`/Dashboard/Jobs/Details/${e}`);
+    // navigate(`/Dashboard/Jobs/Details/${e}`);
+    console.log(e);
   };
 
   return (
@@ -36,7 +37,8 @@ export default function ListJobsSaved({ savedJobs }) {
           flexDirection: "column",
         }}
       >
-        {savedJobs?.jobs?.map((job) => {
+        {
+        savedJobs?.jobs?.map((job) => {
           const [loading, setLoading] = useState(false);
           const [saved, setSaved] = useState(true);
 
