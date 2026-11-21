@@ -24,10 +24,10 @@ export default function SearchInput({search , setSearch}) {
             borderRadius: "0.8rem",
             width: "80%",
             transition: "0.3s",
-            boxShadow: "0 2px 6px rgba(0,0,0,0.1)",
+ 
 
             "&:focus-within": {
-              boxShadow: "0 0 8px rgba(0,0,0,0.3)",
+ 
               transform: "scale(1.02)",
             },
           }}
