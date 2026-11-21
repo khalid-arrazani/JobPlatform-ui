@@ -59,6 +59,7 @@ export default function MobileNavbar() {
           px: 2,
           boxSizing: "border-box",
           borderRadius: "18px",
+          bgcolor:"#f0d0f8dc"
         }}
       >
         <IconButton
