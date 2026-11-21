@@ -1,7 +1,7 @@
 import {
   Avatar,
   Box,
-
+  Card,
   Chip,
   IconButton,
   Stack,
