@@ -1,70 +1,71 @@
-import { Box,Typography,TextField} from "@mui/material";
+import { Box, Typography, TextField } from "@mui/material";
 
-
-
-export default function Header (){
-  
-
-    return <>
+export default function Header() {
+  return (
+    <>
       <Box
+        sx={{
+          height: "17%",
+          width: "100%",
+          display: "flex",
+          justifyContent: "space-between",
+          borderBottom: "solid 0.1px #8d8d8d3a",
+          boxSizing: "border-box",
+        }}
+      >
+        {/* Left */}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+          }}
+        >
+          <Typography
             sx={{
-              height: "17%",
-              width: "100%",
-              display:"flex",
-              justifyContent:"space-between",
-              borderBottom:"solid 0.1px #8d8d8d3a",
-              boxSizing:"border-box"
+              fontSize: "1.4rem",
+              fontWeight: 700,
+              color: "#0F172A",
             }}
           >
-            {/* Left */}
-            <Box sx={{display:"flex",flexDirection:"column",justifyContent:"center"}}>
-              <Typography
-                sx={{
-                  fontSize: "1.4rem",
-                  fontWeight: 700,
-                  color: "#0F172A",
-                }}
-              >
-                Saved Jobs
-              </Typography>
+            Saved Jobs
+          </Typography>
 
-              <Typography
-                sx={{
-                  mt: 1,
-                  color: "#64748B",
-                  fontSize: "0.95rem",
-                }}
-              >
-                Jobs you've saved for later.
-              </Typography>
-            </Box>
+          <Typography
+            sx={{
+              mt: 1,
+              color: "#64748B",
+              fontSize: "0.95rem",
+            }}
+          >
+            Jobs you've saved for later.
+          </Typography>
+        </Box>
 
-            {/* Right */}
-            <Box
-              sx={{
-                display: "flex",
-                gap: 2,
-                alignItems: "center",
-                flexWrap: "wrap",
-              }}
-            >
-              <TextField
-                placeholder="Search saved jobs..."
-                size="small"
-               
-                sx={{
-                  width: 280,
+        {/* Right */}
+        <Box
+          sx={{
+            display: "flex",
+            gap: 2,
+            alignItems: "center",
+            flexWrap: "wrap",
+          }}
+        >
+          <TextField
+            placeholder="Search saved jobs..."
+            size="small"
+            sx={{
+              width: 280,
 
-                  "& .MuiOutlinedInput-root": {
-                    borderRadius: "8px",
-                    bgcolor: "#fff",
-                    height: 40,
-                  },
-                }}
-              />
-
-              
-            </Box>
-
-          </Box></>
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "8px",
+                bgcolor: "#fff",
+                height: 40,
+              },
+            }}
+          />
+        </Box>
+      </Box>
+    </>
+  );
 }
