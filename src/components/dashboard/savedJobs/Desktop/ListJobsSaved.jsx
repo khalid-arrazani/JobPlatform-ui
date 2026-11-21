@@ -21,8 +21,8 @@ export default function ListJobsSaved({ savedJobs }) {
   const navigate = useNavigate();
 
   const openJob = async (e) => {
-    // navigate(`/Dashboard/Jobs/Details/${e}`);
-    console.log(e);
+    navigate(`/Dashboard/Jobs/Details/${e}`);
+   
   };
 
   return (
