@@ -59,7 +59,7 @@ export default function ListJobsSaved({ savedJobs }) {
 
           return (
             <Card
-              key={job.id}
+              key={job._id}
               sx={{
                 py: 1.5,
                 px: 2,
