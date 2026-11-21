@@ -35,7 +35,10 @@ export default function CardCompany({ jobInfo, JobId, fetchJobById }) {
   const { setSnackBar } = useAuth();
 
   const [jobs, setJobs] = useState();
+  
   const navigate = useNavigate();
+
+
   const [openCancelApply, setOpenCancelApply] = useState(false);
 
   useEffect(() => {

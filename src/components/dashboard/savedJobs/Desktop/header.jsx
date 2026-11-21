@@ -1,6 +1,5 @@
-import { Box,Typography,TextField,Button} from "@mui/material";
+import { Box,Typography,TextField} from "@mui/material";
 
-import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
 
 
 export default function Header (){
@@ -64,27 +63,7 @@ export default function Header (){
                 }}
               />
 
-              <Button
-                variant="outlined"
-                size="small"
-                startIcon={<TuneOutlinedIcon />}
-                sx={{
-                  height: 45,
-                  px: 3,
-                  borderRadius: "14px",
-                  textTransform: "none",
-                  fontWeight: 600,
-                  color: "#475569",
-                  borderColor: "#E2E8F0",
-
-                  "&:hover": {
-                    borderColor: "#8B5CF6",
-                    bgcolor: "#FAF5FF",
-                  },
-                }}
-              >
-                Filters
-              </Button>
+              
             </Box>
 
           </Box></>
