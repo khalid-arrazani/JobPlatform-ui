@@ -1,7 +1,7 @@
-import { Box, Typography, TextField, InputAdornment } from "@mui/material";
+import { Box, Typography, TextField, InputAdornment, Autocomplete } from "@mui/material";
 import { Search } from "lucide-react";
 
-export default function Header({setSearch , search }) {
+export default function Header({setSearch , search,felterData,setFelterData }) {
   return (
     <>
       <Box
@@ -77,6 +77,35 @@ export default function Header({setSearch , search }) {
               },
             }}
           />  
+           <Autocomplete
+                      size="small"
+                      fullWidth
+                      sx={{
+                        "& .MuiAutocomplete-clearIndicator": {
+                          display: "none",
+                        },
+                        "& .MuiInputBase-root": {
+                          borderRadius: "8px",
+                          fontFamily: "monospace",
+                        },
+                      }}
+                      options={["Newest First", "Oldest First"]}
+                      value={felterData.sort}
+                      onChange={(event, newValue) => {
+                        setFelterData((prev) => ({ ...prev, sort: newValue }));
+                      }}
+                      slotProps={{
+                        popper: {
+                          sx: {
+                            transition: "none",
+                            animation: "none",
+                          },
+                        },
+                      }}
+                      renderInput={(params) => (
+                        <TextField {...params} placeholder="Sort by" />
+                      )}
+                    />
         </Box>
       </Box>
     </>
