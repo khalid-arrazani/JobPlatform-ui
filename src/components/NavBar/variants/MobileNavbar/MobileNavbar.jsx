@@ -53,7 +53,7 @@ export default function MobileNavbar() {
         sx={{
           height: "4.5rem",
           width: "100%",
-          bgcolor: "#c571ec30",
+       
 
           display: "flex",
           alignItems: "center",
