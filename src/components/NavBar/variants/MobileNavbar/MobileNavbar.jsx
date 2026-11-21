@@ -145,7 +145,7 @@ export default function MobileNavbar() {
         sx={{
           height: "4.9rem",
           width: "95%",
-          bgcolor: "#faeefd",
+          bgcolor: "#f0d0f8dc",
           borderBottom: "1px #ddd solid",
           display: "flex",
           justifyContent: "space-evenly",
@@ -156,12 +156,13 @@ export default function MobileNavbar() {
           position: "absolute",
           bottom: 0,
           zIndex: "1",
+          backdropFilter:"blur(3px)"
         }}
       >
         {/* Home */}
         <Box
           sx={{
-            bgcolor: "#faeefd",
+            
 
             display: "flex",
 
@@ -207,7 +208,7 @@ export default function MobileNavbar() {
         {/* Companies */}
         <Box
           sx={{
-            bgcolor: "#faeefd",
+       
 
             display: "flex",
 
@@ -304,7 +305,7 @@ export default function MobileNavbar() {
         <Box
         onClick={()=>{setOpenModal(true)}}
           sx={{
-            bgcolor: "#faeefd",
+           
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
@@ -357,7 +358,7 @@ export default function MobileNavbar() {
          {authState.user?.user?.role == "recruiter" && (
         <Box
           sx={{
-            bgcolor: "#faeefd",
+        
 
             display: "flex",
 
@@ -414,7 +415,7 @@ export default function MobileNavbar() {
         {/* Apply */}
         <Box
           sx={{
-            bgcolor: "#faeefd",
+           
             display: "flex",
             alignItems: "center",
             flexDirection: "column",
