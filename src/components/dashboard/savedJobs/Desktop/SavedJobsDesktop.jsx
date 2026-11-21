@@ -88,11 +88,11 @@ export default function SavedJobsDesktop() {
             px: 5,
           }}
         >
-          <Header />
+          <Header setSearch={setSearch} search={search} />
           {loading ? (
             <LoadingList />
           ) : (
-            <ListJobsSaved setSearch={setSearch} search={search} savedJobs={savedJobs} handleChange={handleChange} />
+            <ListJobsSaved  savedJobs={savedJobs} handleChange={handleChange} />
           )}
           <Pagination
             onChange={handleChange}
