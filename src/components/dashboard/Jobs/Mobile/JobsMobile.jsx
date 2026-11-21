@@ -36,7 +36,7 @@ export default function JobsMobile({ search, setSearch, handleChange }) {
 
           
 
-          <Box sx={{height:"100%",width:"100%",pt:"0.5rem"}} >
+          <Box sx={{height:"100%",width:"100%",pt:"0.5rem",display:"flex",flexDirection:"column"}} >
 
              <SearchInput  search={search} setSearch={setSearch} />
         

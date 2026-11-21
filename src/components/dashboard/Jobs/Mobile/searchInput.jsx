@@ -18,7 +18,7 @@ export default function SearchInput({search , setSearch}) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            background: "rgba(236, 236, 236, 0.95)",
+            background: "rgb(255, 255, 255)",
             px: 2,
             py: 0.4,
             borderRadius: "0.5rem",
