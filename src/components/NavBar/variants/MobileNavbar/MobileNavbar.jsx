@@ -480,6 +480,7 @@ export default function MobileNavbar() {
         </Box>
 
       </Box>
+      
     </>
   );
 }
