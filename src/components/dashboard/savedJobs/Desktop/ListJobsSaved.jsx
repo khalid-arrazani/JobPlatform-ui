@@ -268,7 +268,7 @@ export default function ListJobsSaved({ savedJobs }) {
                   {/* Buttons */}
                   <Stack direction="row" spacing={2} justifyContent="flex-end">
                     <Button
-                    onClick={()=>{openJob(job.id)}}
+                    onClick={()=>{openJob(job._id)}}
                       variant="outlined"
                       size="small"
                       sx={{
