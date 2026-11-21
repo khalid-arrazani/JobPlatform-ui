@@ -31,7 +31,7 @@ export default function SearchInput({search , setSearch}) {
               transform: "scale(1.02)",
             },
           }}
-        >
+        > 
           <SearchIcon sx={{ color: "#555", fontSize: 20 }} />
 
           <InputBase
