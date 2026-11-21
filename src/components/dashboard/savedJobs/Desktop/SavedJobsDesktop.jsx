@@ -10,25 +10,56 @@ import LoadingList from "./LoadingList";
 import { getSavedJobs } from "../../../../logic/api/job/Job";
 
 export default function SavedJobsDesktop() {
-  const [savedJobs, setSavedJobs] = useState();
+ 
+  const [felterData, setFelterData] = useState({
+    search: "",
+    sort: "Newest First",
+    page: 1,
+  });
+
+
+  const [search, setSearch] = useState("");
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      console.log(52555);
+      setFelterData((prev) => {
+        if (prev.search === search) return prev;
+        return {
+          ...prev,
+          search,
+          page: 1,
+        };
+      });
+    }, 500);
+
+    return () => clearTimeout(timeout);
+  }, [search]);
+
+
+ const [savedJobs, setSavedJobs] = useState();
   const [loading, setLoading] = useState(false);
 
-  const handleChange = (event, value) => {
-    SavedJobs(value);
+   const handleChange = (event, value) => {
+    setFelterData((prev) => ({ ...prev, page: value }));
   };
 
   useEffect(() => {
     SavedJobs();
   }, []);
 
-  const SavedJobs = async (value) => {
+
+  useEffect(() => {
+    SavedJobs();
+  }, [felterData]);
+
+  const SavedJobs = async () => {
     setLoading(true);
     try {
-      const SavedJobs = await getSavedJobs(value);
-
+      const SavedJobs = await getSavedJobs(felterData);
       setSavedJobs(SavedJobs);
     } catch (err) {
-      console.log(err);
+      console.log(err.message);
     } finally {
       setLoading(false);
     }
@@ -61,7 +92,7 @@ export default function SavedJobsDesktop() {
           {loading ? (
             <LoadingList />
           ) : (
-            <ListJobsSaved savedJobs={savedJobs} handleChange={handleChange} />
+            <ListJobsSaved setSearch={setSearch} search={search} savedJobs={savedJobs} handleChange={handleChange} />
           )}
           <Pagination
             onChange={handleChange}

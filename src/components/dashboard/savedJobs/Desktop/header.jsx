@@ -1,6 +1,7 @@
-import { Box, Typography, TextField } from "@mui/material";
+import { Box, Typography, TextField, InputAdornment } from "@mui/material";
+import { Search } from "lucide-react";
 
-export default function Header() {
+export default function Header({setSearch , search }) {
   return (
     <>
       <Box
@@ -52,18 +53,30 @@ export default function Header() {
           }}
         >
           <TextField
-            placeholder="Search saved jobs..."
             size="small"
+            onChange={(e) => {
+               setSearch(e.target.value)
+            }}
+            fullWidth
+            value={search}
+            placeholder="Search Jobs..."
             sx={{
-              width: 280,
-
-              "& .MuiOutlinedInput-root": {
+              borderRadius: "20px",
+              "& .MuiInputBase-root": {
                 borderRadius: "8px",
-                bgcolor: "#fff",
-                height: 40,
+                fontFamily: "monospace",
               },
             }}
-          />
+            slotProps={{
+              input: {
+                startAdornment: (
+                  <InputAdornment position="start">
+                    <Search size={18} color="#64748B" />
+                  </InputAdornment>
+                ),
+              },
+            }}
+          />  
         </Box>
       </Box>
     </>
