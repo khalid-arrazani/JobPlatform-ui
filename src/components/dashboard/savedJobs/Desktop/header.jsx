@@ -47,7 +47,7 @@ export default function Header({setSearch , search,felterData,setFelterData }) {
         <Box
           sx={{
             display: "flex",
-            gap: 2,
+            gap: 0,
             alignItems: "center",
             flexWrap: "wrap",
           }}
