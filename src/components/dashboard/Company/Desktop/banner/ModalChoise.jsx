@@ -5,7 +5,8 @@ import CloseIcon from "@mui/icons-material/Close";
 
 import { GalleryHorizontal, ImageUp } from "lucide-react";
 import DeleteSweepOutlinedIcon from "@mui/icons-material/DeleteSweepOutlined";
-import { useAuth } from "../../../../logic/context/AuthContext";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+
 
 export default function ModalChoise({
   open,
