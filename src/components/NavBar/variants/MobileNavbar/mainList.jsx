@@ -8,13 +8,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Divider,IconButton,
-  CircularProgress
+  Divider,
+  IconButton,
+  CircularProgress,
 } from "@mui/material";
 
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
-
 
 import Badge from "@mui/material/Badge";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
@@ -30,8 +30,7 @@ import AddCircleIcon from "@mui/icons-material/AddCircle";
 import logoTitle from "../../../../assets/Logo/logo.png";
 import { useState } from "react";
 
- 
-import { useLocation  } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
@@ -40,11 +39,6 @@ import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { Logout } from "../../../../logic/api/auth/auth";
 import { useAuth } from "../../../../logic/context/AuthContext";
-
-
- 
- 
-
 
 export default function MainList({ onClose }) {
   const navigate = useNavigate();
@@ -61,7 +55,7 @@ export default function MainList({ onClose }) {
     }
   };
 
-    const { ...authState } = useAuth();
+  const { ...authState } = useAuth();
   return (
     <>
       <Box
@@ -139,11 +133,12 @@ export default function MainList({ onClose }) {
           </ListItem>
         </List>
 
-         {authState.user?.user?.role == "recruiter" ? (
-               <IconButton
+        <List>
+          <ListItem disablePadding>
+            {authState.user?.user?.role == "recruiter" ? (
+              <IconButton
                 onClick={() => navigate("/Dashboard/My_Company")}
                 sx={{
-                 
                   borderRadius: "5px",
                   height: "fit-content",
                   alignSelf: "center",
@@ -192,13 +187,14 @@ export default function MainList({ onClose }) {
                         fontFamily: "monospace",
                       }}
                     >
-                      {" "}
                       {state.user.profile.company.name}{" "}
                     </Typography>
                   </Box>
                 )}
               </IconButton>
             ) : null}
+          </ListItem>
+        </List>
 
         {/*  Navigation */}
         <List>
