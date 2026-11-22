@@ -109,8 +109,9 @@ export default function MainList({ onClose }) {
                   height: "fit-content",
                   fontSize: 13,
                   gap: 0.5,
-                  border: "solid 1px #ffffffb9",
+                  border: "solid 1px #7e46b223",
                   ml: "1rem",
+                  bgcolor:"#56307923",minWidth:""
                 }}
               >
                 {state.isLoading ? (
