@@ -13,11 +13,11 @@ import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect, useState } from "react";
+import { useCompany } from "../../../../logic/context/CompanyContext";
 import { getmyCompany } from "../../../../logic/api/company/Company";
 
-import { useCompany } from "../../../../logic/context/CompanyContext";
 
-export default function CompanyPage() {
+export default function CompanyDesktop() {
   const { dispatch, ...state } = useCompany();
   const [loading, setLoading] = useState(false);
 
