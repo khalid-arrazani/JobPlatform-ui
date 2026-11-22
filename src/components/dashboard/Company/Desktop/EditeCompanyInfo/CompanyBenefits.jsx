@@ -31,8 +31,9 @@ import {
   Monitor,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { UpdateMyCompany } from "../../../../logic/api/company/Company";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../../logic/api/company/Company";
+
 
 const companyBenefits = [
   {

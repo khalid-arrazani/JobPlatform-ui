@@ -13,9 +13,10 @@ import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
 
 import CompanyFounded from "./CompanyFounded";
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../../logic/api/company/Company";
 
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { UpdateMyCompany } from "../../../../logic/api/company/Company";
+
 
 const optionSize = ["1-10", "11-50", "51-200", "201-500", "501-1000", "1000+"];
 const specialties = [

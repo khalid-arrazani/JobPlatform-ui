@@ -50,7 +50,7 @@ export default function CardCompany({ jobInfo }) {
           }}
         >
           <Avatar
-            src={jobInfo?.createdBy.companyLogo.url}
+            src={jobInfo?.createdBy?.companyLogo?.url}
             sx={{
               width: 90,
               height: 90,
