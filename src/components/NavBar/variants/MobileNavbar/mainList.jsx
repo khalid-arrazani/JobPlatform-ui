@@ -11,6 +11,27 @@ import {
   Divider,IconButton
 } from "@mui/material";
 
+import { Tabs, Tab } from "@mui/material";
+import Drawer from "@mui/material/Drawer";
+import MainList from "./mainList.jsx";
+
+import Badge from "@mui/material/Badge";
+import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
+import AddIcon from "@mui/icons-material/Add";
+
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
+import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
+
+import WorkIcon from "@mui/icons-material/Work";
+
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
+import logoTitle from "../../../../assets/Logo/logo.png";
+import { useState } from "react";
+
+ 
+import { useLocation  } from "react-router-dom";
+
 import PersonIcon from "@mui/icons-material/Person";
 import SettingsIcon from "@mui/icons-material/Settings";
 import HomeIcon from "@mui/icons-material/Home";
@@ -20,9 +41,8 @@ import { Logout } from "../../../../logic/api/auth/auth";
 import { useAuth } from "../../../../logic/context/AuthContext";
 
 
-import WorkIcon from "@mui/icons-material/Work";
-
-import AddCircleIcon from "@mui/icons-material/AddCircle";
+ 
+ 
 
 
 export default function MainList({ onClose }) {
@@ -119,24 +139,65 @@ export default function MainList({ onClose }) {
         </List>
 
          {authState.user?.user?.role == "recruiter" ? (
-          <IconButton
-            onClick={() => {
-              setOpenModal(true);
-            }}
-          >
-            <WorkIcon sx={{ color: "#696363" }} />
-            <AddCircleIcon
-              sx={{
-                position: "absolute",
-                bottom: 10,
-                right: 4,
-                fontSize: 13,
-                color: "#22c55e",
-                background: "#fff",
-                borderRadius: "50%",
-              }}
-            />
-          </IconButton>) : null}
+               <IconButton
+                onClick={() => navigate("/Dashboard/My_Company")}
+                sx={{
+                  mr: 1,
+                  borderRadius: "5px",
+                  height: "90%",
+                  alignSelf: "center",
+                  fontSize: 13,
+                  gap: 0.5,
+                  border: "solid 1px #88858535",
+                  fontFamily: "-apple-system",
+                }}
+                style={{ position: "relative", right: "-3rem" }}
+              >
+                {state.isLoading ? (
+                  <CircularProgress
+                    color="success"
+                    aria-label="Loading…"
+                    sx={{ mx: 3 }}
+                  />
+                ) : !state?.user?.hasCompany ? (
+                  <Box sx={{ display: "flex", alignItems: "center" }}>
+                    <Badge
+                      overlap="circular"
+                      sx={{ mr: 0.5 }}
+                      anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+                      badgeContent={
+                        <AddIcon
+                          sx={{
+                            fontSize: 9,
+                            bgcolor: "#1976d2",
+                            color: "white",
+                            borderRadius: "10px",
+                            p: 0.2,
+                          }}
+                        />
+                      }
+                    >
+                      <BusinessOutlinedIcon />
+                    </Badge>
+                    add Company
+                  </Box>
+                ) : (
+                  <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
+                    <BusinessOutlinedIcon />
+                    <Typography
+                      sx={{
+                        color: "#0a0d2cc7",
+                        fontWeight: 500,
+                        fontFamily: "system-ui",
+                      }}
+                    >
+                      {" "}
+                      {state.user.profile.company.name}{" "}
+                    </Typography>
+                  </Box>
+                )}
+              </IconButton>
+            ) : null}
 
         {/*  Navigation */}
         <List>
