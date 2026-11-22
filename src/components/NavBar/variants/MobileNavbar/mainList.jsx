@@ -283,7 +283,10 @@ export default function MainList({ onClose }) {
               <ListItemIcon sx={{ color: "#f87171" }}>
                 <LogoutIcon />
               </ListItemIcon>
-              <ListItemText primary="Logout" />
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.2rem" }}>
+                Logout
+              </Typography>
+              
             </ListItemButton>
           </ListItem>
         </List>
