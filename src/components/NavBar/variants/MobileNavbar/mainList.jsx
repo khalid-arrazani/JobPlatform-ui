@@ -97,41 +97,7 @@ export default function MainList({ onClose }) {
           </Typography>
         </Box>
 
-        <List>
-          <ListItem disablePadding>
-            <ListItemButton
-              onClick={() => {
-                navigate("/Dashboard/Saved");
-                onClose();
-              }}
-              sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
-            >
-              <ListItemIcon sx={{ color: "white" }}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 10"
-                  id="Bookmark--Streamline-Micro"
-                  height="20"
-                  width="20"
-                >
-                  <desc>
-                    Bookmark Streamline Icon: https://streamlinehq.com
-                  </desc>
-                  <path
-                    fill="#f1f1f1"
-                    d="M7.5 0h-5A1.5 1.5 0 0 0 1 1.5v8a0.5 0.5 0 0 0 0.791 0.407l3.064 -2.189a0.249 0.249 0 0 1 0.29 0l3.064 2.189A0.5 0.5 0 0 0 9 9.5v-8A1.5 1.5 0 0 0 7.5 0"
-                    stroke-width="1"
-                  ></path>
-                </svg>
-              </ListItemIcon>
-
-              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
-                Save Jobs
-              </Typography>
-            </ListItemButton>
-          </ListItem>
-        </List>
+        
 
         <List>
           <ListItem disablePadding>
@@ -251,6 +217,40 @@ export default function MainList({ onClose }) {
 
               <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
                 My Profile
+              </Typography>
+            </ListItemButton>
+          </ListItem>
+
+            <ListItem disablePadding>
+            <ListItemButton
+              onClick={() => {
+                navigate("/Dashboard/Saved");
+                onClose();
+              }}
+              sx={{ "&:hover": { background: "rgba(255,255,255,0.08)" } }}
+            >
+              <ListItemIcon sx={{ color: "white" }}>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 10 10"
+                  id="Bookmark--Streamline-Micro"
+                  height="20"
+                  width="20"
+                >
+                  <desc>
+                    Bookmark Streamline Icon: https://streamlinehq.com
+                  </desc>
+                  <path
+                    fill="#f1f1f1"
+                    d="M7.5 0h-5A1.5 1.5 0 0 0 1 1.5v8a0.5 0.5 0 0 0 0.791 0.407l3.064 -2.189a0.249 0.249 0 0 1 0.29 0l3.064 2.189A0.5 0.5 0 0 0 9 9.5v-8A1.5 1.5 0 0 0 7.5 0"
+                    stroke-width="1"
+                  ></path>
+                </svg>
+              </ListItemIcon>
+
+              <Typography sx={{ fontFamily: "monospace", fontSize: "1.3rem" }}>
+                Save Jobs
               </Typography>
             </ListItemButton>
           </ListItem>
