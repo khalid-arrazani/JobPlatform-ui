@@ -144,9 +144,8 @@ export default function MainList({ onClose }) {
                   fontSize: 13,
                   gap: 0.5,
                   border: "solid 1px #ffffffb9",
-                  ml:"1rem"
+                  ml: "1rem",
                 }}
-                
               >
                 {state.isLoading ? (
                   <CircularProgress
@@ -178,13 +177,153 @@ export default function MainList({ onClose }) {
                   </Box>
                 ) : (
                   <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                    <BusinessOutlinedIcon  sx={{color:"#ffffffc3"}} />
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      id="Office-Building-Tall-2--Streamline-Ultimate"
+                      height="24"
+                      width="24"
+                    >
+                      <desc>
+                        Office Building Tall 2 Streamline Icon:
+                        https://streamlinehq.com
+                      </desc>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M6.75 6.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M6.75 10.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M6.75 14.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M12 6.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M12 10.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M12 14.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M17.25 6.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M17.25 10.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M17.25 14.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M21 3.75v19.5H3V3.75"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M18.5 3.75v-3h-13v3"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M14 23.25v-2.5c0 -1.1 -0.9 -2 -2 -2s-2 0.9 -2 2v2.5"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M23.25 23.25H0.75"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M22.25 3.75H1.75"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M6.75 18.75v1"
+                        stroke-width="1"
+                      ></path>
+                      <path
+                        stroke="#fff"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-miterlimit="10"
+                        d="M17.25 18.75v1"
+                        stroke-width="1"
+                      ></path>
+                    </svg>
                     <Typography
                       sx={{
                         color: "#ffff",
                         fontWeight: 500,
                         fontFamily: "monospace",
-                        fontSize:"1.4rem"
+                        fontSize: "1.4rem",
                       }}
                     >
                       {state.user.profile.company.name}{" "}
