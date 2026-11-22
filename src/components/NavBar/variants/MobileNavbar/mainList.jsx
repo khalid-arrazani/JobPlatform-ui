@@ -64,6 +64,7 @@ export default function MainList({ onClose }) {
           height: "100%",
           background: "linear-gradient(180deg, #57073d95 0%, #64129ab9 100%)",
           color: "white",
+          boxSizing:"border-box"
         }}
         role="presentation"
       >
@@ -98,9 +99,8 @@ export default function MainList({ onClose }) {
         </Box>
 
         
-
-        <List>
-          <ListItem disablePadding>
+   <Box sx={{width:"100%",boxSizing:"border-box"}} >
+         
             {authState.user?.user?.role == "recruiter" ? (
               <IconButton
                 onClick={() => navigate("/Dashboard/My_Company")}
@@ -110,8 +110,8 @@ export default function MainList({ onClose }) {
                   fontSize: 13,
                   gap: 0.5,
                   border: "solid 1px #7e46b223",
-                  ml: "1rem",
-                  bgcolor:"#56307923",minWidth:""
+                  mx: "1rem",
+                  bgcolor:"#56307923",width:"100%",
                 }}
               >
                 {state.isLoading ? (
@@ -187,8 +187,7 @@ export default function MainList({ onClose }) {
                 )}
               </IconButton>
             ) : null}
-          </ListItem>
-        </List>
+   </Box>       
 
         {/*  Navigation */}
         <List>
