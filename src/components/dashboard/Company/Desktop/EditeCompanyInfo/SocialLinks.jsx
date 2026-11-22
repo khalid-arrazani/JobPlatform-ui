@@ -15,8 +15,8 @@ import {
   FaXTwitter,
   FaInstagram,
 } from "react-icons/fa6";
-import { UpdateMyCompany } from "../../../../logic/api/company/Company";
-import { useAuth } from "../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../../logic/api/company/Company";
+import { useAuth } from "../../../../../logic/context/AuthContext";
 
 const inputStyle = {
   "& .MuiOutlinedInput-root": {

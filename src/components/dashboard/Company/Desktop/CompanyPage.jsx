@@ -1,7 +1,7 @@
 import { Box } from "@mui/material";
 
 
-import spinner from "../../../assets/spinner.json";
+import spinner from "../../../../assets/spinner.json";
 import { Player } from "@lottiefiles/react-lottie-player";
 
 import CompanyHeader from "./CompanyHeader";
@@ -13,9 +13,9 @@ import CompanyBenefits from "./CompanyBenefits ";
 import SocialContact from "./SocialContact";
 import CompanyInfo from "./CompanyInfo";
 import { useEffect, useState } from "react";
-import { getmyCompany } from "../../../logic/api/company/Company";
+import { getmyCompany } from "../../../../logic/api/company/Company";
 
-import { useCompany } from "../../../logic/context/CompanyContext";
+import { useCompany } from "../../../../logic/context/CompanyContext";
 
 export default function CompanyPage() {
   const { dispatch, ...state } = useCompany();

@@ -2,7 +2,7 @@ import {Typography, Box, Button } from "@mui/material";
 import { CircleCheckBig } from "lucide-react";
 import AddIcon from '@mui/icons-material/Add';
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
-import { useJob } from "../../../../logic/context/JobContext";
+import { useJob } from "../../../../../logic/context/JobContext";
 
 
 export default function EmptyOpenPositions() {

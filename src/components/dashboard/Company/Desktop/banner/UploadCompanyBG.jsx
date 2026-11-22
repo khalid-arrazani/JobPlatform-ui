@@ -5,8 +5,8 @@ import { useState, useRef } from "react";
 import AvatarEditor from "react-avatar-editor";
 
 import { Dialog, DialogContent, Slider } from "@mui/material";
-import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
-import { useAuth } from "../../../../logic/context/AuthContext";
+import { uptadeCompanyBanner } from "../../../../../logic/api/company/Company";
+import { useAuth } from "../../../../../logic/context/AuthContext";
 
 export default function CompanyBG({
   openEditor,
