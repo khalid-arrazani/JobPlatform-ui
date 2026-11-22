@@ -143,7 +143,7 @@ export default function MainList({ onClose }) {
                   height: "fit-content",
                   fontSize: 13,
                   gap: 0.5,
-                  border: "solid 1px #e6e6e642",
+                  border: "solid 1px #ffffffb9",
                   ml:"1rem"
                 }}
                 
