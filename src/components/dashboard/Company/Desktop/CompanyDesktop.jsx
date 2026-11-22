@@ -50,6 +50,7 @@ export default function CompanyDesktop() {
       setLoading(false);
     }
   };
+  console.log(state);
 
   return (
     <>

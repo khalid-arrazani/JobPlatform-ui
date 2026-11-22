@@ -15,7 +15,7 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
  
 
   const { JobId } = useParams();
- console.log("5555555", jobInfo);
+
   const onClose = ()=>{
     setOpen(false)
   }

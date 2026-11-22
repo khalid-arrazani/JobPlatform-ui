@@ -9,7 +9,7 @@ import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
-export default function OpenPositionsCard({ CompanyactiveJobs }) {
+export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
   const [open, setOpen] = useState(false);
 
   return (
@@ -56,6 +56,8 @@ export default function OpenPositionsCard({ CompanyactiveJobs }) {
           >
             View all jobs
           </Button>
+
+
         </Box>
 
         {/* <EmptyOpenPositions/> */}

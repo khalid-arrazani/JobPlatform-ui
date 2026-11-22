@@ -14,7 +14,7 @@ import { Building2 } from 'lucide-react';
 
 const CompanyInfo = ( {CompanyInfo}) => {
 
-  console.log(CompanyInfo);
+
   const company = {
     founded: CompanyInfo?.foundedYear,
     size: CompanyInfo?.companySize,
