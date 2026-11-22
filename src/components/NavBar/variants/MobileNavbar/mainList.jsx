@@ -143,10 +143,10 @@ export default function MainList({ onClose }) {
                   height: "fit-content",
                   fontSize: 13,
                   gap: 0.5,
-                  border: "solid 1px #3f024142",
-                  fontFamily: "-apple-system",
+                  border: "solid 1px #e6e6e642",
+                  ml:"1rem"
                 }}
-                style={{ position: "relative", right: "-3rem" }}
+                
               >
                 {state.isLoading ? (
                   <CircularProgress
@@ -178,12 +178,13 @@ export default function MainList({ onClose }) {
                   </Box>
                 ) : (
                   <Box sx={{ display: "flex", alignItems: "center", gap: 0.5 }}>
-                    <BusinessOutlinedIcon />
+                    <BusinessOutlinedIcon  sx={{color:"#ffffffc3"}} />
                     <Typography
                       sx={{
                         color: "#ffff",
                         fontWeight: 500,
                         fontFamily: "monospace",
+                        fontSize:"1.4rem"
                       }}
                     >
                       {state.user.profile.company.name}{" "}
