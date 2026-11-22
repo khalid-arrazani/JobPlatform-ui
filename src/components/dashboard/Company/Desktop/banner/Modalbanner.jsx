@@ -4,6 +4,8 @@ import Modal from "@mui/material/Modal";
 import { useEffect, useState } from "react";
 
 import CloseIcon from "@mui/icons-material/Close";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { uptadeCompanyBanner } from "../../../../../logic/api/company/Company";
 
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
@@ -21,10 +23,7 @@ const banners = {
   13: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590118/AAYABATzAAgAAQAAAAAAAL1oYjwyW3ZoR2WlcN4Df8JI4A_yre58r.jpg",
   14: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782589674/AAYABATzAAgAAQAAAAAAAL7g7rQW-r65R0ySdjUJAn_9mQ_aygqkz.jpg",
 };
-
-import { uptadeCompanyBanner } from "../../../../logic/api/company/Company";
-import { useAuth } from "../../../../logic/context/AuthContext";
-
+ 
 export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
   const [SelectedBanner, setSelectedBanner] = useState(null);
   const { setSnackBar } = useAuth();

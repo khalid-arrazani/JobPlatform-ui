@@ -2,7 +2,7 @@ import { Typography, Box, IconButton, Modal } from "@mui/material";
 
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import { useAuth } from "../../../../logic/context/AuthContext";
+
 
 import {
   List,
@@ -21,7 +21,9 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import ContactInfo from "./ContactInformation";
 import SocialInfo from "./SocialLinks";
 import CompanyBenefits from "./CompanyBenefits";
-import { useCompany } from "../../../../logic/context/CompanyContext";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { useCompany } from "../../../../../logic/context/CompanyContext";
+ 
 
 export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
   const [reload, setReload] = useState(false);

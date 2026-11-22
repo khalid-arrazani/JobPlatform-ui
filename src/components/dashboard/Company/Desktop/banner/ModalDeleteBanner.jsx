@@ -2,8 +2,10 @@ import { Typography, Box, IconButton, Button, Modal, CircularProgress } from "@m
 
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
-import { useAuth } from "../../../../logic/context/AuthContext";
-import { deleteCompanyBnner } from "../../../../logic/api/company/Company";
+import { useAuth } from "../../../../../logic/context/AuthContext";
+import { deleteCompanyBnner } from "../../../../../logic/api/company/Company";
+
+ 
 
 export default function ModalDeleteBanner({ open, setOpen,fetchCompany }) {
 

@@ -2,7 +2,8 @@ import {Typography, Box, Button } from "@mui/material";
 import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 import AddIcon from '@mui/icons-material/Add';
-import { useCompany } from "../../../../logic/context/CompanyContext";
+import { useCompany } from "../../../../../logic/context/CompanyContext";
+ 
 
 export default function EmptyAboutCompany() {
  
