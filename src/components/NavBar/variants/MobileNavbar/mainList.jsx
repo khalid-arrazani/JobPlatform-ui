@@ -141,7 +141,6 @@ export default function MainList({ onClose }) {
                 sx={{
                   borderRadius: "5px",
                   height: "fit-content",
-                  alignSelf: "center",
                   fontSize: 13,
                   gap: 0.5,
                   border: "solid 1px #3f024142",
