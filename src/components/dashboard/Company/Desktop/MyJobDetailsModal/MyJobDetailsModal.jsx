@@ -18,6 +18,7 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
 
   const onClose = ()=>{
     setOpen(false)
+    console.log(88888);
   }
 
   return <>
