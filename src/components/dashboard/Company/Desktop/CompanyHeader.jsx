@@ -37,6 +37,7 @@ import ModalInfo from "./EditeCompanyInfo/ModaleCompanyInfo";
 
 import { useState } from "react";
 import { useCompany } from "../../../../logic/context/CompanyContext";
+ 
 
 export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
   const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
