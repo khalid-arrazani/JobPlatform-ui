@@ -8,12 +8,13 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Divider,IconButton
+  Divider,IconButton,
+  CircularProgress
 } from "@mui/material";
 
 import { Tabs, Tab } from "@mui/material";
 import Drawer from "@mui/material/Drawer";
-import MainList from "./mainList.jsx";
+
 
 import Badge from "@mui/material/Badge";
 import BusinessOutlinedIcon from "@mui/icons-material/BusinessOutlined";
@@ -142,13 +143,13 @@ export default function MainList({ onClose }) {
                <IconButton
                 onClick={() => navigate("/Dashboard/My_Company")}
                 sx={{
-                  mr: 1,
+                 
                   borderRadius: "5px",
-                  height: "90%",
+                  height: "fit-content",
                   alignSelf: "center",
                   fontSize: 13,
                   gap: 0.5,
-                  border: "solid 1px #88858535",
+                  border: "solid 1px #3f024142",
                   fontFamily: "-apple-system",
                 }}
                 style={{ position: "relative", right: "-3rem" }}
@@ -186,9 +187,9 @@ export default function MainList({ onClose }) {
                     <BusinessOutlinedIcon />
                     <Typography
                       sx={{
-                        color: "#0a0d2cc7",
+                        color: "#ffff",
                         fontWeight: 500,
-                        fontFamily: "system-ui",
+                        fontFamily: "monospace",
                       }}
                     >
                       {" "}
