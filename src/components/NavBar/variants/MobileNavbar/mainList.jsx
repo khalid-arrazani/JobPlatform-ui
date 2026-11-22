@@ -8,7 +8,7 @@ import {
   ListItemButton,
   ListItemIcon,
   ListItemText,
-  Divider,
+  Divider,IconButton
 } from "@mui/material";
 
 import PersonIcon from "@mui/icons-material/Person";
@@ -17,6 +17,13 @@ import HomeIcon from "@mui/icons-material/Home";
 import LogoutIcon from "@mui/icons-material/Logout";
 import { useProfile } from "../../../../logic/context/profileContext";
 import { Logout } from "../../../../logic/api/auth/auth";
+import { useAuth } from "../../../../logic/context/AuthContext";
+
+
+import WorkIcon from "@mui/icons-material/Work";
+
+import AddCircleIcon from "@mui/icons-material/AddCircle";
+
 
 export default function MainList({ onClose }) {
   const navigate = useNavigate();
@@ -32,6 +39,8 @@ export default function MainList({ onClose }) {
       console.log(error);
     }
   };
+
+    const { ...authState } = useAuth();
   return (
     <>
       <Box
@@ -108,6 +117,26 @@ export default function MainList({ onClose }) {
             </ListItemButton>
           </ListItem>
         </List>
+
+         {authState.user?.user?.role == "recruiter" ? (
+          <IconButton
+            onClick={() => {
+              setOpenModal(true);
+            }}
+          >
+            <WorkIcon sx={{ color: "#696363" }} />
+            <AddCircleIcon
+              sx={{
+                position: "absolute",
+                bottom: 10,
+                right: 4,
+                fontSize: 13,
+                color: "#22c55e",
+                background: "#fff",
+                borderRadius: "50%",
+              }}
+            />
+          </IconButton>) : null}
 
         {/*  Navigation */}
         <List>
