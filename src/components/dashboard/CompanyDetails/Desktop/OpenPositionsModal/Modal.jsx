@@ -396,6 +396,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
               <Pagination
               onChange={handleChange}
               count={list?.totalPages}
+              
               />
             </Stack>
           </Box>
