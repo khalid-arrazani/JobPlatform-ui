@@ -11,14 +11,14 @@ import AbouttheCompany from "./AbouttheCompany";
 
 
 
-export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
+export default function MyJobDetailsModal({open , setOpen,jobInfo,CompanyInfo}) {
  
 
   const { JobId } = useParams();
 
   const onClose = ()=>{
     setOpen(false)
-    console.log(88888);
+    console.log(CompanyInfo,88888);
   }
 
   return <>
@@ -87,7 +87,7 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo}) {
           </Button>
 
 
-          <CardCompany jobInfo={jobInfo} JobId={JobId}/>
+          <CardCompany jobInfo={jobInfo} JobId={JobId}  CompanyInfo={CompanyInfo} />
           <DescriptionSection jobInfo={jobInfo}/>
           <AbouttheCompany jobInfo={jobInfo}/>
           <Divider />
