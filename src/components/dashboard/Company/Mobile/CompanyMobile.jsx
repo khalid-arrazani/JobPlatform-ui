@@ -11,7 +11,7 @@ import SocialContact from "./SocialContact";
 import CompanyBenefits from "./CompanyBenefits ";
 import CompanyStatistics from "./CompanyStatistics";
 import OpenPositionsCard from "./OpenPositionsCard ";
-import Owner from "./Owner";
+
 import { useEffect, useState } from "react";
 import { getmyCompany } from "../../../../logic/api/company/Company";
 
@@ -124,8 +124,7 @@ export default function CompanyMobile() {
               CompanyInfo={state?.Company}
               CompanyactiveJobs={state?.Company?.activeJobs}
             />
-            {/* company owner */}
-            <Owner CompanyInfo={state.Company?.company} />
+           
           </Box>
         </Box>
       )}
