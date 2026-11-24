@@ -75,7 +75,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
         {CompanyactiveJobs?.slice(0, 3).map((item) => (
           <Card
             onClick={() => {
-              setOpen(true)
+              OpenJobDetaildModal(item)
             }}
             key={item._id}
             sx={{
