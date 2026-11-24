@@ -88,7 +88,7 @@ export default function CompanyMobile() {
           }}
         >
           {/* top side or Company Card or  Header   */}
-          <CompanyHeader CompanyInfo={state.Company.company} />
+          <CompanyHeader CompanyInfo={state?.Company?.company} />
 
           {/* Content about Company or bottom side  */}
           <Box
