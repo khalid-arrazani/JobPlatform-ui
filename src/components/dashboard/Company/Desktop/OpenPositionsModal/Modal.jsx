@@ -21,7 +21,7 @@ import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
 import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
-import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
+import { GetCompaniesJobs, GetMyJobs } from "../../../../../logic/api/job/Job";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
@@ -36,6 +36,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     page: 1,
     search: "",
     sort: "Newest First",
+    status:"active"
   });
 
   useEffect(() => {
@@ -60,7 +61,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     setLoading(true);
 
     try {
-      const data = await GetCompaniesJobs(felterData);
+      const data = await GetMyJobs(felterData);
       setList(data);
       console.log(data);
     } catch (error) {
