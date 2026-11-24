@@ -26,8 +26,6 @@ export default function CompanyDetailsPage() {
         type: "SETCOMPANYDETAILS",
         payload: data,
       });
-
-      console.log(data);
     } catch (error) {
       console.log(error.response?.data);
     } finally {

@@ -1,5 +1,6 @@
  import { useMediaQuery } from "@mui/material";
 import CompanyDesktop from "./Desktop/CompanyDesktop";
+import CompanyMobile from "./Mobile/CompanyMobile";
 
 
 
@@ -8,7 +9,7 @@ export default function CompanyPage() {
 
   return (
     <>
-      <CompanyDesktop/>
+      <CompanyMobile/>
     </>
   );
 }

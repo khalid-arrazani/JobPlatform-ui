@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Card, Typography, Box, Button, Collapse } from "@mui/material";
 
-import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
+
 import EmptyAboutCompany from "./IfEmpty/EmptyAboutCompany";
 export default function AboutCompany({ CompanyInfo }) {
   const [expanded, setExpanded] = useState(false);
