@@ -11,12 +11,16 @@ import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
   const [open, setOpen] = useState(false);
+  const [jobDetaildModal,setJobDetaildModal]=useState(null)
+
   const onClose = ()=>{
     setOpen(false)
   }
 
  const OpenJobDetaildModal = (Job)=>{
    console.log(Job ,"OpenJobDetailsModal")
+   setJobDetaildModal(Job)
+   setOpen(true)
  }
 
   return (
@@ -31,6 +35,13 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
           mt: 2,
         }}
       >
+        
+        <MyJobDetailsModal open={open} setOpen={setOpen} onClose={onClose} jobInfo={jobDetaildModal} />
+
+
+
+
+
         {/* Header */}
         <Box
           sx={{
@@ -110,7 +121,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
               cursor: "pointer",
             }}
           >
-            <MyJobDetailsModal open={open} setOpen={setOpen} jobInfo={item} CompanyInfo={CompanyInfo} onClose={onClose} />
+            
 
             <Box>
               <Typography fontWeight={600}>
