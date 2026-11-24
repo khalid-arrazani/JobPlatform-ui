@@ -11,6 +11,9 @@ import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 
 export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
   const [open, setOpen] = useState(false);
+  const onClose = ()=>{
+    setOpen(false)
+  }
 
 console.log(open);
 
@@ -105,7 +108,7 @@ console.log(open);
               cursor: "pointer",
             }}
           >
-            <MyJobDetailsModal open={open} setOpen={setOpen} jobInfo={item} CompanyInfo={CompanyInfo} />
+            <MyJobDetailsModal open={open} setOpen={setOpen} jobInfo={item} CompanyInfo={CompanyInfo} onClose={onClose} />
 
             <Box>
               <Typography fontWeight={600}>
