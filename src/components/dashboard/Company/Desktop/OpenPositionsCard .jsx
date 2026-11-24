@@ -12,7 +12,7 @@ import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
   const [open, setOpen] = useState(false);
 
-
+console.log(open);
 
   return (
     <>
