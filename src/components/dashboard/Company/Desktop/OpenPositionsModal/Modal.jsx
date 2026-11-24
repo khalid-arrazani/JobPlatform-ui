@@ -30,13 +30,12 @@ export default function ModalOpenPositions({ open, setOpen }) {
 
   const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
-  const { CompanyId } = useParams();
+
 
   const [felterData, setFelterData] = useState({
     page: 1,
     search: "",
     sort: "Newest First",
-    CompanyId: CompanyId,
   });
 
   useEffect(() => {
