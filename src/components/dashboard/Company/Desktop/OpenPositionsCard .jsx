@@ -8,17 +8,21 @@ import { formatDistanceToNow } from "date-fns";
 import EmptyOpenPositions from "./IfEmpty/EmptyOpenPositions";
 import { useState } from "react";
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
+import ModalOpenPositions from "./OpenPositionsModal/Modal";
 
 export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
   const [open, setOpen] = useState(false);
+  const [openModalOpenPositions, setOpenModalOpenPositions] = useState(false);
   const [jobDetaildModal,setJobDetaildModal]=useState(null)
 
   const onClose = ()=>{
     setOpen(false)
   }
+   const onCloseModalOpenPositions = ()=>{
+    setOpen(false)
+  }
 
- const OpenJobDetaildModal = (Job)=>{
-   console.log(Job ,"OpenJobDetailsModal")
+ const OpenJobDetaildModal = (Job)=>{ 
    setJobDetaildModal(Job)
    setOpen(true)
  }
@@ -37,6 +41,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
       >
         
         <MyJobDetailsModal open={open} setOpen={setOpen} onClose={onClose} jobInfo={jobDetaildModal} />
+        <ModalOpenPositions open={openModalOpenPositions} setOpen={setOpenModalOpenPositions} onClose={onCloseModalOpenPositions} />
 
 
 
@@ -65,6 +70,9 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
           </Box>
 
           <Button
+          onClick={()=>{
+
+          }}
             size="small"
             sx={{
               color: "primary.main",

@@ -23,7 +23,7 @@ import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
 import {  GetMyJobs } from "../../../../../logic/api/job/Job";
 
-export default function ModalOpenPositions({ open, setOpen }) {
+export default function ModalOpenPositions({ open ,onClose }) {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
@@ -79,9 +79,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     fetchCompany();
   }, [felterData]);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  
 
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
@@ -96,7 +94,7 @@ export default function ModalOpenPositions({ open, setOpen }) {
     <>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         sx={{
           display: "flex",
           justifyContent: "center",
