@@ -19,7 +19,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
     setOpen(false)
   }
    const onCloseModalOpenPositions = ()=>{
-    setOpen(false)
+    setOpenModalOpenPositions(false)
   }
 
  const OpenJobDetaildModal = (Job)=>{ 
@@ -71,7 +71,8 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
 
           <Button
           onClick={()=>{
-
+             setOpenModalOpenPositions(true);
+          
           }}
             size="small"
             sx={{
