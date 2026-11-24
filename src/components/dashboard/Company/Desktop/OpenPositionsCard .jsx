@@ -15,7 +15,9 @@ export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
     setOpen(false)
   }
 
-console.log(open);
+ const OpenJobDetaildModal = ()=>{
+   
+ }
 
   return (
     <>
