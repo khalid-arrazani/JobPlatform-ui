@@ -21,7 +21,7 @@ import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
 import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
-import { GetCompaniesJobs, GetMyJobs } from "../../../../../logic/api/job/Job";
+import {  GetMyJobs } from "../../../../../logic/api/job/Job";
 
 export default function ModalOpenPositions({ open, setOpen }) {
   const [loading, setLoading] = useState(false);
