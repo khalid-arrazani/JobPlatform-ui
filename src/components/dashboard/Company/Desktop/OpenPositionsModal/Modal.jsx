@@ -14,7 +14,7 @@ import { MdChevronRight } from "react-icons/md";
 import Pagination from "@mui/material/Pagination";
 import LocationOnOutlinedIcon from "@mui/icons-material/LocationOnOutlined";
 import SearchAndFilter from "./CardFilterAndSearch";
-import { useParams } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 import { millify } from "millify";

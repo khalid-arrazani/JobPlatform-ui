@@ -10,7 +10,7 @@ import { useState } from "react";
 import MyJobDetailsModal from "./MyJobDetailsModal/MyJobDetailsModal";
 import ModalOpenPositions from "./OpenPositionsModal/Modal";
 
-export default function OpenPositionsCard({ CompanyactiveJobs ,CompanyInfo}) {
+export default function OpenPositionsCard({ CompanyactiveJobs }) {
   const [open, setOpen] = useState(false);
   const [openModalOpenPositions, setOpenModalOpenPositions] = useState(false);
   const [jobDetaildModal,setJobDetaildModal]=useState(null)
