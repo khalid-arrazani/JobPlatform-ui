@@ -18,7 +18,6 @@ export default function MyJobDetailsModal({open , setOpen,jobInfo,CompanyInfo}) 
 
   const onClose = ()=>{
     setOpen(false)
-    console.log(CompanyInfo,88888);
   }
 
   return <>
