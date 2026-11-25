@@ -34,7 +34,6 @@ export default function ModalChoise({
     setOpen(false);
   };
 
-  console.log(bannerid);
 
   const handleDeleteBanner = () => {
     if (bannerid === null) {
@@ -63,9 +62,9 @@ export default function ModalChoise({
       >
         <Box
           sx={{
-            width: "60%",
+            width: "95%",
             borderRadius: "10px",
-            height: "50%",
+            height: "18rem",
             bgcolor: "#fff",
             position: "absolute",
             top: "50%",
