@@ -9,6 +9,11 @@ import { HiOutlineShieldCheck } from "react-icons/hi";
 import { useState } from "react";
 import { useCompany } from "../../../../logic/context/CompanyContext";
 import CompanyLogo from "../Desktop/logo/UploadCompanyLogo";
+import ModalChoise from "../Desktop/banner/ModalChoise";
+import Modalbanner from "../Desktop/banner/Modalbanner";
+import CompanyBG from "../Desktop/banner/UploadCompanyBG";
+import ModalDeleteBanner from "../Desktop/banner/ModalDeleteBanner";
+import ModalInfo from "../Desktop/EditeCompanyInfo/ModaleCompanyInfo";
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
@@ -74,6 +79,47 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           <ModeRoundedIcon sx={{ color: "#060420de" }} />
         </IconButton>
 
+ {/* this section for edit Banner  */}
+        {/* ============================================================================== */}
+        <ModalChoise
+          open={modalChoise}
+          setOpen={setModalChoise}
+          bannerid={CompanyInfo?.companyBackground?.bannerId}
+          banner={BG}
+          setBannerModal={setModalBanner}
+          setOpenEditor={setOpenEditor}
+          setImage={setImage}
+          setOpenDeleteBanner={setOpenDeleteBanner}
+        />
+
+        <Modalbanner
+          open={modalBanner}
+          setOpen={setModalBanner}
+          bannerid={CompanyInfo?.companyBackground?.bannerId}
+          fetchCompany={fetchCompany}
+        />
+
+        <CompanyBG
+          openEditor={openEditor}
+          setOpenEditor={setOpenEditor}
+          image={image}
+          setImage={setImage}
+          fetchCompany={fetchCompany}
+        />
+
+        <ModalDeleteBanner
+          open={openDeleteBanner}
+          setOpen={setOpenDeleteBanner}
+          fetchCompany={fetchCompany}
+        />
+
+        <ModalInfo
+          open={openCompanyInfoEdite}
+          setOpen={setOpenCompanyInfoEdite}
+          fetchCompany={fetchCompany}
+          CompanyInfo={CompanyInfo}
+        />
+        {/* ============================================================================== */}
 
 
 
