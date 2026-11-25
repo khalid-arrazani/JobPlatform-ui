@@ -68,11 +68,20 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
       >
         <IconButton
           size="small"
-          sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2 }}
+          sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2,top:0 }}
           onClick={() => setModalChoise(true)}
         >
           <ModeRoundedIcon sx={{ color: "#060420de" }} />
         </IconButton>
+
+
+        
+
+
+
+
+
+
 
         {/* content */}
         <Box
@@ -329,6 +338,9 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             </Box>
           </Box>
         </Box>
+
+
+
       </Box>
     </>
   );
