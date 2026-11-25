@@ -75,10 +75,6 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
         </IconButton>
 
 
-        
-
-
-
 
 
 
