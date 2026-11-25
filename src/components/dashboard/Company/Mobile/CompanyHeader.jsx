@@ -5,6 +5,9 @@ import VerifiedIcon from "@mui/icons-material/Verified";
 import { useNavigate } from "react-router-dom";
 
 import { HiOutlineShieldCheck } from "react-icons/hi";
+import { useState } from "react";
+import { useCompany } from "../../../../logic/context/CompanyContext";
+import CompanyLogo from "../Desktop/logo/UploadCompanyLogo";
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
@@ -25,17 +28,27 @@ const banners = {
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
-export default function CompanyHeader({ CompanyInfo }) {
-  let BG = null;
+export default function CompanyHeader({ CompanyInfo , fetchCompany }) {
+ 
+const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
+
+  const [modalChoise, setModalChoise] = useState(false);
+  const [modalBanner, setModalBanner] = useState(false);
+  const [openEditor, setOpenEditor] = useState(false);
+  const [openEditorLogo, setOpenEditorLogo] = useState(false);
+  const [openDeleteBanner, setOpenDeleteBanner] = useState(false);
+
+
+  const [image, setImage] = useState(false);
+  const [imageLogo, setImageLogo] = useState(false);
+
+
+ let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
     BG = `url(${CompanyInfo?.companyBackground?.url} )`;
   }
-
-
-
-
 
   return (
     <>
@@ -102,7 +115,28 @@ export default function CompanyHeader({ CompanyInfo }) {
               alt=""
               srcset=""
             />
+            <input
+              hidden
+              accept="image/*"
+              type="file"
+              onChange={(e) => {
+                const file = e.target.files?.[0];
+                if (file) {
+                  setImageLogo(file);
+                  setOpenEditorLogo(true);
+                }
+              }}
+            />
           </Card>
+          {/* this section for upload Logo */}
+                    {/* ============================================================ */}
+                    <CompanyLogo
+                      setOpenEditorLogo={setOpenEditorLogo}
+                      openEditorLogo={openEditorLogo}
+                      imageLogo={imageLogo}
+                      fetchCompany={fetchCompany}
+                    />
+                    {/* ============================================================ */}
 
           <Box sx={{ height: "100%", flex: 1, ml: "7rem" }}>
             <Box sx={{ height: "100%", flex: 1 }}>
