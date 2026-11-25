@@ -17,7 +17,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
 
   const [reload , setReload] = useState(false)
 
-  const [scale, setScale] = useState(1.2);
+  const [scale, setScale] = useState(1);
 
 
   const handleSave = () => {
@@ -73,16 +73,16 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "1rem",
+              gap: "0.5rem",
             }}
           >
             <AvatarEditor
               ref={editorRef}
               image={imageLogo}
-              width={360}
-              height={360}
+              width={250}
+              height={250}
               border={5}
-              borderRadius={100}
+              borderRadius={30}
               scale={scale}
             />
 
