@@ -19,7 +19,7 @@ export default function CompanyBG({
   const editorRef = useRef();
   const [reload , setReload] = useState(false)
 
-  const [scale, setScale] = useState(1.3);
+  const [scale, setScale] = useState(1);
 
   const handleSave = () => {
     const canvas = editorRef.current.getImageScaledToCanvas();
@@ -78,26 +78,27 @@ export default function CompanyBG({
       {/* Upload */}
 
       <Dialog
-        sx={{ "& .MuiPaper-root": { maxWidth: "100vw" } }}
+        sx={{ "& .MuiPaper-root": { width: "100vw",m:1 } }}
         open={openEditor}
         onClose={() => setOpenEditor(false)}
       >
-        <DialogContent>
+        <DialogContent sx={{width:"100%",p:1,boxSizing:"border-box"}}>
           <Box
             sx={{
               display: "flex",
               flexDirection: "column",
-              alignItems: "center",
-              gap: "1rem",
-              transform: "scale(1)",
+              alignItems: "center", 
+              transform: "scale(0.75)",
               transformOrigin: "top center",
+              width:"auto",
+              height:"auto"
             }}
           >
             <AvatarEditor
               ref={editorRef}
               image={image}
-              width={1160}
-              height={240}
+              width={580}
+              height={200}
               border={0}
               borderRadius={0}
               scale={scale}
@@ -111,7 +112,7 @@ export default function CompanyBG({
               onChange={(e, value) => setScale(value)}
             />
 
-            <Button disabled={reload} variant="contained" onClick={handleSave} sx={{display:"flex",gap:2}}>
+            <Button disabled={reload} variant="contained" onClick={handleSave} sx={{display:"flex",gap:2,fontSize:"1.5rem"}}>
               Save
               {reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
             </Button>
