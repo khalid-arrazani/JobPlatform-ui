@@ -1,8 +1,9 @@
-import { Box, Card, Typography, Chip } from "@mui/material";
+import { Box, Card, Typography, Chip, IconButton } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 
 import { useNavigate } from "react-router-dom";
+import ModeRoundedIcon from "@mui/icons-material/ModeRounded";
 
 import { HiOutlineShieldCheck } from "react-icons/hi";
 import { useState } from "react";
@@ -65,6 +66,14 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           boxSizing: "border-box",
         }}
       >
+        <IconButton
+          size="small"
+          sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2 }}
+          onClick={() => setModalChoise(true)}
+        >
+          <ModeRoundedIcon sx={{ color: "#060420de" }} />
+        </IconButton>
+
         {/* content */}
         <Box
           sx={{
