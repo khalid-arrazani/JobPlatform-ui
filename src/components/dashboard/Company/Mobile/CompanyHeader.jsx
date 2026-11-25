@@ -1,4 +1,4 @@
-import { Box, Card, Typography, Chip} from "@mui/material";
+import { Box, Card, Typography, Chip } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 
@@ -28,9 +28,8 @@ const banners = {
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
-export default function CompanyHeader({ CompanyInfo , fetchCompany }) {
- 
-const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
+export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
+  const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
 
   const [modalChoise, setModalChoise] = useState(false);
   const [modalBanner, setModalBanner] = useState(false);
@@ -38,12 +37,10 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
   const [openEditorLogo, setOpenEditorLogo] = useState(false);
   const [openDeleteBanner, setOpenDeleteBanner] = useState(false);
 
-
   const [image, setImage] = useState(false);
   const [imageLogo, setImageLogo] = useState(false);
 
-
- let BG = null;
+  let BG = null;
   if (CompanyInfo?.companyBackground?.backgroundType == "banner") {
     BG = `url(${banners[CompanyInfo?.companyBackground?.bannerId] || Default})`;
   } else if (CompanyInfo?.companyBackground?.backgroundType == "upload") {
@@ -65,7 +62,7 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
           position: "relative",
           display: "flex",
           alignItems: "end",
-          boxSizing:"border-box"
+          boxSizing: "border-box",
         }}
       >
         {/* content */}
@@ -80,7 +77,7 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
             display: "flex",
-            py:1
+            py: 1,
           }}
         >
           {/* logo */}
@@ -129,14 +126,14 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
             />
           </Card>
           {/* this section for upload Logo */}
-                    {/* ============================================================ */}
-                    <CompanyLogo
-                      setOpenEditorLogo={setOpenEditorLogo}
-                      openEditorLogo={openEditorLogo}
-                      imageLogo={imageLogo}
-                      fetchCompany={fetchCompany}
-                    />
-                    {/* ============================================================ */}
+          {/* ============================================================ */}
+          <CompanyLogo
+            setOpenEditorLogo={setOpenEditorLogo}
+            openEditorLogo={openEditorLogo}
+            imageLogo={imageLogo}
+            fetchCompany={fetchCompany}
+          />
+          {/* ============================================================ */}
 
           <Box sx={{ height: "100%", flex: 1, ml: "7rem" }}>
             <Box sx={{ height: "100%", flex: 1 }}>
@@ -179,7 +176,6 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
                     height="15"
                     width="15"
                   >
-                    
                     <g id="bag-suitcase-4--product-business-briefcase">
                       <path
                         id="Rectangle 97"
@@ -215,7 +211,6 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
                     }}
                   >
                     {CompanyInfo?.industry}
-                    
                   </Typography>
                 </Box>
 
@@ -305,7 +300,7 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
                         stroke-linejoin="round"
                         stroke-width="0.7"
                       ></path>
-                  </svg>
+                    </svg>
                   }
                   size="small"
                   label={CompanyInfo?.website}
@@ -318,7 +313,7 @@ const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
                     fontFamily: "monospace",
                     borderRadius: "5px",
                     fontSize: "0.62rem",
-                    height:"fit-content"
+                    height: "fit-content",
                   }}
                 />
               </Box>
