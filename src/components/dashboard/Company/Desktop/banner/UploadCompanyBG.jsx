@@ -77,11 +77,11 @@ export default function CompanyBG({
       {/* Upload */}
 
       <Dialog
-        sx={{ "& .MuiPaper-root": { maxWidth: "100vw",width:"95%" } }}
+        sx={{ "& .MuiPaper-root": {width:"100%"},maxWidth:"100%"  }}
         open={openEditor}
         onClose={() => setOpenEditor(false)}
       >
-        <DialogContent>
+        <DialogContent   >
           <Box
             sx={{
               display: "flex",
