@@ -73,13 +73,19 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
       >
         <IconButton
           size="small"
-          sx={{ position: "absolute", right: 0, bgcolor: "#f8f8f8", m: 2,top:0 }}
+          sx={{
+            position: "absolute",
+            right: 0,
+            bgcolor: "#f8f8f8",
+            m: 2,
+            top: 0,
+          }}
           onClick={() => setModalChoise(true)}
         >
           <ModeRoundedIcon sx={{ color: "#060420de" }} />
         </IconButton>
 
- {/* this section for edit Banner  */}
+        {/* this section for edit Banner  */}
         {/* ============================================================================== */}
         <ModalChoise
           open={modalChoise}
@@ -120,10 +126,6 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           CompanyInfo={CompanyInfo}
         />
         {/* ============================================================================== */}
-
-
-
-
 
         {/* content */}
         <Box
@@ -380,9 +382,6 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             </Box>
           </Box>
         </Box>
-
-
-
       </Box>
     </>
   );
