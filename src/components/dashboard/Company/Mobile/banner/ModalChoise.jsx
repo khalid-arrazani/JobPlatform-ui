@@ -90,7 +90,7 @@ export default function ModalChoise({
           >
             <Typography
               sx={{
-                fontSize: "1.5rem",
+                fontSize: "1.2rem",
                 fontWeight: 600,
                 color: "#050318d2",
                 fontFamily: "system-ui",
