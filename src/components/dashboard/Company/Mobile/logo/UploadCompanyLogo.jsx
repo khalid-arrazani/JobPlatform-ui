@@ -74,6 +74,7 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               flexDirection: "column",
               alignItems: "center",
               gap: "0.5rem",
+              width:"100%"
             }}
           >
             <AvatarEditor
