@@ -145,11 +145,11 @@ export default function ModalChoise({
                 onClick={handlebannerModal}
               >
                 <GalleryHorizontal
-                  size={30}
+                  size={20}
                   color="#2a6aff"
                   style={{ margin: 0 }}
                 />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <Typography sx={{ fontSize: "0.8rem",fontFamily:"monospace",textTransform:"none",textAlign:"center" }}>
                   Choose Banner
                 </Typography>
               </Button>
@@ -164,8 +164,8 @@ export default function ModalChoise({
                   gap: 0.5,
                 }}
               >
-                <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <ImageUp size={20} color="#2a6aff" style={{ margin: 0 }} />
+                <Typography  sx={{ fontSize: "0.8rem",fontFamily:"monospace",textTransform:"none",textAlign:"center" }}>
                   Upload Image
                 </Typography>
                 <input
@@ -194,9 +194,9 @@ export default function ModalChoise({
               >
                 <DeleteSweepOutlinedIcon
                   color="#2a6aff"
-                  style={{ margin: 0, fontSize: 30 }}
+                  style={{ margin: 0, fontSize: 20 }}
                 />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <Typography sx={{ fontSize: "0.8rem",fontFamily:"monospace",textTransform:"none",textAlign:"center" }}>
                   Delete Image
                 </Typography>
               </Button>
