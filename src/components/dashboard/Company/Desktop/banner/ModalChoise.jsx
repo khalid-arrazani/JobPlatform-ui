@@ -61,9 +61,9 @@ export default function ModalChoise({
       >
         <Box
           sx={{
-            width: "60%",
+            width: "95%",
             borderRadius: "10px",
-            height: "50%",
+            height: "20REM",
             bgcolor: "#fff",
             position: "absolute",
             top: "50%",
@@ -89,7 +89,7 @@ export default function ModalChoise({
           >
             <Typography
               sx={{
-                fontSize: "1.5rem",
+                fontSize: "1.1rem",
                 fontWeight: 600,
                 color: "#050318d2",
                 fontFamily: "system-ui",
@@ -128,8 +128,7 @@ export default function ModalChoise({
                 height: "100%",
                 width: "70%",
                 display: "flex",
-                justifyContent: "space-around",
-
+                justifyContent: "space-around", 
                 boxSizing: "border-box",
               }}
             >
@@ -140,15 +139,16 @@ export default function ModalChoise({
                   flexDirection: "column",
                   borderRadius: "0px",
                   gap: 0.5,
+                  textTransform:"none"
                 }}
                 onClick={handlebannerModal}
               >
                 <GalleryHorizontal
-                  size={30}
+                  size={20}
                   color="#2a6aff"
                   style={{ margin: 0 }}
                 />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <Typography sx={{ fontSize: "0.8rem" ,fontFamily:"monospace",textAlign:"center"}}>
                   Choose Banner
                 </Typography>
               </Button>
@@ -163,8 +163,8 @@ export default function ModalChoise({
                   gap: 0.5,
                 }}
               >
-                <ImageUp size={30} color="#2a6aff" style={{ margin: 0 }} />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <ImageUp size={20} color="#2a6aff" style={{ margin: 0 }} />
+                <Typography sx={{ fontSize: "0.8rem" ,fontFamily:"monospace",textAlign:"center" }}>
                   Upload Image
                 </Typography>
                 <input
@@ -193,9 +193,9 @@ export default function ModalChoise({
               >
                 <DeleteSweepOutlinedIcon
                   color="#2a6aff"
-                  style={{ margin: 0, fontSize: 30 }}
+                  style={{ margin: 0, fontSize: 20 }}
                 />
-                <Typography sx={{ fontSize: "0.9rem" }}>
+                <Typography sx={{ fontSize: "0.8rem" ,fontFamily:"monospace",textAlign:"center"}}>
                   Delete Image
                 </Typography>
               </Button>
