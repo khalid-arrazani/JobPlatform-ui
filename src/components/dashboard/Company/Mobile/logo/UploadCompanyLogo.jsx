@@ -73,16 +73,16 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
               display: "flex",
               flexDirection: "column",
               alignItems: "center",
-              gap: "1rem",
+              gap: "0.5rem",
             }}
           >
             <AvatarEditor
               ref={editorRef}
               image={imageLogo}
-              width={360}
-              height={360}
-              border={5}
-              borderRadius={100}
+              width={300}
+              height={300}
+              border={3}
+              borderRadius={70}
               scale={scale}
             />
 
@@ -97,7 +97,6 @@ export default function CompanyLogo ({  setOpenEditorLogo, openEditorLogo, image
             <Button disabled={reload} variant="contained" onClick={handleSave} sx={{display:"flex",gap:2}}>
               Save
               {reload ? <CircularProgress enableTrackSlot size="25px" aria-label="Loading…" /> :null }
-              
             </Button>
           </Box>
         </DialogContent>

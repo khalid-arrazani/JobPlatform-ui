@@ -7,6 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useAuth } from "../../../../../logic/context/AuthContext";
 import { uptadeCompanyBanner } from "../../../../../logic/api/company/Company";
 
+
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",

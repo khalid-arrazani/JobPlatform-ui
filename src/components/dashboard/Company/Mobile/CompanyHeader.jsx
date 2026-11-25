@@ -2,18 +2,18 @@ import { Box, Card, Typography, Chip, IconButton } from "@mui/material";
 
 import VerifiedIcon from "@mui/icons-material/Verified";
 
-import { useNavigate } from "react-router-dom";
 import ModeRoundedIcon from "@mui/icons-material/ModeRounded";
 
-import { HiOutlineShieldCheck } from "react-icons/hi";
 import { useState } from "react";
+
+import ModalChoise from "./banner/ModalChoise";
+import Modalbanner from "./banner/Modalbanner";
+import CompanyBG from "./banner/UploadCompanyBG";
+import ModalDeleteBanner from "./banner/ModalDeleteBanner";
+import ModalInfo from "./EditeCompanyInfo/ModaleCompanyInfo";
 import { useCompany } from "../../../../logic/context/CompanyContext";
-import CompanyLogo from "../Desktop/logo/UploadCompanyLogo";
-import ModalChoise from "../Desktop/banner/ModalChoise";
-import Modalbanner from "../Desktop/banner/Modalbanner";
-import CompanyBG from "../Desktop/banner/UploadCompanyBG";
-import ModalDeleteBanner from "../Desktop/banner/ModalDeleteBanner";
-import ModalInfo from "../Desktop/EditeCompanyInfo/ModaleCompanyInfo";
+import CompanyLogo from "./logo/UploadCompanyLogo";
+
 const banners = {
   1: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590367/AAYABATzAAgAAQAAAAAAAGzDZR5rStISQ1yERktnsWHnrA_erl1qv.jpg",
   2: "https://res.cloudinary.com/dzppmepd9/image/upload/v1782590346/AAYABATzAAgAAQAAAAAAAMRw-ZRQGUcDTI2otj46zINFIw_ajmzct.jpg",
@@ -34,6 +34,9 @@ const banners = {
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
+
+
+  
 export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
   const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
 
