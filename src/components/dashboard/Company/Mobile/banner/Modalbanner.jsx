@@ -100,7 +100,7 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
     >
       <Box
         sx={{
-          width: "90%",
+          width: "95%",
 
           borderRadius: "10px",
           height: "90%",
@@ -130,10 +130,10 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
         >
           <Typography
             sx={{
-              fontSize: "1.3rem",
+              fontSize: "1rem",
               fontWeight: 600,
               color: "#050318d2",
-              fontFamily: "system-ui",
+              fontFamily:"monospace",
             }}
           >
             Add a cover image
@@ -164,8 +164,8 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
               src={url}
               onClick={() => setSelectedBanner(Number(id))}
               sx={{
-                width: 300,
-                height: 120,
+                width: 290,
+                height: 110,
                 cursor: "pointer",
                 borderRadius: 2,
                 border:
@@ -189,7 +189,7 @@ export default function Modalbanner({ open, setOpen, bannerid,fetchCompany }) {
           <Button
             onClick={selectBanner}
             size="large"
-            sx={{ mr: 4, px: 4 , display:"flex", gap:2}}
+            sx={{ mr: 4, px: 4 , display:"flex", gap:2,fontFamily:"monospace"}}
             disabled={reload}
             variant="contained" 
           >
