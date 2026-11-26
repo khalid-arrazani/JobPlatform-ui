@@ -92,9 +92,9 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
       >
         <Box
           sx={{
-            height: "95%",
-            width: "95%",
-            bgcolor: "#ffffff",
+            height: "100%",
+            width: "100%",
+            bgcolor: "#fff",
             borderRadius: "20px",
             overflow: "hidden",
             boxSizing: "border-box",
@@ -105,7 +105,7 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
             sx={{
               width: "100%",
               height: "10%",
-              bgcolor: "#eeecec",
+              bgcolor: "#fff",
               borderBottom: "solid 1px #c9c9c9c6",
               display: "flex",
               alignItems: "center",
