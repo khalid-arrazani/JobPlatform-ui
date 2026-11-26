@@ -78,11 +78,11 @@ export default function CompanyBG({
       {/* Upload */}
 
       <Dialog
-        sx={{ "& .MuiPaper-root": { width: "100vw",m:1 } }}
+        sx={{ "& .MuiPaper-root": { width: "100vw",m:1,height:"16rem" } }}
         open={openEditor}
         onClose={() => setOpenEditor(false)}
       >
-        <DialogContent sx={{width:"100%",p:1,boxSizing:"border-box"}}>
+        <DialogContent sx={{width:"100%",p:1,boxSizing:"border-box",height:"fit-content"}}>
           <Box
             sx={{
               display: "flex",
@@ -90,8 +90,7 @@ export default function CompanyBG({
               alignItems: "center", 
               transform: "scale(0.75)",
               transformOrigin: "top center",
-              width:"auto",
-              height:"auto"
+              width:"auto", 
             }}
           >
             <AvatarEditor
