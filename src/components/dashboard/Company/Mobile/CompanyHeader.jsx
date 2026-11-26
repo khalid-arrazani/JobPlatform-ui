@@ -82,7 +82,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           }}
           onClick={() => setModalChoise(true)}
         >
-          <ModeRoundedIcon sx={{ color: "#060420de" }} />
+          <ModeRoundedIcon sx={{ color: "#060420de", width:"1rem"}} />
         </IconButton>
 
         {/* this section for edit Banner  */}
@@ -164,7 +164,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               sx={{
                 fontSize: "0.7rem",
                 fontWeight: 600,
-                color: "#220440b0",
+                color: "#36006bb0",
                 fontFamily: "monospace",
               }}
             >
