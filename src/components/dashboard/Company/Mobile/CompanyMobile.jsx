@@ -39,7 +39,7 @@ export default function CompanyMobile() {
       });
       console.log(data);
     } catch (error) {
-      console.log(error.response?.data);
+      console.log(error.response);
     } finally {
       dispatch({
         type: "SET_LOADING",
