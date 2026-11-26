@@ -1,4 +1,4 @@
-import {  Typography, Box, Chip, Button } from "@mui/material";
+import { Typography, Box, Chip, Button } from "@mui/material";
 
 import WorkOutlineOutlinedIcon from "@mui/icons-material/WorkOutlineOutlined";
 
@@ -16,9 +16,9 @@ import { LuWorkflow } from "react-icons/lu";
 export default function OpenPositionsCard({ CompanyactiveJobs, CompanyInfo }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
- const onClose = ()=>{
-    setOpen(false)
-  }
+  const onClose = () => {
+    setOpen(false);
+  };
   return (
     <>
       <Box
