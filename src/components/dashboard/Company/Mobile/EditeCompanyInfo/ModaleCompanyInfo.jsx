@@ -101,12 +101,13 @@ export default function ModalInfo({
             outline: "none",
           }}
         >
+          {/* header */}
           <Box
             sx={{
               width: "100%",
               height: "4rem",
-              
-              borderBottom: "solid 1px #c9c9c9c6",
+
+              borderBottom: "solid 1px #e6e5e5c8",
               display: "flex",
               alignItems: "center",
               px: 1.5,
@@ -114,19 +115,79 @@ export default function ModalInfo({
               justifyContent: "space-between",
             }}
           >
-            <Typography
-              sx={{
-                fontSize: "1rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "monospace",
-              }}
-            >
-              Edite Company Information
-            </Typography>
+            <Box  sx={{
+              
+              height: "4rem",
+
+              display: "flex",
+              alignItems: "center",
+          
+              boxSizing: "border-box",
+              justifyContent: "space-between",
+              gap:1
+            }}>
+
+              <IconButton sx={{borderRadius:"10px",bgcolor:"#f5edfbaa"}}>
+              <svg
+                id="Text-Align-Right--Streamline-Carbon"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 16 16"
+                height="30"
+                width="30"
+              >
+                
+                <defs></defs>
+                <title>align--right</title>
+                <path d="M3 3h7v1H3Z" fill="#7215cf" stroke-width="0.5"></path>
+                <path d="M5 6h5v1H5Z" fill="#7215cf" stroke-width="0.5"></path>
+                <path d="M3 9h7v1H3Z" fill="#7215cf" stroke-width="0.5"></path>
+                <path d="M5 12h5v1H5Z" fill="#7215cf" stroke-width="0.5"></path>
+                <path
+                  d="M12 2h1v12h-1Z"
+                  fill="#1501aa"
+                  stroke-width="0.5"
+                ></path>
+                <path
+                  id="_Transparent_Rectangle_"
+                  d="M0 0h16v16H0Z"
+                  fill="none"
+                  stroke-width="0.5"
+                ></path>
+              </svg>
+              </IconButton>
+              <Typography
+                sx={{
+                  fontSize: "1rem",
+                  fontWeight: 600,
+                  color: "#050318d2",
+                  fontFamily: "monospace",
+                }}
+              >
+                Edite Company Information
+              </Typography>
+            </Box>
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
+          </Box>
+
+          {/* header */}
+          <Box
+            sx={{
+              width: "100%",
+              height: "4rem",
+
+              borderBottom: "solid 1px #e6e5e5c8",
+              display: "flex",
+              alignItems: "center",
+              px: 1.5,
+              boxSizing: "border-box",
+              justifyContent: "space-between",
+            }}
+          >
+            
+
+              
           </Box>
 
           {/* <Box
