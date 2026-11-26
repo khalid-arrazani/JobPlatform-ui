@@ -90,6 +90,8 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
           alignItems: "center",
         }}
       >
+
+        
         <Box
           sx={{
             height: "100%",
@@ -209,6 +211,10 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
             </Box>
           </Box>
         </Box>
+
+
+
+
       </Modal>
     </>
   );
