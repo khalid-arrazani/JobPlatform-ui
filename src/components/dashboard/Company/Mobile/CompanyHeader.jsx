@@ -157,7 +157,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
-              gap: 0.5,boxSizing:"border-box",px:0.5,cursor:"pointer",":active":{bgcolor:"#eeeded"}
+              gap: 0.5,boxSizing:"border-box",px:0.5,py:0.2,cursor:"pointer",":active":{bgcolor:"#eeeded"}
             }}
           >
             <ModeRoundedIcon sx={{ color: "#7221bede", width: "0.7rem" }} />
