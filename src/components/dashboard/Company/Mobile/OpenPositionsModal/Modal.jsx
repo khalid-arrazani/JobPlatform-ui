@@ -15,55 +15,55 @@ import { LuWorkflow } from "react-icons/lu";
 import Pagination from "@mui/material/Pagination";
 
 import SearchAndFilter from "./CardFilterAndSearch";
-import { useParams } from "react-router-dom";
+
 import { useEffect, useState } from "react";
 
 import { millify } from "millify";
 import { useNavigate } from "react-router-dom";
 import { formatRelative } from "date-fns";
 import LoadingList from "./LoadingList";
-import { GetCompaniesJobs } from "../../../../../logic/api/job/Job";
+import { GetMyJobs } from "../../../../../logic/api/job/Job";
 
-export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
-  const [loading, setLoading] = useState(false);
+export default function ModalOpenPositions({ open ,onClose,CompanyInfo }) {
+   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
   const [list, setList] = useState([]);
   const [search, setSearch] = useState("");
-  const { CompanyId } = useParams();
+
 
   const [felterData, setFelterData] = useState({
     page: 1,
     search: "",
     sort: "Newest First",
-    CompanyId: CompanyId,
+    status:"active"
   });
 
-   
   useEffect(() => {
-    const timeout = setTimeout(() => {
-      setFelterData((prev) => {
-        if (prev.search === search) return prev;
+  const timeout = setTimeout(() => {
 
-        return {
-          ...prev,
-          search: search.trim(),
-          page: 1,
-        };
-      });
-    }, 500);
+    setFelterData(prev => {
+      if (prev.search === search) return prev;
 
-    return () => clearTimeout(timeout);
-  }, [search]);
+      return {
+        ...prev,
+        search : search.trim(),
+        page: 1
+      };
+    });
+  },500);
+
+  return () => clearTimeout(timeout);
+
+ }, [search]);
 
   const fetchCompany = async () => {
     setLoading(true);
 
     try {
-      const data = await GetCompaniesJobs(felterData);
+      const data = await GetMyJobs(felterData);
       setList(data);
-
       console.log(data);
     } catch (error) {
       console.log(error.response?.data);
@@ -75,14 +75,12 @@ export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
   useEffect(() => {
     fetchCompany();
   }, []);
-
+  
   useEffect(() => {
     fetchCompany();
   }, [felterData]);
 
-  const handleClose = () => {
-    setOpen(false);
-  };
+  
 
   const openJob = async (e) => {
     const jobId = e.currentTarget.dataset.id;
@@ -90,14 +88,14 @@ export default function ModalOpenPositions({ open, setOpen,CompanyInfo }) {
   };
 
   const handleChange = (event, value) => {
-    setFelterData((prev) => ({ ...prev, page: value }));
+    setFelterData(prev => ({...prev , page:value}) )
   };
 
   return (
     <>
       <Modal
         open={open}
-        onClose={handleClose}
+        onClose={onClose}
         sx={{
           display: "flex",
           justifyContent: "center",

@@ -16,7 +16,9 @@ import { LuWorkflow } from "react-icons/lu";
 export default function OpenPositionsCard({ CompanyactiveJobs, CompanyInfo }) {
   const navigate = useNavigate();
   const [open, setOpen] = useState(false);
-
+ const onClose = ()=>{
+    setOpen(false)
+  }
   return (
     <>
       <Box
@@ -74,6 +76,7 @@ export default function OpenPositionsCard({ CompanyactiveJobs, CompanyInfo }) {
           <ModalOpenPositions
             open={open}
             setOpen={setOpen}
+            onClose={onClose}
             CompanyInfo={CompanyInfo}
           />
         </Box>
