@@ -174,8 +174,7 @@ export default function ModalInfo({
 
 
           {/* content */}
-          <Box  sx={{width:"100%",flex:1}}  >
-
+          <Box  sx={{width:"100%",flex:1}}>
           </Box>
 
         </Box>
