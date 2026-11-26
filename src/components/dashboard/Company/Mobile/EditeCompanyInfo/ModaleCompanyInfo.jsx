@@ -103,7 +103,30 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
             outline: "none",
           }}
         >
-          <Box
+          <Box sx={{width:"100%",height:"4rem",bgcolor:"#ddd",borderBottom: "solid 1px #c9c9c9c6",
+              display: "flex",
+              alignItems: "center",
+              px: 3.5,
+              boxSizing: "border-box",
+              justifyContent: "space-between"}} >
+           <Typography
+              sx={{
+                fontSize: "1rem",
+                fontWeight: 600,
+                color: "#050318d2",
+                fontFamily:"monospace",
+              }}
+            >
+              Edite Company Information
+            </Typography>
+            <IconButton onClick={handleClose}>
+              <CloseIcon />
+            </IconButton>
+          </Box>
+
+
+
+          {/* <Box
             sx={{
               width: "100%",
               height: "10%",
@@ -129,87 +152,13 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
-          </Box>
+          </Box> */}
 
-          <Box
-            sx={{
-              width: "100%",
-              height: "90%",
-              bgcolor: "#eeecec",
-              display: "flex",
-              boxSizing: "border-box",
-            }}
-          >
-            <Box
-              sx={{
-                width: "30%",
-                height: "100%",
-                borderRight: "solid 1px #c9c9c9c6",
-              }}
-            >
-              <List sx={{ height: "100%", p: "0.5rem" }}>
-                {companyEditSections.map((section) => {
-                  const Icon = section.icon;
+          
 
-                  return (
-                    <ListItemButton
-                      key={section.id}
-                      onClick={() => {
-                        setPart(section.title);
-                      }}
-                      sx={{
-                        borderRadius: "0.7rem",
-                        mb: 1,
-                        mt: 1,
-                        background: section.background,
-                      }}
-                    >
-                      <ListItemIcon>
-                        <Icon style={{ color: "#4f46e5" }} />
-                      </ListItemIcon>
 
-                      <ListItemText primary={section.title} />
-                    </ListItemButton>
-                  );
-                })}
-                <Divider />
 
-                {/* Delete */}
-                <ListItemButton
-                  onClick={handleDelete}
-                  sx={{
-                    borderRadius: "0.7rem",
 
-                    color: "#dc2626",
-
-                    "&:hover": {
-                      background: "#fef2f2",
-                    },
-                    position: "absolute",
-                    bottom: "2rem",
-                    background: part == "delete" ? "#e2c9c9d5" : "none",
-                  }}
-                >
-                  <ListItemIcon>
-                    <DeleteIcon sx={{ color: "#dc2626" }} />
-                  </ListItemIcon>
-
-                  <ListItemText primary="Delete Company" />
-                </ListItemButton>
-              </List>
-            </Box>
-
-            <Box
-              sx={{
-                width: "70%",
-                height: "100%",
-                px: 3,
-                boxSizing: "border-box",
-              }}
-            >
-              {page}
-            </Box>
-          </Box>
         </Box>
 
 
