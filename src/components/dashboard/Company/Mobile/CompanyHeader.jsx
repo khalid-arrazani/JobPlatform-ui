@@ -75,14 +75,14 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
           size="small"
           sx={{
             position: "absolute",
-            right: 0,
+            right: 10,
             bgcolor: "#f8f8f8",
-            m: 2,
+            m: 1,
             top: 0,
           }}
           onClick={() => setModalChoise(true)}
         >
-          <ModeRoundedIcon sx={{ color: "#060420de", width:"1rem"}} />
+          <ModeRoundedIcon  sx={{ color: "#060420de", width:"1rem",height:"1rem"}} />
         </IconButton>
 
         {/* this section for edit Banner  */}
@@ -145,11 +145,12 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
         >
           {/* edite profile */}
           <Box
+          
             sx={{
               position: "absolute",
               height: "fit-content",
               width: "fit-content",
-              bgcolor: "#fff",
+              bgcolor: "#eeeded",
               right: 12,
               top: "-15%",
               border: "1px solid #d9d9d9",
