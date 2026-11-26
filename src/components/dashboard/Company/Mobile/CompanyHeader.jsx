@@ -145,7 +145,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
         >
           {/* edite profile */}
           <Box
-          
+          onClick={()=>{setOpenCompanyInfoEdite(true)}}
             sx={{
               position: "absolute",
               height: "fit-content",
