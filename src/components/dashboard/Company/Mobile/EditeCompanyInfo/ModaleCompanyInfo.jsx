@@ -174,57 +174,10 @@ export default function ModalInfo({
 
 
           {/* content */}
-          <Box  sx={{width:"100%",flex:1,bgcolor:"#ddd"}}  >
+          <Box  sx={{width:"100%",flex:1}}  >
 
           </Box>
 
-
-
-          {/* bottom */}
-          <Box
-            sx={{
-              width: "100%",
-              height: "4rem",
-              borderTop: "solid 1px #e6e5e5c8",
-              display: "flex",
-              alignItems: "center",
-              px: 1.5,
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-            }}
-          >
-            
-
-              
-          </Box>
-
-          {/* <Box
-            sx={{
-              width: "100%",
-              height: "10%",
-              bgcolor: "#fff",
-              borderBottom: "solid 1px #c9c9c9c6",
-              display: "flex",
-              alignItems: "center",
-              px: 3.5,
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-            }}
-          >
-            <Typography
-              sx={{
-                fontSize: "1.5rem",
-                fontWeight: 600,
-                color: "#050318d2",
-                fontFamily: "system-ui",
-              }}
-            >
-              Edite Company Information
-            </Typography>
-            <IconButton onClick={handleClose}>
-              <CloseIcon />
-            </IconButton>
-          </Box> */}
         </Box>
       </Modal>
     </>
