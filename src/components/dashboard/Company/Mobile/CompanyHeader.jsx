@@ -34,9 +34,6 @@ const banners = {
 const Default =
   "https://res.cloudinary.com/dzppmepd9/image/upload/v1782729270/d0d06930-b1a4-4f49-b7ac-b5756e6e065c_xorvuv.png";
 
-
-
-  
 export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
   const { openCompanyInfoEdite, setOpenCompanyInfoEdite } = useCompany();
 
@@ -142,9 +139,39 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
             borderTopLeftRadius: "20px",
             borderTopRightRadius: "20px",
             display: "flex",
-            py: 1,
+            pb: 1,
+            pt: 1.4,
           }}
         >
+          {/* edite profile */}
+          <Box
+            sx={{
+              position: "absolute",
+              height: "fit-content",
+              width: "fit-content",
+              bgcolor: "#fff",
+              right: 12,
+              top: "-15%",
+              border: "1px solid #d9d9d9",
+              borderRadius: "5px",
+              display: "flex",
+              alignItems: "center",
+              gap: 0.5,boxSizing:"border-box",px:0.5
+            }}
+          >
+            <ModeRoundedIcon sx={{ color: "#7221bede", width: "0.7rem" }} />
+            <Typography
+              sx={{
+                fontSize: "0.7rem",
+                fontWeight: 600,
+                color: "#440484de",
+                fontFamily: "monospace",
+              }}
+            >
+              Edite Info
+            </Typography>
+          </Box>
+
           {/* logo */}
           <Card
             component="label"
