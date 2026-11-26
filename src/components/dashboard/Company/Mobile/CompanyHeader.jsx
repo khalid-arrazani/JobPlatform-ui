@@ -153,7 +153,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               right: 12,
               top: "-15%",
               border: "1px solid #d9d9d9",
-              borderRadius: "5px",
+              borderRadius: "10px",
               display: "flex",
               alignItems: "center",
               gap: 0.5,boxSizing:"border-box",px:0.5
@@ -164,7 +164,7 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               sx={{
                 fontSize: "0.7rem",
                 fontWeight: 600,
-                color: "#440484de",
+                color: "#220440b0",
                 fontFamily: "monospace",
               }}
             >
