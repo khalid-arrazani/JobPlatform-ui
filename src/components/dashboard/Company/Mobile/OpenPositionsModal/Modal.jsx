@@ -170,7 +170,7 @@ export default function ModalOpenPositions({ open ,onClose,CompanyInfo }) {
                   >
                     {CompanyInfo?.company?.name ||"company"} Open Positions
                   </Typography>
-                  <IconButton  onClick={()=>{setOpen(false)}} >
+                  <IconButton  onClick={onClose} >
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       fill="#000000"
