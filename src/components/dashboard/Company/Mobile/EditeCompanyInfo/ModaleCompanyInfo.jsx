@@ -99,6 +99,7 @@ export default function ModalInfo({
             overflow: "hidden",
             boxSizing: "border-box",
             outline: "none",
+            display:"flex",flexDirection:"column"
           }}
         >
           {/* header */}
@@ -171,13 +172,20 @@ export default function ModalInfo({
             </IconButton>
           </Box>
 
-          {/* header */}
+
+          {/* content */}
+          <Box  sx={{width:"100%",flex:1,bgcolor:"#ddd"}}  >
+
+          </Box>
+
+
+
+          {/* bottom */}
           <Box
             sx={{
               width: "100%",
               height: "4rem",
-
-              borderBottom: "solid 1px #e6e5e5c8",
+              borderTop: "solid 1px #e6e5e5c8",
               display: "flex",
               alignItems: "center",
               px: 1.5,
