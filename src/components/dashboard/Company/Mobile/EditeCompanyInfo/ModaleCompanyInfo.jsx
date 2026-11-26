@@ -34,7 +34,7 @@ export default function ModalInfo({
 }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
-  
+
   const { part, setPart } = useCompany();
 
   const companyEditSections = [
@@ -71,6 +71,8 @@ export default function ModalInfo({
   const handleClose = () => {
     setOpen(false);
   };
+
+  const [openList , setOpenList ] = useState(false)
 
   const page =
     part == "Company Information" ? (
@@ -132,7 +134,7 @@ export default function ModalInfo({
               gap:1
             }}>
 
-              <IconButton sx={{borderRadius:"10px",bgcolor:"#f5edfbaa"}}>
+              <IconButton   onClick={()=>{setOpenList(true)}} sx={{borderRadius:"10px",bgcolor:"#f5edfbaa"}}>
               <svg
                 id="Text-Align-Right--Streamline-Carbon"
                 xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +178,7 @@ export default function ModalInfo({
             </IconButton>
           </Box>
 
-          <MainListEdit/>
+          <MainListEdit open={openList}  setOpen={setOpenList}    />
 
 
           {/* content */}
