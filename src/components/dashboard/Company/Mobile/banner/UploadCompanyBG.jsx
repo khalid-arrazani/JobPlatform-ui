@@ -41,6 +41,8 @@ export default function CompanyBG({
     }, "image/png");
   };
 
+
+
   const UploudBnner = async (blob) => {
     setReload(true)
     try {
@@ -62,7 +64,7 @@ export default function CompanyBG({
       setOpenEditor(false);
 
     } catch (error) {
-      console.log(error);
+      console.log(error,"ddlll");
       setSnackBar({
         open: true,
         message: error?.response?.data?.message,

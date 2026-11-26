@@ -16,7 +16,7 @@ export default function ModalDeleteBanner({ open, setOpen,fetchCompany }) {
         setReload(true)
           try {
             const res = await deleteCompanyBnner();
-      console.log("55fdsf");
+      
             setSnackBar({
               open: true,
               message: res?.message,
@@ -28,7 +28,7 @@ export default function ModalDeleteBanner({ open, setOpen,fetchCompany }) {
             setOpen(false);
             
           } catch (error) {
-            console.log(error?.response?.data,"ddlll");
+            console.log(error?.response?.data);
 
             setSnackBar({
               open: true,
