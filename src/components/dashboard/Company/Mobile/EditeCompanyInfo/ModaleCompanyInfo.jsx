@@ -34,6 +34,7 @@ export default function ModalInfo({
 }) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
+  
   const { part, setPart } = useCompany();
 
   const companyEditSections = [
