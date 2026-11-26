@@ -37,9 +37,9 @@ export default function CompanyMobile() {
         type: "SETCOMPANY",
         payload: data,
       });
-      console.log(data);
+      console.log(data,"dddd");
     } catch (error) {
-      console.log(error.response);
+      console.log(error);
     } finally {
       dispatch({
         type: "SET_LOADING",
@@ -49,7 +49,7 @@ export default function CompanyMobile() {
       setLoading(false);
     }
   };
-  console.log(state , "222");
+
 
   return (
     <>
@@ -88,7 +88,7 @@ export default function CompanyMobile() {
           }}
         >
           {/* top side or Company Card or  Header   */}
-          <CompanyHeader CompanyInfo={state?.Company?.company} />
+          <CompanyHeader CompanyInfo={state?.Company?.company} fetchCompany={fetchCompany} />
 
           {/* Content about Company or bottom side  */}
           <Box
