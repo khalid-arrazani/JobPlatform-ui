@@ -138,9 +138,9 @@ export default function ModalDeleteBanner({ open, setOpen,fetchCompany }) {
               px: 2,   bgcolor:"#fff4f3"
             }}
           >
-            <Button onClick={handleClose}  >Cancel</Button>
+            <Button onClick={handleClose} sx={{  fontFamily:"monospace",textTransform:"none"}} >Cancel</Button>
 
-            <Button variant="contained" disabled={reload} sx={{ bgcolor: "#de0e0ed6" , display:"flex", gap:2}} onClick={DeleteCompanyBanner} >
+            <Button variant="contained" disabled={reload} sx={{ bgcolor: "#de0e0ed6" , display:"flex", gap:2,fontFamily:"monospace",textTransform:"none"}} onClick={DeleteCompanyBanner} >
               Yes, delete it
                {reload ? <CircularProgress  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
             </Button>
