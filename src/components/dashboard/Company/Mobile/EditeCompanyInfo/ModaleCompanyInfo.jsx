@@ -3,7 +3,6 @@ import { Typography, Box, IconButton, Modal } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 
-
 import {
   List,
   ListItemButton,
@@ -23,13 +22,16 @@ import SocialInfo from "./SocialLinks";
 import CompanyBenefits from "./CompanyBenefits";
 import { useAuth } from "../../../../../logic/context/AuthContext";
 import { useCompany } from "../../../../../logic/context/CompanyContext";
- 
 
-export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
+export default function ModalInfo({
+  open,
+  setOpen,
+  fetchCompany,
+  CompanyInfo,
+}) {
   const [reload, setReload] = useState(false);
   const { setSnackBar } = useAuth();
   const { part, setPart } = useCompany();
-  
 
   const companyEditSections = [
     {
@@ -66,18 +68,16 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
     setOpen(false);
   };
 
-  const page = part == "Company Information" ? 
+  const page =
+    part == "Company Information" ? (
       <Companyinfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany} />
-     : part == "Contact Information" ? 
-      <ContactInfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}   />
-     : part == "Social Links" ? 
-      <SocialInfo  CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}  />
-     : part == "Benefits" ? 
-      <CompanyBenefits CompanyInfo={CompanyInfo} fetchCompany={fetchCompany}  />
-     : null;
-  
-
-
+    ) : part == "Contact Information" ? (
+      <ContactInfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany} />
+    ) : part == "Social Links" ? (
+      <SocialInfo CompanyInfo={CompanyInfo} fetchCompany={fetchCompany} />
+    ) : part == "Benefits" ? (
+      <CompanyBenefits CompanyInfo={CompanyInfo} fetchCompany={fetchCompany} />
+    ) : null;
 
   return (
     <>
@@ -90,8 +90,6 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
           alignItems: "center",
         }}
       >
-
-        
         <Box
           sx={{
             height: "100%",
@@ -103,18 +101,25 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
             outline: "none",
           }}
         >
-          <Box sx={{width:"100%",height:"4rem",bgcolor:"#ddd",borderBottom: "solid 1px #c9c9c9c6",
+          <Box
+            sx={{
+              width: "100%",
+              height: "4rem",
+              
+              borderBottom: "solid 1px #c9c9c9c6",
               display: "flex",
               alignItems: "center",
-              px: 3.5,
+              px: 1.5,
               boxSizing: "border-box",
-              justifyContent: "space-between"}} >
-           <Typography
+              justifyContent: "space-between",
+            }}
+          >
+            <Typography
               sx={{
                 fontSize: "1rem",
                 fontWeight: 600,
                 color: "#050318d2",
-                fontFamily:"monospace",
+                fontFamily: "monospace",
               }}
             >
               Edite Company Information
@@ -123,8 +128,6 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
               <CloseIcon />
             </IconButton>
           </Box>
-
-
 
           {/* <Box
             sx={{
@@ -153,17 +156,7 @@ export default function ModalInfo({ open, setOpen, fetchCompany,CompanyInfo }) {
               <CloseIcon />
             </IconButton>
           </Box> */}
-
-          
-
-
-
-
         </Box>
-
-
-
-
       </Modal>
     </>
   );
