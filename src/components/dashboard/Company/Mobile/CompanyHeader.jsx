@@ -150,14 +150,14 @@ export default function CompanyHeader({ CompanyInfo, fetchCompany }) {
               position: "absolute",
               height: "fit-content",
               width: "fit-content",
-              bgcolor: "#eeeded",
+              bgcolor: "#fff",
               right: 12,
               top: "-15%",
               border: "1px solid #d9d9d9",
               borderRadius: "10px",
               display: "flex",
               alignItems: "center",
-              gap: 0.5,boxSizing:"border-box",px:0.5
+              gap: 0.5,boxSizing:"border-box",px:0.5,cursor:"pointer",":active":{bgcolor:"#eeeded"}
             }}
           >
             <ModeRoundedIcon sx={{ color: "#7221bede", width: "0.7rem" }} />
