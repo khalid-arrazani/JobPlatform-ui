@@ -11,7 +11,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
         onClose={onClose}
         open={open}
         sx={{
-          zIndex: 2000,
+          zIndex: 2000
         }}
         anchor="left"
       >
