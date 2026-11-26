@@ -14,14 +14,17 @@ import {
 import { Building2, Mail } from "lucide-react";
 
 import { Share2, Gift } from "lucide-react";
-import Companyinfo from "./CompanyInformation";
+
 
 import DeleteIcon from "@mui/icons-material/Delete";
-import ContactInfo from "./ContactInformation";
-import SocialInfo from "./SocialLinks";
-import CompanyBenefits from "./CompanyBenefits";
 import { useAuth } from "../../../../../logic/context/AuthContext";
 import { useCompany } from "../../../../../logic/context/CompanyContext";
+import ContactInfo from "./Pages/ContactInformation";
+import SocialInfo from "./Pages/SocialLinks";
+import CompanyBenefits from "./Pages/CompanyBenefits";
+import Companyinfo from "./Pages/CompanyInformation";
+import MainListEdit from "./mainListEdit";
+
 
 export default function ModalInfo({
   open,
@@ -171,6 +174,8 @@ export default function ModalInfo({
               <CloseIcon />
             </IconButton>
           </Box>
+
+          <MainListEdit/>
 
 
           {/* content */}

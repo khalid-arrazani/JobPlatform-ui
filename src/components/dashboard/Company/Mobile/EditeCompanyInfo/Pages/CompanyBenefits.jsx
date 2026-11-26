@@ -3,17 +3,14 @@ import {
   Box,
   Divider,
   TextField,
-  MenuItem,
-  InputAdornment,
+
   Autocomplete,
   Button,
   Card,
   CircularProgress,
 } from "@mui/material";
 
-import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
 
-import CompanyFounded from "./CompanyFounded";
 
 import {
   Laptop,
@@ -31,9 +28,8 @@ import {
   Monitor,
 } from "lucide-react";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../../../logic/context/AuthContext";
-import { UpdateMyCompany } from "../../../../../logic/api/company/Company";
-
+import { useAuth } from "../../../../../../logic/context/AuthContext";
+import { UpdateMyCompany } from "../../../../../../logic/api/company/Company";
 
 const companyBenefits = [
   {
@@ -452,14 +448,28 @@ export default function CompanyBenefits({ CompanyInfo, fetchCompany }) {
           onClick={UpdateMyCompanyBenefits}
           variant="contained"
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" ,bgcolor: !hasChanges ? '#969696' : null}}
+          sx={{
+            display: "flex",
+            gap: 2,
+            height: "2.5rem",
+            fontSize: "1.1rem",
+            bgcolor: !hasChanges ? "#969696" : null,
+          }}
         >
-          Save{reload ? <CircularProgress sx={{
+          Save
+          {reload ? (
+            <CircularProgress
+              sx={{
                 color: "#ffffff",
                 "& .MuiCircularProgress-track": {
                   stroke: "#000000",
                 },
-              }}  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
+              }}
+              enableTrackSlot
+              size="25px"
+              aria-label="Loading…"
+            />
+          ) : null}
         </Button>
       </Box>
     </>

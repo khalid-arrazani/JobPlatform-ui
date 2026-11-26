@@ -10,11 +10,10 @@ import {
 } from "@mui/material";
 
 import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
-
-import CompanyFounded from "./CompanyFounded";
+import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { useEffect, useState } from "react";
-import { useAuth } from "../../../../../logic/context/AuthContext";
-import { UpdateMyCompany } from "../../../../../logic/api/company/Company";
+import { UpdateMyCompany } from "../../../../../../logic/api/company/Company";
+
 
 
 
@@ -70,7 +69,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
     company_size: "1-10",
     company_specialties: "",
   });
-  console.log(companyinfo);
+
 
   useEffect(() => {
     setCompanyinfo({
