@@ -1,6 +1,7 @@
 import { Box, Typography, Drawer, Avatar } from "@mui/material";
 
 export default function MainListEdit({ open, setOpen, section, setSection,setOpenEditModal }) {
+  
   const onClose = () => {
     setOpen(false);
   };
@@ -144,7 +145,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 </Typography>
               </Box>
 
-              {/* ABOUT ME */}
+              {/* Contact information */}
               <Box
                 sx={{
                   height: "4rem",
@@ -249,7 +250,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 </Typography>
               </Box>
 
-              {/* EXPERIENCE */}
+              {/* Socia Links */}
               <Box
                 sx={{
                   height: "4rem",
@@ -330,7 +331,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 </Box>
                 <Typography
                   sx={{
-                    fontFamily: "Benefits",
+                    fontFamily: "monospace",
                     fontSize: "1.1rem",
                     color: section == "Socia Links" ? "#3f0450f1" : "#0f0e0e",
                   }}
@@ -339,7 +340,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 </Typography>
               </Box>
 
-              {/* EDUCATION */}
+              {/* Benefits */}
               <Box
                 onClick={() => {
                   setSection("Benefits");
@@ -422,9 +423,13 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 </Typography>
               </Box>
 
-               
+          
             </Box>
           </Box>
+
+
+
+
           <Box
             sx={{
               height: "7rem",
@@ -489,6 +494,8 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
               </svg>
             </Box>
           </Box>
+
+
         </Box>
       </Drawer>
     </>
