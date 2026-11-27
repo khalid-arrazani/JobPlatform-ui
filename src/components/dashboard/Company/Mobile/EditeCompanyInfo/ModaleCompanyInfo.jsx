@@ -179,7 +179,7 @@ export default function ModalInfo({
             </IconButton>
           </Box>
 
-          <MainListEdit section={part} setSection={setPart} open={openList}  setOpen={setOpenList}    />
+          <MainListEdit section={part} setSection={setPart} open={openList}  setOpen={setOpenList}  />
 
 
           {/* content */}
