@@ -134,8 +134,8 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
   };
 
   return (
-    <>
-      <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
+    <Box sx={{ width: "100%", height: "100%", boxSizing: "border-box",display:"flex",flexDirection:"column" }} >
+      <Box sx={{ width: "100%", flex:1, boxSizing: "border-box",display:"flex",flexDirection:"column",overflow:"auto" }}>
         <Typography
           sx={{
             fontSize: "1.5rem",
@@ -155,11 +155,11 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
         <Box
           sx={{
             display: "flex",
-            flexWrap: "wrap",
             gap: 2,
             justifyContent: "space-between",
             px: 2,
             pt: 2,
+            flexDirection:"column",overflow:"auto",height:"90%"
           }}
         >
           {/* Company Name */}
@@ -381,6 +381,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           pb: 1.5,
           px: 4,
           py:1,
+          width:"100%"
         }}
       >
         <Button
@@ -411,6 +412,6 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           ) : null}
         </Button>
       </Box>
-    </>
+    </Box>
   );
 }
