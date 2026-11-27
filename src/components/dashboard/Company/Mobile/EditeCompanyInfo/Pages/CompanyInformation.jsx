@@ -131,16 +131,16 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
   return (
     <Box
       sx={{
-         display: "flex",
-  gap: 2,
-  px: 2,
-  pt: 2,
-  flexDirection: "column",
-  height: "100%",
-  minHeight: 0,
-  boxSizing: "border-box",
-  overflowY: "auto",
-  overflowX: "hidden",
+        display: "flex",
+        gap: 2,
+        px: 2,
+        pt: 2,
+        flexDirection: "column",
+        height: "100%",
+ 
+        boxSizing: "border-box",
+        overflowY: "auto",
+        overflowX: "hidden",
       }}
     >
       <Typography
@@ -360,7 +360,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           alignItems: "center",
           justifyContent: "end",
           pb: 1.5,
-          px: 4,
+        
           py: 1,
           width: "100%",
         }}
@@ -369,15 +369,17 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           onClick={UpdateMyCompanyinfo}
           variant="contained"
           size="large"
+          fullWidth
           sx={{
             display: "flex",
             gap: 2,
             height: "2.5rem",
             fontSize: "1.1rem",
             bgcolor: !hasChanges ? "#969696" : null,
+            fontFamily:"monospace",m:2,textTransform:"none"
           }}
         >
-          Save{" "}
+          Save Change{" "}
           {reload ? (
             <CircularProgress
               sx={{
