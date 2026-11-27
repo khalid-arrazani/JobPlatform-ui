@@ -52,6 +52,7 @@ const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
+    fontFamily:"monospace"
   },
 };
 
@@ -137,7 +138,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
         pt: 2,
         flexDirection: "column",
         height: "100%",
- 
+
         boxSizing: "border-box",
         overflowY: "auto",
         overflowX: "hidden",
@@ -161,7 +162,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* Company Name */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1" }}>
           Company Name <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
@@ -180,7 +181,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <Building2 size={18} color="#64748B" />
+                  <Building2 size={22} color="#64748B" />
                 </InputAdornment>
               ),
             },
@@ -190,7 +191,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* Industry */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           Industry <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
@@ -220,7 +221,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* headquarters */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           Headquarters <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
@@ -250,7 +251,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* Company Founded*/}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1" }}>
           Founded <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
@@ -259,7 +260,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* Company Size*/}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           Company Size <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
@@ -285,7 +286,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* Company Specialties*/}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           Specialties <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
         <Autocomplete
@@ -320,11 +321,12 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       {/* About Company */}
       <Box sx={{ minWidth: "80%", flex: 1 }}>
-        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily: "system-ui" }}>
+        <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           About Your Company <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
         <TextField
+        
           value={companyinfo.company_about}
           onChange={(e) => {
             setCompanyinfo((prev) => ({
@@ -355,13 +357,13 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           height: "fit-content",
           boxSizing: "border-box",
           alignSelf: "end",
-          borderTop: " solid 1px #d0d0d0",
+          borderTop: " dashed 1px #d0d0d0",
           display: "flex",
           alignItems: "center",
           justifyContent: "end",
-          pb: 1.5,
-        
-          py: 1,
+          pb: 2,
+
+          pt:1,
           width: "100%",
         }}
       >
@@ -376,7 +378,9 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
             height: "2.5rem",
             fontSize: "1.1rem",
             bgcolor: !hasChanges ? "#969696" : null,
-            fontFamily:"monospace",m:2,textTransform:"none"
+            fontFamily: "monospace",
+            
+            textTransform: "none",
           }}
         >
           Save Change{" "}
