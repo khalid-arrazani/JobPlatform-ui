@@ -15,7 +15,6 @@ import { Building2, Mail } from "lucide-react";
 
 import { Share2, Gift } from "lucide-react";
 
-
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useAuth } from "../../../../../logic/context/AuthContext";
 import { useCompany } from "../../../../../logic/context/CompanyContext";
@@ -24,7 +23,6 @@ import SocialInfo from "./Pages/SocialLinks";
 import CompanyBenefits from "./Pages/CompanyBenefits";
 import Companyinfo from "./Pages/CompanyInformation";
 import MainListEdit from "./mainListEdit";
-
 
 export default function ModalInfo({
   open,
@@ -72,7 +70,7 @@ export default function ModalInfo({
     setOpen(false);
   };
 
-  const [openList , setOpenList ] = useState(false)
+  const [openList, setOpenList] = useState(false);
 
   const page =
     part == "Company Information" ? (
@@ -105,7 +103,8 @@ export default function ModalInfo({
             overflow: "hidden",
             boxSizing: "border-box",
             outline: "none",
-            display:"flex",flexDirection:"column"
+            display: "flex",
+            flexDirection: "column",
           }}
         >
           {/* header */}
@@ -122,45 +121,65 @@ export default function ModalInfo({
               justifyContent: "space-between",
             }}
           >
-            <Box  sx={{
-              
-              height: "4rem",
+            <Box
+              sx={{
+                height: "4rem",
 
-              display: "flex",
-              alignItems: "center",
-          
-              boxSizing: "border-box",
-              justifyContent: "space-between",
-              gap:1
-            }}>
+                display: "flex",
+                alignItems: "center",
 
-              <IconButton   onClick={()=>{setOpenList(true)}} sx={{borderRadius:"10px",bgcolor:"#f5edfbaa"}}>
-              <svg
-                id="Text-Align-Right--Streamline-Carbon"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 16 16"
-                height="30"
-                width="30"
+                boxSizing: "border-box",
+                justifyContent: "space-between",
+                gap: 1,
+              }}
+            >
+              <IconButton
+                onClick={() => {
+                  setOpenList(true);
+                }}
+                sx={{ borderRadius: "10px", bgcolor: "#f5edfbaa" }}
               >
-                
-                <defs></defs>
-                <title>align--right</title>
-                <path d="M3 3h7v1H3Z" fill="#7215cf" stroke-width="0.5"></path>
-                <path d="M5 6h5v1H5Z" fill="#7215cf" stroke-width="0.5"></path>
-                <path d="M3 9h7v1H3Z" fill="#7215cf" stroke-width="0.5"></path>
-                <path d="M5 12h5v1H5Z" fill="#7215cf" stroke-width="0.5"></path>
-                <path
-                  d="M12 2h1v12h-1Z"
-                  fill="#1501aa"
-                  stroke-width="0.5"
-                ></path>
-                <path
-                  id="_Transparent_Rectangle_"
-                  d="M0 0h16v16H0Z"
-                  fill="none"
-                  stroke-width="0.5"
-                ></path>
-              </svg>
+                <svg
+                  id="Text-Align-Right--Streamline-Carbon"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 16 16"
+                  height="30"
+                  width="30"
+                >
+                  <defs></defs>
+                  <title>align--right</title>
+                  <path
+                    d="M3 3h7v1H3Z"
+                    fill="#7215cf"
+                    stroke-width="0.5"
+                  ></path>
+                  <path
+                    d="M5 6h5v1H5Z"
+                    fill="#7215cf"
+                    stroke-width="0.5"
+                  ></path>
+                  <path
+                    d="M3 9h7v1H3Z"
+                    fill="#7215cf"
+                    stroke-width="0.5"
+                  ></path>
+                  <path
+                    d="M5 12h5v1H5Z"
+                    fill="#7215cf"
+                    stroke-width="0.5"
+                  ></path>
+                  <path
+                    d="M12 2h1v12h-1Z"
+                    fill="#1501aa"
+                    stroke-width="0.5"
+                  ></path>
+                  <path
+                    id="_Transparent_Rectangle_"
+                    d="M0 0h16v16H0Z"
+                    fill="none"
+                    stroke-width="0.5"
+                  ></path>
+                </svg>
               </IconButton>
               <Typography
                 sx={{
@@ -173,20 +192,32 @@ export default function ModalInfo({
                 Edite Company Information
               </Typography>
             </Box>
-            
+
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
           </Box>
 
-          <MainListEdit section={part} setSection={setPart} open={openList}  setOpen={setOpenList}  />
-
+          <MainListEdit
+            section={part}
+            setSection={setPart}
+            open={openList}
+            setOpen={setOpenList}
+          />
 
           {/* content */}
-          <Box  sx={{width:"100%",flex:1}}>
+          <Box
+            sx={{
+              width: "100%",
+              flex: 1,
+              minHeight: 0,
+              
+              display: "flex",
+              flexDirection: "column",
+            }}
+          >
             {page}
           </Box>
-
         </Box>
       </Modal>
     </>

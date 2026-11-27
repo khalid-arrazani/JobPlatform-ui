@@ -131,15 +131,16 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
   return (
     <Box
       sx={{
-        display: "flex",
-        gap: 2,
-        justifyContent: "space-between",
-        px: 2,
-        pt: 2,
-        flexDirection: "column",
-        height: "100%",
-        boxSizing: "border-box",
-        overflow:"scroll"
+         display: "flex",
+  gap: 2,
+  px: 2,
+  pt: 2,
+  flexDirection: "column",
+  height: "100%",
+  minHeight: 0,
+  boxSizing: "border-box",
+  overflowY: "auto",
+  overflowX: "hidden",
       }}
     >
       <Typography
