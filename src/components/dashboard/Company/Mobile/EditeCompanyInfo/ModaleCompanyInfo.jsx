@@ -173,6 +173,7 @@ export default function ModalInfo({
                 Edite Company Information
               </Typography>
             </Box>
+            
             <IconButton onClick={handleClose}>
               <CloseIcon />
             </IconButton>
