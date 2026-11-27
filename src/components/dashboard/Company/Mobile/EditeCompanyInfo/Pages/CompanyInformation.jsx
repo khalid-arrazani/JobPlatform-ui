@@ -10,9 +10,12 @@ import {
 } from "@mui/material";
 
 import { Building2, BriefcaseBusiness, MapPin } from "lucide-react";
-import { useAuth } from "../../../../../../logic/context/AuthContext";
+
 import { useEffect, useState } from "react";
+import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { UpdateMyCompany } from "../../../../../../logic/api/company/Company";
+import CompanyFounded from "./CompanyFounded";
+
 
 
 
@@ -368,7 +371,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
 
       <Box
         sx={{
-          height: "15%",
+          height: "fit-content",
           boxSizing: "border-box",
           alignSelf: "end",
           borderTop: " solid 1px #d0d0d0",
@@ -377,6 +380,7 @@ export default function Companyinfo({ CompanyInfo, fetchCompany }) {
           justifyContent: "end",
           pb: 1.5,
           px: 4,
+          py:1,
         }}
       >
         <Button
