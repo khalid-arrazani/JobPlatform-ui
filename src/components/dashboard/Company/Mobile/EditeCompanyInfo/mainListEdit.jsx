@@ -1,7 +1,7 @@
 import { Box, Typography, Drawer, Avatar } from "@mui/material";
 
 export default function MainListEdit({ open, setOpen, section, setSection,setOpenEditModal }) {
-  
+
   const onClose = () => {
     setOpen(false);
   };
@@ -150,22 +150,22 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor: section == "Contact information" ? "#e698fc67" : "#9f73ab00",
+                  bgcolor: section == "Contact Information" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
                   boxSizing: "border-box",
                   px: 0.5,
                   border:
-                    section == "Contact information"
+                    section == "Contact Information"
                       ? "#51215f0b solid 1px"
                       : "#06050531 solid 1px",
                   cursor: "pointer",
-                  scale: section == "Contact information" ? 1.02 : 1,
+                  scale: section == "Contact Information" ? 1.02 : 1,
                   transition: "0.2s",
                 }}
                 onClick={() => {
-                  setSection("Contact information");
+                  setSection("Contact Information");
                   setOpen(false);
                 }}
               >
@@ -192,7 +192,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="M3 4.75h18s2 0 2 2v10.5s0 2 -2 2H3s-2 0 -2 -2V6.75s0 -2 2 -2"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -200,7 +200,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="M4.564 7.75h5v5h-5Z"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -208,7 +208,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="m4.564 15.75 4.436 0"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -216,7 +216,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="m15 8.25 4.238 0"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -224,7 +224,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="m15 15.75 4.238 0"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -232,7 +232,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                     <path
                       d="m13.291 12 5.947 0"
                       fill="none"
-                      stroke={section == "Contact information" ? "#3f0450f1" : "#0f0e0e"}
+                      stroke={section == "Contact Information" ? "#3f0450f1" : "#0f0e0e"}
                       stroke-linecap="round"
                       stroke-linejoin="round"
                       stroke-width="1"
@@ -243,7 +243,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: section == "Contact information" ? "#3f0450f1" : "#0f0e0e",
+                    color: section == "Contact Information" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
                   Contact information
