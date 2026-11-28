@@ -24,6 +24,7 @@ const inputStyle = {
     borderRadius: "8px",
     backgroundColor: "#fff",
     maxWidth: "100%",
+     fontFamily:"monospace"
   },
 };
 
