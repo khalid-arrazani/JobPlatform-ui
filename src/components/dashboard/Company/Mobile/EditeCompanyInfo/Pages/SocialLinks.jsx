@@ -9,12 +9,7 @@ import {
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import {
-  FaLinkedin,
-  FaFacebook,
-  FaXTwitter,
-  FaInstagram,
-} from "react-icons/fa6";
+
 import { useAuth } from "../../../../../../logic/context/AuthContext";
 import { UpdateMyCompany } from "../../../../../../logic/api/company/Company";
 
