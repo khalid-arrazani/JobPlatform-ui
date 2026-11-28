@@ -270,7 +270,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                   transition: "0.2s",
                 }}
                 onClick={() => {
-                  setSection("Socia Links");
+                  setSection("Social Links");
                   setOpen(false);
                 }}
               >
@@ -296,7 +296,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                       <path
                         id="Vector"
                         stroke={
-                          section == "Socia Links" ? "#3f0450f1" : "#0f0e0e"
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
                         }
                         d="M3 12c0 3.7712 0 7.6569 1.31802 8.8284C5.63604 22 7.75736 22 12 22c4.2426 0 6.364 0 7.682 -1.1716C21 19.6569 21 15.7712 21 12"
                         stroke-width="1.2"
@@ -304,7 +304,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                       <path
                         id="Vector_2"
                         stroke={
-                          section == "Socia Links" ? "#3f0450f1" : "#0f0e0e"
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
                         }
                         d="M6.5 5c0.82344 -0.02087 1.65925 -0.54509 1.93944 -1.31968 0.00862 -0.02383 0.01746 -0.05033 0.03513 -0.10335L8.50023 3.5c0.04218 -0.12656 0.06328 -0.18986 0.08585 -0.246 0.28819 -0.71688 0.96353 -1.20363 1.73472 -1.25034C10.3812 2 10.4479 2 10.5814 2h2.8377c0.1334 0 0.2001 0 0.2605 0.00366 0.7712 0.04671 1.4466 0.53346 1.7348 1.25034 0.0225 0.05614 0.0436 0.11943 0.0858 0.246l0.0257 0.07697c0.0176 0.05271 0.0265 0.07959 0.0351 0.10335C15.8412 4.45491 16.6766 4.97913 17.5 5"
                         stroke-width="1.2"
@@ -312,7 +312,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                       <path
                         id="Vector_3"
                         stroke={
-                          section == "Socia Links" ? "#3f0450f1" : "#0f0e0e"
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
                         }
                         d="m14.6603 14.2019 6.0073 -1.8022c0.5955 -0.1786 0.8933 -0.268 1.0822 -0.4821 0.0368 -0.0417 0.0701 -0.0864 0.0994 -0.1336C22 11.5415 22 11.2307 22 10.6089c0 -2.45013 0 -3.6752 -0.673 -4.50231 -0.1293 -0.15896 -0.2746 -0.30426 -0.4336 -0.43361C20.0663 5 18.8412 5 16.3911 5H7.60893c-2.45016 0 -3.67523 0 -4.50234 0.67298 -0.15896 0.12935 -0.30426 0.27465 -0.43361 0.43361C2 6.9337 2 8.15877 2 10.6089c0 0.6218 0 0.9326 0.15078 1.1751 0.02937 0.0472 0.06263 0.0919 0.09943 0.1336 0.18894 0.2141 0.48669 0.3035 1.08219 0.4821l6.00728 1.8022"
                         stroke-width="1.2"
@@ -320,7 +320,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                       <path
                         id="Vector_4"
                         stroke={
-                          section == "Socia Links" ? "#3f0450f1" : "#0f0e0e"
+                          section == "Social Links" ? "#3f0450f1" : "#0f0e0e"
                         }
                         stroke-linecap="round"
                         d="M14 12.5h-4c-0.27614 0 -0.5 0.2239 -0.5 0.5v2.1615c0 0.2044 0.12448 0.3883 0.3143 0.4642l0.7001 0.2801c0.9537 0.3814 2.0175 0.3814 2.9712 0l0.7001 -0.2801c0.1898 -0.0759 0.3143 -0.2598 0.3143 -0.4642V13c0 -0.2761 -0.2239 -0.5 -0.5 -0.5Z"
@@ -333,10 +333,10 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                   sx={{
                     fontFamily: "monospace",
                     fontSize: "1.1rem",
-                    color: section == "Socia Links" ? "#3f0450f1" : "#0f0e0e",
+                    color: section == "Social Links" ? "#3f0450f1" : "#0f0e0e",
                   }}
                 >
-                  Socia Links
+                  Social Links
                 </Typography>
               </Box>
 
