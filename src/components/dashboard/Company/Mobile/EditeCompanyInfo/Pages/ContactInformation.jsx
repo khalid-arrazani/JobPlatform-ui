@@ -27,6 +27,8 @@ const inputStyle = {
 };
 
 export default function ContactInfo({ CompanyInfo, fetchCompany }) {
+
+  
   const { setSnackBar } = useAuth();
   const [reload, setReload] = useState(false);
 
