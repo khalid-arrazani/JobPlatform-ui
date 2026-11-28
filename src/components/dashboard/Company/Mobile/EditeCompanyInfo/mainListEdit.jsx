@@ -255,7 +255,7 @@ export default function MainListEdit({ open, setOpen, section, setSection,setOpe
                 sx={{
                   height: "4rem",
                   width: "100%",
-                  bgcolor: section == "Socia Links" ? "#e698fc67" : "#9f73ab00",
+                  bgcolor: section == "Social Links" ? "#e698fc67" : "#9f73ab00",
                   borderRadius: "10px",
                   display: "flex",
                   alignItems: "center",
