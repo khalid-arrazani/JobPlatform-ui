@@ -114,31 +114,32 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
           mb: 1,
         }}
       >
-        Edite Company Information
+        Edite Contact information
       </Typography>
 
-      {/* Company Name */}
+      {/* Company Email */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
         <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1" }}>
-          Company Name <span style={{ color: "#EF4444" }}>*</span>
+          Company Email <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
         <TextField
-          value={companyinfo.company_name}
-          onChange={(e) => {
-            setCompanyinfo((prev) => ({
-              ...prev,
-              company_name: e.target.value,
-            }));
-          }}
+          value={contactInfo.company_email}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_email: e.target.value,
+                }));
+              }}
+              placeholder="contact@company.com"
           fullWidth
-          placeholder="Enter company name"
+          
           sx={inputStyle}
           slotProps={{
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <Building2 size={22} color="#64748B" />
+                  <Mail size={22} color="#64748B" />
                 </InputAdornment>
               ),
             },
@@ -325,7 +326,7 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
         }}
       >
         <Button
-          onClick={UpdateMyCompanyinfo}
+          onClick={UpdateMyCompanyContact}
           variant="contained"
           size="large"
           fullWidth
