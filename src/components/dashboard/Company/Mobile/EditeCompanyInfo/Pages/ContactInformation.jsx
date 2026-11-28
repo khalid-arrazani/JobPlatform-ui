@@ -22,7 +22,7 @@ const inputStyle = {
   "& .MuiOutlinedInput-root": {
     borderRadius: "8px",
     backgroundColor: "#fff",
-    minWidth: "190%",
+    fontFamily:"monospace"
   },
 };
 
@@ -95,7 +95,6 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
         pt: 2,
         flexDirection: "column",
         height: "100%",
-
         boxSizing: "border-box",
         overflowY: "auto",
         overflowX: "hidden",
@@ -118,7 +117,7 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
       </Typography>
 
       {/* Company Email */}
-      <Box sx={{ minWidth: "32%", flex: 1 }}>
+      <Box sx={{ minWidth: "32%", mb:1 }}>
         <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1" }}>
           Company Email <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
@@ -148,7 +147,7 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
       </Box>
 
       {/* Phone Number */}
-      <Box sx={{ minWidth: "32%", flex: 1 }}>
+      <Box sx={{ minWidth: "32%", mb:1   }}>
         <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
           Phone Number <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
