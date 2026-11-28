@@ -116,44 +116,41 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
 
   return (
     <>
-      <Box sx={{ width: "100%", height: "85%", boxSizing: "border-box" }}>
-        <Typography
-          sx={{
-            fontSize: "1.5rem",
-            fontWeight: 600,
-            color: "#050318d2",
-            fontFamily: "system-ui",
-            py: 2,
-            boxSizing: "border-box",
-            ml: 1,
-          }}
-        >
-          Edite Socia Links
-        </Typography>
+      <Box
+      sx={{
+        display: "flex",
+        gap: 2,
+        px: 2,
+        pt: 2,
+        flexDirection: "column",
+        height: "100%",
+        boxSizing: "border-box",
+        overflowY: "auto",
+        overflowX: "hidden",
+      }}
+    >
+      <Typography
+        sx={{
+          fontSize: "1.2rem",
+          fontWeight: 600,
+          color: "#050318d2",
+          fontFamily: "monospace",
 
-        <Divider />
+          boxSizing: "border-box",
+          borderBottom: "1px dashed #ddd",
+          width: "fit-content",
+          mb: 1,
+        }}
+      >
+        Edite Socia Links
+      </Typography>
 
-        <Box
-          sx={{
-            width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            flex: 1,
-            gap: 2,
-            border: "dashed 0.5px #c8c8c8",
-            px: 10,
-            boxSizing: "border-box",
-            overflow: "auto",
-            height: "70%",
-            mt: 4,
-            py: 3.5,
-            justifyContent: "space-evenly",
-            alignItems: "center",
-          }}
-        >
-          {/* LinkedIn */}
-          <TextField
-            value={
+      {/* LinkedIn*/}
+      <Box sx={{ minWidth: "32%", mb:1 }}>
+        
+
+        <TextField
+          value={
               socialInfo.find((item) => item.platform === "linkdin")?.url || ""
             }
             onChange={(e) => {
@@ -165,23 +162,28 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
                 ),
               );
             }}
-            fullWidth
+              fullWidth
             placeholder="https://linkedin.com/company/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FaLinkedin size={30} color="#3376d5" />
-                  </InputAdornment>
-                ),
-              },
-            }}
-          />
+          
+          sx={inputStyle}
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
+                   <FaLinkedin size={30} color="#3376d5" />
+                </InputAdornment>
+              ),
+            },
+          }}
+        />
+      </Box>
 
-          {/* Facebook */}
-          <TextField
-            fullWidth
+      {/* Facebook */}
+      <Box sx={{ minWidth: "32%", mb:1   }}>
+         
+
+        <TextField
+           fullWidth
             value={
               socialInfo.find((item) => item.platform === "facebook")?.url || ""
             }
@@ -195,21 +197,26 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
               );
             }}
             placeholder="https://facebook.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
+          
+          sx={inputStyle}
+          slotProps={{
+            input: {
+              startAdornment: (
+                <InputAdornment position="start">
                     <FaFacebook size={30} color="#1f62c1" />
                   </InputAdornment>
-                ),
-              },
-            }}
-          />
+              ),
+            },
+          }}
+        ></TextField>
+      </Box>
 
-          {/* Instagram */}
-          <TextField
-            fullWidth
+      {/* Instagram */}
+      <Box sx={{ minWidth: "32%",   }}>
+        
+
+        <TextField
+          fullWidth
             value={
               socialInfo.find((item) => item.platform === "instagram")?.url ||
               ""
@@ -224,21 +231,25 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
               );
             }}
             placeholder="https://instagram.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
+          sx={inputStyle}
+          slotProps={{
+            input: {
+              startAdornment: (
+               <InputAdornment position="start">
                     <FaInstagram size={30} color="#E1306C" />
                   </InputAdornment>
-                ),
-              },
-            }}
-          />
+              ),
+            },
+          }}
+        ></TextField>
+      </Box>
 
-          {/* X / Twitter */}
-          <TextField
-            fullWidth
+      {/*  X / Twitter */}
+      <Box sx={{ minWidth: "32%", flex: 1 }}>
+        
+
+        <TextField
+          fullWidth
             value={socialInfo.find((item) => item.platform === "x")?.url || ""}
             onChange={(e) => {
               setSocialInfo((prev) =>
@@ -250,48 +261,69 @@ export default function SocialInfo({ CompanyInfo, fetchCompany }) {
               );
             }}
             placeholder="https://x.com/..."
-            sx={inputStyle}
-            slotProps={{
-              input: {
-                startAdornment: (
-                  <InputAdornment position="start">
+          sx={inputStyle}
+          slotProps={{
+            input: {
+              startAdornment: (
+               <InputAdornment position="start">
                     <FaXTwitter size={30} color="#353d49" />
                   </InputAdornment>
-                ),
-              },
-            }}
-          />
-        </Box>
+              ),
+            },
+          }}
+        ></TextField>
       </Box>
+
+ 
 
       <Box
         sx={{
-          height: "15%",
+          height: "fit-content",
           boxSizing: "border-box",
           alignSelf: "end",
-          borderTop: " solid 1px #d0d0d0",
+          borderTop: " dashed 1px #d0d0d0",
           display: "flex",
           alignItems: "center",
           justifyContent: "end",
-          pb: 1.5,
-          px: 4,
+          pb: 2,
+
+          pt:1,
+          width: "100%",
         }}
       >
         <Button
-          variant="contained"
           onClick={UpdateMyCompanySocial}
+          variant="contained"
           size="large"
-          sx={{ display: "flex", gap: 2, height: "2.5rem", fontSize: "1.1rem" ,bgcolor: !hasChanges ? '#969696' : null}}
+          fullWidth
+          sx={{
+            display: "flex",
+            gap: 2,
+            height: "2.5rem",
+            fontSize: "1.1rem",
+            bgcolor: !hasChanges ? "#969696" : null,
+            fontFamily: "monospace",
+            
+            textTransform: "none",
+          }}
         >
-          Save
-          {reload ? <CircularProgress  sx={{
+          Save Change{" "}
+          {reload ? (
+            <CircularProgress
+              sx={{
                 color: "#ffffff",
                 "& .MuiCircularProgress-track": {
                   stroke: "#000000",
                 },
-              }}  enableTrackSlot size="25px" aria-label="Loading…" /> :null }
+              }}
+              enableTrackSlot
+              size="25px"
+              aria-label="Loading…"
+            />
+          ) : null}
         </Button>
       </Box>
+    </Box>
     </>
   );
 }
