@@ -147,51 +147,51 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
         />
       </Box>
 
-      {/* Industry */}
+      {/* Phone Number */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
         <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
-          Industry <span style={{ color: "#EF4444" }}>*</span>
+          Phone Number <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
         <TextField
-          value={companyinfo.company_industry}
-          onChange={(e) => {
-            setCompanyinfo((prev) => ({
-              ...prev,
-              company_industry: e.target.value,
-            }));
-          }}
-          placeholder="Select industry"
+           value={contactInfo.company_number}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_number: e.target.value,
+                }));
+              }}
+              placeholder="+212 6 12 34 56 78"
           fullWidth
           defaultValue=""
           sx={inputStyle}
           slotProps={{
             input: {
               startAdornment: (
-                <InputAdornment position="start">
-                  <BriefcaseBusiness size={18} color="#64748B" />
-                </InputAdornment>
+                 <InputAdornment position="start">
+                      <Phone size={18} color="#64748B" />
+                    </InputAdornment>
               ),
             },
           }}
         ></TextField>
       </Box>
 
-      {/* headquarters */}
+      {/* Company Website */}
       <Box sx={{ minWidth: "32%", flex: 1 }}>
         <Typography sx={{ mb: 1, fontWeight: 600, fontFamily:"monospace",color:"#010217c1"  }}>
-          Headquarters <span style={{ color: "#EF4444" }}>*</span>
+          Company Website <span style={{ color: "#EF4444" }}>*</span>
         </Typography>
 
         <TextField
-          value={companyinfo.company_locatin}
-          onChange={(e) => {
-            setCompanyinfo((prev) => ({
-              ...prev,
-              company_locatin: e.target.value,
-            }));
-          }}
-          placeholder="Select Location"
+          value={contactInfo.company_webSite}
+              onChange={(e) => {
+                setContactInfo((prev) => ({
+                  ...prev,
+                  company_webSite: e.target.value,
+                }));
+              }}
+              placeholder="https://www.yourcompany.com"
           fullWidth
           defaultValue=""
           sx={inputStyle}
@@ -199,8 +199,8 @@ export default function ContactInfo({ CompanyInfo, fetchCompany }) {
             input: {
               startAdornment: (
                 <InputAdornment position="start">
-                  <MapPin size={18} color="#64748B" />
-                </InputAdornment>
+                      <Globe size={18} color="#64748B" />
+                    </InputAdornment>
               ),
             },
           }}
